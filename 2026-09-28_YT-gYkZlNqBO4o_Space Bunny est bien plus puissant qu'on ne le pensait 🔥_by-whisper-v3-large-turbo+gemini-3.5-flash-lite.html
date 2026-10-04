@@ -1,0 +1,2234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Space Bunny est bien plus puissant qu&#x27;on ne le pensait 🔥 — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Space Bunny est bien plus puissant qu&#x27;on ne le pensait 🔥</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-09-28</span>
+                <span class="badge">⏱️ 09m 41s</span>
+                <span class="badge">🆔 <code>gYkZlNqBO4o</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=gYkZlNqBO4o" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* lève le voile sur un modèle d'intelligence artificielle mystérieux et furtif nommé « Space Bunny », rapidement identifié par la communauté comme étant une création de Minimax. Apparu soudainement sur OpenRouter sans documentation officielle, ce modèle surprend par ses performances de pointe, se positionnant d'emblée comme un rival sérieux face à des poids lourds tels qu'Astra et Opus 5.5. Conçu pour générer des environnements complexes, interactifs et dynamiques (comme des étangs de carpes koï, des jardins japonais en voxel ou des scènes côtières animées), Space Bunny repousse les frontières de la génération procédurale et de la 3D assistée par IA à partir de simples instructions textuelles ou de combinaisons texte-image.</p><p>L'analyse des démonstrations partagées sur X met en lumière des workflows novateurs où les créateurs testent les limites des modèles dans des conditions variées. Par exemple, pour construire un jardin japonais en Three.js, Space Bunny a nécessité environ 45 minutes pour un rendu gratuit et très étendu, tandis qu'Astra a accompli une tâche similaire en 15 minutes pour un coût de 4,24 dollars. De même, en combinant des prompts textuels et des images de référence, Space Bunny s'est montré capable de synthétiser des micro-mondes animés cohérents — intégrant des trains en mouvement, des PNJ et des variations d'éclairage dynamiques — sans perdre sa direction artistique en pixel art ou en style voxel.</p><p>Pour les créateurs de vidéo et les concepteurs d'expériences interactives, ces avancées signalent un changement de paradigme majeur : la capacité à prototyper rapidement des environnements 3D immersifs et dynamiques directement depuis des interfaces d'IA. Toutefois, les analystes appellent à la prudence face aux démos virales. Entre les temps de génération plus longs, l'utilisation d'images de référence masquant une partie de la création de zéro, et l'absence de bancs d'essai standardisés, les créateurs doivent évaluer rigoureusement le compromis entre richesse visuelle, coût temporel et interactivité réelle avant d'intégrer ces outils émergents dans leurs pipelines de production professionnelle.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Minimax</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>L&#x27;émergence des modèles furtifs** : Les fuites de modèles non publiés sur des plateformes comme OpenRouter (tel que Space Bunny par Minimax) constituent un indicateur avancé des capacités futures des IA avant leurs lancements officiels.</span></li><li><span class="point-bullet">✦</span><span>Supériorité sur le niveau de détail** : Space Bunny se distingue par sa capacité à privilégier la richesse environnementale globale, intégrant une multitude de micro-éléments (rochers, PNJ, vélos, panneaux) sans saturer visuellement la scène.</span></li><li><span class="point-bullet">✦</span><span>Gestion des entrées multimodales** : Le modèle exploite efficacement des combinaisons de prompts textuels et d&#x27;images de référence pour assimiler et restituer des directions visuelles complexes.</span></li><li><span class="point-bullet">✦</span><span>Le compromis temps/coût face au résultat** : Une génération gratuite (Space Bunny) peut s&#x27;avérer trois fois plus lente (45 minutes) qu&#x27;une solution payante optimisée (Astra en 15 minutes pour 4,24 $), un facteur critique pour les workflows de production.</span></li><li><span class="point-bullet">✦</span><span>Cohérence stylistique maintenue** : Qu&#x27;il s&#x27;agisse d&#x27;esthétiques en pixel art ou en style voxel, Space Bunny démontre une forte stabilité visuelle, évitant les mélanges de styles anarchiques au sein d&#x27;une même scène.</span></li><li><span class="point-bullet">✦</span><span>Dynamisme et animation contextuelle** : Au-delà des images fixes, le modèle insuffle de la vie dans ses environnements en animant des éléments mobiles (trains changeant de position, bateaux naviguant, personnages en mouvement).</span></li><li><span class="point-bullet">✦</span><span>Gestion avancée de l&#x27;éclairage dynamique** : Les tests (comme le scénario du pélican à vélo) prouvent la capacité de l&#x27;IA à faire basculer l&#x27;ensemble d&#x27;une scène — ciel, océan, route et ombres — d&#x27;un look diurne à un coucher de soleil chaleureux de manière cohérente.</span></li><li><span class="point-bullet">✦</span><span>Piège des démos virales et des &quot;one-shots&quot;** : Les publications sur X ne remplacent pas des bancs d&#x27;essai standardisés ; il est crucial de ne pas juger un outil uniquement sur son résultat final sans connaître le nombre d&#x27;itérations en coulisses.</span></li><li><span class="point-bullet">✦</span><span>Prototypage rapide d&#x27;environnements interactifs** : Ces technologies ouvrent la voie à la création instantanée de décors jouables ou de scènes de jeux vidéo miniatures à partir d&#x27;instructions simples.</span></li><li><span class="point-bullet">✦</span><span>Limitations géométriques persistantes** : Malgré des rendus impressionnants, des défis subsistent concernant la complexité géométrique pure et la robustesse de l&#x27;interactivité à grande échelle, rappelant que l&#x27;IA ne résout pas encore magiquement tout le développement 3D.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:20</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Bon, c&#x27;est vraiment fou. Un modèle d&#x27;IA complètement mystérieux vient d&#x27;apparaître sur OpenRouter avec presque aucune information à son sujet. Il s&#x27;appelle Space Bunny, et c&#x27;était censé être un modèle furtif, sauf que la furtivité n&#x27;a pas duré très longtemps. Les gens ont commencé à creuser dans le code, et voilà, c&#x27;était Minimax.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une interface graphique animée (Postcard Radio) puis des publications sur le réseau social X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Image 1 : &quot;PELICAN ON TWO WHEELS&quot;, commandes de lecture et de vitesse. Image 2 : &quot;Space Bunny (stealth model) is free for the next week&quot;, &quot;- 1M Context&quot;, &quot;- Multi-modal&quot;, &quot;- Zero Data Retention&quot;. Image 3 : Tweet de @LuminaBench avec alerte rouge, mentionnant &quot;The stealth model &#x27;Space Bunny&#x27; is officially a MiniMax model&quot;, et un bloc de code JSON avec `&quot;provider&quot;: &quot;minimax-m3-a-official&quot;`, `&quot;model&quot;: &quot;space-bunny&quot;`.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle successive de l&#x27;animation, du tweet annonçant Space Bunny, puis du tweet d&#x27;analyse du code révélant l&#x27;origine MiniMax.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_001_00-00-02.jpg" alt="Capture d&#x27;écran d&#x27;une interface web stylisée aux tons rétro intitulée &quot;Pelican on Two Wheels&quot; avec un personnage pélican sur un vélo." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une interface web stylisée aux tons rétro intitulée &quot;Pelican on Two Wheels&quot; avec un personnage pélican sur un vélo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_002_00-00-10.jpg" alt="Capture d&#x27;un tweet posté par OpenCode annonçant que &quot;Space Bunny (stealth model) is free for the next week&quot; avec ses spécifications." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_002_00-00-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Capture d&#x27;un tweet posté par OpenCode annonçant que &quot;Space Bunny (stealth model) is free for the next week&quot; avec ses spécifications.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_003_00-00-18.jpg" alt="Capture d&#x27;un tweet de Lumina (@LuminaBench) révélant que le modèle &quot;Space Bunny&quot; est officiellement un modèle MiniMax, avec un extrait de code JSON à l&#x27;appui." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_003_00-00-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:18</span>
+                        <span class="caption-text">Capture d&#x27;un tweet de Lumina (@LuminaBench) révélant que le modèle &quot;Space Bunny&quot; est officiellement un modèle MiniMax, avec un extrait de code JSON à l&#x27;appui.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:20 - 00:00:41</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et ce n&#x27;est pas non plus un modèle expérimental aléatoire. Les premiers résultats montrent que Space Bunny rivalise avec des modèles comme Astra et Opus 5.5. Et aujourd&#x27;hui, j&#x27;ai quelques-uns des premiers résultats les plus fous de ce modèle avant sa sortie officielle. Alors prenez vos chips, installez-vous confortablement, car nous sommes sur le point de découvrir ce que ce modèle mystère peut réellement faire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Capture de post Twitter/X et comparatif visuel côte à côte de rendus graphiques comparant Space Bunny et Grok 4.7.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de Lumina mentionnant MiniMax et &quot;space-bunny&quot;, et comparatif étiqueté Space Bunny (MiniMax M3.1) vs Grok 4.7.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;une publication sur les réseaux sociaux suivie d&#x27;une comparaison visuelle de performances entre modèles d&#x27;IA générative 3D.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_004_00-00-22.jpg" alt="Capture d&#x27;un tweet de Lumina (@LuminaBench) affirmant que le modèle mystère &quot;Space Bunny&quot; est officiellement un modèle MiniMax." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_004_00-00-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:22</span>
+                        <span class="caption-text">Capture d&#x27;un tweet de Lumina (@LuminaBench) affirmant que le modèle mystère &quot;Space Bunny&quot; est officiellement un modèle MiniMax.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_005_00-00-31.jpg" alt="Comparatif visuel côte à côte entre &quot;Space Bunny (MiniMax M3.1)&quot; et &quot;Grok 4.7&quot; montrant le rendu d&#x27;un environnement 3D de bassin à koi." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_005_00-00-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:31</span>
+                        <span class="caption-text">Comparatif visuel côte à côte entre &quot;Space Bunny (MiniMax M3.1)&quot; et &quot;Grok 4.7&quot; montrant le rendu d&#x27;un environnement 3D de bassin à koi.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_006_00-00-39.jpg" alt="Interface technique sombre affichant une simulation physique avec deux sphères en fil de fer et des données de calcul en surimpression." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_006_00-00-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:39</span>
+                        <span class="caption-text">Interface technique sombre affichant une simulation physique avec deux sphères en fil de fer et des données de calcul en surimpression.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:41 - 00:01:00</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est Pursuing AI, et vous regardez le rapport de recherche. D&#x27;accord, regardez ça maintenant. C&#x27;est l&#x27;une des comparaisons qui a commencé à attirer l&#x27;attention sur X. À gauche, nous avons Space Bunny, apparemment Minimax M 3.1, et à droite, Grok 4.7, et tous les deux travaillent sur le même concept d&#x27;étang à carpes koï.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de présentation et de comparaison vidéo côte à côte avec des étiquettes textuelles indiquant les modèles d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;SPACE BUNNY (MINIMAX M3.1)&quot; à gauche et &quot;GROK 4.7&quot; à droite, montrant des rendus 3D interactifs ou des vidéos générées sur le thème d&#x27;un étang de koïs (&quot;Koi Pond&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une comparaison comparative de deux modèles de génération vidéo par IA illustrant le même prompt (étang de koïs).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_007_00-00-51.jpg" alt="Comparaison côte à côte de deux vidéos générées par IA sur le concept d&#x27;un étang à koïs, avec d&#x27;un côté Space Bunny (Minimax M 3.1) et de l&#x27;autre Grok 4.7." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_007_00-00-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:51</span>
+                        <span class="caption-text">Comparaison côte à côte de deux vidéos générées par IA sur le concept d&#x27;un étang à koïs, avec d&#x27;un côté Space Bunny (Minimax M 3.1) et de l&#x27;autre Grok 4.7.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_008_00-00-58.jpg" alt="Vue rapprochée de la même comparaison côte à côte montrant les détails des rendus des étangs à koïs pour Space Bunny (Minimax M 3.1) et Grok 4.7." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_008_00-00-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:58</span>
+                        <span class="caption-text">Vue rapprochée de la même comparaison côte à côte montrant les détails des rendus des étangs à koïs pour Space Bunny (Minimax M 3.1) et Grok 4.7.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:01 - 00:01:20</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, ce qui m&#x27;a immédiatement sauté aux yeux, c&#x27;est à quel point ces deux rendus sont différents. Space Bunny opte pour un environnement beaucoup plus détaillé, semblable à un jeu vidéo. On peut voir les rochers entourant l&#x27;étang, la végétation, l&#x27;eau, les petits poissons, les sentiers, et à mesure que la caméra change, la scène donne toujours l&#x27;impression d&#x27;un véritable environnement jouable.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran partagé comparant deux clips vidéo générés par des IA avec des titres de modèles affichés en surimpression (&quot;SPACE BUNNY (MINIMAX M3.1)&quot; et &quot;GROK 4.7&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;SPACE BUNNY (MINIMAX M3.1)&quot; sous le panneau de gauche, &quot;GROK 4.7&quot; sous le panneau de droite. Dans les vidéos, on aperçoit des éléments textuels liés au jeu comme &quot;Koï Pond&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle côte à côte de deux environnements virtuels générés par intelligence artificielle représentant un étang avec des poissons et de la végétation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_009_00-01-03.jpg" alt="Comparaison côte à côte de deux environnements de jeux générés par IA, montrant &quot;Space Bunny (Minimax M3.1)&quot; à gauche et &quot;Grok 4.7&quot; à droite." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_009_00-01-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:03</span>
+                        <span class="caption-text">Comparaison côte à côte de deux environnements de jeux générés par IA, montrant &quot;Space Bunny (Minimax M3.1)&quot; à gauche et &quot;Grok 4.7&quot; à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_010_00-01-10.jpg" alt="Vue aérienne élargie de la même comparaison entre &quot;Space Bunny (Minimax M3.1)&quot; et &quot;Grok 4.7&quot; montrant l&#x27;étang à carpes koïs." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_010_00-01-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Vue aérienne élargie de la même comparaison entre &quot;Space Bunny (Minimax M3.1)&quot; et &quot;Grok 4.7&quot; montrant l&#x27;étang à carpes koïs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:20 - 00:01:38</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, vous regardez Grok 4.7. Il a un aspect beaucoup plus épuré et stylisé avec cette eau bleu vif, des nénuphars, des rochers et des arbres autour de l&#x27;étang. Mais voici la partie intéressante. Alors que la vidéo passe par différentes vues, les deux modèles essaient de maintenir la même scène globale tout en ajoutant plus de détails.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran partagé comparant deux modèles de génération vidéo par IA (Space Bunny MiniMax M3.1 à gauche et Grok 4.7 à droite), avec un widget animé d&#x27;un chat pianiste en bas à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Koi Pond&quot;, &quot;SPACE BUNNY (MINIMAX M3.1)&quot;, &quot;GROK 4.7&quot;, &quot;Feed the koi&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison comparative des performances de rendu visuel de deux IA génératrices de vidéo à travers différents angles de caméra et plans successifs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_011_00-01-22.jpg" alt="Comparaison côte à côte de Space Bunny (MiniMax M3.1) et Grok 4.7 montrant une vue générale d&#x27;un étang à koïs stylisé." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_011_00-01-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:22</span>
+                        <span class="caption-text">Comparaison côte à côte de Space Bunny (MiniMax M3.1) et Grok 4.7 montrant une vue générale d&#x27;un étang à koïs stylisé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_012_00-01-29.jpg" alt="Comparaison côte à côte montrant un changement de perspective et de plan sur les deux modèles d&#x27;IA." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_012_00-01-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:29</span>
+                        <span class="caption-text">Comparaison côte à côte montrant un changement de perspective et de plan sur les deux modèles d&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_013_00-01-36.jpg" alt="Comparaison côte à côte montrant une vue en plongée plus large sur les deux scènes de l&#x27;étang." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_013_00-01-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:36</span>
+                        <span class="caption-text">Comparaison côte à côte montrant une vue en plongée plus large sur les deux scènes de l&#x27;étang.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:38 - 00:02:00</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Space Bunny devient particulièrement intéressant quand on zoome sur l&#x27;étang. On commence à voir des poissons individuels, des rochers, des plantes, et tous ces petits détails environnementaux intégrés dans la scène. Et c&#x27;est exactement pourquoi je pense que cette fuite mérite qu&#x27;on y prête attention. Nous voyons un modèle non publié testé sur une tâche qui lui demande de générer un environnement entier d&#x27;apparence interactive à partir d&#x27;une simple instruction.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran comparatif vidéo divisé en deux fenêtres verticales affichant des environnements virtuels 3D interactifs (&quot;SPACE BUNNY (MINIMAX M3.1)&quot; à gauche et &quot;GROK 4.7&quot; à droite).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles à l&#x27;écran : &quot;SPACE BUNNY (MINIMAX M3.1)&quot;, &quot;GROK 4.7&quot;, &quot;Koi Pond&quot;, et un petit widget animé de chat en bas à droite.</p>
+                        <p><strong>Action / Démonstration :</strong> La caméra effectue un zoom progressif vers l&#x27;étang pour révéler les détails des poissons, des rochers et de la végétation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_014_00-01-40.jpg" alt="Comparaison côte à côte de Space Bunny (MiniMax M3.1) montrant un étang à koi avec des nénuphars et Grok 4.7 montrant une vue aérienne du même étang." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_014_00-01-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:40</span>
+                        <span class="caption-text">Comparaison côte à côte de Space Bunny (MiniMax M3.1) montrant un étang à koi avec des nénuphars et Grok 4.7 montrant une vue aérienne du même étang.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_015_00-01-49.jpg" alt="Zoom progressif sur l&#x27;étang montrant les détails environnementaux des deux modèles d&#x27;IA." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_015_00-01-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:49</span>
+                        <span class="caption-text">Zoom progressif sur l&#x27;étang montrant les détails environnementaux des deux modèles d&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_016_00-01-58.jpg" alt="Gros plan rapproché sur l&#x27;étang de Space Bunny révélant des poissons individuels, des rochers et des plantes aquatiques détaillées." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_016_00-01-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:58</span>
+                        <span class="caption-text">Gros plan rapproché sur l&#x27;étang de Space Bunny révélant des poissons individuels, des rochers et des plantes aquatiques détaillées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:00 - 00:02:34</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et selon la publication sur X, ce point de contrôle s&#x27;est également amélioré par rapport aux tests précédents. Donc s&#x27;il s&#x27;agit vraiment d&#x27;un premier aperçu du prochain modèle de Minimax, ils ont peut-être préparé du très lourd. Mais évidemment, une comparaison sur X ne suffit pas pour déclarer un vainqueur. sur X a décidé de donner à Space Bunny et Astra exactement le même prompt, en un seul essai, sans modification de prompt entre les deux. La tâche ? Construire un jardin japonais détaillé de style voxel en Three.js avec une pagode, de minuscules villageois, un dragon volant et des éléments interactifs. Et regardez simplement les résultats. Sur le</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le réseau social X (anciennement Twitter) avec des publications de test comparatif d&#x27;intelligences artificielles.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de publication X : &quot;Build a detailed voxel-style Japanese garden in Three.js, with a pagoda, tiny villagers, a flying dragon and interactive details. - space bunny took about 45 minutes (free) - astra took about 15 minutes and cost $4.24&quot;. Labels vidéo : &quot;SPACE BUNNY (XHIGH)&quot; et &quot;GPT-6 ASTRA (VERY HIGH)&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente des publications sur X comparant les performances et les rendus de deux IA génératives (Space Bunny et Astra/Grok) sur une tâche de programmation 3D en Three.js.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_017_00-02-02.jpg" alt="Publication sur X montrant une comparaison entre Space Bunny (Minimax m3.1) et Grok 4.7 avec un texte sur les performances du modèle Minimax." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_017_00-02-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:02</span>
+                        <span class="caption-text">Publication sur X montrant une comparaison entre Space Bunny (Minimax m3.1) et Grok 4.7 avec un texte sur les performances du modèle Minimax.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_018_00-02-23.jpg" alt="Publication sur X de Marcel détaillant le prompt de test comparatif entre Space Bunny et GPT-6 Astra pour la création d&#x27;un jardin japonais en 3.js." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_018_00-02-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:23</span>
+                        <span class="caption-text">Publication sur X de Marcel détaillant le prompt de test comparatif entre Space Bunny et GPT-6 Astra pour la création d&#x27;un jardin japonais en 3.js.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_019_00-02-32.jpg" alt="Gros plan sur la comparaison vidéo en split-screen entre Space Bunny (Xhigh) et GPT-6 Astra (Very High) affichant les deux rendus 3D du jardin japonais." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_019_00-02-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:32</span>
+                        <span class="caption-text">Gros plan sur la comparaison vidéo en split-screen entre Space Bunny (Xhigh) et GPT-6 Astra (Very High) affichant les deux rendus 3D du jardin japonais.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:34 - 00:03:07</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">à gauche, nous avons Space Bunny. À droite, Astra. Space Bunny adopte une approche beaucoup plus vaste ici. Vous avez la grande pagode centrale, la porte torii rouge, des cerisiers en fleurs, des sentiers, de l&#x27;eau et de multiples structures réparties dans tout l&#x27;environnement. Astra opte pour une composition sensiblement différente. Il crée un jardin plus sombre, aux allures nocturnes, avec une pagode et des bâtiments entourés de cerisiers en fleurs et un étang central. Et honnêtement, les deux résultats sont impressionnants pour différentes raisons. Mais il y a un autre détail ici qui, selon moi, est vraiment important.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de comparaison vidéo en écran partagé affichant deux environnements 3D interactifs nommés &quot;Moonlit Pagoda Garden&quot; (générés par Space Bunny à gauche et GPT-6 Astra à droite).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes affichés à l&#x27;écran : &quot;Moonlit Pagoda Garden&quot;, &quot;SPACE BUNNY (XHIGH)&quot;, &quot;GPT-6 Astra (VERY HIGH)&quot;, et le filigrane &quot;marinthecreatorr&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative de deux rendus 3D de jardins asiatiques stylisés générés par intelligence artificielle, mettant en valeur leurs différences de composition, d&#x27;échelle et d&#x27;éclairage.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_020_00-02-36.jpg" alt="Comparaison côte à côte entre &quot;Space Bunny (Xhigh)&quot; montrant un jardin lumineux avec une grande pagode, et &quot;GPT-6 Astra (Very High)&quot; montrant un jardin nocturne sous le titre &quot;Moonlit Pagoda Garden&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_020_00-02-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:36</span>
+                        <span class="caption-text">Comparaison côte à côte entre &quot;Space Bunny (Xhigh)&quot; montrant un jardin lumineux avec une grande pagode, et &quot;GPT-6 Astra (Very High)&quot; montrant un jardin nocturne sous le titre &quot;Moonlit Pagoda Garden&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_021_00-02-45.jpg" alt="Poursuite de la comparaison vidéo en écran partagé montrant les modifications de perspective et de rendu des deux environnements 3D générés." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_021_00-02-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:45</span>
+                        <span class="caption-text">Poursuite de la comparaison vidéo en écran partagé montrant les modifications de perspective et de rendu des deux environnements 3D générés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_022_00-02-56.jpg" alt="Vue en gros plan de l&#x27;environnement de gauche basculé en mode nuit sombre, contrastant avec l&#x27;éclairage de l&#x27;interface d&#x27;Astra à droite." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_022_00-02-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:56</span>
+                        <span class="caption-text">Vue en gros plan de l&#x27;environnement de gauche basculé en mode nuit sombre, contrastant avec l&#x27;éclairage de l&#x27;interface d&#x27;Astra à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_023_00-03-05.jpg" alt="Retour à la vue initiale en écran partagé montrant les deux jardins côte à côte avec leurs légendes respectives." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_023_00-03-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:05</span>
+                        <span class="caption-text">Retour à la vue initiale en écran partagé montrant les deux jardins côte à côte avec leurs légendes respectives.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:07 - 00:03:36</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">D&#x27;après le post sur X, Space Bunny a pris environ 45 minutes pour générer ceci, tandis qu&#x27;Astra a pris environ 15 minutes et a coûté 4,24 dollars. Donc oui, Space Bunny était gratuit dans ce test, mais gratuit ne signifie pas plus rapide. Et c&#x27;est quelque chose que vous devez absolument garder à l&#x27;esprit lorsque vous examinez des comparaisons d&#x27;IA virales. Parce que si vous jugez uniquement par le résultat final, vous pourriez regarder Space Bunny et vous dire, waouh, ce truc a surclassé Astra. Mais le temps de génération était environ trois fois plus long dans cet exemple particulier.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (Twitter) et lecteur vidéo affichant une comparaison comparative de deux modèles d&#x27;IA générative 3D (&quot;Space Bunny&quot; vs &quot;GPT-6 Astra&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du post X : &quot;Build a detailed voxel-style Japanese garden in Three.js, with a pagoda, tiny villagers, a flying dragon and interactive details. - space bunny took about 45 minutes (free) - astra took about 15 minutes and cost $4.24...&quot;. Légendes des vidéos : &quot;SPACE BUNNY (XHIGH)&quot; et &quot;GPT-6 ASTRA (VERY HIGH)&quot;. Titre du projet affiché : &quot;Moonlit Pagoda Garden&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage comparatif d&#x27;un post X textuel détaillant les performances, les temps de génération (45 min vs 15 min) et les coûts, suivi d&#x27;une démonstration visuelle côte à côte des rendus 3D générés par les deux IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_024_00-03-09.jpg" alt="Capture d&#x27;écran d&#x27;un post X (Twitter) de Marcel comparant Space Bunny et GPT-6 Astra avec les temps de génération et les coûts." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_024_00-03-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:09</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un post X (Twitter) de Marcel comparant Space Bunny et GPT-6 Astra avec les temps de génération et les coûts.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_025_00-03-27.jpg" alt="Comparaison vidéo côte à côte montrant un jardin de style voxel généré par Space Bunny (XHIGH) à gauche et GPT-6 Astra (VERY HIGH) à droite." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_025_00-03-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:27</span>
+                        <span class="caption-text">Comparaison vidéo côte à côte montrant un jardin de style voxel généré par Space Bunny (XHIGH) à gauche et GPT-6 Astra (VERY HIGH) à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_026_00-03-34.jpg" alt="Gros plan de la comparaison vidéo côte à côte du jardin voxel entre Space Bunny et GPT-6 Astra sous un autre angle de caméra." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_026_00-03-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:34</span>
+                        <span class="caption-text">Gros plan de la comparaison vidéo côte à côte du jardin voxel entre Space Bunny et GPT-6 Astra sous un autre angle de caméra.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:36 - 00:03:55</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et il y a une autre chose que j&#x27;ai remarquée. Space Bunny semble donner la priorité aux petits détails environnementaux et à la taille globale de la scène, tandis que le résultat d&#x27;Astra semble plus compact et visuellement contrôlé. Mais je n&#x27;appellerais pas cela une victoire définitive pour l&#x27;un ou l&#x27;autre modèle. Pourquoi ? Parce qu&#x27;il s&#x27;agit d&#x27;un seul prompt, d&#x27;une seule exécution, provenant d&#x27;une publication sur X.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de comparaison comparative en écran partagé affichant deux rendus 3D isométriques côte à côte, avec des étiquettes textuelles pour chaque modèle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &#x27;Moonlit Pagoda Garden&#x27;, &#x27;SPACE BUNNY (XHIGH)&#x27;, &#x27;GPT-6 Astra (VERY HIGH)&#x27;, filigrane &#x27;marcthecreatorr&#x27;. Éléments graphiques : îlots isométriques stylisés avec pagodes, arbres en fleurs et jardins japonais.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle côte à côte de deux moteurs d&#x27;IA générative 3D montrant l&#x27;évolution des rendus de paysages de pagodes au clair de lune.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_027_00-03-38.jpg" alt="Comparaison côte à côte de la scène &#x27;Moonlit Pagoda Garden&#x27; générée par les modèles Space Bunny et GPT-6 Astra." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_027_00-03-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:38</span>
+                        <span class="caption-text">Comparaison côte à côte de la scène &#x27;Moonlit Pagoda Garden&#x27; générée par les modèles Space Bunny et GPT-6 Astra.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_028_00-03-46.jpg" alt="Vue rapprochée de la scène en train de s&#x27;animer pour comparer les détails environnementaux des deux IA." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_028_00-03-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:46</span>
+                        <span class="caption-text">Vue rapprochée de la scène en train de s&#x27;animer pour comparer les détails environnementaux des deux IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_029_00-03-53.jpg" alt="Différents angles de rendu et perspectives montrant l&#x27;échelle et la compacité des scènes générées." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_029_00-03-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:53</span>
+                        <span class="caption-text">Différents angles de rendu et perspectives montrant l&#x27;échelle et la compacité des scènes générées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:55 - 00:04:14</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Nous n&#x27;avons pas de banc d&#x27;essai standardisé ici, et nous ne connaissons pas toutes les conditions d&#x27;exécution du test au-delà de ce que le créateur a rapporté. Mais ce n&#x27;est pas ce qui rend cela intéressant. Ce qui est intéressant, c&#x27;est qu&#x27;un modèle Minimax non publié, prétendument furtif, produit des résultats de ce niveau avant même que nous ayons vu son lancement officiel.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (anciennement Twitter) affichant un tweet de l&#x27;utilisateur @marcthecreatorr.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Build a detailed voxel-style Japanese garden in Three.js, with a pagoda, tiny villagers, a flying dragon and interactive details. - space bunny took about 45 minutes (free) - astra took about 15 minutes and cost $4.24 expected Astra to have the advantage here, but space bunny paid way more attention to the little details i asked for. and somehow Space Bunny is completely free to use right now who did it better?&quot; et une image comparative montrant &quot;SPACE BUNNY (XHIGH)&quot; et &quot;GPT-6 ASTRA (VERY HIGH)&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une publication sur les réseaux sociaux comparant deux modèles d&#x27;IA générative.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_030_00-03-57.jpg" alt="Capture d&#x27;écran d&#x27;un tweet comparant les performances des modèles d&#x27;IA &#x27;Space Bunny&#x27; et &#x27;GPT-6 Astra&#x27; pour la création d&#x27;un jardin japonais en style voxel." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_030_00-03-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:57</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet comparant les performances des modèles d&#x27;IA &#x27;Space Bunny&#x27; et &#x27;GPT-6 Astra&#x27; pour la création d&#x27;un jardin japonais en style voxel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_031_00-04-12.jpg" alt="Capture d&#x27;écran similaire au tweet précédent montrant la comparaison des deux modèles d&#x27;IA avec leurs résultats visuels respectifs." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_031_00-04-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:12</span>
+                        <span class="caption-text">Capture d&#x27;écran similaire au tweet précédent montrant la comparaison des deux modèles d&#x27;IA avec leurs résultats visuels respectifs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:14 - 00:04:39</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si le point de contrôle continue de s&#x27;améliorer, Space Bunny pourrait devenir très intéressant. C&#x27;est un autre exemple qui a surgi sur X, et le créateur dit qu&#x27;il a fait tout ce jeu de bord de mer gratuitement en utilisant Space Bunny. Et ils ne lui ont pas juste donné un prompt textuel avant de s&#x27;en aller. Ils ont donné à Space Bunny un prompt plus quelques images, et selon le créateur, le modèle a été capable de comprendre ces différentes entrées et de les transformer en cet environnement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme X (anciennement Twitter) affichant des tweets et des captures d&#x27;écran de projets de jeux créés avec des modèles d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de Marcel : &quot;Build a detailed voxel-style Japanese garden in Three.js... space bunny took about 45 minutes (free), astra took about 15 minutes and cost $4.24&quot;. Texte du tweet de Siddharth : &quot;This is insane, made this Seaside game for FREE with Space Bunny, the new Stealth Model. gave it a prompt + a few images, it understood different inputs and made this very fast&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage successif de publications de créateurs sur le réseau social X illustrant l&#x27;utilisation du modèle Space Bunny pour générer des jeux vidéo à partir de prompts et d&#x27;images.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_032_00-04-16.jpg" alt="Tweet de Marcel sur X comparant les performances entre Space Bunny et GPT-6 Astra pour la création d&#x27;un jardin japonais en voxel." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_032_00-04-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:16</span>
+                        <span class="caption-text">Tweet de Marcel sur X comparant les performances entre Space Bunny et GPT-6 Astra pour la création d&#x27;un jardin japonais en voxel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_033_00-04-23.jpg" alt="Tweet de Siddharth sur X montrant le jeu de bord de mer créé avec Space Bunny pendant la journée." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_033_00-04-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:23</span>
+                        <span class="caption-text">Tweet de Siddharth sur X montrant le jeu de bord de mer créé avec Space Bunny pendant la journée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_034_00-04-37.jpg" alt="Tweet de Siddharth sur X montrant le même jeu de bord de mer créé avec Space Bunny avec un rendu de nuit." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_034_00-04-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:37</span>
+                        <span class="caption-text">Tweet de Siddharth sur X montrant le même jeu de bord de mer créé avec Space Bunny avec un rendu de nuit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:39 - 00:04:59</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et honnêtement, regardez tout ce qui se passe ici. Vous avez cet immense océan en arrière-plan, de petits bateaux qui se déplacent, un phare, une île, des nuages, des oiseaux, la voie ferrée, la gare, un train, tout un quai, et tous ces petits personnages qui se promènent. Et c&#x27;est vraiment ça qui a attiré mon attention.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Animation ou jeu vidéo en pixel art présenté à l&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paysage côtier pixélisé comportant une gare (« WAITING ROOM », « SEAGLASS »), des voies ferrées, un océan avec des bateaux, des nuages, des oiseaux, une montgolfière, un phare sur une île, et de nombreux personnages miniatures animés sur le quai.</p>
+                        <p><strong>Action / Démonstration :</strong> La scène visuelle défile ou montre une animation dynamique en pixel art illustrant une journée qui s&#x27;écoule (du jour au crépuscule) avec des éléments en mouvement constant.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_035_00-04-41.jpg" alt="Scène animée en pixel art montrant une gare côtière de jour avec de nombreux détails en arrière-plan (océan, bateaux, île, nuages, personnages sur le quai)." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_035_00-04-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:41</span>
+                        <span class="caption-text">Scène animée en pixel art montrant une gare côtière de jour avec de nombreux détails en arrière-plan (océan, bateaux, île, nuages, personnages sur le quai).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_036_00-04-57.jpg" alt="Scène animée en pixel art montrant la même gare côtière au crépuscule ou de nuit, avec l&#x27;éclairage public allumé et des personnages se promenant sur le quai." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_036_00-04-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:57</span>
+                        <span class="caption-text">Scène animée en pixel art montrant la même gare côtière au crépuscule ou de nuit, avec l&#x27;éclairage public allumé et des personnages se promenant sur le quai.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:59 - 00:05:23</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La scène ne donne pas l&#x27;impression d&#x27;être totalement statique, au fur et à mesure que la vidéo se lit, le train change de position, les personnages se déplacent autour de la station, des bateaux naviguent sur l&#x27;eau, et tous ces petits éléments donnent vie à l&#x27;univers. Même les minuscules détails, les vélos, les bancs, le panneau de la gare, les fleurs, les lampes et les PNJ contribuent à donner l&#x27;idée qu&#x27;il s&#x27;agit d&#x27;un véritable petit environnement de jeu plutôt que d&#x27;une simple capture d&#x27;écran générée par IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Environnement de jeu vidéo en pixel art affiché à l&#x27;écran, illustrant une démonstration visuelle de génération de vidéo par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Visuels de pixel art représentant une gare nommée &quot;SEAGLASS&quot;, une salle d&#x27;attente (&quot;WAITING ROOM&quot;), un plan d&#x27;eau avec des bateaux, des montagnes, un ciel étoilé ou ensoleillé avec des nuages, et de nombreux personnages (PNJ).</p>
+                        <p><strong>Action / Démonstration :</strong> Les images montrent des plans fixes ou animés d&#x27;un décor de jeu en pixel art, illustrant le mouvement des personnages, le changement de position du train entre le jour et la nuit, et l&#x27;animation de l&#x27;environnement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_037_00-05-01.jpg" alt="Scène de gare en pixel art de nuit au bord de l&#x27;eau, avec des personnages et un lampadaire éclairé." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_037_00-05-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:01</span>
+                        <span class="caption-text">Scène de gare en pixel art de nuit au bord de l&#x27;eau, avec des personnages et un lampadaire éclairé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_038_00-05-15.jpg" alt="Scène de gare en pixel art de jour, montrant un train à l&#x27;arrêt sur les voies et de nombreux personnages sur le quai." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_038_00-05-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:15</span>
+                        <span class="caption-text">Scène de gare en pixel art de jour, montrant un train à l&#x27;arrêt sur les voies et de nombreux personnages sur le quai.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_039_00-05-21.jpg" alt="Scène de gare en pixel art de nuit avec un train arrêté sur les voies et le quai animé par des personnages." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_039_00-05-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:21</span>
+                        <span class="caption-text">Scène de gare en pixel art de nuit avec un train arrêté sur les voies et le quai animé par des personnages.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:23 - 00:05:50</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et visuellement, j&#x27;aime vraiment beaucoup la cohérence ici. Ça a cette esthétique de bord de mer en pixel art très spécifique, et Space Bunny ne commence pas soudainement à mélanger des styles visuels complètement différents dans toute la scène. Mais il y a une chose importante qu&#x27;il ne faut pas ignorer. Le créateur dit qu&#x27;il lui a donné quelques images de référence, donc nous ne pouvons pas dire que Space Bunny a généré chaque idée visuelle complètement à partir de zéro, et nous ne savons pas non plus exactement combien d&#x27;itérations ont eu lieu en coulisses.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur la plateforme X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tweets de Siddharth (@buildwithsid) : &quot;This is insane, made this Seaside game for FREE with Space Bunny, the new Stealth Model. seaglass-game.vercel.app. gave it a prompt + a few images, it understood different inputs and made this very fast. the tiny boats, station, the colors... it got the entire feel sooo right :)&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage successif des visuels du jeu pixel art en plein jour et de nuit, puis du tweet explicatif du créateur détaillant l&#x27;utilisation du modèle Space Bunny.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_040_00-05-25.jpg" alt="Scène en pixel art représentant une gare au bord de la mer en plein jour." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_040_00-05-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:25</span>
+                        <span class="caption-text">Scène en pixel art représentant une gare au bord de la mer en plein jour.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_041_00-05-32.jpg" alt="Scène en pixel art représentant la même gare au bord de la mer de nuit, éclairée par des lampadaires." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_041_00-05-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:32</span>
+                        <span class="caption-text">Scène en pixel art représentant la même gare au bord de la mer de nuit, éclairée par des lampadaires.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_042_00-05-41.jpg" alt="Publication sur le réseau social X (Twitter) du compte de Siddharth montrant le jeu Seaside créé avec Space Bunny." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_042_00-05-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:41</span>
+                        <span class="caption-text">Publication sur le réseau social X (Twitter) du compte de Siddharth montrant le jeu Seaside créé avec Space Bunny.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_043_00-05-48.jpg" alt="Publication sur le réseau social X montrant la version nocturne du jeu Seaside." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_043_00-05-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:48</span>
+                        <span class="caption-text">Publication sur le réseau social X montrant la version nocturne du jeu Seaside.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:50 - 00:06:10</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc je ne regarderais pas cela en me disant que l&#x27;IA vient de créer un jeu complet de qualité commerciale en un seul clic. Ce n&#x27;est pas ce que cela prouve. Ce que cela montre, c&#x27;est quelque chose de beaucoup plus intéressant. Space Bunny semble capable de prendre de multiples entrées, de comprendre une direction visuelle assez complexe, et de transformer cela en un environnement interactif au style cohérent.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur le réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;This is insane, made this Seaside game for FREE with Space Bunny, the new Stealth Model, seaglass-game.vercel.app, gave it a prompt + a few images, it understood different inputs and made this very fast, the tiny boats, station, the colors... it got the entire feel sooo right :)&quot;. Profil de Siddharth (@buildwithsid).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une publication sur les réseaux sociaux illustrant la création d&#x27;un jeu vidéo par IA, suivi d&#x27;un zoom sur le rendu visuel en pixel art du jeu.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_044_00-05-52.jpg" alt="Publication sur X (Twitter) par siddharth montrant un jeu créé gratuitement avec Space Bunny et une capture du jeu en bas." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_044_00-05-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:52</span>
+                        <span class="caption-text">Publication sur X (Twitter) par siddharth montrant un jeu créé gratuitement avec Space Bunny et une capture du jeu en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_045_00-06-00.jpg" alt="Gros plan sur le rendu visuel en pixel art du jeu interactif &quot;Seaglass&quot; montrant une gare au bord de la mer." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_045_00-06-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:00</span>
+                        <span class="caption-text">Gros plan sur le rendu visuel en pixel art du jeu interactif &quot;Seaglass&quot; montrant une gare au bord de la mer.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:10 - 00:06:28</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et selon la publication, le créateur a fait tout cela gratuitement. Comment pourrions-nous oublier le test du pélican ? Celui-ci est juste ridicule. Quelqu&#x27;un a donné à Space Bunny une tâche de codage 3D assez spécifique : un pélican qui fait du vélo le long d&#x27;une route côtière. Et Space Bunny n&#x27;a pas simplement jeté un pélican sur une route aléatoire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de la publication : &quot;This is insane made this Seaside game for FREE with Space Bunny, the new Stealth Model seaglass-game.vercel.app gave it a prompt + a few images, it understood different inputs and made this very fast the tiny boats, station, the colors... it got the entire feel sooo right :)&quot;. Deuxième publication : &quot;Drew it? Mysterious model Space Bunny Alpha runs 3D pelican riding a bike, effects absolutely mind-blowing! Build details: Pelican: Orange hat, yellow beak, blue outfit, natural riding pose with full sense of depth, Bicycle: Red frame, spoked wheels, clear pedals, Scene: Coastal highway + lighthouse + sailboat, San Francisco coordinates, Lighting: Morning mist / noon / sunset switchable, color temperature and shadows in sync, Interaction: 38 km/h speed bar + playback controls + radio UI. Anonymous 1M context + strong coding, surprisingly high level of completion. #SpaceBunnyAlpha #OpenCode #3D #PelicanOnTwoWheels #AIPredict #MiniMaxH31&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur affiche à l&#x27;écran des publications X (Twitter) illustrant les performances du modèle d&#x27;IA Space Bunny.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_046_00-06-12.jpg" alt="Capture d&#x27;écran d&#x27;une publication X (Twitter) montrant un jeu créé gratuitement avec Space Bunny et une image de paysage côtier avec un train." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_046_00-06-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:12</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication X (Twitter) montrant un jeu créé gratuitement avec Space Bunny et une image de paysage côtier avec un train.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_047_00-06-19.jpg" alt="Capture d&#x27;écran d&#x27;une publication X (Twitter) montrant les détails de construction du test du pélican en 3D avec Space Bunny." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_047_00-06-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:19</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication X (Twitter) montrant les détails de construction du test du pélican en 3D avec Space Bunny.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:29 - 00:06:49</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Regardez ce qu&#x27;il a réellement construit. Vous avez le pélican avec un chapeau orange, un bec jaune et une tenue bleue, assis sur le vélo avec une pose de cycliste réaliste. Vous avez le vélo rouge, les roues et les pédales, la route côtière, l&#x27;océan, le phare, les voiliers, et même la petite interface autour de la scène. Mais ce que je veux vraiment que vous regardiez, c&#x27;est ce qui se passe lorsque nous commençons à interagir avec.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web interactive de type &quot;Postcard Radio&quot; avec interface utilisateur stylisée, boutons de contrôle du temps et de la vitesse, et graphismes 3D.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;PELICAN ON TWO WHEELS&quot;, coordonnées géographiques, options de moment de la journée (晨雾 / 07:10, 正午 / 13:00, 落日 / 19:30), curseur de vitesse de conduite, et boutons de lecture/pause.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole l&#x27;interface et clique sur différentes options de moment de la journée (passant de midi au coucher du soleil), modifiant l&#x27;éclairage de la scène 3D animée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_048_00-06-31.jpg" alt="Vue d&#x27;ensemble de l&#x27;interface web interactive montrant un pélican animé sur un vélo le long d&#x27;une route côtière, avec des options de configuration en bas." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_048_00-06-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:31</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de l&#x27;interface web interactive montrant un pélican animé sur un vélo le long d&#x27;une route côtière, avec des options de configuration en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_049_00-06-39.jpg" alt="Gros plan sur l&#x27;interface montrant la modification du paramètre d&#x27;éclairage avec le curseur pointant sur l&#x27;option de coucher de soleil." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_049_00-06-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:39</span>
+                        <span class="caption-text">Gros plan sur l&#x27;interface montrant la modification du paramètre d&#x27;éclairage avec le curseur pointant sur l&#x27;option de coucher de soleil.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_050_00-06-47.jpg" alt="Animation interactive de la caméra en mouvement plongeant vers le pélican à vélo suite à l&#x27;interaction sur l&#x27;interface." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_050_00-06-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:47</span>
+                        <span class="caption-text">Animation interactive de la caméra en mouvement plongeant vers le pélican à vélo suite à l&#x27;interaction sur l&#x27;interface.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:49 - 00:07:12</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;éclairage change, on passe d&#x27;un look de jour lumineux à cette scène beaucoup plus chaleureuse de type coucher de soleil, puis on revient vers un environnement de jour plus frais. Et le plus important n&#x27;est pas simplement que les couleurs changent. Tout l&#x27;éclairage de la scène change avec elles. Le ciel, l&#x27;océan, la route et les ombres basculent tous ensemble, ce qui donne beaucoup plus l&#x27;impression d&#x27;une expérience 3D interactive plutôt que d&#x27;une collection d&#x27;images statiques.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web interactive nommée « Postcard Radio » (Coastal Edition) avec des contrôles de temps, de vitesse et de lecture audio.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : « Postcard Radio », « PELICAN ON TWO WHEELS », options de temps « 晨雾 » (Brume matinale), « 正午 » (Midi), « 落日 » (Coucher de soleil), curseur de vitesse de déplacement (骑行速度).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et démonstration d&#x27;une interface web interactive simulant un déplacement en vélo le long d&#x27;une côte avec modification dynamique de l&#x27;éclairage et de l&#x27;ambiance visuelle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_051_00-06-51.jpg" alt="Interface web interactive « Postcard Radio » montrant un personnage en pélican sur un vélo avec des options de sélection d&#x27;éclairage et de vitesse." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_051_00-06-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:51</span>
+                        <span class="caption-text">Interface web interactive « Postcard Radio » montrant un personnage en pélican sur un vélo avec des options de sélection d&#x27;éclairage et de vitesse.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_052_00-06-57.jpg" alt="Vue de l&#x27;interface montrant une transition vers un éclairage de type coucher de soleil avec des tons plus chauds." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_052_00-06-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:57</span>
+                        <span class="caption-text">Vue de l&#x27;interface montrant une transition vers un éclairage de type coucher de soleil avec des tons plus chauds.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_053_00-07-05.jpg" alt="Vue rapprochée du pélican sur son vélo avec l&#x27;interface de contrôle affichant les modes d&#x27;éclairage (matin, midi, coucher de soleil)." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_053_00-07-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:05</span>
+                        <span class="caption-text">Vue rapprochée du pélican sur son vélo avec l&#x27;interface de contrôle affichant les modes d&#x27;éclairage (matin, midi, coucher de soleil).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_054_00-07-10.jpg" alt="Interface affichant un retour à l&#x27;environnement de jour avec un éclairage plus frais et des ombres ajustées." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_054_00-07-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:10</span>
+                        <span class="caption-text">Interface affichant un retour à l&#x27;environnement de jour avec un éclairage plus frais et des ombres ajustées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:13 - 00:07:38</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et puis il y a le contrôle de la vitesse. L&#x27;interface montre en fait le pélican se déplaçant à environ 38 kilomètres par heure, avec des commandes de lecture et une interface utilisateur de type radio. Maintenant, je veux être prudent ici. Cela ne signifie pas que Space Bunny a magiquement résolu le développement de jeux 3D. Il y a encore des limitations évidentes. L&#x27;environnement lui-même est relativement simple, la géométrie est stylisée, et nous ne savons pas par combien d&#x27;itérations le créateur est passé pour obtenir ce résultat final.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur web interactive personnalisée de type radio et post-card (Postcard Radio) avec lecteur et commandes de vitesse, affichée également dans un post sur le réseau social X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;POSTCARD RADIO&quot;, &quot;PELICAN ON TWO WHEELS&quot;, options de moments de la journée (&quot;晨雾&quot; - Brume matinale, &quot;正午&quot; - Midi, &quot;落日&quot; - Coucher du soleil), curseur de vitesse (&quot;骑行速度&quot;), et texte du tweet : &quot;Drew it? Mysterious model Space Bunny Alpha runs 3D pelican riding a bike, effects absolutely mind-blowing! Build details: Pelican, Bicycle, Scene, Lighting, Interaction... #SpaceBunnyAlpha #OpenCode #3D&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de vitesse et les paramètres de l&#x27;interface utilisateur sont manipulés, démontrant le contrôle en temps réel de la vitesse (de 10 à 38 km/h) et de l&#x27;éclairage de la scène 3D.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_055_00-07-15.jpg" alt="Interface interactive affichant le pélican sur son vélo avec le panneau de configuration de vitesse réglé sur le coucher du soleil." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_055_00-07-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:15</span>
+                        <span class="caption-text">Interface interactive affichant le pélican sur son vélo avec le panneau de configuration de vitesse réglé sur le coucher du soleil.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_056_00-07-22.jpg" alt="Interface interactive affichant le pélican en mouvement avec le curseur de vitesse à 35 km/h et le mode &#x27;正午&#x27; (midi) sélectionné." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_056_00-07-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:22</span>
+                        <span class="caption-text">Interface interactive affichant le pélican en mouvement avec le curseur de vitesse à 35 km/h et le mode &#x27;正午&#x27; (midi) sélectionné.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_057_00-07-30.jpg" alt="Vue arrière du pélican sur la route côtière avec l&#x27;interface montrant une vitesse de 15 km/h et le mode &#x27;晨雾&#x27; (brume matinale) activé." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_057_00-07-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:30</span>
+                        <span class="caption-text">Vue arrière du pélican sur la route côtière avec l&#x27;interface montrant une vitesse de 15 km/h et le mode &#x27;晨雾&#x27; (brume matinale) activé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_058_00-07-36.jpg" alt="Capture d&#x27;écran d&#x27;un tweet du profil @NFT_Chen détaillant les spécifications du modèle Space Bunny Alpha et le projet &#x27;Pelican on Two Wheels&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_058_00-07-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:36</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet du profil @NFT_Chen détaillant les spécifications du modèle Space Bunny Alpha et le projet &#x27;Pelican on Two Wheels&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:39 - 00:07:57</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais ce n&#x27;est pas vraiment le sujet. Ce qui est impressionnant, c&#x27;est le nombre de pièces détachées que Space Bunny a réussi à connecter en une seule petite expérience cohérente. Personnage 3D, animation, environnement, contrôles, éclairage, interface utilisateur et interaction. C&#x27;est une capacité bien différente de la simple génération d&#x27;une jolie page web.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une application web interactive 3D (&quot;Postcard Radio&quot; - &quot;Pelican on Two Wheels&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes en anglais et chinois (&quot;Pelican on Two Wheels&quot;, &quot;Postcard Radio&quot;), contrôles de vitesse, curseur de sélection temporelle (晨雾, 正午, 落日) et boutons de lecture.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et interaction avec une application web 3D intégrant animation, contrôles et interface utilisateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_059_00-07-41.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface web interactive &quot;Postcard Radio&quot; avec un pélican en 3D sur un vélo." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_059_00-07-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:41</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface web interactive &quot;Postcard Radio&quot; avec un pélican en 3D sur un vélo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_060_00-07-48.jpg" alt="Vue de l&#x27;animation interactive montrant le changement de paramètre de temps sur la page web." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_060_00-07-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:48</span>
+                        <span class="caption-text">Vue de l&#x27;animation interactive montrant le changement de paramètre de temps sur la page web.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_061_00-07-55.jpg" alt="Illustration de l&#x27;expérience interactive montrant le contrôle de la vitesse et de la lecture audio." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_061_00-07-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:55</span>
+                        <span class="caption-text">Illustration de l&#x27;expérience interactive montrant le contrôle de la vitesse et de la lecture audio.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:57 - 00:08:19</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est fondamentalement l&#x27;IA qui passe de « écris-moi du code » à « construis-moi un petit monde interactif ». D&#x27;accord, c&#x27;est là que Space Bunny devient sérieusement intéressant. Quelqu&#x27;un a donné au modèle une idée assez simple. Simuler deux sphères qui se rentrent dedans. Et au lieu de simplement vous donner une animation basique de deux balles qui entrent en collision, Space Bunny a construit ce qui ressemble à une simulation 3D de style ingénierie.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une application web interactive 3D, puis un fil d&#x27;actualité de réseau social (X/Twitter), et enfin une interface de simulation 3D technique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1 : Titre &quot;Pelican on Two Wheels&quot;, curseur de vitesse à 35 km/h, options de moment de la journée (Brume matinale, Midi, Coucher du soleil). Sur l&#x27;image 2 : Texte décrivant le modèle Space Bunny (&quot;a mystery lab dropped a free model called Space Bunny... it built a full 3D engineering sim...&quot;). Sur l&#x27;image 3 : Interface noire de simulation 3D avec des grilles de sphères fil de fer (orange et blanche), axes de coordonnées, et infobulles de données physiques (&quot;Contact pressure&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre d&#x27;abord une application interactive 3D, puis un post textuel expliquant la création de Space Bunny, et enfin la simulation 3D de deux sphères en collision avec des analyses de contraintes.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_062_00-07-59.jpg" alt="Interface web interactive montrant un pélican sur un vélo dans un monde 3D stylisé avec des options de configuration en bas." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_062_00-07-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:59</span>
+                        <span class="caption-text">Interface web interactive montrant un pélican sur un vélo dans un monde 3D stylisé avec des options de configuration en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_063_00-08-05.jpg" alt="Publication sur le réseau social X (Twitter) par OpenCode présentant le modèle Space Bunny et une simulation de sphères." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_063_00-08-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:05</span>
+                        <span class="caption-text">Publication sur le réseau social X (Twitter) par OpenCode présentant le modèle Space Bunny et une simulation de sphères.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_064_00-08-17.jpg" alt="Simulation 3D d&#x27;ingénierie détaillée montrant deux sphères en fil de fer (mesh) en train de se percuter avec des données de pression." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_064_00-08-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:17</span>
+                        <span class="caption-text">Simulation 3D d&#x27;ingénierie détaillée montrant deux sphères en fil de fer (mesh) en train de se percuter avec des données de pression.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:19 - 00:08:40</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Regardez la vidéo. Vous pouvez voir les deux sphères s&#x27;approcher l&#x27;une de l&#x27;autre, les maillages se déformer autour de la zone de contact et la simulation se mettre à jour au moment de la collision. Et il ne s&#x27;agit pas seulement d&#x27;un joli rendu 3D. Vous avez la visualisation du maillage, la région de contact, la déformation, les informations de charge et de contrainte, ainsi que différents affichages de type ingénierie autour de la simulation.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de simulation 3D de type ingénierie avec affichage de maillage (wireframe) et de données télémétriques.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Maillages filaires de deux sphères en contact, fenêtres de données techniques et coordonnées spatiales (CNT, PRS, RES) dans les coins, graphiques de charge en bas à droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation d&#x27;une simulation de collision entre deux sphères montrant la déformation du maillage à l&#x27;impact.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_065_00-08-21.jpg" alt="Simulation 3D de deux sphères en maillage filaire se touchant, avec des données techniques et de contrainte affichées à l&#x27;écran." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_065_00-08-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:21</span>
+                        <span class="caption-text">Simulation 3D de deux sphères en maillage filaire se touchant, avec des données techniques et de contrainte affichées à l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:40 - 00:09:00</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Au fur et à mesure que la collision progresse, la géométrie autour du point d&#x27;impact change, et vous pouvez voir la zone de contact se compresser et se déformer. C&#x27;est un type de tâche complètement différent de la génération d&#x27;une page de destination. Vous demandez au modèle de comprendre un scénario physique, de le traduire en code, de créer la géométrie, de simuler l&#x27;interaction, puis de visualiser les données résultantes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation scientifique ou d&#x27;outil de modélisation 3D avancé avec fenêtres de télémétrie, repères d&#x27;axes, grilles de coordonnées et graphiques de données en bas de l&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte technique et coordonnées en superposition autour de la simulation 3D : codes d&#x27;axes, repères de contact, et mini-fenêtres d&#x27;analyse de données dans les coins inférieurs.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage et analyse d&#x27;une simulation numérique de physique montrant la déformation de la géométrie lors d&#x27;un impact.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_066_00-08-42.jpg" alt="Visualisation 3D filaire d&#x27;une simulation de collision entre deux objets sphériques ou dermoïdes, montrant la zone d&#x27;impact avec des repères textuels et des graphiques techniques." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_066_00-08-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:42</span>
+                        <span class="caption-text">Visualisation 3D filaire d&#x27;une simulation de collision entre deux objets sphériques ou dermoïdes, montrant la zone d&#x27;impact avec des repères textuels et des graphiques techniques.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:00 - 00:09:32</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et selon la personne qui a publié ceci, cela a même produit un rapport d&#x27;ingénierie final à partir de la simulation. Maintenant, voici où je veux être prudent. Je ne prendrais pas cette capture d&#x27;écran pour dire soudainement que Space Bunny peut remplacer un logiciel de simulation d&#x27;ingénierie. C&#x27;est une affirmation audacieuse, et cet exemple à lui seul ne le prouve absolument pas. Nous ne savons pas à quel point la physique sous-jacente est précise, quel solveur ou quelles hypothèses ont été utilisés, ou si les résultats ont été validés de manière indépendante. Mais en tant que démonstration de génération de code, c&#x27;est vraiment impressionnant. Parce que Space Bunny ne se contente pas de fabriquer quelque chose qui ressemble</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un fil d&#x27;actualité sur le réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : « a mystery lab dropped a free model called Space Bunny, i asked it to simulate two spheres crushing into each other. it built a full 3D engineering sim with live mesh, load, strain and a final report, engineers pay for software that does this. this cost $0, OpenCode made it free for one week. download OpenCode, pick Space Bunny, type what you want built, bookmark this before the bunny gets a price tag ». On aperçoit également une image incrustée montrant une simulation filaire 3D de deux sphères en collision.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une publication sur les réseaux sociaux détaillant les capacités de simulation du modèle Space Bunny développé par OpenCode.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_067_00-09-02.jpg" alt="Capture d&#x27;écran d&#x27;un tweet sur X (anciennement Twitter) concernant le modèle Space Bunny et sa simulation 3D." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_067_00-09-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:02</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet sur X (anciennement Twitter) concernant le modèle Space Bunny et sa simulation 3D.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:32 - 00:09:41</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">comme une simulation d&#x27;ingénierie. J&#x27;ai le sentiment qu&#x27;on va entendre parler de ce modèle très bientôt. C&#x27;est Pursuing AI, et je vous dis à la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Rendu vidéo de synthèse généré par intelligence artificielle (style voxel/pixel art 3D).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Un modèle 3D style voxel représentant une île-tortue miniature comprenant un phare, des maisons, des arbres stylisés, avec un dégradé de couleur en arrière-plan.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un rendu vidéo démonstratif illustrant les capacités du modèle d&#x27;intelligence artificielle présenté.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gYkZlNqBO4o/frame_068_00-09-37.jpg" alt="Rendu vidéo par IA montrant un diorama en voxel en forme d&#x27;île miniature avec un phare et des habitations." loading="lazy" onclick="openLightbox('screenshots/YT-gYkZlNqBO4o/frame_068_00-09-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:37</span>
+                        <span class="caption-text">Rendu vidéo par IA montrant un diorama en voxel en forme d&#x27;île miniature avec un phare et des habitations.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

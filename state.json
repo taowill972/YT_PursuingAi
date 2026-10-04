@@ -2,7 +2,8 @@
   "processed_ids": [
     "I34qxJjyms0",
     "gLSsLtIYMG4",
-    "ixDclukqjkM"
+    "ixDclukqjkM",
+    "gYkZlNqBO4o"
   ],
   "processed_videos": [
     {
@@ -42,9 +43,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-09-30_YT-ixDclukqjkM_L'OpenDevDay d'OpenAI était bien plus énorme que prévu…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-04T16:19:15Z",
       "status": "completed"
+    },
+    {
+      "video_id": "gYkZlNqBO4o",
+      "title": "Space Bunny est bien plus puissant qu'on ne le pensait 🔥",
+      "raw_title": "Space Bunny Is Way More Powerful Than We Thought 🔥",
+      "filename_md": "2026-09-28_YT-gYkZlNqBO4o_Space Bunny est bien plus puissant qu'on ne le pensait 🔥_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-09-28_YT-gYkZlNqBO4o_Space Bunny est bien plus puissant qu'on ne le pensait 🔥_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-09-28",
+      "duration": 581,
+      "screenshots_count": 68,
+      "filepath_md": "/root/YT_PursuingAi/2026-09-28_YT-gYkZlNqBO4o_Space Bunny est bien plus puissant qu'on ne le pensait 🔥_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-09-28_YT-gYkZlNqBO4o_Space Bunny est bien plus puissant qu'on ne le pensait 🔥_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-04T16:30:19Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 3,
+  "completed_count": 4,
   "last_run_timestamp": "2026-10-04T16:00:02Z",
   "status": "running",
   "total_catalog_count": 83
