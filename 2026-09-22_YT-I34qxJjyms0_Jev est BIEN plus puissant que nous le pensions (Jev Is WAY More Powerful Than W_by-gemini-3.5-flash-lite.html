@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Jev est BIEN plus puissant que nous le pensions (Jev Is WAY More Powerful Than We Thought) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Jev est BIEN plus puissant que nous le pensions (Jev Is WAY More Powerful Than We Thought)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-09-22</span>
+                <span class="badge">⏱️ 08m 11s</span>
+                <span class="badge">🆔 <code>I34qxJjyms0</code></span>
+                <span class="badge">🤖 gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=I34qxJjyms0" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>Jev s&#x27;impose comme un nouveau modèle open source révolutionnaire, radicalement différent des chatbots conversationnels traditionnels. Conçu pour prendre des décisions rapides et agir directement au cœur des logiciels, il fonctionne à une vitesse impressionnante, capable d&#x27;interagir en temps réel avec des environnements dynamiques complexes à un rythme soutenu.</p><p>La vidéo démontre des cas d&#x27;usage saisissants : un véhicule autonome en simulation continue, 100 itérations réussies du dilemme du tramway, du design d&#x27;interface interactif par la voix et le texte, un détecteur de posts indésirables (slop) sur les réseaux sociaux, ainsi que des performances exceptionnelles en audit de maillage interne SEO surpassant largement Claude Opus. L&#x27;écosystème intègre également Laya, un modèle tournant localement sur Apple Silicon M3 Max capable de jouer à Snake à une cadence vertigineuse.</p><p>Cette percée technologique marque le passage d&#x27;une IA passive à des modèles dits &#x27;System One&#x27; ultra-rapides. En réduisant drastiquement la latence et les coûts tout en s&#x27;exécutant parfois entièrement hors ligne, ces agents autonomes redéfinissent la manière dont l&#x27;intelligence artificielle s&#x27;intègre nativement dans nos applications et flux de travail logiciels.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Jev</span><span class="tool-tag">Claude Opus 5</span><span class="tool-tag">Laya</span><span class="tool-tag">Distribb.io</span><span class="tool-tag">Apple Silicon M3 Max</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Jev est un modèle open source conçu pour prendre des décisions rapides et agir directement au sein des logiciels plutôt que de se comporter comme un simple chatbot.</span></li><li><span class="point-bullet">✦</span><span>Il a été testé avec succès dans un environnement de simulation de conduite automobile en temps réel, s&#x27;adaptant continuellement sans jamais bloquer la simulation.</span></li><li><span class="point-bullet">✦</span><span>Soumis 100 fois de suite au dilemme du tramway, Jev a montré une probabilité de 99 % de tirer le levier à chaque itération dans un environnement structuré.</span></li><li><span class="point-bullet">✦</span><span>Il peut être utilisé comme un outil créatif interactif, modifiant instantanément des éléments visuels à l&#x27;écran à partir de simples instructions textuelles.</span></li><li><span class="point-bullet">✦</span><span>Un utilisateur a créé un détecteur de contenu poubelle (slop detector) en temps réel sur X (Twitter) qui analyse et étiquette les posts en arrière-plan pendant le défilement.</span></li><li><span class="point-bullet">✦</span><span>Lors d&#x27;un audit SEO comparatif sur 586 pages, Jev a traité l&#x27;ensemble du site en 45 secondes pour un coût de 0,21 $, surpassant Claude Opus en vitesse et en efficacité tarifaire.</span></li><li><span class="point-bullet">✦</span><span>Le maillage interne est analysé par Jev à travers des milliers de micro-décisions de type oui/non, illustrant parfaitement la puissance des modèles de classification rapide.</span></li><li><span class="point-bullet">✦</span><span>Le modèle alternatif Laya permet d&#x27;exécuter des prises de décision ultra-rapides entièrement hors ligne, directement en local sur une machine Apple Silicon.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;inférence avec Laya sur une puce M3 Max atteint une latence d&#x27;environ 10 millisecondes, démontrant la faisabilité d&#x27;exécuter des IA réactives à la périphérie sans cloud.</span></li><li><span class="point-bullet">✦</span><span>Jev a également été démontré en train de jouer au jeu Snake localement sur M3 Max à une vitesse impressionnante de 60 décisions par seconde.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;approche de Jev repose sur la multiplication de milliers de micro-décisions pour automatiser des flux de travail complexes comme le SEO ou l&#x27;interaction avec des interfaces en direct.</span></li><li><span class="point-bullet">✦</span><span>Ces avancées illustrent la transition vers des modèles faisant partie intégrante du logiciel, capables de déclencher des actions immédiates dans des environnements interactifs.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:31</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de contrôle de Jev Engineering nommée &#x27;ROUTER AND GATE&#x27; affichée sur fond sombre avec un diagramme en réseau complexe.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le schéma détaille les flux de données et de décisions : &#x27;user request&#x27;, &#x27;structured state&#x27;, &#x27;model router&#x27;, &#x27;frontier llm&#x27;, &#x27;mid llm&#x27;, &#x27;cheap llm&#x27;, &#x27;relevance filter&#x27;, &#x27;approval check&#x27;, &#x27;auto node gate&#x27; avec des graphiques de trafic de nœuds et d&#x27;utilisation de la couche &#x27;LAYER STATUS&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation en direct du routage des requêtes utilisateurs à travers différentes couches de modèles LLM et de barrières de sécurité (gates) au sein de l&#x27;architecture Jev.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_01_00-00-06.jpg" alt="Démonstration à l&#x27;écran @ 00:00:06" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_01_00-00-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:00</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:00:06</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:31 - 00:01:02</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Un simulateur de conduite 3D doté d&#x27;un tableau de bord de télémétrie en temps réel (volant, accélérateur, frein) et d&#x27;un panneau d&#x27;analyse de trajectoire sur fond noir en bas à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le compteur indique une vitesse de 16.4 mph. Le volant affiche -3.0 degrés. Le panneau de télémétrie et de réseau routier affiche des métriques détaillées comme &#x27;speed 16.1 mph&#x27;, &#x27;Jev: steering -0.075&#x27;, &#x27;p(collision) 0.02&#x27;, ainsi qu&#x27;une carte vectorielle de la route avec des courbes à l&#x27;approche et des cônes de signalisation.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration en temps réel du modèle Jev pilotant une voiture rouge sur une route goudronnée ensoleillée, gérant la direction et la vitesse de manière autonome face à des obstacles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_02_00-00-46.jpg" alt="Démonstration à l&#x27;écran @ 00:00:46" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_02_00-00-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:31</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:00:46</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:02 - 00:01:33</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Simulateur de conduite 3D doté d&#x27;une vue à la troisième personne depuis l&#x27;arrière d&#x27;un véhicule rouge (Jev), d&#x27;un panneau d&#x27;affichage HUD en haut (« 4x SPEED »), d&#x27;un tableau de bord virtuel en bas à gauche affichant le volant, l&#x27;accélération (THROTTLE à 0.02) et le freinage, ainsi que d&#x27;une mini-carte en bas à droite (« road network: 109 lanes within 200 m »).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Les mesures en temps réel sont affichées dans l&#x27;encadré noir en bas à droite : speed 19.5 mph (8.7 m/s), lane 2, offset +0.04 m, heading +0.00 rad. Jev : steering +0.00 (score 4.0, conf 1.0), throttle +0.02 (score 3.05), p(collision) 0.12, p(off road) 0.06.</p>
+                        <p><strong>Action / Démonstration :</strong> Le véhicule rouge (Jev) navigue de manière autonome sur une route à plusieurs voies en contournant une zone de travaux signalée par des cônes oranges.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_03_00-01-08.jpg" alt="Démonstration à l&#x27;écran @ 00:01:08" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_03_00-01-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:02</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:01:08</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:33 - 00:02:04</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation interactive nommée &quot;JEV / DECISION EXPERIMENT 001&quot;, intitulée &quot;The trolley problem, 100 times.&quot;. Panneau latéral droit affichant le statut de lecture (1x Playback), les essais complétés (2 / 100), les choix (Pull the lever: 2, Leave it alone: 0), et la grille de probabilité de choix en cours.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes affichés : &quot;TRIAL 002&quot;, &quot;Outcome recorded&quot;, &quot;SIDE TRACK - 1 PERSON&quot;, &quot;MAIN TRACK - 5 PEOPLE&quot;, &quot;5 SAVED - 1 LOST&quot;. En bas à gauche : &quot;5 on the main track. 1 on the side track. First 5 trolleys at normal speed.&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration du dilemme du tramway (Trolley Problem) simulé 100 fois par l&#x27;IA Jev, illustrant le choix de tirer le levier pour sauver 5 personnes au détriment d&#x27;une seule.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_04_00-01-39.jpg" alt="Démonstration à l&#x27;écran @ 00:01:39" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_04_00-01-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:33</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:01:39</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:04 - 00:02:35</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web locale (localhost:5174) dans une fenêtre de navigateur au style épuré, avec une barre de recherche centrale et une zone interactive en bas remplie d&#x27;émojis d&#x27;objets divers.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le champ de recherche contient le texte saisi : &#x27;things a magne&#x27; (choses magnétiques / aimantées). En bas, de nombreux émojis d&#x27;objets du quotidien et d&#x27;outils sont entassés.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration d&#x27;une interface interactive et créative propulsée par Jev, où les éléments visuels réagissent en temps réel à une requête textuelle simple pour trier ou filtrer des objets.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_05_00-02-19.jpg" alt="Démonstration à l&#x27;écran @ 00:02:19" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_05_00-02-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:04</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:02:19</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:35 - 00:03:06</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une application interactive locale avec une barre de recherche centrale, un bouton « Chat » en haut à droite, et une pile d&#x27;émojis divers accumulés au bas de l&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> La barre de recherche contient la requête : &quot;things a magnet could attract&quot; (choses qu&#x27;un aimant pourrait attirer). Au-dessus, une liste d&#x27;émojis filtrés et générés dynamiquement (clé, boussole, ciseaux, marteau, tournevis, cadenas, trombone, pince, pièce de monnaie, trompette) est affichée en ligne.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration interactive de Jev permettant de filtrer et faire tomber des émojis en temps réel basés sur une description textuelle thématique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_06_00-02-59.jpg" alt="Démonstration à l&#x27;écran @ 00:02:59" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_06_00-02-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:35</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:02:59</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:06 - 00:03:37</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface d&#x27;une application de dessin web collaborative (type tableau blanc) avec une barre d&#x27;outils en bas, une palette de formes et de couleurs en haut à droite, et un panneau de débogage et de suivi en bas affichant les inputs, les actions Jev et l&#x27;API Canvas.</p>
+                        <p><strong>Contenu textuel & Code :</strong> On observe un tableau blanc numérique comportant un cercle orange en haut à droite, un carré bleu sur la gauche, et un losange rouge (red diamond) positionné entre le carré bleu et le cercle. En bas de l&#x27;écran, les sections INPUTS, JEV et CANVAS affichent les métriques en temps réel (par exemple, action: move 100%, target: shape 3, did: moved red diamond, API: editor.updateShape).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de la manipulation et du déplacement d&#x27;une forme (le losange rouge) sur le canevas à l&#x27;aide de commandes combinant la voix et les gestes de la main capturés par l&#x27;IA Jev.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_07_00-03-21.jpg" alt="Démonstration à l&#x27;écran @ 00:03:21" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_07_00-03-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:06</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:03:21</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:37 - 00:04:08</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de type tableau blanc interactif (« Page 1 ») avec une barre d&#x27;outils en haut et en bas, incluant des outils de sélection, dessin, formes et curseurs de couleur. En bas, un panneau de contrôle technique (section JEV) affiche les métriques de traitement, les entrées vocales et gestuelles (inputs, JEV, canvas).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Trois formes géométriques colorées sur un fond blanc : un cercle/ellipse jaune, un diamant rouge et un carré bleu. Le panneau du bas affiche les détails de l&#x27;action en cours : action « move 100% », cible « shape 2 », position « right of 3 », et le résultat dans le canvas « moved blue rectangle ».</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration d&#x27;une commande vocale et gestuelle combinée où l&#x27;utilisateur déplace dynamiquement le carré bleu à droite du diamant rouge, l&#x27;interface analysant l&#x27;intention et exécutant la mise à jour correspondante.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_08_00-03-52.jpg" alt="Démonstration à l&#x27;écran @ 00:03:52" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_08_00-03-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:37</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:03:52</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:08 - 00:04:39</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de Twitter / X affichant un flux d&#x27;actualités, des publications de comptes (Robin Bilgil, Kache, Dejay), un panneau latéral des tendances (« What&#x27;s happening ») et des suggestions de comptes (« Who to follow »).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Un tweet de Robin Bilgil (« Made a real-time slop detector with jev as you scroll ») incluant une vidéo intégrée avec le statut « Not slop 62% » et du code JSON dans une interface d&#x27;évaluation (OpenAI Client), ainsi qu&#x27;un autre tweet estampillé d&#x27;un grand tampon rouge « SLOP » d&#x27;alerte.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration d&#x27;un outil de détection en temps réel (« slop detector ») intégré lors du défilement des publications sur X, illustrant l&#x27;analyse automatique et visuelle de contenus textuels ou générés par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_09_00-04-32.jpg" alt="Démonstration à l&#x27;écran @ 00:04:32" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_09_00-04-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:08</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:04:32</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:39 - 00:05:10</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme X (anciennement Twitter) affichant un fil d&#x27;actualité, le panneau latéral « What&#x27;s happening » et un profil utilisateur dans un encadré séparé.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Un tweet de l&#x27;utilisateur @RBilgil (« Building @whirl_sh — AI orchestration layer for operations... ») avec un bouton de suivi, ainsi qu&#x27;un autre tweet intégré doté d&#x27;un badge de classification rouge « SLOP » et divers compteurs d&#x27;interactions (réponses, reposts, likes, vues).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration d&#x27;un détecteur de contenu indésirable (« slop ») en temps réel intégré au défilement d&#x27;un réseau social.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_10_00-05-03.jpg" alt="Démonstration à l&#x27;écran @ 00:05:03" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_10_00-05-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:39</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:05:03</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:10 - 00:05:41</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Un tweet de l&#x27;utilisateur @borjafat avec une interface de comparaison de sites web, affichant des données et des graphiques comparatifs.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le texte du tweet indique : &#x27;Jev is WILD for SEO audit 🤯 in 45.1 seconds it read all 586 pages on my site and rebuilt the internal link map... Claude Opus 5, same 586 pages, same clock, got through 21 of them and spent $1.43.&#x27; En bas, un tableau comparatif détaillé &#x27;Internal Link Dealer&#x27; montre les métriques de performance de Jev face à Claude Opus 5.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration comparative en direct des performances de Jev par rapport à Claude Opus 5 pour l&#x27;analyse SEO et le maillage interne d&#x27;un site web de 586 pages.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_11_00-05-25.jpg" alt="Démonstration à l&#x27;écran @ 00:05:25" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_11_00-05-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:10</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:05:25</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:41 - 00:06:12</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web interactive de test et simulation intitulée « Internal Link Dealer by Distribb », affichant deux colonnes comparatives côte à côte : à gauche « Jev (TypeSafe AI - jev-latest) » et à droite « Claude Opus 5 (Anthropic - via OpenRouter) ».</p>
+                        <p><strong>Contenu textuel & Code :</strong> En-tête indiquant « Edition of September 18, 2026 », « 586 pages crawled off distribb.io », « 15 destinations », « 8790 page pairs », « simulated run ». Pour Jev : Read 440/586, Mapped 425/422, Judgments 42,210, J/sec 1267, P50 Call 297ms, Elapsed 33.3s, Cost $0.1568. Pour Claude Opus 5 : Read 16/586, Mapped 12/16, Judgments 1,224, J/sec 37, P50 Call 5,095ms, Elapsed 33.3s, Cost $0.9711. Graphiques radar de métriques (depth, intent, freshness, orphaned, equity, overlap), cartes de liens, listes d&#x27;articles de blog et catégories SEO (AI SEO Agent, AI Content Writer, Backlink Exchange, AI SEO Audit, Content Calendar, Shopify SEO, Local SEO, White Label, SaaS SEO, Healthcare SEO, Free Tools, Comparisons, Reviews, Launch Videos, Docs).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration comparative en temps réel de l&#x27;audit et du maillage interne automatisé de centaines de pages web par deux intelligences artificielles (Jev vs Claude Opus 5), illustrant la vitesse, le nombre de jugements, le coût en tokens et la pertinence des liens générés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_12_00-06-05.jpg" alt="Démonstration à l&#x27;écran @ 00:06:05" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_12_00-06-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:41</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:06:05</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:12 - 00:06:43</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Une interface de terminal ou d&#x27;application macOS intitulée &#x27;LAYA / LOCAL INTELLIGENCE&#x27; montrant un jeu en cours, avec le panneau de contrôle latérale &#x27;LAYA MLX M3 Max Local&#x27; et des scores.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le jeu &#x27;SNAKE&#x27; est affiché en cours d&#x27;exécution avec &#x27;ROUND 01&#x27;, les scores (SCORE 017, LENGTH 023, BEST 017), les probabilités de mouvements (&#x27;NEXT MOVE&#x27; avec UP, DOWN, LEFT, RIGHT et leurs scores comme DOWN à 0.41), &#x27;DEAD-END RISK&#x27; (0.07), &#x27;FOOD REACHABLE&#x27; (0.93), ainsi que les performances d&#x27;inférence (&#x27;INFERENCE 16.7 ns&#x27;, &#x27;DECISIONS 61.2 /s&#x27;, &#x27;NETWORK OFFLINE&#x27;). Sur le tweet visible, le message d&#x27;un utilisateur nommé &#x27;雨夹雪❄️&#x27; (@mizorewww) présente &#x27;laya-mlx&#x27; comme une version 50 fois plus rapide que Jev, consommant moins de 1G de mémoire, capable de jouer au jeu Snake à une vitesse de 60 décisions par seconde sur un M3 Max.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration du modèle open-source Laya (porté sur MLX) fonctionnant localement sur un appareil Apple M3 Max, capable de prendre des décisions ultra-rapides en temps réel pour jouer au jeu Snake à 60 décisions par seconde.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_13_00-06-36.jpg" alt="Démonstration à l&#x27;écran @ 00:06:36" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_13_00-06-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:12</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:06:36</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:43 - 00:07:14</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Fenêtre d&#x27;application logicielle de bureau intitulée &#x27;laya-snake / real recorded decisions&#x27;, exécutée localement sur macOS (boutons de contrôle de la fenêtre rouge/jaune/vert en haut à gauche).</p>
+                        <p><strong>Contenu textuel & Code :</strong> En-tête : &#x27;LAYA / LOCAL INTELLIGENCE&#x27;, &#x27;RECORDED RUN 1x&#x27;. Section gauche : Jeu Snake en cours, score 013, longueur 019, meilleur 013. Section droite : Panneau &#x27;Laya MLX M3 Max Local&#x27;, &#x27;NEXT MOVE&#x27;, probabilités des modèles (UP: 0.07, DOWN: 0.13, LEFT: 0.14, RIGHT: 0.66), action exécutée &#x27;RIGHT&#x27;, &#x27;DEAD-END RISK: 0.07&#x27;, &#x27;FOOD REACHABLE: 0.93&#x27;, métriques (Inference: 10.4 ms, Decisions: 63.7 /s, Output Tokens: 0, Network: OFFLINE, Engine: MLX FP16), bouclier de sécurité &#x27;Shield interventions: 0000&#x27;. En bas : contrôles clavier (SPACE pause, ↑/↓ speed, R reset, Q quit) et horodatage 00:06.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration du modèle d&#x27;IA &#x27;Laya MLX&#x27; jouant au jeu Snake en temps réel, affichant les probabilités de décision pour chaque mouvement (haut, bas, gauche, droite) mis à jour à une fréquence élevée d&#x27;environ 63-64 décisions par seconde.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_14_00-06-49.jpg" alt="Démonstration à l&#x27;écran @ 00:06:49" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_14_00-06-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:43</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:06:49</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:14 - 00:07:45</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation comparative en temps réel affichée dans un navigateur web (localhost:3000/?present&amp;opponent=laya), divisée entre deux adversaires IA : Jev (jev-latest TypeSafe) à gauche et Laya (aac6fef/laya-mlx) à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le titre central indique &#x27;REAL-TIME TETRIS&#x27; avec un chronomètre à &#x27;0:05&#x27;, &#x27;Level 1 · 150 ms per row&#x27;, et les paramètres &#x27;seed 42 · 150 ms per row, 15% faster every 20 s · cleared lines attack&#x27;. Les statistiques de Jev affichent : LINES 0, PIECES 8, SENT 0, RECEIVED 2, LATENCY 321 ms, MISSED 0, IN TOK 23,532, OUT TOK 1,607, COST $0.0010, PER MOVE $0.00012, CALLS 8, INVALID 0. Les statistiques de Laya affichent : LINES 2, PIECES 13, SENT 2, RECEIVED 2, LATENCY 56 ms, MISSED 0, IN TOK 2,333, OUT TOK 0, COST $0.0000, PER MOVE $0.00000, CALLS 13, INVALID 0.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration comparative en direct d&#x27;une partie de Tetris entre deux agents d&#x27;IA, montrant la supériorité de Laya en termes de latence (56 ms contre 321 ms), de coût ($0.0000 contre $0.0010) et de rapidité d&#x27;exécution par rapport à Jev.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_15_00-07-38.jpg" alt="Démonstration à l&#x27;écran @ 00:07:38" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_15_00-07-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:14</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:07:38</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:45 - 00:08:11</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text"></blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;une application de jeu en temps réel comparant deux intelligences artificielles (&quot;Jev&quot; contre &quot;Laya&quot;) sur le jeu Tetris, accessible sur localhost:3000.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau de bord affichant les statistiques en direct de la partie : lignes (4 pour Jev, 3 pour Laya), pièces (22 contre 37), latence (286 ms contre 51 ms), coût (0,0029 $ contre 0,0000 $), jetons utilisés, appels de modèle et message de fin de partie indiquant que Jev a gagné (&quot;Jev wins: Laya topped out first&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration comparative en temps réel de deux IA jouant à Tetris simultanément, avec affichage des métriques de performance et des coûts d&#x27;API.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/I34qxJjyms0_shot_16_00-07-55.jpg" alt="Démonstration à l&#x27;écran @ 00:07:55" loading="lazy" onclick="openLightbox('screenshots/I34qxJjyms0_shot_16_00-07-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:45</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:07:55</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

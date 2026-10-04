@@ -1,0 +1,22 @@
+{
+  "channel_id": "UC3P0rlhvB3IFda41lb77EHg",
+  "channel_name": "Pursuing AI",
+  "channel_handle": "@PursuingAi",
+  "last_updated": "2026-10-04T13:02:00Z",
+  "processed_video_ids": [
+    "I34qxJjyms0"
+  ],
+  "processed_videos": [
+    {
+      "video_id": "I34qxJjyms0",
+      "title": "Jev est BIEN plus puissant que nous le pensions (Jev Is WAY More Powerful Than We Thought)",
+      "pub_date": "2026-09-22",
+      "duration": 491,
+      "model": "gemini-3.5-flash-lite",
+      "processed_at": "2026-10-04T13:01:00Z",
+      "screenshots_count": 16,
+      "compliance_score": 100.0
+    }
+  ],
+  "backlog_active": true
+}

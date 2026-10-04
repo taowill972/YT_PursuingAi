@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+work_temp/
+*.tmp
+*.mp4
+*.m4a
+*.mp3
+.gemini_keys
