@@ -1,7 +1,8 @@
 {
   "processed_ids": [
     "I34qxJjyms0",
-    "gLSsLtIYMG4"
+    "gLSsLtIYMG4",
+    "ixDclukqjkM"
   ],
   "processed_videos": [
     {
@@ -27,9 +28,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-10-02_YT-gLSsLtIYMG4_Gemini 4 Argon est bien plus puissant qu'on ne le pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-04T16:13:01Z",
       "status": "completed"
+    },
+    {
+      "video_id": "ixDclukqjkM",
+      "title": "L'OpenDevDay d'OpenAI était bien plus énorme que prévu…",
+      "raw_title": "OpenAI DevDay Was WAY Bigger Than We Expected…",
+      "filename_md": "2026-09-30_YT-ixDclukqjkM_L'OpenDevDay d'OpenAI était bien plus énorme que prévu…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-09-30_YT-ixDclukqjkM_L'OpenDevDay d'OpenAI était bien plus énorme que prévu…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-09-30",
+      "duration": 519,
+      "screenshots_count": 56,
+      "filepath_md": "/root/YT_PursuingAi/2026-09-30_YT-ixDclukqjkM_L'OpenDevDay d'OpenAI était bien plus énorme que prévu…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-09-30_YT-ixDclukqjkM_L'OpenDevDay d'OpenAI était bien plus énorme que prévu…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-04T16:19:15Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 2,
+  "completed_count": 3,
   "last_run_timestamp": "2026-10-04T16:00:02Z",
   "status": "running",
   "total_catalog_count": 83
