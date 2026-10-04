@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Opus 5.2 est bien plus puissant qu&#x27;on ne le pensait 🤔 — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Opus 5.2 est bien plus puissant qu&#x27;on ne le pensait 🤔</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-09-17</span>
+                <span class="badge">⏱️ 07m 15s</span>
+                <span class="badge">🆔 <code>vE1OOz4XAyA</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=vE1OOz4XAyA" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>Cette vidéo d'analyse prospective de *Pursuing AI* explore la contradiction saisissante entre les appels publics à la modération — initiés notamment par Dario Amodei — et l'accélération frénétique du secteur, marquée par des fuites massives concernant la prochaine génération de modèles de pointe (Claude Opus 5.2, Gemini 4, GPT-6 Soul et Grok 4.7). Le créateur décortique une série de benchmarks officieux et de "leaks" audacieux partagés sur les réseaux sociaux, illustrant un basculement technologique majeur : les intelligences artificielles quittent le terrain exclusif du texte et de l'image plane pour investir massivement le code d'interface complexe (SVG), la génération d'environnements 3D explorables et l'intégration logicielle profonde en milieu professionnel.</p><p>Sur le plan méthodologique, la vidéo adopte une approche comparative rigoureuse, confrontant les capacités émergentes des laboratoires rivaux à travers des tests pratiques similaires. Le créateur analyse étape par étape la génération d'interfaces graphiques interactives en code SVG, la création de mondes 3D stylisés à partir de prompts textuels avec un effort de réflexion élevé, ainsi que le déploiement d'agents autonomes pré-intégrés à des environnements CRM comme Salesforce. Chaque fuite est disséquée avec esprit critique, séparant le battage médiatique (*hype*) des ruptures techniques réelles, tout en contextualisant l'impact de ces innovations sur l'écosystème logiciel global.</p><p>Pour les créateurs de contenu, les réalisateurs et les professionnels de la vidéo par IA, ces avancées annoncent des perspectives révolutionnaires. La transition vers des modèles capables de produire des environnements 3D interactifs (comme l'île japonaise générée par Gemini 4 Pro) et des interfaces fonctionnelles en quelques minutes redéfinit les workflows de production virtuelle, de prototypage rapide et de design d'assets. En comprenant comment ces modèles s'interतयाent désormais directement aux outils de productivité et repoussent les limites des fenêtres contextuelles (jusqu'à 2 millions de tokens), les créateurs disposent d'une vision claire des outils de demain pour automatiser et enrichir leurs pipelines de création.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude</span><span class="tool-tag">GPT-6</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Le paradoxe du ralentissement** : Malgré les appels publics d&#x27;acteurs majeurs comme Dario Amodei à freiner le développement de l&#x27;IA, l&#x27;industrie connaît une accélération sans précédent nourrie par des fuites massives et des lancements imminents.</span></li><li><span class="point-bullet">✦</span><span>Benchmark de génération d&#x27;interface SVG** : La confrontation directe entre Claude Opus 5.2 et GPT-6 Astra sur la recréation d&#x27;une interface X démontre la capacité des modèles à traduire une image en code structuré (mise en page, typographie, espacement).</span></li><li><span class="point-bullet">✦</span><span>Supériorité des compositions interactives** : Sur le test SVG, Astra s&#x27;est distingué par une composition plus solide et un rendu proche d&#x27;un produit fini interactif plutôt que d&#x27;une simple animation graphique.</span></li><li><span class="point-bullet">✦</span><span>Émergence de la génération 3D contextuelle** : Les fuites attribuées à Opus 5.2 révèlent une transition vers la création d&#x27;environnements 3D complets (maisons, paysages) plutôt que de simples images plates.</span></li><li><span class="point-bullet">✦</span><span>Agents IA intégrés aux environnements professionnels** : L&#x27;intégration de Claude à Salesforce avec 37 compétences de vente illustre le passage d&#x27;une IA conversationnelle à une surcouche logicielle opérationnelle capable d&#x27;agir directement dans les outils métiers.</span></li><li><span class="point-bullet">✦</span><span>Explosion des capacités environnementales de Gemini 4 Pro** : Le modèle de Google (nom de code Argon) aurait généré un environnement 3D explorable (style île japonaise) en 2,4 minutes grâce à un effort de réflexion élevé.</span></li><li><span class="point-bullet">✦</span><span>Augmentation radicale des limites de tokens** : Gemini 4 Pro introduit des spécifications techniques impressionnantes avec une limite de sortie de 256k tokens et des perspectives d&#x27;une fenêtre contextuelle atteignant 2 millions de tokens.</span></li><li><span class="point-bullet">✦</span><span>Convergence d&#x27;une &quot;super-semaine&quot; de lancements** : La concomitance des fuites concernant Gemini 4, Grok 4.7, Opus 5.2 et la famille GPT-6 signale un basculement imminent vers une offre multi-modèle de pointe extrêmement concurrentielle.</span></li><li><span class="point-bullet">✦</span><span>Démocratisation potentielle des performances** : Des fuites suggèrent que des variantes comme GPT-6 Soul pourraient offrir des performances supérieures à bas coût, rendant l&#x27;IA de pointe accessible à un public beaucoup plus large.</span></li><li><span class="point-bullet">✦</span><span>Filtrage rigoureux du battage médiatique (*hype*)** : Face à la prolifération de rumeurs et de captures d&#x27;écran non vérifiées, le rôle de l&#x27;analyste est de séparer les promesses marketing des capacités techniques réellement démontrées.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:20</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Après que Dario Amadei a appelé à ralentir le rythme du développement de l&#x27;IA, on pourrait penser que les choses commenceraient à se calmer. Mais d&#x27;une manière ou d&#x27;une autre, c&#x27;est l&#x27;inverse qui s&#x27;est produit. Nous assistons maintenant à des fuites et à des premiers signes de ce qui pourrait être certains des plus grands modèles à venir, notamment Claude Opus 5.2, Gemini 4, GPT-6 Soul, et bien plus encore.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration interactive et simulation scientifique Isaac Lab / PhysX.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 2 : &quot;Made by Opus 5.2&quot;, &quot;TEMPEST&#x27;S HEART&quot;, &quot;A storm kept under glass&quot;, curseurs de contrôle de tempête et d&#x27;éclair. Sur l&#x27;image 3 : &quot;SHARPA WAVE | PPO POLICY | t=12.47s&quot;, &quot;Isaac Lab / PhysX trajectory | g=9.81 m/s2 | turns=+0.22 | episode=2 | drops=0&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de rendus générés par IA et de simulations physiques de pointe illustrant les performances des nouveaux modèles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_001_00-00-10.jpg" alt="Démonstration visuelle d&#x27;une application interactive &quot;Tempest&#x27;s Heart&quot; générée par Claude Opus 5.2 montrant un bateau dans une bouteille avec des effets de tempête." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_001_00-00-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Démonstration visuelle d&#x27;une application interactive &quot;Tempest&#x27;s Heart&quot; générée par Claude Opus 5.2 montrant un bateau dans une bouteille avec des effets de tempête.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_002_00-00-18.jpg" alt="Simulation physique 3D par IA (Isaac Lab) montrant une main robotique manipulatrice faisant tourner un crayon (&quot;Sharpa Wave&quot;)." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_002_00-00-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:18</span>
+                        <span class="caption-text">Simulation physique 3D par IA (Isaac Lab) montrant une main robotique manipulatrice faisant tourner un crayon (&quot;Sharpa Wave&quot;).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:20 - 00:00:39</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et certaines des choses qui fuites sont vraiment folles. Alors prenez vos snacks, installez-vous confortablement, et c&#x27;est parti. C&#x27;est Pursuing AI, et vous regardez The Research Report. Commençons par l&#x27;une des fuites les plus intéressantes. Un utilisateur sur X a testé GPT-6 Astra et le prochain Claude Opus 5.2 sur la même tâche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (Twitter) simulée / affichée sous forme de code SVG généré par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché au-dessus : &#x27;An SVG of a screenshot of X by GPT-6 Astra and opus 5.2&#x27;. Post de l&#x27;utilisateur @Haleeeemahhh avec le texte &#x27;this user is ♀ and loves Ai building REDACTED&#x27; et la section &#x27;What&#x27;s happening&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran d&#x27;une génération SVG complexe reproduisant une interface de réseau social, illustrant les capacités des modèles d&#x27;IA mentionnés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_003_00-00-22.jpg" alt="Visuel d&#x27;illustration montrant un bateau miniature dans une bouteille avec le texte &#x27;Made by Opus 5.2&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_003_00-00-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:22</span>
+                        <span class="caption-text">Visuel d&#x27;illustration montrant un bateau miniature dans une bouteille avec le texte &#x27;Made by Opus 5.2&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_004_00-00-37.jpg" alt="Capture d&#x27;écran d&#x27;un tweet et d&#x27;une interface simulant le réseau social X générée en SVG par GPT-6 Astra et Opus 5.2." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_004_00-00-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:37</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet et d&#x27;une interface simulant le réseau social X générée en SVG par GPT-6 Astra et Opus 5.2.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:39 - 00:00:58</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Recréer une capture d&#x27;écran de X en utilisant SVG. Et il ne s&#x27;agit pas seulement de générer une image. Les modèles doivent essentiellement recréer l&#x27;interface en utilisant du code, en comprenant la mise en page, la typographie, les icônes, l&#x27;espacement, les couleurs et tous les minuscules détails qui composent l&#x27;interface. Et les deux résultats sont en fait assez impressionnants.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Captures d&#x27;écran comparatives d&#x27;interfaces X (Twitter) recréées en code SVG par des intelligences artificielles.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte en haut à gauche : &quot;An SVG of a screenshot of X by GPT-6 Astra and opus 5.2&quot;. Légendes des modèles : &quot;Astra&quot; et &quot;Opus 5.2&quot;. Éléments d&#x27;interface X complets (barre latérale de navigation, flux de publications avec tweets, images, avatars et boutons, panneau &quot;What&#x27;s happening&quot; et &quot;Who to follow&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage comparatif des interfaces recréées par les deux modèles d&#x27;IA, avec un zoom sur les détails de l&#x27;interface pour l&#x27;image #1.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_005_00-00-41.jpg" alt="Comparaison de captures d&#x27;écran SVG générées par GPT-6 Astra et opus 5.2 avec zoom sur les détails de l&#x27;interface de X." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_005_00-00-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:41</span>
+                        <span class="caption-text">Comparaison de captures d&#x27;écran SVG générées par GPT-6 Astra et opus 5.2 avec zoom sur les détails de l&#x27;interface de X.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_006_00-00-49.jpg" alt="Comparaison côte à côte des interfaces X recréées en SVG par les modèles &quot;Astra&quot; et &quot;Opus 5.2&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_006_00-00-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:49</span>
+                        <span class="caption-text">Comparaison côte à côte des interfaces X recréées en SVG par les modèles &quot;Astra&quot; et &quot;Opus 5.2&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:58 - 00:01:19</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Opus 5.2 produit une recréation vraiment soignée avec une mise en page épurée et des éléments visuels détaillés. Mais Astra adopte une approche légèrement différente. Sa sortie ressemble davantage à une expérience interactive complète avec des éléments plus structurés à l&#x27;intérieur du SVG généré. Donc, si nous jugeons le résultat visuel global, je donnerais en fait celui-ci à Astra.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web simulant le réseau social X (anciennement Twitter) en mode sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Affichage de fils d&#x27;actualité, de barres de navigation latérales avec les menus Home, Explore, Notifications, Messages, et de panneaux de tendances &quot;What&#x27;s happening&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative des interfaces générées par les modèles Opus 5.2 et Astra pour évaluer la qualité visuelle et les éléments structurés des graphiques SVG.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_007_00-01-00.jpg" alt="Interface simulant le réseau social X générée par Opus 5.2 avec une mise en page propre et des graphiques détaillés." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_007_00-01-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:00</span>
+                        <span class="caption-text">Interface simulant le réseau social X générée par Opus 5.2 avec une mise en page propre et des graphiques détaillés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_008_00-01-08.jpg" alt="Interface simulant le réseau social X générée par Astra, présentant une approche interactive avec des éléments SVG plus structurés." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_008_00-01-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:08</span>
+                        <span class="caption-text">Interface simulant le réseau social X générée par Astra, présentant une approche interactive avec des éléments SVG plus structurés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_009_00-01-17.jpg" alt="Comparatif côte à côte des interfaces générées par Astra et Opus 5.2." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_009_00-01-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:17</span>
+                        <span class="caption-text">Comparatif côte à côte des interfaces générées par Astra et Opus 5.2.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:19 - 00:01:42</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La composition semble plus solide, les éléments sont mieux organisés, et l&#x27;ensemble ressemble davantage à un produit fini plutôt qu&#x27;à un simple SVG animé. Donc sur ce test particulier, Astro l&#x27;emporte. Mais il y a un détail important ici. Opus 5.2 n&#x27;est même pas encore officiellement sorti. Et c&#x27;est là que les choses deviennent intéressantes, car les fuites concernant Opus 5.2 ne s&#x27;arrêtent pas aux fichiers SVG.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur affichant une comparaison de maquettes ou de codes de l&#x27;application X (anciennement Twitter) en mode sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;Astra&quot; et &quot;Opus 5.2&quot; en titres, ainsi que la mention &quot;An SVG of a screenshot of X by GPT-6 Astra and opus 5.2&quot;. Les interfaces affichent des fils d&#x27;actualité, des profils (Maya Chen, Dev Weekly, etc.), des graphiques statistiques et des panneaux latéraux.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle côte à côte de deux rendus SVG différents issus de modèles d&#x27;IA pour évaluer la qualité de composition et l&#x27;organisation des éléments.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_010_00-01-21.jpg" alt="Comparaison côte à côte de deux interfaces de type X (Twitter) générées en SVG, respectivement étiquetées &quot;Astro&quot; à gauche et &quot;Opus 5.2&quot; à droite." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_010_00-01-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:21</span>
+                        <span class="caption-text">Comparaison côte à côte de deux interfaces de type X (Twitter) générées en SVG, respectivement étiquetées &quot;Astro&quot; à gauche et &quot;Opus 5.2&quot; à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_011_00-01-34.jpg" alt="Affichage d&#x27;un SVG de capture d&#x27;écran de X généré par GPT-6 Astro et Opus 5.2, avec un zoom sur un panneau latéral." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_011_00-01-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:34</span>
+                        <span class="caption-text">Affichage d&#x27;un SVG de capture d&#x27;écran de X généré par GPT-6 Astro et Opus 5.2, avec un zoom sur un panneau latéral.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:43 - 00:02:02</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Un autre utilisateur, Salio, a partagé ce qu&#x27;il prétend être l&#x27;une des premières sorties d&#x27;Opus 5.2. Et cette fois, nous regardons une scène 3D. Le résultat montre un environnement stylisé avec une petite maison, des arbres, un immense champ et de multiples objets disséminés dans toute la scène. Ce qui a retenu mon attention, c&#x27;est la composition globale.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme X (anciennement Twitter) affichant un tweet et une vidéo intégrée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Opus 5.2 First Output Leaked. The jump in visual quality is already noticeable better details, stronger composition. Anthropic is back&quot;. Profil de l&#x27;utilisateur Salio (@Mr_Salio) avec la mention &quot;I track AI Models • AI News&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un tweet sur les réseaux sociaux présentant un exemple de rendu 3D généré par une intelligence artificielle, suivi d&#x27;un zoom sur la vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_012_00-01-45.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Salio montrant une publication sur Opus 5.2 avec une vidéo intégrée représentant un environnement 3D stylisé." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_012_00-01-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:45</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Salio montrant une publication sur Opus 5.2 avec une vidéo intégrée représentant un environnement 3D stylisé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_013_00-01-52.jpg" alt="Gros plan sur la vidéo montrant l&#x27;environnement 3D stylisé avec une petite maison, des arbres et des montagnes en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_013_00-01-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:52</span>
+                        <span class="caption-text">Gros plan sur la vidéo montrant l&#x27;environnement 3D stylisé avec une petite maison, des arbres et des montagnes en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:02 - 00:02:32</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Au lieu de simplement générer une image plate, le modèle semble créer un environnement 3D complet avec différents objets placés dans toute la scène pour construire un monde réel. La publication prétend qu&#x27;il y a déjà un saut notable dans la qualité visuelle, les détails et la composition. Maintenant, évidemment, un seul résultat divulgué ne suffit pas à prouver à quel point Opus 5.2 est réellement capable, mais si ce résultat provient véritablement d&#x27;Opus 5.2, Anthropic pourrait pousser ses capacités visuelles et 3D beaucoup plus loin que nous ne l&#x27;espérions.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Capture d&#x27;écran d&#x27;une publication sur le réseau social X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Opus 5.2 First Output Leaked. The jump in visual quality is already noticeable better details, stronger composition. Anthropic is back&quot;. Profil de Salio (@Mr_Salio) avec la mention &quot;I track AI Models • AI News&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran d&#x27;un rendu visuel 3D puis d&#x27;un tweet commentant ce même visuel de démonstration.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_014_00-02-04.jpg" alt="Rendu visuel 3D montrant un environnement rural avec une maison, des arbres et un champ de hautes herbes." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_014_00-02-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:04</span>
+                        <span class="caption-text">Rendu visuel 3D montrant un environnement rural avec une maison, des arbres et un champ de hautes herbes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_015_00-02-12.jpg" alt="Capture d&#x27;écran d&#x27;un tweet du compte de Salio montrant la publication sur une fuite concernant Opus 5.2." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_015_00-02-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:12</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet du compte de Salio montrant la publication sur une fuite concernant Opus 5.2.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:32 - 00:03:07</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et puis Anthropic a fait un autre mouvement qui n&#x27;a rien à voir avec la 3D, mais qui pourrait en fait être beaucoup plus important pour les entreprises. Claude a maintenant ajouté Salesforce et Beta, intégrant les comptes, opportunités et pipelines Salesforce directement dans Claude. Et il ne s&#x27;agit pas d&#x27;une simple intégration basique. Claude est fourni avec 37 compétences de vente pré-intégrées. Vous pouvez donc préparer un appel commercial, examiner une transaction, créer un tableau de bord de pipeline ou travailler sur vos prévisions sans basculer constamment entre Claude et Salesforce. Et cela représente une tendance beaucoup plus large. L&#x27;IA passe de &quot;réponds-moi à une question&quot;</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme X (anciennement Twitter) et interface de l&#x27;assistant IA Claude.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tweets de Salio (@Mr_Salio) et de Claude (@claudeai), textes sur l&#x27;intégration Salesforce (&quot;Salesforce in Claude is now available in beta&quot;, &quot;Build account plans from your Salesforce records&quot;, &quot;Salesforce is connected&quot;, &quot;Account Executive&quot;, &quot;Sales Manager&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre des publications sur les réseaux sociaux et des captures d&#x27;écran illustrant l&#x27;intégration de Salesforce dans l&#x27;assistant Claude.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_016_00-02-34.jpg" alt="Capture d&#x27;un tweet de Salio sur X montrant une publication concernant la sortie d&#x27;Opus 5.2 et la qualité visuelle." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_016_00-02-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:34</span>
+                        <span class="caption-text">Capture d&#x27;un tweet de Salio sur X montrant une publication concernant la sortie d&#x27;Opus 5.2 et la qualité visuelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_017_00-02-44.jpg" alt="Publication sur le compte officiel de Claude sur X annonnçant l&#x27;intégration de Salesforce en version bêta." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_017_00-02-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:44</span>
+                        <span class="caption-text">Publication sur le compte officiel de Claude sur X annonnçant l&#x27;intégration de Salesforce en version bêta.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_018_00-02-56.jpg" alt="Interface de configuration de l&#x27;intégration Salesforce dans Claude montrant l&#x27;état de connexion et le rôle utilisateur." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_018_00-02-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:56</span>
+                        <span class="caption-text">Interface de configuration de l&#x27;intégration Salesforce dans Claude montrant l&#x27;état de connexion et le rôle utilisateur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_019_00-03-05.jpg" alt="Capture d&#x27;une interface de démonstration montrant un plan de compte généré à partir des données Salesforce." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_019_00-03-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:05</span>
+                        <span class="caption-text">Capture d&#x27;une interface de démonstration montrant un plan de compte généré à partir des données Salesforce.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:07 - 00:03:27</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">pour me donner accès aux outils que j&#x27;utilise et m&#x27;aider réellement à faire le travail. C&#x27;est la direction que nous observons à travers toute l&#x27;industrie en ce moment. Les modèles d&#x27;IA deviennent une couche qui se superpose aux logiciels que les gens utilisent déjà. Et si ces modèles peuvent effectuer des actions de manière fiable à l&#x27;intérieur de ces outils, c&#x27;est là que la course aux agents IA devient vraiment intéressante.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (Twitter) affichant un tweet du compte officiel de Claude (@claudeai).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de Claude : &quot;Salesforce in Claude is now available in beta. It brings your accounts, opportunities, and pipeline into Claude, with 37 pre-built sales skills. Prep a call, review a deal, create a pipeline dashboard, or send your forecast without leaving the conversation.&quot; On y voit également une capture d&#x27;écran d&#x27;une conversation avec Claude intégrée à Salesforce.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un article ou d&#x27;un tweet illustrant l&#x27;intégration d&#x27;un outil externe (Salesforce) directement au sein de l&#x27;interface de l&#x27;assistant IA Claude.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_020_00-03-09.jpg" alt="Capture d&#x27;écran montrant une publication sur X (anciennement Twitter) de Claude annonçant l&#x27;intégration de Salesforce en version bêta." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_020_00-03-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:09</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une publication sur X (anciennement Twitter) de Claude annonçant l&#x27;intégration de Salesforce en version bêta.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:27 - 00:03:52</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais alors qu&#x27;Anthropic étend Claude au lieu de travail, OpenAI pourrait bien préparer quelque chose de beaucoup plus grand. Car Sam Altman lui-même a récemment jeté de l&#x27;huile sur le feu. Il a publié que ça allait être énorme cette semaine, et a ajouté, et puis pour le Dev Day. C&#x27;était déjà intéressant. Mais ensuite, Tebow d&#x27;OpenAI a répondu, en disant que le niveau de lancements attendus cette semaine est quelque chose qu&#x27;on aurait pu attendre du Dev Day 2025.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tweets d&#x27;Anthropic/Claude et de Sam Altman (@sama) annonçant de nouveautés et des lancements importants (&quot;big this week&quot;, &quot;and then for devday&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran de tweets et de messages textuels pour illustrer les annonces d&#x27;Anthropic et de Sam Altman sur les réseaux sociaux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_021_00-03-29.jpg" alt="Capture d&#x27;écran montrant une publication sur X (Twitter) concernant l&#x27;intégration de Salesforce dans Claude en version bêta." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_021_00-03-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:29</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une publication sur X (Twitter) concernant l&#x27;intégration de Salesforce dans Claude en version bêta.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_022_00-03-36.jpg" alt="Capture d&#x27;écran montrant des publications sur X (Twitter) de Sam Altman au sujet des lancements prévus pour la semaine et le Dev Day." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_022_00-03-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:36</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant des publications sur X (Twitter) de Sam Altman au sujet des lancements prévus pour la semaine et le Dev Day.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:52 - 00:04:15</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Aucun d&#x27;eux n&#x27;a réellement révélé ce qui arrive, mais le message est plutôt clair. OpenAI a quelque chose de gros de prévu, et apparemment cette semaine n&#x27;est que le début. Et maintenant, quand on combine cela avec toutes les fuites que nous voyons d&#x27;autres laboratoires, les choses commencent à devenir vraiment intéressantes. Parce que nous ne regardons peut-être pas seulement le lancement d&#x27;un modèle majeur, nous pourrions assister à l&#x27;arrivée de multiples modèles de pointe à peu près en même temps.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de génération 3D et vidéo divisée en deux fenêtres (probablement des outils comme Claude/ChatGPT à gauche et une interface vidéo à droite).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt à gauche concernant la création d&#x27;un modèle 3D de voiture de course de Formule 1. À droite, mention &#x27;Made by Opus 5.2&#x27; et &#x27;Tempest&#x27;s Heart: A storm kept under glass&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de démonstrations technologiques de modèles d&#x27;IA générative (3D et vidéo).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_023_00-04-08.jpg" alt="Écran divisé montrant à gauche une interface de modélisation 3D avec un modèle de voiture de course rouge, et à droite une vidéo générée par IA intitulée &#x27;Tempest&#x27;s Heart&#x27; représentant un bateau dans une bouteille." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_023_00-04-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:08</span>
+                        <span class="caption-text">Écran divisé montrant à gauche une interface de modélisation 3D avec un modèle de voiture de course rouge, et à droite une vidéo générée par IA intitulée &#x27;Tempest&#x27;s Heart&#x27; représentant un bateau dans une bouteille.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:16 - 00:04:36</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et c&#x27;est là qu&#x27;intervient la plus grande fuite. Car alors que tout le monde parle d&#x27;Opus 5.2 et de GPT-6, Google est peut-être déjà en train de tester Gemini 4 en interne. Une nouvelle fuite affirme que des points de contrôle (checkpoints) de Gemini 4 Pro ont commencé à apparaître en interne, le modèle portant apparemment le nom de code Argon. Et le premier résultat affirmé est absolument fou.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une interface de développement à double volet (éditeur de code/modélisation 3D) et un réseau social (X/Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : « Gemini 4 Pro checkpoints have finally started appearing internally a few days ago. This is the first ever output from the model, internally codenamed &quot;argon&quot;. It took 2.4 minutes on High thinking effort. It has a 256k token &quot;output limit&quot;... » et image d&#x27;un décor de pagode et de cerisiers en fleurs.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de fuites d&#x27;informations et de comparaisons entre modèles d&#x27;IA (Opus 5.2 et Gemini 4 Pro).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_024_00-04-18.jpg" alt="Capture d&#x27;écran divisée en deux montrant un éditeur de code et une interface de prévisualisation 3D d&#x27;une Formule 1 à gauche, et une scène maritime interactive à droite portant la mention « Made by Opus 5.2 »." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_024_00-04-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:18</span>
+                        <span class="caption-text">Capture d&#x27;écran divisée en deux montrant un éditeur de code et une interface de prévisualisation 3D d&#x27;une Formule 1 à gauche, et une scène maritime interactive à droite portant la mention « Made by Opus 5.2 ».</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_025_00-04-26.jpg" alt="Capture d&#x27;un tweet du compte X @Lentils80 détaillant la fuite concernant Gemini 4 Pro et son nom de code « Argon », avec une image générée d&#x27;une pagode asiatique sur une île flottante." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_025_00-04-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:26</span>
+                        <span class="caption-text">Capture d&#x27;un tweet du compte X @Lentils80 détaillant la fuite concernant Gemini 4 Pro et son nom de code « Argon », avec une image générée d&#x27;une pagode asiatique sur une île flottante.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:36 - 00:04:56</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Au lieu de générer une image normale, Gemini 4 Pro aurait créé un environnement 3D entièrement explorable. On parle d&#x27;une île japonaise de style Minecraft avec une immense pagode à plusieurs niveaux, des cerisiers en fleurs, des portails torii, de l&#x27;eau, du terrain et toutes sortes de petits détails environnementaux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Visualiseur d&#x27;environnement 3D interactif avec des instructions de contrôle en bas à gauche (&quot;Controls: Left Click + Drag to Rotate...&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Affichage d&#x27;une île voxelisée/style Minecraft comprenant une pagode rouge et grise à plusieurs niveaux, deux cerisiers en fleurs roses, un portail torii rouge, un plan d&#x27;eau et un terrain vallonné. Des filigranes &quot;https://zAI.is&quot; sont visibles en diagonale.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de l&#x27;environnement 3D explorable généré par l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_026_00-04-38.jpg" alt="Capture d&#x27;écran montrant un environnement 3D style Minecraft généré, représentant une île japonaise avec une pagode, des cerisiers et un portail torii." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_026_00-04-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:38</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un environnement 3D style Minecraft généré, représentant une île japonaise avec une pagode, des cerisiers et un portail torii.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:56 - 00:05:33</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Selon la fuite, le modèle a pris environ 2,4 minutes en utilisant un effort de réflexion élevé. Et il y a aussi des affirmations techniques assez folles associées à cette fuite. La publication affirme que Gemini 4 Pro a une limite de sortie de 256k tokens par rapport à 64k sur les modèles Gemini précédents. Et il y a aussi une affirmation selon laquelle Google envisage une fenêtre contextuelle de 2 millions de tokens, bien que la publication elle-même dise que ce n&#x27;est pas finalisé. Nous devons évidemment être prudents ici, ce sont des affirmations de fuite et non des spécifications confirmées de Gemini 4. Mais s&#x27;il s&#x27;agit vraiment d&#x27;un premier point de contrôle de Gemini 4 Pro, Google pourrait</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur les réseaux sociaux (X / Twitter) sur l&#x27;image 1, puis une application web de visualisation et d&#x27;édition de code SVG interactif sur l&#x27;image 2.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1 : Texte parlant de Gemini 4 Pro, du nom de code &#x27;argon&#x27;, du temps de 2,4 minutes avec &#x27;High thinking effort&#x27;, et d&#x27;une limite de sortie de 256k tokens. Sur l&#x27;image 2 : Titre &#x27;Le Pélican Cycliste&#x27;, boutons &#x27;Inspect SVG Code&#x27;, &#x27;Copy SVG Code&#x27;, &#x27;Download .SVG&#x27; et lignes de code SVG en bas de l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur illustre ses propos sur la fuite de Gemini 4 Pro avec la publication X à l&#x27;écran, puis montre un exemple de réalisation ou d&#x27;interface technique connexe.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_027_00-04-58.jpg" alt="Capture d&#x27;écran d&#x27;une publication sur X (Twitter) du compte @Lentils80 concernant des fuites sur les points de contrôle de Gemini 4 Pro et le modèle nommé &#x27;argon&#x27;, incluant une image générée d&#x27;une pagode japonaise en blocs." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_027_00-04-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:58</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication sur X (Twitter) du compte @Lentils80 concernant des fuites sur les points de contrôle de Gemini 4 Pro et le modèle nommé &#x27;argon&#x27;, incluant une image générée d&#x27;une pagode japonaise en blocs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_028_00-05-31.jpg" alt="Interface web montrant une illustration vectorielle interactive d&#x27;un pélican sur un vélo intitulée &#x27;Le Pélican Cycliste&#x27;, avec des options de code SVG et des commandes de lecture." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_028_00-05-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:31</span>
+                        <span class="caption-text">Interface web montrant une illustration vectorielle interactive d&#x27;un pélican sur un vélo intitulée &#x27;Le Pélican Cycliste&#x27;, avec des options de code SVG et des commandes de lecture.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:33 - 00:06:05</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">pousser Gemini au-delà de la simple génération de contenu. Il pourrait évoluer vers la génération d&#x27;environnements interactifs complets. Et honnêtement, c&#x27;est beaucoup plus intéressant que de simplement faire de plus jolies images. Et maintenant, regardez la vue d&#x27;ensemble. Un utilisateur de 1x appelle déjà cela une semaine de lancement, Gemini 4, Grok 4.7, Opus 5.2, la famille GPT-6, et plusieurs modèles chinois. Et puis il y a GPT-6 Sol. Le post affirme que Sol pourrait être bien meilleur que tout le reste tout en étant moins cher,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une application interactive vectorielle SVG (« Le Pélican Cycliste ») et une interface de réseau social (X / Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché sur les images 1 et 2 : « Le Pélican Cycliste » FIG. 01 VECTOR 1K EDITION, « Inspect SVG Code », « Copy SVG Code », « Download .SVG ». Texte de la publication Twitter sur l&#x27;image 3 : « Happy Launch Week, it&#x27;s gonna be crazy week ever as we are expecting alot, &gt; gemini 4, &gt; grok 4.7, &gt; opus 5.2, &gt; gpt 6 family, &gt; few chinese models. I expect 6 sol to be way better then anything and cheaper so everyone can use, which one are you most excited for? » avec le profil de JAZII (@notjazii).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une illustration vectorielle interactive et d&#x27;une publication sur les réseaux sociaux évoquant les lancements majeurs de modèles d&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_029_00-05-35.jpg" alt="Interface web montrant une illustration interactive vectorielle d&#x27;un pélican sur un vélo avec le code SVG en bas." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_029_00-05-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:35</span>
+                        <span class="caption-text">Interface web montrant une illustration interactive vectorielle d&#x27;un pélican sur un vélo avec le code SVG en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_030_00-05-44.jpg" alt="Même interface web montrant l&#x27;illustration interactive vectorielle du pélican cycliste." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_030_00-05-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:44</span>
+                        <span class="caption-text">Même interface web montrant l&#x27;illustration interactive vectorielle du pélican cycliste.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_031_00-05-55.jpg" alt="Capture d&#x27;écran d&#x27;un tweet sur X (Twitter) posté par JAZII listant les lancements de modèles d&#x27;IA attendus." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_031_00-05-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:55</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet sur X (Twitter) posté par JAZII listant les lancements de modèles d&#x27;IA attendus.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:05 - 00:06:40</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">ce qui le rend potentiellement accessible à un bien plus grand nombre de personnes. Encore une fois, nous devons être prudents. Ce sont des attentes et des fuites, pas des spécifications confirmées ni des annonces de lancement. Mais c&#x27;est précisément ce qui rend ce moment si intéressant. Parce qu&#x27;il y a tout juste quelques jours, nous parlions de Dario Amodei demandant à l&#x27;industrie de l&#x27;IA de ralentir. Et maintenant, nous envisageons potentiellement Opus 5.2, Gemini 4, GPT-6, Grok 4.7, de nouveaux modèles chinois, de nouveaux agents IA, et potentiellement toute une vague de nouveaux produits. Donc, au lieu que le développement de l&#x27;IA ne ralentisse</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur le réseau social X (Twitter) et interface de présentation comparative de modèles d&#x27;IA avec illustrations de stations lunaires animées.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Happy Launch Week... it&#x27;s gonna be crazy week ever as we are expecting alot &gt; gemini 4 &gt; grok 4.7 &gt; opus 5.2 &gt; gpt 6 family &gt; few chinese models&quot;. Prompt visible en bas de l&#x27;image 2 : &quot;Generate a richly animated SVG of a whimsical lunar parcel station...&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage successif des prédictions de sorties de modèles d&#x27;IA sur les réseaux sociaux et démonstration comparative des rendus graphiques générés par Opus 5.2 et GPT-6 Astra.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_032_00-06-07.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de JAZII listant les sorties de modèles d&#x27;IA attendues (gemini 4, grok 4.7, opus 5.2, gpt 6 family, few chinese models)." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_032_00-06-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:07</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de JAZII listant les sorties de modèles d&#x27;IA attendues (gemini 4, grok 4.7, opus 5.2, gpt 6 family, few chinese models).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_033_00-06-17.jpg" alt="Comparaison visuelle entre les rendus animés de deux modèles différents, étiquetés &quot;Opus 5.2&quot; et &quot;GPT-6 Astra&quot;, accompagnés d&#x27;un prompt textuel détaillé en bas." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_033_00-06-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:17</span>
+                        <span class="caption-text">Comparaison visuelle entre les rendus animés de deux modèles différents, étiquetés &quot;Opus 5.2&quot; et &quot;GPT-6 Astra&quot;, accompagnés d&#x27;un prompt textuel détaillé en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:40 - 00:07:06</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">...en bas, on dirait que tout le monde appuie sur l&#x27;accélérateur. Et si ne serait-ce que la moitié de ces fuites s&#x27;avèrent réelles, les prochaines semaines pourraient être absolument folles. Alors que vous attendiez GPT-6, Gemini 4, Opus 5.2, Grok 4.7, ou l&#x27;un des modèles chinois, il y a beaucoup à observer. Et je testerai ces modèles, je décortiquerai les sorties, et je séparerai les vraies capacités du battage médiatique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration interactive de modèles d&#x27;IA (Opus 5.2 et GPT-6 Astra), affichant des visualisations de stations spatiales animées et des environnements interactifs en 3D à la première personne avec commandes de navigation (barre de navigation, réglage de tempête, contrôles de voilure).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Opus 5.2&quot;, &quot;GPT-6 Astra&quot;, &quot;Special Delivery&quot;, &quot;LUNAR PARCEL STATION - DOCK 7&quot;, &quot;LITTLE MECHANICAL WONDERS&quot;, &quot;ROVER 03 - IN TRANSIT&quot;, prompt complet en bas de l&#x27;image 1 commençant par &quot;Prompt: Generate a richly animated SVG of a whimsical lunar parcel station...&quot;, &quot;Tempest&#x27;s Heart&quot;, &quot;Made by Opus 5.2&quot;, &quot;TAKE THE HELM / From the tabletop to the deck&quot;, indicateurs de cap (067°, 6.0 KN / 039°, 3.4 KN), options de navigation (Reefed, Half sail, Full sail, Leave the helm), curseur de tempête (&quot;STORM / Force 9 - Strong gale&quot;), boutons &quot;Lightning&quot; et &quot;Sound off&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de démonstrations interactives de code/génération d&#x27;IA (animation vectorielle complexe pour Opus 5.2 et GPT-6 Astra) puis navigation interactive en vue subjective (première personne) à bord d&#x27;un navire virtuel avec des commandes de simulation météo et de voilure.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_034_00-06-42.jpg" alt="Comparaison visuelle entre les interfaces de démonstration de &quot;Opus 5.2&quot; et &quot;GPT-6 Astra&quot; illustrant une station lunaire animée avec un prompt détaillé." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_034_00-06-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:42</span>
+                        <span class="caption-text">Comparaison visuelle entre les interfaces de démonstration de &quot;Opus 5.2&quot; et &quot;GPT-6 Astra&quot; illustrant une station lunaire animée avec un prompt détaillé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_035_00-06-58.jpg" alt="Vue interactive à la première personne depuis le pont d&#x27;un voilier en pleine mer de nuit, titrée &quot;Tempest&#x27;s Heart&quot; et marquée &quot;Made by Opus 5.2&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_035_00-06-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:58</span>
+                        <span class="caption-text">Vue interactive à la première personne depuis le pont d&#x27;un voilier en pleine mer de nuit, titrée &quot;Tempest&#x27;s Heart&quot; et marquée &quot;Made by Opus 5.2&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_036_00-07-04.jpg" alt="Vue interactive similaire depuis le pont du voilier avec un angle de caméra légèrement différent montrant les vagues agitées et le gouvernail." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_036_00-07-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:04</span>
+                        <span class="caption-text">Vue interactive similaire depuis le pont du voilier avec un angle de caméra légèrement différent montrant les vagues agitées et le gouvernail.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:06 - 00:07:15</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous avez apprécié ce rapport de recherche, abonnez-vous à Pursuing AI pour ne pas rater les prochaines vidéos. C&#x27;était Pursuing AI, et je vous dis à la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur de simulation interactive ou d&#x27;application web de navigation avec des commandes de voile (Reefed, Half sail, Full sail), un indicateur de cap (Heading) et de vitesse (KN), ainsi qu&#x27;une barre de contrôle de tempête.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;SHIP IN A BOTTLE - FORCE 6&quot;, &quot;TEMPEST&#x27;S HEART&quot;, &quot;Steer with A and D, trim sails with W and S&quot;, &quot;Made by Opus 5.2&quot;, &quot;FULL SAIL&quot;, &quot;Watch the sails catch the wind&quot;, ainsi que des options de contrôle météo (Storm, Force 9 - Strong gale, Lightning, Sound off).</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation d&#x27;une simulation de navigation interactive sur un bateau naviguant sur une mer agitée sous un ciel nocturne orageux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vE1OOz4XAyA/frame_037_00-07-11.jpg" alt="Capture d&#x27;écran montrant une application interactive ou un jeu de simulation de navigation à bord d&#x27;un voilier en pleine tempête." loading="lazy" onclick="openLightbox('screenshots/YT-vE1OOz4XAyA/frame_037_00-07-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:11</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une application interactive ou un jeu de simulation de navigation à bord d&#x27;un voilier en pleine tempête.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
