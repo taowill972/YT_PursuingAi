@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 GPT-6 Astra est tellement plus puissant qu&#x27;on ne le pensait 🤔 — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 GPT-6 Astra est tellement plus puissant qu&#x27;on ne le pensait 🤔</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-09-06</span>
+                <span class="badge">⏱️ 08m 30s</span>
+                <span class="badge">🆔 <code>1CmH1cXkcj0</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=1CmH1cXkcj0" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* explore les capacités révolutionnaires du modèle « GPT-6 Astra », mis en scène à travers des démonstrations saisissantes allant de la génération 3D complexe au développement de jeux vidéo et au design web. L'analyse démontre comment cette intelligence artificielle dépasse la simple production d'actifs isolés pour orchestrer des structures de données sous-jacentes et des architectures logiques cohérentes. Le créateur adopte une approche méthodique et comparative, décortiquant les résultats de manière séquentielle — de la génération urbaine paramétrique à la modélisation industrielle issue de plans 2D — afin de prouver que l'IA peut structurer des environnements interactifs et modifiables.</p><p>L'analyse de la méthode révèle un processus itératif s'appuyant sur des flux de travail multi-agents et des boucles de rétroaction, permettant de passer d'un simple concept textuel à des applications pleinement fonctionnelles, telles qu'un jeu de conduite urbaine ou un clone de survie inspiré de Minecraft doté d'inventaires et de systèmes de fabrication. La vidéo met également en lumière l'impact des réglages de paramètres sur la qualité finale et illustre l'exécution pas à pas de flux de travail en peinture numérique et en développement front-end. Pour les créateurs de contenu et les développeurs, ces avancées redéfinissent les limites de la productivité, offrant des gains de temps spectaculaires et ouvrant la voie à une personnalisation poussée des environnements virtuels.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">GPT-6</span><span class="tool-tag">flux</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Dépassement du simple prompt** : L&#x27;IA ne génère plus seulement des objets visuels plats, mais structure des environnements dotés de nœuds, de relations logiques et de connexions contextuelles.</span></li><li><span class="point-bullet">✦</span><span>Contrôle et éditabilité des données 3D** : Les utilisateurs peuvent conserver le contrôle sur le placement des éléments environnementaux et modifier en profondeur la disposition proposée par l&#x27;IA.</span></li><li><span class="point-bullet">✦</span><span>Conversion de plans 2D en 3D** : Capacité impressionnante à interpréter des dessins techniques de locomotives pour les transformer en milliers d&#x27;objets modifiables exploitables sous Blender.</span></li><li><span class="point-bullet">✦</span><span>Utilisation de sous-agents en boucles** : Le développement de jeux repose sur des flux de travail itératifs où plusieurs sous-agents collaborent pour traiter des tâches répétitives et complexes.</span></li><li><span class="point-bullet">✦</span><span>Création de mécaniques de jeu complètes** : Au-delà des décors, Astra intègre des systèmes de jeu fonctionnels (interfaces de véhicules, barres de santé, inventaires et systèmes de fabrication).</span></li><li><span class="point-bullet">✦</span><span>Polyvalence des typologies de jeux** : Le modèle prouve sa capacité à s&#x27;adapter à des styles radicalement différents, qu&#x27;il s&#x27;agisse d&#x27;un jeu de course ou d&#x27;un monde de survie en blocs.</span></li><li><span class="point-bullet">✦</span><span>Impact des paramètres de configuration** : La modification des réglages du modèle influence directement la complexité, la densité et la qualité visuelle globale du rendu final.</span></li><li><span class="point-bullet">✦</span><span>Visualisation des processus créatifs** : En peinture numérique, l&#x27;IA démontre sa capacité à construire une œuvre de manière séquentielle (toile, contours, couleurs, détails), offrant un aperçu précieux de sa logique de création.</span></li><li><span class="point-bullet">✦</span><span>Automatisation du développement Front-End** : Génération instantanée de sites web esthétiques complets comprenant navigation, typographie et sections structurées, réduisant le travail de codage initial.</span></li><li><span class="point-bullet">✦</span><span>Piège de l&#x27;échelle industrielle** : Bien que puissants, ces outils génératifs ne remplacent pas encore la complexité inhérente aux productions AAA massives, servant plutôt de puissants accélérateurs de prototypage.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:18</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Salut les gars ! On a eu GPT-6 avant GTA 6, et aujourd&#x27;hui je vais vous montrer ce que GPT-Astra peut réellement générer à travers différentes catégories, de la génération 3D au développement de jeux, en passant par le design web et bien plus encore. Et croyez-moi, certaines des choses qu&#x27;il peut créer sont absolument dingues.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de jeu vidéo (Minecraft) et interfaces de sites web interactifs en 3D et design web.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Mention &quot;*2x speed&quot; sur Minecraft ; titres &quot;Stamford Bridge&quot;, &quot;A corner of London&quot; et options de contrôle en haut et en bas de l&#x27;écran 3D ; en-tête &quot;Art.Car&quot;, texte &quot;FLAWLESS CLEAN FOR YOUR CAR&quot; et statistiques sur le site web.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle de différents types de créations générées par l&#x27;IA, allant d&#x27;une construction dans Minecraft à des interfaces web interactives et de design.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_001_00-00-02.jpg" alt="Un motif géométrique pixelisé complexe affiché dans un jeu vidéo de type Minecraft, avec la mention &quot;*2x speed&quot; en bas à droite." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Un motif géométrique pixelisé complexe affiché dans un jeu vidéo de type Minecraft, avec la mention &quot;*2x speed&quot; en bas à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_002_00-00-09.jpg" alt="Une interface web interactive en 3D représentant le stade de football de Stamford Bridge avec des options de navigation et des commandes vidéo en bas." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_002_00-00-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Une interface web interactive en 3D représentant le stade de football de Stamford Bridge avec des options de navigation et des commandes vidéo en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_003_00-00-16.jpg" alt="Une maquette de site web moderne pour un service de nettoyage de voitures de luxe nommé &quot;Art.Car&quot; avec un curseur de souris visible." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_003_00-00-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:16</span>
+                        <span class="caption-text">Une maquette de site web moderne pour un service de nettoyage de voitures de luxe nommé &quot;Art.Car&quot; avec un curseur de souris visible.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:18 - 00:00:53</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Nous allons examiner ces générations une par une afin que vous puissiez voir par vous-même de quoi ce nouveau modèle est capable. Alors prenez vos chips, installez-vous confortablement et concentrez-vous sur la vidéo car nous avons beaucoup de choses à couvrir. Allez, c&#x27;est parti. C&#x27;est Pursuing AI et vous regardez le Research Report. Alors, commençons par la génération 3D. Et honnêtement, il y a quelque chose de vraiment intéressant à propos de ce premier exemple. À première vue, vous pourriez regarder ceci et vous dire, d&#x27;accord, c&#x27;est une ville 3D générée par IA, mais il y a en fait beaucoup plus de choses qui se passent sous la surface. Nous avons cette ville entière</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme web de visualisation de données 3D &#x27;dat.city&#x27; (world data playground), comportant des menus de districts, une barre de recherche de données et une barre d&#x27;outils de navigation en bas.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;dat.city&quot;, &quot;WORLD DATA PLAYGROUND&quot;, &quot;Districts&quot;, &quot;Search the data...&quot;, et &quot;NOW PLAYING Bricklight Anthem&quot;. Piliers de données en 3D colorés dans des cercles lumineux sur fond de grille de données.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et survol en 3D au-dessus d&#x27;une ville virtuelle, puis basculement vers une vue de visualisation de données souterraines sur la plateforme dat.city.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_004_00-00-20.jpg" alt="Vue aérienne nocturne d&#x27;une ville 3D générée par intelligence artificielle avec des gratte-ciels illuminés." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_004_00-00-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:20</span>
+                        <span class="caption-text">Vue aérienne nocturne d&#x27;une ville 3D générée par intelligence artificielle avec des gratte-ciels illuminés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_005_00-00-30.jpg" alt="Poursuite du survol aérien nocturne de la ville 3D futuriste." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_005_00-00-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:30</span>
+                        <span class="caption-text">Poursuite du survol aérien nocturne de la ville 3D futuriste.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_006_00-00-42.jpg" alt="Interface de la plateforme &#x27;dat.city&#x27; montrant une maquette 3D interactive d&#x27;une ville en journée." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_006_00-00-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Interface de la plateforme &#x27;dat.city&#x27; montrant une maquette 3D interactive d&#x27;une ville en journée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_007_00-00-51.jpg" alt="Vue analytique sous la surface de la plateforme &#x27;dat.city&#x27; affichant des données sous forme de piliers colorés et de cercles lumineux." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_007_00-00-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:51</span>
+                        <span class="caption-text">Vue analytique sous la surface de la plateforme &#x27;dat.city&#x27; affichant des données sous forme de piliers colorés et de cercles lumineux.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:53 - 00:01:27</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">environnement avec différents bâtiments, routes, quartiers, paysages et tous ces éléments différents placés à travers la scène. Et ce qui rend la chose encore plus intéressante, c&#x27;est que le placement de ces éléments n&#x27;est pas complètement aléatoire. L&#x27;utilisateur qui a partagé cette génération nous a également montré un aperçu du graphique d&#x27;arrière-plan de la ville, et c&#x27;est plutôt fou. Vous pouvez voir différents nœuds, relations, quartiers et connexions qui composent l&#x27;environnement. Donc, au lieu de simplement générer un tas d&#x27;objets 3D et de les jeter sur un écran, il y a une structure sous-jacente connectant différentes parties de la ville. Et l&#x27;utilisateur a également mentionné qu&#x27;il peut contrôler le</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de dat.city (World Data Playground) et capture d&#x27;écran du réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de l&#x27;interface dat.city (&quot;dat.city&quot;, &quot;WORLD DATA PLAYGROUND&quot;, &quot;Districts&quot;, &quot;Search the data...&quot;, &quot;NOW PLAYING Bricklight Anthem&quot;). Texte du tweet de Ryan Sael (@RyanSael) : &quot;BUT / I can control the placement however I want. / Here&#x27;s a peak of the backend showing graph for the city:&quot;, avec un schéma de graphe montrant des nœuds et des relations en arrière-plan.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et exploration visuelle de l&#x27;environnement virtuel 3D de dat.city, puis affichage du graphique de données en arrière-plan (backend graph).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_008_00-00-55.jpg" alt="Vue aérienne détaillée d&#x27;un environnement urbain virtuel 3D généré sur la plateforme dat.city." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_008_00-00-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:55</span>
+                        <span class="caption-text">Vue aérienne détaillée d&#x27;un environnement urbain virtuel 3D généré sur la plateforme dat.city.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_009_00-01-05.jpg" alt="Vue d&#x27;ensemble sur une île urbaine 3D avec des gratte-ciels et une montagne au centre." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_009_00-01-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:05</span>
+                        <span class="caption-text">Vue d&#x27;ensemble sur une île urbaine 3D avec des gratte-ciels et une montagne au centre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_010_00-01-16.jpg" alt="Vue en gros plan du graphique de données sous-jacent représentant les nœuds et connexions de la ville." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_010_00-01-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:16</span>
+                        <span class="caption-text">Vue en gros plan du graphique de données sous-jacent représentant les nœuds et connexions de la ville.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_011_00-01-25.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Ryan Sael montrant le graphique de l&#x27;architecture backend de la ville." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_011_00-01-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:25</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Ryan Sael montrant le graphique de l&#x27;architecture backend de la ville.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:27 - 00:02:04</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">le placement comme vous voulez. C&#x27;est important parce que vous n&#x27;êtes pas nécessairement bloqué avec la disposition que l&#x27;IA vous donne. Vous pouvez réellement contrôler où vont les différents éléments et comment l&#x27;environnement est organisé. Et il y a aussi cette autre vue où vous pouvez voir les différents districts représentés sous forme de groupes séparés de structures 3D. Donc quand vous mettez tout cela ensemble, cela devient beaucoup plus intéressant que de simplement dire que l&#x27;IA a généré une ville en 3D. Nous examinons un environnement doté d&#x27;une structure de données sous-jacente, de relations entre les différents éléments et d&#x27;un contrôle sur la façon dont ces éléments sont positionnés. Et c&#x27;est là que le contenu 3D généré par l&#x27;IA commence à devenir vraiment intéressant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web &quot;dat.city&quot; (World Data Playground) avec interface de navigation 3D et barres d&#x27;outils de visualisation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de Ryan Sael (&quot;BUT I can control the placement however I want. Here&#x27;s a peak of the backend showing graph for the city:&quot;), graphe de nœuds et liens de données, interface de dat.city avec barres de recherche, boutons de districts et lecteur audio (&quot;NOW PLAYING Bricklight Anthem&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et basculement entre la vue 3D de la ville urbaine interactive, le graphe de données sous-jacent et la vue des districts sous forme de structures 3D.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_012_00-01-29.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Ryan Sael montrant le graphe backend de la ville avec ses connexions." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_012_00-01-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:29</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Ryan Sael montrant le graphe backend de la ville avec ses connexions.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_013_00-01-40.jpg" alt="Vue d&#x27;ensemble de l&#x27;interface de l&#x27;application dat.city montrant une ville 3D générée avec des bâtiments et des icônes." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_013_00-01-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:40</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de l&#x27;interface de l&#x27;application dat.city montrant une ville 3D générée avec des bâtiments et des icônes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_014_00-01-52.jpg" alt="Vue alternative de dat.city montrant les différents districts représentés par des groupes de structures 3D colorées sur un fond sombre de données." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_014_00-01-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:52</span>
+                        <span class="caption-text">Vue alternative de dat.city montrant les différents districts représentés par des groupes de structures 3D colorées sur un fond sombre de données.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_015_00-02-02.jpg" alt="Autre angle de vue de la ville 3D interactive dans l&#x27;application dat.city avec une palette de couleurs différente pour les bâtiments." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_015_00-02-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:02</span>
+                        <span class="caption-text">Autre angle de vue de la ville 3D interactive dans l&#x27;application dat.city avec une palette de couleurs différente pour les bâtiments.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:04 - 00:02:25</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Imaginez pouvoir décrire le genre de monde que vous voulez, demander à l&#x27;IA de construire l&#x27;environnement initial, puis d&#x27;entrer à l&#x27;intérieur de cet environnement et de le modifier comme vous le souhaitez. Cela peut être utile pour le développement de jeux, les simulations, la visualisation, les sites web interactifs, et bien plus encore. Et rappelez-vous, ce n&#x27;est qu&#x27;un exemple. Vous pouvez réellement essayer cela par vous-même. Le lien est dans la description.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme web interactive dat.city (&quot;World Data Playground&quot;) avec barre de recherche, menu des districts et barre d&#x27;outils de navigation en bas d&#x27;écran. Capture d&#x27;écran d&#x27;un tweet du compte de Ryan Sael.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;dat.city&quot;, &quot;WORLD DATA PLAYGROUND&quot;, &quot;Search the data...&quot;, &quot;Districts&quot;, &quot;NOW PLAYING Bricklight Anthem&quot;, et sur le tweet &quot;Ryan Sael @RyanSael&quot;, &quot;Follow&quot;, &quot;dat.city — World Data Playground&quot;, &quot;From dat.city&quot;. Icônes de géants de la tech (Apple, Google, Nvidia, Microsoft).</p>
+                        <p><strong>Action / Démonstration :</strong> Exploration interactive en 3D d&#x27;une ville virtuelle générée par IA montrant différents districts, avec affichage d&#x27;icônes d&#x27;entreprises, puis affichage d&#x27;une publication Twitter illustrant le projet.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_016_00-02-06.jpg" alt="Vue aérienne interactive de la ville virtuelle sur la plateforme dat.city." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_016_00-02-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:06</span>
+                        <span class="caption-text">Vue aérienne interactive de la ville virtuelle sur la plateforme dat.city.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_017_00-02-15.jpg" alt="Vue de la ville virtuelle sur dat.city avec des icônes d&#x27;entreprises technologiques au sommet des tours." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_017_00-02-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:15</span>
+                        <span class="caption-text">Vue de la ville virtuelle sur dat.city avec des icônes d&#x27;entreprises technologiques au sommet des tours.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_018_00-02-23.jpg" alt="Publication sur le réseau social X (Twitter) de Ryan Sael montrant une capture d&#x27;écran de dat.city." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_018_00-02-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:23</span>
+                        <span class="caption-text">Publication sur le réseau social X (Twitter) de Ryan Sael montrant une capture d&#x27;écran de dat.city.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:26 - 00:02:58</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Passons donc à une autre génération 3D. Et celle-ci adopte une approche complètement différente. Un créateur a pris un vieux dessin technique d&#x27;une locomotive à vapeur et l&#x27;a donné à Astra pour le reconstruire dans Blender. Et regardez simplement le résultat. Selon le créateur, Astra a généré 3 295 objets entièrement modifiables pour recréer le train. Et la partie vraiment cool, c&#x27;est que vous pouvez séparer le modèle en différentes parties et travailler réellement avec elles. Donc, au lieu d&#x27;obtenir un seul modèle 3D plat, vous obtenez quelque chose qui peut être édité et modifié à l&#x27;intérieur de Blender. Vous pouvez également contrôler</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (Twitter) et du logiciel de modélisation 3D Blender.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes des tweets de Ryan Sael et Tom Krcha (« So how good really is GPT-6 Astra at 3D modeling? I took an old drawing of a steam train... »), arborescence des calques Blender listant les 3 295 objets (ex: &#x27;Axle 1 horn guide&#x27;, &#x27;Bell open bronze casting&#x27;).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de publications sur les réseaux sociaux et navigation/visualisation d&#x27;un modèle 3D complexe composé de milliers d&#x27;objets dans Blender.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_019_00-02-28.jpg" alt="Publication sur X (Twitter) du compte Ryan Sael montrant une interface graphique avec des graphiques de données en anneau." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_019_00-02-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:28</span>
+                        <span class="caption-text">Publication sur X (Twitter) du compte Ryan Sael montrant une interface graphique avec des graphiques de données en anneau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_020_00-02-37.jpg" alt="Interface du logiciel Blender affichant le modèle 3D filaire d&#x27;une locomotive à vapeur et son arborescence de 3 295 objets modifiables." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_020_00-02-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:37</span>
+                        <span class="caption-text">Interface du logiciel Blender affichant le modèle 3D filaire d&#x27;une locomotive à vapeur et son arborescence de 3 295 objets modifiables.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_021_00-02-48.jpg" alt="Capture d&#x27;un tweet de Tom Krcha détaillant le processus de modélisation 3D d&#x27;une locomotive à vapeur par Astra dans Blender, avec une capture d&#x27;écran du résultat." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_021_00-02-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:48</span>
+                        <span class="caption-text">Capture d&#x27;un tweet de Tom Krcha détaillant le processus de modélisation 3D d&#x27;une locomotive à vapeur par Astra dans Blender, avec une capture d&#x27;écran du résultat.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:58 - 00:03:18</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">à quel point vous voulez que le modèle final soit détaillé ou simplifié. Maintenant, évidemment, ce n&#x27;est pas parfait, il y a encore des zones qui nécessitent un travail supplémentaire. Mais le fait qu&#x27;Astra puisse prendre un dessin technique 2D et le transformer en un modèle 3D complexe et modifiable est vraiment impressionnant, et cela vous donne une assez bonne idée de la direction que pourrait prendre la modélisation 3D assistée par IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de modélisation 3D Blender (version 5.1.2) affichant une arborescence de scène détaillée, une fenêtre de visualisation 3D en mode filaire et ombré, ainsi qu&#x27;une fenêtre contextuelle montrant le plan technique 2D d&#x27;origine (train.jpg).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface complète de Blender avec le panneau &quot;Scene Collection&quot; listant les différents composants de la locomotive (frames &amp; suspension, axle horn guide, driver suspension, etc.), la timeline en bas, et l&#x27;arborescence des calques.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et inspection des différents éléments géométriques du modèle 3D de la locomotive dans l&#x27;espace de travail Blender, démontrant la structure éditable générée par l&#x27;outil d&#x27;IA Astra.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_022_00-03-00.jpg" alt="Vue d&#x27;ensemble dans Blender montrant le modèle 3D d&#x27;une locomotive à vapeur généré à partir d&#x27;un dessin technique 2D affiché en incrustation." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_022_00-03-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:00</span>
+                        <span class="caption-text">Vue d&#x27;ensemble dans Blender montrant le modèle 3D d&#x27;une locomotive à vapeur généré à partir d&#x27;un dessin technique 2D affiché en incrustation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_023_00-03-08.jpg" alt="Gros plan dans Blender mettant en surbrillance en orange la structure filaire de la chaudière de la locomotive, montrant la complexité de la géométrie 3D." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_023_00-03-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:08</span>
+                        <span class="caption-text">Gros plan dans Blender mettant en surbrillance en orange la structure filaire de la chaudière de la locomotive, montrant la complexité de la géométrie 3D.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_024_00-03-16.jpg" alt="Vue de l&#x27;éditeur 3D Blender affichant la sélection d&#x27;un dôme ou d&#x27;un élément spécifique de la locomotive en surbrillance orange." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_024_00-03-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:16</span>
+                        <span class="caption-text">Vue de l&#x27;éditeur 3D Blender affichant la sélection d&#x27;un dôme ou d&#x27;un élément spécifique de la locomotive en surbrillance orange.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:18 - 00:03:42</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais le prochain exemple pousse cette idée encore plus loin. Et ensuite le joueur monte dans la voiture. Maintenant nous roulons à travers la ville, et vous pouvez voir le trafic, les bâtiments, les routes et l&#x27;environnement qui changent à mesure que le joueur se déplace. Il y a même une interface de véhicule affichant des éléments comme la vitesse, le rapport de vitesse et l&#x27;option de quitter le véhicule. Et c&#x27;est là que cela commence à ressembler davantage à un vrai jeu plutôt qu&#x27;à une simple démo 3D.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel 3D Blender et moteur de jeu interactif avec interface utilisateur (HUD, mini-carte, indicateur de vitesse).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Blocs de code/interface Blender, plaques d&#x27;immatriculation, indication &quot;E EXIT VEHICLE&quot;, vitesse en km/h, rapport engagé (GEAR 1), carte de navigation avec noms de zones urbaines.
+[DESC_ACTION] Navigation dans Blender puis démonstration en temps réel d&#x27;un jeu vidéo interactif avec conduite de véhicule et affichage d&#x27;une carte de navigation.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_025_00-03-20.jpg" alt="Interface du logiciel Blender affichant le modèle 3D filaire d&#x27;une locomotive à vapeur." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_025_00-03-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:20</span>
+                        <span class="caption-text">Interface du logiciel Blender affichant le modèle 3D filaire d&#x27;une locomotive à vapeur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_026_00-03-26.jpg" alt="Vue de jeu en mondes virtuels montrant une voiture en mouvement dans une rue urbaine avec une interface de véhicule (vitesse, rapport, mini-carte)." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_026_00-03-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:26</span>
+                        <span class="caption-text">Vue de jeu en mondes virtuels montrant une voiture en mouvement dans une rue urbaine avec une interface de véhicule (vitesse, rapport, mini-carte).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_027_00-03-34.jpg" alt="Vue de jeu similaire avec la voiture accélérant, modifiant l&#x27;affichage de la vitesse (36 km/h) et l&#x27;environnement urbain." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_027_00-03-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:34</span>
+                        <span class="caption-text">Vue de jeu similaire avec la voiture accélérant, modifiant l&#x27;affichage de la vitesse (36 km/h) et l&#x27;environnement urbain.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_028_00-03-40.jpg" alt="Affichage en plein écran d&#x27;une carte interactive de jeu nommée &quot;MAP&quot; indiquant différents quartiers (The Foundry, Crown Mile, Sunset Strand)." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_028_00-03-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:40</span>
+                        <span class="caption-text">Affichage en plein écran d&#x27;une carte interactive de jeu nommée &quot;MAP&quot; indiquant différents quartiers (The Foundry, Crown Mile, Sunset Strand).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:42 - 00:04:03</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le créateur a également mentionné l&#x27;utilisation de multiples sous-agents en boucles lors de la construction du jeu. Donc au lieu de penser à l&#x27;IA comme écrivant simplement un bout de code et s&#x27;arrêtant là, vous examinez un flux de travail où différentes tâches peuvent être traitées de manière répétée. Maintenant, ce n&#x27;est évidemment pas GTA 6. L&#x27;échelle et la complexité d&#x27;un jeu AAA massif se situent à un tout autre niveau.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur la plateforme X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Publication de l&#x27;utilisateur @rick_boers affirmant : &quot;I just made this GTA 6 clone with ChatGPT 6 Astra on Ultra setting. I used a lot of subagents in loops and it looks so good! The graphics are like of games that cost millions...&quot; Accompagné d&#x27;une image/vidéo du jeu montrant une voiture sur une route entre des immeubles.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran de la publication sur les réseaux sociaux pour illustrer le post du créateur concernant la création de jeux par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_029_00-03-44.jpg" alt="Publication Twitter/X de Rick Boers montrant une capture d&#x27;écran d&#x27;un clone de GTA 6 généré par IA et le texte décrivant son utilisation de sous-agents." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_029_00-03-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:44</span>
+                        <span class="caption-text">Publication Twitter/X de Rick Boers montrant une capture d&#x27;écran d&#x27;un clone de GTA 6 généré par IA et le texte décrivant son utilisation de sous-agents.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:03 - 00:04:24</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais ce n&#x27;est pas vraiment le sujet. Ce qui est intéressant, c&#x27;est que quelqu&#x27;un puisse passer d&#x27;une idée à un jeu 3D jouable avec une ville, des véhicules, de la circulation, des personnages, une interface utilisateur et des systèmes de jeu, et cela montre comment l&#x27;IA pourrait commencer à devenir utile dans des parties beaucoup plus importantes du processus de développement de jeux. Et nous n&#x27;en avons pas fini avec les jeux, car le prochain exemple va dans une direction complètement différente.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration visuelle d&#x27;un moteur de jeu 3D ou d&#x27;un prototype de jeu vidéo généré par IA montrant des environnements urbains interactifs.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Environnement virtuel 3D texturé comprenant des bâtiments urbains, des véhicules (voitures, vans), du trafic routier, des lampadaires, de la végétation et des personnages modélisés.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement fluide de la caméra à travers différents angles de vue (rue, aérienne, place publique) au sein de la ville 3D interactive générée par IA pour illustrer le potentiel des outils de développement de jeux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_030_00-04-05.jpg" alt="Vue au niveau de la rue dans un environnement de jeu 3D généré par IA, montrant des immeubles, des lampadaires, des voitures en circulation et un aperçu de la mer à l&#x27;horizon." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_030_00-04-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:05</span>
+                        <span class="caption-text">Vue au niveau de la rue dans un environnement de jeu 3D généré par IA, montrant des immeubles, des lampadaires, des voitures en circulation et un aperçu de la mer à l&#x27;horizon.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_031_00-04-13.jpg" alt="Vue aérienne en plongée (drone) d&#x27;une ville 3D générée par IA dense avec de grands gratte-ciels en verre, des rues quadrillées et un parking rempli de véhicules." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_031_00-04-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:13</span>
+                        <span class="caption-text">Vue aérienne en plongée (drone) d&#x27;une ville 3D générée par IA dense avec de grands gratte-ciels en verre, des rues quadrillées et un parking rempli de véhicules.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_032_00-04-22.jpg" alt="Vue horizontale au niveau du sol d&#x27;une place urbaine d&#x27;un jeu 3D, montrant des bâtiments aux façades variées, du mobilier urbain, des véhicules garés et des personnages non-joueurs (PNJ) debout sur le trottoir." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_032_00-04-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:22</span>
+                        <span class="caption-text">Vue horizontale au niveau du sol d&#x27;une place urbaine d&#x27;un jeu 3D, montrant des bâtiments aux façades variées, du mobilier urbain, des véhicules garés et des personnages non-joueurs (PNJ) debout sur le trottoir.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:24 - 00:04:46</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous avez déjà joué à Minecraft, celui-ci va vous sembler plutôt familier. Il s&#x27;agit d&#x27;un jeu de survie de style Minecraft généré avec Astra. Vous avez un monde basé sur des blocs avec des montagnes, des arbres, de l&#x27;eau, des maisons, des fermes et différentes zones que vous pouvez explorer. Mais il ne s&#x27;agit pas seulement de se promener. Il y a un inventaire, une barre d&#x27;accès rapide, des barres de santé et de faim, différents objets et même un système de fabrication.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Jeu vidéo de type Minecraft généré par Astra / Interface utilisateur de jeu de survie (barre de vie, faim, inventaire, menu de craft).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Éléments de jeu textuels et visuels : nom &quot;WILDWOOD&quot;, barres de vie (coeurs) et de faim, grille de fabrication 3x3, inventaire contenant 3 bâtons et 12 blocs de bois, commandes affichées en bas de l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Exploration d&#x27;un monde virtuel généré par IA et affichage des différentes interfaces de jeu (inventaire et craft).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_033_00-04-26.jpg" alt="Vue d&#x27;une rue urbaine avec des voitures et des bâtiments, générée par intelligence artificielle." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_033_00-04-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:26</span>
+                        <span class="caption-text">Vue d&#x27;une rue urbaine avec des voitures et des bâtiments, générée par intelligence artificielle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_034_00-04-32.jpg" alt="Vue de gameplay dans un monde de type Minecraft avec des collines verdoyantes, des arbres et une maison en bois." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_034_00-04-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:32</span>
+                        <span class="caption-text">Vue de gameplay dans un monde de type Minecraft avec des collines verdoyantes, des arbres et une maison en bois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_035_00-04-39.jpg" alt="Vue en mouvement montrant le personnage explorant le paysage pixelisé avec des animaux et un bâtiment en bois." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_035_00-04-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:39</span>
+                        <span class="caption-text">Vue en mouvement montrant le personnage explorant le paysage pixelisé avec des animaux et un bâtiment en bois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_036_00-04-44.jpg" alt="Affichage de l&#x27;interface de fabrication (crafting) et de l&#x27;inventaire avec des objets en blocs de bois et des bâtons." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_036_00-04-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:44</span>
+                        <span class="caption-text">Affichage de l&#x27;interface de fabrication (crafting) et de l&#x27;inventaire avec des objets en blocs de bois et des bâtons.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:46 - 00:05:11</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez réellement voir le joueur fabriquer une pioche puis l&#x27;utiliser tout en explorant le monde. Et c&#x27;est ce qui rend cet exemple intéressant. Nous ne regardons pas seulement un environnement généré. de multiples systèmes de jeu travaillant ensemble pour créer une véritable expérience jouable. Nous avons déjà vu le jeu de style GTA, et maintenant nous regardons un type de jeu complètement différent avec des mécaniques complètement différentes, et c&#x27;est ce que je voulais mettre en valeur ici.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du jeu vidéo &quot;WILDWOOD&quot; (survival sandbox) comprenant une barre d&#x27;inventaire rapide en bas, des indicateurs de santé/vies, des contrôles affichés en bas à gauche et un menu d&#x27;inventaire/coffre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du logo &quot;WILDWOOD - SURVIVAL SANDBOX&quot;, commandes clavier en bas à gauche (WASD: move, SPACE: jump, TAB: inventory, etc.), interface de coffre (Chest) avec divers matériaux et icônes d&#x27;objets, et nom du lieu &quot;Oakridge Village&quot; en haut à droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Le joueur explore le monde, manie une pioche en bois, interagit avec des coffres pour gérer son inventaire et récolte des ressources dans un champ de blé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_037_00-04-48.jpg" alt="Vue à la première personne dans le jeu &quot;WILDWOOD&quot; montrant un village avec des maisons en bois et un joueur tenant un outil." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_037_00-04-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:48</span>
+                        <span class="caption-text">Vue à la première personne dans le jeu &quot;WILDWOOD&quot; montrant un village avec des maisons en bois et un joueur tenant un outil.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_038_00-04-55.jpg" alt="Gros plan sur le personnage tenant une pioche en bois près d&#x27;un établi en bois dans le village." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_038_00-04-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:55</span>
+                        <span class="caption-text">Gros plan sur le personnage tenant une pioche en bois près d&#x27;un établi en bois dans le village.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_039_00-05-03.jpg" alt="Interface d&#x27;inventaire et de coffre montrant différents objets, matériaux et blocs dans le jeu." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_039_00-05-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:03</span>
+                        <span class="caption-text">Interface d&#x27;inventaire et de coffre montrant différents objets, matériaux et blocs dans le jeu.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_040_00-05-09.jpg" alt="Le joueur utilise la pioche pour récolter du blé dans un champ cultivé du jeu." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_040_00-05-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:09</span>
+                        <span class="caption-text">Le joueur utilise la pioche pour récolter du blé dans un champ cultivé du jeu.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:11 - 00:05:46</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Astra n&#x27;est pas limité à un seul type de jeu. Il peut générer des expériences très différentes selon ce que vous lui demandez de créer. Mais il y a une comparaison supplémentaire intéressante à examiner. Ici, nous avons le même type de génération de jeu exécuté avec différents paramètres d&#x27;Astra, et vous pouvez immédiatement remarquer certaines différences. Le paramètre le plus élevé produit un résultat plus détaillé et soigné, en particulier dans l&#x27;environnement et la qualité visuelle globale. Le paramètre moyen est plus simple, mais il est toujours capable de produire l&#x27;expérience de jeu de base. Cela vous donne donc une assez bonne idée de la façon dont la modification des paramètres du modèle peut affecter la génération finale. Et honnêtement, si le moyen</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de jeu vidéo généré par IA (moteur Astra / style Minecraft et jeu de plateforme 3D).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;WILDWOOD&quot; en haut à gauche, barre d&#x27;inventaire et de santé en bas. Sur l&#x27;image 2, texte &quot;GPT-6-Astra (Max)&quot; et &quot;GPT-6-Astra (Medium)&quot; avec des compteurs de score et un personnage bleu de type Sonic en train de courir.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration comparative d&#x27;un jeu généré par IA montrant un gameplay à la première personne (style Minecraft) puis une comparaison côte à côte entre deux réglages de modèle différents (Max vs Medium).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_041_00-05-13.jpg" alt="Capture d&#x27;écran montrant un jeu de type Minecraft généré par IA dans un style voxel avec une pioche à la première personne et l&#x27;interface &quot;Wildwood&quot; en haut à gauche." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_041_00-05-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:13</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un jeu de type Minecraft généré par IA dans un style voxel avec une pioche à la première personne et l&#x27;interface &quot;Wildwood&quot; en haut à gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_042_00-05-23.jpg" alt="Capture d&#x27;écran divisée en deux comparant deux versions d&#x27;un jeu de course généré par IA : &quot;GPT-6-Astra (Max)&quot; en haut et &quot;GPT-6-Astra (Medium)&quot; en bas." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_042_00-05-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:23</span>
+                        <span class="caption-text">Capture d&#x27;écran divisée en deux comparant deux versions d&#x27;un jeu de course généré par IA : &quot;GPT-6-Astra (Max)&quot; en haut et &quot;GPT-6-Astra (Medium)&quot; en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:46 - 00:06:21</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">la version peut déjà produire quelque chose comme ça, la version haut de gamme devient assez intéressante. Mais maintenant, laissons de côté le développement de jeux pendant un moment et examinons quelque chose de complètement différent. Ce prochain exemple est un flux de travail de peinture numérique. Et au lieu de simplement vous montrer l&#x27;image finale, Astra construit réellement l&#x27;œuvre d&#x27;art étape par étape. Vous pouvez la voir commencer par une toile de base, puis construire le contour, ajouter les couleurs, travailler sur les cheveux et les vêtements, et ajouter progressivement les plus petits détails. Et à la fin, cela se transforme en cette illustration complète de Hatsune Miku. Ce que je trouve intéressant ici, c&#x27;est que vous voyez le processus plutôt</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface logicielle de &quot;Code Paint&quot; pour la peinture numérique générée par code, ainsi qu&#x27;une interface de test de jeu montrant les performances de modèles (&quot;GPT-6-Astra&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;GPT-6-Astra (Max)&quot;, &quot;GPT-6-Astra (Medium)&quot;, &quot;NICE RUN!&quot;, &quot;00:24.59&quot;, &quot;CODE PAINT&quot;, &quot;初音ミク&quot; (Hatsune Miku), lignes de code JavaScript pour le dessin de canvas (ex: `ctx.moveTo`), et liste des étapes du processus artistique (fond de toile, contours, couleurs, cheveux, vêtements).</p>
+                        <p><strong>Action / Démonstration :</strong> Le flux de travail numérique montre la génération et le tracé progressifs d&#x27;une illustration étape par étape, passant d&#x27;un simple contour à un dessin entièrement coloré, accompagné de contrôles de lecture et de vitesse (2X).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_043_00-05-48.jpg" alt="Démonstration comparative de gameplay montrant le personnage Sonic en train de courir sur des îles flottantes, généré par &quot;GPT-6-Astra (Max)&quot; en haut et &quot;GPT-6-Astra (Medium)&quot; en bas avec un écran de fin de course." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_043_00-05-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:48</span>
+                        <span class="caption-text">Démonstration comparative de gameplay montrant le personnage Sonic en train de courir sur des îles flottantes, généré par &quot;GPT-6-Astra (Max)&quot; en haut et &quot;GPT-6-Astra (Medium)&quot; en bas avec un écran de fin de course.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_044_00-05-58.jpg" alt="Interface de l&#x27;application de peinture numérique &quot;Code Paint&quot; montrant la création étape par étape d&#x27;une illustration de Hatsune Miku, avec le tracé des contours en cours et un panneau latéral de code et de calques." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_044_00-05-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:58</span>
+                        <span class="caption-text">Interface de l&#x27;application de peinture numérique &quot;Code Paint&quot; montrant la création étape par étape d&#x27;une illustration de Hatsune Miku, avec le tracé des contours en cours et un panneau latéral de code et de calques.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_045_00-06-19.jpg" alt="Interface de l&#x27;application &quot;Code Paint&quot; affichant l&#x27;illustration presque complète et colorée de Hatsune Miku avec ses couettes turquoises, ses vêtements détaillés et les outils de pilotage du processus." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_045_00-06-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:19</span>
+                        <span class="caption-text">Interface de l&#x27;application &quot;Code Paint&quot; affichant l&#x27;illustration presque complète et colorée de Hatsune Miku avec ses couettes turquoises, ses vêtements détaillés et les outils de pilotage du processus.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:21 - 00:06:54</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">que le résultat final. Ça montre essentiellement comment un système d&#x27;IA peut aborder une œuvre d&#x27;art numérique étape par étape. Et maintenant, passons à une autre grande catégorie : le développement front-end. Et celle-ci est assez impressionnante parce qu&#x27;Astra peut prendre une idée et la transformer en site web complet. Ici, vous pouvez voir qu&#x27;il a créé un site web complet de préparation esthétique automobile avec navigation, typographie, statistiques, différentes sections et un grand visuel juste au centre. Et la partie intéressante, c&#x27;est que ça ne ressemble pas seulement à une page basique générée par IA. Les différents éléments fonctionnent réellement ensemble pour former un</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de création artistique Code Paint et navigateur web affichant un site web généré par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code Paint (Hatsune Miku, Canvas 2D / Local, 01:18, code JS/HTML visible). Site web &quot;Art.Car&quot; avec navigation (Home, About, Services, Contact), titre &quot;FLAWLESS CLEAN FOR YOUR CAR&quot;, statistiques (15K+, 500+, 7, 98%) et menu de services (&quot;Ceramic Coating 9H&quot;, &quot;Full Exterior Polish&quot;, &quot;Paint Correction &amp; Restore&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration du processus de création d&#x27;une œuvre étape par étape, transition textuelle, puis présentation interactive d&#x27;un site web complet généré par IA avec navigation entre les sections et affichage des détails.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_046_00-06-23.jpg" alt="Interface de programmation de Code Paint montrant la création étape par étape d&#x27;une illustration style anime de Hatsune Miku" loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_046_00-06-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:23</span>
+                        <span class="caption-text">Interface de programmation de Code Paint montrant la création étape par étape d&#x27;une illustration style anime de Hatsune Miku</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_047_00-06-32.jpg" alt="Titre de transition affichant &quot;FRONTEND DEVELOPMENT&quot; en lettres découpées sur fond bleu" loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_047_00-06-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:32</span>
+                        <span class="caption-text">Titre de transition affichant &quot;FRONTEND DEVELOPMENT&quot; en lettres découpées sur fond bleu</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_048_00-06-43.jpg" alt="Section de services sur fond rouge d&#x27;un site web de detailing automobile généré par IA, montrant différentes prestations et tarifs" loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_048_00-06-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:43</span>
+                        <span class="caption-text">Section de services sur fond rouge d&#x27;un site web de detailing automobile généré par IA, montrant différentes prestations et tarifs</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_049_00-06-52.jpg" alt="Page d&#x27;accueil complète d&#x27;un site web de detailing automobile (&quot;Art.Car&quot;) avec navigation, titre principal, statistiques et image centrale d&#x27;une voiture ancienne rouge" loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_049_00-06-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:52</span>
+                        <span class="caption-text">Page d&#x27;accueil complète d&#x27;un site web de detailing automobile (&quot;Art.Car&quot;) avec navigation, titre principal, statistiques et image centrale d&#x27;une voiture ancienne rouge</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:54 - 00:07:25</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">un design complet. Donc au lieu de commencer avec un écran vide et de construire chaque section manuellement, vous pouvez donner une idée à l&#x27;IA et obtenir quelque chose qui ressemble déjà beaucoup plus à un site web fini. Et ce n&#x27;est qu&#x27;un exemple. Voici une autre génération de front-end, et celle-ci prend une direction complètement différente. Vous pouvez voir une interface propre et interactive avec un style visuel et une mise en page complètement différents. Et c&#x27;est ce que j&#x27;aime dans ces exemples. Astra ne se contente pas de répéter le même modèle de site web, il peut adapter le design en fonction de ce que vous lui demandez de construire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un design de site web et une publication sur le réseau social X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Art.Car&quot;, &quot;FLAWLESS CLEAN FOR YOUR CAR&quot;, &quot;Ceramic Coating 9H $850&quot;, &quot;GPT-6 Astra Is Finally Here (And It&#x27;s REALLY Good)&quot;, &quot;One-shot anything.&quot;, profil de Viktor Oddy (@viktoroddy), post d&#x27;OpenAI. Sur la troisième image : &quot;Engineered for the Demands of Tomorrow&quot;, &quot;How we manage your network efficiently&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement et présentation visuelle de différents modèles de sites web générés par l&#x27;intelligence artificielle Astra, illustrant la diversité des designs et des mises en page.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_050_00-06-56.jpg" alt="Aperçu rapproché d&#x27;un design de site web automobile généré par IA, montrant le titre principal et les options de service en surbrillance violette." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_050_00-06-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:56</span>
+                        <span class="caption-text">Aperçu rapproché d&#x27;un design de site web automobile généré par IA, montrant le titre principal et les options de service en surbrillance violette.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_051_00-07-05.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Viktor Oddy présentant le site &#x27;Art.Car&#x27; généré par GPT-6 Astra, avec l&#x27;interface X (Twitter) sur le côté droit." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_051_00-07-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:05</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Viktor Oddy présentant le site &#x27;Art.Car&#x27; généré par GPT-6 Astra, avec l&#x27;interface X (Twitter) sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_052_00-07-15.jpg" alt="Aperçu d&#x27;un autre design de site web front-end interactif avec un style visuel et une mise en page épurés, axé sur l&#x27;optimisation réseau." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_052_00-07-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:15</span>
+                        <span class="caption-text">Aperçu d&#x27;un autre design de site web front-end interactif avec un style visuel et une mise en page épurés, axé sur l&#x27;optimisation réseau.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:26 - 00:07:59</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et honnêtement, après avoir vu tous ces exemples, nous avons couvert pas mal de choses. Et cela nous amène à la fin de notre regard sur GPT-6 Astra. Nous avons commencé par la génération 3D, puis sommes passés à Blender, au développement de jeux, à l&#x27;art numérique, et enfin au développement front-end. Et à travers tous ces exemples, une chose devient assez claire. L&#x27;IA va au-delà de la simple génération de pièces de contenu individuelles. Nous commençons à la voir fonctionner avec des environnements plus complexes, des flux de travail plus longs, de multiples outils et des expériences interactives réelles. Bien sûr, il y a encore des limitations,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, logiciel Blender, outils de simulation de ville et applications de génération 3D/graphique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes &quot;Engineered for the Demands of Tomorrow&quot;, &quot;How we manage your network efficiently&quot;, affichage de visualisations de données, interface Blender avec modélisation de train, mini-carte GPS et graphismes de paon en 3D.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation récapitulative des différents domaines d&#x27;application de l&#x27;IA (3D, Blender, jeux, art, front-end) à travers une grille d&#x27;interfaces dynamiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_053_00-07-28.jpg" alt="Page web affichant un site technologique avec des graphismes abstraits et colorés." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_053_00-07-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:28</span>
+                        <span class="caption-text">Page web affichant un site technologique avec des graphismes abstraits et colorés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_054_00-07-37.jpg" alt="Collage d&#x27;interfaces multiples montrant une carte de ville interactive, un logiciel 3D (Blender) et une simulation de conduite urbaine en vue subjective." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_054_00-07-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:37</span>
+                        <span class="caption-text">Collage d&#x27;interfaces multiples montrant une carte de ville interactive, un logiciel 3D (Blender) et une simulation de conduite urbaine en vue subjective.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_055_00-07-48.jpg" alt="Vue éclatée comprenant plusieurs fenêtres : visualisation de données 3D, modélisation d&#x27;une locomotive dans Blender, conduite en ville et interface de création graphique avec un paon stylisé en bas." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_055_00-07-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:48</span>
+                        <span class="caption-text">Vue éclatée comprenant plusieurs fenêtres : visualisation de données 3D, modélisation d&#x27;une locomotive dans Blender, conduite en ville et interface de création graphique avec un paon stylisé en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_056_00-07-57.jpg" alt="Poursuite de la démonstration avec le paon en 3D interactif et les différentes fenêtres d&#x27;outils d&#x27;IA en haut." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_056_00-07-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:57</span>
+                        <span class="caption-text">Poursuite de la démonstration avec le paon en 3D interactif et les différentes fenêtres d&#x27;outils d&#x27;IA en haut.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:59 - 00:08:17</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">et ces exemples ne doivent pas être pris comme la preuve que l&#x27;IA peut remplacer des équipes créatives ou techniques entières du jour au lendemain. Mais la direction est vraiment intéressante, et si ces capacités continuent de s&#x27;améliorer, la façon dont nous créons des jeux, des mondes 3D, des sites web et du contenu numérique pourrait être très différente à l&#x27;avenir.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran composite affichant plusieurs interfaces logicielles et web simultanément (outils de modélisation 3D, cartes, site web interactif de paon 3D, simulation de conduite).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles sur le site web central : &quot;Some beauty stays for you. A moment of wonder.&quot; et commandes de paramètres en bas à droite. Fenêtres miniatures en haut montrant un modèle de locomotive dans Blender, une carte urbaine, une vue satellite (dat.city) et un personnage anime.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de multiples exemples de créations numériques et de mondes 3D générés ou modélisés, illustrant la diversité des outils présentés dans la vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_057_00-08-01.jpg" alt="Interface de présentation affichant un paon 3D interactif au centre entouré de plusieurs fenêtres de logiciels de création, de modélisation 3D et de cartographie." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_057_00-08-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:01</span>
+                        <span class="caption-text">Interface de présentation affichant un paon 3D interactif au centre entouré de plusieurs fenêtres de logiciels de création, de modélisation 3D et de cartographie.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_058_00-08-08.jpg" alt="Interface similaire avec le paon 3D au centre, montrant l&#x27;évolution des fenêtres en haut, notamment une vue de simulation de conduite automobile urbaine." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_058_00-08-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:08</span>
+                        <span class="caption-text">Interface similaire avec le paon 3D au centre, montrant l&#x27;évolution des fenêtres en haut, notamment une vue de simulation de conduite automobile urbaine.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:17 - 00:08:30</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc, si vous avez apprécié la vidéo, assurez-vous de l&#x27;aimer, de vous abonner à Pursuing AI, et de me dire ce que vous pensez d&#x27;Astra. Et je vous vois dans la prochaine. C&#x27;est Pursuing AI, et vous regardez le Research Report.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écrans de démonstration multi-fenêtres intégrant divers outils de création 3D, des sites web de design et des animations de fin de chaîne YouTube (boutons Like/Subscribe/Notification).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Éléments visuels variés : modèle 3D de ville sur dat.city, interface Blender, animation de personnage, dessin de Hatsune Miku, site web avec le texte &quot;Some beauty stays for your... A moment of wonder&quot;, logo central &quot;PAI&quot; avec un cerveau.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;un montage vidéo récapitulatif montrant plusieurs projets et outils créatifs simultanément à l&#x27;écran, avec incrustation des boutons d&#x27;appel à l&#x27;action pour s&#x27;abonner.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_059_00-08-19.jpg" alt="Interface multi-fenêtres affichant des visualisations 3D, une maquette de ville, un modèle Blender de train, un personnage 3D dans une rue et une illustration de Hatsune Miku, ainsi qu&#x27;un site web au premier plan montrant un paon stylisé." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_059_00-08-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:19</span>
+                        <span class="caption-text">Interface multi-fenêtres affichant des visualisations 3D, une maquette de ville, un modèle Blender de train, un personnage 3D dans une rue et une illustration de Hatsune Miku, ainsi qu&#x27;un site web au premier plan montrant un paon stylisé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-1CmH1cXkcj0/frame_060_00-08-28.jpg" alt="Interface multi-fenêtres similaire avec des projets 3D et des rendus, montrant au centre le logo animé de Pursuing AI (un cerveau relié à un circuit électronique entouré d&#x27;un cercle néon bleu)." loading="lazy" onclick="openLightbox('screenshots/YT-1CmH1cXkcj0/frame_060_00-08-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:28</span>
+                        <span class="caption-text">Interface multi-fenêtres similaire avec des projets 3D et des rendus, montrant au centre le logo animé de Pursuing AI (un cerveau relié à un circuit électronique entouré d&#x27;un cercle néon bleu).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
