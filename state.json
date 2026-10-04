@@ -1,10 +1,7 @@
 {
-  "channel_id": "UC3P0rlhvB3IFda41lb77EHg",
-  "channel_name": "Pursuing AI",
-  "channel_handle": "@PursuingAi",
-  "last_updated": "2026-10-04T13:02:00Z",
-  "processed_video_ids": [
-    "I34qxJjyms0"
+  "processed_ids": [
+    "I34qxJjyms0",
+    "gLSsLtIYMG4"
   ],
   "processed_videos": [
     {
@@ -12,11 +9,28 @@
       "title": "Jev est BIEN plus puissant que nous le pensions (Jev Is WAY More Powerful Than We Thought)",
       "pub_date": "2026-09-22",
       "duration": 491,
-      "model": "gemini-3.5-flash-lite",
-      "processed_at": "2026-10-04T13:01:00Z",
+      "filename_md": "2026-09-22_YT-I34qxJjyms0_Jev est BIEN plus puissant que nous le pensions (Jev Is WAY More Powerful Than W_by-gemini-3.5-flash-lite.md",
+      "filename_html": "2026-09-22_YT-I34qxJjyms0_Jev est BIEN plus puissant que nous le pensions (Jev Is WAY More Powerful Than W_by-gemini-3.5-flash-lite.html",
       "screenshots_count": 16,
-      "compliance_score": 100.0
+      "score": 100.0
+    },
+    {
+      "video_id": "gLSsLtIYMG4",
+      "title": "Gemini 4 Argon est bien plus puissant qu'on ne le pensait",
+      "raw_title": "Gemini 4 Argon Is Way More Powerful Than We Thought",
+      "filename_md": "2026-10-02_YT-gLSsLtIYMG4_Gemini 4 Argon est bien plus puissant qu'on ne le pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-10-02_YT-gLSsLtIYMG4_Gemini 4 Argon est bien plus puissant qu'on ne le pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-10-02",
+      "duration": 660,
+      "screenshots_count": 61,
+      "filepath_md": "/root/YT_PursuingAi/2026-10-02_YT-gLSsLtIYMG4_Gemini 4 Argon est bien plus puissant qu'on ne le pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-10-02_YT-gLSsLtIYMG4_Gemini 4 Argon est bien plus puissant qu'on ne le pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-04T16:13:01Z",
+      "status": "completed"
     }
   ],
-  "backlog_active": true
+  "completed_count": 2,
+  "last_run_timestamp": "2026-10-04T16:00:02Z",
+  "status": "running",
+  "total_catalog_count": 83
 }

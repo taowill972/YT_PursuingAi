@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Gemini 4 Argon est bien plus puissant qu&#x27;on ne le pensait — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Gemini 4 Argon est bien plus puissant qu&#x27;on ne le pensait</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-10-02</span>
+                <span class="badge">⏱️ 11m 00s</span>
+                <span class="badge">🆔 <code>gLSsLtIYMG4</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=gLSsLtIYMG4" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de Pursuing AI décrypte l'émergence et les capacités impressionnantes des points de contrôle (checkpoints) fuis de « Gemini 4 Argon », le prochain grand modèle de Google. Loin des simples artefacts textuels ou des pages HTML basiques, Argon démontre une aptitude remarquable à concevoir des environnements interactifs complexes, des simulations physiques et des interfaces fonctionnelles à la volée. Le créateur mène une analyse comparative rigoureuse de plusieurs cas d'usage — d'un monde inspiré de Minecraft à une simulation optique de lentilles, en passant par une manette Xbox interactive en SVG et un modèle de dynamique des fluides.</p><p>Pour structurer son analyse, le vidéaste adopte une méthode étape par étape : il commence par évaluer l'échelle spatiale des environnements générés (en vérifiant la cohérence globale et les transitions de caméra), puis il teste la profondeur logique du modèle face à des problèmes scientifiques et techniques (comme le traçage de rayons ou la physique de l'eau), avant d'examiner l'utilité pratique des interfaces générées. Cette approche permet de distinguer le battage médiatique des capacités réelles de l'IA.</p><p>Pour les créateurs de vidéo et les concepteurs d'expériences numériques, les enseignements sont majeurs. Argon illustre le passage d'une IA générative visuellement passive à un outil de prototypage interactif capable de fusionner code, design 3D et logique comportementale. Bien que ces démos ne remplissent pas des fonctions physiques parfaites à ce stade, elles redéfinissent la manière dont les créateurs peuvent imaginer la visualisation de données complexes, la fabrication d'interfaces et l'immersion spatiale pour leurs productions futures.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Dépassement du HTML basique** : Argon ne se contente pas de cracher des lignes de code statiques, il conçoit des écosystèmes visuels et logiques complets à partir d&#x27;un simple prompt.</span></li><li><span class="point-bullet">✦</span><span>Évaluation de l&#x27;échelle spatiale** : Dans la démo style Minecraft, l&#x27;intérêt réside dans la capacité du modèle à connecter des environnements variés (plages, forêts, montagnes) de manière cohérente à l&#x27;échelle globale.</span></li><li><span class="point-bullet">✦</span><span>Gestion des mouvements de caméra** : Le recul de la caméra pour observer le monde généré d&#x27;en haut prouve une structuration spatiale tridimensionnelle solide, malgré quelques défauts de rendu sur les bords.</span></li><li><span class="point-bullet">✦</span><span>Simulation physique contenue** : La démo de la lentille montre qu&#x27;Argon peut matérialiser visuellement des flux (chemins de rayons lumineux) et intégrer des contrôles interactifs au sein de la même scène.</span></li><li><span class="point-bullet">✦</span><span>Génération de vecteurs fonctionnels (SVG)** : Le modèle est capable de produire des objets complexes, comme une manette Xbox, intégrant du code vectoriel et des options de personnalisation colorimétrique en temps réel.</span></li><li><span class="point-bullet">✦</span><span>Interactivité prioritaire sur les graphismes** : Pour des cas d&#x27;usage comme la simulation de fluides, l&#x27;intérêt d&#x27;Argon réside dans sa capacité à lier une animation continue à des paramètres modifiables par l&#x27;utilisateur.</span></li><li><span class="point-bullet">✦</span><span>Prototypage pour l&#x27;ingénierie** : Argon transforme des manuels techniques et des diagrammes complexes en modèles 3D interactifs où l&#x27;on peut isoler et inspecter chaque composant spatialement.</span></li><li><span class="point-bullet">✦</span><span>Nuance face au battage médiatique** : L&#x27;analyste rappelle qu&#x27;il ne faut pas crier au « système physique parfait » : ces démos relèvent du prototypage intermédiaire et nécessitent un recul critique sur l&#x27;exactitude des calculs.</span></li><li><span class="point-bullet">✦</span><span>Gain de productivité narrative** : Remplacer l&#x27;explication textuelle par un environnement 3D interactif réduit drastiquement la friction cognitive pour comprendre des systèmes de fabrication ardus.</span></li><li><span class="point-bullet">✦</span><span>Workflow de validation par checkpoints** : L&#x27;examen des fuites de points de contrôle permet d&#x27;anticiper les futurs standards de l&#x27;industrie, où l&#x27;IA générera des applications fonctionnelles et non plus de simples images.</span></li><li><span class="point-bullet">✦</span><span>Piège à éviter dans les prompts** : Ne pas se limiter à demander une belle image ; il faut pousser le modèle à structurer l&#x27;interactivité, l&#x27;ergonomie et la logique comportementale de l&#x27;objet créé.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:23</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Gemini 4 Argon est un dragon. Et non, je ne plaisante pas. Parce qu&#x27;aujourd&#x27;hui, je vais vous montrer des points de contrôle (checkpoints) fuites de Gemini 4 Argon qui pourraient bien vous faire croire que cette chose est un dragon. Et ça devient encore plus fou car Argon répare bizarrement ce mème exact. J&#x27;ai parcouru ces points de contrôle, examiné ce qu&#x27;ils peuvent réellement faire, et certains des résultats sont sérieusement bizarres.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Mèmes animés illustrant des modèles d&#x27;IA, suivis d&#x27;une interface de simulation 3D (AquaLab).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes des étiquettes des têtes du dragon : &#x27;Opus 5.5&#x27;, &#x27;SONNET 5.5&#x27;, &#x27;GPT-6 SOL&#x27;, &#x27;Gemini&#x27;. Panneau latéral d&#x27;AquaLab affichant &#x27;SIMULATION PARAMETERS&#x27; et divers curseurs de contrôle de fluides et d&#x27;éclairage.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de mèmes humoristiques sur les IA, transition vers une animation texturée, puis démonstration d&#x27;une interface de simulation de fluides 3D.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_001_00-00-02.jpg" alt="Mème animé représentant un dragon à quatre têtes associé à différents modèles d&#x27;IA (Opus 5.5, Sonnet 5.5, GPT-6 SOL, Gemini) dont la tête de Gemini apparaît loufoque." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Mème animé représentant un dragon à quatre têtes associé à différents modèles d&#x27;IA (Opus 5.5, Sonnet 5.5, GPT-6 SOL, Gemini) dont la tête de Gemini apparaît loufoque.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_002_00-00-08.jpg" alt="Animation colorée et texturée ressemblant à des fleurs en tricot ou en laine sous un ciel étoilé avec une lune." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_002_00-00-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:08</span>
+                        <span class="caption-text">Animation colorée et texturée ressemblant à des fleurs en tricot ou en laine sous un ciel étoilé avec une lune.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_003_00-00-16.jpg" alt="Mème animé du dragon à quatre têtes montrant la tête de Gemini avec une expression idiote et la langue tirée." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_003_00-00-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:16</span>
+                        <span class="caption-text">Mème animé du dragon à quatre têtes montrant la tête de Gemini avec une expression idiote et la langue tirée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_004_00-00-21.jpg" alt="Interface logicielle de simulation physique 3D nommée AquaLab affichant un bassin d&#x27;eau avec des objets flottants et divers paramètres ajustables sur le panneau latéral." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_004_00-00-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:21</span>
+                        <span class="caption-text">Interface logicielle de simulation physique 3D nommée AquaLab affichant un bassin d&#x27;eau avec des objets flottants et divers paramètres ajustables sur le panneau latéral.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:23 - 00:00:56</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc, dans cette vidéo, nous allons voir ce qu&#x27;est réellement Gemini 4 Argon, pourquoi les gens l&#x27;appellent un dragon et ce que ces points de contrôle pourraient révéler sur le prochain grand modèle de Google. Entrons dans le vif du sujet. C&#x27;est Pursuing AI et vous regardez The Research Report. Maintenant, l&#x27;une des premières démos que j&#x27;ai rencontrées était cet environnement de style Minecraft. Et honnêtement, si vous suivez les modèles de codage par IA, vous avez probablement déjà vu ce genre de démo une douzaine de fois. Je ne vais donc pas m&#x27;asseoir ici pour vous dire, les gars, l&#x27;IA peut créer Minecraft maintenant. Nous le savons déjà. Ce que je voulais réellement</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de publication sur le réseau social X (anciennement Twitter) et interface graphique d&#x27;un jeu style Minecraft affiché en plein écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte visible : &quot;Gemini 4 Argon: Minecraft in a single html. credit: @Inmerson&quot;, profil de tweet &quot;@dummerspast39&quot; avec le texte &quot;anti ai lobby china shill big hater&quot;, interface utilisateur du jeu Minecraft en bas (barre d&#x27;inventaire) et panneaux d&#x27;information textuelle en haut.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente un tweet illustrant la démo de Minecraft générée par Gemini 4 Argon, puis bascule sur un aperçu en jeu montrant des animaux cubiques se déplaçant près de l&#x27;eau.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_005_00-00-46.jpg" alt="Capture d&#x27;écran montrant une publication sur X (Twitter) titrée « Gemini 4 Argon: Minecraft in a single html » avec un tweet associé de Binkg." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_005_00-00-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:46</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une publication sur X (Twitter) titrée « Gemini 4 Argon: Minecraft in a single html » avec un tweet associé de Binkg.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_006_00-00-54.jpg" alt="Démonstration à l&#x27;écran d&#x27;un environnement de type Minecraft en 3D avec des animaux cubiques au bord de l&#x27;eau." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_006_00-00-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:54</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran d&#x27;un environnement de type Minecraft en 3D avec des animaux cubiques au bord de l&#x27;eau.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:56 - 00:01:27</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">de voir à quel point Argon est doué pour construire l&#x27;expérience elle-même. Et en regardant cette démo, il y a plusieurs choses qui sautent immédiatement aux yeux. D&#x27;abord, le monde n&#x27;est pas juste une toute petite scène. Vous pouvez passer sous l&#x27;eau pour aller sur la plage, à travers les forêts, à travers le terrain, et soudain vous regardez ces immenses montagnes enneigées. Et puis la partie vraiment intéressante, c&#x27;est quand la caméra recule. On peut réellement voir tout cet environnement d&#x27;en haut, les îles, l&#x27;eau, les montagnes, les différentes couches de terrain, toutes connectées ensemble.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration du moteur Argon (visuellement similaire à l&#x27;interface de type Minecraft avec HUD, inventaire et superpositions de débogage textuelles en haut à gauche et à droite).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Superpositions textuelles incluant des données de performance (FPS, coordonnées x/y/z, faces, etc.) et des commandes de contrôle en haut à droite (ex: [1] [C] CLASSIFY ROAD, [2] [V] SMOOTH SPLINE). Barre d&#x27;outils/inventaire visible au bas de l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur démontre la navigation fluide à travers différents biomes (plage, forêt, montagnes enneigées) avant d&#x27;effectuer un dézoom global pour montrer l&#x27;ensemble de l&#x27;environnement connecté vu du ciel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_007_00-00-58.jpg" alt="Vue d&#x27;un paysage de type Minecraft avec plage, arbres et eau, affichant des informations de débogage en haut et une barre d&#x27;inventaire en bas." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_007_00-00-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:58</span>
+                        <span class="caption-text">Vue d&#x27;un paysage de type Minecraft avec plage, arbres et eau, affichant des informations de débogage en haut et une barre d&#x27;inventaire en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_008_00-01-07.jpg" alt="Navigation à travers la forêt et le terrain ensoleillé avec des montagnes brumeuses en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_008_00-01-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:07</span>
+                        <span class="caption-text">Navigation à travers la forêt et le terrain ensoleillé avec des montagnes brumeuses en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_009_00-01-17.jpg" alt="Vue rapprochée de montagnes enneigées et rocheuses générées dans le moteur d&#x27;Argon." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_009_00-01-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:17</span>
+                        <span class="caption-text">Vue rapprochée de montagnes enneigées et rocheuses générées dans le moteur d&#x27;Argon.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_010_00-01-25.jpg" alt="Vue aérienne globale dézoomée montrant l&#x27;ensemble de l&#x27;environnement avec les îles, l&#x27;eau et les couches de terrain connectées." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_010_00-01-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:25</span>
+                        <span class="caption-text">Vue aérienne globale dézoomée montrant l&#x27;ensemble de l&#x27;environnement avec les îles, l&#x27;eau et les couches de terrain connectées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:27 - 00:02:00</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, est-ce parfait ? Absolument pas. Vous pouvez voir des problèmes de rendu assez évidents, en particulier autour des bords du monde et de certains terrains. Mais honnêtement, ce n&#x27;est pas sur cela que je jugerais cette démo. Pour moi, la question intéressante est : quelle part de tout cela Argonne a-t-il réellement dû concevoir par lui-même ? Parce que lorsque vous examinez ces modèles, c&#x27;est la partie qui m&#x27;importe, pas seulement de savoir s&#x27;il peut produire quelque chose d&#x27;impressionnant, mais combien de travail j&#x27;ai réellement dû fournir pour y arriver ? Et d&#x27;après ce que nous voyons ici, Argon fait clairement beaucoup plus que simplement cracher une page HTML de base. Et c&#x27;est exactement pour cela que je voulais creuser</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de jeu inspirée de Minecraft affichée en plein écran avec des informations de débogage textuelles en haut (FPS, coordonnées) et une barre d&#x27;inventaire en bas, puis interface d&#x27;un réseau social (X/Twitter) affichant une publication.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles à l&#x27;écran : &quot;NETHER SHADOW v0.2 ULTRA • 100 FPS&quot;, &quot;CHUNKS: 144 | FACES: 251,732 | XYZ: -39, 91, -100&quot;, &quot;CLICKS MOUSE | SHIFT+S: SPRINT | [F]: FLY MODE | [G]: BLACK PALETTE&quot;, &quot;Gemini 4 Argon: Minecraft in a single html. credit: @Inmerson&quot;, et le tweet de @dummerspast39 &quot;anti ai lobby china shill big hater&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur navigue et zoome sur le monde généré en 3D pour mettre en évidence les problèmes de rendu et de bordure du terrain, avant de montrer une publication sur les réseaux sociaux commentant la démo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_011_00-01-29.jpg" alt="Vue aérienne du jeu inspiré de Minecraft avec des problèmes de rendu visibles sur les bords du terrain et des îles." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_011_00-01-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:29</span>
+                        <span class="caption-text">Vue aérienne du jeu inspiré de Minecraft avec des problèmes de rendu visibles sur les bords du terrain et des îles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_012_00-01-38.jpg" alt="Affichage du rendu avec des zones noires et des défauts sur les montagnes en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_012_00-01-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:38</span>
+                        <span class="caption-text">Affichage du rendu avec des zones noires et des défauts sur les montagnes en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_013_00-01-50.jpg" alt="Gros plan sur le monde de type Minecraft montrant l&#x27;interface du jeu et les graphismes en blocs." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_013_00-01-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:50</span>
+                        <span class="caption-text">Gros plan sur le monde de type Minecraft montrant l&#x27;interface du jeu et les graphismes en blocs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_014_00-01-58.jpg" alt="Capture d&#x27;écran d&#x27;un tweet montrant la vidéo du projet &quot;Gemini 4 Argon: Minecraft in a single html&quot; avec un commentaire sur les réseaux sociaux." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_014_00-01-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:58</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet montrant la vidéo du projet &quot;Gemini 4 Argon: Minecraft in a single html&quot; avec un commentaire sur les réseaux sociaux.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:00 - 00:02:29</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">ces points de contrôle un peu plus en profondeur. Parce que la démo de Minecraft est sympa, mais ce n&#x27;est même pas la chose la plus intéressante que j&#x27;ai trouvée. Et cela nous amène à quelque chose de complètement différent. Cette fois, au lieu de demander à Argon de créer quelque chose qui ressemble à un jeu, quelqu&#x27;un lui a demandé de construire une simulation physique d&#x27;une lentille. Et on peut réellement voir ce qui se passe ici. Il y a une source lumineuse d&#x27;un côté, les rayons sont visualisés au fur et à mesure qu&#x27;ils traversent la scène, ils passent à travers ces éléments de lentille, et ensuite on peut voir où ces rayons finissent de l&#x27;autre côté.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web interactive OptiRay 3D (Mountain &amp; Waterfall Lens Lab) et interface de publication type réseau social.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Gemini 4 Argon: Minecraft in a single html. credit: @Inmerson&quot;, &quot;gemini 4 argon: physics demonstation of lens. single html. cc: @Inmerson&quot;, &quot;OptiRay 3D: Mountain &amp; Waterfall Lens Lab&quot;, &quot;LIVE CMOS SENSOR PROJECTION&quot;, &quot;OPTICAL BENCH CONTROLS&quot;.
+[CONTENU_SUITE] Commandes de réglage optique (Focus Ring, Aperture Stop, Lens Focal Length, Mountain Scene Distance), boutons de navigation et graphiques de traçage de rayons lumineux.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et explication visuelle d&#x27;une simulation physique interactive générée par IA représentant le parcours de rayons lumineux à travers un système de lentilles optiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_015_00-02-02.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface d&#x27;une application de jeu Minecraft générée via Gemini 4 Argon, partagée sur les réseaux sociaux." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_015_00-02-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:02</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface d&#x27;une application de jeu Minecraft générée via Gemini 4 Argon, partagée sur les réseaux sociaux.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_016_00-02-11.jpg" alt="Capture d&#x27;écran montrant une publication de simulation physique de lentille optique sur interface web, partagée sur un réseau social." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_016_00-02-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:11</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une publication de simulation physique de lentille optique sur interface web, partagée sur un réseau social.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_017_00-02-20.jpg" alt="Vue rapprochée et interactive de la simulation physique 3D d&#x27;une lentille optique (OptiRay 3D), montrant les éléments internes et les faisceaux lumineux." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_017_00-02-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:20</span>
+                        <span class="caption-text">Vue rapprochée et interactive de la simulation physique 3D d&#x27;une lentille optique (OptiRay 3D), montrant les éléments internes et les faisceaux lumineux.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_018_00-02-27.jpg" alt="Vue d&#x27;ensemble de la simulation OptiRay 3D illustrant la source lumineuse (montagne), les éléments de la lentille et le capteur CMOS." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_018_00-02-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:27</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de la simulation OptiRay 3D illustrant la source lumineuse (montagne), les éléments de la lentille et le capteur CMOS.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:29 - 00:03:04</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce que j&#x27;aime vraiment dans cette démo, c&#x27;est que ce n&#x27;est pas seulement une jolie animation. Vous pouvez réellement vous déplacer dans la scène et inspecter les différentes parties de l&#x27;installation. Vous avez la lentille, les rayons lumineux, l&#x27;écran, les commandes sur le côté, et tout est présenté comme un environnement 3D interactif. Et si vous regardez de près, Argon visualise en fait les chemins de rayons individuels à travers le système. Donc, plutôt que de simplement dire, voici ce que fait une lentille, le modèle génère un petit environnement où l&#x27;on peut réellement voir la physique représentée. Maintenant, évidemment, je ne regarderais pas cela en me disant que Google a résolu la physique. Ce serait exagéré de manière excessive.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web interactive &#x27;OptiRay 3D: Mountain &amp; Waterfall Lens Lab&#x27; avec des panneaux de contrôle latéraux (Optical Bench Controls, Live CMOS Sensor Projection) et des options de navigation en haut de l&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &#x27;OptiRay 3D: Mountain &amp; Waterfall Lens Lab&#x27;, &#x27;LIVE CMOS SENSOR PROJECTION&#x27;, &#x27;TRACES LIGHT RAY BUNDLES&#x27;, &#x27;OPTICAL BENCH CONTROLS&#x27;, ainsi que des curseurs de réglage et des boutons de sélection de scènes (Snowy Peak, Waterfall, Green Grass, Alpine Sun).</p>
+                        <p><strong>Action / Démonstration :</strong> Exploration interactive d&#x27;un environnement 3D simulant la physique optique, avec affichage des chemins de rayons lumineux traversant un système de lentilles et frappant un capteur CMOS.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_019_00-02-31.jpg" alt="Interface 3D interactive &#x27;OptiRay 3D: Mountain &amp; Waterfall Lens Lab&#x27; montrant des lentilles optiques et des faisceaux de rayons lumineux se propageant vers un écran." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_019_00-02-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:31</span>
+                        <span class="caption-text">Interface 3D interactive &#x27;OptiRay 3D: Mountain &amp; Waterfall Lens Lab&#x27; montrant des lentilles optiques et des faisceaux de rayons lumineux se propageant vers un écran.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_020_00-02-42.jpg" alt="Vue d&#x27;ensemble de l&#x27;environnement 3D interactif &#x27;OptiRay 3D&#x27; montrant le système optique complet avec les lentilles, les rayons lumineux et l&#x27;écran de projection." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_020_00-02-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:42</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de l&#x27;environnement 3D interactif &#x27;OptiRay 3D&#x27; montrant le système optique complet avec les lentilles, les rayons lumineux et l&#x27;écran de projection.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:04 - 00:03:26</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il s&#x27;agit d&#x27;une simulation relativement contenue, et nous n&#x27;avons pas assez d&#x27;informations à partir de la seule démo pour savoir à quel point chaque calcul est physiquement précis. Mais ce n&#x27;est pas vraiment le sujet. Ce qui est intéressant, c&#x27;est qu&#x27;Argon ne se contente pas de générer une visualisation statique. Il crée la scène, les objets, les interactions et la représentation visuelle du système en un seul ensemble.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de type réseau social (X / Twitter) affichant une publication avec une vidéo intégrée et des panneaux de contrôle de simulation physique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;gemini 4 argon: physics demonstration of lens. single html. cc: @Inmerson&quot;. Profil visible : &quot;Binkg @dummerspast39&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;une simulation interactive en 3D d&#x27;un système optique avec des paramètres de contrôle physiques affichés à l&#x27;écran.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_021_00-03-06.jpg" alt="Capture d&#x27;écran d&#x27;un tweet et d&#x27;une vidéo de démonstration montrant une simulation physique 3D d&#x27;une lentille optique avec l&#x27;interface d&#x27;Argon." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_021_00-03-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:06</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet et d&#x27;une vidéo de démonstration montrant une simulation physique 3D d&#x27;une lentille optique avec l&#x27;interface d&#x27;Argon.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:26 - 00:03:47</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et quand vous mettez cela à côté de cette démo de Minecraft, vous commencez à voir un schéma. Argon semble être particulièrement intéressant quand on lui donne quelque chose qui n&#x27;est pas seulement du texte ou du code, mais quelque chose qui doit exister et se comporter comme un environnement interactif réel. Et honnêtement, c&#x27;est la partie qui m&#x27;a donné envie de regarder les autres points de contrôle. Parce que le suivant adopte une approche complètement différente.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface logicielle de démonstration 3D et écran de jeu Minecraft côte à côte sur fond violet.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtres de visualisation 3D avec nœuds interconnectés, panneaux de configuration des paramètres à droite, et interface de jeu Minecraft avec barre d&#x27;inventaire et paysage en blocs.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation comparative d&#x27;un modèle 3D abstrait et d&#x27;une simulation interactive de type Minecraft en temps réel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_022_00-03-28.jpg" alt="Double affichage montrant à gauche une interface de visualisation 3D en réseau et à droite une session de jeu Minecraft en cours." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_022_00-03-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:28</span>
+                        <span class="caption-text">Double affichage montrant à gauche une interface de visualisation 3D en réseau et à droite une session de jeu Minecraft en cours.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_023_00-03-45.jpg" alt="Double affichage montrant à gauche une rotation de la visualisation 3D et à droite la progression de la caméra dans le monde Minecraft." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_023_00-03-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:45</span>
+                        <span class="caption-text">Double affichage montrant à gauche une rotation de la visualisation 3D et à droite la progression de la caméra dans le monde Minecraft.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:47 - 00:04:07</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ici, on ne demande pas du tout à Argon de simuler de la physique. On lui demande de recréer un vrai produit sous forme de SVG. Il s&#x27;agit d&#x27;une manette sans fil Xbox, et la page la décrit littéralement comme une étude vectorielle, avec une manette dessinée en code plutôt que simplement insérée comme une image normale. Et il y a quelques détails que j&#x27;aime vraiment ici.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un fil d&#x27;actualité X (Twitter) et une page web interactive de test vectoriel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Xbox Controller SVG Gemini 4 Argon Checkpoint 1:&quot;. Sur la page web : &quot;XBOX&quot;, &quot;A VECTOR STUDY&quot;, &quot;Xbox Wireless Controller&quot;, &quot;Familiar form. Every detail, drawn in code.&quot;, &quot;Download SVG&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation à l&#x27;écran d&#x27;une étude de cas vectorielle montrant une manette Xbox générée et dessinée en code SVG.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_024_00-03-49.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de LuminaBench présentant un test de manette Xbox SVG avec le modèle Gemini 4 Argon." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_024_00-03-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:49</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de LuminaBench présentant un test de manette Xbox SVG avec le modèle Gemini 4 Argon.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_025_00-03-57.jpg" alt="Gros plan sur la page web montrant le rendu vectoriel d&#x27;une manette Xbox sans fil généré par code avec le texte &quot;A Vector Study&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_025_00-03-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:57</span>
+                        <span class="caption-text">Gros plan sur la page web montrant le rendu vectoriel d&#x27;une manette Xbox sans fil généré par code avec le texte &quot;A Vector Study&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:07 - 00:04:26</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez voir le contrôleur rendu proprement sur la page, les boutons individuels et les sticks sont représentés, et tout en bas vous pouvez basculer entre différentes options de couleur, noir et blanc, et tout le contrôleur se met à jour avec. Il y a aussi un bouton de téléchargement SVG tout en haut. Ce n&#x27;est donc pas seulement qu&#x27;Argon génère une image d&#x27;une manette Xbox et en reste là.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de présentation d&#x27;un modèle vectoriel Xbox et flux du réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affichant &quot;Xbox Wireless Controller&quot;, &quot;Download SVG&quot;, options de couleurs en bas (&quot;Robot White&quot;, noir), et publication de @LuminaBench &quot;Xbox Controller SVG Gemini 4 Argon Checkpoint 1:&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation de la manette Xbox rendue avec précision avec ses boutons et options de changement de couleur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_026_00-04-09.jpg" alt="Interface web montrant un rendu vectoriel détaillé d&#x27;une manette sans fil Xbox blanche avec des options de couleurs en bas et un bouton de téléchargement SVG en haut à droite." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_026_00-04-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:09</span>
+                        <span class="caption-text">Interface web montrant un rendu vectoriel détaillé d&#x27;une manette sans fil Xbox blanche avec des options de couleurs en bas et un bouton de téléchargement SVG en haut à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_027_00-04-24.jpg" alt="Publication sur le réseau social X par LuminaBench montrant la manette Xbox en version noire générée via Gemini 4 Argon Checkpoint 1." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_027_00-04-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:24</span>
+                        <span class="caption-text">Publication sur le réseau social X par LuminaBench montrant la manette Xbox en version noire générée via Gemini 4 Argon Checkpoint 1.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:26 - 00:04:46</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il génère une véritable représentation web basée sur des vecteurs de l&#x27;objet avec laquelle vous pouvez interagir. Et c&#x27;est là que les points de contrôle commencent à devenir intéressants pour moi. Et honnêtement, nous n&#x27;en sommes toujours pas au point de contrôle le plus fou, car ce prochain est probablement la démonstration à laquelle je prêterais le plus d&#x27;attention. Ici, Argon est essentiellement utilisé pour construire un terrain de jeu pour la physique de l&#x27;eau.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un flux X (Twitter) avec des publications intégrant des captures d&#x27;écran de démonstrations techniques d&#x27;intelligence artificielle (manette Xbox SVG et simulation de physique de l&#x27;eau).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de Lumina : &quot;Xbox Controller SVG Gemini 4 Argon Checkpoint 1:&quot;. Interface de simulation interactive montrant une manette Xbox sans fil vectorielle et une interface de simulation de physique de l&#x27;eau avec des panneaux de configuration latéraux.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur commente des exemples de publications sur les réseaux sociaux montrant les capacités de génération de vecteurs et de physique de l&#x27;eau d&#x27;Argon.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_028_00-04-28.jpg" alt="Capture d&#x27;écran montrant un tweet du compte Lumina (@LuminaBench) présentant une manette Xbox en SVG générée avec Gemini 4 Argon Checkpoint 1." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_028_00-04-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:28</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un tweet du compte Lumina (@LuminaBench) présentant une manette Xbox en SVG générée avec Gemini 4 Argon Checkpoint 1.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_029_00-04-44.jpg" alt="Capture d&#x27;écran montrant un tweet présentant une simulation de physique de l&#x27;eau avec Argon, montrant une interface interactive de type terrain de jeu aquatique." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_029_00-04-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:44</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un tweet présentant une simulation de physique de l&#x27;eau avec Argon, montrant une interface interactive de type terrain de jeu aquatique.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:46 - 00:05:08</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous avez ce réservoir transparent, avec plusieurs objets qui flottent à l&#x27;intérieur, et ensuite vous pouvez réellement modifier la simulation grâce aux commandes situées sur la droite. Et la partie géniale, c&#x27;est que la vidéo ne montre pas juste un seul préréglage. Vous pouvez voir l&#x27;eau se comporter différemment à mesure que la scène change. La caméra se déplace autour du réservoir, les objets interagissent avec la surface, et la simulation continue de tourner pendant que les paramètres sont ajustés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de simulation 3D de fluides (AquaLab GPU) doté d&#x27;un panneau de contrôle latéral pour les paramètres de simulation, d&#x27;éclairage et de dynamique des vagues.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau latéral « SIMULATION PARAMETERS », préréglages d&#x27;éclairage (Tivoli Pool, Coral Lagoon, Golden Sunset, Bioluminescent), curseurs pour la vitesse de propagation des vagues, la viscosité, l&#x27;intensité des caustiques, et boutons de contrôle en bas (Ripple Brush, Whirlpool, Wave Pulse, Camera Orbit, Mega Plunge, Calm).</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation d&#x27;une simulation en temps réel d&#x27;un bac d&#x27;eau avec des objets flottants colorés, dont la surface est agitée par des vagues.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_030_00-04-48.jpg" alt="Interface de simulation 3D montrant un réservoir d&#x27;eau transparent avec des objets flottants et un panneau de configuration des paramètres sur la droite." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_030_00-04-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:48</span>
+                        <span class="caption-text">Interface de simulation 3D montrant un réservoir d&#x27;eau transparent avec des objets flottants et un panneau de configuration des paramètres sur la droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:08 - 00:05:31</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et à un moment donné, il change même la visualisation pour que vous puissiez voir l&#x27;eau d&#x27;une manière complètement différente, ce qui rend beaucoup plus facile de voir ce qui se passe sous la surface. Et c&#x27;est le genre de démo où je pense que l&#x27;interactivité importe plus que les graphismes. Parce qu&#x27;Argon ne génère pas seulement une jolie animation d&#x27;eau, il génère la simulation et les contrôles autour, vous donnant fondamentalement quelque chose avec lequel vous pouvez expérimenter.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation Argon (Aquat.lab GPU) avec panneau de contrôle latéral et outils de manipulation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau latéral affichant les paramètres de simulation (« SIMULATION PARAMETERS »), des préréglages d&#x27;éclairage (« LIGHTING &amp; OPTICAL PRESET » : Gulf Pool, Coral Lagoon, Golden Sunset, Bioluminescent), des options de vagues (« Wave Propagation Speed », « Fluid Viscosity Damping », « Ocean Swell Direction Slick »), ainsi que des boutons de contrôle interactifs en bas (Route Brush, Whirlpool, Wave Pulse, Camera Orbit, Mega Plunge, Calm).</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation d&#x27;une simulation 3D interactive d&#x27;un plan d&#x27;eau rectangulaire contenant des objets flottants (canards en plastique et sphères colorées), avec affichage de la structure sous-surface.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_031_00-05-10.jpg" alt="Interface du logiciel de simulation d&#x27;eau Argon montrant un bassin 3D avec des objets flottants et des paramètres de simulation ajustables." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_031_00-05-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:10</span>
+                        <span class="caption-text">Interface du logiciel de simulation d&#x27;eau Argon montrant un bassin 3D avec des objets flottants et des paramètres de simulation ajustables.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:31 - 00:05:56</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et c&#x27;est un problème bien plus difficile que de simplement générer une image d&#x27;eau. Maintenant, je ne prendrais pas cette démo comme la preuve qu&#x27;Argon possède un simulateur de fluides parfait et physiquement exact. Nous n&#x27;avons pas assez de précisions ici pour l&#x27;affirmer. Mais en tant que démonstration intermédiaire, c&#x27;est plutôt intéressant. Parce que nous avons maintenant vu Argon générer un environnement 3D semblable à un jeu, une simulation de lentille, une étude de produit au format SVG, et enfin une simulation interactive de fluides.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface logicielle d&#x27;Argon montrant différents modules de démonstration : simulation de fluides (AquasLab), environnement 3D interactif et outils de développement.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de simulation (vitesse de propagation des ondes, viscosité), interfaces graphiques de jeu 3D, page produit de manette Xbox, et outils de rendu.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des différentes capacités d&#x27;Argon à travers des démonstrations visuelles successives de simulations physiques et d&#x27;environnements 3D.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_032_00-05-33.jpg" alt="Simulation interactive de fluides 3D avec des objets flottants (canard, balles) et un panneau de paramètres à droite." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_032_00-05-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:33</span>
+                        <span class="caption-text">Simulation interactive de fluides 3D avec des objets flottants (canard, balles) et un panneau de paramètres à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_033_00-05-48.jpg" alt="Environnement 3D interactif semblable à un jeu vidéo inspiré de Minecraft affiché en haut à gauche." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_033_00-05-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:48</span>
+                        <span class="caption-text">Environnement 3D interactif semblable à un jeu vidéo inspiré de Minecraft affiché en haut à gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_034_00-05-54.jpg" alt="Vue en mosaïque présentant plusieurs démos d&#x27;Argon : un jeu 3D, une interface de nœuds/lentille, une manette Xbox et la simulation de fluides." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_034_00-05-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:54</span>
+                        <span class="caption-text">Vue en mosaïque présentant plusieurs démos d&#x27;Argon : un jeu 3D, une interface de nœuds/lentille, une manette Xbox et la simulation de fluides.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:56 - 00:06:29</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et à ce stade, je commence à comprendre pourquoi les gens s&#x27;enthousiasment pour ces points de contrôle. Ils ne font pas tous le même tour de passe-passe. montrant Argon gérant des types de problèmes visuels interactifs complètement différents. Et cela nous amène en fait à quelque chose qui, à mon avis, est encore plus intéressant, parce que nous nous éloignons maintenant des jeux et de la physique pour entrer dans l&#x27;ingénierie. Regardez ce qui se passe ici. Ce n&#x27;est pas une autre démo de jeu, et ce n&#x27;est pas juste une animation 3D tape-à-l&#x27;œil. Nous examinons un environnement d&#x27;ingénierie assez compliqué, et le modèle transforme toutes ces informations en quelque chose que vous pouvez réellement regarder</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de simulation 3D Apex Fab (Daylight Precision) et interface de contrôle avec navigation 3D, barres d&#x27;échelle (Scale Continuum) et fenêtres d&#x27;infrastructure.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;APEX FAB&quot;, &quot;DAYLIGHT PRECISION&quot;, &quot;Campus &amp; Fab Facilities&quot;, &quot;Tools &amp; Lithography&quot;, &quot;Scale Continuum (10¹ to 10⁻¹² m)&quot;, &quot;Automated Overhead Hoist Transport (OHT / AMHS)&quot;, &quot;Physical Equation / Principle : WIP = TH \times CT&quot;, &quot;Gemini-4.0-Pro&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le modèle 3D interactif d&#x27;une usine de fabrication de semi-conducteurs s&#x27;affiche avec des options de navigation et d&#x27;exploration en vue éclatée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_035_00-05-58.jpg" alt="Interface multi-fenêtres montrant une simulation de jeu interactive, un modèle 3D vectoriel et une manette Xbox sans fil." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_035_00-05-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:58</span>
+                        <span class="caption-text">Interface multi-fenêtres montrant une simulation de jeu interactive, un modèle 3D vectoriel et une manette Xbox sans fil.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_036_00-06-08.jpg" alt="Interface multi-fenêtres avec une vue interactive de type Minecraft et une manette Xbox bleue." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_036_00-06-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:08</span>
+                        <span class="caption-text">Interface multi-fenêtres avec une vue interactive de type Minecraft et une manette Xbox bleue.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_037_00-06-18.jpg" alt="Interface logicielle Apex Fab montrant une vue éclatée 3D complexe d&#x27;un environnement d&#x27;ingénierie (salle blanche/semi-conducteurs)." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_037_00-06-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:18</span>
+                        <span class="caption-text">Interface logicielle Apex Fab montrant une vue éclatée 3D complexe d&#x27;un environnement d&#x27;ingénierie (salle blanche/semi-conducteurs).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_038_00-06-27.jpg" alt="Interface Apex Fab montrant une vue 3D détaillée et éclatée des équipements de fabrication de semi-conducteurs." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_038_00-06-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:27</span>
+                        <span class="caption-text">Interface Apex Fab montrant une vue 3D détaillée et éclatée des équipements de fabrication de semi-conducteurs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:29 - 00:06:58</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">à, faire pivoter, inspecter et comprendre de manière spatiale. Vous pouvez voir différents composants mis en surbrillance, des informations qui apparaissent à côté d&#x27;eux, et l&#x27;ensemble du système présenté presque comme un modèle interactif de la réalité. Et honnêtement, c&#x27;est là que je pense qu&#x27;il y a une histoire beaucoup plus importante. Parce qu&#x27;imaginez essayer de comprendre un système de fabrication compliqué, F, à partir d&#x27;un manuel. Vous avez des diagrammes, des paragraphes, des flèches pointant partout, et vous essayez fondamentalement de construire le tout dans votre tête.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de visualisation 3D et d&#x27;ingénierie nommé &quot;APEX FAB&quot; affichant des structures de fabrication de semi-conducteurs, avec des menus de navigation latérale et des panneaux d&#x27;information détaillés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de navigation (Campus &amp; Fab Facilities, Tools &amp; Lithography, High-NA EUV Scanner, Wafer &amp; Transistors, Packaging &amp; Memory, AI Systems &amp; Racks), commandes de navigation 3D à droite (Control Mode, Directional D-Pad, Preset Views, Points of Interest), et une infobulle sur l&#x27;infrastructure (&quot;Automated Overhead Hoist Transport&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Le modèle 3D d&#x27;un système de fabrication de semi-conducteurs est présenté avec des éléments éclatés, des infobulles informatives et des composants mis en surbrillance pour une inspection spatiale.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_039_00-06-31.jpg" alt="Interface interactive d&#x27;un modèle 3D de fabrication de semi-conducteurs montrant des composants de lithographie en cours d&#x27;inspection spatiale." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_039_00-06-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:31</span>
+                        <span class="caption-text">Interface interactive d&#x27;un modèle 3D de fabrication de semi-conducteurs montrant des composants de lithographie en cours d&#x27;inspection spatiale.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:58 - 00:07:20</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais avec un environnement interactif comme celui-ci, vous pouvez réellement voir les composants les uns par rapport aux autres. Vous pouvez pivoter le modèle, vous pouvez isoler différentes pièces, vous pouvez consulter les informations attachées à un composant spécifique, et soudain, quelque chose qui n&#x27;était qu&#x27;un tas de termes techniques devient quelque chose que vous pouvez réellement explorer. Maintenant, je ne veux pas exagérer et dire qu&#x27;Argon a complètement réinventé l&#x27;éducation.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web interactive APEX FAB (Explorateur 3D scientifique de fabrication de semi-conducteurs et superinformatique).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de navigation latérale (Lithography Laboratories, Wafer &amp; Transistors, AI Systems &amp; Racks, 3D Navigation), curseur d&#x27;échelle (Scale Continuum), informations contextuelles sur la &quot;Coolant Distribution Unit (CDU)&quot; et l&#x27;&quot;Automated Overhead Hoist Transport (OHT / AMHS)&quot;, équations physiques et spécifications techniques.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation interactive et exploration 3D des composants d&#x27;une installation de haute technologie, avec affichage des fiches d&#x27;information associées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_040_00-07-00.jpg" alt="Interface 3D interactive APEX FAB montrant les détails techniques des composants de serveurs et des informations de refroidissement." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_040_00-07-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:00</span>
+                        <span class="caption-text">Interface 3D interactive APEX FAB montrant les détails techniques des composants de serveurs et des informations de refroidissement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_041_00-07-09.jpg" alt="Vue éclatée du modèle 3D sur APEX FAB illustrant la navigation et l&#x27;isolation des différents niveaux d&#x27;infrastructure." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_041_00-07-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:09</span>
+                        <span class="caption-text">Vue éclatée du modèle 3D sur APEX FAB illustrant la navigation et l&#x27;isolation des différents niveaux d&#x27;infrastructure.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:20 - 00:07:42</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Nous n&#x27;avons pas assez de preuves pour cela. Mais je pense que cela pointe vers une direction vraiment intéressante. Et si, au lieu que l&#x27;intelligence artificielle se contente de vous expliquer un concept compliqué, elle pouvait construire une version interactive de ce concept et vous laisser apprendre en l&#x27;explorant ? Et c&#x27;est une façon très différente de penser à un tuteur IA. Parce que vous ne lisez pas seulement l&#x27;explication, vous interagissez avec l&#x27;explication.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Apex Fab (Explorateur 3D scientifique de fabrication de semi-conducteurs et d&#x27;IA)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de navigation de l&#x27;interface incluant &#x27;Campus &amp; Fab&#x27;, &#x27;Tools &amp; Lithography&#x27;, &#x27;Wafer &amp; Transistors&#x27;, &#x27;Packaging &amp; M...&#x27;, &#x27;AI Systems &amp; Racks&#x27;, ainsi que des panneaux de spécifications physiques avec équations et métriques (ex: &#x27;Ellipsoidal Mo/Si Collector Mirror&#x27;, &#x27;Gate-All-Around (GAA) Nanosheet Channels&#x27;, &#x27;12/16-High HBM4 Memory Stack&#x27;).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et exploration interactive de modèles 3D complexes de fabrication de semi-conducteurs à différentes échelles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_042_00-07-22.jpg" alt="Interface interactive d&#x27;Apex Fab montrant une vue 3D détaillée de la lithographie EUV avec des fiches d&#x27;information scientifiques." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_042_00-07-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:22</span>
+                        <span class="caption-text">Interface interactive d&#x27;Apex Fab montrant une vue 3D détaillée de la lithographie EUV avec des fiches d&#x27;information scientifiques.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_043_00-07-31.jpg" alt="Navigation 3D sur l&#x27;interface Apex Fab affichant les détails d&#x27;un transistor Gate-All-Around (GAA) Nanosheet." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_043_00-07-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:31</span>
+                        <span class="caption-text">Navigation 3D sur l&#x27;interface Apex Fab affichant les détails d&#x27;un transistor Gate-All-Around (GAA) Nanosheet.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_044_00-07-40.jpg" alt="Visualisation 3D interactive dans Apex Fab montrant l&#x27;empilement de mémoire HBM4 et les spécifications techniques associées." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_044_00-07-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:40</span>
+                        <span class="caption-text">Visualisation 3D interactive dans Apex Fab montrant l&#x27;empilement de mémoire HBM4 et les spécifications techniques associées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:42 - 00:08:02</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et cette idée devient encore plus intéressante avec la prochaine démo. Parce que maintenant, nous parlons d&#x27;apprendre réellement l&#x27;anatomie. Cette démo est fondamentalement un laboratoire d&#x27;anatomie vétérinaire interactif. Vous pouvez basculer entre les animaux, retirer différentes couches anatomiques, isoler les organes et les muscles, faire pivoter le modèle et même obtenir des étiquettes et des explications pour chaque structure individuelle.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Apex Fab (logiciel d&#x27;exploration 3D) et VetAnat (application interactive d&#x27;anatomie vétérinaire).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de navigation de structures 3D, barres d&#x27;outils de contrôle de caméra, échelles de magnitude, descriptions textuelles détaillées de structures anatomiques et de composants matériels.
+[Vues 3D interactives, manipulation de modèles anatomiques et techniques avec sélection de couches et affichage d&#x27;informations détaillées.]</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_045_00-07-44.jpg" alt="Interface logicielle Apex Fab montrant l&#x27;explorateur scientifique 3D d&#x27;une fabrication de semi-conducteurs et superinformatique IA." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_045_00-07-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:44</span>
+                        <span class="caption-text">Interface logicielle Apex Fab montrant l&#x27;explorateur scientifique 3D d&#x27;une fabrication de semi-conducteurs et superinformatique IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_046_00-07-52.jpg" alt="Interface interactive de laboratoire d&#x27;anatomie vétérinaire VetAnat montrant un modèle 3D annoté avec des couches anatomiques et des étiquettes descriptives." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_046_00-07-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:52</span>
+                        <span class="caption-text">Interface interactive de laboratoire d&#x27;anatomie vétérinaire VetAnat montrant un modèle 3D annoté avec des couches anatomiques et des étiquettes descriptives.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:02 - 00:08:21</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et j&#x27;ai vérifié les explications affichées dans la vidéo, et ce n&#x27;est manifestement pas absurde. Par exemple, la section sur les oiseaux reflète correctement certaines différences aviaires importantes, comme le cœur à quatre cavités et l&#x27;arc aortique droit, et elle note que les oiseaux n&#x27;ont pas de diaphragme de style mammalien. Maintenant, le modèle 3D lui-même est clairement stylisé pour l&#x27;enseignement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> VetAnat (logiciel d&#x27;anatomie vétérinaire 3D) affichant un modèle interactif avec des menus latéraux pour les systèmes anatomiques, les couches, et un panneau d&#x27;examen textuel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> On observe le titre &quot;VetAnat&quot; en haut à gauche, des onglets de sélection d&#x27;espèces (Canine, Equine, Avian, etc.), un modèle 3D central transparent montrant le système circulatoire et respiratoire, et des blocs de texte descriptifs sur les structures anatomiques et les fonctions physiologiques dans le panneau de droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Le modèle 3D est affiché à l&#x27;écran, démontrant l&#x27;anatomie interne d&#x27;un animal (probablement un oiseau selon le contexte audio) avec des explications textuelles interactives.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_047_00-08-04.jpg" alt="Interface du logiciel de modélisation anatomique VetAnat montrant un modèle 3D d&#x27;animal avec des panneaux d&#x27;information détaillés sur l&#x27;anatomie et la physiologie." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_047_00-08-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:04</span>
+                        <span class="caption-text">Interface du logiciel de modélisation anatomique VetAnat montrant un modèle 3D d&#x27;animal avec des panneaux d&#x27;information détaillés sur l&#x27;anatomie et la physiologie.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:21 - 00:08:49</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Certaines structures sont exagérées, simplifiées ou séparées de leur position anatomique normale pour que vous puissiez réellement les voir. Je n&#x27;utiliserais donc pas cela comme un remplacement d&#x27;un véritable atlas anatomique ou d&#x27;une dissection, mais comme interface d&#x27;apprentissage, c&#x27;est vraiment intéressant. Car au lieu de regarder un schéma plat et d&#x27;essayer de se souvenir, d&#x27;accord, où exactement est ce muscle déjà, vous pouvez littéralement faire pivoter l&#x27;animal, isoler le système, cliquer sur une structure et demander au modèle d&#x27;expliquer ce que vous regardez.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> VetAnat (logiciel d&#x27;anatomie vétérinaire 3D basé sur l&#x27;IA)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Modèle 3D interactif d&#x27;un oiseau avec les systèmes anatomiques listés dans le panneau de gauche (Integumentary System, Muscular System, Skeletal System, Cardiovascular &amp; Respiratory, etc.) et des informations textuelles détaillées dans le panneau de droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole et sélectionne différentes vues de l&#x27;anatomie aviaire dans l&#x27;interface interactive du logiciel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_048_00-08-23.jpg" alt="Interface du logiciel VetAnat montrant un modèle 3D simplifié de l&#x27;anatomie d&#x27;un oiseau avec des options de sélection des systèmes anatomiques." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_048_00-08-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:23</span>
+                        <span class="caption-text">Interface du logiciel VetAnat montrant un modèle 3D simplifié de l&#x27;anatomie d&#x27;un oiseau avec des options de sélection des systèmes anatomiques.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:49 - 00:09:14</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et c&#x27;est ce que je voulais dire quand je disais qu&#x27;Argon pouvait nous offrir une nouvelle façon d&#x27;apprendre des choses complexes. Il ne se contente pas de répondre à votre question, il construit quelque chose à partir duquel vous pouvez apprendre. Et après avoir vu tous ces exemples, nous arrivons enfin à la partie qui semble absolument insensée. Mais c&#x27;est aussi là que je ralentirais un peu. Il y a une publication qui circule affirmant que Gemini 4 Argon a trouvé une faille de sécurité grave dans un logiciel hospitalier que d&#x27;autres modèles ont manquée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel VetAnat (interface sombre avec menus de couches anatomiques et panneaux latéraux) et interface Argon Console affichant des données et graphiques 3D.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;Before launch, Google put it to work internally too -rewrote 800,000+ lines of its own OS... Context window jumped to 1 million tokens... On DeepSWE... posted a state of the art 77.9%... Disclaimer: this footage may be staged, edited, or AI-generated, its origin is unconfirmed&quot;. Interface VetAnat avec options (Full Axis, Myology, Osteology, etc.) et informations sur le système cardiorespiratoire.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et visualisation interactive d&#x27;un modèle anatomique 3D d&#x27;un animal, puis affichage d&#x27;un panneau textuel listant des statistiques de performance d&#x27;un modèle d&#x27;IA aux côtés d&#x27;une console d&#x27;analyse.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_049_00-08-51.jpg" alt="Interface interactive d&#x27;anatomie vétérinaire 3D (VetAnat) montrant un modèle transparent de cheval avec des structures organiques et des étiquettes descriptives." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_049_00-08-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:51</span>
+                        <span class="caption-text">Interface interactive d&#x27;anatomie vétérinaire 3D (VetAnat) montrant un modèle transparent de cheval avec des structures organiques et des étiquettes descriptives.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_050_00-09-06.jpg" alt="Vue combinée montrant un texte listant les performances internes de Google et une console de visualisation 3D (Argon Console)." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_050_00-09-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:06</span>
+                        <span class="caption-text">Vue combinée montrant un texte listant les performances internes de Google et une console de visualisation 3D (Argon Console).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:14 - 00:09:36</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et la publication va encore plus loin, affirmant des choses comme plus de 800 000 lignes de code réécrites, plus de 300 téraoctets de mémoire explorés, une amélioration de 40 % par rapport à un algorithme quantique, une fenêtre contextuelle d&#x27;un million de jetons, et un score Deep STUBWE de 77,9 %. Ces chiffres semblent fous, mais il y a un détail très important tout au bas de cette publication.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface logicielle nommée &quot;Argon Console&quot; affichée en parallèle d&#x27;un texte descriptif sur fond noir.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de gauche listant : &quot;-rewrote 800,000+ lines of its own OS&quot;, &quot;300+ TB of memory&quot;, &quot;40% improvement over a quantum algorithm&quot;, &quot;1 million token context window&quot;, &quot;77.9% deep STUBWE score&quot;. Interface Argo Console avec graphiques de données et visualisations en 3D.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage simultané d&#x27;un texte détaillant des statistiques techniques impressionnantes et d&#x27;une interface console futuriste avec des animations de données.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_051_00-09-16.jpg" alt="Capture d&#x27;écran montrant à gauche un texte listant les performances d&#x27;un modèle et à droite l&#x27;interface &quot;Argon Console&quot; avec des visualisations 3D de blocs de données." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_051_00-09-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:16</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant à gauche un texte listant les performances d&#x27;un modèle et à droite l&#x27;interface &quot;Argon Console&quot; avec des visualisations 3D de blocs de données.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_052_00-09-34.jpg" alt="Capture d&#x27;écran montrant à gauche le même texte descriptif et à droite l&#x27;interface &quot;Argon Console&quot; affichant &quot;1,000,000&quot; au cœur d&#x27;une représentation graphique de serveurs et de données." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_052_00-09-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:34</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant à gauche le même texte descriptif et à droite l&#x27;interface &quot;Argon Console&quot; affichant &quot;1,000,000&quot; au cœur d&#x27;une représentation graphique de serveurs et de données.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:36 - 00:10:07</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La séquence vidéo est explicitement décrite comme potentiellement mise en scène, éditée ou générée par IA, et son origine n&#x27;est pas confirmée. Je ne présenterais donc pas la vulnérabilité de l&#x27;hôpital ou ces chiffres de référence comme des faits confirmés sur la seule base de cette publication. Mais il y a tout de même quelque chose d&#x27;intéressant ici, car si Argon peut réellement fonctionner à ce niveau, en particulier lorsqu&#x27;il s&#x27;agit d&#x27;analyser d&#x27;immenses bases de code, de trouver des problèmes de sécurité et d&#x27;évoluer dans des environnements techniques complexes, cela relèverait d&#x27;une catégorie de capacités complètement différente des démonstrations visuelles que nous venons de voir.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface logicielle futuriste nommée « Argon Console » avec graphiques 3D de données, flux de code, panneaux de métriques (Token Stream, Fleet Memory) et affichage de texte superposé.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à gauche listant des statistiques sur Argon (réécriture de lignes de code, augmentation de la fenêtre contextuelle à 1 million de jetons, benchmarks DeepSWE). Sur la console : « RUN #1 : SINGLE TRAJECTORY », « MODEL: GEMINI 4 ARGON », « 65,536 MAX OUTPUT TOKENS », « TOKEN STREAM », « FLEET MEMORY », « DISCLAIMER: this footage may be staged, edited, or AI-generated ».</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation interactive d&#x27;un flux de données et de code au sein d&#x27;une interface de console de modélisation ou d&#x27;IA sophistiquée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_053_00-09-38.jpg" alt="Affichage simultané d&#x27;un bloc de texte listant les performances d&#x27;Argon et d&#x27;une interface de console futuriste en 3D (« Argon Console »)." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_053_00-09-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:38</span>
+                        <span class="caption-text">Affichage simultané d&#x27;un bloc de texte listant les performances d&#x27;Argon et d&#x27;une interface de console futuriste en 3D (« Argon Console »).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_054_00-09-57.jpg" alt="Gros plan sur l&#x27;interface « Argon Console » montrant des visualisations de données 3D avec des blocs et des métriques de jetons (65,536 max output tokens)." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_054_00-09-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:57</span>
+                        <span class="caption-text">Gros plan sur l&#x27;interface « Argon Console » montrant des visualisations de données 3D avec des blocs et des métriques de jetons (65,536 max output tokens).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_055_00-10-05.jpg" alt="L&#x27;interface « Argon Console » en action affichant des flux de code en arrière-plan et des visualisations de flux de jetons." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_055_00-10-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:05</span>
+                        <span class="caption-text">L&#x27;interface « Argon Console » en action affichant des flux de code en arrière-plan et des visualisations de flux de jetons.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:07 - 00:10:29</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et c&#x27;est en fait ce que je veux examiner ensuite, car nous avons vu Argon construire des mondes interactifs, simuler de la physique, reconstruire des objets et créer des environnements éducatifs. Maintenant, nous voyons des affirmations concernant l&#x27;ingénierie logicielle et la recherche en sécurité dans le monde réel, et si ne serait-ce qu&#x27;une partie de ces affirmations s&#x27;avère légitime, alors Argon en tant que dragon ne semble soudain plus aussi ridicule qu&#x27;au début.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Console de développement Argon et interfaces de simulation de mondes virtuels interactifs en 3D.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;ARGON CONSOLE&quot;, &quot;RUN 41 - SINGLE TRAJECTORY&quot;, &quot;MODEL: GEMINI 4 ARGON&quot;, &quot;FINDING: CRITICAL - DATA: PATIENT RECORDS - STATUS: OPEN&quot;, lignes de code source et indicateurs de performance (18.72 TPS).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle des capacités d&#x27;Argon à travers des interfaces de code et des environnements virtuels interactifs générés, appuyant le discours sur l&#x27;ingénierie logicielle et la simulation de mondes.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_056_00-10-09.jpg" alt="Interface de la console Argon affichant des lignes de code, des alertes de sécurité et des métriques de performance en temps réel." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_056_00-10-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:09</span>
+                        <span class="caption-text">Interface de la console Argon affichant des lignes de code, des alertes de sécurité et des métriques de performance en temps réel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_057_00-10-14.jpg" alt="Vue subjective interactive d&#x27;un monde virtuel de style Minecraft généré par IA, montrant des animaux et des blocs." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_057_00-10-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:14</span>
+                        <span class="caption-text">Vue subjective interactive d&#x27;un monde virtuel de style Minecraft généré par IA, montrant des animaux et des blocs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_058_00-10-22.jpg" alt="Vue panoramique d&#x27;un environnement virtuel interactif en monde ouvert de type jeu vidéo avec végétation et relief." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_058_00-10-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:22</span>
+                        <span class="caption-text">Vue panoramique d&#x27;un environnement virtuel interactif en monde ouvert de type jeu vidéo avec végétation et relief.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_059_00-10-27.jpg" alt="Illustration humoristique montrant le mème du dragon à trois têtes (le fameux dragon mal dessiné), illustrant métaphoriquement le sujet." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_059_00-10-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:27</span>
+                        <span class="caption-text">Illustration humoristique montrant le mème du dragon à trois têtes (le fameux dragon mal dessiné), illustrant métaphoriquement le sujet.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:29 - 00:10:48</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Nous attendons toujours de voir à quoi ressemblera le modèle public final, à quel point il est fiable, et si ces points de contrôle fuite se traduisent par des performances dans le monde réel. Mais si Google peut intégrer ne serait-ce qu&#x27;une grande partie de cette capacité dans la version finale, Gemini 4 va être très, très intéressant. Quoi qu&#x27;il en soit, c&#x27;est ce que j&#x27;ai trouvé dans ces points de contrôle d&#x27;Argon.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de simulation 3D de fluides (AquatLab GPU) avec des panneaux de contrôle des paramètres de simulation à droite et des outils de brosse en bas.</p>
+                        <p><strong>Contenu textuel & Code :</strong> On peut lire des libellés de paramètres tels que &quot;Simulation Parameters&quot;, &quot;Lighting &amp; Optical Preset&quot;, &quot;Fluid &amp; Wave Dynamics&quot;, &quot;Wave Propagation Speed&quot;, &quot;Fluid Viscosity Damping&quot;, ainsi que des options de préréglages comme &quot;Snell Pool&quot;, &quot;Coral Lagoon&quot;, &quot;Golden Sunset&quot;, etc. Au centre, un rendu 3D d&#x27;un bassin carré contenant de l&#x27;eau et plusieurs petits objets (balles, canard).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre une interface de simulation visuelle en 3D avec des réglages de dynamique des fluides et de réfraction de la lumière.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_060_00-10-31.jpg" alt="Interface d&#x27;un logiciel de simulation 3D montrant un bassin d&#x27;eau avec des objets flottants et des paramètres de réglage à droite." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_060_00-10-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:31</span>
+                        <span class="caption-text">Interface d&#x27;un logiciel de simulation 3D montrant un bassin d&#x27;eau avec des objets flottants et des paramètres de réglage à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:48 - 00:10:59</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous avez apprécié ce genre d&#x27;analyse approfondie, abonnez-vous à Pursuing AI car dès que Argon sera accessible au public, je vais le tester correctement, pas seulement regarder les démos tape-à-l&#x27;œil. Je vous dis à la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de simulation 3D OptiRay 3D (Mountain &amp; Waterfall Lens Lab), affichant un espace de travail en trois dimensions avec des graphiques vectoriels et des panneaux de contrôle latéraux.</p>
+                        <p><strong>Contenu textuel & Code :</strong> On observe le titre &quot;OptiRay 3D: Mountain &amp; Waterfall Lens Lab&quot; en haut à gauche, un panneau &quot;LIVE CMOS SENSOR PROJECTION&quot; avec des graphiques de montagnes et de soleil, ainsi qu&#x27;un panneau latéral à droite &quot;OPTICAL BENCH CONTROLS&quot; comprenant des curseurs et des boutons de réglage (Focus Ring Gain, Aperture Stop, etc.). Des lignes géométriques blanches et des cercles concentriques colorés (bleu, jaune, rouge) modélisent la trajectoire des rayons lumineux au centre de l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation d&#x27;une simulation optique tridimensionnelle complexe montrant le comportement des rayons lumineux à travers différents plans et capteurs virtuels.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-gLSsLtIYMG4/frame_061_00-10-54.jpg" alt="Interface 3D interactive d&#x27;OptiRay 3D illustrant une simulation de lancer de rayons (ray tracing) avec des cercles concentriques et des contrôles optiques." loading="lazy" onclick="openLightbox('screenshots/YT-gLSsLtIYMG4/frame_061_00-10-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:54</span>
+                        <span class="caption-text">Interface 3D interactive d&#x27;OptiRay 3D illustrant une simulation de lancer de rayons (ray tracing) avec des cercles concentriques et des contrôles optiques.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
