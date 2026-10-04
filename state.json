@@ -3,7 +3,8 @@
     "I34qxJjyms0",
     "gLSsLtIYMG4",
     "ixDclukqjkM",
-    "gYkZlNqBO4o"
+    "gYkZlNqBO4o",
+    "-wBOccKF6Zs"
   ],
   "processed_videos": [
     {
@@ -57,9 +58,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-09-28_YT-gYkZlNqBO4o_Space Bunny est bien plus puissant qu'on ne le pensait 🔥_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-04T16:30:19Z",
       "status": "completed"
+    },
+    {
+      "video_id": "-wBOccKF6Zs",
+      "title": "Opus 5.5 est TELLEMENT plus puissant qu'on ne le pensait 🤔",
+      "raw_title": "Opus 5.5 Is WAY More Powerful Than We Thought 🤔",
+      "filename_md": "2026-09-25_YT--wBOccKF6Zs_Opus 5.5 est TELLEMENT plus puissant qu'on ne le pensait 🤔_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-09-25_YT--wBOccKF6Zs_Opus 5.5 est TELLEMENT plus puissant qu'on ne le pensait 🤔_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-09-25",
+      "duration": 688,
+      "screenshots_count": 83,
+      "filepath_md": "/root/YT_PursuingAi/2026-09-25_YT--wBOccKF6Zs_Opus 5.5 est TELLEMENT plus puissant qu'on ne le pensait 🤔_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-09-25_YT--wBOccKF6Zs_Opus 5.5 est TELLEMENT plus puissant qu'on ne le pensait 🤔_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-04T16:41:23Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 4,
+  "completed_count": 5,
   "last_run_timestamp": "2026-10-04T16:00:02Z",
   "status": "running",
   "total_catalog_count": 83

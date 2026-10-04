@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `4 / 83` (`4.8%`)
+- **Vidéos traitées** : `5 / 83` (`6.0%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -20,6 +20,7 @@
 | 2026-10-02 | [Gemini 4 Argon est bien plus puissant qu'on ne le pensait](2026-10-02_YT-gLSsLtIYMG4_Gemini 4 Argon est bien plus puissant qu'on ne le pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-10-02_YT-gLSsLtIYMG4_Gemini 4 Argon est bien plus puissant qu'on ne le pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 11m 00s | `61 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=gLSsLtIYMG4) | `gLSsLtIYMG4` |
 | 2026-09-30 | [L'OpenDevDay d'OpenAI était bien plus énorme que prévu…](2026-09-30_YT-ixDclukqjkM_L'OpenDevDay d'OpenAI était bien plus énorme que prévu…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-09-30_YT-ixDclukqjkM_L'OpenDevDay d'OpenAI était bien plus énorme que prévu…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 8m 39s | `56 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=ixDclukqjkM) | `ixDclukqjkM` |
 | 2026-09-28 | [Space Bunny est bien plus puissant qu'on ne le pensait 🔥](2026-09-28_YT-gYkZlNqBO4o_Space Bunny est bien plus puissant qu'on ne le pensait 🔥_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-09-28_YT-gYkZlNqBO4o_Space Bunny est bien plus puissant qu'on ne le pensait 🔥_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 9m 41s | `68 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=gYkZlNqBO4o) | `gYkZlNqBO4o` |
+| 2026-09-25 | [Opus 5.5 est TELLEMENT plus puissant qu'on ne le pensait 🤔](2026-09-25_YT--wBOccKF6Zs_Opus 5.5 est TELLEMENT plus puissant qu'on ne le pensait 🤔_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-09-25_YT--wBOccKF6Zs_Opus 5.5 est TELLEMENT plus puissant qu'on ne le pensait 🤔_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 11m 28s | `83 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=-wBOccKF6Zs) | `-wBOccKF6Zs` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

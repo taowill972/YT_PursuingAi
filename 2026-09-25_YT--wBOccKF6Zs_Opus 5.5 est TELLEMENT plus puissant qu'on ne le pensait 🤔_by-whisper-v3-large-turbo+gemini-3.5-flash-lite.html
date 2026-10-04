@@ -1,0 +1,2477 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Opus 5.5 est TELLEMENT plus puissant qu&#x27;on ne le pensait 🤔 — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Opus 5.5 est TELLEMENT plus puissant qu&#x27;on ne le pensait 🤔</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-09-25</span>
+                <span class="badge">⏱️ 11m 28s</span>
+                <span class="badge">🆔 <code>-wBOccKF6Zs</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=-wBOccKF6Zs" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de Pursuing AI met en lumière les capacités surprenantes et avancées du nouveau modèle d'IA **Opus 5.5**, à travers une série de démonstrations pratiques et créatives. Loin de se limiter à la simple génération de texte ou de code brut, ce modèle démontre une aptitude remarquable à traduire des requêtes conceptuelles de haut niveau en environnements interactifs complexes et visuellement soignés. Qu'il s'agisse de concevoir un laboratoire optique pédagogique, un prototype de jeu de basketball en 3D, une île tropicale immersive en monde ouvert ou de transformer un simple croquis en simulation physique interactive, Opus 5.5 redéfinit les frontières de la création assistée par agent.</p><p>Derrière ces résultats spectaculaires se cachent des flux de travail exigeants et itératifs, combinant l'utilisation intensive de sous-agents, des investissements en temps de calcul significatifs (allant de plus d'une heure à près de deux heures d'API) et des coûts financiers non négligeables (de 25 $ à près de 1 900 $ de jetons). Les créateurs mettent en œuvre une méthode basée sur l'impulsion globale et des retours correctifs itératifs (« ajoute ceci », « c'est bizarre, améliore-le »), délégant la quasi-totalité de l'implémentation technique à l'IA.</p><p>Pour les créateurs de contenu vidéo et les développeurs, ces avancées ouvrent des perspectives inédites en matière de narration visuelle et de prototypage rapide. Il devient possible de matérialiser des concepts abstraits sous forme d'expériences interactives explorables, transformant radicalement la manière dont les idées complexes peuvent être présentées et partagées avec un public, tout en conservant un regard critique sur les limites actuelles (bugs, artefacts visuels et nécessité d'une supervision humaine ciblée).</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">flux</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Dépassement du texte brut** : Opus 5.5 transforme des concepts abstraits ou textuels en visualisations interactives fonctionnelles, rendant l&#x27;apprentissage et la communication de concepts ardus (comme l&#x27;optique) immédiatement intuitifs.</span></li><li><span class="point-bullet">✦</span><span>Investissement en temps et en calcul** : La génération de projets complexes requiert une puissance de calcul substantielle, avec des temps d&#x27;API mesurés en heures (ex. : 1h26 ou 2h07) et non en secondes.</span></li><li><span class="point-bullet">✦</span><span>Réalité des coûts financiers** : Les projets d&#x27;envergure (comme l&#x27;île tropicale interactive) nécessitent des budgets de jetons importants, atteignant parfois près de 1 900 $, ce qui redéfinit l&#x27;économie du prototypage par IA.</span></li><li><span class="point-bullet">✦</span><span>Approche par prompts itératifs de haut niveau** : Le rôle de l&#x27;humain évolue vers celui de directeur artistique ou de testeur, se limitant à des instructions générales (« ajoute x et y ») et correctives plutôt qu&#x27;à l&#x27;écriture de code manuel.</span></li><li><span class="point-bullet">✦</span><span>Synergie avec des frameworks spécialisés** : Le succès de la création de jeux (ex. : le jeu de basketball) repose sur l&#x27;association d&#x27;Opus 5.5 avec des technologies existantes comme 3.js et des outils de développement par agents.</span></li><li><span class="point-bullet">✦</span><span>Complexité multi-systèmes** : L&#x27;IA est capable d&#x27;orchestrer de multiples sous-systèmes simultanément (éclairage dynamique, cycles jour/nuit, physique, environnements aquatiques) au sein d&#x27;une même expérience unifiée.</span></li><li><span class="point-bullet">✦</span><span>Du croquis à la simulation physique** : La capacité à convertir un simple dessin à la main en un modèle 3D doté de propriétés physiques interactives (comme une catapulte fonctionnelle) ouvre des voies révolutionnaires pour le design rapide.</span></li><li><span class="point-bullet">✦</span><span>Acceptation des imperfections techniques** : Ces prototypes ne constituent pas des produits finis de niveau commercial (AAA) ; ils comportent inévitablement des bugs, des artefacts visuels et des textures perfectibles qu&#x27;il faut accepter à ce stade technologique.</span></li><li><span class="point-bullet">✦</span><span>Attention au piège de l&#x27;illusion &quot;magique&quot;** : Il ne s&#x27;agit pas d&#x27;un prompt unique et instantané (« one-shot »), mais du fruit d&#x27;un processus itératif orchestré par de multiples sous-agents sous supervision humaine.</span></li><li><span class="point-bullet">✦</span><span>Valeur pédagogique et démonstrative** : Pour les créateurs de vidéo, ces outils permettent de générer des b-rolls interactifs et des démonstrations sur mesure pour illustrer des sujets technologiques ou scientifiques avec un impact visuel maximal.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:26</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dario Amodei a récemment déclaré que nous devons ralentir le rythme du développement de l&#x27;IA, et ensuite Anthropic a sorti Opus 5.5. Et honnêtement, ce modèle est sérieusement impressionnant. Il produit des résultats de très haute qualité, et il surpasse même Astra sur plusieurs benchmarks. Donc dans la vidéo d&#x27;aujourd&#x27;hui, je vais vous montrer certaines des choses les plus impressionnantes qu&#x27;Opus 5.5 a générées, et croyez-moi, certains de ces résultats vont sincèrement vous surprendre.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une application web locale de simulation (&quot;Teraum&quot;) et comparatifs visuels de modèles d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;GPT-6 Astra / 8h 06m of compute&quot; et &quot;Claude Opus 5.5 / 6h 40m of compute&quot;. URL locale affichée : &quot;http://localhost:5199&quot;. Boutons de contrôle : &quot;VEHICLE&quot;, &quot;ROBOT&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle des capacités graphiques et de rendu des différents modèles d&#x27;IA générative comparés à l&#x27;écran.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_001_00-00-09.jpg" alt="Animation 3D isométrique en blocs de type voxel représentant une petite île flottante avec une créature orange, des arbres et un soleil." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_001_00-00-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Animation 3D isométrique en blocs de type voxel représentant une petite île flottante avec une créature orange, des arbres et un soleil.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_002_00-00-18.jpg" alt="Comparaison comparative en écran partagé entre &quot;GPT-6 Astra&quot; (8h 06m of compute) et &quot;Claude Opus 5.5&quot; (6h 40m of compute) montrant des scènes maritimes nocturnes." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_002_00-00-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:18</span>
+                        <span class="caption-text">Comparaison comparative en écran partagé entre &quot;GPT-6 Astra&quot; (8h 06m of compute) et &quot;Claude Opus 5.5&quot; (6h 40m of compute) montrant des scènes maritimes nocturnes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_003_00-00-24.jpg" alt="Capture d&#x27;écran d&#x27;un navigateur web montrant une simulation de véhicule futuriste dans un paysage désertique sur un serveur local." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_003_00-00-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:24</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un navigateur web montrant une simulation de véhicule futuriste dans un paysage désertique sur un serveur local.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:26 - 00:00:48</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Prenez donc vos chips, installez-vous confortablement, et voyons de quoi Opus 5.5 est capable. C&#x27;est Pursuing AI, et vous regardez le rapport de recherche. C&#x27;est donc l&#x27;un des exemples les plus intéressants que j&#x27;aie vus d&#x27;Opus 5.5. Ryan Sale a simplement demandé à Opus 5.5 d&#x27;expliquer la mise au point d&#x27;un appareil photo en créant un laboratoire d&#x27;objectifs interactif.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une application interactive isométrique (Token Town) puis un tweet de Ryan Sale.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;I asked Opus 5.5 to explain camera focus by building an interactive lens lab. Here&#x27;s what it came up with after 1 hour 26 minutes in one shot, $25.66 API cost. lens.lab.sael.net. Move the focus ring and you can see the glass elements shift the sharp plane through the scene&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une simulation 3D de ville en mode isométrique, puis transition vers un tweet illustré par une vidéo montrant les éléments en verre d&#x27;un objectif de caméra interactif.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_004_00-00-28.jpg" alt="Interface de simulation isométrique &quot;Token Town&quot; avec des graphismes de type voxel représentant un magasin Claude." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_004_00-00-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:28</span>
+                        <span class="caption-text">Interface de simulation isométrique &quot;Token Town&quot; avec des graphismes de type voxel représentant un magasin Claude.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_005_00-00-37.jpg" alt="Publication sur le réseau social X (Twitter) de Ryan Sale montrant le laboratoire d&#x27;objectifs interactif généré par Opus 5.5." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_005_00-00-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:37</span>
+                        <span class="caption-text">Publication sur le réseau social X (Twitter) de Ryan Sale montrant le laboratoire d&#x27;objectifs interactif généré par Opus 5.5.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:48 - 00:01:07</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et au lieu de simplement lui donner un mur de texte, Opus 5.5 a réellement construit une simulation interactive visuelle. Vous pouvez voir ici toute une configuration d&#x27;objectif de caméra, avec les éléments en verre individuels, le plan de focalisation, la scène en arrière-plan, et des commandes qui vous permettent de modifier différents paramètres. Et c&#x27;est là que ça devient vraiment intéressant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Simulation interactive web de l&#x27;outil Opus 5.5 expliquant les principes optiques (The Plane of Focus).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;THE PLANE OF FOCUS&quot;, paramètres de réglage &quot;Focus&quot;, &quot;Aperture&quot;, &quot;Sharp zone&quot;, et contrôles de distance (Foreground, Middle, Background) et de lentille (Assembled, Exploded).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle et manipulation d&#x27;une simulation interactive 3D démontrant le fonctionnement d&#x27;un objectif photographique et le plan de netteté.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_006_00-00-50.jpg" alt="Simulation interactive d&#x27;un objectif de caméra montrant les éléments en verre, le plan de focalisation et une scène miniature en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_006_00-00-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:50</span>
+                        <span class="caption-text">Simulation interactive d&#x27;un objectif de caméra montrant les éléments en verre, le plan de focalisation et une scène miniature en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_007_00-00-58.jpg" alt="Vue rapprochée de la structure interne éclatée de l&#x27;objectif de caméra avec ses anneaux dorés et ses lentilles en verre." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_007_00-00-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:58</span>
+                        <span class="caption-text">Vue rapprochée de la structure interne éclatée de l&#x27;objectif de caméra avec ses anneaux dorés et ses lentilles en verre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_008_00-01-05.jpg" alt="Gros plan sur le plan de focalisation interactif mettant en valeur la zone nette sur une maquette de paysage avec une cabane." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_008_00-01-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:05</span>
+                        <span class="caption-text">Gros plan sur le plan de focalisation interactif mettant en valeur la zone nette sur une maquette de paysage avec une cabane.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:07 - 00:01:30</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Au fur et à mesure que vous déplacez la mise au point, le modèle montre visuellement comment le plan net se déplace dans la scène. Ainsi, vous ne lisez pas seulement une explication de la profondeur de champ, vous pouvez réellement voir le concept se dérouler sous vos yeux. Et honnêtement, la présentation visuelle est plutôt impressionnante. L&#x27;objectif lui-même est détaillé, l&#x27;interface est organisée et la simulation vous offre une manière intuitive de comprendre quelque chose qui peut s&#x27;avérer assez difficile à expliquer avec du texte seul.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application interactive web ou logicielle de simulation optique (« The Plane of Focus ») avec des contrôles de mise au point (Foreground, Middle, Background), d&#x27;ouverture (f/2, f/5.6, f/16) et de vue de l&#x27;objectif (Assembled, Exploded).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : « THE PLANE OF FOCUS », « FOCUS », « APERTURE », « SHARP ZONE », boutons de réglage de la distance, de l&#x27;ouverture et de l&#x27;état de l&#x27;objectif (assemblé/éclaté).</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;utilisateur manipule la mise au point et les paramètres de l&#x27;objectif dans la simulation pour observer en temps réel l&#x27;impact sur la profondeur de champ et le plan net.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_009_00-01-09.jpg" alt="Simulation interactive 3D d&#x27;un objectif de caméra montrant le plan de focalisation et la profondeur de champ sur un diorama de paysage." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_009_00-01-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:09</span>
+                        <span class="caption-text">Simulation interactive 3D d&#x27;un objectif de caméra montrant le plan de focalisation et la profondeur de champ sur un diorama de paysage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_010_00-01-15.jpg" alt="Vue d&#x27;ensemble de l&#x27;outil interactif montrant le corps de l&#x27;objectif complet, le diorama et un panneau de sélection de scènes." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_010_00-01-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:15</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de l&#x27;outil interactif montrant le corps de l&#x27;objectif complet, le diorama et un panneau de sélection de scènes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_011_00-01-23.jpg" alt="Vue éclatée (Exploded view) de l&#x27;objectif montrant les différents éléments optiques internes et les lentilles alignées." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_011_00-01-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:23</span>
+                        <span class="caption-text">Vue éclatée (Exploded view) de l&#x27;objectif montrant les différents éléments optiques internes et les lentilles alignées.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_012_00-01-28.jpg" alt="Gros plan sur le plan de focalisation (The Plane of Focus) se déplaçant à travers les éléments du diorama (maison et arbres en 3D)." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_012_00-01-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:28</span>
+                        <span class="caption-text">Gros plan sur le plan de focalisation (The Plane of Focus) se déplaçant à travers les éléments du diorama (maison et arbres en 3D).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:30 - 00:01:49</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais il y a aussi un détail important ici. Selon Ryan, Opus 5.5 a pris 1 heure et 26 minutes pour produire ceci en une seule tentative avec un coût d&#x27;API de 25,66 dollars. Ce n&#x27;est donc pas une petite page Web instantanée qui est apparue en quelques secondes. Il a fallu un temps et une puissance de calcul considérables pour le générer.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de Twitter / X affichant un tweet multimédia avec une vidéo interactive 3D de démonstration technique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de Ryan Sael : &quot;I asked Opus 5.5 to explain camera focus by building an interactive lens lab. Here&#x27;s what it came up with after 1 hour 26 minutes in one shot, $25.66 API cost. lens.lab.sael.net. Move the focus ring and you can see the glass elements shift the sharp plane through the scene.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Le tweet défile ou présente la démonstration interactive d&#x27;un laboratoire de lentilles 3D créé par intelligence artificielle, illustrant le fonctionnement de la mise au point photographique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_013_00-01-32.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Ryan Sael présentant une application interactive 3D générée par Opus 5.5, montrant la structure interne d&#x27;un objectif de caméra." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_013_00-01-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:32</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Ryan Sael présentant une application interactive 3D générée par Opus 5.5, montrant la structure interne d&#x27;un objectif de caméra.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_014_00-01-40.jpg" alt="Suite du tweet interactif montrant le plan de focalisation de l&#x27;objectif sur un diorama de paysage avec des arbres et des montagnes." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_014_00-01-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:40</span>
+                        <span class="caption-text">Suite du tweet interactif montrant le plan de focalisation de l&#x27;objectif sur un diorama de paysage avec des arbres et des montagnes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_015_00-01-47.jpg" alt="Vue globale de l&#x27;interface de l&#x27;application interactive montrant les différents éléments de réglage et la chronologie de l&#x27;objectif." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_015_00-01-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:47</span>
+                        <span class="caption-text">Vue globale de l&#x27;interface de l&#x27;application interactive montrant les différents éléments de réglage et la chronologie de l&#x27;objectif.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:49 - 00:02:09</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et c&#x27;est précisément ce qui rend cet exemple intéressant à mes yeux. Car la partie impressionnante n&#x27;est pas simplement qu&#x27;il ait généré une jolie interface. C&#x27;est que le modèle a compris la requête comme un problème pédagogique et l&#x27;a transformée en une visualisation interactive. Maintenant, je ne regarderais pas non plus cela en disant que l&#x27;IA vient de construire un simulateur physique parfait. Ce n&#x27;est pas ce que nous voyons ici.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un fil d&#x27;actualité X (Twitter) et une application interactive web 3D/WebGL de simulation d&#x27;optique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;I asked Opus 5.5 to explain camera focus by building an interactive lens lab. Here&#x27;s what it came up with after 1 hour 26 minutes in one shot, $25.66 API cost. lens.lab.sael.net. Move the focus ring and you can see the glass elements shift the sharp plane through the scene&quot;. L&#x27;application affiche le titre &quot;THE PLANE OF FOCUS&quot;, des curseurs de réglage (Focus, Aperture, Sharp zone) et une maquette 3D détaillée d&#x27;un objectif de caméra et de lentilles optiques.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une publication sur les réseaux sociaux et la visualisation interactive générée par intelligence artificielle simulant le fonctionnement d&#x27;une lentille de caméra.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_016_00-01-51.jpg" alt="Publication sur X (Twitter) par Ryan Sael montrant une interface interactive de laboratoire de lentilles générée par IA." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_016_00-01-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:51</span>
+                        <span class="caption-text">Publication sur X (Twitter) par Ryan Sael montrant une interface interactive de laboratoire de lentilles générée par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_017_00-02-07.jpg" alt="Gros plan sur l&#x27;interface interactive 3D d&#x27;un laboratoire de mise au point d&#x27;objectifs de caméra (&quot;The Plane of Focus&quot;)." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_017_00-02-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:07</span>
+                        <span class="caption-text">Gros plan sur l&#x27;interface interactive 3D d&#x27;un laboratoire de mise au point d&#x27;objectifs de caméra (&quot;The Plane of Focus&quot;).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:09 - 00:02:32</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce que nous voyons est une démonstration interactive hautement soignée conçue pour communiquer le concept de la mise au point de la caméra, et à cette fin spécifique, c&#x27;est véritablement impressionnant. Si vous voulez l&#x27;essayer vous-même, j&#x27;ai mis le lien dans la description, le même lien partagé par Ryan dans sa publication originale. Mais ce n&#x27;est que le début, car Opus 5.5 peut passer de l&#x27;explication de concepts à la construction concrète de choses avec lesquelles vous pouvez jouer.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web interactive éducative intitulée &quot;The Plane of Focus&quot; avec des panneaux de contrôle pour l&#x27;ouverture (f/2, f/5.6, f/16), les modes d&#x27;objectif (Assembled, Exploded) et les préréglages de mise au point (Foreground, Middle, Background).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre &quot;THE PLANE OF FOCUS&quot;, curseurs de distance, paramètres de mise au point (Focus 66 cm, Aperture f/2, Sharp Zone 2.3 cm), explications textuelles sur la formation de l&#x27;image et la netteté des rayons lumineux.</p>
+                        <p><strong>Action / Démonstration :</strong> Manipulation interactive d&#x27;une simulation 3D démontrant l&#x27;optique photographique, le plan de focalisation, la profondeur de champ et l&#x27;effet du diaphragme sur la netteté d&#x27;une scène miniature.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_018_00-02-11.jpg" alt="Démonstration interactive &#x27;The Plane of Focus&#x27; montrant un objectif de caméra en coupe avec des rayons lumineux et des réglages d&#x27;ouverture." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_018_00-02-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:11</span>
+                        <span class="caption-text">Démonstration interactive &#x27;The Plane of Focus&#x27; montrant un objectif de caméra en coupe avec des rayons lumineux et des réglages d&#x27;ouverture.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_019_00-02-17.jpg" alt="Gros plan sur l&#x27;objectif de la caméra en vue éclatée montrant les différentes lentilles dorées et noires." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_019_00-02-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:17</span>
+                        <span class="caption-text">Gros plan sur l&#x27;objectif de la caméra en vue éclatée montrant les différentes lentilles dorées et noires.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_020_00-02-25.jpg" alt="Vue rapprochée de l&#x27;écran de verre mat montrant la formation de l&#x27;image floue et nette à travers le système optique." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_020_00-02-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:25</span>
+                        <span class="caption-text">Vue rapprochée de l&#x27;écran de verre mat montrant la formation de l&#x27;image floue et nette à travers le système optique.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_021_00-02-30.jpg" alt="Vue générale de la simulation interactive du plan de mise au point avec une frise de vignettes de prévisualisation en bas." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_021_00-02-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:30</span>
+                        <span class="caption-text">Vue générale de la simulation interactive du plan de mise au point avec une frise de vignettes de prévisualisation en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:32 - 00:02:54</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et cela nous amène à notre prochain exemple. Celui-ci est un jeu de basketball sur navigateur. Le créateur a demandé à Opus 5.5 d&#x27;aider à construire une expérience de basketball de style NBA 2K, et c&#x27;est ce qu&#x27;ils ont obtenu. Vous avez un terrain de basketball en 3D, un personnage jouable, un ballon de basketball, un tableau d&#x27;affichage, une horloge des 24 secondes, des mécaniques de tir, des déplacements et un système de timing de tir.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur le réseau social X (Twitter) et un jeu vidéo 3D en cours d&#x27;exécution.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Opus 5.5 cooked NBA 2K in the browser. Is that AGI? Made with @threejs + @genex_games game-dev tools for agents. You can try it here. We&#x27;ll share the source soon. genex.games/opus-2k&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration du jeu de basketball 3D sur navigateur, avec un joueur contrôlable sur le terrain, un panneau de score et une horloge de tir visibles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_022_00-02-34.jpg" alt="Publication sur X montrant une vidéo de gameplay d&#x27;un jeu de basket 3D sur navigateur créé avec Opus 5.5." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_022_00-02-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:34</span>
+                        <span class="caption-text">Publication sur X montrant une vidéo de gameplay d&#x27;un jeu de basket 3D sur navigateur créé avec Opus 5.5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_023_00-02-52.jpg" alt="Vue rapprochée en plein écran du jeu de basketball 3D sur navigateur montrant le joueur sur le terrain." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_023_00-02-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:52</span>
+                        <span class="caption-text">Vue rapprochée en plein écran du jeu de basketball 3D sur navigateur montrant le joueur sur le terrain.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:54 - 00:03:29</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et la partie importante, c&#x27;est qu&#x27;il ne s&#x27;agit pas juste d&#x27;une maquette statique. La vidéo montre le joueur se déplaçant sur le terrain, dribblant le ballon, prenant des tirs et interagissant avec le jeu. Mais il y a une distinction importante que je tiens à faire ici. Il ne s&#x27;agit pas de NBA 2K tournant dans un navigateur. Le message précise explicitement que cela a été réalisé en utilisant 3.js, ainsi que les outils de développement de jeux pour agents de GeneX Games. La contribution d&#x27;Opus 5.5 doit donc être comprise comme faisant partie de ce flux de développement plus large. Il a aidé à générer le jeu grâce au codage et aux outils d&#x27;agents plutôt qu&#x27;en fournissant indépendamment chaque actif, système et élément d&#x27;infrastructure.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une application de jeu 3D (Image 1) et un fil d&#x27;actualité de réseau social (Image 2).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du post : &quot;Opus 5.5 cooked NBA 2K in the browser. Is that AGI? Made with @threejs + @genex_games game-dev tools for agents. You can try it here. We&#x27;ll share the source soon. genex.games/opus-2k&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Un joueur de basketball virtuel dribble et tire au panier sur un terrain en 3D interactif dans un navigateur web.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_024_00-02-56.jpg" alt="Un joueur de basket virtuel sur un terrain 3D en train de tirer au panier avec une jauge de timing de tir visible." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_024_00-02-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:56</span>
+                        <span class="caption-text">Un joueur de basket virtuel sur un terrain 3D en train de tirer au panier avec une jauge de timing de tir visible.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_025_00-03-18.jpg" alt="Une publication sur les réseaux sociaux (X/Twitter) montrant une vidéo du jeu de basket avec le texte explicatif sur son développement." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_025_00-03-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:18</span>
+                        <span class="caption-text">Une publication sur les réseaux sociaux (X/Twitter) montrant une vidéo du jeu de basket avec le texte explicatif sur son développement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:29 - 00:03:53</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et c&#x27;est en fait plus intéressant pour moi, parce que vous ne demandez plus seulement à une IA d&#x27;écrire quelques lignes de JavaScript. Vous lui donnez une idée de haut niveau et vous obtenez quelque chose que vous pouvez réellement ouvrir dans un navigateur et avec lequel interagir. Maintenant, évidemment, ce n&#x27;est en rien comparable à la profondeur d&#x27;un véritable titre NBA 2K. Les graphismes sont beaucoup plus simples, les animations sont plus basiques et les systèmes de gameplay sont bien plus limités. Mais ce n&#x27;est pas vraiment le sujet.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur les réseaux sociaux (X / Twitter) et une démo de jeu 3D interactif.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte visible : &quot;Opus 5.5 cooked NBA 2K in the browser. Is that AGI?&quot;, &quot;Made with @threejs + @genex_games game-dev tools for agents.&quot;, &quot;You can try it here. We&#x27;ll share the source soon.&quot;, &quot;genex.games/opus-2k&quot;, et un chronomètre de jeu affichant &quot;6:20 24&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;une démo de jeu vidéo de basket-ball en 3D développé par une intelligence artificielle dans un navigateur web.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_026_00-03-31.jpg" alt="Capture d&#x27;écran d&#x27;un tweet montrant un jeu de basket-ball 3D généré par IA dans un navigateur web avec le texte du post et un aperçu vidéo." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_026_00-03-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:31</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet montrant un jeu de basket-ball 3D généré par IA dans un navigateur web avec le texte du post et un aperçu vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_027_00-03-51.jpg" alt="Gros plan sur le jeu de basket-ball 3D interactif dans le navigateur avec un joueur sur un parquet de basket et un panneau d&#x27;affichage." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_027_00-03-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:51</span>
+                        <span class="caption-text">Gros plan sur le jeu de basket-ball 3D interactif dans le navigateur avec un joueur sur un parquet de basket et un panneau d&#x27;affichage.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:53 - 00:04:29</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La partie impressionnante est que vous pouvez passer d&#x27;une idée comme « Construis-moi un jeu de basket » à un prototype 3D fonctionnel dans le navigateur. Et c&#x27;est une expérience très différente de simplement demander à l&#x27;IA de générer du code. Et si vous trouvez cela impressionnant, les choses deviennent encore plus ambitieuses. Car cet exemple suivant n&#x27;est pas juste un petit jeu par navigateur. C&#x27;est un environnement interactif tout entier. Dan Greenheck a partagé une expérience qu&#x27;il a créée en utilisant l&#x27;équivalent de 1 874,40 $ de jetons Opus 5.5. Et oui, vous avez bien entendu, près de 1 900 dollars. Ce qu&#x27;il a construit est essentiellement un jeu jouable</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un jeu 3D interactif et un message sur les réseaux sociaux (X / Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de Dan Greenheck détaillant les détails de son projet avec Opus 5.5 (&quot;Ever wonder what $1874.40 of Opus 5.5 tokens looks like?&quot;), et affichage en jeu du score et des commandes.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle de prototypes de jeux 3D interactifs générés par IA et présentation d&#x27;un tweet explicatif.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_028_00-03-55.jpg" alt="Capture d&#x27;écran montrant un prototype de jeu de basket-ball 3D dans le navigateur avec un joueur sur le terrain." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_028_00-03-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:55</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un prototype de jeu de basket-ball 3D dans le navigateur avec un joueur sur le terrain.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_029_00-04-06.jpg" alt="Capture d&#x27;écran du jeu de basket-ball 3D montrant l&#x27;action en jeu dans une grande arène." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_029_00-04-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:06</span>
+                        <span class="caption-text">Capture d&#x27;écran du jeu de basket-ball 3D montrant l&#x27;action en jeu dans une grande arène.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_030_00-04-18.jpg" alt="Publication sur les réseaux sociaux (X / Twitter) de Dan Greenheck expliquant son projet d&#x27;environnement interactif réalisé avec Opus 5.5." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_030_00-04-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:18</span>
+                        <span class="caption-text">Publication sur les réseaux sociaux (X / Twitter) de Dan Greenheck expliquant son projet d&#x27;environnement interactif réalisé avec Opus 5.5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_031_00-04-27.jpg" alt="Capture d&#x27;écran montrant l&#x27;environnement 3D interactif d&#x27;une île tropicale avec des palmiers et l&#x27;océan." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_031_00-04-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:27</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;environnement 3D interactif d&#x27;une île tropicale avec des palmiers et l&#x27;océan.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:29 - 00:04:54</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">environnement d&#x27;île tropicale. Et ce n&#x27;est pas seulement une belle capture d&#x27;écran. Vous pouvez vous déplacer sur l&#x27;île, explorer la plage, marcher dans l&#x27;environnement, aller sur le ponton, voyager sur un bateau et même aller sous l&#x27;eau. Et c&#x27;est là que je pense que la démo devient vraiment impressionnante. Regardez le niveau de détail dans l&#x27;environnement. Vous avez des maisons, de la végétation, l&#x27;océan, des pontons, des bateaux, des changements d&#x27;éclairage et une transition complète du jour à la nuit.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Environnement de simulation ou de jeu interactif en temps réel (affichage des performances avec compteur de FPS en haut à gauche et barre latérale d&#x27;outils à droite).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface utilisateur affichant des indicateurs techniques discrets (FPS, état de marche/exploration) et des menus contextuels sur le bord droit de l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et déplacement en vue subjective ou libre à travers un environnement virtuel 3D photoréaliste représentant une île tropicale.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_032_00-04-31.jpg" alt="Vue aérienne en plongée d&#x27;un village tropical côtier avec des maisons colorées et un chemin de terre à travers la végétation." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_032_00-04-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:31</span>
+                        <span class="caption-text">Vue aérienne en plongée d&#x27;un village tropical côtier avec des maisons colorées et un chemin de terre à travers la végétation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_033_00-04-38.jpg" alt="Vue le long d&#x27;un ponton en bois au coucher du soleil, avec la mer, des nuages dorés et un bateau amarré à gauche." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_033_00-04-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:38</span>
+                        <span class="caption-text">Vue le long d&#x27;un ponton en bois au coucher du soleil, avec la mer, des nuages dorés et un bateau amarré à gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_034_00-04-46.jpg" alt="Vue à hauteur d&#x27;homme se déplaçant près de maisons bleues et de cabanes dans un décor tropical." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_034_00-04-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:46</span>
+                        <span class="caption-text">Vue à hauteur d&#x27;homme se déplaçant près de maisons bleues et de cabanes dans un décor tropical.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_035_00-04-52.jpg" alt="Vue panoramique de l&#x27;océan scintillant au coucher du soleil avec un ciel nuageux et chaleureux." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_035_00-04-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:52</span>
+                        <span class="caption-text">Vue panoramique de l&#x27;océan scintillant au coucher du soleil avec un ciel nuageux et chaleureux.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:54 - 00:05:13</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La nuit, l&#x27;environnement change radicalement, avec des lumières qui illuminent le quai et les environs. Et ensuite, vous pouvez remonter sur le bateau et explorer l&#x27;océan depuis une perspective complètement différente. Il y a même une section sous-marine où vous pouvez voir la baleine et la vie marine sous la surface. C&#x27;est un grand nombre de systèmes différents qui sont rassemblés en une seule expérience interactive.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application interactive 3D nommée &quot;Tidewater&quot; avec compteur de performances (FPS) et outils de navigation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;TIDEWATER&quot;, indicateur de mode (&quot;Walking&quot;, &quot;Diving&quot;), indicateur de profondeur (&quot;3.7 m&quot;), et commandes de gameplay contextuelles.</p>
+                        <p><strong>Action / Démonstration :</strong> Exploration interactive de l&#x27;environnement virtuel marin, passant de la surface au coucher du soleil à une scène nocturne sur le bateau, puis à une immersion sous-marine.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_036_00-04-56.jpg" alt="Vue panoramique de l&#x27;océan au coucher du soleil avec un ciel nuageux et orangé dans l&#x27;expérience interactive Tidewater." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_036_00-04-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:56</span>
+                        <span class="caption-text">Vue panoramique de l&#x27;océan au coucher du soleil avec un ciel nuageux et orangé dans l&#x27;expérience interactive Tidewater.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_037_00-05-04.jpg" alt="Vue nocturne depuis le bateau illuminé avec une invite interactive &quot;Board boat&quot; visible à l&#x27;écran." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_037_00-05-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:04</span>
+                        <span class="caption-text">Vue nocturne depuis le bateau illuminé avec une invite interactive &quot;Board boat&quot; visible à l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_038_00-05-11.jpg" alt="Vue sous-marine de l&#x27;océan montrant une baleine et des petits poissons dans l&#x27;application Tidewater." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_038_00-05-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:11</span>
+                        <span class="caption-text">Vue sous-marine de l&#x27;océan montrant une baleine et des petits poissons dans l&#x27;application Tidewater.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:13 - 00:05:34</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais il y a quelques réserves importantes. Le créateur lui-même dit que le projet a encore des bugs et des artefacts visuels, que certaines textures doivent être améliorées et que les vagues du rivage peuvent paraître étranges par endroits, et l&#x27;on peut effectivement voir certaines de ces imperfections dans la séquence. Donc non, ce n&#x27;est pas un jeu en monde ouvert commercialement poli. Et je ne pense pas que ce soit la bonne comparaison.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Lecteur vidéo interactif de démonstration 3D (avec compteur de FPS et outils de navigation) et interface du réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de Dan Greenheck : &quot;Ever wonder what $1874.40 of Opus 5.5 tokens looks like? Wonder no more. I highly recommend watching the whole video on 1080p on a large screen with sound on...&quot; ainsi que des liens vers threejsroadmap.com, threejswaterpro.com, threepinata.com, eztree.dev.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une scène sous-marine générée, puis passage à un tweet explicatif sur les coûts et détails techniques, et enfin affichage d&#x27;un paysage marin au coucher du soleil.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_039_00-05-15.jpg" alt="Extrait vidéo montrant une scène sous-marine avec une baleine et des particules flottantes dans l&#x27;eau." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_039_00-05-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:15</span>
+                        <span class="caption-text">Extrait vidéo montrant une scène sous-marine avec une baleine et des particules flottantes dans l&#x27;eau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_040_00-05-23.jpg" alt="Publication sur Twitter/X de Dan Greenheck détaillant le projet créé avec des tokens Opus 5.5." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_040_00-05-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:23</span>
+                        <span class="caption-text">Publication sur Twitter/X de Dan Greenheck détaillant le projet créé avec des tokens Opus 5.5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_041_00-05-32.jpg" alt="Extrait vidéo montrant un coucher de soleil pittoresque sur l&#x27;océan avec des nuages dorés et des vagues." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_041_00-05-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:32</span>
+                        <span class="caption-text">Extrait vidéo montrant un coucher de soleil pittoresque sur l&#x27;océan avec des nuages dorés et des vagues.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:34 - 00:05:59</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La partie la plus intéressante est la façon dont cela a été créé. Selon Dan, le processus a impliqué environ 2 heures et 7 minutes de temps d&#x27;API en utilisant plusieurs sous-agents, ce qui s&#x27;est traduit par approximativement 8 heures en temps réel. Et il y a un autre détail qui a vraiment attiré mon attention. Il dit qu&#x27;il y a eu très peu de direction technique impliquée. Selon lui, la plupart de ses prompts étaient essentiellement des choses comme : ajoute x et y, ou ça a l&#x27;air bizarre, améliore-le.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur de l&#x27;application ou du simulateur &#x27;Tidewater&#x27; ainsi qu&#x27;un post sur les réseaux sociaux (type X/Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;FYI I&#x27;m on the $200 subscription plan. This used 59% of my weekly usage and took 2h 7m of API time using multiple subagents, about 8h in real-time. There was extremely little technical direction here. 99% of my prompts were &#x27;Add X and Y&#x27; or &#x27;This looks weird, make it better&#x27;.&quot; En haut à gauche des images 1 et 3, le panneau de contrôle &#x27;Tidewater&#x27; indique des métriques de performance et d&#x27;état (ex: &#x27;63 fps&#x27;, &#x27;TIDEWATER | Walking&#x27;, &#x27;Diving&#x27;).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de scènes générées par IA (coucher de soleil sur l&#x27;océan, ciel nuageux, exploration sous-marine avec une baleine) accompagnée de la publication textuelle décrivant la méthodologie de prompt et le temps de calcul.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_042_00-05-36.jpg" alt="Capture d&#x27;écran vidéo montrant un paysage marin crépusculaire avec des nuages dans le ciel et l&#x27;interface &#x27;Tidewater&#x27; dans le coin supérieur gauche." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_042_00-05-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:36</span>
+                        <span class="caption-text">Capture d&#x27;écran vidéo montrant un paysage marin crépusculaire avec des nuages dans le ciel et l&#x27;interface &#x27;Tidewater&#x27; dans le coin supérieur gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_043_00-05-43.jpg" alt="Capture d&#x27;écran d&#x27;un tweet textuel détaillant le processus de création avec un sous-affichage vidéo de nuages." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_043_00-05-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:43</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet textuel détaillant le processus de création avec un sous-affichage vidéo de nuages.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_044_00-05-57.jpg" alt="Capture d&#x27;écran vidéo montrant une scène sous-marine avec une baleine et des poissons, avec les indicateurs de l&#x27;application &#x27;Tidewater&#x27; à l&#x27;écran." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_044_00-05-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:57</span>
+                        <span class="caption-text">Capture d&#x27;écran vidéo montrant une scène sous-marine avec une baleine et des poissons, avec les indicateurs de l&#x27;application &#x27;Tidewater&#x27; à l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:59 - 00:06:26</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc l&#x27;humain ne spécifiait pas manuellement chaque morceau de code ou chaque implémentation technique. L&#x27;IA gérait une énorme quantité de la construction et de l&#x27;itération. Maintenant, je ne ferais pas dire à cela qu&#x27;on peut donner à Opus 5.5 une seule phrase et obtenir instantanément un jeu AAA terminé. Ce n&#x27;est clairement pas ce qui s&#x27;est passé. Il y a eu une puissance de calcul importante, de multiples sous-agents, des heures d&#x27;itération et près de 1 900 dollars d&#x27;utilisation de jetons derrière ce résultat.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Moteur de jeu / environnement de simulation 3D avec des menus de débogage et des outils de navigation (Tidewater, mode Walk/Free camera, FPS, indicateurs de profondeur).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes et indicateurs visibles à l&#x27;écran : &quot;62 FPS&quot;, &quot;TIDEWATER&quot;, &quot;Diving&quot; / &quot;Walk&quot; / &quot;Free camera&quot;, barres d&#x27;outils verticales avec icônes de paramétrage sur le bord droit.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et exploration interactive au sein d&#x27;un environnement virtuel généré en 3D, illustrant le résultat d&#x27;un monde virtuel/jeu vidéo en cours de test ou de rendu.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_045_00-06-01.jpg" alt="Vue sous-marine montrant une baleine et des fonds marins avec des interfaces de développement ou de moteur de jeu sur les côtés." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_045_00-06-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:01</span>
+                        <span class="caption-text">Vue sous-marine montrant une baleine et des fonds marins avec des interfaces de développement ou de moteur de jeu sur les côtés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_046_00-06-08.jpg" alt="Vue aérienne au-dessus d&#x27;une plage tropicale et d&#x27;une jetée avec des indicateurs de performance et de mode de déplacement (&quot;Walk&quot;)." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_046_00-06-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:08</span>
+                        <span class="caption-text">Vue aérienne au-dessus d&#x27;une plage tropicale et d&#x27;une jetée avec des indicateurs de performance et de mode de déplacement (&quot;Walk&quot;).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_047_00-06-17.jpg" alt="Vue panoramique en plongée d&#x27;une île tropicale verdoyante avec l&#x27;océan turquoise et des options de caméra." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_047_00-06-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:17</span>
+                        <span class="caption-text">Vue panoramique en plongée d&#x27;une île tropicale verdoyante avec l&#x27;océan turquoise et des options de caméra.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_048_00-06-24.jpg" alt="Vue en hauteur d&#x27;un paysage côtier avec des dunes de sable, l&#x27;océan et le ciel nuageux." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_048_00-06-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:24</span>
+                        <span class="caption-text">Vue en hauteur d&#x27;un paysage côtier avec des dunes de sable, l&#x27;océan et le ciel nuageux.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:26 - 00:06:59</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais même avec ces réserves, le résultat est assez remarquable. Parce qu&#x27;on va au-delà de la simple génération de code par l&#x27;IA. On commence à voir l&#x27;IA générer quelque chose dans lequel on peut réellement se promener et interagir. Et cela nous amène à une autre capacité que j&#x27;ai trouvée particulièrement intéressante. Ce prochain exemple est une démonstration de croquis vers simulation. Le créateur commence avec ce qui est fondamentalement un dessin à la main d&#x27;une petite catapult, d&#x27;un projectile, et d&#x27;une pile de blocs. Et puis Opus 5.5 transforme ce croquis en une véritable simulation 3D interactive. On peut voir le dessin brut</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration de simulation interactive 3D (&quot;Tidewater&quot;) et interface de conversion &quot;Sketch to Physics&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte visible : &quot;64 fps&quot;, &quot;TIDECATER&quot;, &quot;Free camera&quot;, encadré en bas &quot;Sketch to Physics&quot;, titre &quot;Paper Trebuchet&quot;, description &quot;A pencil sketch, measured, built and thrown.&quot;, boutons &quot;Play the tour&quot; et &quot;Build it yourself&quot;, annotations &quot;ball&quot;, &quot;cup&quot;, &quot;weight&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur clique sur le bouton &quot;Build it yourself&quot; de l&#x27;interface de conversion d&#x27;un croquis dessiné à la main en simulation physique 3D.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_049_00-06-28.jpg" alt="Vue en 3D interactive d&#x27;un paysage côtier tropical avec de l&#x27;eau turquoise et des vagues." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_049_00-06-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:28</span>
+                        <span class="caption-text">Vue en 3D interactive d&#x27;un paysage côtier tropical avec de l&#x27;eau turquoise et des vagues.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_050_00-06-37.jpg" alt="Vue aérienne de la côte avec des oiseaux survolant l&#x27;eau transparente et un bouton &#x27;Walk&#x27; affiché en bas." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_050_00-06-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:37</span>
+                        <span class="caption-text">Vue aérienne de la côte avec des oiseaux survolant l&#x27;eau transparente et un bouton &#x27;Walk&#x27; affiché en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_051_00-06-48.jpg" alt="Croquis sur papier d&#x27;une catapulte et d&#x27;une pile de blocs avec une interface &#x27;Sketch to Physics&#x27; et le titre &#x27;Paper Trebuchet&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_051_00-06-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:48</span>
+                        <span class="caption-text">Croquis sur papier d&#x27;une catapulte et d&#x27;une pile de blocs avec une interface &#x27;Sketch to Physics&#x27; et le titre &#x27;Paper Trebuchet&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_052_00-06-57.jpg" alt="Gros plan du croquis sur papier montrant des annotations orange (&#x27;ball&#x27;, &#x27;cup&#x27;, &#x27;weight&#x27;) et une trajectoire en pointillés." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_052_00-06-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:57</span>
+                        <span class="caption-text">Gros plan du croquis sur papier montrant des annotations orange (&#x27;ball&#x27;, &#x27;cup&#x27;, &#x27;weight&#x27;) et une trajectoire en pointillés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:59 - 00:07:31</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">transformé en un modèle 3D adéquat avec la catapulte, les roues, le projectile et les blocs tous représentés dans la scène. Mais la partie vraiment intéressante vient ensuite. Il ne s&#x27;agit pas seulement d&#x27;une reconstruction 3D du dessin. La catapulte se comporte réellement comme un système physique. Vous pouvez modifier des paramètres, voir la trajectoire du projectile, puis réellement le lancer. Et quand le projectile touche les blocs, ils réagissent et s&#x27;effondrent. On peut même voir des mesures s&#x27;afficher pendant la simulation, incluant des éléments comme la masse et la vitesse du projectile. Ainsi, ce qui a commencé comme un simple croquis a</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation physique interactive 3D avec affichage de données en surimpression (HUD) et commandes de ralenti.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte et annotations sur les croquis (cotes en mm), affichage de la masse (0,68 kg), de la vitesse (2,35 m/s) et indicateur de vitesse (0,25x).</p>
+                        <p><strong>Action / Démonstration :</strong> Transition d&#x27;un dessin 2D vers une simulation physique interactive 3D où un projectile est lancé d&#x27;une catapulte pour percuter une pile de blocs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_053_00-07-01.jpg" alt="Croquis 2D annoté sur papier représentant une catapulte face à une pile de blocs avec des dimensions en millimètres." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_053_00-07-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:01</span>
+                        <span class="caption-text">Croquis 2D annoté sur papier représentant une catapulte face à une pile de blocs avec des dimensions en millimètres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_054_00-07-10.jpg" alt="Modèle 3D en bois texturé généré à partir du croquis, affichant la catapulte et la pile de blocs sur une table." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_054_00-07-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:10</span>
+                        <span class="caption-text">Modèle 3D en bois texturé généré à partir du croquis, affichant la catapulte et la pile de blocs sur une table.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_055_00-07-21.jpg" alt="Simulation physique de la catapulte montrant la trajectoire pointillée et l&#x27;affichage de la masse de 0,68 kg." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_055_00-07-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:21</span>
+                        <span class="caption-text">Simulation physique de la catapulte montrant la trajectoire pointillée et l&#x27;affichage de la masse de 0,68 kg.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_056_00-07-29.jpg" alt="Simulation au ralenti (0,25x) montrant le lancement du projectile à 2,35 m/s et l&#x27;impact qui fait s&#x27;effondrer les blocs." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_056_00-07-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:29</span>
+                        <span class="caption-text">Simulation au ralenti (0,25x) montrant le lancement du projectile à 2,35 m/s et l&#x27;impact qui fait s&#x27;effondrer les blocs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:31 - 00:07:52</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">devient effectivement une expérience de physique interactive. Et je pense que c&#x27;est le point important ici. Ce qui est impressionnant, ce n&#x27;est pas simplement qu&#x27;Opus 5.5 a créé une jolie scène 3D. Il a pris un concept visuel, l&#x27;a converti en un environnement structuré, et a ensuite ajouté un comportement et une simulation par-dessus. C&#x27;est un saut beaucoup plus important que de simplement générer une image à partir d&#x27;un croquis.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur web interactive avec un panneau de contrôle latéral droit intitulé &quot;Build it yourself!&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;Build it yourself!&quot;, curseur de vitesse (SPEED), d&#x27;angle (ANGLE), de portée (RANGE), bouton &quot;Fire&quot;, options &quot;Slow motion&quot; et &quot;Flight path&quot;, curseur de poids (WEIGHT), curseur &quot;SKETCH - MODEL&quot;, boutons de vue &quot;Hero&quot;, &quot;Side&quot;, &quot;Top&quot;, &quot;Reset&quot;, &quot;Replay tour&quot;, et instruction en bas &quot;Drag the cup back and let go&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;un environnement 3D interactif avec une catapulte en bois prête à tirer sur une pile de cubes en bois posée sur une table.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_057_00-07-33.jpg" alt="Interface de simulation interactive montrant une catapulte en bois et une pile de blocs avec un panneau de contrôle à droite." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_057_00-07-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:33</span>
+                        <span class="caption-text">Interface de simulation interactive montrant une catapulte en bois et une pile de blocs avec un panneau de contrôle à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:53 - 00:08:16</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, je ne prétends pas qu&#x27;il s&#x27;agit d&#x27;un moteur physique parfait rien qu&#x27;à partir de cette démo. Nous n&#x27;avons pas assez d&#x27;informations pour vérifier à quel point chaque calcul physique correspond à une catapulte réelle, mais nous n&#x27;avons pas besoin de faire cette affirmation pour apprécier ce qui se passe. Et honnêtement, c&#x27;est le genre de génération par IA que je trouve bien plus intéressant que de simplement fabriquer une autre jolie page web. Mais Opus 5.5 ne fait pas seulement de petites simulations.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application ou interface web de simulation physique 3D « Build it yourself » avec panneau de contrôle latéral, combinée à une interface de type lecteur vidéo et affichage de publications sur les réseaux sociaux (Twitter/X).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau de contrôle visible avec les métriques : vitesse (2.06 m/s), angle (32°), portée (527 mm), bouton « Fire », options « Slow motion » et « Flight path », curseur de poids (« Weight » de Light à Heavy), curseur « Sketch - Model », et choix de la vue (« Hero », « Side », « Top »). Texte en haut à gauche : « sketch-to-simulation with Opus 5.5 ».</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration interactive d&#x27;une simulation physique générée par IA où une catapulte virtuelle projette un projectile vers des blocs en bois, convertissant un croquis d&#x27;abord dessiné sur papier en un modèle 3D animé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_058_00-07-55.jpg" alt="Interface de simulation physique interactive montrant une catapulte en 3D tirant une sphère métallique vers des blocs de bois, avec un panneau de contrôle à droite." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_058_00-07-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:55</span>
+                        <span class="caption-text">Interface de simulation physique interactive montrant une catapulte en 3D tirant une sphère métallique vers des blocs de bois, avec un panneau de contrôle à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_059_00-08-01.jpg" alt="Suite de la simulation montrant l&#x27;impact de la sphère métallique sur les blocs de bois, faisant s&#x27;effondrer la structure." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_059_00-08-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:01</span>
+                        <span class="caption-text">Suite de la simulation montrant l&#x27;impact de la sphère métallique sur les blocs de bois, faisant s&#x27;effondrer la structure.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_060_00-08-09.jpg" alt="Capture d&#x27;écran divisée montrant à gauche un croquis dessiné sur papier d&#x27;une catapulte (« sketch-to-simulation with Opus 5.5 ») et à droite un fil d&#x27;actualité Twitter / X avec le profil de Ben Poole et le compte officiel de Claude." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_060_00-08-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:09</span>
+                        <span class="caption-text">Capture d&#x27;écran divisée montrant à gauche un croquis dessiné sur papier d&#x27;une catapulte (« sketch-to-simulation with Opus 5.5 ») et à droite un fil d&#x27;actualité Twitter / X avec le profil de Ben Poole et le compte officiel de Claude.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:16 - 00:08:49</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela peut aussi devenir beaucoup plus grand. Le suivant est peut-être la démo de jeu la plus impressionnante visuellement de toute cette liste. Le créateur affirme qu&#x27;il s&#x27;agit d&#x27;une section de 3 minutes d&#x27;un jeu Three.js réalisé avec Opus 5.5 medium, et selon la publication, chaque modèle 3D, texture et animation a été créé à partir de zéro, et l&#x27;on comprend immédiatement ce qu&#x27;ils visaient. C&#x27;est essentiellement un jeu de balancement sur toile de type Spider-Man se déroulant dans une grande ville en 3D. Vous pouvez courir sur les toits, sauter entre les bâtiments, vous balancer dans les rues, grimper sur des immeubles en verre et vous déplacer dans la ville à partir de</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un fil d&#x27;actualité Twitter/X et des extraits vidéo de gameplay en 3D généré par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de publication : &quot;Here&#x27;s 3 mins of a Three.js game I have been making with Opus 5.5 Medium. Every 3D model, texture, and animation is made from scratch.&quot; Mention de l&#x27;outil Opus 5.5 medium et de Three.js.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur fait défiler des publications sur les réseaux sociaux présentant des démonstrations techniques de jeux 3D interactifs générés par IA, illustrant le gameplay de type Spider-Man en milieu urbain.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_061_00-08-18.jpg" alt="Capture d&#x27;une publication montrant un croquis de catapulte animé avec la mention &quot;sketch-to-simulation with Opus 5.5&quot;" loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_061_00-08-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:18</span>
+                        <span class="caption-text">Capture d&#x27;une publication montrant un croquis de catapulte animé avec la mention &quot;sketch-to-simulation with Opus 5.5&quot;</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_062_00-08-28.jpg" alt="Publication X (Twitter) montrant une vidéo d&#x27;un jeu de type Spider-Man en 3D dans une rue urbaine avec du texte explicatif" loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_062_00-08-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:28</span>
+                        <span class="caption-text">Publication X (Twitter) montrant une vidéo d&#x27;un jeu de type Spider-Man en 3D dans une rue urbaine avec du texte explicatif</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_063_00-08-39.jpg" alt="Vue en plein écran du jeu 3D montrant un personnage ressemblant à Spider-Man se balançant au milieu de la circulation urbaine" loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_063_00-08-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:39</span>
+                        <span class="caption-text">Vue en plein écran du jeu 3D montrant un personnage ressemblant à Spider-Man se balançant au milieu de la circulation urbaine</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_064_00-08-47.jpg" alt="Vue aérienne du jeu montrant le personnage planant au-dessus d&#x27;une grande rue bordée d&#x27;immeubles avec une mini-carte en bas à droite" loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_064_00-08-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:47</span>
+                        <span class="caption-text">Vue aérienne du jeu montrant le personnage planant au-dessus d&#x27;une grande rue bordée d&#x27;immeubles avec une mini-carte en bas à droite</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:49 - 00:09:22</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">différentes hauteurs. Et ce qui me frappe vraiment, c&#x27;est la cohérence de l&#x27;environnement. Nous ne regardons pas seulement une scène isolée. La même ville continue tout au long du jeu avec des bâtiments, des routes, de la circulation, des arbres, des piétons, des lampadaires, des toits et une ligne d&#x27;horizon au loin. Il y a aussi une véritable interface de jeu, une minimap, des objectifs, des mouvements interactifs plutôt qu&#x27;il ne s&#x27;agit simplement d&#x27;une animation rendue. Et le balancement sur toile est probablement la partie la plus cool. On peut voir le personnage attaché aux bâtiments, se balancer autour des coins, gagner en élan,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de jeu vidéo (HUD) montrant une minimap en bas à droite, une boussole, des objectifs et des alertes de mission (&quot;Crime in Progress&quot;, &quot;Car Chase&quot;) dans un jeu de type monde ouvert.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Éléments de HUD de jeu vidéo : minimap, boussole, indicateur d&#x27;objectifs, alertes textuelles de missions (&quot;Crime in Progress&quot;, &quot;Car Chase&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Le personnage de Spiderman se déplace à travers la ville : escalade de façade, course sur les toits et balancement urbain entre les gratte-ciels.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_065_00-08-51.jpg" alt="Spiderman escaladant une façade vitrée avec une minimap visible en bas à droite." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_065_00-08-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:51</span>
+                        <span class="caption-text">Spiderman escaladant une façade vitrée avec une minimap visible en bas à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_066_00-09-00.jpg" alt="Spiderman courant sur le toit d&#x27;un immeuble au milieu d&#x27;un paysage urbain avec une minimap en bas à droite." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_066_00-09-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:00</span>
+                        <span class="caption-text">Spiderman courant sur le toit d&#x27;un immeuble au milieu d&#x27;un paysage urbain avec une minimap en bas à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_067_00-09-11.jpg" alt="Spiderman se balançant entre deux grands immeubles urbains." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_067_00-09-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:11</span>
+                        <span class="caption-text">Spiderman se balançant entre deux grands immeubles urbains.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_068_00-09-20.jpg" alt="Spiderman se balançant dans une rue encaissée entre des gratte-ciels avec des indications de mission en haut à gauche et une minimap." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_068_00-09-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:20</span>
+                        <span class="caption-text">Spiderman se balançant dans une rue encaissée entre des gratte-ciels avec des indications de mission en haut à gauche et une minimap.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:22 - 00:09:48</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">relâcher la toile, et se déplacer entre différents bâtiments. Maintenant, ce n&#x27;est clairement pas Spider-Man 2. L&#x27;animation est beaucoup plus simple, la géométrie de la ville est assez répétitive, et certains mouvements de personnages et la physique ne sont pas au niveau d&#x27;un jeu développé professionnellement. Mais ce n&#x27;est pas vraiment ce qui rend cette démo intéressante. La partie impressionnante est que le créateur affirme que les modèles, les textures et les animations ont tous été générés à partir de zéro, et que l&#x27;ensemble tourne comme un jeu de navigateur 3.js.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Jeu web 3.js affichant une interface inspirée de Spider-Man, avec mini-carte en bas à droite et indicateurs de mission en haut à droite et à gauche (&quot;CAR CHASE&quot;, &quot;FINANCIAL DISTRICT&quot;, &quot;MUDGING&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Éléments d&#x27;interface de jeu vidéo : mini-carte de navigation, indicateurs de quête textuels rouges en haut (&quot;CAR CHASE&quot;, &quot;MUDGING&quot;), boussole et repères visuels sur les immeubles.</p>
+                        <p><strong>Action / Démonstration :</strong> Le personnage de Spider-Man se balance dynamiquement entre les gratte-ciels d&#x27;une ville générée en 3D dans le navigateur web.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_069_00-09-24.jpg" alt="Vue aérienne en plongée montrant Spider-Man en train de se balancer entre les immeubles dans une démo de jeu 3.js." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_069_00-09-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:24</span>
+                        <span class="caption-text">Vue aérienne en plongée montrant Spider-Man en train de se balancer entre les immeubles dans une démo de jeu 3.js.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_070_00-09-31.jpg" alt="Vue de profil de Spider-Man lançant sa toile et se déplaçant le long d&#x27;une avenue urbaine." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_070_00-09-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:31</span>
+                        <span class="caption-text">Vue de profil de Spider-Man lançant sa toile et se déplaçant le long d&#x27;une avenue urbaine.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_071_00-09-39.jpg" alt="Vue de dos de Spider-Man se balançant au-dessus d&#x27;une rue du Financial District avec une mini-carte en bas à droite." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_071_00-09-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:39</span>
+                        <span class="caption-text">Vue de dos de Spider-Man se balançant au-dessus d&#x27;une rue du Financial District avec une mini-carte en bas à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_072_00-09-46.jpg" alt="Vue en contre-plongée de Spider-Man naviguant rapidement entre de grands bâtiments générés par IA." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_072_00-09-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:46</span>
+                        <span class="caption-text">Vue en contre-plongée de Spider-Man naviguant rapidement entre de grands bâtiments générés par IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:48 - 00:10:10</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc nous examinons des actifs 3D générés par l&#x27;IA, de l&#x27;animation, de la logique de jeu, de l&#x27;environnement et de l&#x27;interaction, le tout combiné en une seule expérience jouable. Et c&#x27;est une nette progression par rapport au fait de demander à une IA de générer une simple page web ou un petit jeu en JavaScript. Il y a évidemment des limites. Vous pouvez voir une certaine répétition visuelle et des PNJ ainsi que des environnements relativement basiques.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de jeu vidéo affichant une mini-carte en bas à droite, des indicateurs de mission sur les côtés et des éléments graphiques 3D en temps réel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Environnement urbain 3D avec des gratte-ciels texturés, un personnage de type super-héros, une mini-carte avec un curseur de direction et une mention de quête &quot;MUGGING&quot; en haut à droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Le personnage évolue en 3D dans un environnement interactif généré par IA, en chute libre puis en se balançant entre les immeubles avant d&#x27;atterrir sur un toit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_073_00-09-50.jpg" alt="Un personnage ressemblant à Spider-Man en train de chuter ou de voler entre des gratte-ciels dans un environnement urbain 3D généré par IA, avec une mini-carte en bas à droite et une interface de jeu vidéo." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_073_00-09-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:50</span>
+                        <span class="caption-text">Un personnage ressemblant à Spider-Man en train de chuter ou de voler entre des gratte-ciels dans un environnement urbain 3D généré par IA, avec une mini-carte en bas à droite et une interface de jeu vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_074_00-09-59.jpg" alt="Le même personnage en train de se balancer entre les immeubles de la ville grâce à une toile tirée vers un bâtiment, illustrant l&#x27;interaction et la logique de jeu." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_074_00-09-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:59</span>
+                        <span class="caption-text">Le même personnage en train de se balancer entre les immeubles de la ville grâce à une toile tirée vers un bâtiment, illustrant l&#x27;interaction et la logique de jeu.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_075_00-10-08.jpg" alt="Le personnage atterrissant sur le toit d&#x27;un immeuble au milieu d&#x27;un paysage urbain composé de bâtiments aux textures répétitives et d&#x27;un ciel nuageux." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_075_00-10-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:08</span>
+                        <span class="caption-text">Le personnage atterrissant sur le toit d&#x27;un immeuble au milieu d&#x27;un paysage urbain composé de bâtiments aux textures répétitives et d&#x27;un ciel nuageux.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:10 - 00:10:30</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais pour un flux de développement assisté par IA, c&#x27;est vraiment impressionnant. Parce que la question intéressante n&#x27;est pas seulement : est-ce que l&#x27;IA peut écrire du code ? Nous savons déjà qu&#x27;elle le peut. La question beaucoup plus importante est : pouvez-vous décrire le jeu que vous avez en tête, et faire en sorte que l&#x27;IA transforme cette idée en quelque chose que vous pouvez réellement jouer ? Et cette démo s&#x27;en approche de manière surprenante.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Moteur de jeu / prototype vidéo montrant une interface de jeu avec mini-carte en bas à droite et indicateurs de zone.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Environnement urbain 3D généré, personnage de type super-héros en mouvement, mini-carte de navigation et interface de jeu.</p>
+                        <p><strong>Action / Démonstration :</strong> Le personnage se déplace, court et se balance à l&#x27;aide de fils entre les bâtiments dans un environnement de jeu vidéo simulant une grande ville.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_076_00-10-12.jpg" alt="Séquence de gameplay montrant un personnage ressemblant à Spider-Man se balançant entre des gratte-ciels dans une rue urbaine." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_076_00-10-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:12</span>
+                        <span class="caption-text">Séquence de gameplay montrant un personnage ressemblant à Spider-Man se balançant entre des gratte-ciels dans une rue urbaine.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_077_00-10-20.jpg" alt="Séquence de gameplay montrant le personnage au niveau du sol dans une rue animée avec des bâtiments et des véhicules." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_077_00-10-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:20</span>
+                        <span class="caption-text">Séquence de gameplay montrant le personnage au niveau du sol dans une rue animée avec des bâtiments et des véhicules.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_078_00-10-28.jpg" alt="Séquence de gameplay montrant le personnage en train de se balancer en l&#x27;air au-dessus d&#x27;une rue bordée d&#x27;arbres et d&#x27;immeubles." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_078_00-10-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:28</span>
+                        <span class="caption-text">Séquence de gameplay montrant le personnage en train de se balancer en l&#x27;air au-dessus d&#x27;une rue bordée d&#x27;arbres et d&#x27;immeubles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:30 - 00:10:50</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et honnêtement, ces exemples ne font qu&#x27;effleurer la surface de ce dont Opus 5.5 est capable. Des simulations interactives et jeux par navigateur aux mondes 3D entiers, ce qui ressort, c&#x27;est que nous ne demandons plus seulement à l&#x27;IA d&#x27;écrire du code. Nous lui demandons de prendre une idée et de la transformer en quelque chose que nous pouvons réellement voir, utiliser et avec lequel interagir.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web avec barre d&#x27;adresse affichant une URL locale (`http://localhost:5199`) et un en-tête minimaliste portant la mention &quot;FERRUM&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Un environnement 3D en temps réel représentant un désert sablonneux avec des rochers. Au centre, un véhicule gris aux lignes anguleuses est en mouvement. En bas de l&#x27;écran, on aperçoit un compteur (0) à gauche, et des boutons de contrôle &quot;VEHICLE&quot; et &quot;ROBOT&quot; au centre.</p>
+                        <p><strong>Action / Démonstration :</strong> Le véhicule 3D se déplace et navigue interactivement à l&#x27;intérieur de la simulation générée par l&#x27;intelligence artificielle dans le navigateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_079_00-10-32.jpg" alt="Interface d&#x27;un navigateur web affichant une simulation 3D interactive d&#x27;un véhicule futuriste (type Cybertruck) évoluant dans un paysage désertique sur un serveur local." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_079_00-10-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:32</span>
+                        <span class="caption-text">Interface d&#x27;un navigateur web affichant une simulation 3D interactive d&#x27;un véhicule futuriste (type Cybertruck) évoluant dans un paysage désertique sur un serveur local.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:50 - 00:11:08</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il y a encore des limitations, des bugs, et beaucoup de marge d&#x27;amélioration. Et certaines de ces démos ont nécessité des heures de calcul, de multiples agents, des outils de support, et des coûts de jetons importants. Nous ne sommes donc clairement pas au point où l&#x27;on peut décrire le prochain GTA et voir un jeu parfait apparaître cinq minutes plus tard. Mais la direction est assez claire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une application web interactive locale (URL localhost:5199) et interface d&#x27;une application de visualisation 3D interactive (nommée &quot;The Colossal Flower&quot;) avec des menus de contrôle de l&#x27;environnement (&quot;Dawn&quot;, &quot;Day&quot;, &quot;Golden Hour&quot;, &quot;Mist / Rain&quot;, &quot;Night Glow&quot;) et de la fleur (&quot;Closed&quot;, &quot;Blooming&quot;, &quot;Fully Open&quot;, &quot;Cutaway&quot;, &quot;Exploded&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL &quot;http://localhost:5199&quot;, interface avec les options de contrôle de caméra (Hero, Low Angle, Petal, Bloom Core, Base, Aerial, Golden, Night, Cutaway), le statut &quot;NIGHT GLOW - CLOSED&quot; puis &quot;NIGHT GLOW - BLOOMING 35%&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et interaction sur des démos 3D générées ou contrôlées en temps réel, montrant d&#x27;abord un véhicule dans un désert, puis la manipulation de l&#x27;état d&#x27;une fleur lumineuse géante en 3D (passage de fermé à en cours de floraison).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_080_00-10-52.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface d&#x27;une application web interactive hébergée en local avec un véhicule simulant la conduite dans un environnement désertique." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_080_00-10-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:52</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface d&#x27;une application web interactive hébergée en local avec un véhicule simulant la conduite dans un environnement désertique.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_081_00-10-59.jpg" alt="Interface interactive de démonstration 3D intitulée &quot;The Colossal Flower&quot; avec des panneaux de contrôle pour l&#x27;environnement et l&#x27;état de la fleur." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_081_00-10-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:59</span>
+                        <span class="caption-text">Interface interactive de démonstration 3D intitulée &quot;The Colossal Flower&quot; avec des panneaux de contrôle pour l&#x27;environnement et l&#x27;état de la fleur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_082_00-11-06.jpg" alt="Vue de l&#x27;application interactive montrant la fleur en train de s&#x27;ouvrir suite à une interaction de l&#x27;utilisateur." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_082_00-11-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:06</span>
+                        <span class="caption-text">Vue de l&#x27;application interactive montrant la fleur en train de s&#x27;ouvrir suite à une interaction de l&#x27;utilisateur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-28">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:08 - 00:11:28</span>
+                <span class="segment-idx">Segment #28</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le code par IA va bien au-delà de la génération de fonctions individuelles et de fragments de code pour se diriger vers la création d&#x27;expériences interactives de plus en plus complètes. Et c&#x27;est précisément ce qui rend Opus 5.5 si intéressant. Si vous avez apprécié cette vidéo, n&#x27;oubliez pas de vous abonner à Pursuing AI pour découvrir d&#x27;autres expériences en IA, sorties de modèles et recherches. Merci d&#x27;avoir regardé et à bientôt dans la prochaine vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur web interactive d&#x27;une application de visualisation 3D (&quot;The Colossal Flower&quot;) avec des menus latéraux de configuration (Environment, Flower, Camera) et des boutons de contrôle en haut à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> En haut à gauche : &quot;The Colossal Flower&quot;, &quot;NIGHT GLOW — BLOOMING 55%&quot;. En haut à droite : &quot;Auto Tour&quot;, &quot;Labels&quot;, &quot;Sound&quot;, &quot;Concepts&quot;, &quot;Hide UI&quot;. En bas à gauche, section ENVIRONMENT avec les options &quot;Dawn&quot;, &quot;Day&quot;, &quot;Golden Hour&quot;, &quot;Mist / Rain&quot;, &quot;Night Glow&quot;, et section FLOWER avec &quot;Closed&quot;, &quot;Blooming&quot;, &quot;Fully Open&quot;, &quot;Cutaway&quot;, &quot;Exploded&quot;. À droite, menu CAMERA avec &quot;Hero&quot;, &quot;Low Angle&quot;, &quot;Petal&quot;, &quot;Bloom Core&quot;, &quot;Base&quot;, &quot;Aerial&quot;, &quot;Golden&quot;, &quot;Night&quot;, &quot;Cutaway&quot;. Au centre en bas : instructions &quot;Drag to orbit · Right-drag to pan · Scroll to zoom · 1–5 environments · H Hide UI&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation et démonstration d&#x27;une expérience interactive 3D générée ou construite avec l&#x27;aide de l&#x27;IA, montrant une fleur lumineuse rotative.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT--wBOccKF6Zs/frame_083_00-11-10.jpg" alt="Interface interactive d&#x27;une application web présentant une fleur géante lumineuse en 3D avec des panneaux de contrôle pour l&#x27;environnement, l&#x27;état de la fleur et les angles de caméra." loading="lazy" onclick="openLightbox('screenshots/YT--wBOccKF6Zs/frame_083_00-11-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:10</span>
+                        <span class="caption-text">Interface interactive d&#x27;une application web présentant une fleur géante lumineuse en 3D avec des panneaux de contrôle pour l&#x27;environnement, l&#x27;état de la fleur et les angles de caméra.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
