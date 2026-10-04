@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `6 / 83` (`7.2%`)
+- **Vidéos traitées** : `7 / 83` (`8.4%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -22,6 +22,7 @@
 | 2026-09-28 | [Space Bunny est bien plus puissant qu'on ne le pensait 🔥](2026-09-28_YT-gYkZlNqBO4o_Space Bunny est bien plus puissant qu'on ne le pensait 🔥_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-09-28_YT-gYkZlNqBO4o_Space Bunny est bien plus puissant qu'on ne le pensait 🔥_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 9m 41s | `68 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=gYkZlNqBO4o) | `gYkZlNqBO4o` |
 | 2026-09-25 | [Opus 5.5 est TELLEMENT plus puissant qu'on ne le pensait 🤔](2026-09-25_YT--wBOccKF6Zs_Opus 5.5 est TELLEMENT plus puissant qu'on ne le pensait 🤔_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-09-25_YT--wBOccKF6Zs_Opus 5.5 est TELLEMENT plus puissant qu'on ne le pensait 🤔_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 11m 28s | `83 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=-wBOccKF6Zs) | `-wBOccKF6Zs` |
 | 2026-09-17 | [Opus 5.2 est bien plus puissant qu'on ne le pensait 🤔](2026-09-17_YT-vE1OOz4XAyA_Opus 5.2 est bien plus puissant qu'on ne le pensait 🤔_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-09-17_YT-vE1OOz4XAyA_Opus 5.2 est bien plus puissant qu'on ne le pensait 🤔_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 7m 15s | `37 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=vE1OOz4XAyA) | `vE1OOz4XAyA` |
+| 2026-09-11 | [GPT Astra est en réalité PIRE que ce qu'on pensait 👀](2026-09-11_YT-MgCr9prca9s_GPT Astra est en réalité PIRE que ce qu'on pensait 👀_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-09-11_YT-MgCr9prca9s_GPT Astra est en réalité PIRE que ce qu'on pensait 👀_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 7m 48s | `47 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=MgCr9prca9s) | `MgCr9prca9s` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

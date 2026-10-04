@@ -5,7 +5,8 @@
     "ixDclukqjkM",
     "gYkZlNqBO4o",
     "-wBOccKF6Zs",
-    "vE1OOz4XAyA"
+    "vE1OOz4XAyA",
+    "MgCr9prca9s"
   ],
   "processed_videos": [
     {
@@ -87,9 +88,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-09-17_YT-vE1OOz4XAyA_Opus 5.2 est bien plus puissant qu'on ne le pensait 🤔_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-04T16:48:55Z",
       "status": "completed"
+    },
+    {
+      "video_id": "MgCr9prca9s",
+      "title": "GPT Astra est en réalité PIRE que ce qu'on pensait 👀",
+      "raw_title": "GPT Astra Is Actually WORSE Than We Thought 👀",
+      "filename_md": "2026-09-11_YT-MgCr9prca9s_GPT Astra est en réalité PIRE que ce qu'on pensait 👀_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-09-11_YT-MgCr9prca9s_GPT Astra est en réalité PIRE que ce qu'on pensait 👀_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-09-11",
+      "duration": 468,
+      "screenshots_count": 47,
+      "filepath_md": "/root/YT_PursuingAi/2026-09-11_YT-MgCr9prca9s_GPT Astra est en réalité PIRE que ce qu'on pensait 👀_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-09-11_YT-MgCr9prca9s_GPT Astra est en réalité PIRE que ce qu'on pensait 👀_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-04T16:56:18Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 6,
+  "completed_count": 7,
   "last_run_timestamp": "2026-10-04T16:00:02Z",
   "status": "running",
   "total_catalog_count": 83

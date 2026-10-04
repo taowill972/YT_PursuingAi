@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 GPT Astra est en réalité PIRE que ce qu&#x27;on pensait 👀 — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 GPT Astra est en réalité PIRE que ce qu&#x27;on pensait 👀</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-09-11</span>
+                <span class="badge">⏱️ 07m 48s</span>
+                <span class="badge">🆔 <code>MgCr9prca9s</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=MgCr9prca9s" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* met en lumière un phénomène intrigant et controversé autour de **GPT-6 Astra**, le modèle phare d'intelligence artificielle d'OpenAI. Peu de temps après son lancement tonitruant marqué par des résultats d'une qualité et d'un niveau de détail époustouflants, de nombreux utilisateurs ont constaté une baisse flagrante de performance et de complexité sur des tests similaires, voire identiques. Ce constat soulève une question brûlante au sein de la communauté technologique : OpenAI a-t-il subrepticement « bridé » (nerfed) son modèle pour des raisons de coût ou de performance serveur ?</p><p>Pour en avoir le cœur net, le créateur analyse rigoureusement plusieurs cas d'usage comparatifs « avant/après » partagés par la communauté (notamment par les utilisateurs Chet Aslua, Sui et Bhavy). À travers des tests variés allant de la génération d'images fixes (le pélican sur un vélo) à la modélisation 3D et aux séquences vidéo dynamiques (le lancement d'une fusée), les preuves s'accumulent : les nouveaux rendus affichent systématiquement moins de détails structurels, une géométrie simplifiée et une perte notable de photoréalisme. De plus, les temps de génération et d'inférence (le « budget de réflexion ») ont parfois été divisés par deux, suggérant une allocation de ressources en baisse drastique par les serveurs d'OpenAI.</p><p>Face à ces accusations, la situation reste paradoxale et polarisée : d'un côté, les observations empiriques et reproductibles des utilisateurs pointent vers une dégradation qualitative ; de l'autre, un employé d'OpenAI (Thibault) affirme de manière catégorique qu'aucun changement n'a été opéré depuis le lancement. Pour les créateurs de contenu vidéo et les professionnels de l'IA générative, cette polémique rappelle la volatilité inhérente aux modèles hébergés dans le cloud. Elle souligne l'importance vitale de mener des tests A/B rigoureux, de documenter ses prompts et ses paramètres, et de ne jamais tenir pour acquis les performances d'un outil propriétaire dont l'infrastructure technique échappe totalement au contrôle de l'utilisateur final.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">GPT-6</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Le syndrome du « Shadow Nerfing »** : Phénomène où un fournisseur d&#x27;IA réduit discrètement les capacités ou les temps de calcul alloués à un modèle (souvent pour économiser de la bande passante ou des coûts d&#x27;inférence) sans communication officielle.</span></li><li><span class="point-bullet">✦</span><span>Diminution du budget d&#x27;inférence** : Observation concrète que les temps de génération ont chuté (passant par exemple de plus de 9 minutes à moins de 5 minutes), corrélée directement à une baisse visible de la complexité du résultat.</span></li><li><span class="point-bullet">✦</span><span>Perte de complexité structurelle en 3D** : Les comparaisons montrent que les générations récentes peinent à comprendre les objets comme de véritables structures 3D interconnectées, se contentant d&#x27;assembler des formes basiques.</span></li><li><span class="point-bullet">✦</span><span>Disparition du photoréalisme** : Sur les séquences dynamiques (comme le lancement d&#x27;une fusée), les détails atmosphériques complexes (fumée, interactions lumineuses, profondeur de champ) sont gommés au profit d&#x27;illustrations épurées.</span></li><li><span class="point-bullet">✦</span><span>Le piège de l&#x27;évaluation isolée** : Une nouvelle image générée peut paraître satisfaisante en soi, mais la perte de qualité ne saute aux yeux que lors d&#x27;une comparaison directe côte à côte (« side-by-side ») avec les versions du jour du lancement.</span></li><li><span class="point-bullet">✦</span><span>Contradiction utilisateur vs développeur** : Illustration d&#x27;un décalage classique dans l&#x27;écosystème de l&#x27;IA entre l&#x27;expérience empirique de la communauté et les dénégations officielles des équipes de développement.</span></li><li><span class="point-bullet">✦</span><span>Importance des tests A/B contrôlés** : Pour valider une baisse de performance, il est indispensable de reproduire strictement les mêmes conditions : prompt identique, paramètres de raisonnement inchangés et même interface.</span></li><li><span class="point-bullet">✦</span><span>La variabilité inhérente aux LLM et modèles multimodaux** : Le mystère demeure quant à savoir si ces changements proviennent d&#x27;un bridage volontaire, d&#x27;une modification des comportements côté serveur ou d&#x27;une simple variance naturelle du modèle.</span></li><li><span class="point-bullet">✦</span><span>Impact pour les créateurs de contenu** : La dépendance aux outils basés sur le cloud expose les créateurs à des modifications unilatérales de qualité, rendant difficile la standardisation à long terme de workflows de production vidéo automatisés.</span></li><li><span class="point-bullet">✦</span><span>Nécessité d&#x27;une veille active** : Le rapport de recherche démontre l&#x27;intérêt de surveiller les retours de la communauté en temps réel pour détecter rapidement les altérations de comportement des outils d&#x27;IA générative.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:35</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Quelque chose d&#x27;bizarre se passe avec Astra. Quand OpenAI a introduit pour la première fois GPT-6 Astra, les gens obtenaient des résultats absolument fous. Mais maintenant, juste quelques jours plus tard, les gens relancent les mêmes tests ou de très similaires et les résultats sont visiblement différents. La question est donc : est-ce qu&#x27;OpenAI a vraiment bridé Astra ? J&#x27;ai trouvé plusieurs tests comparant les résultats originaux avec ce qu&#x27;Astra fait aujourd&#x27;hui, et la différence est plutôt intéressante. Voyons donc ce qui a réellement changé. Ici Pursuing AI et vous regardez le rapport de recherche. Et c&#x27;est</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de comparaison vidéo comparative (split-screen) illustrant les performances de GPT-6 Astra.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;GPT-6 Astra (Launch)&quot; au-dessus de la vidéo de gauche et &quot;GPT-6 Astra (Today)&quot; au-dessus de la vidéo de droite. Affichage de données textuelles et de télémétrie de conduite en haut à gauche de la vidéo de droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle côte à côte de deux simulations de conduite de véhicules générées par IA pour illustrer une baisse de qualité (nerf) entre la version initiale et la version actuelle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_001_00-00-02.jpg" alt="Comparaison vidéo côte à côte entre GPT-6 Astra au lancement (à gauche) et aujourd&#x27;hui (à droite) montrant une simulation de conduite urbaine de nuit." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Comparaison vidéo côte à côte entre GPT-6 Astra au lancement (à gauche) et aujourd&#x27;hui (à droite) montrant une simulation de conduite urbaine de nuit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_002_00-00-24.jpg" alt="Comparaison vidéo côte à côte montrant l&#x27;évolution du rendu des graphismes et de l&#x27;éclairage de la simulation de conduite entre le lancement et aujourd&#x27;hui." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_002_00-00-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:24</span>
+                        <span class="caption-text">Comparaison vidéo côte à côte montrant l&#x27;évolution du rendu des graphismes et de l&#x27;éclairage de la simulation de conduite entre le lancement et aujourd&#x27;hui.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:35 - 00:01:08</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">là où la comparaison devient vraiment intéressante. Parce que Chet Aslua n&#x27;a pas seulement dit qu&#x27;Astra a l&#x27;air différente, il nous a réellement montré les résultats avant et après. Prenons ce test du pélican sur un vélo. Dans le résultat précédent, Astra a généré cette illustration très détaillée. Vous pouvez voir le pélican, le vélo, l&#x27;écharpe, l&#x27;arrière-plan, l&#x27;eau, le soleil. Il se passe beaucoup de choses dans cette image, et toute la composition semble étonnamment complète. Maintenant, comparez cela avec le résultat plus récent. L&#x27;idée de base est toujours là. Vous avez toujours le pélican, vous avez toujours le</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo comparative avec des captures d&#x27;écran et des illustrations générées par intelligence artificielle (GPT-6 Astra).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;GPT-6 Astra (Launch)&quot;, &quot;GPT-6 Astra (Today)&quot;, &quot;Astra Launch&quot;, &quot;Astra Today&quot;. Illustrations d&#x27;un pélican sur un vélo et séquences de conduite automobile.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur compare visuellement les résultats d&#x27;anciennes et de nouvelles générations d&#x27;IA pour illustrer l&#x27;évolution des performances.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_003_00-00-37.jpg" alt="Comparaison vidéo avant/après de GPT-6 Astra montrant une voiture sur une route de nuit au lancement et aujourd&#x27;hui." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_003_00-00-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:37</span>
+                        <span class="caption-text">Comparaison vidéo avant/après de GPT-6 Astra montrant une voiture sur une route de nuit au lancement et aujourd&#x27;hui.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_004_00-00-47.jpg" alt="Illustration générée par Astra Launch montrant un pélican sur un vélo avec de nombreux détails d&#x27;arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_004_00-00-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:47</span>
+                        <span class="caption-text">Illustration générée par Astra Launch montrant un pélican sur un vélo avec de nombreux détails d&#x27;arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_005_00-01-06.jpg" alt="Comparaison côte à côte entre Astra Launch et Astra Today d&#x27;une illustration de pélican sur un vélo." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_005_00-01-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:06</span>
+                        <span class="caption-text">Comparaison côte à côte entre Astra Launch et Astra Today d&#x27;une illustration de pélican sur un vélo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:08 - 00:01:40</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">bicyclette, et vous avez toujours le même concept visuel général. Ce n&#x27;est donc pas comme si Astra avait soudainement oublié comment suivre le prompt. Mais lorsque vous placez les deux résultats côte à côte, la différence devient beaucoup plus facile à remarquer. La nouvelle image semble plus simple. Il y a moins de petits détails, la composition semble moins élaborée, et certains des éléments visuels qui donnaient au résultat original un aspect plus soigné n&#x27;y sont tout simplement pas de la même manière. Et c&#x27;est important, car si vous me montriez seulement la nouvelle image sans me dire qu&#x27;il existe une version plus ancienne, je pourrais facilement la regarder et</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de comparaison d&#x27;images avec des étiquettes textuelles &quot;Astra Launch&quot; et &quot;Astra Today&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;Astra Launch&quot; au-dessus de l&#x27;image de gauche et &quot;Astra Today&quot; au-dessus de l&#x27;image de droite, représentant des illustrations de pélicans à bicyclette.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative de deux versions d&#x27;une image générée par intelligence artificielle pour analyser l&#x27;évolution de la qualité visuelle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_006_00-01-10.jpg" alt="Comparaison côte à côte de deux images générées par IA : &quot;Astra Launch&quot; (version originale) et &quot;Astra Today&quot; (version récente), montrant un pélican sur un vélo." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_006_00-01-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Comparaison côte à côte de deux images générées par IA : &quot;Astra Launch&quot; (version originale) et &quot;Astra Today&quot; (version récente), montrant un pélican sur un vélo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_007_00-01-38.jpg" alt="Comparaison côte à côte avec l&#x27;image de gauche assombrie pour mettre en valeur l&#x27;image de droite &quot;Astra Today&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_007_00-01-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:38</span>
+                        <span class="caption-text">Comparaison côte à côte avec l&#x27;image de gauche assombrie pour mettre en valeur l&#x27;image de droite &quot;Astra Today&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:40 - 00:02:14</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">disons, ouais, ça a l&#x27;air plutôt bien. Et honnêtement, c&#x27;est le cas. Le problème ne devient vraiment évident que lorsque vous le comparez directement avec ce qu&#x27;Astra produisait avant. Parce que la question n&#x27;est pas : est-ce que le nouveau résultat est bon ? La vraie question est : est-ce qu&#x27;il fait la même quantité de travail que l&#x27;ancien résultat ? Et c&#x27;est là que les choses deviennent intéressantes. Sheta Slua a souligné que la première exécution a pris environ 9 minutes et 8 secondes, mais que la nouvelle exécution n&#x27;a pris que 4 minutes et 48 secondes. C&#x27;est presque la moitié du temps. Et selon son observation, l&#x27;effort de réflexion semblait également être significativement</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Capture d&#x27;écran d&#x27;un navigateur affichant une publication sur le réseau social X (Twitter) et des visuels comparatifs.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Astra Launch&quot;, &quot;Astra Today&quot;, le tweet de @chetaslua avec le texte &quot;astra is nerfed maybe they have fucked up the juice / effort value before vs after in max &lt; it took 9m 08s before and now 4m 48s &gt; basically half the time and thinking effort&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur affiche des captures d&#x27;écran comparatives et un tweet pour illustrer la diminution du temps de calcul et des performances d&#x27;Astra.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_008_00-01-42.jpg" alt="Comparaison côte à côte entre &quot;Astra Launch&quot; et &quot;Astra Today&quot; montrant des illustrations de pélican sur un vélo." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_008_00-01-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:42</span>
+                        <span class="caption-text">Comparaison côte à côte entre &quot;Astra Launch&quot; et &quot;Astra Today&quot; montrant des illustrations de pélican sur un vélo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_009_00-01-52.jpg" alt="Affichage complet et clair des deux images comparatives &quot;Astra Launch&quot; et &quot;Astra Today&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_009_00-01-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:52</span>
+                        <span class="caption-text">Affichage complet et clair des deux images comparatives &quot;Astra Launch&quot; et &quot;Astra Today&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_010_00-02-03.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Chetaslua sur X (Twitter) discutant des performances d&#x27;Astra et du temps d&#x27;exécution." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_010_00-02-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:03</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Chetaslua sur X (Twitter) discutant des performances d&#x27;Astra et du temps d&#x27;exécution.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:14 - 00:02:38</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">inférieur. Donc vous avez cette combinaison intéressante, moins de temps passé à raisonner, et un résultat potentiellement moins détaillé. Et puis les choses deviennent encore plus confuses. Parce qu&#x27;après que Chetislua a posté cette comparaison, Thibault, un employé d&#x27;OpenAI, a répondu directement. Et sa réponse a été plutôt directe. Nous n&#x27;avons apporté aucun changement depuis le lancement d&#x27;Astra. Maintenant, nous avons deux choses qui ne semblent pas correspondre.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Publication de @chetaslua (&quot;astra is nerfed maybe they have fucked up the juice /effort value, before vs after in max &lt; it took 9m 08s before and now 4m 48s&gt;, basically half the time and thinking effort&quot;) avec une image de pélican à vélo. Sur l&#x27;image 2, la réponse de Tibo (@thsottiaux, Codex &amp; ChatGPT @OpenAI) apparaît en bas : &quot;We have made no changes since the launch of Astra.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran de tweets et de captures de comparaisons de performances d&#x27;IA sur le réseau social X, puis apparition de la réponse officielle d&#x27;un employé d&#x27;OpenAI.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_011_00-02-16.jpg" alt="Capture d&#x27;écran du réseau social X (Twitter) montrant la publication de Chetislua comparant les performances d&#x27;Astra avant et après, avec une illustration de pélican à vélo." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_011_00-02-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:16</span>
+                        <span class="caption-text">Capture d&#x27;écran du réseau social X (Twitter) montrant la publication de Chetislua comparant les performances d&#x27;Astra avant et après, avec une illustration de pélican à vélo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_012_00-02-30.jpg" alt="Capture d&#x27;écran du réseau social X (Twitter) montrant la publication de Chetislua ainsi que la réponse de l&#x27;employé d&#x27;OpenAI (Tibo) affirmant qu&#x27;aucun changement n&#x27;a été fait depuis le lancement d&#x27;Astra." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_012_00-02-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:30</span>
+                        <span class="caption-text">Capture d&#x27;écran du réseau social X (Twitter) montrant la publication de Chetislua ainsi que la réponse de l&#x27;employé d&#x27;OpenAI (Tibo) affirmant qu&#x27;aucun changement n&#x27;a été fait depuis le lancement d&#x27;Astra.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:38 - 00:03:01</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">D&#x27;un côté, les utilisateurs disent que quelque chose semble différent. Nous voyons des exemples où le résultat apparaît moins détaillé, et dans ce test particulier, le temps de génération est tombé de plus de neuf minutes à moins de 5. Mais d&#x27;un autre côté, OpenAI affirme que rien n&#x27;a changé depuis le lancement. Alors que se passe-t-il exactement ? Et c&#x27;est là qu&#x27;une autre comparaison a attiré mon attention.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant des publications sur le réseau social X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de gauche : &quot;astra is nerfed maybe they have fucked up the juice /effort value before vs infer in max &lt; it took 9m 08s before and now 4m 48s &gt; basically half the time and thinking effort&quot;. Image d&#x27;un pélican sur un vélo. Tweet de droite sur l&#x27;image #2 : &quot;We have made no changes since the launch of Astra.&quot; posté par Tibo le 11 sept. 2026.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran de captures d&#x27;écran de tweets pour illustrer le débat sur la baisse des performances ou du temps de calcul d&#x27;Astra et la réponse officielle d&#x27;OpenAI.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_013_00-02-40.jpg" alt="Capture d&#x27;écran d&#x27;un tweet montrant une comparaison de génération (avant/après) et le profil Twitter de Chetaslua." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_013_00-02-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:40</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet montrant une comparaison de génération (avant/après) et le profil Twitter de Chetaslua.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_014_00-02-54.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Tibo affirmant qu&#x27;aucun changement n&#x27;a été fait depuis le lancement d&#x27;Astra, aux côtés du message initial avec l&#x27;image du pélican sur un vélo." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_014_00-02-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:54</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Tibo affirmant qu&#x27;aucun changement n&#x27;a été fait depuis le lancement d&#x27;Astra, aux côtés du message initial avec l&#x27;image du pélican sur un vélo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:01 - 00:03:36</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Un autre utilisateur, Sui, a publié une comparaison côte à côte montrant spécifiquement GPT-6 Astra au lancement par rapport à Astra Now. Et selon la publication, ils ont utilisé le même prompt et le même paramètre de raisonnement. Cette fois, la tâche était complètement différente. Ils ont demandé à Astra de générer un modèle 3D. Et honnêtement, cet exemple est plutôt intéressant. Regardez le résultat du lancement sur la gauche. Astra a produit un objet 3D beaucoup plus détaillé. Il y a de multiples composants, différents éléments mécaniques et beaucoup plus de structure dans la conception globale. On dirait que le modèle est</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (Twitter) affichant un tweet de l&#x27;utilisateur @birdabo (Sui) avec des visuels de comparaison 3D.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;GPT-6 Astra on launch vs Astra now. same prompt, same reasoning. it seems we only get the unquantized models for a week then all 3d capabilities and knowledge goes out the window 😅 meanwhile Grok gets nerfed from being TOO fun and edgy lmao.&quot; et étiquettes vidéo &quot;GPT ASTRA (AT LAUNCH)&quot; et &quot;GPT ASTRA (now)&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative côte à côte de deux objets 3D générés par IA avec le même prompt pour illustrer la dégradation des performances du modèle au fil du temps.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_015_00-03-03.jpg" alt="Publication sur les réseaux sociaux montrant une capture d&#x27;écran de Twitter/X avec une comparaison comparative de modèles 3D générés par GPT-6 Astra au lancement versus maintenant." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_015_00-03-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:03</span>
+                        <span class="caption-text">Publication sur les réseaux sociaux montrant une capture d&#x27;écran de Twitter/X avec une comparaison comparative de modèles 3D générés par GPT-6 Astra au lancement versus maintenant.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_016_00-03-25.jpg" alt="Gros plan sur la comparaison vidéo des deux modèles 3D de fusils générés, mettant en évidence le contraste de niveau de détail entre &quot;GPT ASTRA (AT LAUNCH)&quot; et &quot;GPT ASTRA (now)&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_016_00-03-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:25</span>
+                        <span class="caption-text">Gros plan sur la comparaison vidéo des deux modèles 3D de fusils générés, mettant en évidence le contraste de niveau de détail entre &quot;GPT ASTRA (AT LAUNCH)&quot; et &quot;GPT ASTRA (now)&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_017_00-03-34.jpg" alt="Vue rapprochée des deux modèles 3D en rotation, montrant clairement les composants mécaniques détaillés de l&#x27;objet de gauche face au design simplifié de l&#x27;objet de droite." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_017_00-03-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:34</span>
+                        <span class="caption-text">Vue rapprochée des deux modèles 3D en rotation, montrant clairement les composants mécaniques détaillés de l&#x27;objet de gauche face au design simplifié de l&#x27;objet de droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:36 - 00:04:08</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">en essayant de comprendre l&#x27;objet comme une structure 3D plutôt que de simplement générer quelque chose qui lui ressemble visuellement. Regardez maintenant le nouveau résultat sur la droite. Le modèle comprend toujours le concept général. On devine clairement ce qu&#x27;il est censé représenter, mais la géométrie est beaucoup plus simple. Le corps principal est plus basique, plusieurs composants ont l&#x27;air moins cohérents, et une grande partie des petits détails structurels du résultat d&#x27;origine manque. Et c&#x27;est une différence importante, car il ne s&#x27;agit pas simplement d&#x27;une image plus jolie qu&#x27;une autre. Il s&#x27;agit de savoir à quel point</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Comparaison comparative de modèles 3D avec étiquettes textuelles</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes affichés : &quot;GPT ASTRA (AT LAUNCH)&quot; à gauche et &quot;GPT ASTRA (NOW)&quot; à droite. À gauche, un modèle 3D détaillé d&#x27;une mitrailleuse avec des douilles de munitions et un bipied. À droite, un modèle 3D noir au design beaucoup plus géométrique et simplifié.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle de deux rendus 3D pour illustrer la perte de détails et de complexité géométrique d&#x27;un modèle d&#x27;IA au fil du temps.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_018_00-03-38.jpg" alt="Comparaison côte à côte entre GPT Astra au lancement montrant une mitrailleuse détaillée et GPT Astra actuel montrant un modèle 3D géométrique simplifié." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_018_00-03-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:38</span>
+                        <span class="caption-text">Comparaison côte à côte entre GPT Astra au lancement montrant une mitrailleuse détaillée et GPT Astra actuel montrant un modèle 3D géométrique simplifié.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_019_00-03-47.jpg" alt="Vue légèrement modifiée de la même comparaison de modèles 3D" loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_019_00-03-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:47</span>
+                        <span class="caption-text">Vue légèrement modifiée de la même comparaison de modèles 3D</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:08 - 00:04:42</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">des informations structurelles que le modèle semble préserver. Le résultat du lancement donne l&#x27;impression d&#x27;avoir davantage de relations entre ses différentes parties. Le résultat plus récent ressemble plutôt à une collection de formes simples assemblées pour représenter la même idée. Et ensuite, nous avons un autre exemple. Cette fois, la différence est encore plus facile à voir. Bervia a publié une comparaison d&#x27;Astra au jour du lancement par rapport à Astra aujourd&#x27;hui, en affirmant à nouveau utiliser le même prompt. Et cette fois, la tâche consistait à générer une séquence de lancement de fusée. Regardez maintenant la comparaison attentivement. Du côté du jour du lancement, la fusée et le</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme X (Twitter) intégrée dans la vidéo de démonstration.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Astra (launch day) vs Astra (Today). Same prompt. Today&#x27;s result looks off. The photo realism is gone. It clearly looks nerfed. GPT-5.6 Sol is unusable for me right now too.&quot; Labels sur les images : &quot;GPT-6 Astra (Launch)&quot; et &quot;GPT-6 Astra (Today)&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente des comparaisons côte à côte de modèles générés par IA pour illustrer la dégradation de la qualité entre le jour du lancement et aujourd&#x27;hui.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_020_00-04-10.jpg" alt="Comparaison visuelle entre &quot;GPT Astra (at launch)&quot; et &quot;GPT Astra (now)&quot; montrant deux conceptions de mitrailleuses en 3D." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_020_00-04-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:10</span>
+                        <span class="caption-text">Comparaison visuelle entre &quot;GPT Astra (at launch)&quot; et &quot;GPT Astra (now)&quot; montrant deux conceptions de mitrailleuses en 3D.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_021_00-04-20.jpg" alt="Vue rapprochée de la comparaison des deux modèles de mitrailleuses générées par IA." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_021_00-04-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:20</span>
+                        <span class="caption-text">Vue rapprochée de la comparaison des deux modèles de mitrailleuses générées par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_022_00-04-31.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de @Bhavani_00007 montrant une comparaison vidéo de lancement de fusée." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_022_00-04-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:31</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de @Bhavani_00007 montrant une comparaison vidéo de lancement de fusée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_023_00-04-40.jpg" alt="Gros plan sur la comparaison vidéo des lancements de fusées &quot;GPT-6 Astra (Launch)&quot; et &quot;GPT-6 Astra (Today)&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_023_00-04-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:40</span>
+                        <span class="caption-text">Gros plan sur la comparaison vidéo des lancements de fusées &quot;GPT-6 Astra (Launch)&quot; et &quot;GPT-6 Astra (Today)&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:42 - 00:05:03</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;environnement environnant paraît beaucoup plus détaillé. La tour de lancement possède des éléments structurels plus visibles, la fusée elle-même a plus de détails, et toute la scène a un aspect rendu 3D plus réaliste. Même l&#x27;environnement semble plus développé. Vous avez le pas de tir, les structures environnantes, la fumée, l&#x27;éclairage et les gaz d&#x27;échappement qui fonctionnent tous ensemble.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de comparaison vidéo montrant un test visuel côte à côte étiqueté &quot;GPT-6 Astra (Launch)&quot; à gauche et &quot;GPT-6 Astra (Today)&quot; à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;GPT-6 Astra (Launch)&quot; et &quot;GPT-6 Astra (Today)&quot; au sommet des deux fenêtres de comparaison.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle de deux rendus 3D de fusées spatiales au décollage, mettant en évidence les améliorations de détails graphiques, d&#x27;éclairage et de structures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_024_00-04-44.jpg" alt="Comparaison côte à côte de deux versions d&#x27;une fusée au décollage, montrant les détails améliorés du pas de tir et de la tour de lancement." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_024_00-04-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:44</span>
+                        <span class="caption-text">Comparaison côte à côte de deux versions d&#x27;une fusée au décollage, montrant les détails améliorés du pas de tir et de la tour de lancement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_025_00-04-52.jpg" alt="Comparaison côte à côte des fusées en vol avec des panaches de fumée et des structures modernisées." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_025_00-04-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:52</span>
+                        <span class="caption-text">Comparaison côte à côte des fusées en vol avec des panaches de fumée et des structures modernisées.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_026_00-05-01.jpg" alt="Comparaison détaillée des tours de lancement et de la texture des fusées entre la version de lancement et la version actuelle." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_026_00-05-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:01</span>
+                        <span class="caption-text">Comparaison détaillée des tours de lancement et de la texture des fusées entre la version de lancement et la version actuelle.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:03 - 00:05:31</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, regardez la version plus récente. La scène de base est toujours correcte, il y a toujours une fusée, il y a toujours un pas de tir, il y a toujours de la fumée et des gaz d&#x27;échappement, donc là encore, le modèle n&#x27;a pas complètement échoué à la tâche, mais l&#x27;exécution visuelle semble différente. Le résultat le plus récent ressemble beaucoup plus à une illustration 3D épurée, tandis que le résultat du lancement a un aspect plus détaillé et presque photoréaliste. Et la différence devient encore plus évidente lorsque la fusée décolle réellement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un tweet sur la plateforme X (anciennement Twitter) et comparatif vidéo côte à côte.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Astra (launch day) vs Astra (Today). Same prompt. Today&#x27;s result looks off. The photo realism is gone. It clearly looks nerfed. GPT-5.6 Sol is unusable for me right now too.&quot; Labels vidéo : &quot;GPT-6 Astra (Launch)&quot; et &quot;GPT-6 Astra (Today)&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le comparatif vidéo montre le décollage de deux fusées générées par IA pour illustrer l&#x27;évolution et la perte perçue de réalisme dans le rendu visuel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_027_00-05-05.jpg" alt="Comparaison côte à côte de deux versions de génération de fusée, montrant GPT-6 Astra (Launch) à gauche et GPT-6 Astra (Today) à droite." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_027_00-05-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:05</span>
+                        <span class="caption-text">Comparaison côte à côte de deux versions de génération de fusée, montrant GPT-6 Astra (Launch) à gauche et GPT-6 Astra (Today) à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_028_00-05-13.jpg" alt="Visualisation de la fusée en plein vol avec panache de fumée, illustrant la différence d&#x27;aspect visuel entre la version de lancement et la version actuelle." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_028_00-05-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:13</span>
+                        <span class="caption-text">Visualisation de la fusée en plein vol avec panache de fumée, illustrant la différence d&#x27;aspect visuel entre la version de lancement et la version actuelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_029_00-05-22.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Bhavy sur X (Twitter) commentant la baisse de photoréalisme entre Astra (launch day) et Astra (Today)." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_029_00-05-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:22</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Bhavy sur X (Twitter) commentant la baisse de photoréalisme entre Astra (launch day) et Astra (Today).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:31 - 00:06:03</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La version plus ancienne a un sentiment de profondeur et d&#x27;atmosphère plus prononcé, la fumée interagit avec l&#x27;environnement, l&#x27;éclairage semble plus complexe, et la fusée conserve plus de détails visuels tout au long de la séquence. La version plus récente, en revanche, semble beaucoup plus simplifiée. Bhavy a même décrit la différence en disant que le photoréalisme a disparu et que cela a clairement l&#x27;air d&#x27;avoir été bridé (nerfed). Jusqu&#x27;à ce que nous ayons cela, qualifier cela de bridage confirmé serait aller plus vite que les faits, mais en même temps, je ne pense pas qu&#x27;il soit juste de simplement rejeter ce que les utilisateurs constatent, car nous examinons maintenant plusieurs exemples qui pointent dans une</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Capture d&#x27;écran d&#x27;une plateforme de réseau social (X/Twitter) affichant des comparaisons vidéo côte à côte.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;GPT-6 Astra (Launch)&quot;, &quot;GPT-6 Astra (Today)&quot;, tweet de Bhavy (@Bhavani_00007) avec le texte &quot;Astra (launch day) vs Astra (Today). Same prompt. Today&#x27;s result looks off. The photo realism is gone. It clearly looks nerfed. GPT-5.6 Sol is unusable for me right now too.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage comparatif de vidéos générées par IA pour illustrer la perte de qualité et le &quot;nerf&quot; perçu entre le lancement et l&#x27;état actuel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_030_00-05-33.jpg" alt="Comparaison côte à côte de la version de lancement de GPT-6 Astra et de la version actuelle montrant le décollage d&#x27;une fusée." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_030_00-05-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:33</span>
+                        <span class="caption-text">Comparaison côte à côte de la version de lancement de GPT-6 Astra et de la version actuelle montrant le décollage d&#x27;une fusée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_031_00-05-42.jpg" alt="Suite de la comparaison vidéo montrant la fusée en vol dans les deux versions (lancement vs aujourd&#x27;hui)." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_031_00-05-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:42</span>
+                        <span class="caption-text">Suite de la comparaison vidéo montrant la fusée en vol dans les deux versions (lancement vs aujourd&#x27;hui).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_032_00-05-53.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Bhavy commentant la différence entre la version de lancement et la version actuelle." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_032_00-05-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:53</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Bhavy commentant la différence entre la version de lancement et la version actuelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_033_00-06-01.jpg" alt="Comparaison d&#x27;un autre exemple montrant une voiture en mouvement (GPT-6 Astra Launch vs Today)." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_033_00-06-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:01</span>
+                        <span class="caption-text">Comparaison d&#x27;un autre exemple montrant une voiture en mouvement (GPT-6 Astra Launch vs Today).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:03 - 00:06:27</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">direction similaire. La comparaison du Pélican montre une différence majeure dans le temps de raisonnement rapporté, la comparaison de génération 3D montre une différence notable dans la complexité structurelle, et la comparaison de la Fusée montre une différence visible dans le réalisme et le détail visuel. Et tout cela se produit alors qu&#x27;un employé d&#x27;OpenAI dit, nous n&#x27;avons apporté aucun changement depuis le lancement d&#x27;Astra. Il nous reste donc un mystère plutôt intéressant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (Twitter) et captures d&#x27;écran comparatives de générations d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tweets et comparaisons visuelles étiquetées &quot;GPT ASTRA (AT LAUNCH)&quot;, &quot;GPT ASTRA (now)&quot;, &quot;GPT-6 Astra (Launch)&quot; et &quot;GPT-6 Astra (Today)&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage successif des exemples de comparaisons de performances et de complexité visuelle pour illustrer le mystère des changements non officialisés d&#x27;OpenAI.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_034_00-06-05.jpg" alt="Capture d&#x27;écran d&#x27;un tweet montrant un test de performance du modèle Astra avec une image de pélican à vélo." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_034_00-06-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:05</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet montrant un test de performance du modèle Astra avec une image de pélican à vélo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_035_00-06-12.jpg" alt="Comparaison côte à côte de la génération 3D d&#x27;une arme par GPT Astra au lancement et maintenant." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_035_00-06-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:12</span>
+                        <span class="caption-text">Comparaison côte à côte de la génération 3D d&#x27;une arme par GPT Astra au lancement et maintenant.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_036_00-06-19.jpg" alt="Comparaison côte à côte de la génération d&#x27;une fusée par GPT-6 Astra au lancement et aujourd&#x27;hui." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_036_00-06-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:19</span>
+                        <span class="caption-text">Comparaison côte à côte de la génération d&#x27;une fusée par GPT-6 Astra au lancement et aujourd&#x27;hui.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_037_00-06-25.jpg" alt="Deuxième angle de comparaison côte à côte d&#x27;une fusée par GPT-6 Astra au lancement et aujourd&#x27;hui." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_037_00-06-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:25</span>
+                        <span class="caption-text">Deuxième angle de comparaison côte à côte d&#x27;une fusée par GPT-6 Astra au lancement et aujourd&#x27;hui.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:27 - 00:06:46</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si le modèle sous-jacent n&#x27;a vraiment pas changé, pourquoi ces résultats changent-ils ? Astra est-elle réellement servie différemment ? Le budget d&#x27;inférence est-il en train de changer ? Y a-t-il un comportement côté serveur que les utilisateurs ne voient pas ? Ou voyons-nous simplement la variation naturelle d&#x27;un modèle capable de produire des résultats très différents à partir de prompts identiques ou similaires ? Pour l&#x27;instant, nous ne savons pas.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant des images comparatives, un tweet sur les réseaux sociaux (X), et une interface de visualisation de données 3D de ville (dat.city).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;GPT-6 Astra (Launch)&quot; et &quot;GPT-6 Astra (Today)&quot;, tweet de @chetaslua mentionnant &quot;astra is nerfed... before vs after in max &lt; it took 9m 08s before and now 4m 48s&gt;&quot;, et l&#x27;interface de dat.city avec une barre de recherche &quot;Search the data...&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage successif de visuels comparatifs illustrant les variations de performance et de rendu des modèles d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_038_00-06-29.jpg" alt="Comparaison visuelle côte à côte de deux lancements de fusée intitulée &#x27;GPT-6 Astra (Launch)&#x27; et &#x27;GPT-6 Astra (Today)&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_038_00-06-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:29</span>
+                        <span class="caption-text">Comparaison visuelle côte à côte de deux lancements de fusée intitulée &#x27;GPT-6 Astra (Launch)&#x27; et &#x27;GPT-6 Astra (Today)&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_039_00-06-37.jpg" alt="Capture d&#x27;écran d&#x27;un tweet sur X (anciennement Twitter) de l&#x27;utilisateur @chetaslua discutant d&#x27;un modèle Astra affichant un pélican sur un vélo." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_039_00-06-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:37</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet sur X (anciennement Twitter) de l&#x27;utilisateur @chetaslua discutant d&#x27;un modèle Astra affichant un pélican sur un vélo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_040_00-06-44.jpg" alt="Capture d&#x27;écran de l&#x27;interface du site web &#x27;dat.city&#x27; montrant une vue aérienne interactive d&#x27;une ville générée en 3D." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_040_00-06-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:44</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface du site web &#x27;dat.city&#x27; montrant une vue aérienne interactive d&#x27;une ville générée en 3D.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:46 - 00:07:22</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais c&#x27;est exactement pour cela que je vais garder un œil là-dessus. Parce que si davantage de personnes commencent à mener des tests comparatifs avant/après contrôlés, et que le même schéma continue d&#x27;apparaître, alors cela passe de quelques captures d&#x27;écran intéressantes à quelque chose de beaucoup plus significatif. Alors, est-ce qu&#x27;OpenAI a réellement bridé Astra ? Pour l&#x27;instant, nous n&#x27;avons tout simplement pas assez de preuves pour l&#x27;affirmer avec certitude. Nous avons plusieurs utilisateurs qui montrent des résultats du jour du lancement qui semblent plus détaillés, plus performants ou plus gourmands en ressources que ce qu&#x27;ils obtiennent aujourd&#x27;hui. Mais nous avons aussi un employé d&#x27;OpenAI qui affirme qu&#x27;aucun changement n&#x27;a été apporté depuis le lancement. Donc pour l&#x27;instant, cela reste un mystère. Peut-être que quelque chose a réellement changé.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de visualisation de données 3D &quot;dat.city&quot; et interface de comparaison de gameplay &quot;GPT-6 PRO&quot; (Mario-Style World / Arena Boss Fight).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;dat.city WORLD DATA PLAYGROUND&quot;, &quot;Search the data&quot;, &quot;NOW PLAYING: Bricklight Anthem&quot;, &quot;GPT-6 PRO&quot;, &quot;TODAY&quot;, &quot;2 DAYS AGO&quot;, &quot;MARIO-STYLE WORLD&quot;, &quot;ARENA BOSS FIGHT&quot;, &quot;GAMEPLAY COMPARISON&quot;.
+[DESC_IMAGE_1] Navigation et exploration d&#x27;une simulation de ville interactive en 3D.
+[DESC_IMAGE_2] Affichage de données et de métriques en surimpression sur la carte 3D de la ville.
+[DESC_IMAGE_3] Démonstration du gameplay actuel dans un monde virtuel aux couleurs vives.
+[DESC_IMAGE_4] Démonstration du gameplay d&#x27;il y a deux jours montrant une scène de combat (Arena Boss Fight).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_041_00-06-48.jpg" alt="Vue aérienne nocturne d&#x27;une maquette de ville interactive avec des graphismes 3D stylisés sur la plateforme dat.city." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_041_00-06-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:48</span>
+                        <span class="caption-text">Vue aérienne nocturne d&#x27;une maquette de ville interactive avec des graphismes 3D stylisés sur la plateforme dat.city.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_042_00-06-59.jpg" alt="Vue rapprochée de la ville 3D sur dat.city avec des indicateurs et graphiques lumineux colorés superposés." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_042_00-06-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:59</span>
+                        <span class="caption-text">Vue rapprochée de la ville 3D sur dat.city avec des indicateurs et graphiques lumineux colorés superposés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_043_00-07-11.jpg" alt="Comparaison &#x27;Today&#x27; montrant un monde 3D de style Mario avec un personnage cylindrique et des étals de marché." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_043_00-07-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:11</span>
+                        <span class="caption-text">Comparaison &#x27;Today&#x27; montrant un monde 3D de style Mario avec un personnage cylindrique et des étals de marché.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_044_00-07-20.jpg" alt="Comparaison &#x27;2 Days Ago&#x27; montrant un combat de boss en arène 3D avec un personnage et un ennemi imposant." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_044_00-07-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:20</span>
+                        <span class="caption-text">Comparaison &#x27;2 Days Ago&#x27; montrant un combat de boss en arène 3D avec un personnage et un ennemi imposant.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:22 - 00:07:48</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">quelque part dans le système. Peut-être que c&#x27;est l&#x27;inférence ou le comportement côté serveur, ou peut-être que ces comparaisons capturent simplement la variation naturelle entre les générations. Mais une chose est claire, les gens ont remarqué une différence, et maintenant les gens surveillent Astra de beaucoup plus près. Si des tests plus contrôlés commencent à montrer le même schéma, cette histoire pourrait devenir beaucoup plus intéressante. C&#x27;est tout pour cette fois. C&#x27;est Pursuing AI, et je vous retrouve dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de présentation vidéo avec écrans partagés comparant des rendus d&#x27;IA générés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;GPT-6 PRO&quot;, &quot;TWO DAYS APART.&quot;, &quot;TODAY&quot;, &quot;2 DAYS AGO&quot;, &quot;MARIO-STYLE WORLD&quot;, &quot;ARENA BOSS FIGHT&quot;, &quot;YOUR VERDICT?&quot;, &quot;GPT-6 Astra (Launch)&quot;, &quot;GPT-6 Astra (Today)&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage comparatif visuel de deux versions de rendus 3D générés par IA pour illustrer l&#x27;évolution des performances ou des différences de comportement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_045_00-07-24.jpg" alt="Comparaison côte à côte de GPT-6 Pro entre &#x27;Today&#x27; et &#x27;2 Days Ago&#x27; montrant un monde de style Mario et un combat de boss en arène." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_045_00-07-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:24</span>
+                        <span class="caption-text">Comparaison côte à côte de GPT-6 Pro entre &#x27;Today&#x27; et &#x27;2 Days Ago&#x27; montrant un monde de style Mario et un combat de boss en arène.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_046_00-07-31.jpg" alt="Comparaison côte à côte de GPT-6 Astra entre le lancement et aujourd&#x27;hui montrant un décollage de fusée." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_046_00-07-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:31</span>
+                        <span class="caption-text">Comparaison côte à côte de GPT-6 Astra entre le lancement et aujourd&#x27;hui montrant un décollage de fusée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MgCr9prca9s/frame_047_00-07-39.jpg" alt="Comparaison côte à côte de GPT-6 Astra entre le lancement et aujourd&#x27;hui montrant le décollage d&#x27;une fusée avec une tour de lancement orange." loading="lazy" onclick="openLightbox('screenshots/YT-MgCr9prca9s/frame_047_00-07-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:39</span>
+                        <span class="caption-text">Comparaison côte à côte de GPT-6 Astra entre le lancement et aujourd&#x27;hui montrant le décollage d&#x27;une fusée avec une tour de lancement orange.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
