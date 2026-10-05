@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Les robots commencent à surpasser les humains — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Les robots commencent à surpasser les humains</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-08-19</span>
+                <span class="badge">⏱️ 07m 33s</span>
+                <span class="badge">🆔 <code>XuCDf4afPVg</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=XuCDf4afPVg" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* explore les convergences spectaculaires entre la robotique humanoïde de pointe et les avancées imminentes des grands modèles de langage, dressant le portrait d'une ère où l'intelligence artificielle commence à surpasser les performances physiques et cognitives humaines. Le sujet central s'articule autour des records d'athlétisme battus par les derniers robots humanoïdes – notamment ceux d'Unitree – et des fuites industrielles concernant de futurs modèles majeurs comme le mystérieux *Astra* d'OpenAI et le *Gemini 3.8 Flash* de Google. L'analyse met en lumière la vitesse fulgurante des cycles de développement technologique et l'émergence d'une symbiose totale entre la perception visuelle et l'action physique en temps réel.</p><p>Sur le plan technique, les innovations présentées reposent sur des méthodes de pointe telles que le « contrôle corporel global contraint » et le « contrôle par perception directe » (DPC). Cette approche permet de fusionner la vision, les instructions, la posture et le retour d'information pour piloter directement les articulations des robots, comme le démontre la conduite de karts par apprentissage multisource (basé sur plus de 15 000 heures de données). Le créateur structure sa narration vidéo par une montée en puissance progressive : introduction des performances physiques brutes, décryptage technique des algorithmes de coordination, mise en perspective des compétitions à venir (Jeux mondiaux des robots humanoïdes à Pékin), avant de basculer vers l'écosystème numérique avec les rumeurs sur les architectures multi-agents et la compression des coûts des modèles d'IA.</p><p>Pour les créateurs de contenu vidéo et les analystes technologiques, ces enseignements démontrent l'importance cruciale de l'éditorialisation des flux d'actualités complexes. En croisant des illustrations visuelles générées ou augmentées par l'IA (grâce à des outils de pointe comme Seedance ou Kling) avec des données chiffrées précises et un rythme narratif haletant, le créateur maximise l'engagement de l'audience. Cette approche offre une grille de lecture indispensable pour capturer l'attention autour des mutations technologiques rapides, en transformant des communiqués de recherche austères en récits captivants dignes de science-fiction.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Hiérarchiser l&#x27;accroche narrative** : Commencer par des métriques choc (sauts de 2 mètres, vitesses supérieures aux records humains) pour capter immédiatement l&#x27;attention de l&#x27;audience dès les premières secondes.</span></li><li><span class="point-bullet">✦</span><span>Exploiter la technique du &quot;Contrôle par Perception Directe&quot; (DPC)** : Relier visuellement la perception de l&#x27;environnement directement aux actions articulaires pour fluidifier les mouvements complexes, un principe transposable à l&#x27;animation 3D et au contrôle d&#x27;avatars virtuels.</span></li><li><span class="point-bullet">✦</span><span>Intégrer la gestion des erreurs (&quot;drift-to-still&quot;)** : Montrer que la résilience face à l&#x27;échec et la capacité à récupérer d&#x27;une trajectoire déviée renforcent la crédibilité et le réalisme des démonstrations techniques.</span></li><li><span class="point-bullet">✦</span><span>Miser sur la confrontation compétitive** : Structurer le récit autour de rivalités directes (ex: *Unitree Superman* contre *Honor Lightning* et *Mirror Me Bolt*) pour stimuler l&#x27;engagement et l&#x27;interactivité dans les commentaires.</span></li><li><span class="point-bullet">✦</span><span>Assumer les frictions du monde réel** : Ne pas masquer les imperfections (comme le robot percutant un boîtier électrique) pour prouver l&#x27;authenticité des tests en conditions réelles et humaniser le contenu technologique.</span></li><li><span class="point-bullet">✦</span><span>Synchroniser l&#x27;actualité physique et numérique** : Créer un pont thématique fluide entre les avancées de la robotique matérielle et les fuites logicielles des LLM pour offrir une vision macroscopique cohérente de l&#x27;écosystème IA.</span></li><li><span class="point-bullet">✦</span><span>Anticiper l&#x27;impact des architectures multi-agents** : Mettre en avant les capacités multi-agents des futurs modèles comme *Astra* pour sensibiliser le public aux ruptures méthodologiques imminentes dans l&#x27;automatisation des tâches complexes.</span></li><li><span class="point-bullet">✦</span><span>Analyser la démocratisation des performances** : Relayer l&#x27;émergence de modèles économiques agressifs (comme *Gemini 3.8 Flash*) pour illustrer la baisse drastique des coûts d&#x27;accès à l&#x27;intelligence de haut niveau.</span></li><li><span class="point-bullet">✦</span><span>Rythmer le montage par paliers thématiques** : Alterner habilement entre performances athlétiques, explications algorithmiques, échéances événementielles (Jeux mondiaux à Pékin) et rumeurs industrielles pour éviter la monotonie cognitive.</span></li><li><span class="point-bullet">✦</span><span>Maintenir un appel à l&#x27;action contextuel et fédérateur** : Inviter l&#x27;audience à s&#x27;abonner en capitalisant sur la rapidité d&#x27;évolution du secteur, transformant la chaîne en repère indispensable pour l&#x27; veille technologique.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:25</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les robots humanoïdes deviennent plus rapides, plus intelligents et, honnêtement, un peu effrayants. Un robot peut sauter de deux mètres verticalement. Un autre peut conduire un kart en coordonnant ses mains, ses pieds et tout son corps en temps réel. Nous voyons également des robots courir à des vitesses qui peuvent rivaliser avec, et dans certains cas dépasser, les records humains. Et pendant que tout cela se passe, certains des plus grands modèles d&#x27;IA pourraient recevoir des mises à jour majeures en coulisses.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Extraits vidéo d&#x27;actualités sur la robotique et illustration graphique textuelle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte incrusté en bas à droite : &quot;Real footage, not AI-generated&quot;. Logo en haut à droite : &quot;Symbiosis Robotics - FROM HUMANOIDS TO HUMAN&quot;. Texte graphique central sur fond vert : &quot;GPT-6 Astra&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle de robots humanoïdes en mouvement (course, manipulation de drapeaux) et affichage d&#x27;un titre textuel conceptuel sur l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_001_00-00-02.jpg" alt="Gros plan sur les jambes d&#x27;un robot humanoïde en train de courir sur de l&#x27;herbe verte." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Gros plan sur les jambes d&#x27;un robot humanoïde en train de courir sur de l&#x27;herbe verte.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_002_00-00-09.jpg" alt="Robot humanoïde debout sur une piste de karting intérieure, tenant des drapeaux à damier dans ses mains." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_002_00-00-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Robot humanoïde debout sur une piste de karting intérieure, tenant des drapeaux à damier dans ses mains.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_003_00-00-17.jpg" alt="Robot humanoïde se déplaçant rapidement à l&#x27;intérieur d&#x27;un grand stade ou d&#x27;une arène sportive." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_003_00-00-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:17</span>
+                        <span class="caption-text">Robot humanoïde se déplaçant rapidement à l&#x27;intérieur d&#x27;un grand stade ou d&#x27;une arène sportive.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_004_00-00-23.jpg" alt="Affichage graphique en gros plan du texte &quot;GPT-6 Astra&quot; sur fond pastel flou." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_004_00-00-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:23</span>
+                        <span class="caption-text">Affichage graphique en gros plan du texte &quot;GPT-6 Astra&quot; sur fond pastel flou.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:25 - 00:00:49</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc aujourd&#x27;hui, analysons quelques-unes des plus grandes avancées en cours dans le domaine de l&#x27;IA en robotique humanoïde. Commençons par Unitree. Unitree vient de présenter son nouveau robot, et honnêtement, ce truc est assez dingue. Il peut déjà sauter à 2 mètres de haut en partant d&#x27;une position statique et atteindre une vitesse de pointe de 12,66 mètres par seconde, avec des jambes qui ne font que 0,85 mètre de long.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration technique des performances du robot Unitree.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Real footage, not AI-generated&quot;, échelle graduée de 100cm à 200cm, affichage du chronomètre &quot;0.00.79&quot;, et texte technique &quot;Leg Length 0.85m, Maximum Speed 10/0.79=12.658m/s Humanity&#x27;s Global Ultimate Speed 12.4m/s&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot humanoïde Unitree est montré en action (au sol sur l&#x27;herbe, sautant devant une règle graduée, courant sur une piste d&#x27;athlétisme bleue, et les données de chronométrage s&#x27;affichent).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_005_00-00-27.jpg" alt="Gros plan sur le robot humanoïde Unitree allongé sur de l&#x27;herbe verte avec le texte explicatif en bas à droite." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_005_00-00-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:27</span>
+                        <span class="caption-text">Gros plan sur le robot humanoïde Unitree allongé sur de l&#x27;herbe verte avec le texte explicatif en bas à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_006_00-00-34.jpg" alt="Le robot Unitree effectuant un test de saut en hauteur devant une échelle graduée en intérieur." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_006_00-00-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:34</span>
+                        <span class="caption-text">Le robot Unitree effectuant un test de saut en hauteur devant une échelle graduée en intérieur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_007_00-00-41.jpg" alt="Le robot Unitree en train de courir à pleine vitesse sur une piste extérieure bleue." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_007_00-00-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:41</span>
+                        <span class="caption-text">Le robot Unitree en train de courir à pleine vitesse sur une piste extérieure bleue.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_008_00-00-47.jpg" alt="Chronomètre numérique affichant le résultat du test de vitesse avec les statistiques textuelles superposées." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_008_00-00-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:47</span>
+                        <span class="caption-text">Chronomètre numérique affichant le résultat du test de vitesse avec les statistiques textuelles superposées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:49 - 00:01:26</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela place sa détente verticale et sa vitesse de course au-delà des records humains. Mais les chiffres ne sont même pas la partie la plus folle. Regardez simplement comment ce robot s&#x27;équilibre. Maintenant, regardez-le à nouveau au ralenti. Regardez la façon dont ses bras et ses jambes bougent pendant qu&#x27;il court. La coordination est vraiment impressionnante. On dirait presque un coureur humain. Et le plus fou ? Cette machine n&#x27;est en développement que depuis un peu plus de trois mois, il y a donc encore beaucoup de marge d&#x27;amélioration. Mais Unitree n&#x27;apprend pas seulement aux robots à courir, ils travaillent également sur la façon dont les robots peuvent réellement comprendre et contrôler tout leur corps. Et cette prochaine démonstration en est le parfait exemple. Le Unitree</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration des capacités physiques et de course du robot humanoïde Unitree.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Règle de mesure verticale graduée de 10cm à 200cm en arrière-plan, piste de course extérieure avec marquages au sol.</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot humanoïde fléchit ses jambes pour effectuer un saut en hauteur ou se déplace en courant sur une piste.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_009_00-00-51.jpg" alt="Le robot bipède d&#x27;Unitree en position accroupie devant une règle de mesure verticale graduée." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_009_00-00-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:51</span>
+                        <span class="caption-text">Le robot bipède d&#x27;Unitree en position accroupie devant une règle de mesure verticale graduée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_010_00-01-02.jpg" alt="Le robot d&#x27;Unitree en train de courir sur une piste extérieure bleue de nuit." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_010_00-01-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:02</span>
+                        <span class="caption-text">Le robot d&#x27;Unitree en train de courir sur une piste extérieure bleue de nuit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_011_00-01-14.jpg" alt="Le robot bipède d&#x27;Unitree en position accroupie devant la règle de mesure verticale (identique à l&#x27;image 1)." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_011_00-01-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:14</span>
+                        <span class="caption-text">Le robot bipède d&#x27;Unitree en position accroupie devant la règle de mesure verticale (identique à l&#x27;image 1).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_012_00-01-24.jpg" alt="Le robot d&#x27;Unitree filmé de face pendant qu&#x27;il court vers la caméra sur une piste extérieure." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_012_00-01-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Le robot d&#x27;Unitree filmé de face pendant qu&#x27;il court vers la caméra sur une piste extérieure.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:26 - 00:01:53</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">G1 s&#x27;abaisse en fait dans ce minuscule cockpit de karting. Ses mains se posent sur le volant, ses pieds trouvent les pédales, et chaque partie de son corps doit rester coordonnée à l&#x27;intérieur de cet espace extrêmement exigu. Symbiosis appelle cela le contrôle corporel global contraint. Au lieu de planifier chaque mouvement séparément, le système est conçu pour relier ce que le robot voit directement à la façon dont il se déplace, et c&#x27;est là qu&#x27;intervient le contrôle par perception directe, ou DPC.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration technique (Symbiosis Robotics) montrant un robot humanoïde pilotant un kart.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Logo &quot;Symbiosis Robotics&quot; visible en haut à droite avec la mention &quot;Symbiosis to Human&quot;, et le robot G1 en action.</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot s&#x27;installe dans le cockpit d&#x27;un kart, positionne ses mains et ses pieds, puis pilote le véhicule sur une piste.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_013_00-01-28.jpg" alt="Le robot humanoïde G1 s&#x27;installe dans le minuscule cockpit d&#x27;un karting, ses jambes se pliant pour entrer dans l&#x27;espace exigu." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_013_00-01-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:28</span>
+                        <span class="caption-text">Le robot humanoïde G1 s&#x27;installe dans le minuscule cockpit d&#x27;un karting, ses jambes se pliant pour entrer dans l&#x27;espace exigu.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_014_00-01-36.jpg" alt="Le robot G1 tient des drapeaux à damier dans une piste de karting couverte, affichant son système de contrôle." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_014_00-01-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:36</span>
+                        <span class="caption-text">Le robot G1 tient des drapeaux à damier dans une piste de karting couverte, affichant son système de contrôle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_015_00-01-45.jpg" alt="Gros plan sur les pieds du robot G1 appuyant précisément sur les pédales du karting." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_015_00-01-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:45</span>
+                        <span class="caption-text">Gros plan sur les pieds du robot G1 appuyant précisément sur les pédales du karting.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:53 - 00:02:18</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le système combine ce que le robot voit, les instructions qu&#x27;il reçoit, sa position corporelle actuelle et un retour continu, et transforme tout cela directement en mouvements pour ses articulations et ses mains. Il y a une autre partie intéressante appelée l&#x27;Attention Symbiotique. L&#x27;idée est que la perception et le contrôle fonctionnent ensemble, de sorte que le robot ne se contente pas de comprendre ce qui se passe autour de lui, il doit également comprendre ce que son propre corps est réellement capable de faire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration de robotique (Symbiosis Robotics) montrant un robot humanoïde en situation de conduite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun texte textuel ou prompt, uniquement le logo &quot;Symbiosis Robotics&quot; dans le coin supérieur droit de la vidéo.</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot humanoïde conduit, accélère et manœuvre un kart de course sur une piste intérieure en gérant ses mouvements corporels.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_016_00-01-55.jpg" alt="Un robot humanoïde conduit un kart sur une piste intérieure, filmé de côté près des barrières de pneus." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_016_00-01-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Un robot humanoïde conduit un kart sur une piste intérieure, filmé de côté près des barrières de pneus.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_017_00-02-02.jpg" alt="Vue de face d&#x27;un robot humanoïde pilotant un kart sur une piste de course intérieure sombre avec des phares allumés." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_017_00-02-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:02</span>
+                        <span class="caption-text">Vue de face d&#x27;un robot humanoïde pilotant un kart sur une piste de course intérieure sombre avec des phares allumés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_018_00-02-10.jpg" alt="Vue en contre-plongée dynamique d&#x27;un robot humanoïde au volant d&#x27;un kart dans un virage sur circuit intérieur." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_018_00-02-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:10</span>
+                        <span class="caption-text">Vue en contre-plongée dynamique d&#x27;un robot humanoïde au volant d&#x27;un kart dans un virage sur circuit intérieur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_019_00-02-16.jpg" alt="Gros plan rapproché sur les jambes mécaniques et les pédales d&#x27;un robot humanoïde installé dans un kart." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_019_00-02-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:16</span>
+                        <span class="caption-text">Gros plan rapproché sur les jambes mécaniques et les pédales d&#x27;un robot humanoïde installé dans un kart.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:18 - 00:02:38</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez voir cela clairement ici. Le robot utilise son pied droit pour contrôler l&#x27;accélérateur tandis que ses mains dirigent le kart dans le virage. Sa vision, ses mouvements et sa synchronisation doivent tous fonctionner ensemble en temps réel. En gros, c&#x27;est une coordination œil-main-pied, mais pour un robot humanoïde. Et le système est également conçu pour gérer les erreurs.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration de robotique (Symbiosis Robotics) montrant un robot humanoïde conduisant un kart.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Logo et texte de la marque &quot;Symbiosis Robotics&quot; affichés dans le coin supérieur droit.</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot humanoïde pilote activement le kart, utilise l&#x27;accélérateur avec son pied et manœuvre le volant dans les virages.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_020_00-02-20.jpg" alt="Vue rapprochée d&#x27;un robot humanoïde assis dans un kart, utilisant son pied sur l&#x27;accélérateur et ses mains sur le volant." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_020_00-02-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:20</span>
+                        <span class="caption-text">Vue rapprochée d&#x27;un robot humanoïde assis dans un kart, utilisant son pied sur l&#x27;accélérateur et ses mains sur le volant.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_021_00-02-28.jpg" alt="Vue en plan d&#x27;un kart piloté par un robot humanoïde négociant un virage sur une piste de karting intérieure, avec le logo Symbiosis Robotics." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_021_00-02-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:28</span>
+                        <span class="caption-text">Vue en plan d&#x27;un kart piloté par un robot humanoïde négociant un virage sur une piste de karting intérieure, avec le logo Symbiosis Robotics.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_022_00-02-36.jpg" alt="Vue large du kart conduit par le robot humanoïde circulant sur la piste sous un éclairage tamisé avec des décorations murales." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_022_00-02-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:36</span>
+                        <span class="caption-text">Vue large du kart conduit par le robot humanoïde circulant sur la piste sous un éclairage tamisé avec des décorations murales.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:38 - 00:02:59</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Avec leur méthode de dérive vers l&#x27;arrêt (drift-to-still), le robot fait l&#x27;expérience de situations où son mouvement commence à s&#x27;écarter de la trajectoire idéale, puis apprend à récupérer de ces situations. Le modèle a été entraîné en utilisant 15 010 heures de données provenant d&#x27;humains, de robots à roues, de robots armés et de humanoïdes bipèdes, toutes converties en un format commun que le robot peut exécuter.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra sans partage d&#x27;écran</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun texte, prompt ou interface logicielle visible.</p>
+                        <p><strong>Action / Démonstration :</strong> Vidéo d&#x27;illustration montrant un robot bipède pilotant un kart, puis descendant de son véhicule face à un humain dans un circuit de karting intérieur.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:59 - 00:03:19</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;objectif ici n&#x27;est donc pas simplement de construire un meilleur planificateur de mouvement. Il s&#x27;agit de construire un système où l&#x27;IA peut comprendre le monde, comprendre son propre corps et transformer directement cette compréhension en action physique. Et c&#x27;est ce que signifie la symbiosis en rendant l&#x27;intelligence physiquement exécutable. Mais Unitree n&#x27;est pas la seule entreprise à faire progresser les robots humanoïdes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration de robotique humanoïde (Symbiosis Robotics) avec incrustation textuelle et logo en haut à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché à l&#x27;écran : « FROM HUMANOID TO HUMAN » et logo de « Symbiosis Robotics ».</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot humanoïde évolue dans un parcours d&#x27;obstacles intérieur puis marche en coordination étroite avec un humain.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_023_00-03-01.jpg" alt="Titre « FROM HUMANOID TO HUMAN » affiché sur une vidéo floue montrant un robot humanoïde et une personne dans un espace intérieur." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_023_00-03-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:01</span>
+                        <span class="caption-text">Titre « FROM HUMANOID TO HUMAN » affiché sur une vidéo floue montrant un robot humanoïde et une personne dans un espace intérieur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_024_00-03-09.jpg" alt="Un robot humanoïde bipède se déplaçant dans un environnement intérieur avec des barrières et un panneau de signalisation." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_024_00-03-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:09</span>
+                        <span class="caption-text">Un robot humanoïde bipède se déplaçant dans un environnement intérieur avec des barrières et un panneau de signalisation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_025_00-03-17.jpg" alt="Gros plan sur les jambes articulées d&#x27;un robot humanoïde et les jambes d&#x27;une personne marchant de concert." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_025_00-03-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:17</span>
+                        <span class="caption-text">Gros plan sur les jambes articulées d&#x27;un robot humanoïde et les jambes d&#x27;une personne marchant de concert.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:19 - 00:03:40</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La Chine s&#x27;apprête à placer ces machines sur une scène encore plus grande. Les seconds jeux mondiaux de robots humanoïdes se dérouleront à Pékin du 22 au 26 août, et les robots répètent déjà pour la cérémonie d&#x27;ouverture. Et honnêtement, regardez ça. Ils marchent tous au même rythme, se déplaçant ensemble comme une véritable force de robots humanoïdes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur le réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;China will host the 2nd World Humanoid Robot Games in Beijing from Aug 22 to 26 this weekend. Robots are now rehearsing for the opening ceremony.&quot; Nom du compte : XuZhenqing. Date : 12:02 PM - Aug 18, 2026. 16.5K vues.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement ou présentation d&#x27;un tweet et d&#x27;une vidéo montrant des robots humanoïdes répétant leur marche synchronisée dans un stade.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_026_00-03-21.jpg" alt="Capture d&#x27;écran d&#x27;une publication sur X (anciennement Twitter) montrant une vidéo de robots répétant dans un stade, accompagnée de texte sur les World Humanoid Robot Games en Chine." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_026_00-03-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:21</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication sur X (anciennement Twitter) montrant une vidéo de robots répétant dans un stade, accompagnée de texte sur les World Humanoid Robot Games en Chine.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_027_00-03-38.jpg" alt="Gros plan vidéo montrant une troupe de robots humanoïdes marchant en parfaite synchronisation sur la piste bleue d&#x27;un grand stade lors de répétitions." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_027_00-03-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:38</span>
+                        <span class="caption-text">Gros plan vidéo montrant une troupe de robots humanoïdes marchant en parfaite synchronisation sur la piste bleue d&#x27;un grand stade lors de répétitions.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:40 - 00:04:02</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voir autant de robots bouger en synchronisation, c&#x27;est assez dingue. Et si les répétitions ressemblent déjà à ça, j&#x27;ai vraiment hâte de voir à quoi va ressembler la véritable cérémonie d&#x27;ouverture. Mais pendant que certains robots se concentrent sur la coordination, d&#x27;autres misent sur autre chose : la vitesse. La vitesse des robots humanoïdes devient ridicule. Nous avons désormais trois sérieux concurrents qui repoussent les limites de la vitesse à laquelle un robot humanoïde peut réellement courir.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Capture d&#x27;écran d&#x27;une vidéo de démonstration comparative divisée en trois sections verticales affichant des tests de vitesse de robots.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;WHO&#x27;S FASTER, STRONGER, AND MORE LIKELY TO WIN?&quot;, &quot;UNITREE - SUPERMAN&quot;, &quot;TOP SPEED 12.66 m/s&quot;, &quot;HONOR - LIGHTNING&quot;, &quot;GAMES PREP&quot;, &quot;IMPRESSIVE SPEED&quot;, &quot;MIRRORME - BOLT&quot;, &quot;PEAK SPEED 11m/s&quot;, &quot;10 m/s&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Les robots humanoïdes marchent en cadence sur la piste bleue dans les deux premières images, tandis que la troisième montre des clips vidéo de tests de vitesse avec des mesures de performance affichées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_028_00-03-42.jpg" alt="Répétition de nombreux robots humanoïdes marchant en synchronisation sur la piste bleue d&#x27;un grand stade." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_028_00-03-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:42</span>
+                        <span class="caption-text">Répétition de nombreux robots humanoïdes marchant en synchronisation sur la piste bleue d&#x27;un grand stade.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_029_00-03-48.jpg" alt="Vue de face des robots humanoïdes évoluant en formation sur la piste d&#x27;athlétisme lors des préparatifs." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_029_00-03-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:48</span>
+                        <span class="caption-text">Vue de face des robots humanoïdes évoluant en formation sur la piste d&#x27;athlétisme lors des préparatifs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_030_00-03-55.jpg" alt="Comparatif vidéo en trois parties présentant les performances de vitesse de différents robots humanoïdes avec des données chiffrées." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_030_00-03-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:55</span>
+                        <span class="caption-text">Comparatif vidéo en trois parties présentant les performances de vitesse de différents robots humanoïdes avec des données chiffrées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:02 - 00:04:32</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">D&#x27;abord, il y a Unitree Superman, qui atteint une vitesse de pointe de 12,66 mètres par seconde. Ensuite, il y a Honor Lightning, un robot humanoïde conçu pour la course à grande vitesse qui a déjà été testé en compétition de longue distance. Et enfin, Mirror Me Bolt, dont Mirror Me affirme qu&#x27;il peut atteindre plus de 11 mètres par seconde en vitesse de pointe. Et avec les Jeux Mondiaux des Robots Humanoïdes et la Conférence Mondiale des Robots qui mettent l&#x27;athlétisme robotique sous le feu des projecteurs, cela devient vraiment intéressant. Parce que maintenant, je veux voir une seule chose. Une course complète de 100 mètres.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de montage vidéo avec habillage graphique comparatif.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte en haut : &quot;WHO&#x27;S FASTER, STRONGER, AND MORE LIKELY TO WIN?&quot;. Section supérieure : &quot;UNITREE - SUPERMAN&quot;, &quot;TOP SPEED: 12.66 m/s&quot;, extrait vidéo au ralenti (&quot;4x SLOW MOTION&quot;). Section médiane : &quot;HONOR - LIGHTNING&quot;, &quot;GAMES PREP&quot;, &quot;IMPRESSIVE SPEED&quot;, extrait sur un terrain de sport. Section inférieure : &quot;MIRRORME - BOLT&quot;, &quot;PEAK SPEED: 10 m/s&quot;, encart &quot;GROUND TEST / PEAK SPEED: 10 m/s&quot; et vidéo d&#x27;un robot rouge courant sur une piste.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative des performances de vitesse de pointe de différents robots humanoïdes coureurs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_031_00-04-04.jpg" alt="Capture d&#x27;écran montrant une comparaison vidéo verticale de trois robots humanoïdes rapides : Unitree Superman, Honor Lightning et Mirror Me Bolt, avec leurs vitesses respectives." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_031_00-04-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:04</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une comparaison vidéo verticale de trois robots humanoïdes rapides : Unitree Superman, Honor Lightning et Mirror Me Bolt, avec leurs vitesses respectives.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:32 - 00:05:08</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Unitree Superman contre Honor Lightning contre Mirror Me Bolt. Selon vous, qui franchira la ligne d&#x27;arrivée en premier ? Et apparemment, courir aussi vite s&#x27;accompagne de quelques problèmes, car le robot humanoïde de Unitree dépasse les records de vitesse humains et parvient en quelque même temps à détruire un boîtier électrique. Regardez bien ceci. Il se déplace à une vitesse ridicule, puis boum, il percute le boîtier électrique assez violemment pour le casser. Donc oui, Unitree ne se contente pas de rendre ces robots plus rapides, ils les rendent tellement rapides qu&#x27;il vaut mieux probablement ne pas se mettre en travers de leur chemin. Et tandis que la robotique progresse aussi rapidement dans le monde physique, les modèles d&#x27;IA sont...</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration comparative et extraits vidéo de tests de robots humanoïdes.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;WHO&#x27;S FASTER, STRONGER, AND MORE LIKELY TO WIN?&quot;, &quot;UNITREE - SUPERMAN TOP SPEED 12.66 m/s&quot;, &quot;HONOR - LIGHTNING GAMES PREP IMPRESSIVE SPEED&quot;, &quot;MIRRORME - BOLT PEAK SPEED 10 m/s&quot;, &quot;LEG LENGTH 0.85 m - TOP SPEED 10 / 0.79 = 12.658 m/s&quot;, &quot;GLOBAL HUMAN PEAK SPEED: 12.4 m/s&quot;, et la mention &quot;@NEXORAResearch&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot humanoïde accélère à une vitesse extrême sur une piste d&#x27;athlétisme avant de percuter violemment un boîtier électrique, puis on le voit s&#x27;entraîner dans un entrepôt.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_032_00-04-34.jpg" alt="Comparaison des vitesses entre les robots Unitree Superman, Honor Lightning et Mirror Me Bolt avec statistiques." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_032_00-04-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:34</span>
+                        <span class="caption-text">Comparaison des vitesses entre les robots Unitree Superman, Honor Lightning et Mirror Me Bolt avec statistiques.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_033_00-04-45.jpg" alt="Le robot humanoïde de Unitree en train de courir à pleine vitesse sur une piste d&#x27;athlétisme indoor." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_033_00-04-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:45</span>
+                        <span class="caption-text">Le robot humanoïde de Unitree en train de courir à pleine vitesse sur une piste d&#x27;athlétisme indoor.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_034_00-04-56.jpg" alt="Le robot humanoïde de Unitree après avoir percuté et endommagé des boîtiers électriques dans l&#x27;arène." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_034_00-04-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:56</span>
+                        <span class="caption-text">Le robot humanoïde de Unitree après avoir percuté et endommagé des boîtiers électriques dans l&#x27;arène.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_035_00-05-06.jpg" alt="Un robot humanoïde argenté en mouvement rapide dans un entrepôt avec un observateur à côté." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_035_00-05-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:06</span>
+                        <span class="caption-text">Un robot humanoïde argenté en mouvement rapide dans un entrepôt avec un observateur à côté.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:08 - 00:05:29</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">qui progresse tout aussi rapidement dans le monde numérique. Maintenant, parlons des fuites. Tout d&#x27;abord, OpenAI. OpenAI pourrait préparer l&#x27;une de ses plus grandes sorties depuis GPT-4.5, et cela s&#x27;appellerait apparemment Astra. Selon les derniers rapports, le lancement d&#x27;Astra pourrait être ciblé dès cette semaine. Et les rumeurs deviennent encore plus intéressantes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web / Réseau social X (Twitter) et affichage vidéo.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;GPT Astra Leak: Dropping This week&quot;, &quot;OpenAI could be preparing its biggest release since GPT-4.5&quot;, listant des détails comme &quot;Astra is reportedly targeting This week&quot;, &quot;Built on OpenAI&#x27;s largest pretraining run yet&quot;, &quot;Latest internal release candidate reportedly codenamed &#x27;Mewfour&#x27;&quot;, et une image avec le texte &quot;GPT-6 Astra&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage successif d&#x27;une vidéo d&#x27;illustration avec un robot humanoïde puis d&#x27;un tweet sur les fuites concernant OpenAI Astra.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_036_00-05-10.jpg" alt="Vidéo de démonstration montrant un robot humanoïde en train de danser dans un entrepôt." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_036_00-05-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:10</span>
+                        <span class="caption-text">Vidéo de démonstration montrant un robot humanoïde en train de danser dans un entrepôt.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_037_00-05-18.jpg" alt="Capture d&#x27;écran d&#x27;un tweet sur X (Twitter) détaillant les rumeurs de fuite concernant GPT-6 Astra d&#x27;OpenAI." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_037_00-05-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:18</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet sur X (Twitter) détaillant les rumeurs de fuite concernant GPT-6 Astra d&#x27;OpenAI.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:29 - 00:05:48</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il serait construit sur le plus grand entraînement préalable d&#x27;OpenAI à ce jour, tandis que la dernière version candidate interne porterait le nom de code MU4. Les employés d&#x27;OpenAI le testeraient déjà en interne, et certains rapports affirment qu&#x27;il fonctionne à des vitesses de niveau cérébral au sein de l&#x27;entreprise. Mais la vitesse n&#x27;est pas la seule chose.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un tweet sur la plateforme X (anciennement Twitter) de l&#x27;utilisateur Salio.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;GPT Astra Leak: Dropping This week. OpenAI could be preparing its biggest release since GPT-4.5. &gt; Astra is reportedly targeting This week &gt; Built on OpenAI&#x27;s largest pretraining run yet &gt; Latest internal release candidate reportedly codenamed &quot;Mewfour&quot; &gt; OpenAI employees are already dogfooding it internally &gt; Reportedly running at Cerebras-level speeds inside OpenAI &gt; Significantly stronger multi-agent capabilities &gt; Expanded security evaluations could still delay the launch. Could Astra become the most powerful AI model ever released?&quot; Une image incluse dans le tweet affiche le texte &quot;GPT-6 Astra&quot; sur fond vert et blanc.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un article ou post issu des réseaux sociaux détaillant les rumeurs sur le modèle GPT-6 Astra d&#x27;OpenAI.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_038_00-05-31.jpg" alt="Capture d&#x27;écran d&#x27;un tweet concernant la fuite de GPT Astra et ses spécificités techniques." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_038_00-05-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:31</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet concernant la fuite de GPT Astra et ses spécificités techniques.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:48 - 00:06:06</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On dit aussi qu&#x27;Astra dispose de capacités multi-agents nettement plus puissantes, ce qui pourrait la rendre bien meilleure pour gérer des tâches complexes à travers de multiples agents IA. Il y a juste un gros point d&#x27;interrogation. OpenAI élargirait ses évaluations de sécurité, et ces tests pourraient encore retarder le lancement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme X (anciennement Twitter) affichant une publication (tweet) à gauche et les tendances/suggestions à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;GPT Astra Leak: Dropping This week. OpenAI could be preparing its biggest release since GPT-4.5. &gt; Astra is reportedly targeting This week &gt; Built on OpenAI&#x27;s largest pretraining run yet &gt; Latest internal release candidate reportedly codenamed &quot;Mewfour&quot; &gt; OpenAI employees are already dogfooding it internally &gt; Reportedly running at Cerebras-level speeds inside OpenAI &gt; Significantly stronger multi-agent capabilities &gt; Expanded security evaluations could still delay the launch. Could Astra become the most powerful AI model ever released?&quot;. Une image avec le texte &quot;GPT-6 Astra&quot; sur fond vert et blanc.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran d&#x27;un message publié sur les réseaux sociaux (X) détaillant les caractéristiques et les rumeurs sur le lancement de GPT-6 Astra.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_039_00-05-50.jpg" alt="Capture d&#x27;écran d&#x27;un tweet sur X (Twitter) du compte @Mr_Salio résumant les fuites et rumeurs concernant GPT-6 Astra, incluant une liste de points clés et une image avec le texte &quot;GPT-6 Astra&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_039_00-05-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:50</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet sur X (Twitter) du compte @Mr_Salio résumant les fuites et rumeurs concernant GPT-6 Astra, incluant une liste de points clés et une image avec le texte &quot;GPT-6 Astra&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:06 - 00:06:26</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors, est-ce que GPT-Astra arrive vraiment cette semaine ? Nous devrons attendre pour voir. Mais si ces rapports sont exacts, OpenAI pourrait bien préparer quelque chose d&#x27;assez important. Et Google pourrait bien sortir un autre modèle plus tôt que prévu. Gemini 3.8 Flash viserait une sortie publique en septembre, et il semble déjà déployé en interne.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (Twitter) affichant des tweets d&#x27;actualité sur l&#x27;intelligence artificielle du compte @Mr_Salio.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1 : Tweet intitulé &quot;GPT Astra Leak: Dropping This week&quot;, mentionnant &quot;OpenAI could be preparing its biggest release since GPT-4.5&quot; avec des points sur Astra (sortie cette semaine, entraînement massif, nom de code &quot;Mewfour&quot;, tests internes, vitesse type Cerebras, capacités multi-agents accrues) et l&#x27;image &quot;GPT-6 Astra&quot;. Sur l&#x27;image 2 : Tweet &quot;Gemini 3.8 Flash Leak&quot; avec les détails sur sa sortie en septembre, son déploiement interne et l&#x27;image du logo &quot;Gemini 3.8 Flash&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran de publications sur les réseaux sociaux résumant les fuites et rumeurs concernant les futurs modèles phares d&#x27;OpenAI (GPT-6 Astra) et de Google (Gemini 3.8 Flash).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_040_00-06-08.jpg" alt="Publication X (Twitter) du compte @Mr_Salio détaillant les rumeurs autour du lancement imminent de GPT-6 Astra par OpenAI, incluant ses spécifications techniques et ses performances." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_040_00-06-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:08</span>
+                        <span class="caption-text">Publication X (Twitter) du compte @Mr_Salio détaillant les rumeurs autour du lancement imminent de GPT-6 Astra par OpenAI, incluant ses spécifications techniques et ses performances.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_041_00-06-24.jpg" alt="Publication X (Twitter) du compte @Mr_Salio présentant les fuites d&#x27;informations sur Gemini 3.8 Flash de Google, sa sortie prévue en septembre et ses performances comparées." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_041_00-06-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:24</span>
+                        <span class="caption-text">Publication X (Twitter) du compte @Mr_Salio présentant les fuites d&#x27;informations sur Gemini 3.8 Flash de Google, sa sortie prévue en septembre et ses performances comparées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:26 - 00:06:45</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Selon les fuites, Google a passé des mois à l&#x27;affiner grâce à des tests auprès de partenaires, et c&#x27;est là que les choses deviennent intéressantes. La rumeur veut que Gemini 3.8 Flash offre des performances du niveau de Fable 5 à un coût bien inférieur. Si c&#x27;est vrai, Google pourrait bien tenir un modèle extrêmement compétitif, surtout s&#x27;il arrive avant Gemini 4.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme X (anciennement Twitter) affichant un tweet posté par le compte @Mr_Salio.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Gemini 3.8 Flash Leak&quot; avec une liste de points (sortie publique prévue en septembre, déjà déployé en interne, Google a passé des mois à l&#x27;affiner, performances de niveau Fable 5, pourrait arriver avant Gemini 4) et une image intégrée affichant le logo coloré de Google et le texte &quot;Gemini 3.8 Flash&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une publication sur les réseaux sociaux (X) illustrant les informations et rumeurs concernant la fuite du modèle Gemini 3.8 Flash.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_042_00-06-28.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Salio détaillant les fuites concernant Gemini 3.8 Flash avec ses spécifications et performances." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_042_00-06-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:28</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Salio détaillant les fuites concernant Gemini 3.8 Flash avec ses spécifications et performances.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:45 - 00:07:05</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et cela correspond également à la direction de la gamme Flash de Google : des modèles rapides, des coûts réduits et des améliorations rapides. La grande question est donc de savoir si Gemini 3.8 Flash peut réellement battre Fable 5 à une fraction du coût ? Si ces rapports sont exacts, septembre pourrait devenir très intéressant. Et c&#x27;est la vue d&#x27;ensemble en ce moment.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration logicielle avec des visualisations 3D et des schémas d&#x27;architecture d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte visible : &quot;Gemini 3.7 Flash can train a robotics model&quot;, &quot;Main Agent&quot;, &quot;Evolutionary Strategy Optimizer&quot;, &quot;Neural Policy&quot;, &quot;MuJoCo 3D simulation&quot;, &quot;Reward&quot;, &quot;Progress plateaus?&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle de la simulation robotique et de schémas fonctionnels expliquant l&#x27;optimisation par stratégie évolutionniste.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_043_00-06-47.jpg" alt="Animation 3D d&#x27;un robot quadrupède (corps bleu, pattes jaunes et vertes) sur fond blanc, illustrant l&#x27;entraînement d&#x27;un modèle de robotique." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_043_00-06-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:47</span>
+                        <span class="caption-text">Animation 3D d&#x27;un robot quadrupède (corps bleu, pattes jaunes et vertes) sur fond blanc, illustrant l&#x27;entraînement d&#x27;un modèle de robotique.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_044_00-06-55.jpg" alt="Interface sombre montrant un bouton de validation bleu avec une flèche blanche et une icône de microphone, ainsi que le texte &quot;Main Agent&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_044_00-06-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:55</span>
+                        <span class="caption-text">Interface sombre montrant un bouton de validation bleu avec une flèche blanche et une icône de microphone, ainsi que le texte &quot;Main Agent&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_045_00-07-03.jpg" alt="Schéma d&#x27;architecture technique représentant un &quot;Evolutionary Strategy Optimizer&quot; avec une &quot;Neural Policy&quot; et une simulation &quot;MuJoCo 3D&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_045_00-07-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:03</span>
+                        <span class="caption-text">Schéma d&#x27;architecture technique représentant un &quot;Evolutionary Strategy Optimizer&quot; avec une &quot;Neural Policy&quot; et une simulation &quot;MuJoCo 3D&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:05 - 00:07:29</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les robots humanoïdes apprennent à courir, sauter, garder l&#x27;équilibre, conduire et se relever après des erreurs. En même temps, les modèles d&#x27;IA deviennent plus rapides, plus performants et se concentrent de plus en plus sur la gestion de tâches complexes. Le plus fou, c&#x27;est que nous assistons encore au développement de cette technologie en temps réel. Donc, si vous voulez vous tenir au courant des dernières actualités sur l&#x27;IA et la robotique sans rater l&#x27;essentiel, abonnez-vous à Pursuing AI.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra et extraits vidéo d&#x27;illustration sans interface logicielle ni démonstration directe.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte incrusté en bas à droite sur certaines images : &quot;Real footage, not AI-generated&quot; et un bouton rouge &quot;Subscribe&quot; sur l&#x27;image #4.</p>
+                        <p><strong>Action / Démonstration :</strong> Illustrations vidéo montrant des extraits de robots en mouvement (saut, course) et une animation de cerveau humain stylisé avec un anneau lumineux.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:29 - 00:07:32</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Parce que ça bouge vite, et on se retrouve dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de fin de YouTube / Animation de fin de vidéo.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;The Research Report&quot;, logo du cerveau connecté à une puce &quot;PAI&quot; entouré d&#x27;un cercle néon bleu, et boutons de pouce levé, d&#x27;abonnement (&quot;Subscribed&quot;) et de cloche de notification.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de l&#x27;écran de clôture de la vidéo avec le logo de la marque et les incitations à l&#x27;abonnement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-XuCDf4afPVg/frame_046_00-07-31.jpg" alt="Écran de fin de la vidéo affichant le logo de la chaîne PAI, le titre The Research Report et les boutons d&#x27;abonnement." loading="lazy" onclick="openLightbox('screenshots/YT-XuCDf4afPVg/frame_046_00-07-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:31</span>
+                        <span class="caption-text">Écran de fin de la vidéo affichant le logo de la chaîne PAI, le titre The Research Report et les boutons d&#x27;abonnement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `15 / 83` (`18.1%`)
+- **Vidéos traitées** : `16 / 83` (`19.3%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -31,6 +31,7 @@
 | 2026-08-27 | [Fuite d'OpenAI GPT-Bel, révélation d'Ox Alpha, nouveau processeur d'OpenAI et percée IA de NVIDIA - Actualités IA](2026-08-27_YT-2JoMP7G2C2Q_Fuite d'OpenAI GPT-Bel, révélation d'Ox Alpha, nouveau processeur d'OpenAI et pe_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-27_YT-2JoMP7G2C2Q_Fuite d'OpenAI GPT-Bel, révélation d'Ox Alpha, nouveau processeur d'OpenAI et pe_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 7m 15s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=2JoMP7G2C2Q) | `2JoMP7G2C2Q` |
 | 2026-08-25 | [Le secret du modèle IA d'OX Alpha enfin RÉVÉLÉ ?](2026-08-25_YT-eVah4t3huis_Le secret du modèle IA d'OX Alpha enfin RÉVÉLÉ_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-25_YT-eVah4t3huis_Le secret du modèle IA d'OX Alpha enfin RÉVÉLÉ_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 5m 05s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=eVah4t3huis) | `eVah4t3huis` |
 | 2026-08-22 | [ChatGPT Image 2.5 est ARRIVÉ — Ça change tout !](2026-08-22_YT-xzrAGK7_5qY_ChatGPT Image 2.5 est ARRIVÉ — Ça change tout !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-22_YT-xzrAGK7_5qY_ChatGPT Image 2.5 est ARRIVÉ — Ça change tout !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 7m 08s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=xzrAGK7_5qY) | `xzrAGK7_5qY` |
+| 2026-08-19 | [Les robots commencent à surpasser les humains](2026-08-19_YT-XuCDf4afPVg_Les robots commencent à surpasser les humains_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-19_YT-XuCDf4afPVg_Les robots commencent à surpasser les humains_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 7m 33s | `46 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=XuCDf4afPVg) | `XuCDf4afPVg` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

@@ -14,7 +14,8 @@
     "ryosCa6_eCE",
     "2JoMP7G2C2Q",
     "eVah4t3huis",
-    "xzrAGK7_5qY"
+    "xzrAGK7_5qY",
+    "XuCDf4afPVg"
   ],
   "processed_videos": [
     {
@@ -222,9 +223,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-08-22_YT-xzrAGK7_5qY_ChatGPT Image 2.5 est ARRIVÉ — Ça change tout !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-05T07:18:15Z",
       "status": "completed"
+    },
+    {
+      "video_id": "XuCDf4afPVg",
+      "title": "Les robots commencent à surpasser les humains",
+      "raw_title": "Robots Are Starting to Beat Humans",
+      "filename_md": "2026-08-19_YT-XuCDf4afPVg_Les robots commencent à surpasser les humains_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-08-19_YT-XuCDf4afPVg_Les robots commencent à surpasser les humains_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-08-19",
+      "duration": 453,
+      "screenshots_count": 46,
+      "filepath_md": "/root/YT_PursuingAi/2026-08-19_YT-XuCDf4afPVg_Les robots commencent à surpasser les humains_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-08-19_YT-XuCDf4afPVg_Les robots commencent à surpasser les humains_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T07:26:46Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 15,
+  "completed_count": 16,
   "last_run_timestamp": "2026-10-05T04:00:03Z",
   "status": "running",
   "total_catalog_count": 83
