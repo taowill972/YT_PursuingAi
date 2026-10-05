@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Kimi K3 est hallucinant ! Encore un moment DeepSeek ? — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Kimi K3 est hallucinant ! Encore un moment DeepSeek ?</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-07-16</span>
+                <span class="badge">⏱️ 04m 51s</span>
+                <span class="badge">🆔 <code>QraT8ZNkxgw</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=QraT8ZNkxgw" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de Pursuing AI analyse l'émergence anticipée du modèle **Kimi K3** (repéré sous le nom de code « Kevin » dans l'environnement *Ella Marina*), présenté par la communauté comme un potentiel « moment DeepSeek R1 » capable de bousculer la hiérarchie établie de l'intelligence artificielle. Les premiers retours de testeurs et de développeurs mettent en lumière des performances stupéfiantes en matière de raisonnement spatial, de génération d'interfaces graphiques complexes et de conception d'environnements 3D interactifs, rivalisant directement avec des ténors du marché comme GPT-5.6 Pro ou Fable 5. L'analyse détaillée de ces cas d'usage démontre un bond qualitatif majeur pour les modèles d'origine chinoise, notamment dans la cohérence visuelle globale, l'éclairage et la structure logique, le tout exécuté de surcroît en une seule tentative.</p><p>Sur le plan méthodologique, la vidéo explore la capacité du modèle à décoder des requêtes textuelles hautement exigeantes sans qu'il soit nécessaire de surcharger le prompt d'indications contextuelles complexes. Le processus repose sur une exécution fluide où le modèle mobilise de manière autonome des logiques de raisonnement avancées — comparables à celles observées chez ses rivaux occidentaux les plus onéreux. De plus, la mise en avant d'un mode d'essaim d'agents (agent swarm) propulsé par Moonshot AI illustre une avancée significative dans la coordination multi-agents, ouvrant la voie à des flux de travail automatisés et interconnectés d'une efficacité redoutable.</p><p>Pour les créateurs de vidéo et les développeurs, ces innovations annoncent des perspectives économiques et créatives décisives. Si les performances du Kimi K3 se confirment lors de sa sortie publique, la démocratisation de ces capacités de pointe à moindre coût exercera une pression concurrentielle féroce sur les laboratoires traditionnels, forçant une baisse des prix et une accélération de l'innovation. Les créateurs pourront ainsi concevoir des environnements visuels complexes, des interfaces front-end dynamiques et des simulations sophistiquées avec une précision quasi-humaine, tout en réduisant drastiquement les budgets de calcul et les itérations de prompt.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">flux</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Rupture du raisonnement spatial** : Kimi K3 démontre une aptitude inédite à traiter des invites exigeant une géométrie complexe (comme un pélican en art voxel détaillé), surpassant les limites historiques des modèles open-weight asiatiques.</span></li><li><span class="point-bullet">✦</span><span>Maîtrise des benchmarks d&#x27;interface** : Le succès du modèle au test du clonage de Windows prouve sa capacité à générer des dispositions d&#x27;UI précises, des fenêtres professionnelles et des outils interactifs intégrés.</span></li><li><span class="point-bullet">✦</span><span>Autonomie logique et mimétisme stratégique** : Le modèle adopte spontanément des approches de raisonnement avancées similaires à celles de Fable 5, et ce, sans qu&#x27;aucune consigne spécifique n&#x27;ait été incluse dans le prompt initial.</span></li><li><span class="point-bullet">✦</span><span>Cohérence visuelle en un seul essai** : Kimi K3 parvient à égaler la qualité d&#x27;environnements intérieurs complexes générés par GPT-5.6 Pro dès la première tentative, garantissant un éclairage, une composition et un placement d&#x27;objets irréprochables.</span></li><li><span class="point-bullet">✦</span><span>Génération d&#x27;expériences 3D front-end** : Le modèle excelle dans la création d&#x27;interfaces futuristes et de visualisations interactives complexes, réduisant l&#x27;écart qualitatif entre les solutions open-weights et les modèles propriétaires les plus onéreux.</span></li><li><span class="point-bullet">✦</span><span>Le phénomène du « Moment DeepSeek »** : L&#x27;émergence potentielle de Kimi K3 illustre la capacité de nouveaux acteurs à offrir des performances de classe mondiale à une fraction du coût des laboratoires occidentaux traditionnels.</span></li><li><span class="point-bullet">✦</span><span>Coordination par essaim d&#x27;agents** : L&#x27;intégration d&#x27;un mode multi-agents par Moonshot AI permet à Kimi K3 de coordonner plusieurs intelligences artificielles simultanément, optimisant la gestion de flux de travail complexes.</span></li><li><span class="point-bullet">✦</span><span>Pression sur la politique tarifaire des géants** : L&#x27;arrivée imminente d&#x27;un tel modèle sur le marché menace directement les marges et la domination d&#x27;OpenAI et d&#x27;Anthropic, présageant une guerre des prix agressive.</span></li><li><span class="point-bullet">✦</span><span>Prudence face aux effets de battage médiatique (hype)** : Les performances observées proviennent d&#x27;environnements fermés (Ella Marina) et nécessitent une vérification indépendante rigoureuse après le lancement public officiel.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:18</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Kimi K3 n&#x27;est même pas encore sorti, mais il apparaît déjà dans Ella Marina sous le nom de code Kevin. Et après avoir vu les premiers résultats de tests, je ne m&#x27;attends honnêtement pas à cela. Certaines personnes l&#x27;appellent déjà un autre moment DeepSeek R1. Alors, le battage médiatique est-il réel ? Découvrons-le.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de publication Twitter (X) et interface d&#x27;une application ou d&#x27;un monde virtuel interactif en blocs de type voxel (&quot;Voxel Liberty&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1 : Publication du compte vérifié @Kimi_Moonshot (Kimi.ai), date de publication (4:03 AM · Jul 16, 2026), 521,9K vues, statistiques d&#x27;engagement. Sur l&#x27;image 2 et 3 : Interface avec les titres &quot;VOXEL LIBERTY&quot;, options de navigation (&quot;DRAG ORBIT&quot;, &quot;SCROLL ZOOM&quot;, &quot;M DAY / NIGHT&quot;, &quot;SPACE PAUSE&quot;), icônes de contrôle de caméra et de paramètres.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et affichage d&#x27;une publication sur les réseaux sociaux suivie de la visualisation interactive d&#x27;un modèle 3D en voxels représentant la Statue de la Liberté dans un environnement nocturne.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_001_00-00-02.jpg" alt="Publication Twitter de Kimi.ai montrant un test ou une image générée sur fond bleu." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Publication Twitter de Kimi.ai montrant un test ou une image générée sur fond bleu.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_002_00-00-09.jpg" alt="Interface d&#x27;un logiciel ou d&#x27;un jeu de modélisation en blocs (voxel) représentant la Statue de la Liberté de nuit, intitulée Voxel Liberty." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_002_00-00-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Interface d&#x27;un logiciel ou d&#x27;un jeu de modélisation en blocs (voxel) représentant la Statue de la Liberté de nuit, intitulée Voxel Liberty.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_003_00-00-16.jpg" alt="Gros plan sur la base de la Statue de la Liberté en voxels, montrant les détails de l&#x27;île et des drapeaux." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_003_00-00-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:16</span>
+                        <span class="caption-text">Gros plan sur la base de la Statue de la Liberté en voxels, montrant les détails de l&#x27;île et des drapeaux.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:19 - 00:00:39</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous regardez Pursuing AI, et voici leur rapport de recherche. Commençons par quelque chose qui a immédiatement attiré mon attention. Un testeur a demandé à Kimi K3 de générer un pélican en art voxel extrêmement détaillé. Il y a quelques mois, les modèles chinois luttaient généralement avec des invites de ce genre car elles exigent un fort raisonnement spatial.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (Twitter) affichant un tweet de @Lentils80 et des widgets latéraux (panneaux d&#x27;information et résultats sportifs).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de @Lentils80 : &quot;Another amazing output from Kimi K3 👀 For reference, just a few months ago Chinese models were VERY bad at these kinds of tests that require spatial reasoning I don&#x27;t think they&#x27;re cheating by training on these prompts directly, so either they did some magic or this model is big&quot;. Encart latéral affichant des scores de football (France vs Espagne, Angleterre vs Argentine).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage et lecture d&#x27;une publication X (Twitter) commentant les capacités de génération vidéo de Kimi K3 en art voxel, illustré par une vidéo générée par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_004_00-00-29.jpg" alt="Rendu vidéo généré en art voxel montrant un pélican sur un vélo au bord de l&#x27;eau avec une grande roue et un phare en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_004_00-00-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:29</span>
+                        <span class="caption-text">Rendu vidéo généré en art voxel montrant un pélican sur un vélo au bord de l&#x27;eau avec une grande roue et un phare en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_005_00-00-37.jpg" alt="Capture d&#x27;écran d&#x27;un tweet posté par @Lentils80 sur X (Twitter) montrant le test de Kimi K3 avec des images en art voxel et des commentaires sur le raisonnement spatial des modèles chinois." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_005_00-00-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:37</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet posté par @Lentils80 sur X (Twitter) montrant le test de Kimi K3 avec des images en art voxel et des commentaires sur le raisonnement spatial des modèles chinois.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:40 - 00:01:03</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais Kimi K3 a produit un résultat incroyablement détaillé avec une profondeur, un éclairage, des ombres et un placement d&#x27;objets corrects. C&#x27;est déjà un bond remarquable par rapport aux générations précédentes. Maintenant, voici où les choses deviennent encore plus intéressantes. Un autre développeur a exécuté le fameux Windows Clone Benchmark, où une IA recrée une interface de système d&#x27;exploitation de type Windows.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un tweet, et interface graphique émulée d&#x27;un système d&#x27;exploitation de type Windows (Window Clone Benchmark).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de @chetaslua : &quot;Window Clone test. Kimi cooked so hard like you know i am running this test for a year now watch this video once gemini cooked so hard with visuals , fable done the visual+function solid one thing this model is super slow in arena maybe size is bigger &lt; i hope so &gt;&quot;. Sur l&#x27;interface Windows : barre des tâches avec menu Démarrer, barre de recherche « Search apps &amp; files » et icônes d&#x27;applications.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle d&#x27;une génération en voxel art très détaillée par Kimi K3, suivie de la présentation du benchmark « Windows Clone » montrant les performances de l&#x27;IA pour recréer une interface de système d&#x27;exploitation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_006_00-00-42.jpg" alt="Scène animée en style voxel art montrant une grande roue, un phare et une cigognette à vélo au bord de l&#x27;eau." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_006_00-00-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Scène animée en style voxel art montrant une grande roue, un phare et une cigognette à vélo au bord de l&#x27;eau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_007_00-00-48.jpg" alt="Poursuite de la scène en voxel art le long d&#x27;une jetée avec des palmiers et un kiosque en forme de glace rose." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_007_00-00-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:48</span>
+                        <span class="caption-text">Poursuite de la scène en voxel art le long d&#x27;une jetée avec des palmiers et un kiosque en forme de glace rose.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_008_00-00-55.jpg" alt="Publication sur le réseau social X par @chetaslua concernant le « Window Clone test » avec l&#x27;interface du benchmark et le profil de l&#x27;auteur." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_008_00-00-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:55</span>
+                        <span class="caption-text">Publication sur le réseau social X par @chetaslua concernant le « Window Clone test » avec l&#x27;interface du benchmark et le profil de l&#x27;auteur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_009_00-01-01.jpg" alt="Gros plan sur l&#x27;interface émulée d&#x27;un système d&#x27;exploitation de type Windows avec barre des tâches et fond étoilé." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_009_00-01-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:01</span>
+                        <span class="caption-text">Gros plan sur l&#x27;interface émulée d&#x27;un système d&#x27;exploitation de type Windows avec barre des tâches et fond étoilé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:03 - 00:01:24</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le résultat comprenait des fenêtres de style professionnel, des menus, des outils de peinture, une intégration de Wikipédia et des dispositions d&#x27;interface utilisateur étonnamment précises. Ce benchmark a traditionnellement été difficile pour de nombreux modèles aux poids ouverts, pourtant Kimi K3 s&#x27;en est sorti étonnamment bien. Vint ensuite un autre benchmark impliquant une simulation de tir à l&#x27;arc mécanique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de bureau générique avec barre des tâches, puis interface du réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 2, texte du tweet : &quot;New test of Kimi K3... It doesn&#x27;t seem incredible at first glance, but it&#x27;s one of the best outputs on this prompt...&quot; et une vidéo intégrée montrant un jeu de tir à l&#x27;arc en 3D avec des scores et des cibles.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de publications sur les réseaux sociaux évaluant les performances du modèle Kimi K3 sur des benchmarks spécifiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_010_00-01-05.jpg" alt="Interface logicielle avec une barre de tâches en bas et une animation de particules sur fond noir." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_010_00-01-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:05</span>
+                        <span class="caption-text">Interface logicielle avec une barre de tâches en bas et une animation de particules sur fond noir.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_011_00-01-22.jpg" alt="Publication sur X (Twitter) par Mirochill montrant un test de Kimi K3 avec une simulation 3D de tir à l&#x27;arc." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_011_00-01-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:22</span>
+                        <span class="caption-text">Publication sur X (Twitter) par Mirochill montrant un test de Kimi K3 avec une simulation 3D de tir à l&#x27;arc.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:25 - 00:01:43</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La partie intéressante n&#x27;était pas seulement qu&#x27;il a résolu la tâche. Selon le testeur, Kimi K3 a utilisé presque la même approche de raisonnement que Fable 5 a utilisée, même si cette approche n&#x27;était mentionnée nulle part dans le prompt. Cela a immédiatement suscité des discussions en ligne. Certaines personnes ont même plaisanté en disant qu&#x27;il semblait distillé de Fable.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de Twitter (X) affichant un post et des actualités sportives sur le panneau latéral, ainsi qu&#x27;une interface de jeu vidéo 3D en vue subjective.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;New test of Kimi K3... It doesn&#x27;t seem incredible at first glance, but it&#x27;s one of the best outputs on this prompt. It used the same original mechanisms that Fable 5 produced for me (not specified in the prompt), it looks exactly like the same result. It&#x27;s very likely that it was distilled from Fable, and yet it&#x27;s no less performant, it even happens to be better sometimes! Subscribe for more tests and comparisons&quot;. Le jeu affiche &quot;Round 1&quot;, &quot;Score 77&quot;, &quot;Targets 1/3&quot;, &quot;Arrows 4&quot; et &quot;WIND 3.0 m/s&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un post sur les réseaux sociaux commentant les performances du modèle Kimi K3 par rapport à Fable 5, avec un extrait vidéo du jeu généré.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_012_00-01-27.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Mirochill montrant un test de Kimi K3 avec une vidéo de jeu intégrée." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_012_00-01-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:27</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Mirochill montrant un test de Kimi K3 avec une vidéo de jeu intégrée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_013_00-01-41.jpg" alt="Vue rapprochée d&#x27;un jeu de tir à l&#x27;arc en 3D avec des cibles et des scores affichés." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_013_00-01-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:41</span>
+                        <span class="caption-text">Vue rapprochée d&#x27;un jeu de tir à l&#x27;arc en 3D avec des cibles et des scores affichés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:44 - 00:02:06</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Bien sûr, il n&#x27;y a aucune preuve confirmant cela, alors traitez ces commentaires comme de la spéculation plutôt que comme un fait. Voici un autre exemple impressionnant. Un testeur a généré un environnement intérieur complexe et a affirmé que Kimi K3 égalait la qualité de GPT 5.6 Pro, qu&#x27;il surpassait Fable 5 sur cette invite spécifique, et qu&#x27;il l&#x27;avait fait en une seule tentative.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Capture d&#x27;écran d&#x27;un jeu vidéo d&#x27;archerie et d&#x27;une interface de réseau social (Twitter/X).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1 : affichage du score (173), des cibles (2/3), des flèches et du vent (2.3 m/s). Sur l&#x27;image 2 : tweet de @mirochill affirmant « INCREDIBLE: Kimi K3 is in preparation, and it&#x27;s amazing! » avec une image d&#x27;intérieur générée.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle d&#x27;un environnement 3D de tir à l&#x27;arc, suivie de la présentation d&#x27;un post Twitter commentant les performances de Kimi K3.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_014_00-01-46.jpg" alt="Capture d&#x27;écran montrant un jeu vidéo 3D minimaliste avec un arc et une cible de tir à l&#x27;arc." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_014_00-01-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:46</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un jeu vidéo 3D minimaliste avec un arc et une cible de tir à l&#x27;arc.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_015_00-01-55.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Mirochill montrant un test du modèle Kimi K3." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_015_00-01-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Mirochill montrant un test du modèle Kimi K3.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:06 - 00:02:25</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Que cela soit toujours vrai de manière cohérente nécessite encore une vérification indépendante, mais visuellement, les résultats semblent étonnamment cohérents. L&#x27;éclairage, la composition, le placement des objets et la compréhension de la scène étaient tous bien plus solides que ce que nous avons l&#x27;habitude de voir de la part des précédents modèles open-weight chinois. Et les exemples ne s&#x27;arrêtent pas là.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration visuelle de vidéos générées par IA (modèle open-weight chinois).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Des scènes intérieures générées par IA démontrant la gestion de l&#x27;éclairage, des reflets et de la composition spatiale.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;exemples vidéo illustrant les capacités du modèle d&#x27;IA en matière de cohérence visuelle et d&#x27;éclairage.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_016_00-02-08.jpg" alt="Exemple visuel généré montrant une cuisine moderne et lumineuse avec des placards verts et un réfrigérateur." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_016_00-02-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:08</span>
+                        <span class="caption-text">Exemple visuel généré montrant une cuisine moderne et lumineuse avec des placards verts et un réfrigérateur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_017_00-02-16.jpg" alt="Exemple visuel généré montrant un intérieur de salon avec des cadres au mur, une lampe allumée et des plantes." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_017_00-02-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:16</span>
+                        <span class="caption-text">Exemple visuel généré montrant un intérieur de salon avec des cadres au mur, une lampe allumée et des plantes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_018_00-02-23.jpg" alt="Exemple visuel généré en gros plan sur le plan de travail d&#x27;une cuisine avec des effets de lumière vive." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_018_00-02-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:23</span>
+                        <span class="caption-text">Exemple visuel généré en gros plan sur le plan de travail d&#x27;une cuisine avec des effets de lumière vive.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:26 - 00:02:49</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les développeurs ont également partagé des expériences web 3D interactives construites avec KimiK3, Des interfaces futuristes aux visualisations de machines volantes inspirées de Léonard de Vinci, le modèle semble beaucoup plus fort pour générer des expériences front-end interactives. Des comparaisons côte à côte avec GPT 5.6 montrent qu&#x27;ils se rapprochent étonnamment dans certaines tâches.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant des applications interactives 3D, une interface de réseau social (X/Twitter) et des comparaisons côte à côte de modèles d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Kimi K3 (kivine)&quot;, &quot;THE ANTIKYTHERA MECHANISM&quot;, &quot;GPT 5.6 sol xhigh&quot;, &quot;Antikythera&quot;, &quot;Kimi K3 is very good at 3d generations&quot;, &quot;&gt; leonardo da vinci ornithopter in three js&quot;, &quot;Ornithopter&quot;, &quot;A machine for flight, studied in the art of birds - Timber, linen and brass, imagined across five centuries.&quot;, &quot;BUILT FROM PROCEDURAL PRIMITIVES ONLY. NO OBJ/GLTF. NO TEXTURES. NO MODELS.&quot;, &quot;SCORCHED HORIZON&quot;, &quot;GPT-5.6 Sol&quot;, &quot;TERMINAL APPROACH&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation comparative d&#x27;expériences web 3D interactives générées par intelligence artificielle, illustrant les capacités de KimiK3 face à GPT 5.6.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_019_00-02-28.jpg" alt="Comparaison côte à côte entre une interface 3D interactive générée par KimiK3 montrant le mécanisme d&#x27;Anticythère et une version similaire générée par GPT 5.6." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_019_00-02-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:28</span>
+                        <span class="caption-text">Comparaison côte à côte entre une interface 3D interactive générée par KimiK3 montrant le mécanisme d&#x27;Anticythère et une version similaire générée par GPT 5.6.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_020_00-02-34.jpg" alt="Publication sur X (Twitter) montrant une interface interactive de l&#x27;ornithoptère de Léonard de Vinci en Three.js créée avec KimiK3." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_020_00-02-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:34</span>
+                        <span class="caption-text">Publication sur X (Twitter) montrant une interface interactive de l&#x27;ornithoptère de Léonard de Vinci en Three.js créée avec KimiK3.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_021_00-02-42.jpg" alt="Gros plan sur l&#x27;application interactive 3D de l&#x27;ornithoptère de Léonard de Vinci avec des contrôles de vitesse de battement d&#x27;ailes." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_021_00-02-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:42</span>
+                        <span class="caption-text">Gros plan sur l&#x27;application interactive 3D de l&#x27;ornithoptère de Léonard de Vinci avec des contrôles de vitesse de battement d&#x27;ailes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_022_00-02-47.jpg" alt="Comparaison comparative entre KimiK3 (affichage &#x27;Scorched Horizon&#x27;) et GPT-5.6 Sol (affichage &#x27;Terminal Approach&#x27;) représentant des paysages urbains futuristes." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_022_00-02-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:47</span>
+                        <span class="caption-text">Comparaison comparative entre KimiK3 (affichage &#x27;Scorched Horizon&#x27;) et GPT-5.6 Sol (affichage &#x27;Terminal Approach&#x27;) représentant des paysages urbains futuristes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:49 - 00:03:13</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors pourquoi tout le monde compare-t-il cela à DeepSeek R1 ? Parce que l&#x27;année dernière, l&#x27;industrie de l&#x27;IA était largement dominée par OpenAI, Anthropic et Google. Puis, DeepSeek R1 est arrivé presque de nulle part. Il a offert des performances qui ont choqué tout le monde tout en étant considérablement moins cher. Les gens se sont même demandé si les laboratoires de pointe avaient vraiment besoin de budgets de calcul massifs pour rivaliser.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de lecture vidéo comparative divisée en deux fenêtres superposées affichant des simulations et rendus 3D de villes.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Kimi K3&quot;, &quot;GPT-5.6 Sol&quot;, &quot;TERMINAL APPROACH&quot;, &quot;GROUND ZERO&quot;, ainsi que des barres de progression de lecture vidéo.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle des performances de rendu ou de simulation entre deux modèles d&#x27;IA différents (Kimi K3 et GPT-5.6 Sol).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_023_00-02-51.jpg" alt="Comparaison vidéo de simulations de villes générées par les modèles Kimi K3 et GPT-5.6 Sol avec le texte &#x27;TERMINAL APPROACH&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_023_00-02-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:51</span>
+                        <span class="caption-text">Comparaison vidéo de simulations de villes générées par les modèles Kimi K3 et GPT-5.6 Sol avec le texte &#x27;TERMINAL APPROACH&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_024_00-03-05.jpg" alt="Comparaison vidéo montrant &#x27;Kimi K3&#x27; et &#x27;GPT-5.6 Sol&#x27; avec le texte &#x27;GROUND ZERO&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_024_00-03-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:05</span>
+                        <span class="caption-text">Comparaison vidéo montrant &#x27;Kimi K3&#x27; et &#x27;GPT-5.6 Sol&#x27; avec le texte &#x27;GROUND ZERO&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:13 - 00:03:38</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, de nombreux premiers testeurs pensent que Kimi K3 pourrait créer une perturbation similaire. Un autre domaine qui reçoit beaucoup d&#x27;attention est les capacités des agents. Moonshot AI propose déjà un mode d&#x27;essaim d&#x27;agents, où plusieurs agents IA travaillent ensemble sur une tâche. Les premiers testeurs affirment que Kimi K3 est nettement meilleur pour coordonner ces agents, rendant les flux de travail complexes beaucoup plus performants.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (Twitter) et interface d&#x27;un jeu vidéo de course en 3D avec affichage des tours et classement.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte sur les posts X : « One of the first Kimi K3 outputs for y&#x27;all, tried it on frontend... » et « a chinese openweight model kimi k3 is already live on @arena under the name &#x27;KIVINE&#x27;... ». Éléments de jeu : LAP 1/3, 1ST/6, mini-carte du circuit, classement des joueurs, animation d&#x27;un chat qui tape sur un clavier en bas à droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement de publications sur X montrant des retours d&#x27;utilisateurs sur Kimi K3, suivi d&#x27;une démonstration en jeu d&#x27;un jeu de course automobile style karting.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_025_00-03-15.jpg" alt="Publication sur X (Twitter) montrant les premiers résultats de Kimi K3 avec un aperçu visuel textuel." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_025_00-03-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:15</span>
+                        <span class="caption-text">Publication sur X (Twitter) montrant les premiers résultats de Kimi K3 avec un aperçu visuel textuel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_026_00-03-22.jpg" alt="Publication sur X (Twitter) présentant Kimi K3 sous le nom &#x27;KIVINE&#x27; et un extrait de jeu de course." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_026_00-03-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:22</span>
+                        <span class="caption-text">Publication sur X (Twitter) présentant Kimi K3 sous le nom &#x27;KIVINE&#x27; et un extrait de jeu de course.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_027_00-03-30.jpg" alt="Capture d&#x27;écran du jeu de course (type Mario Kart) développé ou généré, montrant la piste et l&#x27;interface de jeu." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_027_00-03-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:30</span>
+                        <span class="caption-text">Capture d&#x27;écran du jeu de course (type Mario Kart) développé ou généré, montrant la piste et l&#x27;interface de jeu.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_028_00-03-36.jpg" alt="Capture du jeu de course en cours de partie montrant le classement (LAP 2/3) et des pièces à collecter." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_028_00-03-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:36</span>
+                        <span class="caption-text">Capture du jeu de course en cours de partie montrant le classement (LAP 2/3) et des pièces à collecter.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:38 - 00:04:12</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si ces rapports se confirment après le lancement, cela pourrait devenir l&#x27;un des assistants IA en poids libres les plus puissants disponibles. Cela soulève une question intéressante. Si Kimi K3 peut offrir des performances proches de modèles comme Fable 5 ou GPT 5.6 tout en coûtant probablement beaucoup moins cher, cela exercera-t-il une nouvelle pression sur les prix des entreprises comme OpenAI et Anthropic ? Nous approchons également de la fin de vie prévue de Fable 5, il sera donc intéressant de voir si ces plans changent à mesure que la concurrence s&#x27;intensifie. Maintenant, il est important de rester réaliste.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de jeu vidéo et interface du réseau social X (Twitter) présentant une simulation 3D interactive réalisée avec Three.js.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : « Kimi K3 war scene made with @threejs one shot », nom d&#x27;utilisateur « @chetaslua », informations de profil (« AI Insider / Reporter featured in BGR... »), et interface tactique affichant « PACIFIC THUNDER » avec divers navires et statuts de combat (USS PRINCETON, FALCON-2, WOLF-5, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation d&#x27;une démo interactive de scène de guerre maritime créée par IA à l&#x27;aide de Kimi K3 et Three.js.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_029_00-03-40.jpg" alt="Capture d&#x27;écran montrant un jeu vidéo de course de type kart en 3D avec un classement des joueurs à gauche et une mini-carte en haut à droite." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_029_00-03-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:40</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un jeu vidéo de course de type kart en 3D avec un classement des joueurs à gauche et une mini-carte en haut à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_030_00-03-50.jpg" alt="Capture d&#x27;écran d&#x27;une publication sur le réseau social X (Twitter) montrant une vidéo intégrée intitulée « Kimi K3 war scene made with @threejs one shot »." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_030_00-03-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:50</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication sur le réseau social X (Twitter) montrant une vidéo intégrée intitulée « Kimi K3 war scene made with @threejs one shot ».</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_031_00-04-01.jpg" alt="Vue rapprochée de la simulation de scène de guerre maritime intitulée « PACIFIC THUNDER » générée avec Kimi K3 et Three.js." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_031_00-04-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:01</span>
+                        <span class="caption-text">Vue rapprochée de la simulation de scène de guerre maritime intitulée « PACIFIC THUNDER » générée avec Kimi K3 et Three.js.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_032_00-04-10.jpg" alt="Zoom sur la simulation de combat naval montrant les mouvements de la flotte sur l&#x27;océan avec des panneaux de statut tactiques sur le côté gauche." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_032_00-04-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:10</span>
+                        <span class="caption-text">Zoom sur la simulation de combat naval montrant les mouvements de la flotte sur l&#x27;océan avec des panneaux de statut tactiques sur le côté gauche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:12 - 00:04:31</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout ce dont nous avons discuté aujourd&#x27;hui provient des premiers tests d&#x27;Elemarina et des rapports de développeurs qui y ont actuellement accès. Rien de tout cela ne doit être considéré comme un verdict définitif jusqu&#x27;à ce que le Kini K3 soit officiellement lancé et que des analyses comparatives plus larges soient disponibles. Mais les premiers signes sont vraiment enthousiasmants.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du logiciel ou jeu de simulation nommé &quot;PACIFIC THUNDER&quot; / &quot;Elemarina Task Force 17&quot; avec mini-radar, listes d&#x27;unités tactiques et curseur de souris.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;PACIFIC THUNDER&quot;, &quot;ELEMARINA TASK FORCE 17&quot;, &quot;SIMULATION // NO REAL-WORLD DATA&quot;, &quot;FIRST TO 12 KILLS WINS THEATER&quot;, ainsi que divers noms d&#x27;unités et scores (RANGER-3, FALCON-2, WOLF-5, USS PRINCETON).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et affichage d&#x27;une simulation de combat aéronaval ou tactique avec des porte-avions et des avions de chasse survolant l&#x27;océan.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_033_00-04-14.jpg" alt="Vue aérienne du jeu ou de la simulation montrant un porte-avions naviguant sur l&#x27;eau et un curseur de souris au centre." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_033_00-04-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:14</span>
+                        <span class="caption-text">Vue aérienne du jeu ou de la simulation montrant un porte-avions naviguant sur l&#x27;eau et un curseur de souris au centre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_034_00-04-21.jpg" alt="Vue de l&#x27;interface de simulation &quot;PACIFIC THUNDER&quot; avec un radar en haut à droite, des listes d&#x27;unités à gauche et des reflets lumineux sur l&#x27;eau." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_034_00-04-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:21</span>
+                        <span class="caption-text">Vue de l&#x27;interface de simulation &quot;PACIFIC THUNDER&quot; avec un radar en haut à droite, des listes d&#x27;unités à gauche et des reflets lumineux sur l&#x27;eau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_035_00-04-29.jpg" alt="Vue à la troisième personne montrant des avions en vol au-dessus de la mer avec le porte-avions en arrière-plan dans la brume." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_035_00-04-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:29</span>
+                        <span class="caption-text">Vue à la troisième personne montrant des avions en vol au-dessus de la mer avec le porte-avions en arrière-plan dans la brume.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:31 - 00:04:50</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si ces résultats se traduisent dans la version publique, Kimi K3 pourrait devenir l&#x27;un des plus grands lancements d&#x27;IA de l&#x27;année. Qu&#x27;en pensez-vous ? S&#x27;agit-il vraiment d&#x27;un autre moment DeepSeek ou le battage médiatique dépasse-t-il la réalité ? Faites-moi part de vos réflexions dans les commentaires. Si vous avez apprécié ce rapport de recherche, n&#x27;oubliez pas de liker, de vous abonner et je vous retrouve dans le prochain.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation de jeu/stratégie (type Pacific Thunder) et écran de fin de chaîne YouTube.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;PACIFIC THUNDER&quot;, menus de score/unités à gauche, mini-carte en haut à droite, logo &quot;PAI&quot; et boutons d&#x27;interaction de fin de vidéo (&quot;LIKE&quot;, &quot;SUBSCRIBE&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et affichage d&#x27;une simulation de combat maritime, puis transition vers l&#x27;écran de fin de la chaîne YouTube invitant à s&#x27;abonner.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_036_00-04-33.jpg" alt="Interface de simulation montrant un hélicoptère en vol au-dessus de l&#x27;océan avec un porte-avions et des menus de statistiques à gauche." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_036_00-04-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:33</span>
+                        <span class="caption-text">Interface de simulation montrant un hélicoptère en vol au-dessus de l&#x27;océan avec un porte-avions et des menus de statistiques à gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_037_00-04-40.jpg" alt="Vue de la simulation au-dessus de la mer avec une nappe de brouillard lumineux au loin." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_037_00-04-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:40</span>
+                        <span class="caption-text">Vue de la simulation au-dessus de la mer avec une nappe de brouillard lumineux au loin.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-QraT8ZNkxgw/frame_038_00-04-48.jpg" alt="Écran de fin de vidéo montrant le logo animé de Pursuing AI (cerveau et puce connectés) avec des boutons de like, abonnement et cloche." loading="lazy" onclick="openLightbox('screenshots/YT-QraT8ZNkxgw/frame_038_00-04-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:48</span>
+                        <span class="caption-text">Écran de fin de vidéo montrant le logo animé de Pursuing AI (cerveau et puce connectés) avec des boutons de like, abonnement et cloche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

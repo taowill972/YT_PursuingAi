@@ -24,7 +24,8 @@
     "4lFiMR0DilQ",
     "hY7daRwGnaw",
     "2s4Y1oD9k3A",
-    "MDdWGsuGcSE"
+    "MDdWGsuGcSE",
+    "QraT8ZNkxgw"
   ],
   "processed_videos": [
     {
@@ -372,9 +373,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-07-18_YT-MDdWGsuGcSE_Kimi K3 vs Fable 5 Lequel l'emporte_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-05T16:09:50Z",
       "status": "completed"
+    },
+    {
+      "video_id": "QraT8ZNkxgw",
+      "title": "Kimi K3 est hallucinant ! Encore un moment DeepSeek ?",
+      "raw_title": "Kimi K3 is INSANE! Another DeepSeek Moment?",
+      "filename_md": "2026-07-16_YT-QraT8ZNkxgw_Kimi K3 est hallucinant ! Encore un moment DeepSeek_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-07-16_YT-QraT8ZNkxgw_Kimi K3 est hallucinant ! Encore un moment DeepSeek_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-07-16",
+      "duration": 291,
+      "screenshots_count": 38,
+      "filepath_md": "/root/YT_PursuingAi/2026-07-16_YT-QraT8ZNkxgw_Kimi K3 est hallucinant ! Encore un moment DeepSeek_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-07-16_YT-QraT8ZNkxgw_Kimi K3 est hallucinant ! Encore un moment DeepSeek_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T16:21:26Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 25,
+  "completed_count": 26,
   "last_run_timestamp": "2026-10-05T16:00:03Z",
   "status": "running",
   "total_catalog_count": 83
