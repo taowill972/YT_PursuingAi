@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Claude Fable 5 vs GPT-5.6 : qui gagne vraiment ? — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Claude Fable 5 vs GPT-5.6 : qui gagne vraiment ?</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-07-08</span>
+                <span class="badge">⏱️ 04m 12s</span>
+                <span class="badge">🆔 <code>Zk9o9CQy8NA</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=Zk9o9CQy8NA" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* propose un combat de titans entre deux des modèles d'intelligence artificielle générative les plus avancés du moment : **Claude Fable 5** et **GPT-5.6**. À travers l'analyse comparative de cas d'usage concrets extraits de la plateforme X (anciennement Twitter), le créateur décortique les capacités de ces deux intelligences artificielles sur des terrains complexes tels que l'animation 3D au style voxel, la génération de environnements de jeux vidéo interactifs, et la simulation architecturale. L'analyse met en lumière la rivalité féroce qui oppose ces géants, chacun démontrant des supériorités sectorielles nettes selon que l'on recherche le réalisme visuel brut ou l'interactivité poussée.</p><p>Pour mener à bien cette démonstration comparative, la méthode du créateur repose sur une observation empirique rigoureuse, juxtaposant des prompts similaires soumis aux deux intelligences artificielles. Il évalue méthodiquement des critères techniques précis : la fluidité des mouvements, la fidélité physique, la qualité de l'éclairage et le degré d'interactivité (comme la navigation dans des environnements ou l'utilisation d'objets). Cette approche séquentielle permet d'isoler les points forts de chaque écosystème sans parti pris technique.</p><p>Pour les créateurs de vidéo, les vidéastes et les développeurs de contenu, ces enseignements redéfinissent les standards de la production visuelle assistée par IA. Comprendre les nuances de performance entre **Claude Fable 5** et **GPT-5.6** permet d'optimiser le choix des outils selon le livrable attendu : privilégier le rendu cinématographique et l'esthétique globale d'un côté, ou miser sur l'interactivité dynamique de type "moteur de jeu" de l'autre. C'est une feuille de route indispensable pour anticiper les workflows de demain dans la création de mondes virtuels.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude</span><span class="tool-tag">flux</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Supériorité esthétique de Fable 5 sur les textures** : Dans les animations stylisées (comme le paon en voxel Minecraft), Fable 5 offre un rendu global souvent plus propre et séduisant.</span></li><li><span class="point-bullet">✦</span><span>Fluidité et naturel du mouvement** : GPT-5.6 rivalise et surpasse parfois Fable 5 sur la cinématique organique des corps et la précision des flux de mouvement globaux.</span></li><li><span class="point-bullet">✦</span><span>Arbitrage entre rendu et interactivité** : Le choix technologique dépend de l&#x27;objectif final : Fable 5 excelle dans la qualité pure du rendu, tandis que GPT-5.6 l&#x27;emporte sur la profondeur fonctionnelle.</span></li><li><span class="point-bullet">✦</span><span>Gestion de l&#x27;éclairage (Lighting)** : Fable 5 conserve une longueur d&#x27;avance sur la maîtrise des ambiances lumineuses et des ombres réalistes, notamment dans les scènes architecturales.</span></li><li><span class="point-bullet">✦</span><span>Immersion et interactivité architecturale** : GPT-5.6 permet de générer des environnements visitables de type *GTA V*, où l&#x27;utilisateur peut réellement ouvrir des portes, des tiroirs ou interagir avec les lumières.</span></li><li><span class="point-bullet">✦</span><span>Gestion des limites dans les rendus de jeux de tir (FPS)** : Fable 5 simule des mécaniques de tir et de visée (utilisation de la lunette) extrêmement convaincantes, dignes de studios professionnels.</span></li><li><span class="point-bullet">✦</span><span>Écueils de la génération d&#x27;armes par GPT-5.6** : Dans les séquences d&#x27;action, GPT-5.6 montre des faiblesses techniques, notamment avec des lunettes de visée totalement obturées qui nuisent à la lisibilité de l&#x27;action.</span></li><li><span class="point-bullet">✦</span><span>Gestion de la physique et des moteurs de jeu** : Les deux outils démontrent une capacité bluffante à générer des environnements vidéoludiques dotés d&#x27;une physique impressionnante et de mécaniques de collecte fluides.</span></li><li><span class="point-bullet">✦</span><span>Équilibre concurrentiel inattendu** : La compétition entre les deux IA est beaucoup plus serrée que prévu, chaque modèle gagnant à tour de rôle selon le cas d&#x27;usage spécifique testé.</span></li><li><span class="point-bullet">✦</span><span>Analyse critique des prompts complexes** : L&#x27;évaluation démontre qu&#x27;aucun modèle n&#x27;est universellement supérieur ; l&#x27;hybridation des workflows ou le choix ciblé du modèle selon la scène est capital pour un créateur.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:35</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Claude Fable 5 est de retour et GPT-5.6 est enfin là. Mais il n&#x27;y a qu&#x27;une seule question. Qui est réellement en train de gagner ? Regardons les vrais exemples que les gens publient sur X. C&#x27;est Pursuing AI et vous regardez le Research Report. Commençons par cette animation de paon style voxel Minecraft générée par Fable 5. À première vue, ça a l&#x27;air plutôt bien. L&#x27;animation est fluide et le style global est impressionnant. Mais comparez-la maintenant avec la génération de GPT-5.6. La différence</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de présentation vidéo / démo de générations d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;NOW SHOWING FABLE 5&quot;, &quot;CALIBER NYX-01&quot;, codes et options textuelles en bas à gauche de la vidéo de la voiture.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;exemples de générations de modèles vidéo par IA (Fable 5 et GPT-5.6) incluant des animations de style voxel (paon, voiture) et des rendus complexes 3D.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_001_00-00-02.jpg" alt="Écran titre affichant &#x27;NOW SHOWING FABLE 5&#x27; avec une petite créature pixelisée et une échelle en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Écran titre affichant &#x27;NOW SHOWING FABLE 5&#x27; avec une petite créature pixelisée et une échelle en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_002_00-00-12.jpg" alt="Démonstration comparative divisée en deux fenêtres : à gauche, une voiture bleue en voxel style 3D dans un environnement routier ; à droite, une montre-gousset mécanique détaillée nommée &#x27;CALIBER NYX-01&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_002_00-00-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:12</span>
+                        <span class="caption-text">Démonstration comparative divisée en deux fenêtres : à gauche, une voiture bleue en voxel style 3D dans un environnement routier ; à droite, une montre-gousset mécanique détaillée nommée &#x27;CALIBER NYX-01&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_003_00-00-24.jpg" alt="Animation en vue frontale d&#x27;un paon en blocs de type voxel se tenant sur un socle circulaire dans un environnement sombre." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_003_00-00-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:24</span>
+                        <span class="caption-text">Animation en vue frontale d&#x27;un paon en blocs de type voxel se tenant sur un socle circulaire dans un environnement sombre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_004_00-00-33.jpg" alt="Animation du même paon en voxel déployant magnifiquement sa grande roue aux motifs colorés bleus, verts et jaunes." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_004_00-00-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:33</span>
+                        <span class="caption-text">Animation du même paon en voxel déployant magnifiquement sa grande roue aux motifs colorés bleus, verts et jaunes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:35 - 00:01:07</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">devient clair presque immédiatement. L&#x27;animation des plumes du paon a l&#x27;air beaucoup plus fluide, le mouvement du corps semble plus naturel, et le mouvement global a un flux beaucoup plus réaliste. Fable 5 offre définitivement un bon résultat, mais dans cette comparaison, GPT-5.6 l&#x27;emporte clairement. Avant de continuer, un grand merci au sponsor d&#x27;aujourd&#x27;hui, U7Buy. Si vous avez pensé à vous procurer ChatGBT+, mais que vous ne voulez pas payer le prix mensuel complet, U7Buy vaut le détour.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la plateforme U7Buy et interface vidéo de comparaison.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affichant &quot;FABLE 5&quot; et &quot;GPT 5.6&quot;, ainsi que le site &quot;U7Buy&quot; avec divers bannières de jeux.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative de deux modèles d&#x27;IA générative de vidéo puis affichage publicitaire du site partenaire.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_005_00-00-37.jpg" alt="Animation d&#x27;un paon en blocs de type voxel sur un socle circulaire gris." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_005_00-00-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:37</span>
+                        <span class="caption-text">Animation d&#x27;un paon en blocs de type voxel sur un socle circulaire gris.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_006_00-00-46.jpg" alt="Comparaison côte à côte entre Fable 5 et GPT 5.6 affichant des animations de paons en blocs." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_006_00-00-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:46</span>
+                        <span class="caption-text">Comparaison côte à côte entre Fable 5 et GPT 5.6 affichant des animations de paons en blocs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_007_00-00-56.jpg" alt="Texte animé en caractères lumineux sur fond noir affichant &quot;a quick th...&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_007_00-00-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:56</span>
+                        <span class="caption-text">Texte animé en caractères lumineux sur fond noir affichant &quot;a quick th...&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_008_00-01-05.jpg" alt="Capture d&#x27;écran du site web U7Buy montrant des bannières de jeux et des options de navigation." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_008_00-01-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:05</span>
+                        <span class="caption-text">Capture d&#x27;écran du site web U7Buy montrant des bannières de jeux et des options de navigation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:07 - 00:01:31</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ils proposent ChatGBT+, des options d&#x27;abonnement à des prix inférieurs selon l&#x27;offre, et ils ont actuellement une note Trustpilot de 4,8 étoiles basée sur plus de 47 000 avis. Le processus est simple. Il vous suffit de visiter le lien dans la description, de choisir une offre ChatGBT+, d&#x27;examiner la note du vendeur et les détails du compte, et lors du paiement, d&#x27;utiliser mon code PURSU pour obtenir 5 % de réduction supplémentaire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site e-commerce U7BUY et une page de profil Trustpilot.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;U7BUY&quot;, &quot;ChatGPT Accounts for Sale&quot;, &quot;Trustpilot 4.8 Excellent&quot;, &quot;Subscription Account&quot;, &quot;PURSU 5% OFF&quot;, options de paiement (Visa, Crypto, Google Pay).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site U7BUY pour présenter les abonnements ChatGPT, la note Trustpilot et l&#x27;application d&#x27;un code promo lors du paiement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_009_00-01-09.jpg" alt="Page produit de U7BUY montrant les détails et tarifs des comptes ChatGPT Plus." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_009_00-01-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:09</span>
+                        <span class="caption-text">Page produit de U7BUY montrant les détails et tarifs des comptes ChatGPT Plus.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_010_00-01-15.jpg" alt="Profil Trustpilot de la plateforme U7BUY affichant une note de 4,8 étoiles et plus de 47 000 avis." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_010_00-01-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:15</span>
+                        <span class="caption-text">Profil Trustpilot de la plateforme U7BUY affichant une note de 4,8 étoiles et plus de 47 000 avis.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_011_00-01-23.jpg" alt="Page de sélection des abonnements sur U7BUY affichant différentes applications comme ChatGPT, Netflix, Spotify et Prime Video." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_011_00-01-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:23</span>
+                        <span class="caption-text">Page de sélection des abonnements sur U7BUY affichant différentes applications comme ChatGPT, Netflix, Spotify et Prime Video.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_012_00-01-29.jpg" alt="Page de paiement sur U7BUY montrant l&#x27;application du code promo &#x27;pursue&#x27; pour obtenir 5% de réduction." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_012_00-01-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:29</span>
+                        <span class="caption-text">Page de paiement sur U7BUY montrant l&#x27;application du code promo &#x27;pursue&#x27; pour obtenir 5% de réduction.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:31 - 00:01:50</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous cherchez un moyen plus abordable d&#x27;accéder à ChatGPT+, consultez U7Buy en utilisant le lien ci-dessous. Merci encore à U7Buy d&#x27;avoir sponsorisé cette vidéo, et maintenant revenons-en à nos moutons. Passons maintenant à quelque chose de beaucoup plus stimulant. Ce jeu généré par Fable 5 a été partagé par l&#x27;utilisateur Mirochill.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site e-commerce U7Buy puis une publication sur le réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur U7Buy, les options d&#x27;abonnement affichent &#x27;ChatGPT Accounts for Sale&#x27;, &#x27;Plus (Private)&#x27;, &#x27;1 Month $4.99&#x27;. Sur l&#x27;écran promotionnel, le texte indique &#x27;USE pursue 5% off code&#x27;. Sur X, le post de @mirochill indique &#x27;GPT 5.6 Sol Pro vs Claude Fables 5&#x27; avec une image de jeu vidéo montrant une ligne &#x27;START&#x27; et des personnages à vélo.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site web promotionnel U7Buy puis affichage d&#x27;un post X montrant un test de jeu vidéo généré par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_013_00-01-33.jpg" alt="Page web de la plateforme U7Buy proposant des abonnements ChatGPT+ à prix réduit." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_013_00-01-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:33</span>
+                        <span class="caption-text">Page web de la plateforme U7Buy proposant des abonnements ChatGPT+ à prix réduit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_014_00-01-41.jpg" alt="Écran promotionnel de U7Buy affichant le code promo &#x27;pursue&#x27; offrant 5% de réduction sur Netflix et ChatGPT." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_014_00-01-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:41</span>
+                        <span class="caption-text">Écran promotionnel de U7Buy affichant le code promo &#x27;pursue&#x27; offrant 5% de réduction sur Netflix et ChatGPT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_015_00-01-48.jpg" alt="Publication sur le réseau social X de l&#x27;utilisateur Mirochill montrant un jeu en 3D généré par Fable 5." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_015_00-01-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:48</span>
+                        <span class="caption-text">Publication sur le réseau social X de l&#x27;utilisateur Mirochill montrant un jeu en 3D généré par Fable 5.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:50 - 00:02:12</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Comme vous pouvez le voir, le gameplay a l&#x27;air fluide, la physique est impressionnante, la carte semble plus grande, et même l&#x27;animation de collecte des pièces a l&#x27;air soignée. Dans l&#x27;ensemble, Fable 5 fait un très bon travail avec le rendu des jeux. Mais maintenant, comparez-le avec le GPT 5.6. La première chose que vous remarquerez probablement, c&#x27;est que le personnage brille un peu trop.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de jeu vidéo avec mini-carte en bas à droite, compteurs de score et classement en haut à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Éléments de jeu 3D stylisés, pièces dorées à collecter, ligne de départ, noms des joueurs (Moss, Bill, Pippa).</p>
+                        <p><strong>Action / Démonstration :</strong> Les personnages circulent sur des vélos, collectent des pièces et franchissent la ligne de départ/arrivée sur un circuit asphalté.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_016_00-01-52.jpg" alt="Séquence de gameplay de Fable 5 montrant des personnages à vélo sous une banderole &#x27;START&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_016_00-01-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:52</span>
+                        <span class="caption-text">Séquence de gameplay de Fable 5 montrant des personnages à vélo sous une banderole &#x27;START&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_017_00-02-01.jpg" alt="Vue de la carte et du personnage à vélo roulant sur une route sinueuse en bord de mer." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_017_00-02-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:01</span>
+                        <span class="caption-text">Vue de la carte et du personnage à vélo roulant sur une route sinueuse en bord de mer.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_018_00-02-10.jpg" alt="Comparaison avec le jeu GPT 5.6 où un personnage brille de manière excessive au centre de l&#x27;écran." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_018_00-02-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:10</span>
+                        <span class="caption-text">Comparaison avec le jeu GPT 5.6 où un personnage brille de manière excessive au centre de l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:12 - 00:02:47</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cependant, l&#x27;animation du jeu et la physique sont toujours très bonnes. Cela dit, en ce qui concerne la qualité de rendu, Fable 5 fait vraiment un meilleur travail dans cet exemple. Voici maintenant une autre comparaison intéressante. Il s&#x27;agit d&#x27;une maison en 3D générée par Fable 5. L&#x27;éclairage est vraiment bon, mais il y a une limite. On ne peut pas vraiment se déplacer à l&#x27;intérieur de la maison. Regardez maintenant la version de GPT 5.6. La toute première chose que vous remarquerez, c&#x27;est que vous pouvez réellement vous déplacer dans la maison. Vous pouvez ouvrir et fermer des portes, ouvrir des tiroirs, allumer et éteindre les lumières.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme X (anciennement Twitter) et interfaces de visualisation de scènes 3D interactives.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Claude Fable 5 is back, here&#x27;s a comparison with GPT 5.6 Pro 👀... It&#x27;s impossible to move around in the Fable 5 version, but the lighting is better...&quot;. Bouton d&#x27;interaction à l&#x27;écran : &quot;F / Click : switch table lamp on&quot;. Mentions du profil &quot;@mirochill&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur navigue à travers des publications comparatives sur les réseaux sociaux et montre des séquences interactives permettant de manipuler des objets dans un environnement 3D généré par intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_019_00-02-14.jpg" alt="Scène de gameplay montrant une moto sur une route goudronnée avec des éléments de jeu et des scores." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_019_00-02-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:14</span>
+                        <span class="caption-text">Scène de gameplay montrant une moto sur une route goudronnée avec des éléments de jeu et des scores.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_020_00-02-24.jpg" alt="Interface du réseau social X (Twitter) affichant un tweet de Mirochill comparant Claude Fable 5 et GPT 5.6 Pro avec une vidéo intégrée d&#x27;un intérieur 3D." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_020_00-02-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:24</span>
+                        <span class="caption-text">Interface du réseau social X (Twitter) affichant un tweet de Mirochill comparant Claude Fable 5 et GPT 5.6 Pro avec une vidéo intégrée d&#x27;un intérieur 3D.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_021_00-02-36.jpg" alt="Capture d&#x27;un autre post sur l&#x27;interface X montrant une vue intérieure d&#x27;une pièce générée en 3D avec un meuble et une porte." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_021_00-02-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:36</span>
+                        <span class="caption-text">Capture d&#x27;un autre post sur l&#x27;interface X montrant une vue intérieure d&#x27;une pièce générée en 3D avec un meuble et une porte.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_022_00-02-45.jpg" alt="Gros plan interactif d&#x27;une pièce virtuelle montrant un meuble avec une lampe de table, des livres, un vase de fleurs et une invite contextuelle permettant d&#x27;allumer la lampe." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_022_00-02-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:45</span>
+                        <span class="caption-text">Gros plan interactif d&#x27;une pièce virtuelle montrant un meuble avec une lampe de table, des livres, un vase de fleurs et une invite contextuelle permettant d&#x27;allumer la lampe.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:48 - 00:03:11</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En gros, ça génère une maison qui ressemble plus à GTA V. On peut même regarder dehors à travers les fenêtres. La seule chose qui lui manque comparé à Fable V, c&#x27;est la qualité de l&#x27;éclairage. Mais dans l&#x27;ensemble, c&#x27;est une génération vraiment impressionnante et qui offre beaucoup plus d&#x27;interaction que la version Fable V. Passons maintenant à l&#x27;exemple probablement le plus intéressant, un jeu de tir.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de jeu vidéo généré par IA avec des indications d&#x27;interaction textuelles à l&#x27;écran, et navigateur affichant le réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes d&#x27;interface en bas de l&#x27;écran « E / Click interact », « doors, curtains, drawers, lights », mentions « @mirochill », ainsi qu&#x27;un post sur X de @chetaslua comparant Fable 5 et GPT 5.6 Pro.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et démonstration interactive à l&#x27;intérieur d&#x27;un environnement de maison généré par IA, puis affichage d&#x27;un post comparatif sur X concernant des modèles de génération.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_023_00-02-50.jpg" alt="Vue intérieure d&#x27;une maison générée par IA montrant une table à manger, une cuisine équipée et des indications textuelles d&#x27;interaction en bas à gauche." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_023_00-02-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:50</span>
+                        <span class="caption-text">Vue intérieure d&#x27;une maison générée par IA montrant une table à manger, une cuisine équipée et des indications textuelles d&#x27;interaction en bas à gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_024_00-02-56.jpg" alt="Vue de la plante verte près de la fenêtre avec un menu contextuel affichant l&#x27;option d&#x27;interaction « Open curtains » (ouvrir les rideaux)." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_024_00-02-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:56</span>
+                        <span class="caption-text">Vue de la plante verte près de la fenêtre avec un menu contextuel affichant l&#x27;option d&#x27;interaction « Open curtains » (ouvrir les rideaux).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_025_00-03-03.jpg" alt="Vue de la fenêtre montrant le mouvement des rideaux qui se ferment ou s&#x27;ouvrent, avec le curseur d&#x27;interaction et la vue extérieure sur la rue." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_025_00-03-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:03</span>
+                        <span class="caption-text">Vue de la fenêtre montrant le mouvement des rideaux qui se ferment ou s&#x27;ouvrent, avec le curseur d&#x27;interaction et la vue extérieure sur la rue.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_026_00-03-09.jpg" alt="Capture d&#x27;écran du réseau social X (Twitter) montrant un post comparatif entre Fable 5 et GPT 5.6 Pro (Sol) avec deux images de jeux vidéo." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_026_00-03-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:09</span>
+                        <span class="caption-text">Capture d&#x27;écran du réseau social X (Twitter) montrant un post comparatif entre Fable 5 et GPT 5.6 Pro (Sol) avec deux images de jeux vidéo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:11 - 00:03:33</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est la génération Fable 5. Honnêtement, on dirait un vrai jeu fait par des développeurs. L&#x27;animation de marche, le lancer de grenade, le fait de regarder à travers la lunette de visée, le mouvement de tir, tout semble naturel et soigné. Maintenant, comparez cela avec le GPT 5.6. L&#x27;animation de tir n&#x27;est pas aussi bonne, et le plus gros problème, c&#x27;est la lunette de visée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de comparaison vidéo divisé en deux parties, illustrant les performances de deux modèles d&#x27;IA différents sur le rendu de jeux vidéo en vue subjective (FPS).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte jaune en haut à gauche de chaque section : &quot;Fable 5&quot; pour la vidéo supérieure et &quot;GPT 5.6Pro&quot; pour la vidéo inférieure. Les vidéos montrent des environnements de type jeu de tir en 3D avec des arbres, des rochers et des éléments d&#x27;interface de jeu (barre de vie, munitions).</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle de deux rendus de jeux vidéo générés par IA, illustrant les animations de personnages et les mécanismes de visée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_027_00-03-13.jpg" alt="Comparaison vidéo côte à côte montrant en haut une génération de jeu vidéo par &#x27;Fable 5&#x27; et en bas par &#x27;GPT 5.6Pro&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_027_00-03-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:13</span>
+                        <span class="caption-text">Comparaison vidéo côte à côte montrant en haut une génération de jeu vidéo par &#x27;Fable 5&#x27; et en bas par &#x27;GPT 5.6Pro&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:33 - 00:03:52</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">complètement fermé pour qu&#x27;on ne puisse pas vraiment voir à travers correctement. Donc après avoir regardé tous ces exemples, voici le bilan global. GPT 5.6 est vraiment bon en génération 3D, mais Fable 5 est meilleur en ce qui concerne la qualité de rendu et pour offrir une expérience plus fluide et plus naturelle.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de comparaison comparative affichant des fenêtres de moteurs de rendu 3D labellisées &quot;Fable 5&quot; et &quot;GPT 5.6 Pro&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Étiquettes textuelles jaunes &quot;Fable 5&quot; et &quot;GPT 5.6 Pro&quot;, vues subjectives de jeux vidéo avec des éléments d&#x27;interface utilisateur (viseur, compteur de munitions), modélisations 3D d&#x27;intérieurs de maison et d&#x27;animaux en blocs.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration comparative de performances de génération 3D entre deux technologies différentes (Fable 5 vs GPT 5.6 Pro) à travers des environnements interactifs et des objets modélisés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_028_00-03-35.jpg" alt="Comparaison côte à côte ou empilée entre Fable 5 et GPT 5.6 Pro montrant un environnement 3D de type jeu vidéo de tir à la première personne." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_028_00-03-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:35</span>
+                        <span class="caption-text">Comparaison côte à côte ou empilée entre Fable 5 et GPT 5.6 Pro montrant un environnement 3D de type jeu vidéo de tir à la première personne.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_029_00-03-43.jpg" alt="Comparaison multi-panneaux entre Fable 5 et GPT 5.6 Pro affichant différents types de rendus 3D (scènes de salon et modèles de paon voxel)." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_029_00-03-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:43</span>
+                        <span class="caption-text">Comparaison multi-panneaux entre Fable 5 et GPT 5.6 Pro affichant différents types de rendus 3D (scènes de salon et modèles de paon voxel).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_030_00-03-50.jpg" alt="Comparaison multi-panneaux détaillée montrant l&#x27;évolution des rendus intérieurs et le déploiement complet d&#x27;un modèle 3D de paon en voxel." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_030_00-03-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:50</span>
+                        <span class="caption-text">Comparaison multi-panneaux détaillée montrant l&#x27;évolution des rendus intérieurs et le déploiement complet d&#x27;un modèle 3D de paon en voxel.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:52 - 00:04:12</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En même temps, GPT 5.6 obtient d&#x27;excellents résultats et bat même Fable 5 sur plusieurs exemples. La compétition est donc bien plus serrée que beaucoup ne le prévoyaient. Mais maintenant, je veux connaître votre avis. Lequel pensez-vous qui est réellement le meilleur ? Faites-moi part de vos réflexions dans les commentaires, et je vous retrouve dans le prochain rapport de recherche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de comparaison vidéo montrant des tests comparatifs de modèles d&#x27;IA (Fable 5 vs GPT 5.6 Pro) avec des rendus 3D, des environnements de jeux et des modélisations d&#x27;animaux.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Mentions textuelles &quot;Fable 5&quot; et &quot;GPT 5.6 Pro&quot; étiquetant les différentes fenêtres de démonstration vidéo montrant des intérieurs de pièces, des paysages forestiers et un paon en voxels 3D.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle côte à côte de plusieurs exemples de génération entre Fable 5 et GPT 5.6 Pro.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_031_00-03-54.jpg" alt="Comparaison vidéo en grille montrant les performances de Fable 5 et GPT 5.6 Pro sur plusieurs exemples de scènes 3D et de modélisation." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_031_00-03-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:54</span>
+                        <span class="caption-text">Comparaison vidéo en grille montrant les performances de Fable 5 et GPT 5.6 Pro sur plusieurs exemples de scènes 3D et de modélisation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Zk9o9CQy8NA/frame_032_00-04-02.jpg" alt="Suite de la comparaison comparative en grille affichant d&#x27;autres exemples de génération entre Fable 5 et GPT 5.6 Pro." loading="lazy" onclick="openLightbox('screenshots/YT-Zk9o9CQy8NA/frame_032_00-04-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:02</span>
+                        <span class="caption-text">Suite de la comparaison comparative en grille affichant d&#x27;autres exemples de génération entre Fable 5 et GPT 5.6 Pro.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
