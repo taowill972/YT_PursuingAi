@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `19 / 83` (`22.9%`)
+- **Vidéos traitées** : `20 / 83` (`24.1%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -35,6 +35,7 @@
 | 2026-08-17 | [L'IA d'Apple en Chine, Grok 4.6 et 1 MILLIARD d'utilisateurs pour Google : GROSSE ACTU IA](2026-08-17_YT-SCodVNW0vtw_L'IA d'Apple en Chine, Grok 4.6 et 1 MILLIARD d'utilisateurs pour Google GROSSE _by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-17_YT-SCodVNW0vtw_L'IA d'Apple en Chine, Grok 4.6 et 1 MILLIARD d'utilisateurs pour Google GROSSE _by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 58s | `24 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=SCodVNW0vtw) | `SCodVNW0vtw` |
 | 2026-08-13 | [55 % des cyberattaques utilisent l'IA ?](2026-08-13_YT-bcDvdUb-fEw_55 % des cyberattaques utilisent l'IA_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-13_YT-bcDvdUb-fEw_55 % des cyberattaques utilisent l'IA_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 02s | `14 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=bcDvdUb-fEw) | `bcDvdUb-fEw` |
 | 2026-08-05 | [Est-ce que Qwen 3.8 Max peut battre Fable 5 ?](2026-08-05_YT-yzNl4SLoSDI_Est-ce que Qwen 3.8 Max peut battre Fable 5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-05_YT-yzNl4SLoSDI_Est-ce que Qwen 3.8 Max peut battre Fable 5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 55s | `26 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=yzNl4SLoSDI) | `yzNl4SLoSDI` |
+| 2026-08-03 | [Qwen 3.8 Max met GPT en difficulté](2026-08-03_YT-aAnaH3o6mF4_Qwen 3.8 Max met GPT en difficulté_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-03_YT-aAnaH3o6mF4_Qwen 3.8 Max met GPT en difficulté_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 51s | `27 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=aAnaH3o6mF4) | `aAnaH3o6mF4` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

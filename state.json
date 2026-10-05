@@ -18,7 +18,8 @@
     "XuCDf4afPVg",
     "SCodVNW0vtw",
     "bcDvdUb-fEw",
-    "yzNl4SLoSDI"
+    "yzNl4SLoSDI",
+    "aAnaH3o6mF4"
   ],
   "processed_videos": [
     {
@@ -282,9 +283,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-08-05_YT-yzNl4SLoSDI_Est-ce que Qwen 3.8 Max peut battre Fable 5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-05T10:09:38Z",
       "status": "completed"
+    },
+    {
+      "video_id": "aAnaH3o6mF4",
+      "title": "Qwen 3.8 Max met GPT en difficulté",
+      "raw_title": "Qwen 3.8 Max Makes GPT In Trouble",
+      "filename_md": "2026-08-03_YT-aAnaH3o6mF4_Qwen 3.8 Max met GPT en difficulté_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-08-03_YT-aAnaH3o6mF4_Qwen 3.8 Max met GPT en difficulté_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-08-03",
+      "duration": 231,
+      "screenshots_count": 27,
+      "filepath_md": "/root/YT_PursuingAi/2026-08-03_YT-aAnaH3o6mF4_Qwen 3.8 Max met GPT en difficulté_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-08-03_YT-aAnaH3o6mF4_Qwen 3.8 Max met GPT en difficulté_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T10:14:27Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 19,
+  "completed_count": 20,
   "last_run_timestamp": "2026-10-05T10:00:03Z",
   "status": "running",
   "total_catalog_count": 83
