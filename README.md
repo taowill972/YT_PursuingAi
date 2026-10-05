@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `13 / 83` (`15.7%`)
+- **Vidéos traitées** : `14 / 83` (`16.9%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -29,6 +29,7 @@
 | 2026-08-30 | [GPT-6 Is FAR More Powerful Than We Realized](2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 15s | `7 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=AYqoJOg4TBY) | `AYqoJOg4TBY` |
 | 2026-08-28 | [FABLE-5.1 Is WAY More Powerful Than We Thought](2026-08-28_YT-ryosCa6_eCE_FABLE-5.1 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-28_YT-ryosCa6_eCE_FABLE-5.1 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 2m 46s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=ryosCa6_eCE) | `ryosCa6_eCE` |
 | 2026-08-27 | [Fuite d'OpenAI GPT-Bel, révélation d'Ox Alpha, nouveau processeur d'OpenAI et percée IA de NVIDIA - Actualités IA](2026-08-27_YT-2JoMP7G2C2Q_Fuite d'OpenAI GPT-Bel, révélation d'Ox Alpha, nouveau processeur d'OpenAI et pe_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-27_YT-2JoMP7G2C2Q_Fuite d'OpenAI GPT-Bel, révélation d'Ox Alpha, nouveau processeur d'OpenAI et pe_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 7m 15s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=2JoMP7G2C2Q) | `2JoMP7G2C2Q` |
+| 2026-08-25 | [Le secret du modèle IA d'OX Alpha enfin RÉVÉLÉ ?](2026-08-25_YT-eVah4t3huis_Le secret du modèle IA d'OX Alpha enfin RÉVÉLÉ_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-25_YT-eVah4t3huis_Le secret du modèle IA d'OX Alpha enfin RÉVÉLÉ_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 5m 05s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=eVah4t3huis) | `eVah4t3huis` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
