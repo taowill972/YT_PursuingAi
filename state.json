@@ -22,7 +22,8 @@
     "aAnaH3o6mF4",
     "hyDviOrokpc",
     "4lFiMR0DilQ",
-    "hY7daRwGnaw"
+    "hY7daRwGnaw",
+    "2s4Y1oD9k3A"
   ],
   "processed_videos": [
     {
@@ -342,9 +343,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-07-27_YT-hY7daRwGnaw_Un seul prompt a créé cette scène cinématique par IA ! Akool Clash_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-05T10:34:58Z",
       "status": "completed"
+    },
+    {
+      "video_id": "2s4Y1oD9k3A",
+      "title": "Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur)",
+      "raw_title": "Claude Opus 5 Is INSANE! (Real Developer Tests)",
+      "filename_md": "2026-07-25_YT-2s4Y1oD9k3A_Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-07-25_YT-2s4Y1oD9k3A_Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-07-25",
+      "duration": 351,
+      "screenshots_count": 37,
+      "filepath_md": "/root/YT_PursuingAi/2026-07-25_YT-2s4Y1oD9k3A_Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-07-25_YT-2s4Y1oD9k3A_Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T10:46:21Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 23,
+  "completed_count": 24,
   "last_run_timestamp": "2026-10-05T10:00:03Z",
   "status": "running",
   "total_catalog_count": 83

@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-07-25</span>
+                <span class="badge">⏱️ 05m 51s</span>
+                <span class="badge">🆔 <code>2s4Y1oD9k3A</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=2s4Y1oD9k3A" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* met en lumière la sortie et les capacités stupéfiantes de **Claude Opus 5** (développé par Anthropic), un modèle de pointe qui rivalise directement avec les cadors du marché (comme Fable 5) tout en maintenant le prix de la version précédente. Loin de se limiter aux simples scores des benchmarks, le réalisateur analyse des cas d'usage réels et complexes soumis par la communauté de développeurs et de créateurs. Ces tests démontrent la capacité d'Opus 5 à générer non seulement du code, mais des expériences interactives et visuelles immersives à partir de simples instructions textuelles.</p><p>La méthode présentée repose sur l'exploitation des capacités de raisonnement avancé du modèle (notamment via des fonctionnalités comme *Max Thinking*) pour concevoir des applications web interactives et des graphismes sophistiqués. Le workflow consiste à challenger l'IA sur des projets multidisciplinaires : génération de personnages 3D animés avec gestion des vêtements et affichage filaire, création de publicités animées complètes en pur HTML et CSS, ou encore imbrication de systèmes (comme un macOS virtuel fonctionnant à l'intérieur d'une pièce en 3.js). Les créateurs de contenu et de vidéos bénéficient ainsi d'un assistant capable d'automatiser le prototypage rapide d'interfaces, d'animations complexes et de scènes 3D interactives sans passer par des pipelines de production lourds.</p><p>Enfin, l'analyse comparative aborde les performances d'Opus 5 face à des concurrents tels que Kimi K3 et Fable 5, notamment sur la génération de textures complexes (comme le rendu photoréaliste d'un bonsaï Sakura). Bien que les benchmarks traditionnels placent Opus 5 au sommet dans de nombreuses catégories (à l'exception notable de la santé et d'une parité quasi parfaite sur les agents de codage), la vidéo souligne que la véritable valeur réside dans la transparence d'Anthropic et dans la fidélité des détails visuels et structurels produits, ouvrant de nouvelles perspectives créatives pour le design interactif et le développement assisté par IA.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Dépassement des benchmarks** : Les scores bruts ne suffisent pas ; la véritable puissance de Claude Opus 5 se mesure à sa capacité à exécuter des tâches créatives et techniques complexes dans le monde réel.</span></li><li><span class="point-bullet">✦</span><span>Animation 3D et textures** : Capacité à générer des personnages animés dotés de mouvements naturels, incluant la simulation physique de tissus ondulatoires et l&#x27;accès à des modes filaires (wireframe).</span></li><li><span class="point-bullet">✦</span><span>Génération publicitaire autonome** : Utilisation du prompt engineering et du *Max Thinking* pour concevoir de zéro une publicité animée de 30 secondes entièrement en HTML, avec effets de néon et transitions fluides.</span></li><li><span class="point-bullet">✦</span><span>Imbrication de systèmes (Inception logicielle)** : Réalisation de scènes 3.js sophistiquées intégrant un environnement virtuel (une pièce chaleureuse) qui abrite lui-même un MacBook virtuel doté d&#x27;une interface macOS pleinement fonctionnelle.</span></li><li><span class="point-bullet">✦</span><span>Maîtrise des détails microscopiques** : Supériorité manifeste d&#x27;Opus 5 face à ses concurrents (Kimi K3, Fable 5) sur la génération de textures organiques complexes, telles que l&#x27;écorce torsadée et réaliste d&#x27;un bonsaï Sakura.</span></li><li><span class="point-bullet">✦</span><span>Transparence des éditeurs** : Appréciation de la démarche d&#x27;Anthropic qui publie ouvertement les domaines où son modèle est légèrement en retrait (comme la santé), renforçant la confiance des développeurs.</span></li><li><span class="point-bullet">✦</span><span>Parité sur les agents de codage** : Constat d&#x27;une performance presque identique (à 0,1 % près) entre Opus 5 et Fable 5 sur les tâches de codage par agent, déplaçant la différenciation vers la créativité et la structure.</span></li><li><span class="point-bullet">✦</span><span>Accessibilité des sources** : Le partage systématique des prompts originaux et des liens de démo en direct par les créateurs permet une rétro-ingénierie et un apprentissage empirique rapides pour la communauté.</span></li><li><span class="point-bullet">✦</span><span>Prototypage instantané pour la vidéo** : Possibilité pour les créateurs de contourner les pipelines de production traditionnels en demandant à l&#x27;IA de coder des prototypes interactifs directement exploitables à l&#x27;écran.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout le monde s&#x27;attendait à ce qu&#x27;Anthropic sorte un modèle plus puissant. Mais presque personne ne s&#x27;attendait à ces résultats. Anthropic vient de lancer Claude Opus 5, et sur plusieurs benchmarks majeurs, il rivalise directement avec Fable 5 tout en coûtant le même prix que l&#x27;Opus 4.8. Mais les benchmarks ne sont pas la partie intéressante.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation 3D interactive, page web officielle d&#x27;Anthropic, et moteur de jeu vidéo en vue subjective (FPS).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1 : panneaux avec statistiques de l&#x27;animal (vitesse 0.2 km/h, démarche, cœur, faim, soif, etc.) et contrôles vocaux/corporels. Sur l&#x27;image 2 : en-tête &quot;Introducing Claude Opus 5&quot;, date &quot;24 Jul 2026&quot;, logo de l&#x27;entreprise et bouton &quot;Try Claude&quot;. Sur l&#x27;image 3 : mini-carte en haut à gauche, compteur de munitions &quot;30 / 210&quot; en bas à droite, viseur et réticule d&#x27;arme.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation d&#x27;une simulation 3D d&#x27;un animal, navigation sur la page de présentation du nouveau modèle d&#x27;Anthropic, et séquence de gameplay montrant un environnement de jeu vidéo interactif.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_001_00-00-02.jpg" alt="Interface d&#x27;un logiciel ou d&#x27;une simulation 3D montrant un éléphant dans un paysage désertique avec des panneaux de contrôle sur les côtés." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Interface d&#x27;un logiciel ou d&#x27;une simulation 3D montrant un éléphant dans un paysage désertique avec des panneaux de contrôle sur les côtés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_002_00-00-10.jpg" alt="Page web d&#x27;Anthropic annonçant le lancement de Claude Opus 5 avec une illustration en forme de chiffre 5 composé de pierres." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_002_00-00-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Page web d&#x27;Anthropic annonçant le lancement de Claude Opus 5 avec une illustration en forme de chiffre 5 composé de pierres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_003_00-00-19.jpg" alt="Vue à la première personne (FPS) dans un jeu vidéo de type tir tactique montrant un personnage tenant un fusil d&#x27;assaut dans une ruelle urbaine." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_003_00-00-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:19</span>
+                        <span class="caption-text">Vue à la première personne (FPS) dans un jeu vidéo de type tir tactique montrant un personnage tenant un fusil d&#x27;assaut dans une ruelle urbaine.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:21 - 00:00:44</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce qui est intéressant, c&#x27;est ce qui se passe quand on pousse réellement Opus 5 dans ses retranchements. Certains résultats sont tellement surprenants qu&#x27;ils changent complètement la position de ce modèle face à la concurrence. Aujourd&#x27;hui, je vais vous montrer les exemples d&#x27;Opus 5 les plus impressionnants que j&#x27;ai pu trouver, de la programmation au raisonnement en passant par des tâches du monde réel qui ont même fait s&#x27;arrêter et regarder à deux fois des utilisateurs d&#x27;IA expérimentés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interfaces de simulations interactives, de moteurs de jeu et d&#x27;environnements de test 3D.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus techniques, paramètres atmosphériques (heure, vent), spécifications de baliste et affichage d&#x27;un aéronef commercial.
+[DESC_IMAGE_1] Vue subjective d&#x27;un jeu vidéo avec un fusil en premier plan dans un décor de ville détruite.
+[DESC_IMAGE_2] Panneau latéral « ATMOSPHERE » avec des curseurs pour régler l&#x27;heure, les vagues et le vent.
+[DESC_IMAGE_3] Panneaux de contrôle techniques « BALLISTA », « LAYING &amp; LOADING » et « QUADRANT ».
+[DESC_IMAGE_4] Rendu 3D réaliste d&#x27;un avion portant l&#x27;inscription &quot;BOEING&quot; sur son flanc.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_004_00-00-23.jpg" alt="Démonstration d&#x27;un jeu de tir à la première personne généré ou contrôlé par l&#x27;IA dans une rue urbaine." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_004_00-00-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:23</span>
+                        <span class="caption-text">Démonstration d&#x27;un jeu de tir à la première personne généré ou contrôlé par l&#x27;IA dans une rue urbaine.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_005_00-00-29.jpg" alt="Interface de simulation paysagère ou environnementale montrant un lac et des montagnes avec des curseurs d&#x27;atmosphère." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_005_00-00-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:29</span>
+                        <span class="caption-text">Interface de simulation paysagère ou environnementale montrant un lac et des montagnes avec des curseurs d&#x27;atmosphère.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_006_00-00-36.jpg" alt="Interface de simulation interactive d&#x27;une baliste médiévale avec des paramètres techniques et des contrôles de tir." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_006_00-00-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:36</span>
+                        <span class="caption-text">Interface de simulation interactive d&#x27;une baliste médiévale avec des paramètres techniques et des contrôles de tir.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_007_00-00-42.jpg" alt="Modélisation 3D détaillée d&#x27;un avion de ligne Boeing sur une piste d&#x27;atterrissage." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_007_00-00-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Modélisation 3D détaillée d&#x27;un avion de ligne Boeing sur une piste d&#x27;atterrissage.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:44 - 00:01:03</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ceci est Pursuing AI, et vous regardez The Research Report. Commençons par quelque chose qui a vraiment attiré mon attention. L&#x27;utilisateur Majid Manzarpur a utilisé Clot Opus 5 pour créer ce personnage entièrement animé. À première vue, ça a l&#x27;air impressionnant. Mais regardez d&#x27;un peu plus près.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant X (Twitter) et une application de visualisation 3D interactive utilisant Three.js avec un panneau « RIG INSPECTOR ».</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de Majid Manzarpur : « So.. @claudeai Opus 5 can build a game character, equip, rig and animate it in @threejs with pure code Prompt and demo link below 👇 ». Interface « RIG INSPECTOR » avec options de graines (Seed), animations (IDLE, WALK, RUN, ATTACK, BLOCK, HIT), calques (BODY, ARMOR, BOTH) et options d&#x27;armure.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un tweet sur X puis zoom sur la démonstration interactive d&#x27;un personnage 3D en armure noire manipulé dans un visualiseur avec squelette et options d&#x27;animation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_008_00-00-54.jpg" alt="Publication sur le réseau social X (Twitter) de Majid Manzarpur montrant un personnage en armure 3D animé et des informations sur Claude d&#x27;Anthropic." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_008_00-00-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:54</span>
+                        <span class="caption-text">Publication sur le réseau social X (Twitter) de Majid Manzarpur montrant un personnage en armure 3D animé et des informations sur Claude d&#x27;Anthropic.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_009_00-01-01.jpg" alt="Gros plan sur le panneau de contrôle « RIG INSPECTOR » avec un personnage en armure noire entièrement riggé et animé." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_009_00-01-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:01</span>
+                        <span class="caption-text">Gros plan sur le panneau de contrôle « RIG INSPECTOR » avec un personnage en armure noire entièrement riggé et animé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:03 - 00:01:25</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Remarquez à quel point le personnage marche naturellement. Regardez maintenant le tissu qui flotte derrière lui. Ces mouvements ondulatoires ajoutent un niveau de réalisme qu&#x27;il est difficile d&#x27;ignorer. Et si cela ne suffit pas, vous pouvez même inspecter l&#x27;ensemble du modèle en mode filaire et carte de pondération pour voir comment il est construit. Le meilleur dans tout ça, c&#x27;est que le créateur a partagé à la fois le prompt original et un lien de démo en direct, afin que vous puissiez l&#x27;explorer vous-même.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;outil de rigging 3D (Rig Inspector) et interface du réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau latéral avec les options de rig (Seed, Animation, Layers avec Skeleton, Wireframe, Grid, etc.), et nom du personnage &quot;REVENANT&quot;. Sur la capture X : publication de Majid Manzarpour avec le texte &quot;Prompt if you want to compare to other models&quot; et un lien de démo vers Claude AI.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation du modèle 3D d&#x27;un chevalier en mouvement de marche avec son panneau de contrôle interactif, suivie d&#x27;une transition vers une publication sur les réseaux sociaux montrant le prompt et le lien de démo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_010_00-01-05.jpg" alt="Interface du &quot;Rig Inspector&quot; montrant un personnage 3D en armure noire avec des options d&#x27;animation (Walk, Run, Idle) et des réglages de squelette et de grille." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_010_00-01-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:05</span>
+                        <span class="caption-text">Interface du &quot;Rig Inspector&quot; montrant un personnage 3D en armure noire avec des options d&#x27;animation (Walk, Run, Idle) et des réglages de squelette et de grille.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_011_00-01-23.jpg" alt="Publication sur le réseau social X (Twitter) du compte de Majid Manzarpour partageant le prompt et le lien de démonstration de Claude AI pour le générateur d&#x27;armures 3D." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_011_00-01-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:23</span>
+                        <span class="caption-text">Publication sur le réseau social X (Twitter) du compte de Majid Manzarpour partageant le prompt et le lien de démonstration de Claude AI pour le générateur d&#x27;armures 3D.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:25 - 00:01:44</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;ai mis tous les liens dans la description. Mais ce n&#x27;est que le début, car le prochain exemple d&#x27;Opus 5 est encore plus surprenant. Le prochain exemple prend une direction complètement différente. L&#x27;utilisateur Stevie a mis au défi Claude Opus 5 en utilisant Max Thinking pour créer sa propre publicité.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (anciennement Twitter) en mode sombre, affichant un post avec un lecteur vidéo intégré.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du post de Majid Manzarpour (@majidmanzarpour) : &quot;So... @claudeai Opus 5 can build a game character, equip, rig and animate it in @threejs with pure code. Prompt and demo link below 👇&quot;. Dans la vidéo intégrée, on aperçoit un personnage de type chevalier/robot sombre manipulé via une interface de type &quot;Rig Inspector&quot;. Sur le panneau latéral droit, des suggestions de comptes pertinents (« Relevant people ») incluent Majid Manzarpour et Claude (@claudeai).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une capture d&#x27;écran d&#x27;un tweet illustrant les capacités de Claude Opus 5 à coder entièrement un personnage 3D interactif.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_012_00-01-27.jpg" alt="Publication sur le réseau social X montrant un post de Majid Manzarpour avec une vidéo de démonstration d&#x27;un personnage de jeu généré par Claude Opus 5." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_012_00-01-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:27</span>
+                        <span class="caption-text">Publication sur le réseau social X montrant un post de Majid Manzarpour avec une vidéo de démonstration d&#x27;un personnage de jeu généré par Claude Opus 5.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:44 - 00:02:08</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et au lieu de générer une simple démo, Opus 5 a créé une publicité animée entière de 30 secondes en pur HTML. Regardez simplement le résultat. Les animations de style néon clignotant, les transitions fluides et la présentation cinématographique. On a vraiment l&#x27;impression d&#x27;une publicité de station-service tard dans la nuit, et non de quelque chose qu&#x27;on s&#x27;attendrait à ce qu&#x27;une IA construise à partir d&#x27;une seule invite.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme X (anciennement Twitter) affichant un tweet et la vidéo intégrée, suivie du rendu vidéo en plein écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;I asked Claude Opus 5 (thinking Max) to make its own launch ad. &#x27;You just launched. Direct your own intro film. Theme: old-school neon.&#x27; It wrote the storyboard, then coded the whole thing: flickering tubes, rain reflections, a power surge before the reveal. 30 seconds. Pure HTML canvas.&quot; Éléments visuels animés incluant des enseignes au néon colorées (&quot;REASONING&quot;, &quot;VISION&quot;, &quot;WRITING&quot;) et le logo de Claude.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration du rendu visuel de la publicité animée générée entièrement en HTML par l&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_013_00-01-46.jpg" alt="Capture d&#x27;écran d&#x27;un tweet montrant le résultat visuel de l&#x27;annonce animée en HTML générée par Opus 5." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_013_00-01-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:46</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet montrant le résultat visuel de l&#x27;annonce animée en HTML générée par Opus 5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_014_00-02-00.jpg" alt="Animation de néons orange scintillants sur fond sombre avec effet de pluie." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_014_00-02-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:00</span>
+                        <span class="caption-text">Animation de néons orange scintillants sur fond sombre avec effet de pluie.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_015_00-02-06.jpg" alt="Scène animée complète de style néon urbain avec des enseignes lumineuses colorées sous la pluie." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_015_00-02-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:06</span>
+                        <span class="caption-text">Scène animée complète de style néon urbain avec des enseignes lumineuses colorées sous la pluie.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:08 - 00:02:27</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce qui est encore plus impressionnant, c&#x27;est qu&#x27;Opus 5 a décidé de générer cette expérience interactive complète de lui-même. Cela en dit long sur l&#x27;évolution de son raisonnement créatif. Si vous souhaitez explorer par vous-même, j&#x27;ai mis le lien vers la publication originale dans la description. Et croyez-moi, vous n&#x27;avez pas encore vu l&#x27;exemple le plus fou d&#x27;Opus 5.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface vidéo graphique puis interface du réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;CLAUDE OPUS 5&quot;, &quot;non gaming&quot;, et sur l&#x27;image 3 le post de stevibe expliquant : &quot;I asked Claude Opus 5 (thinking Max) to make its own launch ad...&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des visuels animés de l&#x27;interface graphique générée par l&#x27;IA, puis transition vers la publication originale sur les réseaux sociaux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_016_00-02-10.jpg" alt="Animation graphique simulant une enseigne au néon avec le texte &#x27;CLAUDE OPUS 5&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_016_00-02-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:10</span>
+                        <span class="caption-text">Animation graphique simulant une enseigne au néon avec le texte &#x27;CLAUDE OPUS 5&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_017_00-02-17.jpg" alt="Vue élargie de l&#x27;animation de néons montrant de nouveaux éléments textuels et symboles associés à Claude Opus 5." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_017_00-02-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:17</span>
+                        <span class="caption-text">Vue élargie de l&#x27;animation de néons montrant de nouveaux éléments textuels et symboles associés à Claude Opus 5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_018_00-02-25.jpg" alt="Capture d&#x27;écran d&#x27;une publication sur le réseau social X montrant le post original avec la vidéo de démonstration et le texte descriptif." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_018_00-02-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:25</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication sur le réseau social X montrant le post original avec la vidéo de démonstration et le texte descriptif.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:27 - 00:02:49</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;exemple suivant brouille complètement la frontière entre la génération par IA et l&#x27;expérience interactive réelle. L&#x27;utilisateur Token Gremlin a demandé à Claude Opus 5 de créer une pièce interactive chaleureuse en 3.js. Mais regardez de plus près. À l&#x27;intérieur de la pièce se trouve un MacBook virtuel exécutant une interface entièrement fonctionnelle semblable à macOS.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur le réseau social X (Twitter) et un projet interactif 3.js montrant un bureau macOS virtuel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de @stevibe : &quot;I asked Claude Opus 5 (thinking Max) to make its own launch ad. You just launched. Direct your own intro film. Theme: old-school neon. It wrote the storyboard, then coded the whole thing: flickering tubes, rain reflections, a power surge before the reveal. 30 seconds. Pure HTML canvas.&quot; Dans la deuxième image, on aperçoit une simulation de bureau macOS avec un Dock d&#x27;applications et un fond d&#x27;écran coloré.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;un tweet illustrant les capacités de codage de Claude Opus 5, puis affichage de la pièce interactive en 3.js avec le MacBook virtuel affichant une interface macOS fonctionnelle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_019_00-02-29.jpg" alt="Capture d&#x27;écran d&#x27;une publication sur X (Twitter) par @stevibe montrant un tweet et une vidéo de démonstration sur Claude Opus 5." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_019_00-02-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:29</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication sur X (Twitter) par @stevibe montrant un tweet et une vidéo de démonstration sur Claude Opus 5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_020_00-02-47.jpg" alt="Capture d&#x27;écran montrant l&#x27;écran d&#x27;un ordinateur affichant une interface simulant un bureau macOS à l&#x27;intérieur d&#x27;une pièce interactive 3.js." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_020_00-02-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:47</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;écran d&#x27;un ordinateur affichant une interface simulant un bureau macOS à l&#x27;intérieur d&#x27;une pièce interactive 3.js.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:49 - 00:03:11</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous ne regardez pas seulement une scène en 3D, vous interagissez avec un logiciel à l&#x27;intérieur d&#x27;un ordinateur qui existe lui-même à l&#x27;intérieur d&#x27;un autre monde virtuel. Ce qui rend cela si impressionnant, c&#x27;est la superposition. Opus 5 a généré l&#x27;environnement, l&#x27;éclairage, la disposition des meubles, l&#x27;atmosphère, puis a intégré un système d&#x27;exploitation interactif au sein de cette même expérience.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface d&#x27;un système d&#x27;exploitation virtuel de type macOS (Finder et Dock) affichée sur l&#x27;écran d&#x27;un ordinateur portable dans un environnement 3D.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre du Finder ouverte montrant les dossiers par défaut (Desktop, Documents, Downloads, Movies, Music, Pictures), le Dock d&#x27;applications macOS en bas et un fond d&#x27;écran coloré.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le système d&#x27;exploitation virtuel intégré au sein d&#x27;une scène 3D interactive générée par intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_021_00-02-51.jpg" alt="Vue d&#x27;un ordinateur virtuel affichant le Finder de macOS à l&#x27;intérieur d&#x27;une scène 3D générée par IA." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_021_00-02-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:51</span>
+                        <span class="caption-text">Vue d&#x27;un ordinateur virtuel affichant le Finder de macOS à l&#x27;intérieur d&#x27;une scène 3D générée par IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:11 - 00:03:30</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce n&#x27;est pas seulement un rendu impressionnant, ce sont de multiples couches de génération qui travaillent ensemble. Et honnêtement, le MacBook virtuel et l&#x27;environnement global semblent étonnamment réels. L&#x27;éclairage, les reflets et les minuscules détails naturels font qu&#x27;il est facile d&#x27;oublier que l&#x27;on regarde quelque chose généré par l&#x27;IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un environnement virtuel interactif simulant un ordinateur portable (MacBook virtuel).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface d&#x27;un système d&#x27;exploitation inspiré de macOS affichée sur l&#x27;écran virtuel, avec le bureau, des fenêtres ouvertes (dont une visionneuse d&#x27;images d&#x27;une ville nocturne) et un dock d&#x27;applications en bas.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle d&#x27;un environnement virtuel extrêmement réaliste généré par intelligence artificielle, mettant en valeur les reflets, l&#x27;éclairage et la fidélité graphique de l&#x27;écran du MacBook.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_022_00-03-13.jpg" alt="Affichage d&#x27;un MacBook virtuel intégré dans un environnement 3D généré par IA, montrant le système d&#x27;exploitation avec ses fenêtres et son dock." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_022_00-03-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:13</span>
+                        <span class="caption-text">Affichage d&#x27;un MacBook virtuel intégré dans un environnement 3D généré par IA, montrant le système d&#x27;exploitation avec ses fenêtres et son dock.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:30 - 00:03:48</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous souhaitez l&#x27;explorer vous-même, j&#x27;ai mis le lien du message original dans la description. Mais la prochaine démo d&#x27;Opus 5 pousse le réalisme encore plus loin. Passons maintenant des expériences interactives à quelque chose de beaucoup plus stimulant : un test détaillé de génération de bonsaï Sakura réalisé par UserSynipsis.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Système d&#x27;exploitation de type macOS et interface du réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1, on aperçoit une fenêtre de recherche avec le texte &quot;Search&quot; et &quot;No results. There are only five pages and you have probably seen them all&quot;. Sur l&#x27;image 2, le tweet de @abhinavflac indique &quot;Opus 5 clears kimi k3 hard&quot; avec des comparaisons textuelles détaillées sur le tronc, la canopée et la chute des pétales, ainsi qu&#x27;une vidéo intégrée montrant le bonsaï Sakura en 3D.</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran montre d&#x27;abord un environnement virtuel de bureau avec une recherche infructueuse, puis bascule sur une publication X affichant un comparatif de génération d&#x27;IA sur le thème d&#x27;un bonsaï.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_023_00-03-32.jpg" alt="Un écran d&#x27;ordinateur portable affichant une interface de bureau type macOS avec une fenêtre de recherche ouverte." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_023_00-03-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:32</span>
+                        <span class="caption-text">Un écran d&#x27;ordinateur portable affichant une interface de bureau type macOS avec une fenêtre de recherche ouverte.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_024_00-03-46.jpg" alt="Une capture d&#x27;écran du réseau social X (Twitter) montrant une publication de l&#x27;utilisateur @abhinavflac concernant le test de génération d&#x27;un bonsaï Sakura." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_024_00-03-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:46</span>
+                        <span class="caption-text">Une capture d&#x27;écran du réseau social X (Twitter) montrant une publication de l&#x27;utilisateur @abhinavflac concernant le test de génération d&#x27;un bonsaï Sakura.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:48 - 00:04:10</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce n&#x27;est pas seulement une comparaison côte à côte. C&#x27;est un test qui révèle dans quelle mesure chaque modèle comprend les détails précis et le réalisme. Et dans cette comparaison, Claude Opus 5 surpasse à la fois Kimi K3 et Fable 5. Regardez de plus près le tronc. Remarquez le bois naturellement torsadé, le grain réaliste et les riches textures de l&#x27;écorce.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de présentation de rendu 3D avec affichage de statistiques de diagnostic en temps réel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;OPUS 5&quot;, texte japonais en haut à gauche (&quot;桜盆栽 SAKURA BONSAI&quot;), encadré de diagnostic avec des données techniques en haut à droite (&quot;FPS: 147&quot;, &quot;BLOSSOMS: 2,974&quot;, &quot;PETALS IN AIR: 214&quot;, &quot;BRANCHES: 310&quot;, &quot;DRAW CALLS: 31&quot;, &quot;TRIANGLES: 423,647&quot;), et texte en bas à gauche (&quot;Procedural Nejiki Bonsai - unstressed, emissions - continuously falling petals&quot;) et bouton &quot;DIAGNOSTICS&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle et gros plan sur le rendu détaillé d&#x27;un bonsaï en 3D avec simulation de chute de pétales de fleurs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_025_00-03-50.jpg" alt="Rendu visuel d&#x27;un bonsaï généré par Claude Opus 5 avec des pétales de fleurs roses qui tombent et des statistiques de performance affichées." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_025_00-03-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:50</span>
+                        <span class="caption-text">Rendu visuel d&#x27;un bonsaï généré par Claude Opus 5 avec des pétales de fleurs roses qui tombent et des statistiques de performance affichées.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_026_00-04-08.jpg" alt="Gros plan sur le tronc torsadé et les branches fleuries du bonsaï généré par Claude Opus 5, avec le texte &quot;OPUS 5&quot; visible sur la gauche." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_026_00-04-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:08</span>
+                        <span class="caption-text">Gros plan sur le tronc torsadé et les branches fleuries du bonsaï généré par Claude Opus 5, avec le texte &quot;OPUS 5&quot; visible sur la gauche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:10 - 00:04:32</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On a vraiment l&#x27;impression d&#x27;avoir affaire à un bonsaï vivant. En comparaison, Kimi K3 produit un tronc beaucoup plus sombre et simple avec nettement moins de texture. Et Fable 5 rate également de nombreux détails réalistes de l&#x27;écorce, ce qui donne à l&#x27;arbre un aspect plus plat et moins naturel. C&#x27;est le genre de comparaison où la différence n&#x27;est pas évidente au premier abord.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration et de benchmark web affichant des modèles de bonsaïs générés en 3D avec des onglets de navigateur et des panneaux de diagnostics.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affichant &quot;OPUS 5&quot;, &quot;SAKURA BONSAI&quot;, des métriques de performance en haut à droite (FPS 144, Blossoms 2,974, etc.), ainsi que les libellés &quot;kimi k3&quot; et &quot;fable 5&quot; sur les comparatifs.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative des différents modèles de génération d&#x27;arbres bonsaïs (Opus 5, Kimi K3, Fable 5) pour évaluer la qualité des textures d&#x27;écorce et du rendu des pétales.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_027_00-04-12.jpg" alt="Rendu visuel d&#x27;un bonsaï de cerisier en fleurs étiqueté &quot;OPUS 5&quot; avec des pétales tombant dans le vent et des données de diagnostic à l&#x27;écran." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_027_00-04-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:12</span>
+                        <span class="caption-text">Rendu visuel d&#x27;un bonsaï de cerisier en fleurs étiqueté &quot;OPUS 5&quot; avec des pétales tombant dans le vent et des données de diagnostic à l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_028_00-04-21.jpg" alt="Comparaison côte à côte de deux fenêtres de navigateur montrant &quot;kimi k3&quot; à gauche et &quot;fable 5&quot; à droite représentant des modèles de bonsaï différents." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_028_00-04-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:21</span>
+                        <span class="caption-text">Comparaison côte à côte de deux fenêtres de navigateur montrant &quot;kimi k3&quot; à gauche et &quot;fable 5&quot; à droite représentant des modèles de bonsaï différents.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:32 - 00:04:53</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais une fois que vous remarquez les détails, vous ne pouvez tout simplement plus les ignorer. Avant de conclure, prenons du recul et examinons la vue d&#x27;ensemble. Selon le benchmark d&#x27;Artificial Analysis, Cloud Opus 5 est actuellement classé au sommet. Et si vous comparez les scores des benchmarks, Opus 5 surpasse Fable 5 dans presque toutes les catégories principales.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (anciennement Twitter) et site web de benchmark Artificial Analysis.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tweets sur X concernant &quot;Opus 5 clears kimi k3 hard&quot; et graphiques statistiques d&#x27;Artificial Analysis montrant les scores d&#x27;intelligence, la vitesse d&#x27;inférence en tokens par seconde et le coût moyen par tâche pour des modèles tels que Claude Opus 5, Fable 5, GPT-5.6 Sol, Kimi K3, etc. Le tableau de benchmark détaille des scores pour des critères comme l&#x27;agentic terminal coding, knowledge work, computer use, et agentic coding.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement à travers des publications sur les réseaux sociaux puis affichage de graphiques statistiques et de tableaux de benchmarks comparatifs entre modèles d&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_029_00-04-34.jpg" alt="Capture d&#x27;écran d&#x27;un tweet sur X montrant une discussion sur les performances comparées entre Opus 5 et Kimi K3, avec une vidéo de bonsaï en sakura." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_029_00-04-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:34</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet sur X montrant une discussion sur les performances comparées entre Opus 5 et Kimi K3, avec une vidéo de bonsaï en sakura.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_030_00-04-42.jpg" alt="Tableau de bord d&#x27;Artificial Analysis affichant les graphiques de benchmarks de l&#x27;Intelligence, de la Vitesse et du Coût par tâche de différents modèles d&#x27;IA." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_030_00-04-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:42</span>
+                        <span class="caption-text">Tableau de bord d&#x27;Artificial Analysis affichant les graphiques de benchmarks de l&#x27;Intelligence, de la Vitesse et du Coût par tâche de différents modèles d&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_031_00-04-51.jpg" alt="Tableau comparatif détaillé des scores de performance par catégorie entre les modèles Opus 5, Fable 5, Opus 4.8 et GPT-5.6 Sol." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_031_00-04-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:51</span>
+                        <span class="caption-text">Tableau comparatif détaillé des scores de performance par catégorie entre les modèles Opus 5, Fable 5, Opus 4.8 et GPT-5.6 Sol.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:53 - 00:05:13</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La seule exception notable est la santé. Ici, Fable 5 obtient 66 %, tandis que Cloud Opus 5 arrive à 59,8 %. Et pour le codage d&#x27;un agent, la différence est presque inexistante, seulement 0,1 %. Mais voici la partie que j&#x27;ai trouvée la plus intéressante. Anthropic n&#x27;a pas prétendu tout gagner.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Tableau comparatif de benchmarks de modèles d&#x27;intelligence artificielle (Opus 5, Fable 5, Opus 4.8, GPT-5.6 Sol).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux de scores pour différentes catégories : Agentic terminal coding, Knowledge work, Novel problem-solving, Agentic search, Multidisciplinary reasoning, Computer use, Agentic coding, Business workflows, Legal, Health, Biology. Noms des modèles en en-tête : Opus 5, Fable 5, Opus 4.8, GPT-5.6 Sol.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement et navigation à l&#x27;écran sur le tableau des benchmarks de performance des modèles d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_032_00-04-55.jpg" alt="Gros plan sur le tableau comparatif montrant les scores de santé et de biologie des différents modèles d&#x27;IA." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_032_00-04-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:55</span>
+                        <span class="caption-text">Gros plan sur le tableau comparatif montrant les scores de santé et de biologie des différents modèles d&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_033_00-05-03.jpg" alt="Vue dézoomée du tableau comparatif avec un curseur de souris pointant sur une ligne de performance." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_033_00-05-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:03</span>
+                        <span class="caption-text">Vue dézoomée du tableau comparatif avec un curseur de souris pointant sur une ligne de performance.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_034_00-05-11.jpg" alt="Vue d&#x27;ensemble complète du tableau comparatif des performances des modèles Opus 5, Fable 5, Opus 4.8 et GPT-5.6 Sol." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_034_00-05-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:11</span>
+                        <span class="caption-text">Vue d&#x27;ensemble complète du tableau comparatif des performances des modèles Opus 5, Fable 5, Opus 4.8 et GPT-5.6 Sol.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:13 - 00:05:35</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Au lieu de cela, ils ont ouvertement publié les domaines où Opus 5 était légèrement en retard. Que ce soit de la transparence ou de la confiance dans le modèle, je vous laisse décider. Et c&#x27;est exactement pourquoi les chiffres des benchmarks ne racontent jamais toute l&#x27;histoire. Le véritable test, c&#x27;est ce que ces modèles peuvent réellement construire. Et comme vous l&#x27;avez vu aujourd&#x27;hui, Opus 5 livre des résultats vraiment impressionnants.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant des graphiques de performance et des pages de documentation/démonstration d&#x27;Anthropic (Claude).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux de benchmarks détaillant des métriques telles que &quot;Agentic terminal coding&quot;, &quot;Knowledge work&quot;, &quot;Novel problem-solving&quot;, &quot;Agentic search&quot;, &quot;Multidisciplinary reasoning&quot;, etc. Sur les images 2 et 3, le texte indique : &quot;Finally, Opus 5 is capable of producing much stronger visual outputs:&quot; ainsi que les boutons &quot;Wind tunnel&quot; et &quot;Cell artifact&quot;, et une légende sous la simulation : &quot;Opus 5 visualized the flow of air over aerodynamic (and non-aerodynamic) objects. Try different settings in the wind tunnel here.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle comparative des benchmarks de performance suivie d&#x27;une démonstration des capacités de rendu visuel d&#x27;Opus 5 dans une simulation de soufflerie interactive.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_035_00-05-15.jpg" alt="Tableau de comparaison des performances de différents modèles d&#x27;IA, dont Opus 5, Fable 5, Opus 4.8 et GPT-5.6 Sol, à travers divers benchmarks." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_035_00-05-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:15</span>
+                        <span class="caption-text">Tableau de comparaison des performances de différents modèles d&#x27;IA, dont Opus 5, Fable 5, Opus 4.8 et GPT-5.6 Sol, à travers divers benchmarks.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_036_00-05-28.jpg" alt="Page web de présentation d&#x27;Anthropic montrant une simulation visuelle d&#x27;une soufflerie aérodynamique avec une voiture rouge." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_036_00-05-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:28</span>
+                        <span class="caption-text">Page web de présentation d&#x27;Anthropic montrant une simulation visuelle d&#x27;une soufflerie aérodynamique avec une voiture rouge.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2s4Y1oD9k3A/frame_037_00-05-33.jpg" alt="Page web de présentation d&#x27;Anthropic montrant une simulation visuelle de flux d&#x27;air autour d&#x27;un objet cubique texturé." loading="lazy" onclick="openLightbox('screenshots/YT-2s4Y1oD9k3A/frame_037_00-05-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:33</span>
+                        <span class="caption-text">Page web de présentation d&#x27;Anthropic montrant une simulation visuelle de flux d&#x27;air autour d&#x27;un objet cubique texturé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:35 - 00:05:50</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ceci est Pursuing AI, et vous avez regardé The Research Report. Si vous avez apprécié cette plongée en profondeur, assurez-vous d&#x27;aimer, de vous abonner et de partager cette vidéo avec quelqu&#x27;un qui s&#x27;intéresse à l&#x27;IA. Merci d&#x27;avoir regardé, et je vous retrouve dans le prochain rapport de recherche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de fin / Animation de clôture de la chaîne (pas de logiciel de démonstration ni de partage d&#x27;écran).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Animation graphique sur fond noir montrant un cerveau humain connecté à un microprocesseur lumineux entouré d&#x27;un cercle néon bleu, sans texte visible.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de l&#x27;animation graphique de clôture de la chaîne Pursuing AI pendant la conclusion de la vidéo.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
