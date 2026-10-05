@@ -29,9 +29,24 @@
     "MTVxdh7q9xg",
     "Zk9o9CQy8NA",
     "Q0XpvTcubPU",
-    "kB1HjgYIoMw"
+    "kB1HjgYIoMw",
+    "4j3laLc7b8M"
   ],
   "processed_videos": [
+    {
+      "video_id": "4j3laLc7b8M",
+      "title": "Fable 5.5, GPT-6.1 Astra & Google’s Mystery AI Model Just Appeared",
+      "raw_title": "Fable 5.5, GPT-6.1 Astra & Google’s Mystery AI Model Just Appeared",
+      "filename_md": "2026-10-05_YT-4j3laLc7b8M_Fable 5.5, GPT-6.1 Astra & Google’s Mystery AI Model Just Appeared_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-10-05_YT-4j3laLc7b8M_Fable 5.5, GPT-6.1 Astra & Google’s Mystery AI Model Just Appeared_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-10-05",
+      "duration": 730,
+      "screenshots_count": 0,
+      "filepath_md": "/root/YT_PursuingAi/2026-10-05_YT-4j3laLc7b8M_Fable 5.5, GPT-6.1 Astra & Google’s Mystery AI Model Just Appeared_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-10-05_YT-4j3laLc7b8M_Fable 5.5, GPT-6.1 Astra & Google’s Mystery AI Model Just Appeared_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T23:39:40Z",
+      "status": "completed"
+    },
     {
       "video_id": "I34qxJjyms0",
       "title": "Jev est BIEN plus puissant que nous le pensions (Jev Is WAY More Powerful Than We Thought)",
@@ -449,8 +464,8 @@
       "status": "completed"
     }
   ],
-  "completed_count": 30,
+  "completed_count": 31,
   "last_run_timestamp": "2026-10-05T16:00:03Z",
-  "status": "running",
+  "status": "waiting_next_cron",
   "total_catalog_count": 83
 }
