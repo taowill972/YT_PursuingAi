@@ -23,7 +23,8 @@
     "hyDviOrokpc",
     "4lFiMR0DilQ",
     "hY7daRwGnaw",
-    "2s4Y1oD9k3A"
+    "2s4Y1oD9k3A",
+    "MDdWGsuGcSE"
   ],
   "processed_videos": [
     {
@@ -357,10 +358,24 @@
       "filepath_html": "/root/YT_PursuingAi/2026-07-25_YT-2s4Y1oD9k3A_Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-05T10:46:21Z",
       "status": "completed"
+    },
+    {
+      "video_id": "MDdWGsuGcSE",
+      "title": "Kimi K3 vs Fable 5 : Lequel l'emporte ?",
+      "raw_title": "Kimi K3 vs Fable 5: Who Wins?",
+      "filename_md": "2026-07-18_YT-MDdWGsuGcSE_Kimi K3 vs Fable 5 Lequel l'emporte_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-07-18_YT-MDdWGsuGcSE_Kimi K3 vs Fable 5 Lequel l'emporte_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-07-18",
+      "duration": 292,
+      "screenshots_count": 39,
+      "filepath_md": "/root/YT_PursuingAi/2026-07-18_YT-MDdWGsuGcSE_Kimi K3 vs Fable 5 Lequel l'emporte_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-07-18_YT-MDdWGsuGcSE_Kimi K3 vs Fable 5 Lequel l'emporte_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T16:09:50Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 24,
-  "last_run_timestamp": "2026-10-05T10:00:03Z",
+  "completed_count": 25,
+  "last_run_timestamp": "2026-10-05T16:00:03Z",
   "status": "running",
   "total_catalog_count": 83
 }

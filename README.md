@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `24 / 83` (`28.9%`)
+- **Vidéos traitées** : `25 / 83` (`30.1%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -40,6 +40,7 @@
 | 2026-07-31 | [Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux ?](2026-07-31_YT-4lFiMR0DilQ_Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-07-31_YT-4lFiMR0DilQ_Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 7m 54s | `53 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=4lFiMR0DilQ) | `4lFiMR0DilQ` |
 | 2026-07-27 | [Un seul prompt a créé cette scène cinématique par IA ! Akool Clash](2026-07-27_YT-hY7daRwGnaw_Un seul prompt a créé cette scène cinématique par IA ! Akool Clash_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-07-27_YT-hY7daRwGnaw_Un seul prompt a créé cette scène cinématique par IA ! Akool Clash_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 43s | `28 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=hY7daRwGnaw) | `hY7daRwGnaw` |
 | 2026-07-25 | [Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur)](2026-07-25_YT-2s4Y1oD9k3A_Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-07-25_YT-2s4Y1oD9k3A_Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 5m 51s | `37 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=2s4Y1oD9k3A) | `2s4Y1oD9k3A` |
+| 2026-07-18 | [Kimi K3 vs Fable 5 : Lequel l'emporte ?](2026-07-18_YT-MDdWGsuGcSE_Kimi K3 vs Fable 5 Lequel l'emporte_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-07-18_YT-MDdWGsuGcSE_Kimi K3 vs Fable 5 Lequel l'emporte_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 52s | `39 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=MDdWGsuGcSE) | `MDdWGsuGcSE` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Kimi K3 vs Fable 5 : Lequel l&#x27;emporte ? — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Kimi K3 vs Fable 5 : Lequel l&#x27;emporte ?</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-07-18</span>
+                <span class="badge">⏱️ 04m 52s</span>
+                <span class="badge">🆔 <code>MDdWGsuGcSE</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=MDdWGsuGcSE" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* intitulée « Kimi K3 vs Fable 5 : Lequel l'emporte ? » propose une analyse comparative de pointe dans l'écosystème en perpétuelle mutation de la génération par intelligence artificielle. Le sujet central décortique la confrontation directe entre Kimi K3 — un modèle open source qui bouscule la hiérarchie — et les ténors propriétaires du marché que sont Fable 5 et GPT 5.6. À travers une série de tests rigoureux issus de retours de la communauté sur la plateforme X, la vidéo démontre comment l'open source réduit, voire efface, l'écart historique de qualité avec les solutions fermées et onéreuses.</p><p>La méthodologie adoptée par le créateur repose sur l'analyse comparative à l'aveugle et côte à côte (A/B testing) de prompts identiques appliqués à divers cas d'usage : environnements naturels, modélisations 3JS complexes (comme l'appartement de Monica dans *Friends* ou une écluse de canal), et génération de code front-end (site web de café premium). En guidant le spectateur à travers des révélations progressives, le créateur illustre l'impact des choix architecturaux sur les textures, l'éclairage volumétrique et la fluidité des animations, transformant une simple revue de benchmarks en une véritable masterclass d'analyse visuelle.</p><p>Pour les créateurs de vidéo et développeurs de contenu par IA, les bénéfices concrets sont immenses. Cette transition vers des modèles open source ultra-performants démocratise l'accès à une esthétique haut de gamme, réduit drastiquement les coûts de production, et offre une alternative crédible et souveraine face aux abonnements propriétaires prohibitifs. L'analyse prouve que la maîtrise du prompt ne suffit plus ; c'est la compréhension fine des forces de chaque moteur de rendu — notamment en matière de gestion de la lumière et de cohérence spatiale — qui garantit un résultat professionnel.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>L&#x27;essor fracassant de l&#x27;open source** : Kimi K3 démontre qu&#x27;un modèle ouvert peut non seulement rivaliser, mais parfois surpasser les modèles frontières fermés les plus coûteux, redéfinissant les équilibres économiques de la création par IA.</span></li><li><span class="point-bullet">✦</span><span>La suprématie de l&#x27;éclairage naturel** : Sur des environnements complexes comme les paysages de lacs ou les intérieurs, Kimi K3 se distingue par une gestion supérieure de la lumière, offrant des reflets plus organiques et des ambiances visuelles plus immersives que Fable 5.</span></li><li><span class="point-bullet">✦</span><span>Efficacité des tests à l&#x27;aveugle** : Utiliser la méthode du &quot;devinez avant la révélation&quot; engage l&#x27;audience et prouve objectivement que les préjugés en faveur des outils payants s&#x27;effondrent face à la réalité qualitative des outputs.</span></li><li><span class="point-bullet">✦</span><span>Richesse des textures et des détails** : Les comparatifs révèlent que Kimi K3 pousse le niveau de détail des textures (végétation, roches, matériaux architecturaux) bien au-delà des attentes initiales pour un modèle open source.</span></li><li><span class="point-bullet">✦</span><span>Maîtrise de la reconstitution 3D (Cas *Friends*)** : Pour des prompts spatiaux complexes nécessitant un plan d&#x27;origine précis et un éclairage chaleureux (appartement de Monica), Kimi K3 génère un niveau de finition supérieur et un sentiment de volume plus réaliste.</span></li><li><span class="point-bullet">✦</span><span>Fluidité des simulations techniques** : Dans les tests de simulation de transit de cargo via 3JS, Kimi K3 prouve sa capacité à maintenir une fluidité parfaite et une construction d&#x27;environnement irréprochable face à GPT 5.6 et Fable 5.</span></li><li><span class="point-bullet">✦</span><span>Supériorité en génération Front-End** : Kimi K3 surclasse ses concurrents sur les tests de design web grâce à l&#x27;intégration native d&#x27;animations d&#x27;ouverture fluides et une meilleure retranscription de l&#x27;identité de marque (ex: *Terra Roast*).</span></li><li><span class="point-bullet">✦</span><span>Rapport coût-efficacité révolutionnaire** : Alors que certains fichiers HTML propriétaires testés s&#x27;avèrent onéreux (12 dollars l&#x27;unité), l&#x27;émergence d&#x27;alternatives open source de qualité égale libère les créateurs des contraintes budgétaires lourdes.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;émulation par la concurrence** : La rivalité frontale entre modèles ouverts et fermés accélère le rythme global des innovations technologiques, bénéficiant directement aux créateurs de contenu finaux.</span></li><li><span class="point-bullet">✦</span><span>Priorité aux cas d&#x27;usage réels** : La vidéo rappelle l&#x27;importance de juger les IA sur des cas d&#x27;utilisation concrets issus de la communauté (partagés sur X) plutôt que de se fier aveuglément aux scores de benchmarks théoriques.</span></li><li><span class="point-bullet">✦</span><span>Piège à éviter : négliger l&#x27;esthétique globale** : Un bon prompt ne suffit pas ; la capacité du modèle à interpréter l&#x27;ambiance globale (mood) fait toute la différence entre un rendu fonctionnel (Fable 5) et un rendu professionnel et soigné (Kimi K3).</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:20</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout le monde parle de Kimi K3. Certaines personnes disent même qu&#x27;il égale ou surpasse Fable 5. Mais est-ce vraiment vrai ? J&#x27;ai parcouru de vrais posts sur X comparant les deux modèles, et certains résultats m&#x27;ont vraiment surpris. Jetons un œil. C&#x27;est Pursuing AI, et vous regardez le Research Report.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo comparative de différents modèles d&#x27;IA (Kimi K3, Claude Fable 5, GPT 5.6, Grok 4.5) avec affichage de rendus 3D et métriques de performance.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Kimi K3&quot;, &quot;Claude Fable 5 High&quot;, &quot;GPT 5.6 sol High&quot;, &quot;The Lock&quot;, &quot;Grok 4.5&quot;, &quot;Claude Fable 5&quot;, métriques de vitesse en haut à gauche (Speed: 11.6 m/s, FPS: 420fps).</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle côte à côte de plusieurs modèles d&#x27;intelligence artificielle générant des scènes 3D interactives complexes.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_001_00-00-02.jpg" alt="Comparatif en grille de quatre modèles d&#x27;IA (Kimi K3, Claude Fable 5 High, GPT 5.6 sol High, Grok 4.5) simulant une scène de transit de porte d&#x27;écluse avec des conteneurs." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Comparatif en grille de quatre modèles d&#x27;IA (Kimi K3, Claude Fable 5 High, GPT 5.6 sol High, Grok 4.5) simulant une scène de transit de porte d&#x27;écluse avec des conteneurs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_002_00-00-10.jpg" alt="Scène de simulation 3D urbaine de nuit générée par Claude Fable 5, montrant un personnage planant entre de hauts immeubles illuminés." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_002_00-00-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Scène de simulation 3D urbaine de nuit générée par Claude Fable 5, montrant un personnage planant entre de hauts immeubles illuminés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:20 - 00:00:47</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout d&#x27;abord, jetez un œil à ces deux résultats. Lequel pensez-vous a été généré par Kimi K3 et lequel par Fable 5 ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de visualisation web en 3D interactive utilisant Three.js (Procedural Kyoto).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte en haut à gauche « KYOTO AT DUSK » et « 京都の街並み », texte de bas de page avec des instructions de navigation (WASD, glisser pour regarder), mentions « THREE.JS - PROCEDURAL KYOTO » et « Kimi Agent ».</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle entre deux environnements 3D générés procéduralement présentés côte à côte à l&#x27;écran.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_003_00-00-22.jpg" alt="Comparaison côte à côte de deux scènes virtuelles générées, montrant des rues traditionnelles de Kyoto au crépuscule." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_003_00-00-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:22</span>
+                        <span class="caption-text">Comparaison côte à côte de deux scènes virtuelles générées, montrant des rues traditionnelles de Kyoto au crépuscule.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_004_00-00-30.jpg" alt="Vue rapprochée d&#x27;une interface de démonstration en 3D intitulée &#x27;Kyoto at Dusk&#x27; avec des caractères japonais." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_004_00-00-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:30</span>
+                        <span class="caption-text">Vue rapprochée d&#x27;une interface de démonstration en 3D intitulée &#x27;Kyoto at Dusk&#x27; avec des caractères japonais.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_005_00-00-38.jpg" alt="Vue en plein écran d&#x27;une rue pavée de Kyoto avec des lanternes et des flocons de neige stylisés tombant." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_005_00-00-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:38</span>
+                        <span class="caption-text">Vue en plein écran d&#x27;une rue pavée de Kyoto avec des lanternes et des flocons de neige stylisés tombant.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_006_00-00-45.jpg" alt="Inversion de la disposition côte à côte des deux scènes virtuelles de Kyoto pour la comparaison comparative." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_006_00-00-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:45</span>
+                        <span class="caption-text">Inversion de la disposition côte à côte des deux scènes virtuelles de Kyoto pour la comparaison comparative.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:47 - 00:01:22</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donnez votre réponse avant que je ne la révèle. Les deux ont été générés en utilisant exactement le même prompt, mais les résultats sont complètement différents. Regardez simplement l&#x27;environnement de Kimi K3. L&#x27;éclairage, les textures et l&#x27;esthétique générale semblent beaucoup plus riches et soignés que ceux de Fable 5. Et voici le résultat de GPT 5.6 en utilisant ce même prompt. Étonnamment, Kimi K3 offre le meilleur résultat des trois. C&#x27;est honnêtement impressionnant de voir un modèle open source rivaliser directement avec certains des meilleurs modèles propriétaires. Une telle concurrence est bénéfique pour tout le monde car elle pousse</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une interface de publication de type réseau social (X/Twitter) ainsi que des démonstrations comparatives de rendus 3D/vidéo d&#x27;environnements virtuels.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du post sur X : &quot;Even using the same prompt as GPT5.6 and Fable 5, the difference is this stark... It kinda feels like there&#x27;s a difference in aesthetic sense. I&#x27;ll also post the URL for this in the thread.&quot; Profil de @gimu_ai (&quot;Game Vibe Coder&quot;). Textes en japonais à l&#x27;écran (&quot;京都の街並み&quot;, &quot;夜明けの町家通り&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une comparaison visuelle entre les rendus de différents modèles d&#x27;IA (Kimi K3, Fable 5, GPT 5.6) générés à partir du même prompt, en analysant la qualité de l&#x27;éclairage et des textures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_007_00-00-49.jpg" alt="Comparaison côte à côte de deux environnements virtuels générés par IA représentant des rues de style japonais à Kyoto." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_007_00-00-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:49</span>
+                        <span class="caption-text">Comparaison côte à côte de deux environnements virtuels générés par IA représentant des rues de style japonais à Kyoto.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_008_00-00-59.jpg" alt="Publication sur le réseau social X par @gimu_ai montrant un comparatif d&#x27;environnements générés avec le même prompt." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_008_00-00-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:59</span>
+                        <span class="caption-text">Publication sur le réseau social X par @gimu_ai montrant un comparatif d&#x27;environnements générés avec le même prompt.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_009_00-01-11.jpg" alt="Comparaison côte à côte montrant un environnement matinal brumeux à gauche et une rue illuminée au crépuscule à droite." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_009_00-01-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:11</span>
+                        <span class="caption-text">Comparaison côte à côte montrant un environnement matinal brumeux à gauche et une rue illuminée au crépuscule à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_010_00-01-20.jpg" alt="Publication sur le réseau social X par @gimu_ai affichant une vidéo intégrée de l&#x27;environnement virtuel généré par Kimi K3." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_010_00-01-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:20</span>
+                        <span class="caption-text">Publication sur le réseau social X par @gimu_ai affichant une vidéo intégrée de l&#x27;environnement virtuel généré par Kimi K3.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:22 - 00:01:46</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;IA progresse encore plus vite. Alors, avez-vous deviné correctement ? Dites-le-moi dans les commentaires. Je veux voir combien d&#x27;entre vous ont trouvé la bonne réponse. Ensuite, regardons cette scène de lac. D&#x27;abord, voici le résultat de Fable 5. Ça a l&#x27;air bien, mais maintenant, jetez un œil à la version de Kimi K3. La différence est immédiatement perceptible. Les reflets sur l&#x27;eau ont l&#x27;air beaucoup plus naturels, et la scène globale paraît plus réaliste.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de visualisation et de rendu 3D avec un panneau de réglages d&#x27;atmosphère (heure, vagues, brouillard) combiné à un affichage sur un fil d&#x27;actualité Twitter/X.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte en haut à gauche &#x27;静 湖&#x27; (Lac paisible), panneaux de contrôle &#x27;ATMOSPHERE&#x27;, curseurs de réglage, et interface de publication de gimu_ai sur X (anciennement Twitter).
+[DESC_IMAGE_1] [DESC_IMAGE_2] [DESC_IMAGE_3] [DESC_IMAGE_4] Démonstration comparative de rendus de scènes virtuelles et de paysages lacustres générés ou simulés, illustrant les performances et la qualité des reflets aquatiques.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et affichage comparatif de différentes versions de scènes 3D de lacs et de paysages urbains, mettant en valeur les différences de reflets et de réalisme entre les outils.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_011_00-01-24.jpg" alt="Capture d&#x27;un post Twitter/X montrant une vidéo générée de rue urbaine avec texte en japonais et interface latérale du réseau social." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_011_00-01-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Capture d&#x27;un post Twitter/X montrant une vidéo générée de rue urbaine avec texte en japonais et interface latérale du réseau social.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_012_00-01-31.jpg" alt="Interface de rendu 3D avec des statistiques de performance (120 fps) et des curseurs de réglage pour l&#x27;eau et le soleil au-dessus d&#x27;un océan numérique." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_012_00-01-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:31</span>
+                        <span class="caption-text">Interface de rendu 3D avec des statistiques de performance (120 fps) et des curseurs de réglage pour l&#x27;eau et le soleil au-dessus d&#x27;un océan numérique.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_013_00-01-38.jpg" alt="Vue aérienne 3D d&#x27;un paysage montagneux avec un lac au centre et un panneau de configuration &#x27;ATMOSPHERE&#x27; sur le côté droit." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_013_00-01-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:38</span>
+                        <span class="caption-text">Vue aérienne 3D d&#x27;un paysage montagneux avec un lac au centre et un panneau de configuration &#x27;ATMOSPHERE&#x27; sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_014_00-01-44.jpg" alt="Scène de lac réaliste au coucher du soleil avec des reflets lumineux sur l&#x27;eau et le panneau de contrôle de l&#x27;atmosphère visible à droite." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_014_00-01-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:44</span>
+                        <span class="caption-text">Scène de lac réaliste au coucher du soleil avec des reflets lumineux sur l&#x27;eau et le panneau de contrôle de l&#x27;atmosphère visible à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:46 - 00:02:09</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les arbres, les montagnes, l&#x27;éclairage et la composition générale s&#x27;assemblent magnifiquement. Comparé à Fable 5, Kimi K3 offre un résultat beaucoup plus soigné, et dans cet exemple, il prend clairement l&#x27;avantage. La personne qui a partagé cette comparaison a déclaré : La qualité du lac est élevée, mais ce n&#x27;est pas tout. Les arbres et les montagnes environnants sont incroyables aussi, dépassant tous les attentes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de génération 3D / application de paysage (Kimi K3) combinée à une capture d&#x27;écran du réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte en japonais et anglais à l&#x27;écran (titre &quot;静 湖&quot; / &quot;SILENT LAKE&quot;), panneaux de configuration de l&#x27;atmosphère (lumière, curseurs), et le texte complet du tweet de @gimu_ai évaluant les performances de Kimi K3 par rapport à Fable 5.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et démonstration visuelle d&#x27;un environnement 3D généré par IA, puis affichage du tweet de comparaison sur les réseaux sociaux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_015_00-01-48.jpg" alt="Vue aérienne 3D d&#x27;un paysage généré avec un lac entouré de forêts et de montagnes, avec un panneau de contrôle &quot;ATMOSPHERE&quot; sur le côté droit." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_015_00-01-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:48</span>
+                        <span class="caption-text">Vue aérienne 3D d&#x27;un paysage généré avec un lac entouré de forêts et de montagnes, avec un panneau de contrôle &quot;ATMOSPHERE&quot; sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_016_00-01-54.jpg" alt="Dézoom progressif sur le même paysage en 3D avec modification de l&#x27;éclairage via le panneau &quot;ATMOSPHERE&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_016_00-01-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:54</span>
+                        <span class="caption-text">Dézoom progressif sur le même paysage en 3D avec modification de l&#x27;éclairage via le panneau &quot;ATMOSPHERE&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_017_00-02-01.jpg" alt="Capture d&#x27;écran d&#x27;un tweet publié sur X par le compte &quot;gimu&quot; partageant les performances de Kimi K3 avec une image du paysage." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_017_00-02-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:01</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet publié sur X par le compte &quot;gimu&quot; partageant les performances de Kimi K3 avec une image du paysage.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:09 - 00:02:29</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">en regardant les deux images côte à côte, il est facile de comprendre pourquoi ils sont arrivés à cette conclusion. Vient ensuite cet exemple d&#x27;appartement 3JS. La consigne était de créer une reconstitution 3D navigable à la première personne de l&#x27;appartement de Monica dans Friends, en restant fidèle au plan d&#x27;origine avec un éclairage chaleureux. D&#x27;abord, voici le résultat de Fable5.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de développement 3D (Three.js), réseau social (X/Twitter) et navigateur web affichant un fichier HTML local.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt visible sur X : &quot;in @threejs, create a first person pov navigable 3d scene of the iconic Monica&#x27;s apartment from tv show Friends correctly based on this floor plan, stay true to the original look and feel, use warm lighting. This is by far THE BEST I&#x27;ve seen on this test! This single html cost me $12, but the result is stunning!&quot;. Paramètres 3D : 120 fps, 9.32 ms/frame, commandes d&#x27;atmosphère et de rendu.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative de scènes 3D interactives et affichage d&#x27;une publication sur les réseaux sociaux avec le résultat de Fable5.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_018_00-02-11.jpg" alt="Comparaison côte à côte de scènes 3D générées avec des panneaux de contrôle des performances et des paramètres atmosphériques." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_018_00-02-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:11</span>
+                        <span class="caption-text">Comparaison côte à côte de scènes 3D générées avec des panneaux de contrôle des performances et des paramètres atmosphériques.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_019_00-02-19.jpg" alt="Publication sur les réseaux sociaux montrant le prompt textuel pour créer l&#x27;appartement de Friends et une capture d&#x27;écran du résultat." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_019_00-02-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:19</span>
+                        <span class="caption-text">Publication sur les réseaux sociaux montrant le prompt textuel pour créer l&#x27;appartement de Friends et une capture d&#x27;écran du résultat.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_020_00-02-27.jpg" alt="Rendu 3D en vue subjective (première personne) de la cuisine de l&#x27;appartement de Monica depuis un navigateur web." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_020_00-02-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:27</span>
+                        <span class="caption-text">Rendu 3D en vue subjective (première personne) de la cuisine de l&#x27;appartement de Monica depuis un navigateur web.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:29 - 00:02:48</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La personne qui l&#x27;a partagé a dit : c&#x27;est de loin le meilleur que j&#x27;ai vu sur ce test. Ce seul fichier HTML m&#x27;a coûté 12 dollars, mais le résultat est époustouflant. Regardons maintenant la version de Kimi K3. Tout de suite, la scène semble plus soignée, l&#x27;éclairage a l&#x27;air plus chaud et plus naturel, et l&#x27;environnement global a un niveau de détail supérieur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un rendu 3D interactif au format HTML (fichier local Monica&#x27;s Apartment).</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL locale visible (`file:///Users/scott/Downloads/monicas-apartment/index.html`) et instructions de navigation en bas d&#x27;écran (`[W][A][S][D] Move`, `Mouse look`, `Shift Run`, `ESC Release cursor`).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur navigue à travers un environnement 3D interactif généré à partir d&#x27;un code HTML représentant l&#x27;appartement de Monica.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_021_00-02-31.jpg" alt="Vue en 3D dans un navigateur web de l&#x27;appartement de la série Friends (version générée), montrant la cuisine et le salon avec un sol en damier et des murs violets." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_021_00-02-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:31</span>
+                        <span class="caption-text">Vue en 3D dans un navigateur web de l&#x27;appartement de la série Friends (version générée), montrant la cuisine et le salon avec un sol en damier et des murs violets.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_022_00-02-38.jpg" alt="Autre angle de vue dans le navigateur web montrant une perspective plus large de l&#x27;appartement avec l&#x27;indication des touches de contrôle en bas (WASD move, mouse look, shift run, esc release cursor)." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_022_00-02-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:38</span>
+                        <span class="caption-text">Autre angle de vue dans le navigateur web montrant une perspective plus large de l&#x27;appartement avec l&#x27;indication des touches de contrôle en bas (WASD move, mouse look, shift run, esc release cursor).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_023_00-02-46.jpg" alt="Gros plan sur le coin salon de l&#x27;appartement virtuel interactif, affichant le canapé, la table basse, le meuble TV et les murs de couleur violette." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_023_00-02-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:46</span>
+                        <span class="caption-text">Gros plan sur le coin salon de l&#x27;appartement virtuel interactif, affichant le canapé, la table basse, le meuble TV et les murs de couleur violette.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:48 - 00:03:11</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Côte à côte, Kimi K3 semble surpasser Fable 5 dans cet exemple particulier. Ce qui est vraiment surprenant, c&#x27;est que nous observons ce niveau de qualité de la part d&#x27;un modèle open source. Cela soulève une question intéressante : si les modèles open source atteignent ce niveau de performance, quel est l&#x27;écart qui subsiste entre eux et les coûteux modèles frontières fermés ? Passons maintenant à la comparaison suivante.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une application de simulation ou de génération interactive en 3D divisée en deux fenêtres comparatives.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes &quot;kimi k3&quot; à gauche et &quot;fable 5&quot; à droite, environnements virtuels 3D interactifs (salon, cuisine, salle à manger, vue sur ville la nuit).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et comparaison simultanée des rendus 3D générés par les deux modèles de modèles d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_024_00-02-50.jpg" alt="Comparaison côte à côte de Kimi K3 et Fable 5 affichant un salon virtuel en 3D style low-poly." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_024_00-02-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:50</span>
+                        <span class="caption-text">Comparaison côte à côte de Kimi K3 et Fable 5 affichant un salon virtuel en 3D style low-poly.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_025_00-02-56.jpg" alt="Comparaison côte à côte de Kimi K3 et Fable 5 montrant un autre angle de l&#x27;appartement virtuel." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_025_00-02-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:56</span>
+                        <span class="caption-text">Comparaison côte à côte de Kimi K3 et Fable 5 montrant un autre angle de l&#x27;appartement virtuel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_026_00-03-04.jpg" alt="Comparaison côte à côte de Kimi K3 et Fable 5 montrant la zone de la cuisine et de la fenêtre." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_026_00-03-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:04</span>
+                        <span class="caption-text">Comparaison côte à côte de Kimi K3 et Fable 5 montrant la zone de la cuisine et de la fenêtre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_027_00-03-09.jpg" alt="Comparaison côte à côte de Kimi K3 et Fable 5 montrant la salle à manger virtuelle." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_027_00-03-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:09</span>
+                        <span class="caption-text">Comparaison côte à côte de Kimi K3 et Fable 5 montrant la salle à manger virtuelle.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:11 - 00:03:44</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, voici cette simulation de transit d&#x27;un cargo à travers une écluse de style canal de Panama en 3JS. Voici la comparaison entre les trois. Fable 5 s&#x27;en sort très bien, GPT 5.6 est également impressionnant, et Kimi K3 tire parfaitement son épingle du jeu. La simulation a l&#x27;air fluide, l&#x27;environnement est bien construit, et la qualité globale est tout à fait au niveau des modèles de pointe. Ce qui est le plus impressionnant, c&#x27;est que Kimi K3 ne se contente pas de produire des résultats corrects, il rivalise constamment en tête-à-tête avec ces meilleurs modèles propriétaires. Pour un open-source</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme X (anciennement Twitter) affichant un tweet comparatif et des fenêtres de rendu de simulations 3JS en grille.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &#x27;Kimi K3 vs Claude Fable 5 vs GPT 5.6 sol vs Grok 4.5. Kimi nailed it in one shot 🔥🔥. Fable level model with sonnet pricing. &gt; Panama Canal style cargo ship lock transit simulation in Three js&#x27;. Noms des modèles affichés : Kimi K3, Claude Fable 5 High, GPT 5.6 sol High, Grok 4.5. Nom du navire visible : OCEAN PIONEER.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une comparaison visuelle côte à côte de simulations 3JS complexes générées par différents modèles d&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_028_00-03-13.jpg" alt="Capture d&#x27;écran d&#x27;un tweet comparant quatre modèles d&#x27;IA sur une simulation 3JS de transit d&#x27;écluse de type canal de Panama, avec le post d&#x27;Harshith sur X." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_028_00-03-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:13</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet comparant quatre modèles d&#x27;IA sur une simulation 3JS de transit d&#x27;écluse de type canal de Panama, avec le post d&#x27;Harshith sur X.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_029_00-03-23.jpg" alt="Vue comparative en grille à quatre panneaux montrant les simulations 3JS de Kimi K3, Claude Fable 5 High, GPT 5.6 sol High et Grok 4.5." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_029_00-03-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:23</span>
+                        <span class="caption-text">Vue comparative en grille à quatre panneaux montrant les simulations 3JS de Kimi K3, Claude Fable 5 High, GPT 5.6 sol High et Grok 4.5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_030_00-03-33.jpg" alt="Vue rapprochée de la simulation 3JS générée par Kimi K3 montrant un porte-conteneurs nommé &#x27;OCEAN PIONEER&#x27; entrant dans la chambre d&#x27;écluse." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_030_00-03-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:33</span>
+                        <span class="caption-text">Vue rapprochée de la simulation 3JS générée par Kimi K3 montrant un porte-conteneurs nommé &#x27;OCEAN PIONEER&#x27; entrant dans la chambre d&#x27;écluse.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_031_00-03-42.jpg" alt="Grille comparative à quatre panneaux montrant l&#x27;évolution des simulations 3JS par les différents modèles d&#x27;IA avec des vues sous différents angles." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_031_00-03-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:42</span>
+                        <span class="caption-text">Grille comparative à quatre panneaux montrant l&#x27;évolution des simulations 3JS par les différents modèles d&#x27;IA avec des vues sous différents angles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:44 - 00:04:18</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">modèle c&#x27;est une réalisation énorme et cela montre à quel point l&#x27;IA open-source est devenue compétitive. Passons maintenant à la prochaine comparaison. Celle-ci est un test de génération front-end. Jetez d&#x27;abord un œil au résultat de Fable 5. Il a l&#x27;air correct et fait le travail, mais comparez-le maintenant avec la sortie de Kimi K3. Dès le début, Kimi K3 attire votre attention avec une animation d&#x27;ouverture fluide qui donne immédiatement l&#x27;impression d&#x27;un site web plus soigné et professionnel. Il fait également un meilleur travail pour capturer l&#x27;apparence et l&#x27;ambiance d&#x27;une marque de café premium Terra Roast, avec des visuels plus propres et un design plus raffiné.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation comparative de pages web front-end générées par différents modèles d&#x27;IA (Kimi K3, Fable 5, GPT 5.6, Grok 4.5).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Kimi K3&quot;, &quot;Claude Fable 5 High&quot;, &quot;GPT 5.6 sol High&quot;, &quot;Grok 4.5&quot;, &quot;TERRA ROAST&quot;, &quot;FROM SOIL TO SIP&quot;, &quot;ORIGIN&quot;, &quot;Fire, Time &amp; Transformation&quot;, &quot;234°C&quot;, &quot;PICKED AT PEAK CRIMSON&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle côte à côte des interfaces web générées par Kimi K3 et Fable 5 pour illustrer la fluidité des animations et la qualité du design front-end.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_032_00-03-46.jpg" alt="Comparatif de quatre interfaces front-end générées par IA (Kimi K3, Claude Fable 5 High, GPT 5.6 sol High, Grok 4.5) sur le thème du canal de Panama." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_032_00-03-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:46</span>
+                        <span class="caption-text">Comparatif de quatre interfaces front-end générées par IA (Kimi K3, Claude Fable 5 High, GPT 5.6 sol High, Grok 4.5) sur le thème du canal de Panama.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_033_00-03-56.jpg" alt="Comparaison côte à côte des sites web de la marque Terra Roast générés par Kimi K3 et Fable 5, affichant la section d&#x27;en-tête &quot;Origin&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_033_00-03-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:56</span>
+                        <span class="caption-text">Comparaison côte à côte des sites web de la marque Terra Roast générés par Kimi K3 et Fable 5, affichant la section d&#x27;en-tête &quot;Origin&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_034_00-04-07.jpg" alt="Comparaison des interfaces web de Terra Roast par Kimi K3 (fond clair) et Fable 5 (fond sombre) montrant des données chiffrées sur l&#x27;élévation et la géolocalisation." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_034_00-04-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:07</span>
+                        <span class="caption-text">Comparaison des interfaces web de Terra Roast par Kimi K3 (fond clair) et Fable 5 (fond sombre) montrant des données chiffrées sur l&#x27;élévation et la géolocalisation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_035_00-04-16.jpg" alt="Comparaison de la section &quot;Fire, Time &amp; Transformation&quot; pour Kimi K3 (avec jauge de température à 234°C) et Fable 5 (section &quot;Picked at Peak Crimson&quot; avec des cartes de processus)." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_035_00-04-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:16</span>
+                        <span class="caption-text">Comparaison de la section &quot;Fire, Time &amp; Transformation&quot; pour Kimi K3 (avec jauge de température à 234°C) et Fable 5 (section &quot;Picked at Peak Crimson&quot; avec des cartes de processus).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:18 - 00:04:51</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">design global. D&#x27;après cet exemple, je pense que Kimi K3 s&#x27;en sort clairement mieux pour la génération de front-end. Maintenant, c&#x27;est à vous. Voici une dernière comparaison. Examinez attentivement les deux résultats et dites-moi lequel vous semble le meilleur. Ne faites pas défiler vers les commentaires tout de suite. Prenez votre propre décision et commentez votre réponse ci-dessous. Je suis vraiment curieux de voir si votre choix correspond au mien. Si vous avez apprécié ce rapport de recherche et que vous souhaitez voir davantage de comparaisons d&#x27;IA dans le monde réel au lieu de simples scores de benchmarks, assurez-vous de vous abonner. C&#x27;est Pursuing AI et je vous retrouve dans la prochaine vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation visuelle comparative d&#x27;interfaces web générées par IA (Kimi K3 et Fable 5), suivie d&#x27;une animation 3D thématique sur l&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &#x27;KIMI K3&#x27;, &#x27;Fable 5&#x27;, &#x27;TERRAROAST&#x27;, &#x27;The Final Ritual&#x27;, &#x27;FIRE, TIMED TO THE SECOND&#x27;, &#x27;MERIDIAN 8000&#x27;, &#x27;CAMP II - THE ICEFALL&#x27;, &#x27;SOUTH COL LINE - SPRING&#x27;, &#x27;FIVE LAYERS, ONE SYSTEM&#x27;, ainsi que diverses données techniques et métriques.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement visuel comparatif de deux interfaces front-end générées par intelligence artificielle, puis affichage de l&#x27;animation de fin de vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_036_00-04-20.jpg" alt="Comparaison côte à côte de deux interfaces web générées par &#x27;KIMI K3&#x27; et &#x27;Fable 5&#x27;, montrant des conceptions textuelles et visuelles autour du café." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_036_00-04-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:20</span>
+                        <span class="caption-text">Comparaison côte à côte de deux interfaces web générées par &#x27;KIMI K3&#x27; et &#x27;Fable 5&#x27;, montrant des conceptions textuelles et visuelles autour du café.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_037_00-04-30.jpg" alt="Comparaison côte à côte de deux interfaces de site web &#x27;MERIDIAN 8000&#x27; sur le thème de l&#x27;alpinisme et de l&#x27;escalade, affichant des données d&#x27;altitude et de campement." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_037_00-04-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:30</span>
+                        <span class="caption-text">Comparaison côte à côte de deux interfaces de site web &#x27;MERIDIAN 8000&#x27; sur le thème de l&#x27;alpinisme et de l&#x27;escalade, affichant des données d&#x27;altitude et de campement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_038_00-04-41.jpg" alt="Comparaison côte à côte d&#x27;autres sections du site &#x27;MERIDIAN 8000&#x27; affichant des informations techniques sur la route sud et la science des matériaux." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_038_00-04-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:41</span>
+                        <span class="caption-text">Comparaison côte à côte d&#x27;autres sections du site &#x27;MERIDIAN 8000&#x27; affichant des informations techniques sur la route sud et la science des matériaux.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MDdWGsuGcSE/frame_039_00-04-49.jpg" alt="Animation 3D illustrant un cerveau humain connecté à une puce électronique au sein d&#x27;un cercle néon bleu, symbolisant l&#x27;intelligence artificielle." loading="lazy" onclick="openLightbox('screenshots/YT-MDdWGsuGcSE/frame_039_00-04-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:49</span>
+                        <span class="caption-text">Animation 3D illustrant un cerveau humain connecté à une puce électronique au sein d&#x27;un cercle néon bleu, symbolisant l&#x27;intelligence artificielle.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
