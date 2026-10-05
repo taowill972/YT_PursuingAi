@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 GPT-6 est TELLEMENT plus puissant que ce qu&#x27;on pensait — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 GPT-6 est TELLEMENT plus puissant que ce qu&#x27;on pensait</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-08-30</span>
+                <span class="badge">⏱️ 04m 15s</span>
+                <span class="badge">🆔 <code>AYqoJOg4TBY</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=AYqoJOg4TBY" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>Dans ce tutoriel complet intitulé **GPT-6 est TELLEMENT plus puissant que ce qu'on pensait**, le créateur présente les techniques de pointe pour maîtriser la génération de vidéos et de visuels par intelligence artificielle.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">GPT-6</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Structurer ses prompts de mouvement avec des termes de caméra précis.</span></li><li><span class="point-bullet">✦</span><span>Soigner la cohérence des personnages entre chaque plan.</span></li><li><span class="point-bullet">✦</span><span>Exploiter les modèles de dernière génération pour un rendu professionnel.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">OpenAI se prépare peut-être à révéler quelque chose d&#x27;assez intéressant. Une nouvelle fuite prétend que l&#x27;entreprise a étendu les tests internes d&#x27;un modèle appelé GPT-Astra, et nous voyons déjà certains de ses soi-disant premiers résultats. Et honnêtement, ce ne sont pas vos démos d&#x27;IA typiques. Nous parlons de sites Web interactifs, d&#x27;environnements de jeux jouables, d&#x27;objets 3D détaillés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de navigation web affichant des environnements graphiques et interactifs générés par IA, sous forme de mondes virtuels et de mini-jeux.</p>
+                        <p><strong>Contenu textuel & Code :</strong> On peut lire des titres comme &quot;Aurelion - An Atlas of Improvised Kingdoms&quot;, &quot;Voxel Pagoda Garden&quot;, ainsi que divers panneaux d&#x27;interface de jeu (santé, mini-map, contrôles clavier).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle des capacités du modèle GPT-Astra à générer des environnements virtuels interactifs et des jeux vidéo jouables en 3D et 2D isométrique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_001_00-00-02.jpg" alt="Interface d&#x27;un jeu vidéo ou monde virtuel 3D isométrique nommé &quot;Aurelion&quot;, affichant un vaste archipel de îles flottantes avec des habitations et un château." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Interface d&#x27;un jeu vidéo ou monde virtuel 3D isométrique nommé &quot;Aurelion&quot;, affichant un vaste archipel de îles flottantes avec des habitations et un château.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_002_00-00-11.jpg" alt="Scène en voxel représentant un jardin de pagode (&quot;Voxel Pagoda Garden&quot;) sous une douce chute de neige, avec des arbres roses et un temple traditionnel." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_002_00-00-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:11</span>
+                        <span class="caption-text">Scène en voxel représentant un jardin de pagode (&quot;Voxel Pagoda Garden&quot;) sous une douce chute de neige, avec des arbres roses et un temple traditionnel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_003_00-00-19.jpg" alt="Vue aérienne interactive d&#x27;un jeu de type GTA en 2D isométrique, montrant des rues urbaines avec des voitures, des bâtiments et des menus d&#x27;interface (santé, armure, contrats)." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_003_00-00-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:19</span>
+                        <span class="caption-text">Vue aérienne interactive d&#x27;un jeu de type GTA en 2D isométrique, montrant des rues urbaines avec des voitures, des bâtiments et des menus d&#x27;interface (santé, armure, contrats).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:21 - 00:00:45</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors, de quoi Astra est-elle exactement capable, et pourquoi ce modèle semble-t-il si axé sur les détails ? Jetons un coup d&#x27;œil. OpenAI aurait étendu les tests internes de GPT-Astra, actuellement nom de code Mosaic-Alpha-FDM, ce qui pourrait être le signe qu&#x27;une sortie approche. Et bien sûr, comme nous l&#x27;avons vu avec les précédents modèles d&#x27;OpenAI, nous avons déjà les toutes premières sorties publiques de celui-ci.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de jeu vidéo en vue du dessus (Image #1) et interface du réseau social X/Twitter en mode sombre (Image #2).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image #1, divers affichages de statut de jeu (santé, armure, contrats, mini-carte, armes). Sur l&#x27;image #2, un tweet du compte @Lentils80 disant : &quot;Major Scoop: OpenAI has just expanded internal testing of GPT Astra, codenamed &quot;mozaik-alpha-fdm&quot;, signifying release might be near...&quot; avec une image de monde isométrique généré.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de la sortie de test du modèle GPT-Astra via un post sur les réseaux sociaux et affichage d&#x27;un rendu de jeu vidéo en lien avec le sujet.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_004_00-00-23.jpg" alt="Vue aérienne d&#x27;une démonstration de jeu vidéo montrant une ville quadrillée avec des véhicules et des interfaces de contrôle textuelles." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_004_00-00-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:23</span>
+                        <span class="caption-text">Vue aérienne d&#x27;une démonstration de jeu vidéo montrant une ville quadrillée avec des véhicules et des interfaces de contrôle textuelles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_005_00-00-30.jpg" alt="Publication sur le réseau social X (Twitter) du compte &quot;Lentils&quot; concernant les tests internes de GPT-Astra, avec une image et une vidéo intégrées." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_005_00-00-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:30</span>
+                        <span class="caption-text">Publication sur le réseau social X (Twitter) du compte &quot;Lentils&quot; concernant les tests internes de GPT-Astra, avec une image et une vidéo intégrées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:45 - 00:01:14</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les deux exemples ont été générés zero-shot sur l&#x27;effort maximal, et les premiers résultats sont plutôt intéressants. L&#x27;interface frontale pourrait également avoir enfin été corrigée, et le modèle semble accorder beaucoup plus d&#x27;attention aux petits détails. Et si vous regardez ce monde de style voxel, le niveau de détail est assez impressionnant. Vous avez un royaume fantastique entièrement construit avec des murs de château, des tours à carreaux bleus, des maisons aux toits rouges, des terres agricoles, des forêts, des falaises et des cascades, le tout rendu avec une géométrie de voxel cohérente.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le réseau social X et une interface web de présentation de projet 3D interactif (Aurelion / Nacre).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du post sur X : &quot;Major Scoop: OpenAI has just expanded internal testing of GPT Astra, codenamed &quot;mozaik-alpha-fdm&quot;... Both outputs are zero-shot on Max effort. Frontend &quot;might&quot; have finally been fixed...&quot;. Sur les autres images : interface web de style jeu de stratégie/monde virtuel &quot;AURELION&quot; avec menus de sélection et mini-carte, et site &quot;NACRE&quot; avec le titre &quot;A second nature.&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation visuelle d&#x27;un monde virtuel généré en style voxel ainsi que d&#x27;interfaces web de démonstration de projets technologiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_006_00-00-47.jpg" alt="Capture d&#x27;écran du réseau social X montrant un post de Lentils à propos des tests internes de GPT Astra et une image de monde voxel." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_006_00-00-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:47</span>
+                        <span class="caption-text">Capture d&#x27;écran du réseau social X montrant un post de Lentils à propos des tests internes de GPT Astra et une image de monde voxel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_007_00-00-55.jpg" alt="Interface Web minimaliste et futuriste de &#x27;NACRE&#x27; présentant le projet &#x27;N-01 / The Somatic Interface&#x27; avec un modèle 3D abstrait en spirale." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_007_00-00-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:55</span>
+                        <span class="caption-text">Interface Web minimaliste et futuriste de &#x27;NACRE&#x27; présentant le projet &#x27;N-01 / The Somatic Interface&#x27; avec un modèle 3D abstrait en spirale.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_008_00-01-04.jpg" alt="Vue panoramique d&#x27;un monde fantastique généré en style voxel nommé &#x27;AURELION&#x27;, montrant un château, des maisons aux toits rouges et des éléments naturels." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_008_00-01-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:04</span>
+                        <span class="caption-text">Vue panoramique d&#x27;un monde fantastique généré en style voxel nommé &#x27;AURELION&#x27;, montrant un château, des maisons aux toits rouges et des éléments naturels.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_009_00-01-12.jpg" alt="Gros plan de l&#x27;interface et du monde voxel &#x27;AURELION&#x27; montrant les détails des bâtiments, des rues et des fortifications du château." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_009_00-01-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:12</span>
+                        <span class="caption-text">Gros plan de l&#x27;interface et du monde voxel &#x27;AURELION&#x27; montrant les détails des bâtiments, des rues et des fortifications du château.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:14 - 00:01:34</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">There are even floating islands, an airship, ships in the harbor, and snow-covered mountains in the background. What really stands out is how coherent the whole environment feels, with individual voxels making up everything from the buildings and trees to the water and shadows. And this is where things get really interesting. Because the front end here is actually really good.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:34 - 00:01:56</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">We&#x27;re not talking about another basic AI-generated website with a few cards and gradients. It built a full, polished interactive experience, custom visuals, animations, topography, multiple sections, and even interactive elements that respond on the page. on the page. If this is representative of GPT-Astra, then the front-end problem might actually be getting solved.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:56 - 00:02:28</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc l&#x27;esprit, dammer, sur Max, le modèle réfléchit apparemment beaucoup plus que Sol. Mais cette réflexion supplémentaire semble se traduire par un sérieux souci du détail, comme vous pouvez le voir à travers ces résultats. Le premier est un rendu de manette de style PlayStation étonnamment détaillé, avec un écran central et un éclairage bleu. Mais le deuxième exemple est là où les choses deviennent beaucoup plus intéressantes. Astra a apparemment généré une ville cyberpunk en vue du dessus, avec des courses-poursuites en voiture, des poursuites policières, des armes, des contrats et une interface utilisateur dynamique pour des éléments tels que les scores et les niveaux de recherche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (anciennement Twitter) et interface d&#x27;un jeu ou d&#x27;une simulation interactive générée par IA (vue de dessus de type GTA 2, avec HUD de score, santé et mini-carte).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du post X : &quot;OpenAI has just dropped its first internal Astra checkpoint: mozaik-alpha-fdm. Here are the first two outputs, both generated 1-shot on Max effort. On Max the model tends to think ALOT more than Sol, but it has a ton of attention to detail as evident by the outputs below.&quot; Éléments de l&#x27;interface du jeu cyberpunk : HEALTH (100), BODY ARMOR (0), GETAWAY CONTRACTS, commandes clavier (MOUSE AIM / CLICK FIRE, W/S/A/D, SPACE, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et affichage de publications sur les réseaux sociaux présentant les capacités du modèle Astra, suivis de gros plans sur les rendus visuels détaillés générés par l&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_010_00-01-58.jpg" alt="Capture d&#x27;écran du réseau social X montrant un post sur OpenAI et les outputs d&#x27;Astra." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_010_00-01-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:58</span>
+                        <span class="caption-text">Capture d&#x27;écran du réseau social X montrant un post sur OpenAI et les outputs d&#x27;Astra.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_011_00-02-07.jpg" alt="Rendu haute résolution d&#x27;une manette de type PlayStation blanche et noire avec éclairage LED bleu et écran central." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_011_00-02-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:07</span>
+                        <span class="caption-text">Rendu haute résolution d&#x27;une manette de type PlayStation blanche et noire avec éclairage LED bleu et écran central.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_012_00-02-18.jpg" alt="Capture d&#x27;écran du réseau social X montrant le même post avec la phrase sur le modèle Max et Sol mise en surbrillance." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_012_00-02-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:18</span>
+                        <span class="caption-text">Capture d&#x27;écran du réseau social X montrant le même post avec la phrase sur le modèle Max et Sol mise en surbrillance.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_013_00-02-26.jpg" alt="Vue aérienne du jeu ou de la simulation de ville cyberpunk générée par Astra, avec interface utilisateur, barres de santé et contrôles affichés." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_013_00-02-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:26</span>
+                        <span class="caption-text">Vue aérienne du jeu ou de la simulation de ville cyberpunk générée par Astra, avec interface utilisateur, barres de santé et contrôles affichés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:28 - 00:03:01</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et ce qui ressort vraiment, c&#x27;est la cohérence. L&#x27;environnement, les mécaniques de jeu, les contrôles et les détails visuels tiennent la route tout au long du clip. Selon l&#x27;utilisateur, Max passe nettement plus de temps à réfléchir que Sol, et si ces exemples sont représentatifs, ce temps de raisonnement supplémentaire est peut-être exactement ce qui aide Astra à produire des résultats avec autant de détails et de cohérence. Et cela pourrait être un autre signe que GPT-Astra est en train de devenir sérieusement performant en matière de génération 3D. En une seule génération, il a produit ce vaisseau spatial 3D complet, avec sa coque,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de jeu vidéo style GTA en vue top-down et interface du réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes de jeu : &#x27;NEIGHBOROUGH&#x27;, &#x27;HEALTH 100&#x27;, &#x27;GETAWAY CONTRACT&#x27;, &#x27;BARE KNUCKLES&#x27;, &#x27;0.023c&#x27;. Post de Tim Jayas : &#x27;GPT-Astra generated this 3D spaceship and it looks really good! this new astra model is apparently set to be released next week...&#x27;</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration du gameplay d&#x27;un jeu vidéo avec des véhicules circulant en ville, suivie de la présentation d&#x27;une publication sur X et d&#x27;un modèle 3D de vaisseau spatial.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_014_00-02-30.jpg" alt="Vue du dessus d&#x27;un jeu de simulation urbaine en 2D montrant la grille de la ville, des bâtiments et des véhicules en déplacement." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_014_00-02-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:30</span>
+                        <span class="caption-text">Vue du dessus d&#x27;un jeu de simulation urbaine en 2D montrant la grille de la ville, des bâtiments et des véhicules en déplacement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_015_00-02-39.jpg" alt="Vue du dessus de la ville avec l&#x27;interface de jeu affichant un compteur de vitesse et des informations de mission." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_015_00-02-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:39</span>
+                        <span class="caption-text">Vue du dessus de la ville avec l&#x27;interface de jeu affichant un compteur de vitesse et des informations de mission.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_016_00-02-50.jpg" alt="Publication sur le réseau social X par Tim Jayas montrant le vaisseau spatial généré par l&#x27;IA GPT-Astra." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_016_00-02-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:50</span>
+                        <span class="caption-text">Publication sur le réseau social X par Tim Jayas montrant le vaisseau spatial généré par l&#x27;IA GPT-Astra.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AYqoJOg4TBY/frame_017_00-02-59.jpg" alt="Rendu détaillé en 3D d&#x27;un grand vaisseau spatial futuriste nommé N.S.V. AURORA dans l&#x27;espace." loading="lazy" onclick="openLightbox('screenshots/YT-AYqoJOg4TBY/frame_017_00-02-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:59</span>
+                        <span class="caption-text">Rendu détaillé en 3D d&#x27;un grand vaisseau spatial futuriste nommé N.S.V. AURORA dans l&#x27;espace.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:01 - 00:03:22</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">engines, surface details, materials, and lighting all working together. What&#x27;s especially impressive is the consistency. The geometry holds up across different angles, the proportions feel believable, and the materials respond naturally to the lighting. If these early examples are anything to go by, Astra might be a pretty big step forward for AI-generated 3D content.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:22 - 00:03:40</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">And here&#x27;s another 3D tank reportedly generated by GPT Astra. Interestingly, almost all of these Astra examples seem to share the same sci-fi and space-inspired aesthetic, futuristic vehicles, sleek mechanical designs, and cinematic lighting. Honestly, it kind of fits the name Astra perfectly.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:40 - 00:03:59</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">And honestly, if these leaks are legitimate, GPT-Astra is starting to look like a pretty serious multimodal model. What&#x27;s interesting isn&#x27;t just that it can generate impressive images, it&#x27;s the combination of detail, consistency, interactivity, reasoning, and 3D generation showing up across these different examples.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:59 - 00:04:14</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Of course, these are still leaked outputs, so we&#x27;ll have to wait for something official to know how capable the final model really is. But if OpenAI really is getting ready to release Astra, things could get very interesting.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
