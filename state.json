@@ -27,7 +27,8 @@
     "MDdWGsuGcSE",
     "QraT8ZNkxgw",
     "MTVxdh7q9xg",
-    "Zk9o9CQy8NA"
+    "Zk9o9CQy8NA",
+    "Q0XpvTcubPU"
   ],
   "processed_videos": [
     {
@@ -417,9 +418,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-07-08_YT-Zk9o9CQy8NA_Claude Fable 5 vs GPT-5.6 qui gagne vraiment_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-05T16:39:45Z",
       "status": "completed"
+    },
+    {
+      "video_id": "Q0XpvTcubPU",
+      "title": "La toute première IA vraiment réaliste ?",
+      "raw_title": "The Most Realistic AI Ever?",
+      "filename_md": "2026-06-24_YT-Q0XpvTcubPU_La toute première IA vraiment réaliste_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-06-24_YT-Q0XpvTcubPU_La toute première IA vraiment réaliste_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-06-24",
+      "duration": 526,
+      "screenshots_count": 38,
+      "filepath_md": "/root/YT_PursuingAi/2026-06-24_YT-Q0XpvTcubPU_La toute première IA vraiment réaliste_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-06-24_YT-Q0XpvTcubPU_La toute première IA vraiment réaliste_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T16:48:24Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 28,
+  "completed_count": 29,
   "last_run_timestamp": "2026-10-05T16:00:03Z",
   "status": "running",
   "total_catalog_count": 83

@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 La toute première IA vraiment réaliste ? — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 La toute première IA vraiment réaliste ?</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-06-24</span>
+                <span class="badge">⏱️ 08m 46s</span>
+                <span class="badge">🆔 <code>Q0XpvTcubPU</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=Q0XpvTcubPU" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo « La toute première IA vraiment réaliste ? » de *Pursuing AI* explore une mutation majeure dans la création audiovisuelle en présentant **Flova**, un agent créatif d'intelligence artificielle tout-en-un. Le créateur démontre la puissance de cet outil à travers un court-métrage dramatique et réaliste — simulant une tempête apocalyptique et une mère cherchant désespérément sa fille —, entièrement généré sans caméras, acteurs ni équipe technique. En partant d'une simple idée textuelle brute, Flova orchestre l'ensemble de la chaîne de production, de l'écriture du scénario jusqu'au montage final, en passant par le design des personnages et la composition musicale.</p><p>L'innovation centrale réside dans le concept de « compétences » (*skills*), des flux de travail encapsulés qui automatisent et mémorisent les choix artistiques, les paramètres de production et la cohérence des personnages (grâce à des modèles comme *Nano Banana*). L'agent analyse le concept initial, rédige le script, planifie 13 plans distincts, génère les visuels et permet au réalisateur d'intervenir à chaque étape pour ajuster précisément le storyboard par simple dialogue. Cette approche hybride entre automatisation intelligente et contrôle granulaire redéfinit le métier de réalisateur, reléguant au second plan la complexité technique du *prompt engineering* au profit de la vision purement créative.</p><p>Pour les créateurs de vidéo, ce rapport de recherche met en lumière un gain de temps et d'efficacité considérable, démocratisant l'accès à la réalisation cinématographique de haute qualité. Grâce à l'interopérabilité de Flova avec les meilleurs modèles du marché (*Kling*, *Veo*, *Seedance*, etc.), les créateurs n'ont plus besoin d'arbitrer manuellement entre les outils ou d'apprendre des interfaces hétérogènes. La possibilité de réutiliser des flux de travail communautaires ou personnels ouvre la voie à une industrialisation rapide des séries, des clips ou des films narratifs, posant frontalement la question de l'avenir de Hollywood face à cette automatisation cinématographique de pointe.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Kling</span><span class="tool-tag">Nano Banana</span><span class="tool-tag">Seedance</span><span class="tool-tag">Veo</span><span class="tool-tag">flux</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Affranchissement du *Prompt Engineering* traditionnel** : L&#x27;utilisation d&#x27;un agent orchestrateur comme Flova permet de partir d&#x27;une simple idée brute, l&#x27;IA se chargeant elle-même de rédiger et d&#x27;optimiser les prompts détaillés pour chaque plan.</span></li><li><span class="point-bullet">✦</span><span>Centralisation des meilleurs modèles du marché** : Finie la dispersion entre plateformes ; l&#x27;agent sélectionne automatiquement le meilleur outil (vidéo, image ou audio) en fonction des besoins spécifiques de chaque scène.</span></li><li><span class="point-bullet">✦</span><span>Le concept de « Compétences » (*Skills*)** : Un flux de travail créatif complet peut être enregistré, stocké et réutilisé pour garantir une parfaite cohérence visuelle et narrative sur des projets épisodiques ou des suites.</span></li><li><span class="point-bullet">✦</span><span>Planification automatique de la production** : À partir d&#x27;un pitch, l&#x27;IA structure instantanément le projet en découpant l&#x27;histoire en plans précis (par exemple, 13 plans et 3 pistes musicales pour ce court-métrage).</span></li><li><span class="point-bullet">✦</span><span>Création et cohérence des personnages** : Grâce à des modèles dédiés comme *Nano Banana*, l&#x27;IA génère des personnages crédibles et maintient leur identité visuelle d&#x27;une scène à l&#x27;autre sans effort manuel complexe.</span></li><li><span class="point-bullet">✦</span><span>Contrôle granulaire et itératif** : L&#x27;utilisateur n&#x27;est pas passif ; il peut à tout moment modifier le storyboard, ajuster un mouvement de caméra ou régénérer un plan spécifique par simple dialogue textuel avec l&#x27;agent.</span></li><li><span class="point-bullet">✦</span><span>Bibliothèque de compétences communautaire** : Les créateurs débutants comme confirmés peuvent explorer, s&#x27;approprier et adapter des flux de travail partagés par des pairs, accélérant ainsi la courbe d&#x27;apprentissage.</span></li><li><span class="point-bullet">✦</span><span>Traçabilité et pédagogie des projets** : La plateforme permet d&#x27;analyser comment d&#x27;autres utilisateurs ont construit leurs œuvres, offrant une mine d&#x27;or pour étudier les choix de modèles et les processus créatifs.</span></li><li><span class="point-bullet">✦</span><span>Pipeline de production rationalisé** : Le flux imite les étapes d&#x27;un studio professionnel (scénario, validation, découpage, génération, édition chronologique), rendant la réalisation accessible sans compétences techniques cinématographiques préalables.</span></li><li><span class="point-bullet">✦</span><span>Gain de temps exponentiel** : La réduction des frictions techniques permet aux créateurs de se concentrer exclusivement sur la narration, le rythme dramatique et l&#x27;impact émotionnel de leurs histoires.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:06 - 00:00:28</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le Service Météorologique National a émis un avertissement de tempête extrême pour la zone métropolitaine. Il est conseillé aux citoyens de... Conclure l&#x27;accord Meridian aujourd&#x27;hui, pas demain. Aujourd&#x27;hui. Maman ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation cinématographique d&#x27;une vidéo générée par IA (aucune interface de logiciel de création n&#x27;est affichée).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Séquence vidéo narrative montrant un paysage urbain menaçant, une femme d&#x27;affaires interagissant avec un écran holographique et une main posant un téléphone sur une table.</p>
+                        <p><strong>Action / Démonstration :</strong> Illustration visuelle du scénario narré, sans démonstration d&#x27;outil d&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:28 - 00:00:50</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les fenêtres se brisent. Le professeur dit de rester à l&#x27;intérieur, mais j&#x27;ai très peur. Lily ? Lily ! Ma fille est là-dehors.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo cinématique générée par IA (pas d&#x27;interface de logiciel visible).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Séquence vidéo narrative montrant des plans de coupe dramatiques : une femme au téléphone, une avenue urbaine congestionnée sous un ciel d&#x27;orage menaçant, et une violente explosion sur le flanc d&#x27;un gratte-ciel avec des débris enflammés.</p>
+                        <p><strong>Action / Démonstration :</strong> Illustration visuelle du récit dramatique en cours, avec des plans cinématographiques générés par intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:52 - 00:01:13</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;arrive. Ordonnez de se confiner sur place !</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation de séquences vidéo générées par intelligence artificielle sans interface logicielle visible.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Générations de vidéos cinématiques montrant une skyline urbaine, un monstre géant ressemblant à Godzilla attaquant la ville, et des personnages fuyant en catastrophe à l&#x27;intérieur d&#x27;un bâtiment.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle de séquences cinématiques générées par IA illustrant un scénario catastrophe.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:13 - 00:01:33</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ma fille est là-bas ! Maman ? J&#x27;ai vraiment peur. Tu ne peux pas.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra sans partage d&#x27;écran (extraits vidéo de démonstration de génération par IA sans interface logicielle visible)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Séquences cinématiques montrant une femme ouvrant une porte sombre, courant dans des escaliers bétonnés d&#x27;un immeuble vétuste, puis s&#x27;enfuyant dans une rue alors qu&#x27;un grand bâtiment s&#x27;effondre en arrière-plan en dégageant un énorme nuage de poussière grise.</p>
+                        <p><strong>Action / Démonstration :</strong> Une femme court frénétiquement pour fuir un danger ou un bâtiment en train de s&#x27;effondrer.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:33 - 00:01:56</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Bon, avant que j&#x27;explique ce qui se passe ici, je dois vous dire quelque chose. Aucune de ces scènes n&#x27;a été filmée. Pas de caméras, pas d&#x27;acteurs, pas d&#x27;équipe de production. J&#x27;ai tout fait avec l&#x27;IA. Et après avoir vu ce qui s&#x27;est passé ensuite, je commence à me demander, est-ce que Hollywood est fini ? Il y a quelques jours, je suis tombé sur une plateforme appelée Flova et j&#x27;ai décidé de tester jusqu&#x27;où la réalisation de films par IA est réellement arrivée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Extraits vidéo et animations textuelles générés par IA illustrant les capacités de la plateforme Flova.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché à l&#x27;écran : « Is HOLLYWOOD Over ? » et « Everyone can be a director with Flova ».
+[DESC_IMAGE_1] Rendu vidéo de synthèse montrant une mégapole futuriste.
+[DESC_IMAGE_2] Animation de caméra fluide sur une autoroute urbaine dense.
+[DESC_IMAGE_3] Scène cinématographique mettant en scène un personnage enfantin avec un encart textuel posant la question de l&#x27;avenir d&#x27;Hollywood.
+[DESC_IMAGE_4] Écran de transition textuel publicitaire introduisant l&#x27;outil Flova.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle de séquences cinématographiques entièrement générées par IA pour illustrer le potentiel de la plateforme Flova.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_001_00-01-35.jpg" alt="Vue aérienne générée par IA d&#x27;une ville futuriste ressemblant à Dubaï sous un ciel d&#x27;orage menaçant." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_001_00-01-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:35</span>
+                        <span class="caption-text">Vue aérienne générée par IA d&#x27;une ville futuriste ressemblant à Dubaï sous un ciel d&#x27;orage menaçant.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_002_00-01-41.jpg" alt="Travelling avant à travers des grat-ciels et des autoroutes surélevées remplies de circulation automobile généré par IA." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_002_00-01-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:41</span>
+                        <span class="caption-text">Travelling avant à travers des grat-ciels et des autoroutes surélevées remplies de circulation automobile généré par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_003_00-01-49.jpg" alt="Portrait d&#x27;une jeune fille en uniforme scolaire dans un décor sombre, avec le texte « Is HOLLYWOOD Over ? » affiché à droite." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_003_00-01-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:49</span>
+                        <span class="caption-text">Portrait d&#x27;une jeune fille en uniforme scolaire dans un décor sombre, avec le texte « Is HOLLYWOOD Over ? » affiché à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_004_00-01-54.jpg" alt="Texte animé à l&#x27;écran sur fond flou : « Everyone can be a director with Flova »." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_004_00-01-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:54</span>
+                        <span class="caption-text">Texte animé à l&#x27;écran sur fond flou : « Everyone can be a director with Flova ».</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:56 - 00:02:31</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc, je lui ai donné une idée de film simple. Une tempête massive est sur le point de frapper une ville. Une mère se retrouve piégée dans le chaos et court à travers la ville pour sauver sa fille avant qu&#x27;il ne soit trop tard. C&#x27;était tout. Juste une idée vague. Et d&#x27;une manière ou d&#x27;une autre, Flova a transformé ça en ceci. Le fait qu&#x27;une simple idée puisse devenir quelque chose d&#x27;aussi cinématique est honnêtement assez fou. Donc dans cette vidéo, je vais vous montrer exactement comment j&#x27;ai fait ce court-métrage IA, comment fonctionne le flux de travail, et pourquoi des outils comme celui-ci poussent les gens à se poser des questions assez importantes sur l&#x27;avenir de la réalisation de films.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;agent vidéo IA Flova 1.0 (Your Personal AI Video Agent Partner).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt saisi : &quot;A massive storm is about to hit a city. A mother gets trapped in the chaos and races across the city to save her daughter before it&#x27;s too late.&quot; et panneau &quot;Resource Analysis&quot; avec les détails de caractérisation (Type: img, Character: Wednesday Addams, General Appearance, Clothing &amp; Style, Personality &amp; Mood, Location).</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;utilisateur montre l&#x27;interface de saisie de prompt de l&#x27;outil Flova, puis un extrait cinématique généré, et enfin le panneau d&#x27;analyse détaillée des ressources du projet.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_005_00-01-58.jpg" alt="Interface de l&#x27;outil Flova 1.0 montrant la saisie du prompt textuel pour l&#x27;idée de film." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_005_00-01-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:58</span>
+                        <span class="caption-text">Interface de l&#x27;outil Flova 1.0 montrant la saisie du prompt textuel pour l&#x27;idée de film.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_006_00-02-20.jpg" alt="Extrait du court-métrage généré par l&#x27;IA montrant une foule paniquée face à une ville sous la tempête." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_006_00-02-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:20</span>
+                        <span class="caption-text">Extrait du court-métrage généré par l&#x27;IA montrant une foule paniquée face à une ville sous la tempête.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_007_00-02-29.jpg" alt="Panneau d&#x27;analyse de ressources de Flova affichant les détails d&#x27;un personnage (Mercredi Addams) et son style." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_007_00-02-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:29</span>
+                        <span class="caption-text">Panneau d&#x27;analyse de ressources de Flova affichant les détails d&#x27;un personnage (Mercredi Addams) et son style.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:31 - 00:02:56</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est Pursuing AI, et vous regardez le Research Report. Maintenant, voici ce qui rend Flova intéressant. Flova n&#x27;est pas juste un autre modèle d&#x27;IA. C&#x27;est plutôt un agent créatif d&#x27;IA qui combine plusieurs modèles de pointe de génération de vidéo, d&#x27;image, de musique et d&#x27;audio en un seul flux de travail. Pour la génération de vidéos, il peut utiliser des modèles comme Seedance V2, Kling, Veo, Happy Horse, et d&#x27;autres.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme flova.ai et interface de montage de type timeline de Flova.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Flova 1.0 — Your Personal AI Video Agent Partner&quot;, &quot;Ask Flova to create a...&quot;, &quot;Timeline&quot;, &quot;Kling 3.0 Audio&quot;, &quot;Vidu Q3 Pro&quot;, &quot;Grok Imagine Video&quot;, &quot;Kling 3.0 Omni&quot;, &quot;Nano banana&quot;, &quot;Seedance 1.0 Pro&quot;, &quot;Veo3&quot;, &quot;WAN2.5&quot;, &quot;Sora2&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle de l&#x27;interface de Flova, de ses fonctionnalités multi-modèles et de sa chronologie de montage.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_008_00-02-33.jpg" alt="Illustration graphique montrant un cerveau humain relié par des câbles à une puce affichant les initiales PAI, encerclée par un halo lumineux néon bleu." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_008_00-02-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:33</span>
+                        <span class="caption-text">Illustration graphique montrant un cerveau humain relié par des câbles à une puce affichant les initiales PAI, encerclée par un halo lumineux néon bleu.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_009_00-02-40.jpg" alt="Écran de présentation du logiciel Flova affichant son logo et les icônes de divers modèles de génération de vidéo pris en charge (Nano banana, Seedance 1.0 Pro, Veo3, WAN2.5, Sora2)." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_009_00-02-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:40</span>
+                        <span class="caption-text">Écran de présentation du logiciel Flova affichant son logo et les icônes de divers modèles de génération de vidéo pris en charge (Nano banana, Seedance 1.0 Pro, Veo3, WAN2.5, Sora2).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_010_00-02-48.jpg" alt="Interface de montage de Flova présentant une chronologie (Timeline) avec des vignettes de clips vidéo générés et des pistes audio et musicales." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_010_00-02-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:48</span>
+                        <span class="caption-text">Interface de montage de Flova présentant une chronologie (Timeline) avec des vignettes de clips vidéo générés et des pistes audio et musicales.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_011_00-02-54.jpg" alt="Interface web de la plateforme flova.ai montrant le tableau de bord principal avec le menu de sélection des modèles vidéo de pointe (Kling 3.0 Audio, Vidu Q3 Pro, Grok Imagine Video, Kling 3.0 Omni)." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_011_00-02-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:54</span>
+                        <span class="caption-text">Interface web de la plateforme flova.ai montrant le tableau de bord principal avec le menu de sélection des modèles vidéo de pointe (Kling 3.0 Audio, Vidu Q3 Pro, Grok Imagine Video, Kling 3.0 Omni).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:56 - 00:03:18</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour les images, vous avez accès à des modèles tels que GPT Image, Nano Banana, Seedream 4.5, et bien d&#x27;autres. Pour la musique et l&#x27;audio, l&#x27;outil intègre des solutions comme Suno, Mureka et d&#x27;autres grands modèles. Au lieu de vous forcer à choisir manuellement le bon modèle pour chaque tâche, Flova sélectionne automatiquement les meilleurs outils en fonction de ce que vous essayez de créer.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant l&#x27;interface de l&#x27;application de création vidéo par IA Flova.ai, avec des menus contextuels de modèles et un espace de travail orienté agent conversationnel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Flova 1.0 — Your Personal AI Video Agent Partner&quot;, les onglets de modèles (Image, Video, Music, Narration), les outils Suno et Mureka, ainsi que le nom du projet &quot;Futuristic Superstorm Rescue&quot; et la boîte de discussion interactive.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et démonstration visuelle des différents modèles intégrés dans la plateforme Flova.ai pour la génération d&#x27;images, de musique et de voix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_012_00-02-58.jpg" alt="Interface de Flova.ai montrant le menu déroulant de sélection des modèles musicaux et audio (Suno, Mureka, etc.)." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_012_00-02-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:58</span>
+                        <span class="caption-text">Interface de Flova.ai montrant le menu déroulant de sélection des modèles musicaux et audio (Suno, Mureka, etc.).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_013_00-03-16.jpg" alt="Interface de projet de Flova.ai avec un panneau de chat interactif et la section de prévisualisation &quot;Futuristic Superstorm Rescue&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_013_00-03-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:16</span>
+                        <span class="caption-text">Interface de projet de Flova.ai avec un panneau de chat interactif et la section de prévisualisation &quot;Futuristic Superstorm Rescue&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:18 - 00:03:39</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour le tester, j&#x27;ai simplement décrit mon idée dans la boîte de saisie. Je n&#x27;ai pas écrit de scénario détaillé, j&#x27;ai juste expliqué le concept brut d&#x27;une femme d&#x27;affaires, de sa fille et d&#x27;une puissante tempête s&#x27;approchant de la ville. Après avoir analysé l&#x27;idée, Flova a identifié qu&#x27;il s&#x27;agissait d&#x27;un court-métrage narratif cinématographique et a automatiquement chargé un flux de travail appelé court-métrage narratif.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;application Flova (flova.ai) avec un panneau de chat à droite et un panneau de prévisualisation à gauche affichant un bouton &#x27;Start!&#x27;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt dans la bulle de chat : &quot;A catastrophic superstorm suddenly strikes a futuristic city. A successful businesswoman is working in her high-rise office when she receives a call from her young daughter at school...&quot; Réponse de Flova en dessous : &quot;This is a full cinematic short film production — loading the best-fit skill for this narrative-driven pipeline!&quot; avec les différentes phases du pipeline listées (Script, Spec &amp; Storyboard, Character Elements, Voice Anchors, Shot Videos, Audio Layers, Final Assembly &amp; Export).</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;interface affiche le prompt textuel soumis par l&#x27;utilisateur et la réponse automatisée de l&#x27;IA qui charge le workflow adapté (Narrative Short Film).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_014_00-03-20.jpg" alt="Interface de Flova montrant le panneau de chat avec le prompt textuel décrivant le court-métrage et le chargement automatique du flux de travail &#x27;Narrative Short Film&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_014_00-03-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:20</span>
+                        <span class="caption-text">Interface de Flova montrant le panneau de chat avec le prompt textuel décrivant le court-métrage et le chargement automatique du flux de travail &#x27;Narrative Short Film&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:39 - 00:04:12</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans Flova, ces flux de travail sont appelés des compétences (skills), mais les compétences sont bien plus que de simples pipelines de production. Une compétence peut stocker un flux de travail créatif entier, incluant les personnages, les styles visuels, les ressources, les choix de modèles, les paramètres de production et les processus de génération. Cela signifie que si vous créez plusieurs épisodes, des suites ou une série entière, vous pouvez réutiliser la même compétence et maintenir la cohérence sans tout reconstruire à partir de zéro. Flova comprend également une bibliothèque de compétences remplie de flux de travail prêts à l&#x27;emploi créés par des créateurs expérimentés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Flova (flova.ai), comprenant un espace de projet avec des documents de spécifications, un panneau de chat interactif et une bibliothèque de compétences (&quot;Skill&quot;) classées par catégories.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1 : URL &quot;flova.ai/m/project/id...&quot;, titre &quot;Futuristic Superstorm Rescue&quot;, documents &quot;Final_Video_Spec.md&quot;, &quot;skill.md&quot;, et des instructions de chat détaillant les phases de production (&quot;Narrative Short Film (Voice Reference)&quot;). Sur l&#x27;image 2 : Onglets &quot;My&quot;, &quot;Featured&quot;, catégories (Essentials, Auteur Aesthetics, Drama, etc.), et cartes de compétences telles que &quot;Humanized Cat Shorts&quot;, &quot;Cozy AI Vlog Creator&quot;, &quot;Methodology Video Builder&quot;, &quot;Akira Toriyama Style Animated Short&quot;, &quot;Manifesto-Driven Concept Short&quot;, &quot;Surreal Pop Aesthetic Concept Video Generation&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de Flova montrant la structure d&#x27;un projet de court métrage et la bibliothèque de compétences pré-conçues.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_015_00-03-41.jpg" alt="Interface de l&#x27;application web Flova affichant un projet de court métrage narratif avec un panneau de documentation et une interface de chat." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_015_00-03-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:41</span>
+                        <span class="caption-text">Interface de l&#x27;application web Flova affichant un projet de court métrage narratif avec un panneau de documentation et une interface de chat.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_016_00-04-10.jpg" alt="Bibliothèque de compétences (Skill library) de Flova présentant différents modèles et flux de travail prêts à l&#x27;emploi pour les créateurs." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_016_00-04-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:10</span>
+                        <span class="caption-text">Bibliothèque de compétences (Skill library) de Flova présentant différents modèles et flux de travail prêts à l&#x27;emploi pour les créateurs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:12 - 00:04:32</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc même si vous débutez complètement dans la réalisation de films par IA, vous pouvez partir de flux de travail professionnels éprouvés et les personnaliser pour vos propres histoires. Une fois la compétence chargée, Flova a commencé à suivre son processus de production. D&#x27;abord, il a généré toute l&#x27;histoire et le scénario. Ensuite, il m&#x27;a demandé de tout examiner et d&#x27;apporter les modifications souhaitées.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant l&#x27;interface de la plateforme Flova AI (flova.ai).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Image 1 : Fenêtre contextuelle montrant le titre &quot;Cozy AI Vlog Creator&quot;, une section &quot;Process Planning&quot; avec les étapes &quot;1. Lock Global Parameters&quot; et &quot;2. Storyboard Design&quot;. Image 2 : Projet &quot;Futuristic Superstorm Rescue&quot; avec un panneau latéral montrant un panneau de discussion (&quot;Chat&quot;) contenant des blocs de script découpés par scènes (&quot;SCENE 1&quot;, &quot;SCENE 2&quot;, &quot;SCENE 3&quot;) et un champ de saisie de texte en bas.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et affichage des détails d&#x27;une compétence de création de vlog sur l&#x27;image 1, puis basculement sur l&#x27;interface de projet montrant le script généré par l&#x27;IA sur l&#x27;image 2.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_017_00-04-14.jpg" alt="Interface de Flova affichant les détails et le contenu d&#x27;une compétence &quot;Cozy AI Vlog Creator&quot; avec sa planification de processus." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_017_00-04-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:14</span>
+                        <span class="caption-text">Interface de Flova affichant les détails et le contenu d&#x27;une compétence &quot;Cozy AI Vlog Creator&quot; avec sa planification de processus.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_018_00-04-22.jpg" alt="Interface de Flova affichant la génération du scénario et des scènes pour un projet intitulé &quot;Futuristic Superstorm Rescue&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_018_00-04-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:22</span>
+                        <span class="caption-text">Interface de Flova affichant la génération du scénario et des scènes pour un projet intitulé &quot;Futuristic Superstorm Rescue&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:32 - 00:04:53</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Après avoir approuvé le scénario, il a automatiquement planifié la production. Il a décidé de créer 13 plans différents et trois pistes musicales de fond distinctes. Ensuite, il a demandé si j&#x27;avais des références de personnages. Je n&#x27;en avais pas, il a donc généré les personnages entièrement avec l&#x27;IA. Ce qui est intéressant, c&#x27;est qu&#x27;il a automatiquement sélectionné le modèle d&#x27;image le plus adapté à la tâche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Flova AI (flova.ai) avec un panneau de prévisualisation à gauche (« Start! ») et un panneau de chat interactif (« Chat ») à droite affichant les spécifications de la vidéo.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Dans le panneau de droite, on peut lire les paramètres confirmés de la vidéo (« Final Video Spec ») : titre (Storm Signal), type (Cinematic Action Drama), durée (~2-3 min), format (16:9), style visuel (Realistic Hollywood blockbuster), modèle vidéo (Seedance 2.0), modèle d&#x27;image (Nano Banana Pro), et musique de fond (Suno 5). Le storyboard indique 5 éléments clés, 13 plans sur 4 actes, et 3 couches audio BGM. Le texte demande ensuite si l&#x27;utilisateur possède des images de référence pour les personnages (Sara ou Lily).</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;interface affiche le récapitulatif de la planification automatique de la production et pose une question interactive dans le chat pour savoir si l&#x27;utilisateur souhaite importer des images de référence de personnages.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_019_00-04-34.jpg" alt="Interface du logiciel de création vidéo par IA (Flova AI) montrant le résumé de la configuration du projet, les paramètres de production, le storyboard et l&#x27;assistant conversationnel." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_019_00-04-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:34</span>
+                        <span class="caption-text">Interface du logiciel de création vidéo par IA (Flova AI) montrant le résumé de la configuration du projet, les paramètres de production, le storyboard et l&#x27;assistant conversationnel.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:53 - 00:05:11</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans ce projet, il a utilisé Nano Banana pour créer le design des personnages. Une fois les personnages approuvés, Flova a commencé à générer chaque scène étape par étape. Et c&#x27;est là que les choses ont commencé à devenir vraiment impressionnantes. Regardez ces plans. L&#x27;éclairage, l&#x27;atmosphère, la composition de la caméra, le réalisme.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;outil de création vidéo Flova.ai avec un panneau latéral de storyboard et un panneau de chat/génération d&#x27;actifs.</p>
+                        <p><strong>Contenu textuel & Code :</strong> On peut lire des titres de projets comme &#x27;Futuristic Superstorm Rescue&#x27;, des éléments de storyboard comme &#x27;Element_School_Gym&#x27; et des rapports d&#x27;analyse d&#x27;agents de génération d&#x27;images.</p>
+                        <p><strong>Action / Démonstration :</strong> Le logiciel affiche l&#x27;état de la génération des différentes scènes et ressources du projet, suivi du rendu visuel final d&#x27;un personnage.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_020_00-04-55.jpg" alt="Interface du logiciel Flova.ai montrant le panneau de storyboard et les étapes de génération des actifs du projet &#x27;Futuristic Superstorm Rescue&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_020_00-04-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:55</span>
+                        <span class="caption-text">Interface du logiciel Flova.ai montrant le panneau de storyboard et les étapes de génération des actifs du projet &#x27;Futuristic Superstorm Rescue&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_021_00-05-09.jpg" alt="Gros plan cinématographique d&#x27;une jeune fille en pleurs dans un couloir d&#x27;école, illustrant le réalisme et l&#x27;éclairage de la scène générée." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_021_00-05-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:09</span>
+                        <span class="caption-text">Gros plan cinématographique d&#x27;une jeune fille en pleurs dans un couloir d&#x27;école, illustrant le réalisme et l&#x27;éclairage de la scène générée.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:11 - 00:05:33</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On a vraiment l&#x27;impression de voir des scènes d&#x27;un vrai film. Le plus fou, c&#x27;est que je n&#x27;ai jamais écrit de prompts pour ces plans individuels. Flova a généré tous les prompts de scène automatiquement. Mon rôle consistait simplement à examiner le résultat et à donner mon avis chaque fois que je voulais modifier quelque chose. Mais ce qui m&#x27;a encore plus impressionné, c&#x27;est le contrôle que l&#x27;on conserve tout au long du processus.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Flova AI (flova.ai/m/project/...)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface web affichant un aperçu de projet Flova AI avec des visuels de personnage générés (gros plan et plan en pied d&#x27;une petite fille en uniforme scolaire sur fond neutre).</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation du projet sur l&#x27;interface de Flova AI pour illustrer la génération de plans cinématographiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_022_00-05-31.jpg" alt="Interface web de l&#x27;outil Flova AI montrant deux plans rapprochés d&#x27;une jeune fille dans un style cinématographique." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_022_00-05-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:31</span>
+                        <span class="caption-text">Interface web de l&#x27;outil Flova AI montrant deux plans rapprochés d&#x27;une jeune fille dans un style cinématographique.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:33 - 00:05:51</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce n&#x27;est pas de ces systèmes où l&#x27;on appuie sur un bouton en croisant les doigts. À tout moment, vous pouvez sauter directement dans le storyboard et modifier des scènes spécifiques. Peut-être voulez-vous un mouvement de caméra différent. Peut-être qu&#x27;une scène a besoin de plus d&#x27;émotion. Peut-être qu&#x27;une action de personnage ne semble pas correcte. Ou peut-être qu&#x27;un seul plan a besoin d&#x27;être régénéré.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web flova.ai (interface de montage et storyboard par IA) comprenant un menu supérieur avec l&#x27;onglet Storyboard et Media, un panneau de gauche pour le storyboard et les éléments, un panneau central de prévisualisation et de médias, et un panneau de chat à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Nom du projet : « Futuristic Superstorm Rescue ». Panneau de chat affichant le statut de l&#x27;analyse par l&#x27;agent (« Agent analysis completed ») avec un tableau récapitulatif des éléments (Sara Chen, Lily Chen, Cybertruck, High-Rise Office, School Gym) avec leur statut « Generated » et des notes techniques. Dans la prévisualisation, des images de référence d&#x27;une jeune fille (Lily Chen) sont affichées.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de l&#x27;interface complète de gestion de projet et de storyboard sur l&#x27;outil de création vidéo par IA flova.ai.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_023_00-05-35.jpg" alt="Interface de l&#x27;application de création vidéo par IA (flova.ai) affichant un projet nommé « Futuristic Superstorm Rescue » avec le storyboard, la prévisualisation des scènes, les médias et un panneau de chat de l&#x27;agent." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_023_00-05-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:35</span>
+                        <span class="caption-text">Interface de l&#x27;application de création vidéo par IA (flova.ai) affichant un projet nommé « Futuristic Superstorm Rescue » avec le storyboard, la prévisualisation des scènes, les médias et un panneau de chat de l&#x27;agent.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:52 - 00:06:13</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Au lieu de reconstruire l&#x27;ensemble du projet, vous pouvez simplement dialoguer avec l&#x27;agent, décrire la modification souhaitée, et Flova met à jour cette partie spécifique du film. Une fois que vous êtes satisfait du résultat, vous pouvez passer directement à l&#x27;édition de la chronologie et à l&#x27;exportation. Ce niveau de contrôle donne l&#x27;impression que le flux de travail est beaucoup plus proche d&#x27;un véritable pipeline de production, plutôt que d&#x27;un simple générateur de vidéo par IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Flova (flova.ai) avec un thème sombre, divisée en plusieurs panneaux : Storyboard à gauche, Prévisualisation et Médias au centre, et un panneau de Chat IA à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> On peut lire dans le panneau de chat le prompt utilisateur : &quot;Characters looking good but the lack of realism in the environment and also in characters&quot; ainsi que la réponse de l&#x27;agent Flova indiquant qu&#x27;il a régénéré les références d&#x27;éléments avec un accent accru sur le réalisme photoréaliste et cinématique. Dans la barre supérieure, le nom du projet est &quot;Futuristic Superstorm Rescue&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;interface de Flova où l&#x27;agent conversationnel discute et met à jour des parties spécifiques d&#x27;un film ou d&#x27;un storyboard en temps réel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_024_00-05-54.jpg" alt="Interface de l&#x27;application Flova montrant le storyboard, la prévisualisation vidéo, les éléments multimédias et le panneau de chat textuel avec l&#x27;agent IA." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_024_00-05-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:54</span>
+                        <span class="caption-text">Interface de l&#x27;application Flova montrant le storyboard, la prévisualisation vidéo, les éléments multimédias et le panneau de chat textuel avec l&#x27;agent IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:13 - 00:06:33</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et honnêtement, c&#x27;est probablement le plus grand avantage ici. Vous n&#x27;avez pas besoin de devenir un ingénieur de prompt expert. Vous n&#x27;avez pas besoin d&#x27;apprendre quel modèle vidéo fonctionne le mieux pour les scènes d&#x27;action, ou quel modèle d&#x27;image crée les personnages les plus cohérents. Vous vous concentrez sur l&#x27;idée créative. L&#x27;agent gère le processus de production. Une fonctionnalité que j&#x27;aime vraiment ce sont les compétences (skills).</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;application Flowa AI (flowa.ai) comprenant un volet multimédia à gauche, un lecteur/prévisualiseur au centre, une timeline en bas à gauche et un assistant textuel interactif (Chat) à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> On peut lire des éléments de texte dans le volet de chat comme &quot;Great — with all element references approved, we&#x27;re ready to move to the next phase: voice anchors for Sara and Lily&quot;, &quot;Path B — Seedance video audio extraction&quot;, et un prompt narratif détaillé décrivant une tempête menaçant une ville futuriste (&quot;A catastrophic superstorm suddenly strikes a futuristic city...&quot;). Le projet s&#x27;intitule &quot;Futuristic Superstorm Rescue&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran présente l&#x27;interface complète de production vidéo par IA de Flowa, montrant la gestion des éléments multimédias, l&#x27;interaction avec l&#x27;agent textuel pour choisir les options de production audio/vidéo et la prévisualisation des clips générés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_025_00-06-15.jpg" alt="Interface de l&#x27;application Flowa AI montrant les options de discussion de l&#x27;agent pour la sélection des voix des personnages (voix de Sara et Lily) et les médias associés générés." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_025_00-06-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:15</span>
+                        <span class="caption-text">Interface de l&#x27;application Flowa AI montrant les options de discussion de l&#x27;agent pour la sélection des voix des personnages (voix de Sara et Lily) et les médias associés générés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_026_00-06-31.jpg" alt="Interface de l&#x27;application Flowa AI affichant un panneau de prévisualisation vidéo avec une scène dramatique d&#x27;une jeune fille, et le volet de chat à droite détaillant le scénario et l&#x27;avertissement de crédits insuffisants." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_026_00-06-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:31</span>
+                        <span class="caption-text">Interface de l&#x27;application Flowa AI affichant un panneau de prévisualisation vidéo avec une scène dramatique d&#x27;une jeune fille, et le volet de chat à droite détaillant le scénario et l&#x27;avertissement de crédits insuffisants.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:33 - 00:06:52</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une fois que vous avez construit un flux de travail qui vous plaît, vous pouvez simplement cliquer sur enregistrer et le transformer en compétence. Cela signifie que vous n&#x27;avez pas tout à reconstruire à partir de zéro à chaque fois. Vous pouvez le réutiliser chaque fois que vous commencez un nouveau projet, ce qui fait gagner beaucoup de temps. Et si vous débutez, vous n&#x27;avez même pas besoin de créer votre propre flux de travail. Ouvrez simplement la bibliothèque de compétences où d&#x27;autres créateurs ont déjà partagé leurs flux de travail.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Flova.ai (interface de création vidéo par IA avec gestion de workflows et de compétences).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Éditeur de documents avec &quot;Process Planning&quot;, panneau de chat latéral avec le statut &quot;Skill is ready&quot;, et bibliothèque de compétences classées par catégories (Essentials, Auteur Aesthetics, Drama, etc.) avec des cartes comme &quot;Toy IP Design Kit&quot;, &quot;Dark Chinese Mythic Fantasy&quot;, &quot;Classic 3D J-Horror&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris clique sur le bouton &quot;Save as My Skill&quot; pour enregistrer le workflow, puis navigue dans la bibliothèque de compétences pour montrer les modèles partagés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_027_00-06-35.jpg" alt="Interface de Flova.ai montrant un projet de court-métrage narratif avec le bouton &quot;Save as My Skill&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_027_00-06-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:35</span>
+                        <span class="caption-text">Interface de Flova.ai montrant un projet de court-métrage narratif avec le bouton &quot;Save as My Skill&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_028_00-06-50.jpg" alt="Bibliothèque de compétences (Skill library) sur Flova.ai affichant des modèles partagés par d&#x27;autres créateurs." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_028_00-06-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:50</span>
+                        <span class="caption-text">Bibliothèque de compétences (Skill library) sur Flova.ai affichant des modèles partagés par d&#x27;autres créateurs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:53 - 00:07:15</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez les parcourir, choisir celui dont vous avez besoin et commencer à générer des vidéos en quelques clics seulement. C&#x27;est l&#x27;un des moyens les plus simples d&#x27;apprendre à utiliser la plateforme tout en obtenant des résultats de haute qualité. Vous pouvez également explorer des projets créés par d&#x27;autres utilisateurs et même voir comment ces projets ont été réalisés. Flova montre le flux de travail, les modèles et le processus créatif derrière de nombreuses créations, ce qui facilite l&#x27;apprentissage et l&#x27;amélioration de vos propres projets.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant l&#x27;interface de la plateforme Flova AI (flova.ai).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte descriptif de projets de design, processus de planification, étapes de fabrication, spécifications techniques, éléments de storyboard et panneau de discussion avec l&#x27;intelligence artificielle.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation à travers les projets et exploration des workflows et processus créatifs d&#x27;autres utilisateurs sur la plateforme Flova.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_029_00-06-55.jpg" alt="Interface de Flova montrant le kit de design IP de jouet avec la planification du processus et le bouton d&#x27;ajout." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_029_00-06-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:55</span>
+                        <span class="caption-text">Interface de Flova montrant le kit de design IP de jouet avec la planification du processus et le bouton d&#x27;ajout.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_030_00-07-01.jpg" alt="Interface de Flova affichant une variante de personnage de jouet IP avec les étapes du processus et de dépendances." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_030_00-07-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:01</span>
+                        <span class="caption-text">Interface de Flova affichant une variante de personnage de jouet IP avec les étapes du processus et de dépendances.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_031_00-07-08.jpg" alt="Interface de Flova montrant le storyboard pour la création d&#x27;un clip vidéo avec des éléments robotiques et le panneau de chat." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_031_00-07-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:08</span>
+                        <span class="caption-text">Interface de Flova montrant le storyboard pour la création d&#x27;un clip vidéo avec des éléments robotiques et le panneau de chat.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:16 - 00:07:49</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc après avoir passé du temps avec Flova, je comprends pourquoi des outils de ce genre attirent autant l&#x27;attention. La combinaison de plusieurs modèles d&#x27;IA, de compétences réutilisables, de flux de travail contrôlables, de modèles professionnels et d&#x27;une production automatisée rend la création de contenu cinématographique nettement plus facile qu&#x27;il y a un an à peine. Et si vous voulez l&#x27;essayer vous-même, Flova vous offre cent crédits lors de votre inscription, plus 200 crédits supplémentaires en explorant la plateforme afin que vous puissiez découvrir ses fonctionnalités et commencer à créer vos propres projets d&#x27;IA. La question n&#x27;est plus de savoir si l&#x27;IA peut</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme web Flova dédiée à la création de contenu vidéo par intelligence artificielle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Noms des modèles d&#x27;IA (Seedream 4.0, Nano Banana, Midjourney V7), plans tarifaires de la plateforme Flova (Free à $0, Starter à $16, Basic à $41, Pro à $166) et détails des flux de travail automatisés.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de Flova, sélection de modèles d&#x27;IA via le menu déroulant et consultation des grilles tarifaires.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_032_00-07-18.jpg" alt="Interface principale de Flova montrant le projet &#x27;Galaxy of Love&#x27; avec le storyboard et l&#x27;aperçu d&#x27;un personnage robot rose en 3D." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_032_00-07-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:18</span>
+                        <span class="caption-text">Interface principale de Flova montrant le projet &#x27;Galaxy of Love&#x27; avec le storyboard et l&#x27;aperçu d&#x27;un personnage robot rose en 3D.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_033_00-07-27.jpg" alt="Menu déroulant de sélection des modèles d&#x27;IA (&#x27;Models&#x27;) pour l&#x27;image avec Seedream 4.0, Nano Banana et Midjourney V7." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_033_00-07-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:27</span>
+                        <span class="caption-text">Menu déroulant de sélection des modèles d&#x27;IA (&#x27;Models&#x27;) pour l&#x27;image avec Seedream 4.0, Nano Banana et Midjourney V7.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_034_00-07-38.jpg" alt="Page de tarification et des abonnements de Flova montrant les différents forfaits (Free, Starter, Basic, Pro) et les crédits associés." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_034_00-07-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:38</span>
+                        <span class="caption-text">Page de tarification et des abonnements de Flova montrant les différents forfaits (Free, Starter, Basic, Pro) et les crédits associés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_035_00-07-47.jpg" alt="Rendu visuel cinématographique d&#x27;une pièce mystérieuse avec une grande porte en bois, une bibliothèque et des étagères." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_035_00-07-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:47</span>
+                        <span class="caption-text">Rendu visuel cinématographique d&#x27;une pièce mystérieuse avec une grande porte en bois, une bibliothèque et des étagères.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:49 - 00:08:05</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">aider à faire des films. La question est de savoir jusqu&#x27;où cette technologie ira à partir de maintenant. Si vous avez apprécié ce rapport de recherche, assurez-vous d&#x27;aimer la vidéo, de vous abonner à Pursuing AI, et dites-moi dans les commentaires, l&#x27;IA pourrait-elle éventuellement devenir un concurrent sérieux pour le cinéma traditionnel ? Je vous vois dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Extraits vidéo de démonstration avec le filigrane/logo de la plateforme Flova.ai.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Logos de la plateforme Flova.ai sur les images 2 et 3, ainsi qu&#x27;une grille de plusieurs vidéos générées sur l&#x27;image 1.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de clips vidéo générés par intelligence artificielle mettant en scène divers personnages et scènes de films.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_036_00-07-51.jpg" alt="Grille de vignettes vidéo illustrant différents types de productions visuelles générées par IA." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_036_00-07-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:51</span>
+                        <span class="caption-text">Grille de vignettes vidéo illustrant différents types de productions visuelles générées par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_037_00-07-57.jpg" alt="Gros plan sur un jeune homme dans une épicerie avec le logo Flova.ai visible en haut à droite." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_037_00-07-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:57</span>
+                        <span class="caption-text">Gros plan sur un jeune homme dans une épicerie avec le logo Flova.ai visible en haut à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Q0XpvTcubPU/frame_038_00-08-03.jpg" alt="Plan large d&#x27;un jeune homme dans un magasin près du comptoir avec un caissier, le logo Flova.ai en haut à droite." loading="lazy" onclick="openLightbox('screenshots/YT-Q0XpvTcubPU/frame_038_00-08-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:03</span>
+                        <span class="caption-text">Plan large d&#x27;un jeune homme dans un magasin près du comptoir avec un caissier, le logo Flova.ai en haut à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
