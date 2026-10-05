@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 DeepSeek V4 Flash est TELLEMENT plus puissant qu&#x27;on le pensait ! 🤯 — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 DeepSeek V4 Flash est TELLEMENT plus puissant qu&#x27;on le pensait ! 🤯</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-08-01</span>
+                <span class="badge">⏱️ 05m 01s</span>
+                <span class="badge">🆔 <code>hyDviOrokpc</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=hyDviOrokpc" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* explore les performances révolutionnaires de **DeepSeek V4 Flash**, un modèle d'IA léger mais extrêmement performant, capable de générer des environnements interactifs complexes, des jeux vidéo complets (GTA 6-style, FPS) et des interfaces web à partir d'un simple prompt textuel. Le créateur analyse minutieusement ce nouveau modèle en le confrontant aux poids lourds du secteur comme **GPT-5.6 Luna** et **Kimi K3**, tout en dévoilant les premiers aperçus prometteurs de **DeepSeek V4 Pro**. L'analyse met en lumière un changement de paradigme majeur dans l'industrie : l'efficacité économique extrême des petits modèles qui talonnent les architectures dix fois plus grandes pour une fraction du coût.</p><p>La méthodologie démontrée repose sur une approche itérative via des agents conversationnels et des environnements de développement intégrés (comme l'utilisation de *Hermes Agent*). Le créateur procède par des benchmarks comparatifs rigoureux en soumettant exactement le même prompt à différents modèles pour évaluer le ratio coût-temps-qualité. Pour les créateurs de vidéo et de contenu interactif, ces avancées ouvrent des perspectives inédites : la possibilité de prototyper des univers virtuels interactifs, des décors complexes et des applications web cinématiques en quelques minutes, pour à peine quelques centimes, redéfinissant ainsi les standards de production rapide.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>La démocratisation du prototypage interactif** : DeepSeek V4 Flash prouve qu&#x27;un modèle léger peut générer des mondes ouverts interactifs (style GTA 6) avec gestion de la physique, tirs et réactions des PNJ sans nécessiter d&#x27;actifs externes.</span></li><li><span class="point-bullet">✦</span><span>Un ratio coût-performance spectaculaire** : La génération d&#x27;un jeu de tir à la première personne (FPS) complet via Hermes Agent a pris seulement 32 minutes pour un coût dérisoire de 7 cents, rendant l&#x27;expérimentation accessible à tous les créateurs.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;efficacité des petits modèles** : Bien que Kimi K3 soit environ 10 fois plus grand, DeepSeek V4 Flash parvient à atteindre près de 90 % de sa qualité pour un coût inférieur à 10 cents par itération.</span></li><li><span class="point-bullet">✦</span><span>Le compromis vitesse/qualité face aux géants** : Face à GPT-5.6 Luna sur un test complexe comme la création d&#x27;un clone de Minecraft, le modèle Flash demande plus de temps (plus de 5 minutes) et se montre légèrement plus cher ($1,30 contre $0,75), illustrant les limites actuelles des modèles légers sur des tâches hautement itératives et correctives.</span></li><li><span class="point-bullet">✦</span><span>Des approches créatives diversifiées en front-end** : À prompt égal, DeepSeek V4 Flash privilégie une esthétique cosmique et poétique (*Orbit*), tandis que GPT-5.6 Luna opte pour une interactivité environnementale poussée (*Era*), prouvant que le choix du modèle dépend de la sensibilité artistique recherchée.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;importance des passes de contrôle qualité** : Le succès d&#x27;un projet généré par IA réside dans l&#x27;intégration de boucles itératives (comme les 6 itérations de construction et 8 passes de contrôle qualité observées pour le produit *Arc01*).</span></li><li><span class="point-bullet">✦</span><span>Le bond en avant de DeepSeek V4 Pro** : Les premiers résultats du modèle Pro confirment une nette amélioration de la composition de scène, de l&#x27;éclairage (feu de camp, tentes) et de la précision des détails par rapport aux versions Flash.</span></li><li><span class="point-bullet">✦</span><span>Les spéculations sur l&#x27;architecture cachée** : Des rumeurs suggèrent que l&#x27;API de DeepSeek pourrait acheminer vers *Fable 5*, ce qui expliquerait l&#x27;impressionnant bond de performance observé sur ces dernières versions.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;optimisation du budget de production** : Avec un coût estimé à environ 2 dollars pour une journée entière de travail intensif sur de multiples projets, les créateurs peuvent multiplier les tests sans impacter leur trésorerie.</span></li><li><span class="point-bullet">✦</span><span>La robustesse des fondamentaux** : Même s&#x27;ils pèchent parfois sur le dernier niveau de raffinement visuel ultime (comparé à Kimi K3), les modèles flash maîtrisent parfaitement la structure, la typographie de base et la mise en page globale.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:38</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">DeepSeq VAC avec son nouveau modèle v4 flash. Aujourd&#x27;hui, nous allons voir comment il performe, le comparer avec Kimi K3, l&#x27;un des plus forts modèles open source, et jeter également un œil rapide aux premiers résultats de DeepSeq v4 Pro. C&#x27;est Pursuing AI et vous regardez le Research Report. En commençant par cette démo de style GTA 6 en un seul coup. Tout ce que vous voyez a été généré entièrement par DeepSeq v4 flash sans actifs externes. Pour un modèle Flash, il fait un travail impressionnant en recréant un environnement de monde ouvert réaliste. Vous pouvez tirer avec des armes, les PNJ réagissent en s&#x27;enfuyant, conduire des voitures, frapper</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration de moteur de jeu ou de simulation en monde ouvert avec affichage tête haute (HUD) et interface de comparaison côte à côte</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes &quot;V4 FLASH&quot;, &quot;5.6 Luna&quot;, compteur de score et d&#x27;objectifs, inventaire dans le coin supérieur gauche, indicateur de munitions et d&#x27;argent dans le coin supérieur droit</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison de performances de modèles d&#x27;IA générative jouant à des jeux de plateforme et navigation dans un environnement open-world virtuel en 3D</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_001_00-00-02.jpg" alt="Comparaison côte à côte entre V4 Flash et 5.6 Luna montrant un parcours d&#x27;obstacles en 3D" loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Comparaison côte à côte entre V4 Flash et 5.6 Luna montrant un parcours d&#x27;obstacles en 3D</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_002_00-00-14.jpg" alt="Vue rapprochée à l&#x27;intérieur d&#x27;un véhicule vert dans une démonstration de style open-world" loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_002_00-00-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:14</span>
+                        <span class="caption-text">Vue rapprochée à l&#x27;intérieur d&#x27;un véhicule vert dans une démonstration de style open-world</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_003_00-00-26.jpg" alt="Vue en monde ouvert de style GTA 6 avec un personnage sur un trottoir et des voitures circulant en arrière-plan" loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_003_00-00-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:26</span>
+                        <span class="caption-text">Vue en monde ouvert de style GTA 6 avec un personnage sur un trottoir et des voitures circulant en arrière-plan</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_004_00-00-36.jpg" alt="Personnage pointant une arme dans une rue de la ville virtuelle avec des PNJ à proximité" loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_004_00-00-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:36</span>
+                        <span class="caption-text">Personnage pointant une arme dans une rue de la ville virtuelle avec des PNJ à proximité</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:38 - 00:01:00</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">piétons, et entrent même en collision avec des bâtiments au lieu de les traverser. La physique et les interactions ne sont pas parfaites, mais il est quand même impressionnant de voir un modèle léger générer un jeu interactif de ce type. Vient ensuite cette gare ferroviaire entièrement générée construite avec Three.js. Pour un modèle Flash, la qualité est étonnamment bonne, surtout compte tenu du prix.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de jeu vidéo et application web 3D interactive utilisant Three.js.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Éléments d&#x27;interface de jeu (compteur d&#x27;argent en haut à droite, objectif &quot;Explore the city&quot;) et étiquette &quot;KINGSWAY STATION - Photorealistic Three.js railway station - PBR - dynamic shadows&quot; avec des boutons de navigation (Overview, Platform, Train, Station, Footbridge).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation interactive dans un jeu de type monde ouvert généré par IA, suivie de la présentation d&#x27;une scène 3D de gare ferroviaire.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_005_00-00-40.jpg" alt="Vue à la troisième personne d&#x27;un jeu vidéo interactif généré par IA montrant une voiture jaune naviguant dans une rue urbaine." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_005_00-00-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:40</span>
+                        <span class="caption-text">Vue à la troisième personne d&#x27;un jeu vidéo interactif généré par IA montrant une voiture jaune naviguant dans une rue urbaine.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_006_00-00-49.jpg" alt="Suite de la séquence du jeu montrant la voiture circulant près de bâtiments et croisant d&#x27;autres véhicules." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_006_00-00-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:49</span>
+                        <span class="caption-text">Suite de la séquence du jeu montrant la voiture circulant près de bâtiments et croisant d&#x27;autres véhicules.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_007_00-00-58.jpg" alt="Présentation d&#x27;un modèle 3D interactif d&#x27;une gare ferroviaire nommée &#x27;Kingsway Station&#x27; construit avec Three.js." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_007_00-00-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:58</span>
+                        <span class="caption-text">Présentation d&#x27;un modèle 3D interactif d&#x27;une gare ferroviaire nommée &#x27;Kingsway Station&#x27; construit avec Three.js.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:00 - 00:01:20</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La scène a l&#x27;air propre, la structure est détaillée et la présentation globale est solide. Et rappelez-vous, il s&#x27;agit de DeepSeek V4 Flash, pas du modèle Pro. Plus tard dans la vidéo, je vous montrerai également ce dont DeepSeek V4 Pro est capable. Ensuite, voici ce jeu de tir à la première personne (FPS). Et honnêtement, la partie la plus impressionnante n&#x27;est pas les graphismes, c&#x27;est le coût.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation 3D interactive et moteur de jeu vidéo à la première personne (FPS) avec affichage de l&#x27;arme et compteur de munitions.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;KINGSWAY STATION&quot;, &quot;Photorealistic Three.js railway station - PBR - dynamic shadows&quot;, boutons de navigation (&quot;Overview&quot;, &quot;Platform&quot;, &quot;Train&quot;, &quot;Station&quot;, &quot;Footbridge&quot;), et sur l&#x27;image 3 un chargeur/arme étiqueté &quot;TAC-9 (92mm Ammo)&quot; avec le chiffre &quot;26&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et exploration d&#x27;une scène 3D de gare ferroviaire interactive, puis transition vers une séquence de jeu de tir à la première personne (FPS).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_008_00-01-02.jpg" alt="Vue d&#x27;une simulation 3D de gare ferroviaire intitulée &#x27;Kingsway Station&#x27; avec des options de navigation en haut à droite." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_008_00-01-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:02</span>
+                        <span class="caption-text">Vue d&#x27;une simulation 3D de gare ferroviaire intitulée &#x27;Kingsway Station&#x27; avec des options de navigation en haut à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_009_00-01-10.jpg" alt="Vue aérienne rapprochée de la même gare ferroviaire montrant les quais et la passerelle." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_009_00-01-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Vue aérienne rapprochée de la même gare ferroviaire montrant les quais et la passerelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_010_00-01-18.jpg" alt="Vue à la première personne (FPS) d&#x27;un jeu vidéo montrant une arme et des munitions TAC-9." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_010_00-01-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:18</span>
+                        <span class="caption-text">Vue à la première personne (FPS) d&#x27;un jeu vidéo montrant une arme et des munitions TAC-9.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:20 - 00:01:42</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela a été construit en utilisant DeepSeq V4 Flash 0731 dans Hermes Agent avec un seul prompt. Cela a pris environ 32 minutes à générer et n&#x27;a coûté que 7 cents. C&#x27;est incroyablement bon marché. Environ 2 dollars peuvent durer toute une journée pour de nombreux projets. Et compte tenu du prix, les graphismes et la qualité générale sont en réalité plutôt bons.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur la plateforme X (Twitter) et lecteur vidéo en plein écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;DeepSeek V4 Flash 0731 in Hermes Agent and one prompt, took 32 minutes and cost 0.07$, this model is so cheap to the point where 2 dollars can last you a full day.&quot; Profil d&#x27;Elshayib : &quot;A Father | Full-stack dev going into network engineering while contributing to open source and building side projects&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un post Twitter contenant un exemple de projet généré par IA, puis transition vers un zoom sur la vidéo du projet en question.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_011_00-01-22.jpg" alt="Capture d&#x27;écran d&#x27;une publication X (Twitter) montrant une vidéo de jeu et le profil d&#x27;Elshayib (@elshayib)." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_011_00-01-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:22</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication X (Twitter) montrant une vidéo de jeu et le profil d&#x27;Elshayib (@elshayib).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_012_00-01-40.jpg" alt="Vue rapprochée en plein écran du rendu d&#x27;un jeu vidéo montrant une terrasse avec des caisses et un parasol." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_012_00-01-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:40</span>
+                        <span class="caption-text">Vue rapprochée en plein écran du rendu d&#x27;un jeu vidéo montrant une terrasse avec des caisses et un parasol.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:42 - 00:02:06</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, comparons DeepSeq V4 Flash à GPT 5.6 Luna dans le test Minecraft. Pour être juste, aucun des deux modèles n&#x27;a réussi à construire un clone convaincant de Minecraft, mais les deux ont tout de même produit des résultats exploitables. La plus grande différence réside dans le temps, le coût et la qualité. GPT-5.6 Luna a complété tous les tests en environ 3 minutes et a coûté environ 75 cents.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de test comparative avec affichage côte à côte de deux environnements de type Minecraft (V4 Flash à gauche, 5.6 Luna à droite), puis capture d&#x27;un post Twitter (X).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;V4 FLASH&quot;, &quot;5.6 Luna&quot;, et le tweet de JAZII (@notjazii) indiquant : &quot;both models failed on making a good minecraft clone / but not bad / here&#x27;s the pricing of all three test: / &gt; luna took around 3 mins for all test which costed around .75$ / &gt; v4 flash took over 5 mins... and costed 1.3$&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle des performances des deux IA à l&#x27;écran, suivie de la lecture d&#x27;un tweet récapitulatif des coûts et du temps de traitement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_013_00-01-44.jpg" alt="Comparaison vidéo côte à côte entre DeepSeq V4 Flash et GPT 5.6 Luna exécutant un clone de Minecraft." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_013_00-01-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:44</span>
+                        <span class="caption-text">Comparaison vidéo côte à côte entre DeepSeq V4 Flash et GPT 5.6 Luna exécutant un clone de Minecraft.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_014_00-01-50.jpg" alt="Poursuite de la comparaison vidéo des deux modèles générant des environnements en blocs." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_014_00-01-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:50</span>
+                        <span class="caption-text">Poursuite de la comparaison vidéo des deux modèles générant des environnements en blocs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_015_00-01-58.jpg" alt="Vue panoramique de la génération de paysages par les deux intelligences artificielles." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_015_00-01-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:58</span>
+                        <span class="caption-text">Vue panoramique de la génération de paysages par les deux intelligences artificielles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_016_00-02-04.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de @notjazii détaillant les performances, les coûts et le temps d&#x27;exécution des deux modèles." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_016_00-02-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:04</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de @notjazii détaillant les performances, les coûts et le temps d&#x27;exécution des deux modèles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:06 - 00:02:28</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Deep Seek V4 Flash a pris plus de 5 minutes, essayant principalement de corriger la génération de Minecraft, et a fini par coûter environ 1,30 $. Bien que les deux aient échoué, GPT-5.6 Luna a offert une qualité globale nettement supérieure dans ce test. Passant au test de front-end, les deux modèles ont livré des résultats impressionnants mais avec des approches créatives très différentes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Capture d&#x27;un post Twitter intégrée affichant des comparatifs vidéo côte à côte de jeux et de sites web générés par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;both models failed on making a good minecraft clone... &gt; luna took around 3 mins for all test which costed around .75$ &gt; v4 flash took over 5 mins... and costed 1.3$&quot;. Étiquettes &quot;V4 FLASH&quot; et &quot;5.6 LUNA&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative des résultats, du temps de calcul et des coûts des deux modèles d&#x27;IA sur des tâches de génération de jeux vidéo et d&#x27;interfaces web.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_017_00-02-08.jpg" alt="Capture d&#x27;écran d&#x27;un tweet comparant les performances et les coûts de DeepSeek V4 Flash et GPT-5.6 Luna sur la génération de Minecraft." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_017_00-02-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:08</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet comparant les performances et les coûts de DeepSeek V4 Flash et GPT-5.6 Luna sur la génération de Minecraft.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_018_00-02-21.jpg" alt="Comparaison vidéo côte à côte entre V4 Flash et 5.6 Luna montrant le rendu du jeu style Minecraft en cours d&#x27;exécution." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_018_00-02-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:21</span>
+                        <span class="caption-text">Comparaison vidéo côte à côte entre V4 Flash et 5.6 Luna montrant le rendu du jeu style Minecraft en cours d&#x27;exécution.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_019_00-02-26.jpg" alt="Comparaison des interfaces web de front-end générées par V4 Flash et 5.6 Luna avec des animations spatiales et typographiques." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_019_00-02-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:26</span>
+                        <span class="caption-text">Comparaison des interfaces web de front-end générées par V4 Flash et 5.6 Luna avec des animations spatiales et typographiques.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:28 - 00:02:47</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">DeepSeq V4 Flash a construit Orbit, un site web sombre et étoilé avec des textes poétiques, des visuels inspirés de constellations et une atmosphère cinématique. D&#x27;un autre côté, GPT-5.6 Luna a créé Era, une expérience interactive aux tons verts où la pièce réagit à la lumière, à l&#x27;air et au son.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation comparative divisée en deux colonnes (V4 Flash à gauche, 5.6 Luna à droite) affichant des captures d&#x27;écran de sites web générés par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> À gauche (V4 Flash / Orbit) : fond étoilé sombre, graphiques de constellations, texte &quot;Find your patch of dark.&quot;. À droite (5.6 Luna / Era) : fond vert vif, interface interactive, formulaires et textes descriptifs.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage comparatif côte à côte de deux interfaces web créées par différentes IA, illustrant leurs styles visuels distincts.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_020_00-02-30.jpg" alt="Comparaison côte à côte montrant à gauche le site sombre &quot;Orbit&quot; généré par V4 Flash avec des constellations et à droite l&#x27;interface verte &quot;Era&quot; générée par 5.6 Luna." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_020_00-02-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:30</span>
+                        <span class="caption-text">Comparaison côte à côte montrant à gauche le site sombre &quot;Orbit&quot; généré par V4 Flash avec des constellations et à droite l&#x27;interface verte &quot;Era&quot; générée par 5.6 Luna.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_021_00-02-45.jpg" alt="Comparaison côte à côte montrant la suite des deux interfaces web avec le texte &quot;Find your patch of dark&quot; pour Orbit à gauche et l&#x27;interface interactive verte d&#x27;Era à droite." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_021_00-02-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:45</span>
+                        <span class="caption-text">Comparaison côte à côte montrant la suite des deux interfaces web avec le texte &quot;Find your patch of dark&quot; pour Orbit à gauche et l&#x27;interface interactive verte d&#x27;Era à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:47 - 00:03:05</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les deux sites web sont entièrement responsifs, dotés d&#x27;animations fluides et possèdent une forte hiérarchie visuelle sans ressembler à des modèles SaaS génériques. Dans cette comparaison, tout est une question de créativité et de préférence personnelle, plutôt que de capacité. Maintenant, comparons DeepSeq V4 Flash avec Kimi K3.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateurs web affichant des interfaces de sites web comparatifs (V4 Flash, 5.6 Luna, DeepSeek V4 Flash, Kimi K3).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Step into a darker sky.&quot;, &quot;AERA&quot;, &quot;V4 FLASH&quot;, &quot;5.6 LUNA&quot;, &quot;ARC 01&quot;, &quot;DeepSeek V4 Flash&quot;, &quot;KIMI K3&quot;, &quot;$10,000&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative de designs de sites web et d&#x27;interfaces utilisateur générés par différents modèles d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_022_00-02-49.jpg" alt="Comparaison côte à côte de deux interfaces de sites web nommées &#x27;V4 FLASH&#x27; et &#x27;5.6 LUNA&#x27; affichant des thèmes sombres et clairs avec des textes typographiés." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_022_00-02-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:49</span>
+                        <span class="caption-text">Comparaison côte à côte de deux interfaces de sites web nommées &#x27;V4 FLASH&#x27; et &#x27;5.6 LUNA&#x27; affichant des thèmes sombres et clairs avec des textes typographiés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_023_00-02-56.jpg" alt="Continuation de la comparaison entre les interfaces &#x27;V4 FLASH&#x27; et &#x27;5.6 LUNA&#x27; avec des éléments graphiques et textuels animés." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_023_00-02-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:56</span>
+                        <span class="caption-text">Continuation de la comparaison entre les interfaces &#x27;V4 FLASH&#x27; et &#x27;5.6 LUNA&#x27; avec des éléments graphiques et textuels animés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_024_00-03-03.jpg" alt="Comparaison verticale de deux interfaces de sites web étiquetées &#x27;DeepSeek V4 Flash&#x27; et &#x27;KIMI K3&#x27; montrant des éléments 3D en forme de trombone métallique sur fond noir." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_024_00-03-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:03</span>
+                        <span class="caption-text">Comparaison verticale de deux interfaces de sites web étiquetées &#x27;DeepSeek V4 Flash&#x27; et &#x27;KIMI K3&#x27; montrant des éléments 3D en forme de trombone métallique sur fond noir.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:05 - 00:03:24</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les deux modèles ont reçu exactement le même prompt pour créer une page de destination de produit de luxe pour un produit conceptuel fictif à 10 000 $ appelé Arc01. Kimi K3 prend clairement la tête en termes de finition. Il a une meilleure typographie, une utilisation plus forte de l&#x27;espace négatif, et la présentation du produit phare a l&#x27;air plus raffinée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran partagé comparant deux interfaces de pages web générées par IA (DeepSeek V4 Flash en haut, Kimi K3 en bas).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;ARC 01&quot;, &quot;The ten-thousand-dollar paperclip.&quot;, &quot;DeepSeek V4 Flash&quot;, &quot;KIMI K3&quot;, ainsi que diverses sections techniques de présentation du produit conceptuel.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle côte à côte de deux designs de pages web de produits de luxe générés par deux modèles d&#x27;IA différents.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_025_00-03-07.jpg" alt="Comparaison côte à côte de deux pages de destination web générées par DeepSeek V4 Flash (haut) et Kimi K3 (bas) pour le produit Arc01." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_025_00-03-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:07</span>
+                        <span class="caption-text">Comparaison côte à côte de deux pages de destination web générées par DeepSeek V4 Flash (haut) et Kimi K3 (bas) pour le produit Arc01.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_026_00-03-15.jpg" alt="Comparaison côte à côte des sections de spécifications et de fabrication des pages web générées par les deux modèles IA." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_026_00-03-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:15</span>
+                        <span class="caption-text">Comparaison côte à côte des sections de spécifications et de fabrication des pages web générées par les deux modèles IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:24 - 00:03:51</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais DeepSeq V4 Flash s&#x27;en approche étonnamment. La mise en page, le texte et la structure générale sont tous solides. Il est principalement en retard sur le dernier niveau de raffinement visuel, pas sur les fondamentaux. Ce qui est vraiment impressionnant, c&#x27;est que Kimi K3 est environ 10 fois plus grand, pourtant DeepSeek V4 Flash atteint environ 90 % de la qualité tout en coûtant moins de 10 cents pour 6 itérations de construction et 8 passes de contrôle qualité.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Capture d&#x27;écran de pages web comparatives et interface de réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes comparatifs montrant &quot;DeepSeek V4 Flash&quot; et &quot;KIMI K3&quot;, ainsi qu&#x27;un tweet de @filiroval parlant de modèles 10x plus petits atteignant 90% du résultat pour moins de 0.10$.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative côte à côte de deux interfaces générées par les modèles DeepSeek V4 Flash et Kimi K3.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_027_00-03-26.jpg" alt="Comparaison visuelle divisée en deux écrans montrant les résultats de DeepSeek V4 Flash et Kimi K3 avec des interfaces web sur fond sombre." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_027_00-03-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:26</span>
+                        <span class="caption-text">Comparaison visuelle divisée en deux écrans montrant les résultats de DeepSeek V4 Flash et Kimi K3 avec des interfaces web sur fond sombre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_028_00-03-42.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de @filiroval affichant une comparaison similaire entre DeepSeek V4 Flash et Kimi K3 sur le web." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_028_00-03-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:42</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de @filiroval affichant une comparaison similaire entre DeepSeek V4 Flash et Kimi K3 sur le web.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:51 - 00:04:09</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela montre à quel point les petits modèles sont devenus performants. Ils ne sont plus seulement bons pour leur taille, ils sont réellement bons. Enfin, jetons un œil à DeepSeek V4 Pro. Les premiers résultats proviennent du modèle utilisant exactement le même prompt qui a été précédemment utilisé pour tester Kimi K3 et GPT 5.6.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration et de tests comparative de modèles d&#x27;IA (DeepSeek V4 Pro, DeepSeek V4 Flash, GPT-5.6 Sol, Kimi K3) affichant des environnements 3D interactifs et des interfaces web de présentation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : « DeepSeek V4 Flash », « KIMI K3 », « Ballista », « GPT-5.6 Sol », « V4 Pro ». Éléments d&#x27;interface de jeu ou de simulation 3D incluant des commandes de baliste, des paysages avec chemins, herbe et torches.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative des résultats de différents modèles d&#x27;IA (DeepSeek V4 Pro, Flash, GPT-5.6 Sol, Kimi K3) sur un même prompt de simulation 3D interactive de baliste.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_029_00-03-53.jpg" alt="Capture d&#x27;écran montrant des interfaces sombres de sites web avec les étiquettes DeepSeek V4 Flash et KIMI K3." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_029_00-03-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:53</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant des interfaces sombres de sites web avec les étiquettes DeepSeek V4 Flash et KIMI K3.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_030_00-04-00.jpg" alt="Vue rapprochée d&#x27;une simulation 3D interactive représentant une catapulte ou une baliste sur un chemin enherbé." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_030_00-04-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:00</span>
+                        <span class="caption-text">Vue rapprochée d&#x27;une simulation 3D interactive représentant une catapulte ou une baliste sur un chemin enherbé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_031_00-04-07.jpg" alt="Comparatif à l&#x27;écran montrant l&#x27;interface V4 Pro à gauche, ainsi que GPT-5.6 Sol et Kimi K3 à droite." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_031_00-04-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:07</span>
+                        <span class="caption-text">Comparatif à l&#x27;écran montrant l&#x27;interface V4 Pro à gauche, ainsi que GPT-5.6 Sol et Kimi K3 à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:09 - 00:04:28</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout de suite, vous pouvez voir le souci du détail amélioré, des tentes et du feu de camp jusqu&#x27;à la composition globale de la scène. Si ces premiers résultats sont un indicateur, DeepSeek V4 Pro s&#x27;annonce très prometteur. Voici un autre résultat de DeepSeek V4 Pro. En ce moment, il y a beaucoup de discussions autour de l&#x27;API.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de comparaison comparative de modèles d&#x27;IA et environnement de simulation 3D interactive (type jeu vidéo ou banc de test technique).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;V4 Pro&quot;, &quot;GPT-5.6 Sol&quot;, &quot;Kimi K3&quot;, &quot;Ballista&quot;, commandes WASD, score et statistiques de tir.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle des performances graphiques et physiques de différents modèles d&#x27;IA (DeepSeek V4 Pro, GPT-5.6 Sol, Kimi K3) sur une simulation de baliste et de stand de tir.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_032_00-04-11.jpg" alt="Comparaison multi-modèles montrant une simulation de baliste avec DeepSeek V4 Pro, GPT-5.6 Sol et Kimi K3." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_032_00-04-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:11</span>
+                        <span class="caption-text">Comparaison multi-modèles montrant une simulation de baliste avec DeepSeek V4 Pro, GPT-5.6 Sol et Kimi K3.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_033_00-04-19.jpg" alt="Évolution de la simulation de baliste avec DeepSeek V4 Pro dans un décor nocturne, aux côtés de GPT-5.6 Sol et Kimi K3." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_033_00-04-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:19</span>
+                        <span class="caption-text">Évolution de la simulation de baliste avec DeepSeek V4 Pro dans un décor nocturne, aux côtés de GPT-5.6 Sol et Kimi K3.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_034_00-04-26.jpg" alt="Vue à la première personne dans un stand de tir virtuel simulant une arme de type AK-47 avec indicateurs de score et commandes." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_034_00-04-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:26</span>
+                        <span class="caption-text">Vue à la première personne dans un stand de tir virtuel simulant une arme de type AK-47 avec indicateurs de score et commandes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:28 - 00:04:48</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Plusieurs personnes sur X ont suggéré que cela pourrait être acheminé vers Fable 5, ce qui pourrait expliquer le bond des performances. Si c&#x27;est vrai, les améliorations ont du sens. Mais si ce n&#x27;est pas acheminé vers Fable 5, alors DeepSeek a peut-être construit un modèle encore plus puissant que Kimi K3. Quoi qu&#x27;il en soit, cela vaut la peine de garder un œil dessus jusqu&#x27;à ce que DeepSeek partage officiellement plus de détails.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Jeu vidéo de type FPS / simulateur de tir avec un menu de configuration d&#x27;armes interactif (Gunsmith).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de configuration d&#x27;armes (Barrel, Muzzle, Optic, Stock, Underbarrel, Magazine, Finish), statistiques de l&#x27;arme (Damage, Fire Rate, Control, Accuracy, Handling, Mobility, Reload, Magazine), score en haut à droite (665, 790), indications de touches en haut à gauche (WASD, SHIFT, LMB, RMB, R, HOLD T, F).</p>
+                        <p><strong>Action / Démonstration :</strong> Le joueur se trouve dans un stand de tir, navigue dans le menu de personnalisation de l&#x27;AK-47 pour modifier les accessoires de l&#x27;arme et vise les cibles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_035_00-04-30.jpg" alt="Vue à la première personne dans un jeu vidéo de tir montrant un stand de tir avec des cibles au loin." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_035_00-04-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:30</span>
+                        <span class="caption-text">Vue à la première personne dans un jeu vidéo de tir montrant un stand de tir avec des cibles au loin.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_036_00-04-38.jpg" alt="Interface de personnalisation d&#x27;arme (« AK-47 - GUNSMITH ») avec différents composants modifiables affichés en bas de l&#x27;écran." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_036_00-04-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:38</span>
+                        <span class="caption-text">Interface de personnalisation d&#x27;arme (« AK-47 - GUNSMITH ») avec différents composants modifiables affichés en bas de l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_037_00-04-46.jpg" alt="Vue à la première personne à travers la lunette de visée d&#x27;un fusil pointant vers une cible lointaine." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_037_00-04-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:46</span>
+                        <span class="caption-text">Vue à la première personne à travers la lunette de visée d&#x27;un fusil pointant vers une cible lointaine.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:48 - 00:05:00</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est tout pour le rapport de recherche d&#x27;aujourd&#x27;hui. Si vous avez apprécié cette analyse détaillée et que vous souhaitez garder une longueur d&#x27;avance sur les derniers modèles, outils et avancées en matière d&#x27;IA, assurez-vous de vous abonner à Pursuing AI. Merci d&#x27;avoir regardé, et je vous dis à la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de jeu vidéo de tir avec affichage des scores et des commandes en haut à gauche.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte des commandes (WASD move, SHIFT sprint / hold breath, etc.), score de 1205 en haut à droite, munitions et statistiques de l&#x27;arme en bas à gauche et en bas à droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation d&#x27;une session de jeu ou d&#x27;un test de simulation de tir avec une arme de type fusil d&#x27;assaut (AK-47).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hyDviOrokpc/frame_038_00-04-54.jpg" alt="Capture d&#x27;écran montrant un jeu vidéo ou un simulateur de tir à la première personne avec des cibles." loading="lazy" onclick="openLightbox('screenshots/YT-hyDviOrokpc/frame_038_00-04-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:54</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un jeu vidéo ou un simulateur de tir à la première personne avec des cibles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

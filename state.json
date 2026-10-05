@@ -19,7 +19,8 @@
     "SCodVNW0vtw",
     "bcDvdUb-fEw",
     "yzNl4SLoSDI",
-    "aAnaH3o6mF4"
+    "aAnaH3o6mF4",
+    "hyDviOrokpc"
   ],
   "processed_videos": [
     {
@@ -297,9 +298,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-08-03_YT-aAnaH3o6mF4_Qwen 3.8 Max met GPT en difficulté_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-05T10:14:27Z",
       "status": "completed"
+    },
+    {
+      "video_id": "hyDviOrokpc",
+      "title": "DeepSeek V4 Flash est TELLEMENT plus puissant qu'on le pensait ! 🤯",
+      "raw_title": "DeepSeek V4 Flash is WAY Powerful Than We Thought! 🤯",
+      "filename_md": "2026-08-01_YT-hyDviOrokpc_DeepSeek V4 Flash est TELLEMENT plus puissant qu'on le pensait ! 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-08-01_YT-hyDviOrokpc_DeepSeek V4 Flash est TELLEMENT plus puissant qu'on le pensait ! 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-08-01",
+      "duration": 301,
+      "screenshots_count": 38,
+      "filepath_md": "/root/YT_PursuingAi/2026-08-01_YT-hyDviOrokpc_DeepSeek V4 Flash est TELLEMENT plus puissant qu'on le pensait ! 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-08-01_YT-hyDviOrokpc_DeepSeek V4 Flash est TELLEMENT plus puissant qu'on le pensait ! 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T10:19:19Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 20,
+  "completed_count": 21,
   "last_run_timestamp": "2026-10-05T10:00:03Z",
   "status": "running",
   "total_catalog_count": 83
