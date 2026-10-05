@@ -12,6 +12,8 @@
     "U8rB10LbAXk",
     "AYqoJOg4TBY",
     "ryosCa6_eCE",
+    "2JoMP7G2C2Q",
+    "eVah4t3huis",
     "xzrAGK7_5qY"
   ],
   "processed_videos": [
@@ -153,16 +155,16 @@
     },
     {
       "video_id": "AYqoJOg4TBY",
-      "title": "GPT-6 est TELLEMENT plus puissant que ce qu'on pensait",
+      "title": "GPT-6 Is FAR More Powerful Than We Realized",
       "raw_title": "GPT-6 Is FAR More Powerful Than We Realized",
-      "filename_md": "2026-08-30_YT-AYqoJOg4TBY_GPT-6 est TELLEMENT plus puissant que ce qu'on pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
-      "filename_html": "2026-08-30_YT-AYqoJOg4TBY_GPT-6 est TELLEMENT plus puissant que ce qu'on pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "filename_md": "2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "pub_date": "2026-08-30",
       "duration": 255,
-      "screenshots_count": 17,
-      "filepath_md": "/root/YT_PursuingAi/2026-08-30_YT-AYqoJOg4TBY_GPT-6 est TELLEMENT plus puissant que ce qu'on pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
-      "filepath_html": "/root/YT_PursuingAi/2026-08-30_YT-AYqoJOg4TBY_GPT-6 est TELLEMENT plus puissant que ce qu'on pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
-      "processed_at": "2026-10-05T05:03:45Z",
+      "screenshots_count": 7,
+      "filepath_md": "/root/YT_PursuingAi/2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T05:47:24Z",
       "status": "completed"
     },
     {
@@ -176,7 +178,35 @@
       "screenshots_count": 0,
       "filepath_md": "/root/YT_PursuingAi/2026-08-28_YT-ryosCa6_eCE_FABLE-5.1 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
       "filepath_html": "/root/YT_PursuingAi/2026-08-28_YT-ryosCa6_eCE_FABLE-5.1 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
-      "processed_at": "2026-10-05T06:33:21Z",
+      "processed_at": "2026-10-05T07:00:14Z",
+      "status": "completed"
+    },
+    {
+      "video_id": "2JoMP7G2C2Q",
+      "title": "Fuite d'OpenAI GPT-Bel, révélation d'Ox Alpha, nouveau processeur d'OpenAI et percée IA de NVIDIA | Actualités IA",
+      "raw_title": "OpenAI GPT-Bel Leak, Ox Alpha Revealed, OpenAI’s New Chip & NVIDIA’s AI Breakthrough | AI News",
+      "filename_md": "2026-08-27_YT-2JoMP7G2C2Q_Fuite d'OpenAI GPT-Bel, révélation d'Ox Alpha, nouveau processeur d'OpenAI et pe_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-08-27_YT-2JoMP7G2C2Q_Fuite d'OpenAI GPT-Bel, révélation d'Ox Alpha, nouveau processeur d'OpenAI et pe_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-08-27",
+      "duration": 435,
+      "screenshots_count": 0,
+      "filepath_md": "/root/YT_PursuingAi/2026-08-27_YT-2JoMP7G2C2Q_Fuite d'OpenAI GPT-Bel, révélation d'Ox Alpha, nouveau processeur d'OpenAI et pe_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-08-27_YT-2JoMP7G2C2Q_Fuite d'OpenAI GPT-Bel, révélation d'Ox Alpha, nouveau processeur d'OpenAI et pe_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T07:07:37Z",
+      "status": "completed"
+    },
+    {
+      "video_id": "eVah4t3huis",
+      "title": "Le secret du modèle IA d'OX Alpha enfin RÉVÉLÉ ?",
+      "raw_title": "OX Alpha’s Secret AI Model REVEALED?",
+      "filename_md": "2026-08-25_YT-eVah4t3huis_Le secret du modèle IA d'OX Alpha enfin RÉVÉLÉ_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-08-25_YT-eVah4t3huis_Le secret du modèle IA d'OX Alpha enfin RÉVÉLÉ_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-08-25",
+      "duration": 305,
+      "screenshots_count": 0,
+      "filepath_md": "/root/YT_PursuingAi/2026-08-25_YT-eVah4t3huis_Le secret du modèle IA d'OX Alpha enfin RÉVÉLÉ_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-08-25_YT-eVah4t3huis_Le secret du modèle IA d'OX Alpha enfin RÉVÉLÉ_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T07:12:06Z",
       "status": "completed"
     },
     {
@@ -187,15 +217,15 @@
       "filename_html": "2026-08-22_YT-xzrAGK7_5qY_ChatGPT Image 2.5 est ARRIVÉ — Ça change tout !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "pub_date": "2026-08-22",
       "duration": 428,
-      "screenshots_count": 33,
+      "screenshots_count": 0,
       "filepath_md": "/root/YT_PursuingAi/2026-08-22_YT-xzrAGK7_5qY_ChatGPT Image 2.5 est ARRIVÉ — Ça change tout !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
       "filepath_html": "/root/YT_PursuingAi/2026-08-22_YT-xzrAGK7_5qY_ChatGPT Image 2.5 est ARRIVÉ — Ça change tout !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
-      "processed_at": "2026-10-05T07:15:30Z",
+      "processed_at": "2026-10-05T07:18:15Z",
       "status": "completed"
     }
   ],
-  "completed_count": 13,
-  "last_run_timestamp": "2026-10-04T22:00:05Z",
+  "completed_count": 15,
+  "last_run_timestamp": "2026-10-05T04:00:03Z",
   "status": "running",
   "total_catalog_count": 83
 }
