@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `9 / 83` (`10.8%`)
+- **Vidéos traitées** : `10 / 83` (`12.0%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -25,6 +25,7 @@
 | 2026-09-11 | [GPT Astra est en réalité PIRE que ce qu'on pensait 👀](2026-09-11_YT-MgCr9prca9s_GPT Astra est en réalité PIRE que ce qu'on pensait 👀_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-09-11_YT-MgCr9prca9s_GPT Astra est en réalité PIRE que ce qu'on pensait 👀_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 7m 48s | `47 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=MgCr9prca9s) | `MgCr9prca9s` |
 | 2026-09-06 | [GPT-6 Astra est tellement plus puissant qu'on ne le pensait 🤔](2026-09-06_YT-1CmH1cXkcj0_GPT-6 Astra est tellement plus puissant qu'on ne le pensait 🤔_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-09-06_YT-1CmH1cXkcj0_GPT-6 Astra est tellement plus puissant qu'on ne le pensait 🤔_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 8m 30s | `60 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=1CmH1cXkcj0) | `1CmH1cXkcj0` |
 | 2026-09-03 | [FABLE 5.1 est BEAUCOUP plus puissant que nous ne le pensions](2026-09-03_YT-ygDzSWJGC4o_FABLE 5.1 est BEAUCOUP plus puissant que nous ne le pensions_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-09-03_YT-ygDzSWJGC4o_FABLE 5.1 est BEAUCOUP plus puissant que nous ne le pensions_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 6m 20s | `10 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=ygDzSWJGC4o) | `ygDzSWJGC4o` |
+| 2026-09-01 | [TENCENT HY4 Is WAY More Powerful Than GPT Astra, KIMI K3](2026-09-01_YT-U8rB10LbAXk_TENCENT HY4 Is WAY More Powerful Than GPT Astra, KIMI K3_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-09-01_YT-U8rB10LbAXk_TENCENT HY4 Is WAY More Powerful Than GPT Astra, KIMI K3_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 9m 13s | `1 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=U8rB10LbAXk) | `U8rB10LbAXk` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

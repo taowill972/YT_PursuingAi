@@ -8,7 +8,8 @@
     "vE1OOz4XAyA",
     "MgCr9prca9s",
     "1CmH1cXkcj0",
-    "ygDzSWJGC4o"
+    "ygDzSWJGC4o",
+    "U8rB10LbAXk"
   ],
   "processed_videos": [
     {
@@ -132,9 +133,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-09-03_YT-ygDzSWJGC4o_FABLE 5.1 est BEAUCOUP plus puissant que nous ne le pensions_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-05T00:28:28Z",
       "status": "completed"
+    },
+    {
+      "video_id": "U8rB10LbAXk",
+      "title": "TENCENT HY4 Is WAY More Powerful Than GPT Astra, KIMI K3",
+      "raw_title": "TENCENT HY4 Is WAY More Powerful Than GPT Astra, KIMI K3",
+      "filename_md": "2026-09-01_YT-U8rB10LbAXk_TENCENT HY4 Is WAY More Powerful Than GPT Astra, KIMI K3_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-09-01_YT-U8rB10LbAXk_TENCENT HY4 Is WAY More Powerful Than GPT Astra, KIMI K3_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-09-01",
+      "duration": 553,
+      "screenshots_count": 1,
+      "filepath_md": "/root/YT_PursuingAi/2026-09-01_YT-U8rB10LbAXk_TENCENT HY4 Is WAY More Powerful Than GPT Astra, KIMI K3_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-09-01_YT-U8rB10LbAXk_TENCENT HY4 Is WAY More Powerful Than GPT Astra, KIMI K3_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T03:53:35Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 9,
+  "completed_count": 10,
   "last_run_timestamp": "2026-10-04T22:00:05Z",
   "status": "running",
   "total_catalog_count": 83
