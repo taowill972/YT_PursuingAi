@@ -10,7 +10,8 @@
     "1CmH1cXkcj0",
     "ygDzSWJGC4o",
     "U8rB10LbAXk",
-    "AYqoJOg4TBY"
+    "AYqoJOg4TBY",
+    "ryosCa6_eCE"
   ],
   "processed_videos": [
     {
@@ -151,21 +152,35 @@
     },
     {
       "video_id": "AYqoJOg4TBY",
-      "title": "GPT-6 Is FAR More Powerful Than We Realized",
+      "title": "GPT-6 est TELLEMENT plus puissant que ce qu'on pensait",
       "raw_title": "GPT-6 Is FAR More Powerful Than We Realized",
-      "filename_md": "2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
-      "filename_html": "2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "filename_md": "2026-08-30_YT-AYqoJOg4TBY_GPT-6 est TELLEMENT plus puissant que ce qu'on pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-08-30_YT-AYqoJOg4TBY_GPT-6 est TELLEMENT plus puissant que ce qu'on pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "pub_date": "2026-08-30",
       "duration": 255,
-      "screenshots_count": 7,
-      "filepath_md": "/root/YT_PursuingAi/2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
-      "filepath_html": "/root/YT_PursuingAi/2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
-      "processed_at": "2026-10-05T05:47:24Z",
+      "screenshots_count": 17,
+      "filepath_md": "/root/YT_PursuingAi/2026-08-30_YT-AYqoJOg4TBY_GPT-6 est TELLEMENT plus puissant que ce qu'on pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-08-30_YT-AYqoJOg4TBY_GPT-6 est TELLEMENT plus puissant que ce qu'on pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T05:03:45Z",
+      "status": "completed"
+    },
+    {
+      "video_id": "ryosCa6_eCE",
+      "title": "FABLE-5.1 Is WAY More Powerful Than We Thought",
+      "raw_title": "FABLE-5.1 Is WAY More Powerful Than We Thought",
+      "filename_md": "2026-08-28_YT-ryosCa6_eCE_FABLE-5.1 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-08-28_YT-ryosCa6_eCE_FABLE-5.1 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-08-28",
+      "duration": 166,
+      "screenshots_count": 0,
+      "filepath_md": "/root/YT_PursuingAi/2026-08-28_YT-ryosCa6_eCE_FABLE-5.1 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-08-28_YT-ryosCa6_eCE_FABLE-5.1 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T06:33:21Z",
       "status": "completed"
     }
   ],
-  "completed_count": 11,
-  "last_run_timestamp": "2026-10-05T04:00:03Z",
+  "completed_count": 12,
+  "last_run_timestamp": "2026-10-04T22:00:05Z",
   "status": "running",
   "total_catalog_count": 83
 }
