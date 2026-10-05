@@ -151,21 +151,21 @@
     },
     {
       "video_id": "AYqoJOg4TBY",
-      "title": "GPT-6 est TELLEMENT plus puissant que ce qu'on pensait",
+      "title": "GPT-6 Is FAR More Powerful Than We Realized",
       "raw_title": "GPT-6 Is FAR More Powerful Than We Realized",
-      "filename_md": "2026-08-30_YT-AYqoJOg4TBY_GPT-6 est TELLEMENT plus puissant que ce qu'on pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
-      "filename_html": "2026-08-30_YT-AYqoJOg4TBY_GPT-6 est TELLEMENT plus puissant que ce qu'on pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "filename_md": "2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "pub_date": "2026-08-30",
       "duration": 255,
-      "screenshots_count": 17,
-      "filepath_md": "/root/YT_PursuingAi/2026-08-30_YT-AYqoJOg4TBY_GPT-6 est TELLEMENT plus puissant que ce qu'on pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
-      "filepath_html": "/root/YT_PursuingAi/2026-08-30_YT-AYqoJOg4TBY_GPT-6 est TELLEMENT plus puissant que ce qu'on pensait_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
-      "processed_at": "2026-10-05T05:03:45Z",
+      "screenshots_count": 7,
+      "filepath_md": "/root/YT_PursuingAi/2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-08-30_YT-AYqoJOg4TBY_GPT-6 Is FAR More Powerful Than We Realized_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T05:47:24Z",
       "status": "completed"
     }
   ],
   "completed_count": 11,
-  "last_run_timestamp": "2026-10-04T22:00:05Z",
+  "last_run_timestamp": "2026-10-05T04:00:03Z",
   "status": "running",
   "total_catalog_count": 83
 }
