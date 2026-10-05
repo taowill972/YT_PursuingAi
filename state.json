@@ -28,7 +28,8 @@
     "QraT8ZNkxgw",
     "MTVxdh7q9xg",
     "Zk9o9CQy8NA",
-    "Q0XpvTcubPU"
+    "Q0XpvTcubPU",
+    "kB1HjgYIoMw"
   ],
   "processed_videos": [
     {
@@ -432,9 +433,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-06-24_YT-Q0XpvTcubPU_La toute première IA vraiment réaliste_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-05T16:48:24Z",
       "status": "completed"
+    },
+    {
+      "video_id": "kB1HjgYIoMw",
+      "title": "NVIDIA vient de sortir une IA totalement folle",
+      "raw_title": "NVIDIA Just Released a Crazy New AI",
+      "filename_md": "2026-06-07_YT-kB1HjgYIoMw_NVIDIA vient de sortir une IA totalement folle_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-06-07_YT-kB1HjgYIoMw_NVIDIA vient de sortir une IA totalement folle_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-06-07",
+      "duration": 391,
+      "screenshots_count": 39,
+      "filepath_md": "/root/YT_PursuingAi/2026-06-07_YT-kB1HjgYIoMw_NVIDIA vient de sortir une IA totalement folle_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-06-07_YT-kB1HjgYIoMw_NVIDIA vient de sortir une IA totalement folle_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T16:56:07Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 29,
+  "completed_count": 30,
   "last_run_timestamp": "2026-10-05T16:00:03Z",
   "status": "running",
   "total_catalog_count": 83

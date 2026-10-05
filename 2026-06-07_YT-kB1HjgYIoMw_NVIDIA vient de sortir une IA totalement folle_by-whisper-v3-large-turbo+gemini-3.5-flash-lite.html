@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 NVIDIA vient de sortir une IA totalement folle — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 NVIDIA vient de sortir une IA totalement folle</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-06-07</span>
+                <span class="badge">⏱️ 06m 31s</span>
+                <span class="badge">🆔 <code>kB1HjgYIoMw</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=kB1HjgYIoMw" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>L'industrie de l'intelligence artificielle connaît une accélération fulgurante, comparée par les experts à un « speed-run du futur », où chaque semaine apporte son lot de percées technologiques disruptives. Ce rapport de recherche décrypte les innovations majeures du moment, en mettant un accent particulier sur les dernières avancées de NVIDIA. Face aux goulots d'étranglement traditionnels de la génération d'images, de la vidéo et de la 3D, les chercheurs repoussent sans cesse les limites de la vitesse, de la fidélité visuelle et de la cohérence physique, transformant des flux de travail complexes en processus instantanés et ouverts à la communauté.</p><p>Pour les créateurs de vidéo et les professionnels de l'image, ces nouveautés redéfinissent les standards de production. L'introduction de méthodes révolutionnaires de mise à l'échelle (upscaling) permet de s'affranchir des amplificateurs de résolution séparés grâce à des décodeurs de diffusion par pixels uniques, garantissant des rendus 2K ultra-rapides et d'une netteté chirurgicale. Parallèlement, l'émergence d'outils combinant l'édition audio-vidéo synchronisée, la reconstruction 3D à partir de simples smartphones et l'intégration de moteurs physiques (PhysX) ouvre des perspectives inédites pour la post-production, la réalité virtuelle et l'immobilier.</p><p>La méthode mise en avant par le créateur repose sur une veille technologique rigoureuse et une analyse comparative directe des performances (benchmarks) des modèles open-source. En décortiquant l'architecture des nouveaux outils — de leur espace latent jusqu'à l'espace pixel — il offre aux créateurs une vision stratégique claire pour intégrer ces technologies dans leurs workflows locaux. Le bénéfice concret est massif : gain de temps drastique, réduction des étapes superflues de rendu, et accès démocratisé à des outils de pointe compatibles avec des écosystèmes majeurs comme Flux et SDXL.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Flux</span><span class="tool-tag">SDXL</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Élimination du double décodage** : Pour optimiser l&#x27;upscaling, privilégiez les architectures utilisant un décodeur de diffusion par pixels unique qui produit directement l&#x27;image haute résolution dans l&#x27;espace pixel sans passer par un amplificateur séparé.</span></li><li><span class="point-bullet">✦</span><span>Gain de performance drastique** : L&#x27;utilisation de méthodes de pointe comme PID permet d&#x27;atteindre des vitesses de traitement jusqu&#x27;à 6 fois supérieures aux standards actuels (comme CDANCE v2), réduisant le temps de passage d&#x27;une image de 512px au format 2K à moins d&#x27;une seconde.</span></li><li><span class="point-bullet">✦</span><span>Exploitation de l&#x27;écosystème Open-Source** : Surveillez activement les dépôts GitHub associés aux articles de recherche pour télécharger les poids et exécuter les modèles directement en local, garantissant une indépendance totale et une maîtrise des coûts de calcul.</span></li><li><span class="point-bullet">✦</span><span>Synchronisation audio-visuelle automatisée** : Utilisez des outils de type *Instruct AV to AV* pour corriger ou réécrire les dialogues d&#x27;une vidéo par simple prompt, tout en automatisant la synchronisation labiale et la modification des caractéristiques vocales du locuteur.</span></li><li><span class="point-bullet">✦</span><span>Reconstruction 3D à partir de sources légères** : Pour vos projets en réalité virtuelle ou en immobilier, exploitez *Gen Recon* pour transformer de simples vidéos de smartphone en maillages 3D complets prêts pour le PBR, facilitant le rééclairage et l&#x27;édition de scènes.</span></li><li><span class="point-bullet">✦</span><span>Intégration d&#x27;un a priori de forme génératif** : S&#x27;appuyer sur des structures comme *Trellis 2* permet d&#x27;insuffler au modèle une compréhension approfondie de la morphologie réelle des objets 3D, évitant ainsi les artefacts visuels lors des changements d&#x27;angle.</span></li><li><span class="point-bullet">✦</span><span>Du maillage statique à la simulation physique** : Ne vous contentez pas d&#x27;objets 3D esthétiquement réalistes ; orientez vos workflows vers des frameworks comme *PhysX Omni* pour intégrer nativement la physique, l&#x27;échelle, les articulations et les propriétés de mouvement dès la génération.</span></li><li><span class="point-bullet">✦</span><span>Compatibilité multi-modèles** : Assurez-vous que vos outils de post-traitement (comme les upscalers) prennent en charge nativement les grands standards du marché tels que Flux, SD3 ou SDXL pour fluidifier votre pipeline de production créative.</span></li><li><span class="point-bullet">✦</span><span>Analyse rigoureuse des benchmarks** : Avant d&#x27;adopter un nouvel outil d&#x27;IA, examinez les graphiques de taux de victoire (*win-rate*) par rapport aux concurrents pour valider sa supériorité sur des critères multiples (vitesse, fidélité, cohérence).</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:20</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;industrie de l&#x27;intelligence artificielle a un sérieux problème. Chaque semaine, des chercheurs parviennent d&#x27;une manière ou d&#x27;une autre à publier une technologie qui a l&#x27;air complètement fausse. Une IA peut maintenant transformer une image floue en un chef-d&#x27;œuvre détaillé en 2K en moins d&#x27;une seconde. Une autre peut réécrire ce que quelqu&#x27;un dit dans une vidéo tout en synchronisant parfaitement ses mouvements de lèvres.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration technique / Logiciel de traitement vidéo et d&#x27;image par IA</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Early Termination of Latent Diffusion Model: FLUX.1 [dev]&quot;, étapes de 18 à 26 step et Full Step, &quot;VAE Decode&quot;, &quot;PiD Decode&quot;, étiquette &quot;Edited&quot; et sous-titres de dialogue.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison côte à côte de rendus d&#x27;images générées par IA et démonstration de modification de dialogue synchronisé sur une vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_001_00-00-10.jpg" alt="Interface de démonstration comparant le modèle FLUX.1 [dev] avec l&#x27;affichage des étapes (18 à Full Step) et les méthodes VAE Decode versus PiD Decode sur une image générée d&#x27;une femme aux cheveux ornés de poissons." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_001_00-00-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Interface de démonstration comparant le modèle FLUX.1 [dev] avec l&#x27;affichage des étapes (18 à Full Step) et les méthodes VAE Decode versus PiD Decode sur une image générée d&#x27;une femme aux cheveux ornés de poissons.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_002_00-00-18.jpg" alt="Extrait vidéo montrant un homme en costume en train de parler, avec un encart &quot;Edited&quot; en haut à gauche et des sous-titres en bas indiquant &quot;We need to finalize the proposal by tomorrow.&quot;" loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_002_00-00-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:18</span>
+                        <span class="caption-text">Extrait vidéo montrant un homme en costume en train de parler, avec un encart &quot;Edited&quot; en haut à gauche et des sous-titres en bas indiquant &quot;We need to finalize the proposal by tomorrow.&quot;</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:20 - 00:00:52</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Un autre peut reconstruire une pièce 3D entière à partir de quelques photos de smartphone, et un autre peut générer des objets 3D qui n&#x27;ont pas seulement l&#x27;air réalistes mais comprennent réellement la physique. À ce stade, nous speed-runnons littéralement le futur. Donc aujourd&#x27;hui, nous allons examiner certaines des sorties d&#x27;IA les plus impressionnantes de cette semaine, ce qui se passe dans les coulisses, et pourquoi NVIDIA continue d&#x27;être incapable de prendre une semaine de congé. C&#x27;est Pursuing AI et vous regardez le Research Report. Également cette semaine, NVIDIA a lâché quelque chose d&#x27;assez dingue.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciels de visualisation 3D, outils de recherche en intelligence artificielle et page web de recherche NVIDIA Spatial Intelligence Lab.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;Phone Capture&quot;, &quot;3D Reconstruction&quot;, &quot;LIT&quot;, &quot;PiD: Fast and High-Resolution Latent Decoding with Pixel Diffusion&quot;, noms des auteurs (Yifan Lu, Qi Wu, etc.), boutons &quot;Read Paper (arXiv)&quot;, &quot;Model&quot;, &quot;Github&quot;, TL:DR, sections &quot;Real Image Latent&quot; (SD3 VAE, DINOv2) et &quot;Generated Image Latent&quot; (Z-Image, Flux.2 [dev]), section &quot;Abstract&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle de technologies d&#x27;IA 3D (reconstruction de pièce, objets 3D physiques) puis présentation de la page web du projet PiD de NVIDIA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_003_00-00-22.jpg" alt="Démonstration de la reconstruction 3D d&#x27;une pièce à partir de captures vidéo d&#x27;un smartphone (Phone Capture vs 3D Reconstruction)." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_003_00-00-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:22</span>
+                        <span class="caption-text">Démonstration de la reconstruction 3D d&#x27;une pièce à partir de captures vidéo d&#x27;un smartphone (Phone Capture vs 3D Reconstruction).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_004_00-00-31.jpg" alt="Visualisation de modèles 3D interactifs d&#x27;une voiture de sport bleue sur un damier, illustrant la compréhension de la physique." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_004_00-00-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:31</span>
+                        <span class="caption-text">Visualisation de modèles 3D interactifs d&#x27;une voiture de sport bleue sur un damier, illustrant la compréhension de la physique.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_005_00-00-42.jpg" alt="Visualisation de modèles 3D interactifs d&#x27;un robot méca sur un damier, illustrant la physique des objets." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_005_00-00-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Visualisation de modèles 3D interactifs d&#x27;un robot méca sur un damier, illustrant la physique des objets.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_006_00-00-50.jpg" alt="Capture d&#x27;écran du site web de NVIDIA Spatial Intelligence Lab présentant le projet PiD (Fast and High-Resolution Latent Decoding with Pixel Diffusion)." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_006_00-00-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:50</span>
+                        <span class="caption-text">Capture d&#x27;écran du site web de NVIDIA Spatial Intelligence Lab présentant le projet PiD (Fast and High-Resolution Latent Decoding with Pixel Diffusion).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:52 - 00:01:12</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ça s&#x27;appelle PID, et c&#x27;est une nouvelle méthode open-source pour redimensionner des images à des résolutions beaucoup plus élevées avec des détails considérablement améliorés. Regardez simplement ces exemples. Vous pouvez prendre une image et la pousser jusqu&#x27;à 2K et au-delà tout en gardant tout net, propre et cohérent. L&#x27;augmentation de la qualité est honnêtement ridicule.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de recherche de la &#x27;Spatial Intelligence Lab&#x27; (NVIDIA) présentant l&#x27;outil PiD (Pixel Diffusion).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes : &#x27;PiD: Fast and High-Resolution Latent Decoding with Pixel Diffusion&#x27;, &#x27;Read Paper (or ArXiv)&#x27;, &#x27;Model&#x27;, &#x27;Code&#x27;, &#x27;Real Image Latent&#x27;, &#x27;Generated Image Latent&#x27;, &#x27;PiD vs VAE — 4K Decoding Generated Latent&#x27;, &#x27;VAE Decode 1024 x 1024&#x27;, &#x27;PiD Decode 4096 x 4096&#x27;, &#x27;HARVEST SYMPHONY&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page web du projet PiD et affichage d&#x27;une comparaison avant/après démontrant les capacités de suréchantillonnage et de décodage haute résolution.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_007_00-00-54.jpg" alt="Page du projet PiD montrant le titre principal &#x27;Fast and High-Resolution Latent Decoding with Pixel Diffusion&#x27; et des exemples d&#x27;images latentes." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_007_00-00-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:54</span>
+                        <span class="caption-text">Page du projet PiD montrant le titre principal &#x27;Fast and High-Resolution Latent Decoding with Pixel Diffusion&#x27; et des exemples d&#x27;images latentes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_008_00-01-02.jpg" alt="Section de démonstration et de comparaison du site web PiD avec des exemples d&#x27;images en haute résolution." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_008_00-01-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:02</span>
+                        <span class="caption-text">Section de démonstration et de comparaison du site web PiD avec des exemples d&#x27;images en haute résolution.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_009_00-01-10.jpg" alt="Comparaison visuelle côte à côte entre le décodage VAE standard (1024x1024) et le décodage PiD (4096x4096) sur une image montrant un pupitre avec le texte &#x27;HARVEST SYMPHONY&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_009_00-01-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Comparaison visuelle côte à côte entre le décodage VAE standard (1024x1024) et le décodage PiD (4096x4096) sur une image montrant un pupitre avec le texte &#x27;HARVEST SYMPHONY&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:12 - 00:01:46</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les détails précis qui étaient à peine visibles auparavant deviennent soudainement nets et bien définis. Maintenant, voici un problème que PiD essaie de résoudre. Avec la plupart des systèmes de génération d&#x27;images traditionnels, la génération d&#x27;images haute résolution s&#x27;accompagne d&#x27;un goulot d&#x27;étranglement. Généralement, le modèle décode d&#x27;abord l&#x27;image de l&#x27;espace latent vers l&#x27;espace pixel, puis l&#x27;envoie via un amplificateur de résolution séparé pour augmenter la résolution. PiD supprime complètement cet élément superflu. À la place, il utilise un décodeur de diffusion par pixels unique qui produit directement une image haute résolution dans l&#x27;espace pixel, et c&#x27;est incroyablement rapide.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de présentation web comparative de PiD (Pixel Diffusion Decoder) montrant des curseurs de comparaison avant/après et une galerie de résultats.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &#x27;PiD vs VAE - 4K Decoding Generated Latent&#x27;, &#x27;VAE Decode 1024x1024&#x27;, &#x27;PiD Decode 4096x4096&#x27;, &#x27;HARVEST SYMPHONY&#x27;, &#x27;PIXEL DIFFUSION DECODER&#x27;, &#x27;PiD&#x27;, ainsi que plusieurs descriptions de prompts d&#x27;images (ex: &#x27;Fashion campaign set inside a freezer aisle...&#x27;).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative visuelle démontrant la supériorité de résolution du décodeur PiD par rapport au décodeur VAE traditionnel à travers des curseurs interactifs et des gros plans de texte.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_010_00-01-14.jpg" alt="Comparaison côte à côte entre le décodage VAE (1024x1024) et le décodage PiD (4096x4096) sur une image de lutrin avec le texte &#x27;HARVEST SYMPHONY&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_010_00-01-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:14</span>
+                        <span class="caption-text">Comparaison côte à côte entre le décodage VAE (1024x1024) et le décodage PiD (4096x4096) sur une image de lutrin avec le texte &#x27;HARVEST SYMPHONY&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_011_00-01-24.jpg" alt="Galerie de démonstration présentant plusieurs exemples de comparaisons d&#x27;images générées par IA avec curseur interactif entre le décodeur VAE et PiD." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_011_00-01-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Galerie de démonstration présentant plusieurs exemples de comparaisons d&#x27;images générées par IA avec curseur interactif entre le décodeur VAE et PiD.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_012_00-01-36.jpg" alt="Écran de titre affichant le logo coloré &#x27;PiD&#x27; avec la mention &#x27;PIXEL DIFFUSION DECODER&#x27; au-dessus." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_012_00-01-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:36</span>
+                        <span class="caption-text">Écran de titre affichant le logo coloré &#x27;PiD&#x27; avec la mention &#x27;PIXEL DIFFUSION DECODER&#x27; au-dessus.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:46 - 00:02:06</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Selon les benchmarks de Nvidia, PID peut mettre à l&#x27;échelle une image de 512 par 512 jusqu&#x27;en 2K en moins d&#x27;une seconde. C&#x27;est presque 6 fois plus rapide que la version 2 de CDANCE, qui est actuellement l&#x27;un des meilleurs outils de mise à l&#x27;échelle d&#x27;images disponibles. Et sur ce graphique de benchmark, vous pouvez voir le taux de victoire de PID par rapport aux modèles concurrents.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Tableau de benchmarks quantitatifs montrant des graphiques de performance.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre : &quot;Quantitative Results (Decoding + Upsampling, 512² → 2048²)&quot;. Graphique de gauche : &quot;End-to-End Decoding Latency (ms)&quot; listant Real-ESRGAN (62,2 ms), PID (211,2 ms en vert), LUA (369,3 ms), TSD-SR (724,8 ms), InvSR-1 (1017,7 ms), SeedVR2 (1237,5 ms). Texte en bas : &quot;PID is up to 5.9x faster than SeedVR2 (211.2 ms vs 1237.5 ms)&quot;. Graphique de droite : &quot;Gemini-3-Flash Judge Rating (%)&quot; listant InvSR-1 (90,1%), LUA (99,4% en vert), Real-ESRGAN (97,5%), SeedVR2 (85,1%), TSD-SR (87,2%). Texte en bas : &quot;% of evaluations where judges prefer PID over each baseline&quot;. Légende en bas : PID (Ours) en vert, Baseline en gris.</p>
+                        <p><strong>Action / Démonstration :</strong> Le graphique de benchmarking s&#x27;affiche à l&#x27;écran pour illustrer les performances de vitesse et de qualité de PID comparées aux modèles concurrents.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_013_00-01-48.jpg" alt="Graphique de résultats quantitatifs montrant la latence de décodage et le taux de notation pour le modèle PID par rapport aux modèles concurrents." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_013_00-01-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:48</span>
+                        <span class="caption-text">Graphique de résultats quantitatifs montrant la latence de décodage et le taux de notation pour le modèle PID par rapport aux modèles concurrents.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:06 - 00:02:40</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans la plupart des cas, il s&#x27;en sort haut la main. Le meilleur dans tout ça ? Ils l&#x27;ont déjà publié. Si vous faites défiler la page vers le haut et cliquez sur le bouton de code, vous trouverez des instructions pour télécharger et exécuter le tout localement sur votre propre machine. La version actuelle prend déjà en charge Flux, Zimage, SD3 et plusieurs autres modèles. La prise en charge de Qwen Image et de SDXL est prévue pour l&#x27;avenir. Si vous souhaitez l&#x27;explorer davantage, consultez le lien dans la description ci-dessous. Ensuite, cette IA est plutôt intéressante, elle s&#x27;appelle Instruct AV to AV et c&#x27;est un système qui permet d&#x27;éditer ensemble de la vidéo et de l&#x27;audio à partir d&#x27;un simple prompt.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de présentation de résultats de recherche avec graphiques et tableaux de données comparatives.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le titre principal indique &quot;Quantitative Results (Decoding + Upsampling, 512² -&gt; 2048²)&quot;. À gauche, un diagramme en barres horizontales détaille &quot;End-to-End Decoding Latency (ms) ↓&quot; avec les modèles Real-ESRGAN (62.2 ms), PID (211.2 ms en vert), LUA (369.3 ms), TSD-SR (724.8 ms), InvSR-1 (1017.7 ms) et SeedVR2 (1237.5 ms). Une note en bas à gauche précise &quot;PID is up to 5.9x faster than SeedVR2 (211.2 ms vs 1237.5 ms)&quot;. À droite, un autre diagramme en barres présente &quot;Gemini-3-Flash Judge Rating (%) ↑&quot; avec InvSR-1 (90.1%), LUA (99.4%), Real-ESRGAN (97.5%), SeedVR2 (85.1%) et TSD-SR (87.2%). Une légende en bas indique &quot;% of evaluations where judges prefer PID over each baseline&quot;, ainsi qu&#x27;un code couleur pour &quot;PID (Ours)&quot; en vert et &quot;Baseline&quot; en gris. Un curseur de souris est visible en bas au centre.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur affiche des graphiques de performances comparatives quantitatives pour illustrer les résultats et la vitesse d&#x27;exécution du modèle présenté.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_014_00-02-08.jpg" alt="Graphique de résultats quantitatifs comparant la latence de décodage et les notes d&#x27;évaluation du modèle PID par rapport à d&#x27;autres solutions." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_014_00-02-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:08</span>
+                        <span class="caption-text">Graphique de résultats quantitatifs comparant la latence de décodage et les notes d&#x27;évaluation du modèle PID par rapport à d&#x27;autres solutions.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:40 - 00:02:59</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Par exemple, vous pouvez prendre une vidéo existante et faire dire à une personne quelque chose de complètement différent. Non seulement cela modifie l&#x27;audio, mais cela met également à jour la synchronisation labiale pour correspondre. Voici un exemple. Ouais, je vois ce que tu veux dire, mais je pense vraiment qu&#x27;on devrait lui donner une autre chance. C&#x27;est plus que de l&#x27;art. C&#x27;est une déclaration.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;InstructAV2AV et lecteur vidéo de démonstration.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de l&#x27;instruction : &quot;Keep the person&#x27;s identity and change the spoken words to &#x27;This is more than just art, it&#x27;s a statement.&#x27;&quot;, et sous-titre &quot;This is more than just art, it&#x27;s a statement.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de modification vidéo par IA montrant l&#x27;entrée et la sortie synchronisées avec une nouvelle piste audio et une synchronisation labiale ajustée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_015_00-02-42.jpg" alt="Interface web du modèle InstructAV2AV montrant une comparaison vidéo avec instruction textuelle." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_015_00-02-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:42</span>
+                        <span class="caption-text">Interface web du modèle InstructAV2AV montrant une comparaison vidéo avec instruction textuelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_016_00-02-57.jpg" alt="Gros plan sur la vidéo éditée avec la phrase sous-titrée à l&#x27;écran." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_016_00-02-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:57</span>
+                        <span class="caption-text">Gros plan sur la vidéo éditée avec la phrase sous-titrée à l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:59 - 00:03:37</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ou voici un autre exemple. Je comprends la situation et je crois que vous en êtes capable. Je pense vraiment que nous devrions faire de notre mieux pour y arriver. Ou voici un autre exemple où la voix de la personne est modifiée pour ressembler davantage à celle d&#x27;un homme tout en changeant les mots prononcés : j&#x27;ai trouvé une adresse pour une mère à Hartwell. Je comprends, mais je pense que nous devons considérer, mais cela ne s&#x27;arrête pas là. Vous pouvez garder le discours original et transformer simplement le locuteur d&#x27;un homme en femme, et voici le résultat : cet endroit me rappelle le moment où j&#x27;ai commencé ce voyage. Je pense vraiment que nous devrions lui donner une seconde chance.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;outil de recherche ou de démonstration vidéo &#x27;InstructAV2AV&#x27;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de l&#x27;instruction visible : « Keep the person&#x27;s appearance, change the timbre to a man, and change the spoken words to &#x27;I understand, but I think we need to consider.&#x27; » et sur l&#x27;image 3 : « Change the man in the middle into a young woman. »</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;exemples de modification vidéo et audio par intelligence artificielle via l&#x27;outil InstructAV2AV.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_017_00-03-01.jpg" alt="Exemple vidéo d&#x27;un homme en costume sur une plage au téléphone portable avec la mention &#x27;Original&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_017_00-03-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:01</span>
+                        <span class="caption-text">Exemple vidéo d&#x27;un homme en costume sur une plage au téléphone portable avec la mention &#x27;Original&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_018_00-03-13.jpg" alt="Interface de l&#x27;outil InstructAV2AV montrant l&#x27;instruction textuelle de modification et les vidéos d&#x27;entrée/sortie." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_018_00-03-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:13</span>
+                        <span class="caption-text">Interface de l&#x27;outil InstructAV2AV montrant l&#x27;instruction textuelle de modification et les vidéos d&#x27;entrée/sortie.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_019_00-03-35.jpg" alt="Écran noir affichant une instruction textuelle en italique blanc sur la modification d&#x27;un personnage." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_019_00-03-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:35</span>
+                        <span class="caption-text">Écran noir affichant une instruction textuelle en italique blanc sur la modification d&#x27;un personnage.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:37 - 00:03:58</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Waouh, c&#x27;est tellement incroyable. Nous devons finaliser la proposition pour demain. C&#x27;est un sujet plutôt intéressant. Maintenant, si vous faites défiler vers le haut de la page, vous verrez à la fois un bouton de code et un bouton pour les poids du modèle. Pour l&#x27;instant cependant, il n&#x27;y a encore rien sur la page GitHub. Pourtant, si vous souhaitez en savoir plus, consultez le lien dans la description ci-dessous.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la page de présentation du projet de recherche InstructAV2AV avec interface claire sur fond sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre &#x27;InstructAV2AV: Instruction-Guided Audio-Video Joint Editing&#x27;, noms des auteurs (Haojie Zheng, Yixin Yang, Siqi Yang, Shuchen Weng, Boxin Shi), affiliations (Beijing Academy of Artificial Intelligence, Peking University), boutons &#x27;arXiv&#x27;, &#x27;Code (GitHub)&#x27;, &#x27;Model Weights&#x27;, et section &#x27;Demo&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de la page web du projet de recherche et défilement vers le haut pour montrer les différents boutons de ressources (code et poids du modèle).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_020_00-03-39.jpg" alt="Extrait vidéo illustratif montrant une femme souriante dans une scène de discussion avec le sous-titre &#x27;Wow, that is so amazing.&#x27;" loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_020_00-03-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:39</span>
+                        <span class="caption-text">Extrait vidéo illustratif montrant une femme souriante dans une scène de discussion avec le sous-titre &#x27;Wow, that is so amazing.&#x27;</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_021_00-03-48.jpg" alt="Page web du projet &#x27;InstructAV2AV: Instruction-Guided Audio-Video Joint Editing&#x27; montrant les boutons arXiv, Code (GitHub) et Model Weights." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_021_00-03-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:48</span>
+                        <span class="caption-text">Page web du projet &#x27;InstructAV2AV: Instruction-Guided Audio-Video Joint Editing&#x27; montrant les boutons arXiv, Code (GitHub) et Model Weights.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:58 - 00:04:30</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, cette IA est idéale pour l&#x27;immobilier et la VR. Elle s&#x27;appelle Gen Recon. Et comme vous pouvez le voir à partir de ces exemples, elle peut prendre des vidéos de smartphone décontractées ou même simplement une collection de photos d&#x27;une pièce et les transformer en une scène 3D complète et éditable. L&#x27;entrée est une vidéo ou un ensemble d&#x27;images, la sortie est un maillage prêt pour le PBR. En d&#x27;autres termes, un modèle 3D complet avec des matériaux qui peuvent être utilisés pour le rendu ou une édition ultérieure. Par exemple, vous pouvez rééclairer l&#x27;environnement sous différents angles, changer les matériaux ou même changer les couleurs dans toute la scène.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Article de recherche / Présentation académique de GenRecon</p>
+                        <p><strong>Contenu textuel & Code :</strong> &quot;GenRecon: Bridging Generative Priors for Multi-View 3D Scene Reconstruction&quot;, noms des chercheurs (Katharina Schmid, Nicolas von Lützow, Jozef Hladký, Angela Dai, Matthias Nießner), affiliations (Technical University of Munich, Computing Systems Lab, Huawei Technologies, Switzerland), boutons de liens (Paper, arXiv, Video, Code), étiquettes &quot;Phone Capture&quot;, &quot;3D Reconstruction&quot;, &quot;GEOMETRY&quot;, &quot;RELIGHTING&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de la transformation d&#x27;une vidéo de smartphone en modèle 3D avec options de géométrie et de rééclairage.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_022_00-04-00.jpg" alt="Présentation du titre du projet GenRecon pour la reconstruction de scènes 3D multi-vues avec une vue côte à côte d&#x27;une capture par téléphone et d&#x27;une reconstruction 3D géométrique." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_022_00-04-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:00</span>
+                        <span class="caption-text">Présentation du titre du projet GenRecon pour la reconstruction de scènes 3D multi-vues avec une vue côte à côte d&#x27;une capture par téléphone et d&#x27;une reconstruction 3D géométrique.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_023_00-04-10.jpg" alt="Illustration d&#x27;une capture vidéo de pièce réalisée à l&#x27;aide d&#x27;un smartphone (Phone Capture)." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_023_00-04-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:10</span>
+                        <span class="caption-text">Illustration d&#x27;une capture vidéo de pièce réalisée à l&#x27;aide d&#x27;un smartphone (Phone Capture).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_024_00-04-20.jpg" alt="Démonstration du rééclairage (Relighting) d&#x27;une scène 3D reconstruite à partir d&#x27;une vidéo de smartphone." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_024_00-04-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:20</span>
+                        <span class="caption-text">Démonstration du rééclairage (Relighting) d&#x27;une scène 3D reconstruite à partir d&#x27;une vidéo de smartphone.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_025_00-04-28.jpg" alt="Écran de titre institutionnel montrant le nom du projet GenRecon et les contributeurs universitaires et industriels." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_025_00-04-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:28</span>
+                        <span class="caption-text">Écran de titre institutionnel montrant le nom du projet GenRecon et les contributeurs universitaires et industriels.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:31 - 00:04:51</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors, comment ça fonctionne ? Genrecom prend une collection d&#x27;images ou de trames vidéo et reconstruit l&#x27;environnement par morceaux tout en maintenant la cohérence sur l&#x27;ensemble de la scène. Il utilise également Trellis 2 comme ce que les chercheurs appellent un a priori de forme génératif. Considérez cela comme le fait de donner au modèle une solide compréhension de l&#x27;apparence réelle des objets 3D.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration logicielle / pipeline de recherche IA de modélisation 3D (Genrecom / Trellis 2).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;RGB INPUT IMAGES&quot;, aperçu d&#x27;images de caméra RGB d&#x27;une chambre à coucher, rendus 3D partiels de pièces et plans au sol (floor plans) en incrustation.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation du processus de reconstruction d&#x27;un environnement 3D par morceaux à partir d&#x27;images d&#x27;entrée RVB et démonstration de la cohérence spatiale.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_026_00-04-33.jpg" alt="Affichage des images d&#x27;entrée RVB d&#x27;une chambre à coucher avec le texte &quot;RGB INPUT IMAGES&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_026_00-04-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:33</span>
+                        <span class="caption-text">Affichage des images d&#x27;entrée RVB d&#x27;une chambre à coucher avec le texte &quot;RGB INPUT IMAGES&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_027_00-04-41.jpg" alt="Reconstruction 3D partielle de l&#x27;environnement en cours par morceaux, avec un aperçu de la pièce d&#x27;origine et du plan au sol en incrustation." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_027_00-04-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:41</span>
+                        <span class="caption-text">Reconstruction 3D partielle de l&#x27;environnement en cours par morceaux, avec un aperçu de la pièce d&#x27;origine et du plan au sol en incrustation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_028_00-04-49.jpg" alt="Poursuite de la reconstruction 3D de l&#x27;environnement avec affichage d&#x27;un nouveau segment de la pièce et de la carte en bas à droite." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_028_00-04-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:49</span>
+                        <span class="caption-text">Poursuite de la reconstruction 3D de l&#x27;environnement avec affichage d&#x27;un nouveau segment de la pièce et de la carte en bas à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:51 - 00:05:15</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout en haut de la page, il y a actuellement un bouton &quot;bientôt disponible&quot;. Espérons qu&#x27;ils le mettront en open source. Pour l&#x27;instant, ils ont seulement publié un article technique. Si vous souhaitez en savoir plus, je mettrai le lien de la page dans la description ci-dessous. Également cette semaine, nous avons découvert une IA très utile appelée PhysX Omni, et elle s&#x27;attaque à l&#x27;un des plus grands problèmes de la génération 3D. La plupart des systèmes d&#x27;IA peuvent générer des objets qui ont l&#x27;air bien, mais ils ne fonctionnent pas réellement dans les simulations physiques.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant les pages de recherche des projets &quot;GenRecon&quot; et &quot;PhysX-Omni&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titres de projets de recherche, boutons de liens (Paper, arXiv, Video, Code), captures d&#x27;écran de reconstruction 3D et grille de vidéos de simulations physiques d&#x27;objets rigides, déformables et articulés.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole les différents boutons et sections des pages web présentées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_029_00-04-53.jpg" alt="Page web de présentation du projet &quot;GenRecon&quot; montrant le titre de la recherche et les liens vers le papier et le code." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_029_00-04-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:53</span>
+                        <span class="caption-text">Page web de présentation du projet &quot;GenRecon&quot; montrant le titre de la recherche et les liens vers le papier et le code.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_030_00-05-07.jpg" alt="Page web de présentation de l&#x27;IA &quot;PhysX-Omni&quot; montrant son titre, les boutons d&#x27;accès et une grille de vidéos de démonstration de simulations physiques 3D." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_030_00-05-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:07</span>
+                        <span class="caption-text">Page web de présentation de l&#x27;IA &quot;PhysX-Omni&quot; montrant son titre, les boutons d&#x27;accès et une grille de vidéos de démonstration de simulations physiques 3D.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:15 - 00:05:49</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">PhysX Omni change la donne. Au lieu de générer une voiture sous forme de maillage statique unique, il crée des éléments prêts pour la simulation. Cela signifie que la géométrie, l&#x27;échelle, les propriétés des matériaux et la compréhension du mouvement sont toutes intégrées au résultat. Par exemple dans cette démo, les roues bougent correctement lorsque la voiture est déplacée. Voici un autre exemple où l&#x27;objet possède des articulations correctement placées qui bougent de manière réaliste et en voici un autre. Ce qui est intéressant, c&#x27;est que la plupart des systèmes de génération 3D existants se concentrent soit sur l&#x27;apparence, soit sur des catégories d&#x27;objets très spécifiques telles que les objets rigides.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de simulation 3D (PhysX Omni) avec affichage en écran partagé ou double vue sur fond de damier.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Modèles 3D interactifs (voiture de sport bleue, excavatrice jaune, créature robotique bleue) dans un environnement de simulation physique avec sol à motifs de damier gris et blanc.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de différents actifs 3D dotés de propriétés physiques, de mouvements de roues et d&#x27;articulations fonctionnelles manipulés dans l&#x27;environnement de simulation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_031_00-05-17.jpg" alt="Démonstration de PhysX Omni affichant une voiture de sport bleue modélisée en 3D sur un sol quadrillé dans un environnement de simulation, avec comparaison visuelle." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_031_00-05-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:17</span>
+                        <span class="caption-text">Démonstration de PhysX Omni affichant une voiture de sport bleue modélisée en 3D sur un sol quadrillé dans un environnement de simulation, avec comparaison visuelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_032_00-05-27.jpg" alt="Démonstration de PhysX Omni montrant le déplacement interactif de la voiture de sport bleue avec des roues fonctionnelles en temps réel." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_032_00-05-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:27</span>
+                        <span class="caption-text">Démonstration de PhysX Omni montrant le déplacement interactif de la voiture de sport bleue avec des roues fonctionnelles en temps réel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_033_00-05-38.jpg" alt="Démonstration de PhysX Omni illustrant un modèle 3D d&#x27;excavatrice jaune interagissant avec un objet sphérique rouge grâce à des articulations réalistes." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_033_00-05-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:38</span>
+                        <span class="caption-text">Démonstration de PhysX Omni illustrant un modèle 3D d&#x27;excavatrice jaune interagissant avec un objet sphérique rouge grâce à des articulations réalistes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_034_00-05-47.jpg" alt="Démonstration de PhysX Omni présentant un modèle 3D animé de créature robotique/animalte bleue et grise sur fond quadrillé." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_034_00-05-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:47</span>
+                        <span class="caption-text">Démonstration de PhysX Omni présentant un modèle 3D animé de créature robotique/animalte bleue et grise sur fond quadrillé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:49 - 00:06:08</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">PhysX Omni essaie d&#x27;unifier le tout en un seul framework et, lorsqu&#x27;on le compare à des systèmes concurrents tels qu&#x27;Articulate Anything, PhysXGen et PhysXAnything, on peut voir que PhysX Omni obtient systématiquement de meilleurs résultats sur de multiples benchmarks. En moyenne, il atteint les performances globales les plus élevées sur un graphique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo technique / slides académiques sur PhysX-Bench.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphiques en radar et schémas hexagonaux intitulés &quot;III. Overview of PhysX-Bench&quot;, &quot;Benchmark Overview&quot; et &quot;Evaluation Dimensions&quot;, avec la légende des différents modèles (Articulate-Anything, MonoArt, PhysXGen, PhysX-Anything).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage comparatif des performances de PhysX Omni par rapport aux systèmes concurrents sur différents benchmarks physiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_035_00-05-51.jpg" alt="Comparaison côte à côte de simulations 3D montrant le comportement physique d&#x27;un modèle animal robotique sur un sol damé." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_035_00-05-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:51</span>
+                        <span class="caption-text">Comparaison côte à côte de simulations 3D montrant le comportement physique d&#x27;un modèle animal robotique sur un sol damé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_036_00-05-58.jpg" alt="Graphique de présentation intitulé &quot;III. Overview of PhysX-Bench&quot; détaillant les dimensions d&#x27;évaluation et les performances comparées des différents systèmes." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_036_00-05-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:58</span>
+                        <span class="caption-text">Graphique de présentation intitulé &quot;III. Overview of PhysX-Bench&quot; détaillant les dimensions d&#x27;évaluation et les performances comparées des différents systèmes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:08 - 00:06:30</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et le truc génial, c&#x27;est qu&#x27;ils ont déjà tout publié. Si vous faites défiler la page vers le haut et cliquez sur le bouton de code, vous trouverez des instructions pour télécharger et exécuter le tout localement sur votre propre machine. Si vous souhaitez explorer cela plus en profondeur, consultez le lien dans la description ci-dessous. Et si vous avez apprécié ce rapport, pensez à vous abonner car la semaine prochaine sera probablement encore plus folle. C&#x27;est Pursuing AI, et je vous retrouve dans le prochain rapport de recherche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le dépôt GitHub du projet PhysX-Omni et ses instructions d&#x27;installation et de démonstration.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;PhysX-Omni: Unified Simulation-Ready Physical 3D Generation for Rigid, Deformable, and Articulated Objects&quot;, instructions &quot;Installation&quot;, &quot;1. Clone the repo: git clone --recurse-submodules https://github.com/physx-omni/PhysX-Omni.git&quot;, et commandes d&#x27;installation des dépendances.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des instructions de téléchargement et d&#x27;exécution locale du modèle d&#x27;intelligence artificielle sur GitHub, illustrée par des extraits de simulations physiques 3D.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_037_00-06-10.jpg" alt="Page web du projet PhysX-Omni présentant la génération 3D physique unifiée et prête pour la simulation, avec des boutons de code, de dataset et de vidéo ainsi qu&#x27;une grille de prévisualisations vidéo." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_037_00-06-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:10</span>
+                        <span class="caption-text">Page web du projet PhysX-Omni présentant la génération 3D physique unifiée et prête pour la simulation, avec des boutons de code, de dataset et de vidéo ainsi qu&#x27;une grille de prévisualisations vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_038_00-06-16.jpg" alt="Documentation d&#x27;installation du projet sur GitHub montrant les commandes de clonage du dépôt et les instructions de configuration de l&#x27;environnement Conda." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_038_00-06-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:16</span>
+                        <span class="caption-text">Documentation d&#x27;installation du projet sur GitHub montrant les commandes de clonage du dépôt et les instructions de configuration de l&#x27;environnement Conda.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-kB1HjgYIoMw/frame_039_00-06-23.jpg" alt="Démonstration de simulation physique 3D montrant un objet articulé interagissant dans un environnement quadrillé." loading="lazy" onclick="openLightbox('screenshots/YT-kB1HjgYIoMw/frame_039_00-06-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:23</span>
+                        <span class="caption-text">Démonstration de simulation physique 3D montrant un objet articulé interagissant dans un environnement quadrillé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

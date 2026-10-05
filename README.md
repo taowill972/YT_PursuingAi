@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `29 / 83` (`34.9%`)
+- **Vidéos traitées** : `30 / 83` (`36.1%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -45,6 +45,7 @@
 | 2026-07-12 | [Je ne m'attendais pas à ce que Grok 4.5 fasse ça](2026-07-12_YT-MTVxdh7q9xg_Je ne m'attendais pas à ce que Grok 4.5 fasse ça_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-07-12_YT-MTVxdh7q9xg_Je ne m'attendais pas à ce que Grok 4.5 fasse ça_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 04s | `32 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=MTVxdh7q9xg) | `MTVxdh7q9xg` |
 | 2026-07-08 | [Claude Fable 5 vs GPT-5.6 : qui gagne vraiment ?](2026-07-08_YT-Zk9o9CQy8NA_Claude Fable 5 vs GPT-5.6 qui gagne vraiment_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-07-08_YT-Zk9o9CQy8NA_Claude Fable 5 vs GPT-5.6 qui gagne vraiment_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 12s | `32 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=Zk9o9CQy8NA) | `Zk9o9CQy8NA` |
 | 2026-06-24 | [La toute première IA vraiment réaliste ?](2026-06-24_YT-Q0XpvTcubPU_La toute première IA vraiment réaliste_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-06-24_YT-Q0XpvTcubPU_La toute première IA vraiment réaliste_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 8m 46s | `38 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=Q0XpvTcubPU) | `Q0XpvTcubPU` |
+| 2026-06-07 | [NVIDIA vient de sortir une IA totalement folle](2026-06-07_YT-kB1HjgYIoMw_NVIDIA vient de sortir une IA totalement folle_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-06-07_YT-kB1HjgYIoMw_NVIDIA vient de sortir une IA totalement folle_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 6m 31s | `39 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=kB1HjgYIoMw) | `kB1HjgYIoMw` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
