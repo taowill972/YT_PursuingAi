@@ -21,7 +21,8 @@
     "yzNl4SLoSDI",
     "aAnaH3o6mF4",
     "hyDviOrokpc",
-    "4lFiMR0DilQ"
+    "4lFiMR0DilQ",
+    "hY7daRwGnaw"
   ],
   "processed_videos": [
     {
@@ -327,9 +328,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-07-31_YT-4lFiMR0DilQ_Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-05T10:28:15Z",
       "status": "completed"
+    },
+    {
+      "video_id": "hY7daRwGnaw",
+      "title": "Un seul prompt a créé cette scène cinématique par IA ! Akool Clash",
+      "raw_title": "One Prompt Created This Cinematic AI Scene! Akool Clash",
+      "filename_md": "2026-07-27_YT-hY7daRwGnaw_Un seul prompt a créé cette scène cinématique par IA ! Akool Clash_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-07-27_YT-hY7daRwGnaw_Un seul prompt a créé cette scène cinématique par IA ! Akool Clash_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-07-27",
+      "duration": 283,
+      "screenshots_count": 28,
+      "filepath_md": "/root/YT_PursuingAi/2026-07-27_YT-hY7daRwGnaw_Un seul prompt a créé cette scène cinématique par IA ! Akool Clash_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-07-27_YT-hY7daRwGnaw_Un seul prompt a créé cette scène cinématique par IA ! Akool Clash_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T10:34:58Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 22,
+  "completed_count": 23,
   "last_run_timestamp": "2026-10-05T10:00:03Z",
   "status": "running",
   "total_catalog_count": 83

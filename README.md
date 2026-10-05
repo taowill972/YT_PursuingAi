@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `22 / 83` (`26.5%`)
+- **Vidéos traitées** : `23 / 83` (`27.7%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -38,6 +38,7 @@
 | 2026-08-03 | [Qwen 3.8 Max met GPT en difficulté](2026-08-03_YT-aAnaH3o6mF4_Qwen 3.8 Max met GPT en difficulté_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-03_YT-aAnaH3o6mF4_Qwen 3.8 Max met GPT en difficulté_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 51s | `27 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=aAnaH3o6mF4) | `aAnaH3o6mF4` |
 | 2026-08-01 | [DeepSeek V4 Flash est TELLEMENT plus puissant qu'on le pensait ! 🤯](2026-08-01_YT-hyDviOrokpc_DeepSeek V4 Flash est TELLEMENT plus puissant qu'on le pensait ! 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-01_YT-hyDviOrokpc_DeepSeek V4 Flash est TELLEMENT plus puissant qu'on le pensait ! 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 5m 01s | `38 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=hyDviOrokpc) | `hyDviOrokpc` |
 | 2026-07-31 | [Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux ?](2026-07-31_YT-4lFiMR0DilQ_Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-07-31_YT-4lFiMR0DilQ_Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 7m 54s | `53 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=4lFiMR0DilQ) | `4lFiMR0DilQ` |
+| 2026-07-27 | [Un seul prompt a créé cette scène cinématique par IA ! Akool Clash](2026-07-27_YT-hY7daRwGnaw_Un seul prompt a créé cette scène cinématique par IA ! Akool Clash_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-07-27_YT-hY7daRwGnaw_Un seul prompt a créé cette scène cinématique par IA ! Akool Clash_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 43s | `28 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=hY7daRwGnaw) | `hY7daRwGnaw` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

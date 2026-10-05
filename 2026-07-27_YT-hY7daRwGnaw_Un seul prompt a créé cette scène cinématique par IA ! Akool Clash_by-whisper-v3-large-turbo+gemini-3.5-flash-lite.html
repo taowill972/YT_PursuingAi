@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Un seul prompt a créé cette scène cinématique par IA ! Akool Clash — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Un seul prompt a créé cette scène cinématique par IA ! Akool Clash</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-07-27</span>
+                <span class="badge">⏱️ 04m 43s</span>
+                <span class="badge">🆔 <code>hY7daRwGnaw</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=hY7daRwGnaw" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de Pursuing AI, intitulée « Un seul prompt a créé cette scène cinématique par IA ! Akool Clash », explore la création de plans cinématographiques ultra-réalistes grâce à l'écosystème de pointe d'Akool Studio et au modèle de génération vidéo Seedance 2 (phonétiquement retranscrit *C-Dance 2*). Le créateur y démontre comment transformer une simple idée textuelle en un plan complexe au ralenti, intégrant des mouvements de caméra fluides et des effets spectaculaires dignes d'Hollywood, le tout en quelques clics. Cette approche démocratise la réalisation haut de gamme en s'affranchissant des contraintes techniques et budgétaires traditionnelles, offrant aux vidéastes un contrôle inédit sur le rendu visuel.</p><p>Au-delà de la prouesse technique, la vidéo se positionne comme un guide pratique pour capitaliser sur l'industrie naissante du cinéma par IA. En détaillant l'utilisation d'assistants de prompt intelligents capables d'enrichir une description minimaliste, le tutoriel met en lumière l'importance cruciale de l'ingénierie du prompt dans le workflow moderne. Les créateurs apprennent à paramétrer finement leurs générations — de la gestion de l'audio intégré à la résolution 4K et aux ratios d'image adaptés aux différentes plateformes sociales — pour maximiser l'impact visuel et narratif de leurs productions.</p><p>Enfin, l'intervention intègre une dimension stratégique majeure en présentant le concours vidéo d'Akool, doté de 300 000 dollars de prix. Cette initiative illustre la monétisation croissante et la reconnaissance institutionnelle accordée aux artistes génératifs. L'analyse des critères de notation du concours (créativité, exécution technique, narration et intégration de la plateforme) offre une feuille de route précieuse pour tout créateur souhaitant professionnaliser sa démarche, valider son savoir-faire et s'imposer sur le marché ultra-compétitif de la vidéo synthétique.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Simplification du processus créatif** : Il est possible de concevoir des scènes cinématiques complexes en partant d&#x27;une simple idée textuelle brute grâce aux assistants de prompts intégrés.</span></li><li><span class="point-bullet">✦</span><span>Effet &quot;Bullet Time&quot; et mouvements fluides** : Le modèle Seedance 2 excelle dans la restitution de mouvements de caméra sophistiqués et de ralentis spectaculaires sans perte de cohérence visuelle.</span></li><li><span class="point-bullet">✦</span><span>Optimisation par l&#x27;IA générative** : L&#x27;utilisation d&#x27;un outil de prompt intelligent permet d&#x27;enrichir instantanément un concept minimaliste (ex: un papillon et un perroquet) en instructions artistiques professionnelles.</span></li><li><span class="point-bullet">✦</span><span>Flexibilité des formats de sortie** : La plateforme prend en charge des ratios d&#x27;image adaptés à tous les canaux de diffusion (formats paysage pour YouTube, verticaux pour les Shorts et réseaux sociaux).</span></li><li><span class="point-bullet">✦</span><span>Maîtrise de la durée et de la résolution** : Les créateurs peuvent générer des clips d&#x27;une durée allant de 5 à 15 secondes avec une résolution atteignant la qualité 4K pour un rendu professionnel.</span></li><li><span class="point-bullet">✦</span><span>Gestion audio et génération multiple** : Le studio permet d&#x27;activer ou de désactiver des pistes audio et de produire plusieurs variations de vidéos en simultané pour optimiser les choix de montage.</span></li><li><span class="point-bullet">✦</span><span>Structure d&#x27;un concours à fort enjeu** : Le concours Akool offre 300 000 $ de prix globaux, démontrant la viabilité économique et la reconnaissance croissante des créateurs de contenu par IA.</span></li><li><span class="point-bullet">✦</span><span>Critères de notation pondérés** : La créativité pèse 40 %, l&#x27;exécution technique 30 %, la narration 20 %, et l&#x27;utilisation spécifique de l&#x27;outil Akool/Seedance 10 %, guidant les efforts d&#x27;optimisation des artistes.</span></li><li><span class="point-bullet">✦</span><span>Incitations financières incitatives** : La présence d&#x27;un &quot;bonus créateur&quot; garantissant 100 $ pour chaque soumission qualifiée abaisse la barrière à l&#x27;entrée et encourage la participation active.</span></li><li><span class="point-bullet">✦</span><span>Workflow de soumission simplifié** : Le processus exige uniquement un compte sur la plateforme, l&#x27;hébergement de la vidéo sur un réseau social compatible et le remplissage d&#x27;un formulaire avec l&#x27;URL publique.</span></li><li><span class="point-bullet">✦</span><span>Importance de la narration (Storytelling)** : Malgré la puissance technologique de l&#x27;IA, 20 % de la note d&#x27;un concours professionnel reposent sur la capacité de la vidéo à susciter l&#x27;émotion et l&#x27;engagement.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:15 - 00:00:36</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez créer des vidéos cinématiques par IA exactement comme celle-ci. Aujourd&#x27;hui, je vais vous montrer exactement comment j&#x27;ai fait cette scène en utilisant C-Dance 2 à l&#x27;intérieur d&#x27;un super studio. De l&#x27;écriture du prompt à la génération de mouvements de caméra cinématographiques fluides, je vais vous guider tout au long du processus, étape par étape. Et si vous prévoyez de créer vos propres films par IA, il y a une nouvelle encore meilleure.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Akool (plateforme Web d&#x27;IA avec outils vidéo, image, audio, etc.)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Bannière « Win Your Share of $300,000 in Creator Rewards », sections de modules (Upgrade to Pro &amp; Save 34%, Pixverse, Seedance 2.0, Recent results).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de l&#x27;interface principale du tableau de bord de la plateforme Akool.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_001_00-00-34.jpg" alt="Interface de la plateforme Akool montrant divers outils de création vidéo par IA, notamment Seedance 2.0." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_001_00-00-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:34</span>
+                        <span class="caption-text">Interface de la plateforme Akool montrant divers outils de création vidéo par IA, notamment Seedance 2.0.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:37 - 00:00:58</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Akul héberge actuellement un concours de vidéos IA de 300 000 $ où les créateurs ont la chance de présenter leur travail et de gagner des prix. Je vais également vous montrer comment participer avant la fin de cette vidéo. C&#x27;est Pursuing AI et vous regardez Research Report. Commençons. Pour commencer, cliquez sur le lien dans la description. Il vous mènera directement à un studio sympa.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web et plateforme en ligne Akul (avec menus Home, Agentic Canvas, Effects, Community, Result Library, API, Video, Image, Audio, Live, Avatar, Voice).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;Win Your Share of $300,000 in Creator Rewards*&quot;, &quot;Push Seedance 2 to the limit&quot;, &quot;Submit by September 15&quot;, et un compteur temporel (54 jours 03 heures 19 minutes).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page web du concours Akul puis affichage de l&#x27;interface du tableau de bord de la plateforme de création.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_002_00-00-39.jpg" alt="Page d&#x27;accueil du site Akul présentant le concours de vidéos avec un compte à rebours de 54 jours et l&#x27;arrière-plan d&#x27;un flacon de parfum." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_002_00-00-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:39</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Akul présentant le concours de vidéos avec un compte à rebours de 54 jours et l&#x27;arrière-plan d&#x27;un flacon de parfum.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_003_00-00-47.jpg" alt="Page d&#x27;accueil du site Akul affichant le concours avec en arrière-plan une vidéo de sac à dos dans un paysage enneigé." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_003_00-00-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:47</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Akul affichant le concours avec en arrière-plan une vidéo de sac à dos dans un paysage enneigé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_004_00-00-56.jpg" alt="Tableau de bord de la plateforme Akul avec le menu latéral, la bannière du concours de 300 000 $ et les vignettes des outils Seedance 2.0." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_004_00-00-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:56</span>
+                        <span class="caption-text">Tableau de bord de la plateforme Akul avec le menu latéral, la bannière du concours de 300 000 $ et les vignettes des outils Seedance 2.0.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:58 - 00:01:33</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Connectez-vous simplement à votre compte. Une fois à l&#x27;intérieur, vous trouverez une variété d&#x27;outils d&#x27;IA pour créer des vidéos, des images et même de l&#x27;audio. Pour ce tutoriel, nous nous concentrons sur la génération de vidéos. Cliquez sur vidéo, puis choisissez soit texte vers vidéo, soit image vers vidéo selon le type de vidéo que vous souhaitez créer. Ensuite, sélectionnez C-Dance 2 comme modèle vidéo. Ici, vous pouvez personnaliser vos paramètres de génération. Vous pouvez activer ou désactiver l&#x27;audio, choisir combien de vidéos vous voulez générer en même temps, et définir la durée de la vidéo. Akul prend en charge des longueurs de vidéo de 5 secondes jusqu&#x27;à 15 secondes. Si vous avez besoin de plus</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme Akul (générateur de médias par intelligence artificielle).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus Home, Agentic Canvas, Effects, Community, Result Library, API, AI Tools (Video, Image, Audio, Live), section Video Generator avec les options Image to Video, Text to Video, Video to Video, Talking Photo, sélection du modèle Seedance 2.0, réglages audio (Audio: On), nombre de vidéos, durée (15s), résolution (720p), format (16:9).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de la plateforme Akul, sélection de l&#x27;outil vidéo, affichage du modèle Seedance et des paramètres de génération.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_005_00-01-00.jpg" alt="Page d&#x27;accueil de la plateforme Akul avec le menu latéral des outils d&#x27;IA et les bannières promotionnelles." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_005_00-01-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:00</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Akul avec le menu latéral des outils d&#x27;IA et les bannières promotionnelles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_006_00-01-10.jpg" alt="Interface de chargement de l&#x27;outil Text to Video sur la plateforme Akul en cours de chargement." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_006_00-01-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Interface de chargement de l&#x27;outil Text to Video sur la plateforme Akul en cours de chargement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_007_00-01-22.jpg" alt="Interface complète du générateur de vidéo sur Akul montrant le modèle Seedance 2.0, les options de prompt et les paramètres de durée et de résolution." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_007_00-01-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:22</span>
+                        <span class="caption-text">Interface complète du générateur de vidéo sur Akul montrant le modèle Seedance 2.0, les options de prompt et les paramètres de durée et de résolution.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:33 - 00:01:56</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">qualité, vous pouvez également générer vos vidéos en 4k et sélectionner le format d&#x27;image qui correspond le mieux à votre projet, que ce soit pour YouTube, les shorts, ou les réseaux sociaux. L&#x27;une de mes fonctionnalités préférées dans un studio cool est l&#x27;outil de prompt IA. Il aide à transformer une idée simple en un prompt professionnel détaillé. Par exemple, j&#x27;ai seulement écrit un papillon volant à travers une forêt jusqu&#x27;à ce qu&#x27;un perroquet l&#x27;attrape.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de génération de vidéos par IA (« Video Generator ») comprenant des options de rapport hauteur/largeur (16:9), le choix des modèles (Seedance 2.0), et un outil de prompt IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt visible : « A vibrant monarch butterfly with iridescent orange and black wings flutters through a sun-dappled ancient forest... », options de résolution (720p), durée (15s), et paramètres de génération (Audio: On, 1 Video).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de génération vidéo, visualisation des résultats précédents et de la zone de saisie du prompt textuel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_008_00-01-35.jpg" alt="Interface de l&#x27;outil de génération vidéo affichant les paramètres de format, la sélection du modèle Seedance 2.0 et l&#x27;historique des vidéos générées." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_008_00-01-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:35</span>
+                        <span class="caption-text">Interface de l&#x27;outil de génération vidéo affichant les paramètres de format, la sélection du modèle Seedance 2.0 et l&#x27;historique des vidéos générées.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_009_00-01-41.jpg" alt="Interface de l&#x27;outil de génération vidéo montrant le champ de saisie de prompt textuel avec le bouton AI Prompt et les options de configuration de la vidéo (audio, durée, résolution)." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_009_00-01-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:41</span>
+                        <span class="caption-text">Interface de l&#x27;outil de génération vidéo montrant le champ de saisie de prompt textuel avec le bouton AI Prompt et les options de configuration de la vidéo (audio, durée, résolution).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:56 - 00:02:19</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, tout se transforme en plan au ralenti cinématographique type &quot;bullet time&quot;. Ce n&#x27;est que quelques lignes. Cliquez maintenant sur le prompt IA et, en quelques secondes, il génère plusieurs prompts de qualité professionnelle. Choisissez celui que vous préférez ou apportez de petites modifications si nécessaire. Une fois votre prompt prêt, définissez le reste des paramètres de votre vidéo, tels que la durée, la résolution, le format d&#x27;image et toute autre option adaptée à votre projet.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de génération de vidéo (Seedance / Video Generator) avec panneau de configuration à gauche et bibliothèque de vidéos générées à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt saisi : &quot;A butterfly flying through a forest until a parrot catches it, then everything turns into a cinematic bullet-time slow-motion shot&quot;. Sur l&#x27;image 2, la modale &quot;Refine Prompt&quot; propose plusieurs variantes descriptives détaillées. Paramètres visibles : Seedance 2.0, 720P, 16:9, durée 15s.</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;utilisateur saisit ou visualise le prompt dans l&#x27;interface, puis la modale de raffinement par IA s&#x27;ouvre pour proposer des prompts professionnels améliorés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_010_00-01-58.jpg" alt="Interface du générateur vidéo Seedance affichant le champ de saisie du prompt et les options de modèles." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_010_00-01-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:58</span>
+                        <span class="caption-text">Interface du générateur vidéo Seedance affichant le champ de saisie du prompt et les options de modèles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_011_00-02-04.jpg" alt="Fenêtre contextuelle &quot;Refine Prompt&quot; affichant plusieurs propositions de prompts générés par l&#x27;IA." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_011_00-02-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:04</span>
+                        <span class="caption-text">Fenêtre contextuelle &quot;Refine Prompt&quot; affichant plusieurs propositions de prompts générés par l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:20 - 00:02:42</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, cliquez sur Générer. Après quelques minutes, votre vidéo sera prête. Voici le résultat. Jetons un coup d&#x27;œil. Vient maintenant la partie passionnante : comment vous pouvez participer au concours vidéo IA de 300 000 $ d&#x27;Akul.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de génération de vidéo (semblable à Seedance 2.0 / Video Generator) avec options de Text to Video, Image to Video, Video to Video et Talking Photo.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt visible : &quot;Photorealistic cinematic, one single continuous unbroken shot... Bright daylight in a lush tropical rainforest... vibrant blue-and-orange butterfly...&quot;. Paramètres : Modèle Seedance 2.0, résolution 720p, format 16:9, durée 15s. Mention d&#x27;une notification verte &quot;Generation in progress&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;interface de génération de vidéo en cours de traitement, puis présente les résultats finaux de la vidéo générée sous différents angles et plans (mouvement dans la jungle et gros plan sur le perroquet).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_012_00-02-22.jpg" alt="Interface du générateur de vidéo montrant le processus de génération en cours avec les options de modèle Seedance 2.0." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_012_00-02-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:22</span>
+                        <span class="caption-text">Interface du générateur de vidéo montrant le processus de génération en cours avec les options de modèle Seedance 2.0.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_013_00-02-27.jpg" alt="Résultat vidéo généré montrant un mouvement rapide à travers une forêt tropicale avec des papillons bleus." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_013_00-02-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:27</span>
+                        <span class="caption-text">Résultat vidéo généré montrant un mouvement rapide à travers une forêt tropicale avec des papillons bleus.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_014_00-02-35.jpg" alt="Gros plan sur le résultat de la vidéo générée montrant un perroquet vert tenant un papillon bleu." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_014_00-02-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:35</span>
+                        <span class="caption-text">Gros plan sur le résultat de la vidéo générée montrant un perroquet vert tenant un papillon bleu.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_015_00-02-40.jpg" alt="Affichage de l&#x27;interface principale avec la vidéo générée finale mettant en scène un papillon dans un décor de jungle luxuriante." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_015_00-02-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:40</span>
+                        <span class="caption-text">Affichage de l&#x27;interface principale avec la vidéo générée finale mettant en scène un papillon dans un décor de jungle luxuriante.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:42 - 00:03:06</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Retournez sur la page d&#x27;accueil d&#x27;Akul Studio, et tout en haut de la page d&#x27;accueil, vous verrez la bannière du concours. Cliquez dessus. Vous trouverez ici tous les détails du concours. Le grand prix est de 300 000 dollars plus un abonnement Enterprise d&#x27;un an. Il y a aussi le prix de la création la plus originale, qui offre 15 000 dollars et un abonnement Pro d&#x27;un an, et le prix de la meilleure publicité, également d&#x27;une valeur de 15 000 dollars avec un abonnement Pro d&#x27;un an.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site officiel de la plateforme Akool (Akool Studio).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de la bannière : &quot;Win Your Share of $300,000 in Creator Rewards&quot;. Catégories de prix visibles : Grand Prize ($30,000, 1 Year Enterprise), Most Creative ($15,000, 1 Year Pro), Best Ad ($15,000, 1 Year Pro), AKOOL Picks ($1,000, Pro Access), Creator Bonus ($100).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site web d&#x27;Akool, passage de la page d&#x27;accueil à la page détaillée des prix et du concours.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_016_00-02-44.jpg" alt="Page d&#x27;accueil d&#x27;Akool Studio affichant la bannière du concours en haut." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_016_00-02-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:44</span>
+                        <span class="caption-text">Page d&#x27;accueil d&#x27;Akool Studio affichant la bannière du concours en haut.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_017_00-02-51.jpg" alt="Page de détails du concours Akool présentant les différentes catégories de prix." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_017_00-02-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:51</span>
+                        <span class="caption-text">Page de détails du concours Akool présentant les différentes catégories de prix.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_018_00-02-59.jpg" alt="Page de détails du concours défilant vers le bas pour montrer les critères de notation." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_018_00-02-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:59</span>
+                        <span class="caption-text">Page de détails du concours défilant vers le bas pour montrer les critères de notation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:07 - 00:03:31</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Akul sélectionnera également 10 gagnants du choix des éditeurs, chacun recevant 1 000 $ et un accès Pro. Et voici le meilleur. Grâce au bonus créateur, chaque soumission qualifiée reçoit 100 $. Le jugement est basé sur quatre catégories. 40 % pour la créativité. Les gens peuvent-ils immédiatement dire que cette idée est unique ? 30 % pour l&#x27;exécution. Qualité de production, rythme, montage et savoir-faire global.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site officiel de la plateforme Akool pour le concours vidéo.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes détaillant les prix (Grand Prize $30,000, Most Creative $15,000, Best Ad $15,000, AKOOL Picks $1000, Creator Bonus $100) et les critères d&#x27;évaluation en pourcentage (40% Creativity, 30% Execution, 20% Storytelling, 10% Use of AKOOL).</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole différentes sections de la page web pour illustrer les récompenses et les critères de notation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_019_00-03-09.jpg" alt="Page web d&#x27;Akool montrant les prix du concours et le bonus de 100 $ pour chaque soumission." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_019_00-03-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:09</span>
+                        <span class="caption-text">Page web d&#x27;Akool montrant les prix du concours et le bonus de 100 $ pour chaque soumission.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_020_00-03-23.jpg" alt="Page web d&#x27;Akool détaillant les quatre critères de notation : 40% créativité, 30% exécution, 20% narration et 10% utilisation d&#x27;Akool." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_020_00-03-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:23</span>
+                        <span class="caption-text">Page web d&#x27;Akool détaillant les quatre critères de notation : 40% créativité, 30% exécution, 20% narration et 10% utilisation d&#x27;Akool.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:31 - 00:03:50</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">20% de narration. Est-ce que la vidéo a suscité de l&#x27;émotion, de l&#x27;intérêt ou de l&#x27;engagement ? Et 10% d&#x27;utilisation d&#x27;un cool. Utilisation intelligente et remarquable de C Dance 2 sur un cool. Pour participer, cliquez sur Participer pour gagner. Remplissez votre prénom, nom, e-mail personnel et la même adresse e-mail que celle utilisée pour vous connecter à un cool.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de la plateforme Akool (page du concours de création vidéo avec critères de notation et formulaire de soumission).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Your work will be judged on: 40% Creativity, 30% Execution, 20% Storytelling (Did the video create emotion, interest, or engagement?), 10% Use of AKOOL&quot;. Formulaire avec champs : First name*, Last name*, Personal email*, Akool Email*, Submission URL*. Bouton &quot;Enter to win&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole le critère &quot;20% Storytelling&quot; sur la première image, puis passe au remplissage du formulaire de participation sur la seconde image.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_021_00-03-33.jpg" alt="Interface du site web Akool montrant les critères de notation du concours (créativité, exécution, narration, utilisation d&#x27;Akool) avec le détail des pourcentages." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_021_00-03-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:33</span>
+                        <span class="caption-text">Interface du site web Akool montrant les critères de notation du concours (créativité, exécution, narration, utilisation d&#x27;Akool) avec le détail des pourcentages.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_022_00-03-48.jpg" alt="Formulaire de participation en ligne du site Akool demandant le prénom, le nom, l&#x27;e-mail personnel et l&#x27;e-mail du compte Akool." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_022_00-03-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:48</span>
+                        <span class="caption-text">Formulaire de participation en ligne du site Akool demandant le prénom, le nom, l&#x27;e-mail personnel et l&#x27;e-mail du compte Akool.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:50 - 00:04:19</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Enfin, collez l&#x27;URL de votre vidéo publiée. Vous pouvez télécharger votre vidéo sur YouTube, Instagram, X ou une autre plateforme prise en charge. Dans mon cas, j&#x27;ai publié la mienne sur Instagram, copié le lien, l&#x27;ai collé dans le formulaire de soumission et j&#x27;ai cliqué sur Entrée pour gagner. C&#x27;est tout. Votre participation est soumise et vous participez officiellement au concours. Et c&#x27;est ainsi que vous pouvez créer des vidéos cinématiques par IA en utilisant C Dance 2 dans Akul Studio, et même participer au concours de vidéos IA de 300 000 $ pour avoir une chance de gagner de superbes prix.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de la plateforme Akool (Akool Studio).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire de soumission avec les champs &quot;First name&quot; (avec &quot;PURSUING&quot;), &quot;Last name&quot; (avec &quot;AI&quot;), &quot;Personal email&quot;, &quot;Akool Email&quot;, &quot;Submission URL&quot;, case à cocher pour l&#x27;utilisation marketing, et bouton &quot;Enter to win&quot;. Sur les autres images, page d&#x27;accueil d&#x27;Akool avec les menus de navigation et le slogan &quot;Turn Ideas into Reality with Gen AI Tools for Video Production&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du formulaire de participation au concours et de la plateforme Akool.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_023_00-03-52.jpg" alt="Formulaire de soumission en ligne sur le site d&#x27;Akool avec les champs de coordonnées et le lien de la vidéo." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_023_00-03-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:52</span>
+                        <span class="caption-text">Formulaire de soumission en ligne sur le site d&#x27;Akool avec les champs de coordonnées et le lien de la vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_024_00-04-10.jpg" alt="Page d&#x27;accueil du site Akool montrant le slogan &quot;Turn Ideas into Reality with Gen AI Tools&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_024_00-04-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:10</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Akool montrant le slogan &quot;Turn Ideas into Reality with Gen AI Tools&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_025_00-04-17.jpg" alt="Page d&#x27;accueil du site Akool avec une autre bannière mettant en avant la production de vidéos par IA." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_025_00-04-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:17</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Akool avec une autre bannière mettant en avant la production de vidéos par IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:19 - 00:04:37</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous avez trouvé ce tutoriel utile, vous trouverez le lien Akul et le lien du concours dans la description ci-dessous. Essayez-le et faites-moi savoir ce que vous créez. J&#x27;aimerais beaucoup voir vos résultats. Si vous avez apprécié cette vidéo, n&#x27;oubliez pas d&#x27;aimer, de vous abonner et d&#x27;activer les notifications, car je partage régulièrement des outils d&#x27;IA, des tutoriels et des recherches pour vous aider à garder une longueur d&#x27;avance.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de la plateforme Akool (outil d&#x27;IA pour la création vidéo, avatars, traduction et face swap).</p>
+                        <p><strong>Contenu textuel & Code :</strong> En-tête avec le logo AKOOL et les menus (Products, Effects, Resources, Company, Enterprise, Develop, Pricing, Contact Sales, My Dashboard). Slogan central : « Turn Ideas into Reality with Gen AI Tools for Translation / Education ». Sous-titre : « AI Video Creation Made Easy - Avatars, Translation, and Face Swap in One Platform ». Boutons « API Doc » et « Start from Dashboard ».</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et affichage de la page d&#x27;accueil du site web Akool présentant les différentes fonctionnalités et cas d&#x27;usage de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_026_00-04-21.jpg" alt="Page d&#x27;accueil du site Akool montrant un personnage féminin avec des ailes d&#x27;ange et le slogan sur la traduction par IA." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_026_00-04-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:21</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Akool montrant un personnage féminin avec des ailes d&#x27;ange et le slogan sur la traduction par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_027_00-04-28.jpg" alt="Page d&#x27;accueil du site Akool avec un couple regardant par la fenêtre et le slogan sur l&#x27;éducation par IA." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_027_00-04-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:28</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Akool avec un couple regardant par la fenêtre et le slogan sur l&#x27;éducation par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-hY7daRwGnaw/frame_028_00-04-35.jpg" alt="Page d&#x27;accueil du site Akool présentant une femme parlant devant un micro avec le slogan sur les outils d&#x27;IA pour la traduction." loading="lazy" onclick="openLightbox('screenshots/YT-hY7daRwGnaw/frame_028_00-04-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:35</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Akool présentant une femme parlant devant un micro avec le slogan sur les outils d&#x27;IA pour la traduction.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:37 - 00:04:43</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est Pursuing AI, et vous avez regardé Research Report. Merci d&#x27;avoir regardé, et je vous dis à la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra / écran de fin sans partage d&#x27;écran (animation du logo de la chaîne avec un cerveau et une puce électronique portant l&#x27;inscription PAI entourés d&#x27;un cercle néon bleu).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Animation graphique affichant le logo &quot;PAI&quot; sur un fond noir avec un anneau lumineux bleu.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de l&#x27;écran de fin de la vidéo avec le logo de la chaîne Pursuing AI.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
