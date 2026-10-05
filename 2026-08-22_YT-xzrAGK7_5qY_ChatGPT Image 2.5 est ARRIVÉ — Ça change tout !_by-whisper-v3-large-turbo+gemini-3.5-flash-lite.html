@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 ChatGPT Image 2.5 est ARRIVÉ — Ça change tout ! — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 ChatGPT Image 2.5 est ARRIVÉ — Ça change tout !</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-08-22</span>
+                <span class="badge">⏱️ 07m 08s</span>
+                <span class="badge">🆔 <code>xzrAGK7_5qY</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=xzrAGK7_5qY" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* offre une plongée fascinante et prospective au cœur des dernières avancées mondiales en matière de robotique humanoïde et d'intelligence artificielle générative. Le sujet central explore la transition rapide des prototypes de laboratoire vers des applications commerciales et industrielles concrètes, telles que démontrées lors de la Conférence mondiale sur les robots (WRC) à Pékin. Les créateurs et analystes y découvrent comment l'IA physique franchit un cap décisif, alliant des modèles d'action mondiaux, une conscience environnementale en temps réel et des interactions émotionnelles de plus en plus troublantes de réalisme.</p><p>L'analyse détaille les méthodes et techniques novatrices déployées par des acteurs majeurs comme Galbot et UBtech. On y observe des robots capables d'apprendre par imitation directe, d'ajuster leur équilibre en temps réel grâce au retour tactile, ou encore d'interagir commercialement avec un public dans des environnements imprévisibles. Le workflow présenté met en lumière la symbiose croissante entre la vision par ordinateur, le contrôle à faible latence et l'apprentissage comportemental, tout en soulignant les défis techniques persistants, à l'instar des crashs spectaculaires lors des tests de vitesse.</p><p>Pour les créateurs de contenu vidéo et les veilleurs technologiques, ces informations fournissent des clés stratégiques indispensables pour anticiper les tendances du marché. En parallèle, la vidéo aborde les fuites concernant les modèles de pointe — qu'il s'agisse des mystérieux points de contrôle d'image de type GPT (Luna Lisa Alpha) ou des rumeurs de déploiement autour des architectures d'Anthropic (Claude/Fable). Ces éléments permettent de saisir la temporalité tactique et la guerre des communiqués que se livrent les géants de la tech, offrant un panorama idéal pour comprendre l'impact de l'IA sur la création visuelle et l'automatisation de demain.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>L&#x27;apprentissage par imitation directe** : Les modèles d&#x27;action mondiaux permettent aux robots d&#x27;observer un geste humain en direct, de le copier instantanément et d&#x27;exécuter le mouvement de manière fluide.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;autonomie décisionnelle contextuelle** : Les robots intègrent désormais des boucles de rétroaction qui analysent l&#x27;affluence en temps réel pour adapter leur comportement commercial (danser, attirer l&#x27;attention, orienter les clients).</span></li><li><span class="point-bullet">✦</span><span>Le réalisme expressif et émotionnel** : Les entreprises misent sur des micro-mouvements (clignements des yeux, orientation du regard, inclinaison de la tête) pour rendre l&#x27;interaction homme-robot plus naturelle et moins rigide.</span></li><li><span class="point-bullet">✦</span><span>La rentabilité comme juge de paix** : Au-delà de la prouesse technique, la viabilité de la robotique humanoïde se mesure désormais à sa capacité à s&#x27;intégrer dans la chaîne de valeur industrielle (ex. fabrication de VE) pour générer des profits.</span></li><li><span class="point-bullet">✦</span><span>La gestion de l&#x27;équilibre dynamique** : Le contrôle à faible latence et l&#x27;utilisation du retour tactile sont indispensables pour permettre à un robot de danser ou de se mouvoir en synchronisation parfaite avec un partenaire humain.</span></li><li><span class="point-bullet">✦</span><span>Le défi critique de la décélération** : Les tests de course démontrent que faire courir un humanoïde est une chose, mais maîtriser son arrêt d&#x27;urgence pour éviter les collisions destructrices reste un écueil technologique majeur.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;optimisation visuelle des modèles génératifs** : Les fuites de points de contrôle (comme Luna Lisa Alpha) montrent que la suppression des artefacts visuels (bruit, grain) constitue l&#x27;axe principal d&#x27;amélioration des IA de génération d&#x27;images.</span></li><li><span class="point-bullet">✦</span><span>La guerre tactique des sorties de modèles** : Les lancements d&#x27;IA ne répondent plus seulement à un calendrier technique, mais s&#x27;inscrivent dans des stratégies d&#x27;alignement concurrentiel (observer la concurrence avant de libérer une mise à jour).</span></li><li><span class="point-bullet">✦</span><span>Le déploiement en conditions réelles (Shadow Testing)** : Les indices de tests dits &quot;gris&quot; ou de bascules discrètes sur les interfaces web confirment que les entreprises testent leurs modèles à grande échelle sur de vrais utilisateurs avant une officialisation.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:32</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Votre waifu IA est arrivée. Et apparemment, votre partenaire de danse robotique est arrivé aussi. Les robots humanoïdes deviennent sérieusement bizarres et sérieusement impressionnants. C&#x27;est Pursuing AI, et vous regardez le Research Report. Entrons dans le vif du sujet. Galbot vient de présenter son tout premier robot humanoïde sur scène au WRC 2026, et c&#x27;est un pas en avant assez important pour l&#x27;entreprise. Jusqu&#x27;à présent, Galbot construisait principalement des robots sur roues. Maintenant, ils dotent leur robot de deux jambes. C&#x27;est le ET1. Et oui, visuellement, vous pourriez le regarder et penser,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Extrait vidéo promotionnel de l&#x27;entreprise Galbot (provenant de Bilibili) montrant ses technologies robotiques.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché à l&#x27;écran sur l&#x27;image 4 : Logo &quot;GALBOT&quot;, &quot;AstraBrain Agent 唤醒...&quot; et &quot;视觉识别：检测到人物靠近，执行召唤动作&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du robot humanoïde ET1 de Galbot qui exécute des mouvements de danse et de reconnaissance visuelle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_001_00-00-02.jpg" alt="Un robot humanoïde féminin réaliste tenant un bouquet de fleurs." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Un robot humanoïde féminin réaliste tenant un bouquet de fleurs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_002_00-00-11.jpg" alt="Une animation visuelle représentant un cerveau humain dans un cercle lumineux sur fond noir." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_002_00-00-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:11</span>
+                        <span class="caption-text">Une animation visuelle représentant un cerveau humain dans un cercle lumineux sur fond noir.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_003_00-00-22.jpg" alt="Le robot humanoïde ET1 de Galbot effectuant une danse sur scène dans un décor enfumé." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_003_00-00-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:22</span>
+                        <span class="caption-text">Le robot humanoïde ET1 de Galbot effectuant une danse sur scène dans un décor enfumé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_004_00-00-30.jpg" alt="Gros plan sur le robot humanoïde de Galbot avec des superpositions de texte en chinois et le logo GALBOT." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_004_00-00-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:30</span>
+                        <span class="caption-text">Gros plan sur le robot humanoïde de Galbot avec des superpositions de texte en chinois et le logo GALBOT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:33 - 00:00:58</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Attends, n&#x27;est-ce pas un Unitree R1 ? Mais le corps n&#x27;est pas vraiment la partie intéressante ici. C&#x27;est l&#x27;IA qui tourne à l&#x27;intérieur. Galbot a construit un modèle d&#x27;action mondial conçu pour contrôler différents types de robots, pas seulement des humanoïdes, mais aussi des robots à roues et même des machines à forte charge. Et on peut réellement voir le modèle apprendre. Un humain effectue un mouvement devant l&#x27;ET1, le robot regarde, le copie et commence à bouger tout seul.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration vidéo de robotique (Galbot / Bilibili) montrant des interactions entre un humain et un robot humanoïde.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte en chinois et en anglais à l&#x27;écran indiquant l&#x27;apprentissage par imitation des mouvements et l&#x27;exécution de stratégies de danse.</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot humanoïde observe les mouvements d&#x27;un être humain puis les reproduit et les exécute de manière autonome.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_005_00-00-35.jpg" alt="Un robot humanoïde et un humain face à face dans un studio, avec une incrustation montrant un modèle 3D du robot." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_005_00-00-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:35</span>
+                        <span class="caption-text">Un robot humanoïde et un humain face à face dans un studio, avec une incrustation montrant un modèle 3D du robot.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_006_00-00-41.jpg" alt="Le robot humanoïde observe un humain effectuant une danse ou un mouvement dynamique, avec un schéma de capture de mouvement en haut." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_006_00-00-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:41</span>
+                        <span class="caption-text">Le robot humanoïde observe un humain effectuant une danse ou un mouvement dynamique, avec un schéma de capture de mouvement en haut.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_007_00-00-50.jpg" alt="Le robot humanoïde exécute seul une chorégraphie de danse au milieu de fumée artificielle." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_007_00-00-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:50</span>
+                        <span class="caption-text">Le robot humanoïde exécute seul une chorégraphie de danse au milieu de fumée artificielle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_008_00-00-56.jpg" alt="Le robot humanoïde effectue une figure de danse complexe et aérienne avec un retour vidéo en incrustation." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_008_00-00-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:56</span>
+                        <span class="caption-text">Le robot humanoïde effectue une figure de danse complexe et aérienne avec un retour vidéo en incrustation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:58 - 00:01:17</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et honnêtement, le mouvement est assez impressionnant, surtout la façon dont il utilise ses hanches et ses cheville pour garder le mouvement fluide au lieu d&#x27;avoir l&#x27;air d&#x27;un robot rigide suivant des étapes préprogrammées. Mais ensuite, Galbat va encore plus loin. Ils mettent l&#x27;ET1 à l&#x27;extérieur et lui donnent un vrai travail. Le robot travaille à un stand de snacks.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration de robotique (source Bilibili / Galbot).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte en haut à gauche en chinois (ex: &quot;学习完成，进行语音动作回应&quot;, &quot;执行舞蹈策略&quot;) et sous-titres en bas (&quot;我来做你的卖货搭子吧&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot humanoïde démontre des capacités de danse avancées en intérieur, puis se retrouve en extérieur à travailler dans un stand de snacks.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_009_00-01-00.jpg" alt="Le robot humanoïde blanc ET1 effectue des mouvements de danse fluides dans un entrepôt, avec une incrustation vidéo montrant une personne effectuant la même danse en référence." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_009_00-01-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:00</span>
+                        <span class="caption-text">Le robot humanoïde blanc ET1 effectue des mouvements de danse fluides dans un entrepôt, avec une incrustation vidéo montrant une personne effectuant la même danse en référence.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_010_00-01-08.jpg" alt="Le robot humanoïde ET1 exécute un saut dynamique dans l&#x27;entrepôt, illustrant la souplesse de ses articulations." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_010_00-01-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:08</span>
+                        <span class="caption-text">Le robot humanoïde ET1 exécute un saut dynamique dans l&#x27;entrepôt, illustrant la souplesse de ses articulations.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_011_00-01-15.jpg" alt="Le robot humanoïde ET1 interagit en extérieur près d&#x27;un stand de snacks coloré tenu par une personne." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_011_00-01-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:15</span>
+                        <span class="caption-text">Le robot humanoïde ET1 interagit en extérieur près d&#x27;un stand de snacks coloré tenu par une personne.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:18 - 00:01:51</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Son système surveille l&#x27;environnement en temps réel, calculant combien de personnes sont autour, ce qui se passe et ce qu&#x27;il devrait faire ensuite. Le système se dit en gros : l&#x27;affluence est faible. ET1 décide donc d&#x27;attirer un peu l&#x27;attention. Il commence à danser, puis il interagit avec les gens, les oriente vers les collations saines, parle aux enfants et aux adultes, et continue jusqu&#x27;à ce qu&#x27;il atteigne son objectif de vente. Et une fois l&#x27;objectif atteint, ouais, une autre danse. Fondé en 2023 par le professeur He Wang de l&#x27;Université de Pékin, Galbot construit à la fois les robots et l&#x27;IA derrière eux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra sans partage d&#x27;écran</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun écran de logiciel, code ou interface utilisateur de démonstration n&#x27;est visible dans ce segment vidéo.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre une vidéo d&#x27;illustration en plein écran d&#x27;un robot humanoïde (Galbot ET1) interagissant avec des personnes et effectuant des actions dans un environnement extérieur.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:51 - 00:02:11</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et l&#x27;entreprise viserait désormais une introduction en bourse à Hong Kong pour une valorisation d&#x27;environ 4 milliards de dollars. Bon, votre waifu en IA vient de devenir réelle. Et honnêtement, ces robots ont l&#x27;air beaucoup trop réels. Regardez juste le visage, la peau, les yeux, les petits mouvements de tête, et même la façon dont ils clignent des yeux et déplacent leur attention.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interfaces de démonstration vidéo intégrant des incrustations graphiques de suivi (statistiques de capteurs en bas à gauche de l&#x27;image 1) et présentations de salon professionnel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1, du texte en chinois en haut à gauche (&quot;银河通用机器人&quot;, &quot;高动感具身执行中...&quot;) et des icônes de menu d&#x27;état (Danse, Tâches, Vente interactive). Sur les images 2 et 3, le logo &quot;UBTECH 9880.HK&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot humanoïde exécute un coup de pied dynamique sur l&#x27;image 1, tandis que les images 2 et 3 montrent un buste robotique féminin aux finitions extrêmement réalistes présenté en exposition.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_012_00-01-53.jpg" alt="Un robot humanoïde effectuant un mouvement de karaté ou d&#x27;arts martiaux en extérieur devant des spectateurs, avec une interface incrustée affichant des données de statut et des indicateurs de performance." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_012_00-01-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:53</span>
+                        <span class="caption-text">Un robot humanoïde effectuant un mouvement de karaté ou d&#x27;arts martiaux en extérieur devant des spectateurs, avec une interface incrustée affichant des données de statut et des indicateurs de performance.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_013_00-02-01.jpg" alt="Un buste de robot humanoïde hyperréaliste à l&#x27;apparence féminine, exposé sur un stand de salon avec le logo UBTECH 9880.HK en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_013_00-02-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:01</span>
+                        <span class="caption-text">Un buste de robot humanoïde hyperréaliste à l&#x27;apparence féminine, exposé sur un stand de salon avec le logo UBTECH 9880.HK en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_014_00-02-09.jpg" alt="Gros plan sur le visage et le buste ultra-réaliste d&#x27;un robot humanoïde féminin au salon UBTECH, montrant des traits faciaux très détaillés." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_014_00-02-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:09</span>
+                        <span class="caption-text">Gros plan sur le visage et le buste ultra-réaliste d&#x27;un robot humanoïde féminin au salon UBTECH, montrant des traits faciaux très détaillés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:12 - 00:02:32</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce sont ces petits détails qui vous font regarder à deux fois. UB Tech a présenté ces humanoïdes de soins émotionnels à la Conférence mondiale sur les robots à Pékin. Et ils n&#x27;essayent pas seulement de les rendre fonctionnels, ils essaient de les faire se sentir humains. Le robot peut suivre vos yeux, tourner sa tête vers vous, cligner des yeux, incliner sa tête et réagir à ce qui se passe autour de lui.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra / reportage vidéo sans partage d&#x27;écran logiciel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Séquence vidéo montrant des robots humanoïdes réalistes lors d&#x27;un salon technologique.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de robots humanoïdes de soins émotionnels développés par UB Tech.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:32 - 00:03:05</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et d&#x27;une certaine manière, ces minuscules mouvements font une énorme différence. Parce qu&#x27;un robot qui ramasse une boîte, c&#x27;est une chose, mais quand il vous regarde directement comme s&#x27;il écoutait vraiment, ouais, ça fait une différence. Uptek cible ces robots pour la compagnie et les soins, avec des modèles individuels coûtant environ 24 000 $. Ce n&#x27;est vraiment pas bon marché. Mais avec plus de 300 entreprises qui présentent maintenant de la robotique à la conférence, nous allons clairement au-delà des robots qui se contentent de travailler. Ces entreprises essaient de construire des robots qui peuvent réellement interagir avec nous. Et honnêtement, je ne sais pas si c&#x27;est vraiment</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo de démonstration des robots humanoïdes d&#x27;Uptek.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Visuels de robots humanoïdes de compagnie dotés de mouvements et de traits réalistes.</p>
+                        <p><strong>Action / Démonstration :</strong> Les robots humanoïdes bougent subtilement et affichent des expressions interactives face caméra.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_015_00-02-34.jpg" alt="Gros plan sur le visage détaillé d&#x27;un androïde humanoïde Uptek simulant des expressions faciales réalistes." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_015_00-02-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:34</span>
+                        <span class="caption-text">Gros plan sur le visage détaillé d&#x27;un androïde humanoïde Uptek simulant des expressions faciales réalistes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_016_00-02-43.jpg" alt="Vue de plain-pied d&#x27;un robot humanoïde humanoïde Uptek habillé avec des vêtements de type stylisé." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_016_00-02-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:43</span>
+                        <span class="caption-text">Vue de plain-pied d&#x27;un robot humanoïde humanoïde Uptek habillé avec des vêtements de type stylisé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_017_00-02-54.jpg" alt="Gros plan sur le visage d&#x27;un autre androïde humanoïde Uptek portant des lunettes de soleil." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_017_00-02-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:54</span>
+                        <span class="caption-text">Gros plan sur le visage d&#x27;un autre androïde humanoïde Uptek portant des lunettes de soleil.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_018_00-03-03.jpg" alt="Gros plan sur le bas du visage et les bijoux d&#x27;un androïde humanoïde Uptek montrant le niveau de détail esthétique." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_018_00-03-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:03</span>
+                        <span class="caption-text">Gros plan sur le bas du visage et les bijoux d&#x27;un androïde humanoïde Uptek montrant le niveau de détail esthétique.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:05 - 00:03:41</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">cool ou légèrement terrifiant. Mais chaque robot ne passe pas une excellente journée. Et puis les choses tournent sérieusement mal. Ce robot humanoïde s&#x27;entraîne pour les Jeux mondiaux des robots humanoïdes 2026 à Pékin, et il file à toute allure sur la piste. Mais en s&#x27;approchant de la fin, il y a un problème, il ne s&#x27;arrête pas. Le robot s&#x27;écrase directement dans la barrière de sécurité à pleine vitesse. L&#x27;impact fait pencher son corps vers l&#x27;avant, des étincelles commencent à jaillir, et en quelques secondes, le tout s&#x27;effondre simplement sur la piste. Ouais, ça ne faisait définitivement pas partie du plan d&#x27;entraînement. Et c&#x27;est un très bon rappel</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration sportive montrant un test de robot humanoïde en salle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun texte ou code affiché, visionnage d&#x27;une séquence vidéo d&#x27;un robot courant sur une piste d&#x27;athlétisme couverte.</p>
+                        <p><strong>Action / Démonstration :</strong> Un robot humanoïde court sur une piste, ne s&#x27;arrête pas à la fin et s&#x27;écrase violemment contre la barrière de sécurité.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_019_00-03-18.jpg" alt="Un robot humanoïde courant sur une piste d&#x27;athlétisme bleue dans un grand stade intérieur." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_019_00-03-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:18</span>
+                        <span class="caption-text">Un robot humanoïde courant sur une piste d&#x27;athlétisme bleue dans un grand stade intérieur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_020_00-03-30.jpg" alt="Le robot humanoïde en train de chuter et de glisser sur la piste bleue." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_020_00-03-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:30</span>
+                        <span class="caption-text">Le robot humanoïde en train de chuter et de glisser sur la piste bleue.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_021_00-03-39.jpg" alt="Le robot humanoïde encastré dans la barrière de sécurité bleue à l&#x27;extrémité de la piste." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_021_00-03-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:39</span>
+                        <span class="caption-text">Le robot humanoïde encastré dans la barrière de sécurité bleue à l&#x27;extrémité de la piste.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:41 - 00:04:18</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">que faire courir vite un robot humanoïde est un défi. Le faire s&#x27;arrêter quand il est censé le faire en est un autre. Maintenant, nous avons une autre fuite intéressante concernant l&#x27;IA. Un nouveau point de contrôle d&#x27;image GPT a apparemment commencé à apparaître dans Arena, et celui-ci porte le nom de Luna Lisa Alpha. Maintenant, le nom en lui-même ne nous dit pas grand-chose, mais les images le font. Comparé au point de contrôle Mona Lisa précédent, cette version a l&#x27;air nettement plus propre et plus réaliste. Et l&#x27;un des plus grands changements, ce bruit et ce grain bizarres que nous avons vus auparavant, semble avoir complètement disparu. La partie intéressante est que</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Capture d&#x27;écran textuelle d&#x27;informations sur les modèles d&#x27;IA et exemples d&#x27;images générées</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte sur l&#x27;image 2 : &quot;GPT-Image 2.5 Leaks: &#x27;Luna-Lisa-Alpha&#x27;&quot; listant les points clés des fuites et le logo &quot;GPT Image 2.5&quot;. Texte sur l&#x27;image 4 : &quot;Charlie Kirk is DEAD. Charlie Kirk, the conservative commentator and founder of Turning Point USA, has died.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle illustrant les propos du narrateur sur la course des robots humanoïdes, les fuites de checkpoints d&#x27;IA et les exemples d&#x27;images générées plus réalistes.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_022_00-03-43.jpg" alt="Vidéo d&#x27;un robot humanoïde courant rapidement sur une piste d&#x27;athlétisme en intérieur" loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_022_00-03-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:43</span>
+                        <span class="caption-text">Vidéo d&#x27;un robot humanoïde courant rapidement sur une piste d&#x27;athlétisme en intérieur</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_023_00-03-54.jpg" alt="Texte informatif détaillant les fuites sur le modèle GPT-Image 2.5 et le point de contrôle &#x27;Luna-Lisa-Alpha&#x27;" loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_023_00-03-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:54</span>
+                        <span class="caption-text">Texte informatif détaillant les fuites sur le modèle GPT-Image 2.5 et le point de contrôle &#x27;Luna-Lisa-Alpha&#x27;</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_024_00-04-06.jpg" alt="Image générée par IA montrant un faux selfie ultra-réaliste de Will Smith mangeant des spaghettis" loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_024_00-04-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:06</span>
+                        <span class="caption-text">Image générée par IA montrant un faux selfie ultra-réaliste de Will Smith mangeant des spaghettis</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_025_00-04-16.jpg" alt="Image générée par IA d&#x27;un faux article de presse annonçant la mort de Charlie Kirk avec du texte superposé" loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_025_00-04-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:16</span>
+                        <span class="caption-text">Image générée par IA d&#x27;un faux article de presse annonçant la mort de Charlie Kirk avec du texte superposé</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:18 - 00:04:51</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Personne ne sait vraiment encore ce qu&#x27;est ce modèle. Cela pourrait être GPT Image 2.5, ou même GPT Image 3. Le nom n&#x27;a pas été confirmé, alors pour l&#x27;instant nous regardons essentiellement un point de contrôle mystère qui semble être une mise à niveau assez importante. Et s&#x27;il s&#x27;agit vraiment de la prochaine génération d&#x27;image GPT, les choses vont devenir très intéressantes. UBtech montre pourquoi la course des robots humanoïdes devient beaucoup plus sérieuse. Lors de la Conférence mondiale sur les robots, l&#x27;entreprise a démontré son Walker S faisant quelque chose qui a l&#x27;air simple au début, mais qui est en réalité incroyablement difficile pour un robot.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo d&#x27;actualités technologiques combinant des captures d&#x27;écran textuelles et des séquences vidéo de robots lors d&#x27;un salon professionnel (World Robot Conference).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;GPT-Image 2.5 Leaks: &#x27;Luna-Lisa-Alpha&#x27;&quot; listant les points clés d&#x27;un nouveau checkpoint testé dans Arena, comparant les améliorations de réalisme par rapport à &quot;mona-lisa&quot;, et affichant le logo &quot;GPT Image 2.5&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;informations textuelles sur les modèles d&#x27;IA générative d&#x27;images, suivie d&#x27;une séquence vidéo démontrant les capacités dynamiques d&#x27;un robot humanoïde (Walker S) en interaction physique fluide avec un humain.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_026_00-04-20.jpg" alt="Capture d&#x27;écran montrant des informations textuelles sur les fuites de GPT-Image 2.5 (&quot;Luna-Lisa-Alpha&quot;) et un logo stylisé de GPT Image 2.5." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_026_00-04-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:20</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant des informations textuelles sur les fuites de GPT-Image 2.5 (&quot;Luna-Lisa-Alpha&quot;) et un logo stylisé de GPT Image 2.5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_027_00-04-41.jpg" alt="Démonstration du robot humanoïde Walker S d&#x27;UBtech en train de danser avec un partenaire humain lors de la Conférence mondiale sur les robots." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_027_00-04-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:41</span>
+                        <span class="caption-text">Démonstration du robot humanoïde Walker S d&#x27;UBtech en train de danser avec un partenaire humain lors de la Conférence mondiale sur les robots.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_028_00-04-49.jpg" alt="Vue sous un autre angle du robot humanoïde Walker S d&#x27;UBtech effectuant des mouvements de danse complexes avec un partenaire humain." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_028_00-04-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:49</span>
+                        <span class="caption-text">Vue sous un autre angle du robot humanoïde Walker S d&#x27;UBtech effectuant des mouvements de danse complexes avec un partenaire humain.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:52 - 00:05:14</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Suivi des mouvements de tout le corps en temps réel. Le robot danse avec un partenaire humain et ajuste constamment son corps pour correspondre au mouvement. Et il ne se contente pas de copier ce qu&#x27;il voit. Walker S utilise le retour tactile et la répartition du poids pour effectuer de minuscules ajustements de son équilibre pendant que le mouvement se produit. Cela signifie que lorsque son partenaire bouge, le robot doit réagir presque instantanément.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo d&#x27;un robot humanoïde (aucun logiciel ou interface numérique affiché)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun texte, prompt ou paramètre technique visible à l&#x27;écran</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot humanoïde Walker S danse avec un partenaire humain dans un espace d&#x27;exposition publique</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:14 - 00:05:36</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et cela devient encore plus difficile lorsque vous réunissez un robot mobile, un humain et un environnement imprévisible. C&#x27;est là que des éléments tels que la détection spatiale, le contrôle à faible latence et les modèles d&#x27;action vision-langage deviennent vraiment importants. Mais UbiTech ne se contente pas de montrer cela sur une scène. L&#x27;entreprise pousse déjà ses robots humanoïdes dans des environnements industriels, notamment dans la fabrication de véhicules électriques.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration en direct / B-roll montrant un robot humanoïde interagissant avec un humain.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Un robot humanoïde blanc et noir en train de danser en couple avec un partenaire humain habillé en costume sur une estrade. En arrière-plan, du public observe la scène dans un grand hall d&#x27;exposition.</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot humanoïde effectue des mouvements de danse coordonnés avec un être humain, illustrant les capacités d&#x27;interaction physique et de contrôle en temps réel du robot.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_029_00-05-16.jpg" alt="Un robot humanoïde en train de danser avec un humain dans un environnement d&#x27;exposition ou de démonstration." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_029_00-05-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:16</span>
+                        <span class="caption-text">Un robot humanoïde en train de danser avec un humain dans un environnement d&#x27;exposition ou de démonstration.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:36 - 00:05:55</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors que certaines entreprises montrent encore ce que leurs robots pourraient être capables de faire, UbiTech essaie de les mettre au travail. Et c&#x27;est la partie de la course aux robots humanoïdes que je surveille de plus près. Car la vraie question n&#x27;est pas : est-ce qu&#x27;un robot peut bouger comme un humain ? C&#x27;est : est-ce qu&#x27;il peut réellement gagner de l&#x27;argent en le faisant ? Il y a peut-être un autre modèle qui se profile juste au coin de la rue.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration ou reportage montrant le robot humanoïde d&#x27;UbiTech dans un espace d&#x27;exposition.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Démonstration physique d&#x27;un robot humanoïde bipède interagissant sur scène ou dans un espace public devant un public.</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot humanoïde exécute des mouvements aux côtés d&#x27;un humain dans un environnement de type salon professionnel ou exposition technologique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_030_00-05-38.jpg" alt="Un robot humanoïde blanc en démonstration dans un salon, en train de danser ou d&#x27;interagir avec un humain." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_030_00-05-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:38</span>
+                        <span class="caption-text">Un robot humanoïde blanc en démonstration dans un salon, en train de danser ou d&#x27;interagir avec un humain.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:55 - 00:06:14</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une nouvelle fuite prétend que Fable 5.1 pourrait arriver entre le 1er et le 14 septembre. Et apparemment, il est déjà en cours de test. Certains utilisateurs de Claude web affirment même que leurs comptes ont été basculés discrètement sur la version 5.1 lors de ce qui ressemble à un déploiement limité. Mais voici la partie qui rend cette rumeur intéressante.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un fil d&#x27;actualité ou un message provenant de la plateforme X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;FABLE 5.1 MAY BE WAITING FOR ASTRA&quot; et plusieurs puces résumant les informations sur les tests en cours, le déploiement gris sur Claude Web, et la comparaison avec le lancement d&#x27;OpenAI Astra. Une image d&#x27;illustration avec des personnes et une main robotique est intégrée dans le tweet.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran d&#x27;une publication textuelle sur les réseaux sociaux résumant les fuites et les théories concernant la sortie prochaine de Fable 5.1.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_031_00-05-57.jpg" alt="Capture d&#x27;écran d&#x27;un tweet du compte Vepsi détaillant les rumeurs autour de la sortie de Fable 5.1 par Anthropic." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_031_00-05-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:57</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet du compte Vepsi détaillant les rumeurs autour de la sortie de Fable 5.1 par Anthropic.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:14 - 00:06:48</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Des spéculations indiquent qu&#x27;Anthropic pourrait synchroniser le lancement autour d&#x27;Astra d&#x27;OpenAI. En gros, laisser OpenAI abattre ses cartes en premier, voir ce qu&#x27;Astra peut réellement faire, puis lâcher Fable 5.1. Si cela se produit vraiment, il pourrait s&#x27;agir moins d&#x27;une mise à jour de modèle normale que d&#x27;un mouvement stratégique dans la course aux armements de l&#x27;intelligence artificielle. La mise à jour elle-même devrait améliorer les capacités plutôt que de réinventer complètement le modèle. Et selon l&#x27;estimation de Vepsi, il y a 80 % de chances que Fable 5.1 arrive en septembre. Évidemment, rien de tout cela n&#x27;est confirmé.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (Twitter) affichant un fil de discussion et un profil utilisateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;FABLE 5.1 MAY BE WAITING FOR ASTRA. New leak claims Anthropic is targeting September 1-14 for Fable 5.1. Already reportedly in testing, some Claude Web accounts allegedly got silently routed to 5.1 during gray rollout, Anthropic may be timing the release around OpenAI&#x27;s Astra launch, The upgrade is expected to focus on capability rather than a complete model reset. Are they waiting for Astra to drop first... so they can see exactly what OpenAI is bringing before unleashing 5.1? Vepsi&#x27;s Bet: 80% chance Fable 5.1 lands in September. Reason: The alleged gray testing is a much stronger signal than a random release-date rumor.&quot; Une image intégrée montre deux personnes, dont une avec une main robotique. Le panneau latéral montre le profil de Vepsi (@vepsi_).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un article ou d&#x27;un post provenant de la plateforme X pour illustrer les rumeurs sur la sortie de Fable 5.1 et la stratégie d&#x27;Anthropic face à OpenAI Astra.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_032_00-06-16.jpg" alt="Capture d&#x27;écran d&#x27;un tweet et d&#x27;un profil X (Twitter) du compte @vepsi_ discutant de la sortie potentielle de Fable 5.1 par rapport au lancement d&#x27;Astra par OpenAI." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_032_00-06-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:16</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet et d&#x27;un profil X (Twitter) du compte @vepsi_ discutant de la sortie potentielle de Fable 5.1 par rapport au lancement d&#x27;Astra par OpenAI.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:48 - 00:07:04</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pourtant, mais ce test gris présumé, c&#x27;est ce qui rend cette rumeur intéressante à suivre. Parce qu&#x27;une rumeur de date de sortie aléatoire est une chose, mais des utilisateurs déjà redirigés vers le nouveau modèle, c&#x27;est un signal très différent. Et si ces fuites sont correctes, septembre pourrait devenir très intéressant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un fil d&#x27;actualité ou un tweet sur la plateforme X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte principal : « FABLE 5.1 MAY BE WAITING FOR ASTRA. New leak claims Anthropic is targeting September 1-14 for Fable 5.1. Already reportedly in testing. Some Claude Web accounts allegedly got silently routed to 5.1 during gray rollout. Anthropic may be timing the release around OpenAI&#x27;s Astra launch. The upgrade is expected to focus on capability rather than a complete model reset. Are they waiting for Astra to drop first... so they can see exactly what OpenAI is bringing before unleashing 5.1? 👀 Vepsi&#x27;s Bet: 80% chance Fable 5.1 lands in September. Reason: The alleged gray testing is a much stronger signal than a random release-date rumor. » Un profil utilisateur « Vepsi » est également visible avec sa biographie.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran d&#x27;une publication textuelle sur les réseaux sociaux détaillant les fuites concernant Fable 5.1.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-xzrAGK7_5qY/frame_033_00-06-50.jpg" alt="Capture d&#x27;écran d&#x27;un tweet et d&#x27;un article détaillant les rumeurs sur le lancement imminent de Fable 5.1 par Anthropic." loading="lazy" onclick="openLightbox('screenshots/YT-xzrAGK7_5qY/frame_033_00-06-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:50</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet et d&#x27;un article détaillant les rumeurs sur le lancement imminent de Fable 5.1 par Anthropic.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
