@@ -17,7 +17,8 @@
     "xzrAGK7_5qY",
     "XuCDf4afPVg",
     "SCodVNW0vtw",
-    "bcDvdUb-fEw"
+    "bcDvdUb-fEw",
+    "yzNl4SLoSDI"
   ],
   "processed_videos": [
     {
@@ -267,9 +268,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-08-13_YT-bcDvdUb-fEw_55 % des cyberattaques utilisent l'IA_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-05T10:04:28Z",
       "status": "completed"
+    },
+    {
+      "video_id": "yzNl4SLoSDI",
+      "title": "Est-ce que Qwen 3.8 Max peut battre Fable 5 ?",
+      "raw_title": "Can Qwen 3.8 Max Beat Fable 5?",
+      "filename_md": "2026-08-05_YT-yzNl4SLoSDI_Est-ce que Qwen 3.8 Max peut battre Fable 5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-08-05_YT-yzNl4SLoSDI_Est-ce que Qwen 3.8 Max peut battre Fable 5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-08-05",
+      "duration": 235,
+      "screenshots_count": 26,
+      "filepath_md": "/root/YT_PursuingAi/2026-08-05_YT-yzNl4SLoSDI_Est-ce que Qwen 3.8 Max peut battre Fable 5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-08-05_YT-yzNl4SLoSDI_Est-ce que Qwen 3.8 Max peut battre Fable 5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T10:09:38Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 18,
+  "completed_count": 19,
   "last_run_timestamp": "2026-10-05T10:00:03Z",
   "status": "running",
   "total_catalog_count": 83
