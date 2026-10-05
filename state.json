@@ -16,7 +16,8 @@
     "eVah4t3huis",
     "xzrAGK7_5qY",
     "XuCDf4afPVg",
-    "SCodVNW0vtw"
+    "SCodVNW0vtw",
+    "bcDvdUb-fEw"
   ],
   "processed_videos": [
     {
@@ -252,10 +253,24 @@
       "filepath_html": "/root/YT_PursuingAi/2026-08-17_YT-SCodVNW0vtw_L'IA d'Apple en Chine, Grok 4.6 et 1 MILLIARD d'utilisateurs pour Google GROSSE _by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-05T07:30:36Z",
       "status": "completed"
+    },
+    {
+      "video_id": "bcDvdUb-fEw",
+      "title": "55 % des cyberattaques utilisent l'IA ?",
+      "raw_title": "55% of Cyberattacks Use AI?",
+      "filename_md": "2026-08-13_YT-bcDvdUb-fEw_55 % des cyberattaques utilisent l'IA_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-08-13_YT-bcDvdUb-fEw_55 % des cyberattaques utilisent l'IA_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-08-13",
+      "duration": 182,
+      "screenshots_count": 14,
+      "filepath_md": "/root/YT_PursuingAi/2026-08-13_YT-bcDvdUb-fEw_55 % des cyberattaques utilisent l'IA_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-08-13_YT-bcDvdUb-fEw_55 % des cyberattaques utilisent l'IA_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T10:04:28Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 17,
-  "last_run_timestamp": "2026-10-05T04:00:03Z",
+  "completed_count": 18,
+  "last_run_timestamp": "2026-10-05T10:00:03Z",
   "status": "running",
   "total_catalog_count": 83
 }

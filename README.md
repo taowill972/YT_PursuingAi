@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `17 / 83` (`20.5%`)
+- **Vidéos traitées** : `18 / 83` (`21.7%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -33,6 +33,7 @@
 | 2026-08-22 | [ChatGPT Image 2.5 est ARRIVÉ — Ça change tout !](2026-08-22_YT-xzrAGK7_5qY_ChatGPT Image 2.5 est ARRIVÉ — Ça change tout !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-22_YT-xzrAGK7_5qY_ChatGPT Image 2.5 est ARRIVÉ — Ça change tout !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 7m 08s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=xzrAGK7_5qY) | `xzrAGK7_5qY` |
 | 2026-08-19 | [Les robots commencent à surpasser les humains](2026-08-19_YT-XuCDf4afPVg_Les robots commencent à surpasser les humains_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-19_YT-XuCDf4afPVg_Les robots commencent à surpasser les humains_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 7m 33s | `46 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=XuCDf4afPVg) | `XuCDf4afPVg` |
 | 2026-08-17 | [L'IA d'Apple en Chine, Grok 4.6 et 1 MILLIARD d'utilisateurs pour Google : GROSSE ACTU IA](2026-08-17_YT-SCodVNW0vtw_L'IA d'Apple en Chine, Grok 4.6 et 1 MILLIARD d'utilisateurs pour Google GROSSE _by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-17_YT-SCodVNW0vtw_L'IA d'Apple en Chine, Grok 4.6 et 1 MILLIARD d'utilisateurs pour Google GROSSE _by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 58s | `24 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=SCodVNW0vtw) | `SCodVNW0vtw` |
+| 2026-08-13 | [55 % des cyberattaques utilisent l'IA ?](2026-08-13_YT-bcDvdUb-fEw_55 % des cyberattaques utilisent l'IA_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-08-13_YT-bcDvdUb-fEw_55 % des cyberattaques utilisent l'IA_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 02s | `14 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=bcDvdUb-fEw) | `bcDvdUb-fEw` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

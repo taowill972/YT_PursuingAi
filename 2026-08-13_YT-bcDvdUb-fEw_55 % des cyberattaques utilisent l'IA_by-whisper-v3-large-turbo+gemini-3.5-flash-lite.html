@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 55 % des cyberattaques utilisent l&#x27;IA ? — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 55 % des cyberattaques utilisent l&#x27;IA ?</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-08-13</span>
+                <span class="badge">⏱️ 03m 02s</span>
+                <span class="badge">🆔 <code>bcDvdUb-fEw</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=bcDvdUb-fEw" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>Cette vidéo de *Pursuing AI* dresse un panorama percutant et global de l'accélération industrielle et géopolitique de l'intelligence artificielle, loin des simples effets de mode. En s'appuyant sur des visuels de pointe générés via Seedance 2.5, Kling 3.0 et Midjourney, le créateur structure son récit autour du basculement de l'IA du laboratoire vers le monde réel. L'analyse démontre comment la technologie se fragmente en deux flux distincts : d'une part, la course aux armements des modèles géants hébergés dans le cloud, et d'autre part, la démocratisation foudroyante d'outils open-source ultra-performants taillés pour le matériel local.</p><p>Sur la forme, le créateur adopte une méthode rigoureuse basée sur le "news-stacking" thématique : introduction choc par l'image, transition fluide entre des sujets macroéconomiques (puces, open-source), géopolitiques (défense), sociétaux (cybersécurité) et industriels (robotique), puis conclusion prospective. Cette structure narrative maintient un rythme haletant grâce à un montage visuel dynamique et synchronisé. Les créateurs de vidéo par IA y trouvent une masterclass sur l'art d'illustrer des concepts abstraits (comme le traitement des tokens ou la cybersécurité) par des métaphores visuelles hyper-réalistes et cinématographiques.</p><p>Pour les créateurs de contenu, cette vidéo enseigne comment maximiser l'engagement en traitant l'actualité technologique sous l'angle de l'impact direct et tangible. L'utilisation stratégique de génération vidéo par IA permet de combler le fossé entre des communiqués de presse arides et des séquences visuelles dignes de blockbusters. En maîtrisant la cohérence visuelle entre les différents outils de génération, il devient possible de produire des analyses géopolitiques et techniques hautement professionnelles, captivant l'audience de la première à la dernière seconde.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Démocratisation du calcul local** : La sortie de modèles comme Muse Glimmer prouve qu&#x27;il n&#x27;est plus nécessaire de dépendre de clusters géants pour exécuter des IA puissantes, ouvrant la voie à une utilisation sur un GPU unique.</span></li><li><span class="point-bullet">✦</span><span>Bifurcation du marché de l&#x27;IA** : Le secteur se divise clairement entre les laboratoires aux budgets pharaoniques et l&#x27;écosystème open-source ultra-rapide destiné aux startups et créateurs indépendants.</span></li><li><span class="point-bullet">✦</span><span>Industrialisation de la robotique** : Les robots humanoïdes ne relèvent plus de la démonstration marketing ; ils intègrent activement les chaînes de montage automobiles (comme chez BMW) avec des tolérances industrielles strictes.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;IA au cœur de la défense moderne** : Le vol réussi d&#x27;un F-16 piloté par IA par la DARPA marque un point de non-retour dans l&#x27;autonomie des systèmes d&#x27;armement et la stratégie militaire mondiale.</span></li><li><span class="point-bullet">✦</span><span>Explosion de la cybercriminalité augmentée** : Le rapport d&#x27;Interpol soulignant que 55 % des cybercrimes en Afrique utilisent l&#x27;IA illustre la double peine de l&#x27;accessibilité technologique, désormais aux mains des acteurs malveillants.</span></li><li><span class="point-bullet">✦</span><span>Valorisation de l&#x27;infrastructure logicielle** : Des initiatives comme *Mixture of Kittens* rappellent que l&#x27;optimisation du code et des couches logicielles est aussi cruciale que la puissance brute du matériel.</span></li><li><span class="point-bullet">✦</span><span>Rythme de production &quot;News-Stacking&quot;** : Structurer une vidéo d&#x27;actualité technologique par strates (logiciel, militaire, sécurité, industrie) maintient l&#x27;attention sans saturer le spectateur.</span></li><li><span class="point-bullet">✦</span><span>Illustration visuelle de l&#x27;abstrait** : Pour garder le spectateur captif, chaque concept technique lourd (tokens, GPU, cybersécurité) doit impérativement être incarné par une illustration visuelle générée par IA de haute qualité.</span></li><li><span class="point-bullet">✦</span><span>Piège à éviter : la sur-promesse déconnectée** : Contrairement aux simples teasers de laboratoire, l&#x27;accent doit être mis sur l&#x27;impact réel et mesurable (chiffres de production, déploiements concrets).</span></li><li><span class="point-bullet">✦</span><span>Workflow multi-outils** : Combiner Midjourney pour la statique et Seedance/Kling pour le mouvement garantit une esthétique visuelle haut de gamme et cohérente tout au long du format court.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Un robot humanoïde a battu le record du monde du marathon, et le plus grand fabricant de puces au monde vient de publier des chiffres qui devraient effrayer quiconque parie contre le boom de l&#x27;IA. Cette semaine, la course aux armements de l&#x27;IA est devenue locale, ouverte et farouchement disputée, et les robots quittent officiellement la scène des démonstrations pour entrer dans les usines. Entrons dans le vif du sujet. Comment ça va tout le monde, bienvenue sur la chaîne.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra sans partage d&#x27;écran (extraits vidéo B-roll d&#x27;illustration uniquement)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun texte, code ou prompt visible à l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Aucune manipulation de logiciel ou d&#x27;outil d&#x27;IA montrée à l&#x27;écran.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:22 - 00:00:47</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Meta a discrètement lancé quelque chose qui compte beaucoup pour quiconque développe réellement avec l&#x27;IA. Ça s&#x27;appelle Muse Glimmer, un modèle multimodal à 30 milliards de paramètres publié sous licence Apache 2.0, ce qui signifie qu&#x27;il est véritablement ouvert et utilisable commercialement. Il est spécifiquement optimisé pour l&#x27;utilisation d&#x27;outils d&#x27;agents locaux et le codage, gère une fenêtre contextuelle de 131 000 tokens et prend en charge plus de 100 langues, la statistique phare qui fait parler les développeurs.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de ligne de commande OpenCode et page web de présentation d&#x27;un modèle d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titres de l&#x27;article de blog Meta, lignes de code, invite utilisateur « I just installed Home Assistant on a Raspberry Pi... », et liste des tâches à accomplir (« Discover Home Assistant instance on home network », « Identify A/V receiver entity... », « Design responsive dashboard UI/UX... », etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de l&#x27;exécution d&#x27;une tâche agentique en plusieurs étapes à partir d&#x27;un unique prompt utilisateur dans OpenCode.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_001_00-00-24.jpg" alt="Interface d&#x27;OpenCode montrant le terminal avec une invite de commande pour Muse Glimmer." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_001_00-00-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:24</span>
+                        <span class="caption-text">Interface d&#x27;OpenCode montrant le terminal avec une invite de commande pour Muse Glimmer.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_002_00-00-30.jpg" alt="Article de présentation officiel intitulé « Introducing Muse Glimmer: An Open Agentic Model That Runs on Your Device »." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_002_00-00-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:30</span>
+                        <span class="caption-text">Article de présentation officiel intitulé « Introducing Muse Glimmer: An Open Agentic Model That Runs on Your Device ».</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_003_00-00-39.jpg" alt="Interface OpenCode affichant une session active avec la liste des tâches (To-do) générées par Muse Glimmer." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_003_00-00-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:39</span>
+                        <span class="caption-text">Interface OpenCode affichant une session active avec la liste des tâches (To-do) générées par Muse Glimmer.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_004_00-00-45.jpg" alt="Zoom sur la liste des tâches (To-do) détaillant les étapes d&#x27;exécution de l&#x27;agent IA." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_004_00-00-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:45</span>
+                        <span class="caption-text">Zoom sur la liste des tâches (To-do) détaillant les étapes d&#x27;exécution de l&#x27;agent IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:47 - 00:01:11</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cette chose tourne sur un seul GPU, pas un cluster, pas un centre de données, un seul GPU. Cela fait partie d&#x27;une tendance plus large. La course à l&#x27;IA ne se résume plus seulement à qui possède le plus grand modèle de pointe. Elle se divise en deux voies : la course aux armements des laboratoires de pointe à mille milliards de dollars et une course open-source parallèle visant à réduire des modèles puissants pour qu&#x27;une startup ou, honnêtement, un passionné puisse les exécuter localement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface logicielle d&#x27;OpenCode avec un panneau de terminal à gauche et un panneau de gestion de tâches (To-do) à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre &quot;Muse Glimmer | Agentic Task Completion in OpenCode&quot;, commandes de terminal ($ ifconfig, $ ip getifaddr en0, $ arp -a), panneaux de suivi des tâches et du contexte (tokens utilisés, coût).</p>
+                        <p><strong>Action / Démonstration :</strong> Exécution de commandes et appels d&#x27;outils par l&#x27;agent IA pour découvrir l&#x27;adresse IP de Home Assistant sur le réseau local.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_005_00-00-49.jpg" alt="Interface d&#x27;OpenCode montrant l&#x27;exécution d&#x27;une tâche par Muse Glimmer avec le plan découpé en plusieurs étapes." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_005_00-00-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:49</span>
+                        <span class="caption-text">Interface d&#x27;OpenCode montrant l&#x27;exécution d&#x27;une tâche par Muse Glimmer avec le plan découpé en plusieurs étapes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_006_00-00-55.jpg" alt="Interface d&#x27;OpenCode affichant un terminal et une liste de tâches pour Muse Glimmer recherchant l&#x27;adresse IP de Home Assistant." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_006_00-00-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:55</span>
+                        <span class="caption-text">Interface d&#x27;OpenCode affichant un terminal et une liste de tâches pour Muse Glimmer recherchant l&#x27;adresse IP de Home Assistant.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:11 - 00:01:35</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et ce n&#x27;est pas seulement Meta. Cursor a publié un outil d&#x27;optimisation open-source appelé Mixture of Kittens, conçu pour extraire davantage de performances des systèmes GPU NVL72 de NVIDIA pour les modèles de type Mixture of Experts. Même l&#x27;infrastructure logicielle autour de l&#x27;IA est maintenant en open source. Si vous êtes développeur, c&#x27;est important, car vos options pour exécuter une IA performante sans payer de frais d&#x27;API viennent de s&#x27;améliorer considérablement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Articles de blog et graphiques techniques présentés sous forme de diapositives ou de captures d&#x27;écran documentaires.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes : &quot;Mixture-of-Kittens: our open-source MoE megakernel for NVL72s&quot;, graphiques de performance avec barres orange montrant la supériorité de Mixture-of-Kittens, et schémas d&#x27;architecture GPU intitulés &quot;Push vs pull based dispatch&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement et affichage successif de captures d&#x27;écran documentaires illustrant l&#x27;outil Mixture-of-Kittens, ses performances et son architecture technique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_007_00-01-13.jpg" alt="Capture d&#x27;écran d&#x27;un article en ligne présentant l&#x27;outil open-source Mixture-of-Kittens de Cursor." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_007_00-01-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:13</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un article en ligne présentant l&#x27;outil open-source Mixture-of-Kittens de Cursor.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_008_00-01-19.jpg" alt="Graphique à barres comparant les performances du débit MXFP8 de Mixture-of-Kittens par rapport à d&#x27;autres architectures sur les systèmes GB300 NVL72." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_008_00-01-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:19</span>
+                        <span class="caption-text">Graphique à barres comparant les performances du débit MXFP8 de Mixture-of-Kittens par rapport à d&#x27;autres architectures sur les systèmes GB300 NVL72.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_009_00-01-27.jpg" alt="Schéma comparatif illustrant les méthodes de répartition des tâches &#x27;Push vs pull based dispatch&#x27; entre GPU." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_009_00-01-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:27</span>
+                        <span class="caption-text">Schéma comparatif illustrant les méthodes de répartition des tâches &#x27;Push vs pull based dispatch&#x27; entre GPU.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:35 - 00:02:11</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, passons à une histoire qui est un peu moins une démonstration technologique cool et un peu plus un sujet auquel nous devrions prêter attention. Pour la première fois, la DARPA a réalisé un vol réel d&#x27;un avion de chasse F-16 entièrement contrôlé par intelligence artificielle. Pas un simulateur, pas un drone, un véritable F-16 piloté entièrement par l&#x27;IA. C&#x27;est une étape majeure dans l&#x27;aviation de combat autonome, et cela reflète une volonté stratégique beaucoup plus large de l&#x27;armée américaine d&#x27;intégrer l&#x27;IA au cœur des futures capacités de combat. Quels que soient vos sentiments sur les armes autonomes, et il y a beaucoup de sentiments légitimes de tous côtés, c&#x27;est en train de se produire, c&#x27;est réel.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Articles de blog et séquences vidéo documentaires illustrant l&#x27;actualité militaire et technologique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes d&#x27;articles de presse et de recherche sur l&#x27;IA et l&#x27;aéronautique militaire (DARPA, F-16, NVL72s).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de captures d&#x27;articles et d&#x27;extraits vidéo documentaires illustrant le vol du F-16 contrôlé par l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_010_00-01-37.jpg" alt="Article de blog intitulé &#x27;Mixture-of-Kittens: our open-source MoE megakernel for NVL72s&#x27; avec un graphique sinusoïdal." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_010_00-01-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:37</span>
+                        <span class="caption-text">Article de blog intitulé &#x27;Mixture-of-Kittens: our open-source MoE megakernel for NVL72s&#x27; avec un graphique sinusoïdal.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_011_00-01-48.jpg" alt="Article intitulé &#x27;DARPA, U.S. Air Force fly AI-controlled F-16&#x27; montrant un F-16 en vol." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_011_00-01-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:48</span>
+                        <span class="caption-text">Article intitulé &#x27;DARPA, U.S. Air Force fly AI-controlled F-16&#x27; montrant un F-16 en vol.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:11 - 00:02:30</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">et ça s&#x27;accélère. Et du côté de la sécurité, un nouveau rapport d&#x27;Interpol sur les cybermenaces en Afrique révèle que l&#x27;IA est désormais impliquée dans 55 % des cybercrimes signalés à travers le continent. On parle de phishing automatisé, de deepfakes, d&#x27;e-mails frauduleux et d&#x27;identités synthétiques, le tout accéléré par des outils d&#x27;IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Document textuel / Capture d&#x27;écran d&#x27;article (source @medium en bas à droite).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;5. AI IS NOW INVOLVED IN 55% OF CYBERATTACKS IN AFRICA. According to INTERPOL&#x27;s African Cyberthreat Assessment 2026 report, artificial intelligence is now involved in 55% of reported cybercrimes across Africa. Cybercriminals are using AI to automate phishing campaigns, create deepfakes, generate fraudulent emails, produce synthetic digital identities, and make their attacks faster, more targeted, and harder to detect. Based on data collected from 36 African countries, the report shows that cybercrime has evolved into a cross-border industrial ecosystem. Since 2024, financial losses linked to cyberattacks have more than doubled, rising from $192 million to $484 million. While INTERPOL is the first organization to quantify AI&#x27;s impact at 55% in Africa, Europol and ENISA have also warned...&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage fixe d&#x27;un extrait de rapport textuel illustrant les statistiques des cyberattaques liées à l&#x27;IA en Afrique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_012_00-02-13.jpg" alt="Capture d&#x27;écran d&#x27;un article ou rapport texte intitulé &quot;5. AI IS NOW INVOLVED IN 55% OF CYBERATTACKS IN AFRICA&quot; détaillant les conclusions d&#x27;Interpol sur les cybermenaces en Afrique." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_012_00-02-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:13</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un article ou rapport texte intitulé &quot;5. AI IS NOW INVOLVED IN 55% OF CYBERATTACKS IN AFRICA&quot; détaillant les conclusions d&#x27;Interpol sur les cybermenaces en Afrique.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:30 - 00:02:48</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pendant ce temps, ces robots ont aidé à construire plus de 30 000 BMW X3 et ont chargé plus de 90 000 pièces de tôle, travaillant quotidiennement sur une chaîne de montage active avec une précision de 5 mm. Ce n&#x27;est pas une démo. C&#x27;est un vrai travail. Agbot, originaire de Chine, a atteint 15 000 unités cumulées produites.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Capture d&#x27;article web/presse sur fond abstrait violet et vert.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de l&#x27;article : &quot;AGIBOT&#x27;s 15,000th Robot Rolls Off the Production Line, Marking a New Milestone in Embodied AI Deployment. [SHANGHAI, China, June 28, 2026] AGIBOT, a global leader in embodied AI and robotics, today announced that its 15,000th robot has officially rolled off the production line. The milestone unit is the AGIBOT G2, an industrial-grade embodied task robot designed for industrial and real-world operational scenarios.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un article de presse officielle concernant le jalon de production d&#x27;Agibot.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_013_00-02-46.jpg" alt="Capture d&#x27;écran d&#x27;un article de presse annonçant qu&#x27;AGIBOT a atteint 15 000 robots produits." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_013_00-02-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:46</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un article de presse annonçant qu&#x27;AGIBOT a atteint 15 000 robots produits.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:49 - 00:03:02</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">2026 n&#x27;est pas l&#x27;année où l&#x27;IA est devenue puissante. C&#x27;est l&#x27;année où elle s&#x27;est intégrée dans les usines, dans les avions de chasse, dans votre dépôt GitHub et très bientôt, peut-être dans votre entrepôt. C&#x27;est le récapitulatif de votre semaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> OpenCode (interface de ligne de commande / IDE)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Muse Glimmer | Agentic Task Completion in OpenCode&quot; et &quot;Muse Glimmer running in Open Code can complete multiple step end to end agentic tasks from a single user prompt.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage simultané d&#x27;un robot humanoïde effectuant des tâches en usine et d&#x27;une interface de code exécutant des tâches agentiques complexes via Muse Glimmer.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-bcDvdUb-fEw/frame_014_00-02-51.jpg" alt="Écran partagé montrant à gauche un robot humanoïde dans une usine et à droite l&#x27;interface d&#x27;OpenCode avec Muse Glimmer." loading="lazy" onclick="openLightbox('screenshots/YT-bcDvdUb-fEw/frame_014_00-02-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:51</span>
+                        <span class="caption-text">Écran partagé montrant à gauche un robot humanoïde dans une usine et à droite l&#x27;interface d&#x27;OpenCode avec Muse Glimmer.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
