@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Je ne m&#x27;attendais pas à ce que Grok 4.5 fasse ça — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Je ne m&#x27;attendais pas à ce que Grok 4.5 fasse ça</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-07-12</span>
+                <span class="badge">⏱️ 04m 04s</span>
+                <span class="badge">🆔 <code>MTVxdh7q9xg</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=MTVxdh7q9xg" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* intitulée « Je ne m'attendais pas à ce que Grok 4.5 fasse ça » explore le bond en avant monumental réalisé par le modèle d'intelligence artificielle de xAI dans le domaine du développement et de la génération applicative. Elon Musk affirmant que Grok 4.5 a officiellement surpassé Claude Opus, le rapport de recherche décortique les preuves empiriques de cette montée en puissance à travers une série de démonstrations saisissantes : des jeux multijoueurs fonctionnels aux animations fluides, des FPS 3D complets générés en une heure via de simples prompts, jusqu'à des tests d'applications mobiles autonomes et des sites web immersifs d'exploration spatiale.</p><p>L'approche méthodologique mise en avant repose sur le passage du simple assistant de codage à un véritable agent de développement *full-stack*. Les créateurs et développeurs n'ont plus besoin d'écrire manuellement des lignes de code, de configurer des suites de tests complexes ou d'assembler péniblement des shaders graphiques. En s'appuyant sur des interfaces conversationnelles en langage naturel et sur des outils comme Grok Build (bénéficiant notamment des synergies post-acquisition de Cursor par xAI), le workflow consiste à décrire précisément l'expérience interactive souhaitée — de la logique de jeu aux animations cinématiques et au déploiement. L'IA interprète, structure, génère et optimise l'ensemble de la chaîne de production de manière autonome.</p><p>Pour les créateurs de vidéo et les technologues, cette mutation représente un levier de productivité et de créativité sans précédent. Il devient possible de concevoir des prototypes visuels complexes, des environnements 3D interactifs et des applications web ultra-poussées en un temps record, transformant ce qui était autrefois un projet de week-end fastidieux en une simple itération textuelle. Cette vidéo illustre la transition définitive vers une ère où l'idéation prime sur l'exécution technique pure, redéfinissant les standards de rapidité et de complexité atteignables par un seul individu.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Saut qualitatif massif en programmation** : Grok 4.5 s&#x27;affranchit de sa réputation passée d&#x27;outil à la traîne pour rivaliser directement avec les meilleurs modèles du marché (comme Claude Opus) sur des tâches de code complexes.</span></li><li><span class="point-bullet">✦</span><span>Création de jeux vidéo express** : Il est désormais possible de générer des jeux 3D complets (incluant le rigging de personnages, des cartes détaillées, la logique IA et le design de menus) en seulement deux prompts et environ une heure de travail.</span></li><li><span class="point-bullet">✦</span><span>Fluidité et jouabilité réelle** : Les productions issues de Grok 4.5 ne sont pas de simples démos techniques éphémères, mais des applications jouables dotées d&#x27;animations fluides, de retours visuels (comme les flashs de dégâts) et de mécaniques de tir abouties.</span></li><li><span class="point-bullet">✦</span><span>Tests d&#x27;applications autonomes (Zero-Code Testing)** : Le modèle est capable d&#x27;interagir directement avec une application iPhone en recevant un simple prompt textuel, ouvrant, cliquant et naviguant à travers les écrans exactement comme le ferait un testeur humain, sans script de test manuel.</span></li><li><span class="point-bullet">✦</span><span>Génération de projets web full-stack** : Des sites web complexes et narratifs (type &quot;Space Explorer&quot; avec défilement cinématographique) peuvent être entièrement bâtis en quelques heures, incluant HTML, CSS, animations et effets interactifs.</span></li><li><span class="point-bullet">✦</span><span>Maîtrise des shaders et de l&#x27;optimisation** : Au-delà du code de base, l&#x27;IA gère des aspects avancés tels que la programmation de shaders personnalisés, le traitement vidéo et l&#x27;optimisation des performances graphiques.</span></li><li><span class="point-bullet">✦</span><span>Déploiement assisté** : Le workflow ne s&#x27;arrête pas à la génération de code brut ; l&#x27;outil aide activement à la mise en ligne et au déploiement du produit final.</span></li><li><span class="point-bullet">✦</span><span>Impact de l&#x27;intégration de Cursor** : L&#x27;accélération foudroyante des capacités de programmation de xAI est directement corrélée à l&#x27;intégration de la technologie et de l&#x27;expertise de la plateforme Cursor dans l&#x27;écosystème Grok.</span></li><li><span class="point-bullet">✦</span><span>Évolution du rôle du développeur** : L&#x27;IA agit désormais comme un développeur *full-stack* autonome qui ne nécessite plus de réunions de planification de sprint, déplaçant la valeur de l&#x27;écriture du code vers la clarté de la vision créative.</span></li><li><span class="point-bullet">✦</span><span>Raccourcissement drastique des cycles de prototypage** : Des projets nécessitant autrefois des semaines de travail nocturne et de café peuvent désormais être matérialisés en une seule session de travail grâce au langage naturel.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:19</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Elon Musk dit que Grok 4.5 a officiellement battu Claude Opus. C&#x27;est une affirmation massive, mais est-ce réellement vrai ? Découvrons-le. C&#x27;est Pursuing AI, et vous regardez le Research Report. Tout d&#x27;abord, voici ce jeu multijoueur construit par l&#x27;ex-utilisateur Ash. Il tourne entièrement sur le web.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (Twitter) affichant des publications et un fil d&#x27;actualité.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de la publication de Grok : &quot;Try Grok 4.5 for free, an all new Opus-class model that is fast and low cost. Great for real-world coding and engineering tasks.&quot; Texte du tweet d&#x27;Ash : &quot;I downloaded @cursor_ai to try out the new Grok 4.5. Within minutes I added tool/weapon stowing so you can take things with you in vehicles without needing to drop them. Worked first time! What a time to be alive!&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran de publications sur les réseaux sociaux illustrant l&#x27;annonce de Grok 4.5 et les tests de développement d&#x27;un jeu par un utilisateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_001_00-00-02.jpg" alt="Capture d&#x27;écran d&#x27;une publication X (Twitter) présentant Grok 4.5 comme un nouveau modèle de classe Opus rapide, économique et adapté au code." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication X (Twitter) présentant Grok 4.5 comme un nouveau modèle de classe Opus rapide, économique et adapté au code.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_002_00-00-17.jpg" alt="Publication X (Twitter) d&#x27;Ash montrant un jeu multijoueur web avec des captures de gameplay et du texte sur l&#x27;utilisation de Grok 4.5 et Cursor AI." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_002_00-00-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:17</span>
+                        <span class="caption-text">Publication X (Twitter) d&#x27;Ash montrant un jeu multijoueur web avec des captures de gameplay et du texte sur l&#x27;utilisation de Grok 4.5 et Cursor AI.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:19 - 00:00:42</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est multijoueur, et honnêtement, c&#x27;est incroyable. Les animations de course et de saut sont ridiculement fluides. Et sur le côté droit, c&#x27;est en fait son ami qui observe tout ce qui se passe en temps réel. Si c&#x27;est ce que Grok 4.5 aide déjà les gens à construire, nous partons sur des bases plutôt convaincantes. Ensuite, il y a ce jeu 3D créé par Jaden Devis, et honnêtement, c&#x27;est un peu ridicule.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de jeu web (affichée via localhost:3001) et capture d&#x27;écran du réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de @JaydenDavisNC : &quot;Grok 4.5 in Grok Build is insane for 3D game dev 🤯 I ran a detailed prompt using the /goal feature and I created this in only two prompts. Took roughly an hour. The model rigged all the enemy humanoids and made a fleshed out map and AI logic.&quot; Une image d&#x27;armurerie 3D (ARMORY, MULD-10) est visible dans le tweet.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre un jeu vidéo multijoueur 3D fonctionnel en temps réel avec des personnages animés, puis présente le post X du créateur du jeu Jaden Davis.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_003_00-00-21.jpg" alt="Capture d&#x27;écran montrant le jeu 3D multijoueur en cours d&#x27;exécution avec deux fenêtres de jeu côte à côte." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_003_00-00-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:21</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant le jeu 3D multijoueur en cours d&#x27;exécution avec deux fenêtres de jeu côte à côte.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_004_00-00-27.jpg" alt="Capture d&#x27;écran montrant le personnage du jeu en train de courir et des feux d&#x27;artifice générés dans le décor." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_004_00-00-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:27</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant le personnage du jeu en train de courir et des feux d&#x27;artifice générés dans le décor.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_005_00-00-40.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Jaden Davis présentant le jeu développé avec Grok 4.5." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_005_00-00-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:40</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Jaden Davis présentant le jeu développé avec Grok 4.5.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:42 - 00:01:07</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il dit que le tout a été créé avec seulement deux prompts et a pris environ une heure. Le modèle a riggé tous les humanoïdes ennemis, a construit une carte entièrement détaillée et a même généré la logique IA. Ensuite, il y a le jeu lui-même. Vous obtenez un menu de démarrage correct, plusieurs armes au choix, une carte étonnamment grande, des animations de tir fluides, et lorsque vous subissez des dégâts, l&#x27;écran clignote en rouge, tout juste comme on s&#x27;y attend d&#x27;un vrai FPS.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de Twitter (X) affichant un post utilisateur avec intégration vidéo, puis interface de gameplay d&#x27;un jeu de tir subjectif (FPS) 3D avec mini-carte et indicateurs de munitions/vie.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du post Twitter de @JaydenDavisNC : &quot;Grok 4.5 in Grok Build is insane for 3D game dev. I ran a detailed prompt using the /goal feature and I created this in only two prompts. Took roughly an hour. The model rigged all the enemy humanoids and made a fleshed out map and AI logic.&quot; Titre du jeu visible : &quot;COUNTER PROTOCOL&quot;. Éléments de HUD visibles en jeu : mini-carte ronde, compteurs de score, chronomètre, indicateur de santé (100) et de munitions (15 / 45, puis 6).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le fil Twitter présentant la création du jeu, puis démonstration en direct du gameplay du FPS avec exploration de la carte et manipulation d&#x27;armes.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_006_00-00-44.jpg" alt="Capture d&#x27;un post Twitter de Jayden Davis montrant une vidéo intégrée du jeu &#x27;Counter Protocol&#x27; avec son menu principal et sa carte en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_006_00-00-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:44</span>
+                        <span class="caption-text">Capture d&#x27;un post Twitter de Jayden Davis montrant une vidéo intégrée du jeu &#x27;Counter Protocol&#x27; avec son menu principal et sa carte en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_007_00-00-59.jpg" alt="Vue à la première personne dans le jeu, montrant un environnement 3D de style urbain/désertique avec une arme au premier plan et une interface de jeu (HUD)." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_007_00-00-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:59</span>
+                        <span class="caption-text">Vue à la première personne dans le jeu, montrant un environnement 3D de style urbain/désertique avec une arme au premier plan et une interface de jeu (HUD).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_008_00-01-05.jpg" alt="Scène d&#x27;action dans le jeu montrant le joueur tenant une arme face à un ennemi lointain, avec un adversaire vaincu au sol et l&#x27;ATH complet." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_008_00-01-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:05</span>
+                        <span class="caption-text">Scène d&#x27;action dans le jeu montrant le joueur tenant une arme face à un ennemi lointain, avec un adversaire vaincu au sol et l&#x27;ATH complet.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:08 - 00:01:26</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce n&#x27;est pas juste une autre démo technique générée par IA qui s&#x27;effondre après cinq secondes. C&#x27;est un jeu qui a vraiment l&#x27;air jouable. Et si Grok peut construire quelque chose comme ça presque entièrement par lui-même, il est peut-être temps d&#x27;arrêter de penser à l&#x27;ancien Grok, celui qui était constamment à la traîne sur des tâches de codage comme celles-ci. Et voici un autre exemple fou.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface d&#x27;un jeu vidéo de type FPS (semblable à Counter-Strike) exécuté dans un navigateur ou une application, affichant un mini-carte en haut à gauche, un chronomètre, un indicateur d&#x27;argent ($900), la santé (100) et les munitions (15/45).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;GO GO GO&quot;, chronomètre &quot;1:54&quot;, &quot;1:49&quot;, &quot;1:41&quot;, argent &quot;$900&quot;, munitions &quot;15&quot;, &quot;9&quot;. Environnement 3D low-poly rappelant la carte Dust de Counter-Strike.</p>
+                        <p><strong>Action / Démonstration :</strong> Le joueur se déplace dans un environnement de jeu de tir à la première personne, explore la carte et tire avec son arme, démontrant la jouabilité fonctionnelle d&#x27;un jeu créé par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_009_00-01-10.jpg" alt="Démonstration à l&#x27;écran @ 00:01:10" loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_009_00-01-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:01:10</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_010_00-01-17.jpg" alt="Démonstration à l&#x27;écran @ 00:01:17" loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_010_00-01-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:17</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:01:17</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_011_00-01-24.jpg" alt="Démonstration à l&#x27;écran @ 00:01:24" loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_011_00-01-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran @ 00:01:24</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:27 - 00:01:49</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans cette démo, Grok 4.5 teste une application iPhone entièrement par lui-même. Normalement, les développeurs doivent écrire du code de test et indiquer manuellement au logiciel quels boutons presser. Mais ici, ils donnent simplement à Grok une invite textuelle en anglais simple. L&#x27;intelligence artificielle ouvre l&#x27;application, appuie sur des boutons, navigue à travers différents écrans et vérifie si tout fonctionne, exactement comme une vraie personne utilisant le téléphone.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de terminal de commande et émulateur d&#x27;iPhone intégré montrant une application mobile.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : « grok 4.5 can now test iOS features on live devices. no scripts. no selectors. no xcode. one prompt ». Code affiché dans le terminal avec des blocs verts et rouges, et un champ de prompt « &gt; add a forget password flow ». Émulateur affichant l&#x27;application « Lockbox » avec un champ de connexion.</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;intelligence artificielle saisit un prompt textuel pour ajouter et tester un flux de récupération de mot de passe, puis exécute les tests sur l&#x27;émulateur iPhone.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_012_00-01-29.jpg" alt="Capture d&#x27;un post Twitter montrant Grok 4.5 tester des fonctionnalités iOS sur un appareil en direct." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_012_00-01-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:29</span>
+                        <span class="caption-text">Capture d&#x27;un post Twitter montrant Grok 4.5 tester des fonctionnalités iOS sur un appareil en direct.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_013_00-01-38.jpg" alt="Gros plan sur une interface de terminal textuel montrant les retours d&#x27;exécution et un champ de saisie de prompt." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_013_00-01-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:38</span>
+                        <span class="caption-text">Gros plan sur une interface de terminal textuel montrant les retours d&#x27;exécution et un champ de saisie de prompt.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_014_00-01-47.jpg" alt="Interface divisée en deux montrant un terminal de code à gauche et un émulateur d&#x27;iPhone 17 Pro Max à droite affichant l&#x27;application Lockbox." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_014_00-01-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:47</span>
+                        <span class="caption-text">Interface divisée en deux montrant un terminal de code à gauche et un émulateur d&#x27;iPhone 17 Pro Max à droite affichant l&#x27;application Lockbox.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:49 - 00:02:16</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est la partie impressionnante. Pas de code, pas de configuration compliquée, juste un seul prompt et l&#x27;IA gère les tests toute seule. Et celle-ci est vraiment impressionnante. Un développeur affirme avoir construit tout ce site web de type &quot;Space Explorer&quot; défilant en seulement deux heures en utilisant Grok Build. Au lieu d&#x27;écrire manuellement des centaines de lignes de code, il a simplement décrit ce qu&#x27;il voulait en anglais simple, et Grok a généré le site web, les animations et tous les effets interactifs.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Émulateur mobile, interface de terminal de code, navigateur web affichant un site interactif, et interface du réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Check your email&quot;, &quot;123456&quot;, &quot;Grok 4.5 is INSANE for web dev...&quot;, &quot;International Space Station&quot;, &quot;A laboratory the size of a football field&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et démonstration du site web interactif sur l&#x27;espace généré par IA, ainsi que l&#x27;interface de développement avec Grok 4.5.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_015_00-01-51.jpg" alt="Interface de développement avec un terminal de code à gauche et un émulateur mobile iPhone 17 Pro Max à droite montrant un écran de vérification d&#x27;e-mail." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_015_00-01-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:51</span>
+                        <span class="caption-text">Interface de développement avec un terminal de code à gauche et un émulateur mobile iPhone 17 Pro Max à droite montrant un écran de vérification d&#x27;e-mail.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_016_00-01-59.jpg" alt="Capture d&#x27;un post Twitter/X de l&#x27;utilisateur @anshu montrant une interface de site web avec une station spatiale." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_016_00-01-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:59</span>
+                        <span class="caption-text">Capture d&#x27;un post Twitter/X de l&#x27;utilisateur @anshu montrant une interface de site web avec une station spatiale.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_017_00-02-08.jpg" alt="Capture d&#x27;écran d&#x27;un navigateur web affichant un site sur l&#x27;espace avec le lancement d&#x27;une fusée entourée de fumée." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_017_00-02-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:08</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un navigateur web affichant un site sur l&#x27;espace avec le lancement d&#x27;une fusée entourée de fumée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_018_00-02-14.jpg" alt="Capture d&#x27;écran d&#x27;un navigateur web montrant la Station Spatiale Internationale avec le texte descriptif associé." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_018_00-02-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:14</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un navigateur web montrant la Station Spatiale Internationale avec le texte descriptif associé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:16 - 00:02:34</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il y a quelques années, cela aurait été un projet de week-end alimenté par du café et des choix de vie discutables. Maintenant, c&#x27;est quelque chose que vous pouvez décrire dans un prompt. C&#x27;est le véritable changement qui est en train de se produire ici. L&#x27;IA ne vous aide plus seulement à écrire du code. Elle construit des projets web complets à partir d&#x27;un simple prompt, rendant le développement considérablement plus rapide.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant l&#x27;URL ascent.anshu.dev, puis interface de la plateforme X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL de l&#x27;application « ascent.anshu.dev » ; publication sur X par Anshu (@anshuc) disant : « Grok 4.5 is INSANE for web dev. I built this scrolling space explorer in just a couple hours with Grok Build. Link below, try it out! » avec une vidéo intégrée montrant la Lune, et un panneau latéral affichant des scores de football (Espagne vs Belgique, Norvège vs Angleterre, Argentine vs Suisse).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et interaction au sein d&#x27;une application web interactive représentant le système solaire, puis défilement et affichage d&#x27;un post sur le réseau social X.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_019_00-02-18.jpg" alt="Interface d&#x27;un navigateur web montrant une application interactive en 3D d&#x27;exploration de la Lune en gros plan sur fond d&#x27;étoiles." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_019_00-02-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:18</span>
+                        <span class="caption-text">Interface d&#x27;un navigateur web montrant une application interactive en 3D d&#x27;exploration de la Lune en gros plan sur fond d&#x27;étoiles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_020_00-02-25.jpg" alt="Interface de la même application web montrant la planète Mars vue de loin dans l&#x27;espace avec le curseur en forme de main." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_020_00-02-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:25</span>
+                        <span class="caption-text">Interface de la même application web montrant la planète Mars vue de loin dans l&#x27;espace avec le curseur en forme de main.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_021_00-02-32.jpg" alt="Capture d&#x27;écran d&#x27;un tweet posté par Anshu sur X (Twitter) présentant une vidéo de démonstration de l&#x27;application &quot;scrolling space explorer&quot; construite avec Grok Build." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_021_00-02-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:32</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet posté par Anshu sur X (Twitter) présentant une vidéo de démonstration de l&#x27;application &quot;scrolling space explorer&quot; construite avec Grok Build.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:35 - 00:02:59</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et cette démo passe à un niveau supérieur. Un développeur a construit tout ce site web interactif d&#x27;exploration spatiale en seulement quelques heures en utilisant Grok Build. En faisant défiler la page, une fusée s&#x27;lance dans l&#x27;espace, vous emmenant dans un voyage cinématographique à travers l&#x27;ISS, la lune, et même Mars, avec des compteurs de distance en direct, des panneaux d&#x27;information interactifs, et des animations qui n&#x27;ont honnêtement aucune raison d&#x27;être aussi réussies.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur les réseaux sociaux (X/Twitter) et un site web interactif personnalisé nommé &quot;Space Explorer&quot; (ascent.anshu.dev).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du post : &quot;Grok 4.5 is INSANE for web dev. I built this scrolling space explorer in just a couple hours with Grok Build. Link below, try it out!&quot;. Sur le site web : compteur de distance en direct (&quot;516,371 km&quot;), légende &quot;International Space Station&quot; avec des informations détaillées, et &quot;The Moon&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement à travers le site web interactif simulant un voyage spatial avec des vues de l&#x27;espace, de la Station Spatiale Internationale et de la Lune.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_022_00-02-37.jpg" alt="Publication sur les réseaux sociaux montrant le site web interactif d&#x27;exploration spatiale créé avec Grok Build." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_022_00-02-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:37</span>
+                        <span class="caption-text">Publication sur les réseaux sociaux montrant le site web interactif d&#x27;exploration spatiale créé avec Grok Build.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_023_00-02-51.jpg" alt="Navigation sur le site web interactif affichant une vue détaillée de la Station Spatiale Internationale (ISS) avec des panneaux d&#x27;information." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_023_00-02-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:51</span>
+                        <span class="caption-text">Navigation sur le site web interactif affichant une vue détaillée de la Station Spatiale Internationale (ISS) avec des panneaux d&#x27;information.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_024_00-02-57.jpg" alt="Vue rapprochée de la Lune dans l&#x27;interface interactive du site web d&#x27;exploration spatiale." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_024_00-02-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:57</span>
+                        <span class="caption-text">Vue rapprochée de la Lune dans l&#x27;interface interactive du site web d&#x27;exploration spatiale.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:59 - 00:03:34</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais voici la partie qui a vraiment attiré mon attention. Grok n&#x27;a pas seulement généré du HTML et du CSS pour en rester là. Il a géré de la programmation avancée, généré des visuels, créé des animations et des shaders personnalisés, traité des vidéos, optimisé les performances et même aidé à déployer le site web final. Nous dépassons lentement le stade de l&#x27;IA qui se contente d&#x27;autocompléter du code. On commence à avoir l&#x27;impression d&#x27;avoir affaire à un développeur full-stack qui ne demande jamais une nouvelle réunion de planification de sprint. Et cela explique peut-être pourquoi Grok s&#x27;améliore si vite. Plus tôt cette année, XAI a acquis Cursor, l&#x27;un des</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une application web interactive (&quot;ascent.anshu.dev&quot;) puis un article de CNBC.</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL &quot;ascent.anshu.dev&quot;, texte &quot;DISTANCE FROM EARTH: 429,628 km&quot;, &quot;The Moon&quot;, article CNBC &quot;SpaceX to acquire the AI coding startup Cursor for $60 billion&quot; avec la journaliste Ashley Capoot.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation à travers une application web immersive illustrant l&#x27;espace et la Lune, puis affichage d&#x27;un article de presse sur une acquisition.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_025_00-03-01.jpg" alt="Interface web interactive affichant une fusée stylisée dans l&#x27;espace avec l&#x27;indication &quot;429,628 km&quot; depuis la Terre." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_025_00-03-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:01</span>
+                        <span class="caption-text">Interface web interactive affichant une fusée stylisée dans l&#x27;espace avec l&#x27;indication &quot;429,628 km&quot; depuis la Terre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_026_00-03-11.jpg" alt="Interface web montrant le décollage d&#x27;une fusée sur un pas de tir au crépuscule." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_026_00-03-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:11</span>
+                        <span class="caption-text">Interface web montrant le décollage d&#x27;une fusée sur un pas de tir au crépuscule.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_027_00-03-23.jpg" alt="Interface web montrant une vue rapprochée en noir et blanc de la surface lunaire avec le titre &quot;The Moon&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_027_00-03-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:23</span>
+                        <span class="caption-text">Interface web montrant une vue rapprochée en noir et blanc de la surface lunaire avec le titre &quot;The Moon&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_028_00-03-32.jpg" alt="Article de presse CNBC titrant &quot;SpaceX to acquire the AI coding startup Cursor for $60 billion&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_028_00-03-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:32</span>
+                        <span class="caption-text">Article de presse CNBC titrant &quot;SpaceX to acquire the AI coding startup Cursor for $60 billion&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:34 - 00:03:55</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">des plateformes de programmation. Depuis lors, la technologie et l&#x27;expertise en ingénierie de Cursor ont commencé à intégrer Grok. Cela pourrait être l&#x27;une des principales raisons pour lesquelles ses capacités de programmation se sont améliorées de façon si spectaculaire en si peu de temps. Si ce rythme se poursuit, le vieux Grok dont tout le monde se moquait pourrait disparaître bien plus tôt que prévu. Et c&#x27;est tout pour ce rapport de recherche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface logicielle de démonstration et présentations textuelles épurées.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &#x27;2.0&#x27; avec logo hexagonal, interface météo interactive avec widgets sombres, barre de saisie avec le prompt &#x27;Build a site for my book review&#x27; et le sélecteur &#x27;Grok 4.5&#x27;, et le texte &#x27;Built for science, math, and engineering&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des logos, des interfaces logicielles et des capacités techniques de l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_029_00-03-36.jpg" alt="Logo et numéro de version &#x27;2.0&#x27; sur fond clair." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_029_00-03-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:36</span>
+                        <span class="caption-text">Logo et numéro de version &#x27;2.0&#x27; sur fond clair.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_030_00-03-44.jpg" alt="Interface de démonstration affichant une application météo/dashboard sombre et une barre de prompt avec le texte &#x27;Build a site for my book review&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_030_00-03-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:44</span>
+                        <span class="caption-text">Interface de démonstration affichant une application météo/dashboard sombre et une barre de prompt avec le texte &#x27;Build a site for my book review&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_031_00-03-53.jpg" alt="Texte affiché à l&#x27;écran : &#x27;Built for science, math, and engineering&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_031_00-03-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:53</span>
+                        <span class="caption-text">Texte affiché à l&#x27;écran : &#x27;Built for science, math, and engineering&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:55 - 00:04:34</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous avez aimé, assurez-vous de vous abonner car il y a beaucoup d&#x27;autres actualités sur l&#x27;IA qui arrivent. C&#x27;est Pursuing AI, et je vous retrouve dans le prochain rapport de recherche. Merci.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de type interface de génération 3D ou outil de design assisté par IA avec une barre de prompt en bas (&quot;Grok 4.5&quot;) et une zone de visualisation centrale.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt visible en bas : &quot;Build me a 3D model of the booster&quot;, logo d&#x27;IA &quot;Grok 4.5&quot;, et un widget de rappel d&#x27;abonnement YouTube en haut avec une icône de pouce levé et &quot;SUBSCRIBED&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un modèle 3D en filaire représentant un booster de fusée au centre de l&#x27;écran, avec une incitation à s&#x27;abonner positionnée au-dessus.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-MTVxdh7q9xg/frame_032_00-03-57.jpg" alt="Interface de modélisation 3D avec un panneau de prompt indiquant &quot;Build me a 3D model of the booster&quot; et un bouton de notification d&#x27;abonnement en haut." loading="lazy" onclick="openLightbox('screenshots/YT-MTVxdh7q9xg/frame_032_00-03-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:57</span>
+                        <span class="caption-text">Interface de modélisation 3D avec un panneau de prompt indiquant &quot;Build me a 3D model of the booster&quot; et un bouton de notification d&#x27;abonnement en haut.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

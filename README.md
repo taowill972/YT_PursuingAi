@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `26 / 83` (`31.3%`)
+- **Vidéos traitées** : `27 / 83` (`32.5%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -42,6 +42,7 @@
 | 2026-07-25 | [Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur)](2026-07-25_YT-2s4Y1oD9k3A_Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-07-25_YT-2s4Y1oD9k3A_Claude Opus 5 est INCROYABLE ! (Vrais tests de développeur)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 5m 51s | `37 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=2s4Y1oD9k3A) | `2s4Y1oD9k3A` |
 | 2026-07-18 | [Kimi K3 vs Fable 5 : Lequel l'emporte ?](2026-07-18_YT-MDdWGsuGcSE_Kimi K3 vs Fable 5 Lequel l'emporte_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-07-18_YT-MDdWGsuGcSE_Kimi K3 vs Fable 5 Lequel l'emporte_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 52s | `39 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=MDdWGsuGcSE) | `MDdWGsuGcSE` |
 | 2026-07-16 | [Kimi K3 est hallucinant ! Encore un moment DeepSeek ?](2026-07-16_YT-QraT8ZNkxgw_Kimi K3 est hallucinant ! Encore un moment DeepSeek_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-07-16_YT-QraT8ZNkxgw_Kimi K3 est hallucinant ! Encore un moment DeepSeek_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 51s | `38 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=QraT8ZNkxgw) | `QraT8ZNkxgw` |
+| 2026-07-12 | [Je ne m'attendais pas à ce que Grok 4.5 fasse ça](2026-07-12_YT-MTVxdh7q9xg_Je ne m'attendais pas à ce que Grok 4.5 fasse ça_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-07-12_YT-MTVxdh7q9xg_Je ne m'attendais pas à ce que Grok 4.5 fasse ça_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 04s | `32 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=MTVxdh7q9xg) | `MTVxdh7q9xg` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
