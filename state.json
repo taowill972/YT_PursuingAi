@@ -20,7 +20,8 @@
     "bcDvdUb-fEw",
     "yzNl4SLoSDI",
     "aAnaH3o6mF4",
-    "hyDviOrokpc"
+    "hyDviOrokpc",
+    "4lFiMR0DilQ"
   ],
   "processed_videos": [
     {
@@ -312,9 +313,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-08-01_YT-hyDviOrokpc_DeepSeek V4 Flash est TELLEMENT plus puissant qu'on le pensait ! 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-05T10:19:19Z",
       "status": "completed"
+    },
+    {
+      "video_id": "4lFiMR0DilQ",
+      "title": "Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux ?",
+      "raw_title": "Opus 5 Just Crossed The Limits! End of Game Devs..",
+      "filename_md": "2026-07-31_YT-4lFiMR0DilQ_Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-07-31_YT-4lFiMR0DilQ_Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-07-31",
+      "duration": 474,
+      "screenshots_count": 53,
+      "filepath_md": "/root/YT_PursuingAi/2026-07-31_YT-4lFiMR0DilQ_Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-07-31_YT-4lFiMR0DilQ_Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-05T10:28:15Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 21,
+  "completed_count": 22,
   "last_run_timestamp": "2026-10-05T10:00:03Z",
   "status": "running",
   "total_catalog_count": 83

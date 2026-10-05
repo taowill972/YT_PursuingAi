@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux ? — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Opus 5 vient de franchir toutes les limites ! La fin des développeurs de jeux ?</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-07-31</span>
+                <span class="badge">⏱️ 07m 54s</span>
+                <span class="badge">🆔 <code>4lFiMR0DilQ</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=4lFiMR0DilQ" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* explore les capacités révolutionnaires du modèle d'intelligence artificielle **Claude Opus 5** appliquées à la création et au développement de jeux vidéo. À travers plusieurs démonstrations de pointe, la vidéo met en lumière le passage d'une simple assistance au codage à une génération autonome de systèmes graphiques complexes, de jeux de stratégie en temps réel et de démos interactives par navigateur (comme le projet *Snowflow*). Le créateur décortique la méthode de « boucle de gantelet » (*gauntlet loop*), où l'IA emploie des sous-agents pour évaluer en continu son propre travail, comparer les résultats à des références existantes, corriger visuellement les bugs via l'analyse de captures d'écran et itérer jusqu'à obtenir un niveau de qualité prêt pour la production.</p><p>Au-delà des performances techniques ahurissantes — telles que la génération de jeux 3D complexes via 3.js, BabylonJS et des shaders WGSL personnalisés en quelques heures pour un coût de calcul mesuré en millions de jetons —, le rapport alerte sur la prolifération de fausses démos virales sur les réseaux sociaux. La méthode d'analyse du créateur repose sur un scepticisme rigoureux : exiger des preuves tangibles telles que des dépôts GitHub, du code source ouvert, des journaux de développement et des versions jouables. Pour les créateurs de contenu et les développeurs, l'enseignement majeur réside dans la compréhension des limites actuelles et des réelles opportunités de ces flux de travail agentiques autonomes.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Transition vers des agents autonomes** : L&#x27;IA ne se contente plus d&#x27;écrire des lignes de code isolées ; elle conçoit des architectures logicielles complètes et gère des pipelines de rendu complexes de manière autonome.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;utilisation de la boucle de gantelet (*gauntlet loop*)** : Intégration de sous-agents IA constructeurs et critiques qui évaluent, comparent au matériel d&#x27;origine et affinent le code en continu.</span></li><li><span class="point-bullet">✦</span><span>Auto-correction visuelle** : Capacité pour l&#x27;IA d&#x27;analyser des captures d&#x27;écran de son propre rendu, d&#x27;identifier les artéfacts visuels et d&#x27;appliquer des correctifs ciblés.</span></li><li><span class="point-bullet">✦</span><span>Économie de jetons et coûts de calcul** : La génération de projets d&#x27;envergure (comme des jeux par navigateur open-source) nécessite des volumes de jetons considérables (plusieurs millions de tokens de sortie) et des investissements de calcul mesurables.</span></li><li><span class="point-bullet">✦</span><span>Le piège des fausses démos virales** : Marge de tromperie élevée sur les réseaux sociaux (notamment sur X) avec des vidéos de jeux de style GTA prétendument générés en un seul prompt, mais s&#x27;avérant être des habillages de jeux existants.</span></li><li><span class="point-bullet">✦</span><span>Critères de validation technique** : Exigence systématique de preuves tangibles avant de valider une percée en IA (dépôt GitHub, démo jouable directement dans le navigateur, code source ou documentation technique).</span></li><li><span class="point-bullet">✦</span><span>Réalisme des environnements générés** : Atteinte d&#x27;un point d&#x27;inflexion où l&#x27;IA produit des ressources de qualité indépendante (suspensions réactives, particules, météo interactive, shaders de neige persistante).</span></li><li><span class="point-bullet">✦</span><span>Optimisation des coûts d&#x27;infrastructure** : Recours à des plateformes spécialisées d&#x27;abonnement groupé ou à prix réduits pour amortir l&#x27;utilisation intensive des outils d&#x27;intelligence artificielle de pointe.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:19</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Opus 5 assure un max en ce moment. Les générations que les gens créent sont tellement réalistes que certaines n&#x27;ont même plus l&#x27;air d&#x27;appartenir à l&#x27;IA. J&#x27;ai parcouru les meilleurs exemples et croyez-moi, vous comprendrez pourquoi tout le monde parle de ce modèle. C&#x27;est Pursuing AI et vous regardez le rapport de recherche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de type jeu vidéo avec affichage de débogage (Debug HUD) et interface de jeu de stratégie spatiale en temps réel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;OPUS 5&quot;, &quot;OBJECTIVE: Reach the Starship, Board the Starship&quot;, &quot;DEBUG HUD&quot;, &quot;build: UE5.4 dev&quot;, statistiques de performance (FPS, VRAM, RAM, Nanite tris).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de rendus visuels ultra-réalistes générés par intelligence artificielle, présentés sous forme de fausses séquences de jeu vidéo et d&#x27;interfaces tactiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_001_00-00-02.jpg" alt="Rendu vidéo de type jeu vidéo avec une fusée Starship et des personnages en arrière-plan, accompagné d&#x27;un panneau de débogage HUD." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Rendu vidéo de type jeu vidéo avec une fusée Starship et des personnages en arrière-plan, accompagné d&#x27;un panneau de débogage HUD.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_002_00-00-09.jpg" alt="Interface de stratégie spatiale de type jeu de gestion avec des vaisseaux et des menus de flotte." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_002_00-00-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Interface de stratégie spatiale de type jeu de gestion avec des vaisseaux et des menus de flotte.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_003_00-00-17.jpg" alt="Illustration graphique d&#x27;un cerveau connecté à une puce électronique portant l&#x27;inscription PAI dans un cercle lumineux." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_003_00-00-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:17</span>
+                        <span class="caption-text">Illustration graphique d&#x27;un cerveau connecté à une puce électronique portant l&#x27;inscription PAI dans un cercle lumineux.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:19 - 00:00:38</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En commençant par cette démonstration de conduite tout-terrain, Chris a demandé à Opus 5 de générer les plus beaux graphismes de jeu possibles, et tout ce que vous voyez ici a été créé par le modèle lui-même. À première vue, il est difficile de croire que cela a été généré par IA. L&#x27;éclairage, le terrain, la végétation et l&#x27;environnement global ont l&#x27;air étonnamment soignés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme X (Twitter) affichant un tweet avec une vidéo intégrée, ainsi qu&#x27;une barre latérale à droite montrant les suggestions de profils à suivre et les tendances actuelles.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de Chris : &quot;I asked Claude 5 Opus to generate me the best game graphics it could! I wanted to create a car on a dirt trail demo and see how good it was at crafting car graphics without any textures. Everything you see here is 100% crafted from the model itself.&quot; Le profil de Chris (@ChrisGPT) est également visible avec la mention &quot;Agi 2029 - AI Insider / Reporter as featured in The Information - NYT - Techcrunch&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un post sur les réseaux sociaux présentant une vidéo de gameplay générée par intelligence artificielle, démontrant les capacités graphiques d&#x27;un modèle d&#x27;IA pour la création de jeux vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_004_00-00-21.jpg" alt="Capture d&#x27;écran d&#x27;une publication X (Twitter) de Chris (@ChrisGPT) montrant une vidéo de démonstration de conduite tout-terrain générée par IA." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_004_00-00-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:21</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication X (Twitter) de Chris (@ChrisGPT) montrant une vidéo de démonstration de conduite tout-terrain générée par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_005_00-00-36.jpg" alt="Gros plan sur la démo de jeu vidéo montrant un véhicule tout-terrain circulant sur un sentier en terre au milieu d&#x27;une forêt dense." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_005_00-00-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:36</span>
+                        <span class="caption-text">Gros plan sur la démo de jeu vidéo montrant un véhicule tout-terrain circulant sur un sentier en terre au milieu d&#x27;une forêt dense.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:38 - 00:01:01</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Bien sûr, ce n&#x27;est pas parfait, il y a encore des artéfacts visuels et des limitations de gameplay, mais la qualité visuelle globale est vraiment impressionnante. Chris lui a alors donné un tout dernier prompt : augmenter la qualité. Et les résultats ont complètement changé la scène. Il a même dit : Nous avons atteint le point d&#x27;inflexion où l&#x27;IA peut produire des ressources de qualité indépendante pour les jeux vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme X (Twitter) affichant un tweet de ChrisGPT et le panneau latéral des tendances.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de ChrisGPT : &quot;Claude Opus 5, I think we&#x27;ve reached the inflection point where AI can produce indie quality assets for video games. This is after my second prompt, just simply telling it to increase the quality. Some of these angles on the car are truly stunning and I can 100% say they look better than a lot of Indie games I&#x27;ve recently played.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran affiche d&#x27;abord les images en mouvement d&#x27;une démo de jeu vidéo générée par IA, puis passe à une capture d&#x27;un post sur les réseaux sociaux commentant cette réalisation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_006_00-00-40.jpg" alt="Rendu vidéo d&#x27;un jeu de conduite généré par IA montrant un véhicule vert progressant sur un sentier forestier (Ridgeline Trail)." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_006_00-00-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:40</span>
+                        <span class="caption-text">Rendu vidéo d&#x27;un jeu de conduite généré par IA montrant un véhicule vert progressant sur un sentier forestier (Ridgeline Trail).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_007_00-00-46.jpg" alt="Vue de gameplay poursuivant la scène du véhicule vert roulant dans la forêt sur un chemin boueux." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_007_00-00-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:46</span>
+                        <span class="caption-text">Vue de gameplay poursuivant la scène du véhicule vert roulant dans la forêt sur un chemin boueux.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_008_00-00-54.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de @ChrisGPT commentant les capacités de Claude Opus 5 à générer des graphismes de qualité indie." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_008_00-00-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:54</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de @ChrisGPT commentant les capacités de Claude Opus 5 à générer des graphismes de qualité indie.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:01 - 00:01:20</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En regardant la version améliorée, il est facile de comprendre pourquoi. Les reflets sur la carrosserie de la voiture, la lumière du soleil frappant la peinture et les détails de l&#x27;environnement ont l&#x27;air beaucoup plus raffinés. Dans certains plans, je dirais sincèrement que les visuels rivalisent avec de nombreux jeux indépendants disponibles aujourd&#x27;hui. Ce qui m&#x27;a encore plus impressionné, ce sont les petits détails.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Capture d&#x27;écran de gameplay montrant un environnement virtuel interactif de type jeu vidéo avec des éléments d&#x27;interface (HUD, titre &quot;RIDGELINE TRAIL&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché en haut à gauche : &quot;RIDGELINE TRAIL&quot;, ainsi que des indicateurs de vitesse ou de performance en bas de l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle d&#x27;un véhicule en mouvement à travers différents angles de caméra (extérieur et intérieur) pour mettre en valeur les graphismes, l&#x27;éclairage et les détails de l&#x27;environnement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_009_00-01-03.jpg" alt="Vue extérieure de profil d&#x27;un véhicule tout-terrain traversant un sentier boisé, illustrant les reflets sur la carrosserie et l&#x27;éclairage." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_009_00-01-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:03</span>
+                        <span class="caption-text">Vue extérieure de profil d&#x27;un véhicule tout-terrain traversant un sentier boisé, illustrant les reflets sur la carrosserie et l&#x27;éclairage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_010_00-01-11.jpg" alt="Vue arrière en léger contre-plongée d&#x27;un véhicule tout-terrain roulant sur un chemin de terre rocailleux dans une forêt." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_010_00-01-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:11</span>
+                        <span class="caption-text">Vue arrière en léger contre-plongée d&#x27;un véhicule tout-terrain roulant sur un chemin de terre rocailleux dans une forêt.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_011_00-01-18.jpg" alt="Vue intérieure détaillée du poste de pilotage (tableau de bord, volant, cadrans et rétroviseur) d&#x27;un véhicule tout-terrain." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_011_00-01-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:18</span>
+                        <span class="caption-text">Vue intérieure détaillée du poste de pilotage (tableau de bord, volant, cadrans et rétroviseur) d&#x27;un véhicule tout-terrain.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:20 - 00:01:39</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La suspension réagit à mesure que la voiture roule sur un terrain accidenté. Les pneus soulèvent du sable, l&#x27;odomètre est fonctionnel, et l&#x27;environnement semble beaucoup plus vivant que ce à quoi on s&#x27;attendrait d&#x27;un contenu généré par l&#x27;IA. Ça ne remplace toujours pas le développement de jeux AAA, mais c&#x27;est un signe évident de la rapidité avec laquelle l&#x27;IA s&#x27;améliore.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration vidéo d&#x27;un contenu généré par IA ou d&#x27;un moteur de jeu interactif style &quot;Ridgeline Trail&quot; avec des éléments d&#x27;interface utilisateur en surimpression (commandes de touches, odomètre/compteur).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché &quot;RIDGELINE TRAIL&quot;, commandes de jeu en bas à gauche (Click, Drag, WASD, etc.), et compteur de vitesse/odomètre fonctionnel en bas à droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Un véhicule tout-terrain vert roule sur un terrain accidenté, simulant dynamiquement la physique des suspensions et la projection de sable/poussière par les pneus.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_012_00-01-22.jpg" alt="Gros plan en caméra embarquée sur le côté d&#x27;un 4x4 vert tout-terrain roulant sur un sentier accidenté (Ridgeline Trail), montrant la réaction des suspensions et des pneus soulevant de la poussière." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_012_00-01-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:22</span>
+                        <span class="caption-text">Gros plan en caméra embarquée sur le côté d&#x27;un 4x4 vert tout-terrain roulant sur un sentier accidenté (Ridgeline Trail), montrant la réaction des suspensions et des pneus soulevant de la poussière.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_013_00-01-30.jpg" alt="Vue générale du 4x4 vert naviguant à travers un terrain boisé et accidenté, avec des affichages de télémétrie de jeu en surimpression." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_013_00-01-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:30</span>
+                        <span class="caption-text">Vue générale du 4x4 vert naviguant à travers un terrain boisé et accidenté, avec des affichages de télémétrie de jeu en surimpression.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_014_00-01-37.jpg" alt="Vue légèrement plus éloignée du véhicule tout-terrain en mouvement dans la forêt, illustrant le réalisme du comportement de conduite simulé." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_014_00-01-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:37</span>
+                        <span class="caption-text">Vue légèrement plus éloignée du véhicule tout-terrain en mouvement dans la forêt, illustrant le réalisme du comportement de conduite simulé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:39 - 00:01:57</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si c&#x27;est ce qu&#x27;Opus 5 peut générer aujourd&#x27;hui, imaginez où en seront ces outils d&#x27;ici un an. À ce rythme, nous obtiendrons honnêtement GTA 7 fait avec l&#x27;IA avant que Rockstar ne sorte officiellement GTA 6. Avant de continuer, je veux rapidement vous montrer un moyen d&#x27;économiser de l&#x27;argent sur les abonnements IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur le réseau social X (anciennement Twitter) et une page de tarification officielle de ChatGPT.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Publication de ChrisGPT sur X mentionnant &quot;Claude Opus 5&quot; et la génération d&#x27;actifs de jeux vidéo de qualité indépendante. Page des tarifs de ChatGPT affichant les formules Free ($0), Go ($8), Plus ($20) et Pro ($100/mois) avec leurs caractéristiques respectives.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle d&#x27;un post sur les réseaux sociaux illustrant la génération par IA, suivie d&#x27;une démonstration de la page de tarification des abonnements IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_015_00-01-41.jpg" alt="Capture d&#x27;écran du réseau social X montrant une publication de l&#x27;utilisateur ChrisGPT à propos des capacités de Claude Opus 5 pour générer des assets de jeux vidéo." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_015_00-01-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:41</span>
+                        <span class="caption-text">Capture d&#x27;écran du réseau social X montrant une publication de l&#x27;utilisateur ChrisGPT à propos des capacités de Claude Opus 5 pour générer des assets de jeux vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_016_00-01-55.jpg" alt="Page web de tarification de ChatGPT présentant les différentes offres d&#x27;abonnement (Free à 0$, Go à 8$, Plus à 20$ et Pro à 100$)." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_016_00-01-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Page web de tarification de ChatGPT présentant les différentes offres d&#x27;abonnement (Free à 0$, Go à 8$, Plus à 20$ et Pro à 100$).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:57 - 00:02:19</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous recherchez un abonnement ChatGPT Plus moins cher en 2026, U7Buy vaut vraiment le détour. U7Buy propose un abonnement privé d&#x27;un mois à ChatGPT Plus pour environ 9 dollars au lieu du prix officiel de 20 dollars, tout en vous donnant accès à des fonctionnalités puissantes comme GPT 5.6, Image 2.0 et Deep Research.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de commerce en ligne U7Buy (page d&#x27;achat de comptes ChatGPT Accounts).</p>
+                        <p><strong>Contenu textuel & Code :</strong> &quot;ChatGPT Accounts for Sale&quot;, &quot;Safe&quot;, &quot;Full Warranty&quot;, &quot;Plan Type: Plus (Private), Go (Private), Pro (Private), Plus (Shared)&quot;, &quot;Duration: 1 Month $9.99, 12 Months $53.50&quot;, &quot;ChatGPT Plus Private 1 Month&quot;, &quot;Price $9.99&quot;, &quot;Buy Now&quot;, texte superposé &quot;GPT 5.6&quot; et &quot;IMAGE 2.0&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de la page d&#x27;achat d&#x27;un compte ChatGPT Plus à prix réduit sur le site U7Buy.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_017_00-01-59.jpg" alt="Navigation sur le site U7Buy montrant la page d&#x27;achat de comptes ChatGPT Plus avec les options de prix et de durée." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_017_00-01-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:59</span>
+                        <span class="caption-text">Navigation sur le site U7Buy montrant la page d&#x27;achat de comptes ChatGPT Plus avec les options de prix et de durée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_018_00-02-08.jpg" alt="Gros plan sur les options de type de forfait (Plus Private, Go, Pro) et de durée (1 mois à 9.99$, 12 mois à 53.50$)." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_018_00-02-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:08</span>
+                        <span class="caption-text">Gros plan sur les options de type de forfait (Plus Private, Go, Pro) et de durée (1 mois à 9.99$, 12 mois à 53.50$).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_019_00-02-17.jpg" alt="Affichage de l&#x27;interface du site U7Buy avec superposition des textes illustrant les fonctionnalités mentionnées (GPT 5.6, Image 2.0)." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_019_00-02-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:17</span>
+                        <span class="caption-text">Affichage de l&#x27;interface du site U7Buy avec superposition des textes illustrant les fonctionnalités mentionnées (GPT 5.6, Image 2.0).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:19 - 00:02:41</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En plus de ChatGPT+, U7buy propose également des abonnements pour des services tels que Netflix, Gemini et Spotify, ce qui en fait un endroit pratique pour économiser sur plusieurs abonnements. Ils fournissent également un support client 24h/24 et 7j/7 si vous avez besoin d&#x27;aide. U7buy fonctionne depuis plus de 10 ans et a obtenu une note de 4,8 étoiles sur Trustpilot avec des milliers d&#x27;avis clients.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web U7buy et plateforme d&#x27;avis Trustpilot.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Logos et abonnements de services (Crunchyroll, Amazon Prime Video, Gemini, Xbox, Claude, Apple TV, Apple Music, Perplexity AI, Apple One, Spotify), barres de recherche, note globale de 4.8 sur Trustpilot avec 47 172 avis.
+[DESC_IMAGE_1] Navigation sur la boutique en ligne U7buy présentant les offres d&#x27;abonnements multiples.
+[DESC_IMAGE_2] Affichage de la rubrique d&#x27;assistance client 24/7 de U7buy.
+[DESC_IMAGE_3] Consultation de la note Trustpilot de 4.8 étoiles accumulée au fil de plus de 10 ans d&#x27;activité.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_020_00-02-21.jpg" alt="Page du site U7buy montrant les différentes catégories d&#x27;abonnements disponibles (Netflix, Gemini, Spotify, etc.)." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_020_00-02-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:21</span>
+                        <span class="caption-text">Page du site U7buy montrant les différentes catégories d&#x27;abonnements disponibles (Netflix, Gemini, Spotify, etc.).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_021_00-02-30.jpg" alt="Centre d&#x27;aide (Help Center) du site U7buy avec une barre de recherche." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_021_00-02-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:30</span>
+                        <span class="caption-text">Centre d&#x27;aide (Help Center) du site U7buy avec une barre de recherche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_022_00-02-39.jpg" alt="Page Trustpilot de U7buy affichant la note de 4.8 étoiles et le résumé des avis clients." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_022_00-02-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:39</span>
+                        <span class="caption-text">Page Trustpilot de U7buy affichant la note de 4.8 étoiles et le résumé des avis clients.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:41 - 00:03:09</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous souhaitez économiser de l&#x27;argent sur vos abonnements, consultez mon lien dans la description et utilisez mon code de réduction PURSU pour obtenir 5 % de réduction supplémentaire sur votre commande. Revenons maintenant à la vidéo. Si vous pensiez que le dernier exemple était impressionnant, celui-ci passe à un niveau supérieur. Imaginez donner à Opus 5 un seul prompt détaillé et le regarder construire un tout nouveau jeu de stratégie en temps réel inspiré de Homeworld, entièrement à partir de zéro. Pas d&#x27;actifs préfabriqués, pas de modèles 3D existants.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran promotionnel de code de réduction (U7BUY) suivi d&#x27;une interface de réseau social (X/Twitter) et d&#x27;une interface de jeu vidéo de stratégie en temps réel (RTS) spatiale.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code promo &quot;PURSU&quot;, texte &quot;5% off code&quot;, publication X mentionnant &quot;Homeworld Style Space RTS with OPUS 5 (workflow)&quot;, métriques de jetons (68.6k input, 4.6m output, $632.65), et interface de jeu affichant les ressources, les unités de flotte, les icônes de vaisseaux et les arbres de recherche.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;un code promotionnel de parrainage, puis affichage d&#x27;un post sur les réseaux sociaux et d&#x27;une démonstration détaillée du jeu de stratégie spatiale généré par Opus 5.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_023_00-02-43.jpg" alt="Écran promotionnel U7BUY affichant l&#x27;offre de réduction de 5 % avec le code promo PURSU." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_023_00-02-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:43</span>
+                        <span class="caption-text">Écran promotionnel U7BUY affichant l&#x27;offre de réduction de 5 % avec le code promo PURSU.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_024_00-03-00.jpg" alt="Capture d&#x27;écran d&#x27;une publication sur les réseaux sociaux (X/Twitter) montrant le projet de jeu de stratégie spatiale réalisé avec Opus 5." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_024_00-03-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:00</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication sur les réseaux sociaux (X/Twitter) montrant le projet de jeu de stratégie spatiale réalisé avec Opus 5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_025_00-03-07.jpg" alt="Interface de jeu en plein écran montrant le jeu de stratégie spatiale de type Homeworld généré par IA, avec des vaisseaux et des menus de gestion." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_025_00-03-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:07</span>
+                        <span class="caption-text">Interface de jeu en plein écran montrant le jeu de stratégie spatiale de type Homeworld généré par IA, avec des vaisseaux et des menus de gestion.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:10 - 00:03:40</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout ce que vous voyez, depuis les immenses vaisseaux capitaux jusqu&#x27;aux planètes, champs d&#x27;astéroïdes, contrôles de flotte, objectifs, gestion des ressources et batailles en temps réel, a été généré par Opus 5 en utilisant 3.js. Mais voici la partie vraiment intéressante. Le modèle n&#x27;a pas seulement généré du code une fois pour s&#x27;arrêter, il a évalué en continu son propre travail, utilisé des sous-agents pour améliorer différentes parties du projet, comparé les résultats avec le jeu original Homeworld, et continué à affiner le jeu jusqu&#x27;à atteindre ce niveau de qualité.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur de type jeu de stratégie de science-fiction (style Homeworld) avec des panneaux de ressources, de gestion de flotte, de recherche et une mini-carte radar.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;RESOURCE UNITS 14 688&quot;, &quot;FLEET SUPPLY 63 / 140&quot;, &quot;AEGIS DESTROYER&quot;, &quot;COMPOSITE PLATING&quot;, &quot;SELECTION: STARFALL MOTHERSHIP&quot;, &quot;CRUCIBLE REFINERY&quot;, &quot;FLEET UNDER ATTACK&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et gestion de jeu de stratégie spatiale en temps réel, avec sélection d&#x27;unités, construction de vaisseaux et observation de combats spatiaux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_026_00-03-12.jpg" alt="Interface d&#x27;un jeu de stratégie spatiale généré par IA, montrant une planète avec des anneaux, un champ d&#x27;astéroïdes et des menus de gestion de flotte." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_026_00-03-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:12</span>
+                        <span class="caption-text">Interface d&#x27;un jeu de stratégie spatiale généré par IA, montrant une planète avec des anneaux, un champ d&#x27;astéroïdes et des menus de gestion de flotte.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_027_00-03-20.jpg" alt="Vue rapprochée d&#x27;un vaisseau capital dans le jeu spatial avec des informations sur les unités et des options de construction." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_027_00-03-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:20</span>
+                        <span class="caption-text">Vue rapprochée d&#x27;un vaisseau capital dans le jeu spatial avec des informations sur les unités et des options de construction.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_028_00-03-31.jpg" alt="Scène de bataille spatiale en temps réel au-dessus d&#x27;une planète avec des tirs de laser et des sélections de zones par encadré." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_028_00-03-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:31</span>
+                        <span class="caption-text">Scène de bataille spatiale en temps réel au-dessus d&#x27;une planète avec des tirs de laser et des sélections de zones par encadré.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:40 - 00:03:59</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les chiffres derrière ce projet sont honnêtement fous. Environ 68 000 jetons d&#x27;entrée, plus de 4,6 millions de jetons de sortie, et environ 632 $ de coût de calcul pour le terminer. Et le résultat ? Un jeu par navigateur entièrement jouable qui est également open source.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (anciennement Twitter) affichant un post avec texte et image intégrée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du post : &quot;My holy-shi moment of opus5. Homeworld Style Space RTS with OPUS 5 (workflow) 68.6k input, 4.6m output, 837.2m cache read, 13.6m cache write ($632.65). Models: generated, Asset: none. Besides minor game play issues, watching model cook this is beyond my imagination.&quot; Capture d&#x27;écran d&#x27;un jeu de stratégie en temps réel (RTS) spatial avec des vaisseaux dans un décor nébuleux. Panneau latéral droit affichant les sections &quot;Relevant people&quot; et &quot;What&#x27;s happening&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran d&#x27;une publication sur les réseaux sociaux illustrant les statistiques et le rendu du projet discuté dans la vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_029_00-03-42.jpg" alt="Publication sur le réseau social X montrant les détails d&#x27;un projet de jeu de stratégie spatiale généré par IA, incluant les statistiques de jetons et une capture d&#x27;écran du jeu." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_029_00-03-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:42</span>
+                        <span class="caption-text">Publication sur le réseau social X montrant les détails d&#x27;un projet de jeu de stratégie spatiale généré par IA, incluant les statistiques de jetons et une capture d&#x27;écran du jeu.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:59 - 00:04:22</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et juste au moment où vous pensez qu&#x27;Opus 5 ne pouvait pas être plus impressionnant, voici un autre exemple. Ce développeur a associé Claude Code à Opus 5 et lui a donné un seul objectif. À partir de là, l&#x27;IA a presque tout géré. Après environ 9 heures et près de 4 millions de jetons, elle a construit Snowflow, une démo graphique basée sur un navigateur qui est honnêtement difficile à croire comme étant principalement créée par une IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un tweet (interface de type X/Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Someone used Claude Code with Opus 5 to build SNOWFLOW, a browser WebGPU snow and waterbending demo with persistent terrain deformation in 9 hours. - Full-Stack Graphics Pipeline... - Interactive Terrain Deformation... - Visual Self-Correction... - 9-Hour Build Window...&quot; ainsi qu&#x27;une vidéo intégrée montrant le rendu enneigé. Dans le panneau de droite, des sections &quot;Relevant people&quot; avec le compte d&#x27;0xMarioNawfal et &quot;What&#x27;s happening&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une publication sur les réseaux sociaux détaillant les caractéristiques techniques d&#x27;une démo graphique créée par une IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_030_00-04-01.jpg" alt="Capture d&#x27;écran d&#x27;un tweet expliquant la création de Snowflow avec Claude Code et Opus 5, incluant une vidéo de démonstration." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_030_00-04-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:01</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet expliquant la création de Snowflow avec Claude Code et Opus 5, incluant une vidéo de démonstration.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:22 - 00:04:40</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le projet comprend des shaders WGSL personnalisés, un pipeline de rendu WebPG complet, un système de terrain BabylonJS, de la neige interactive qui réagit à vos sorts, des traces de neige persistantes, un déplacement d&#x27;eau réaliste et même un terrain qui se restitue lentement de lui-même au fil du temps.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur la plateforme X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Someone used Claude Code with Opus 5 to build SNOWFLOW, a browser WebGPU snow and waterbending demo with persistent terrain deformation in 9 hours.&quot; Suivi de points clés techniques incluant &quot;Full-Stack Graphics Pipeline&quot;, &quot;Interactive Terrain Deformation&quot;, &quot;Visual Self-Correction&quot;, et &quot;9-Hour Build Window&quot;, avec une vidéo intégrée montrant un personnage dans un paysage enneigé.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une publication sur les réseaux sociaux détaillant la création d&#x27;une démo WebGPU interactive à l&#x27;aide de Claude Code et Opus 5.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_031_00-04-24.jpg" alt="Capture d&#x27;écran d&#x27;un tweet sur X présentant la démo technique &quot;SNOWFLOW&quot; avec des détails sur les pipelines graphiques WebGPU et Babylon.js." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_031_00-04-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:24</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet sur X présentant la démo technique &quot;SNOWFLOW&quot; avec des détails sur les pipelines graphiques WebGPU et Babylon.js.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:40 - 00:05:01</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais la partie la plus folle, c&#x27;est que Opus 5 n&#x27;a pas seulement généré le projet, il a réellement examiné des captures d&#x27;écran de son propre travail, trouvé des bugs visuels et les a corrigés automatiquement. Maintenant, jetez un œil à ce gameplay. Vous pouvez parcourir le monde, lancer des sorts d&#x27;eau, tailler des chemins à travers la neige, et chaque interaction modifie l&#x27;environnement en temps réel.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface d&#x27;une application de réseau social (X / Twitter) montrant un post explicatif et des extraits vidéo, suivie d&#x27;un moteur de rendu graphique 3D WebGPU.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du post X : &quot;Someone used Claude Code with Opus 5 to build SNOWFLOW, a browser WebGPU snow and waterbending demo with persistent terrain deformation in 9 hours.&quot; avec les points techniques : Full-Stack Graphics Pipeline, Interactive Terrain Deformation, Visual Self-Correction, 9-Hour Build Window.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre une publication détaillant le projet Snowflow, puis présente des séquences de gameplay interactives où le personnage se déplace et interagit dynamiquement avec le décor enneigé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_032_00-04-42.jpg" alt="Publication sur X (Twitter) présentant le projet Snowflow créé avec Claude Code et Opus 5 en 9 heures." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_032_00-04-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:42</span>
+                        <span class="caption-text">Publication sur X (Twitter) présentant le projet Snowflow créé avec Claude Code et Opus 5 en 9 heures.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_033_00-04-51.jpg" alt="Vue de gameplay montrant un personnage en tenue sombre marchant sur un vaste paysage enneigé vallonné." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_033_00-04-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:51</span>
+                        <span class="caption-text">Vue de gameplay montrant un personnage en tenue sombre marchant sur un vaste paysage enneigé vallonné.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_034_00-04-59.jpg" alt="Vue de gameplay montrant le personnage en train de courir et de manipuler l&#x27;environnement enneigé en temps réel." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_034_00-04-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:59</span>
+                        <span class="caption-text">Vue de gameplay montrant le personnage en train de courir et de manipuler l&#x27;environnement enneigé en temps réel.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:01 - 00:05:22</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;éclairage, les effets de particules, les reflets et la déformation du terrain ont l&#x27;air incroyablement soignés. C&#x27;est l&#x27;une des démonstrations les plus fortes de ce dont Opus 5 est capable aujourd&#x27;hui. Ce n&#x27;est plus seulement une IA qui écrit du code, elle peut construire des systèmes graphiques avancés, les déboguer visuellement et itérer jusqu&#x27;à ce que le résultat final semble prêt pour la production.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Système de rendu graphique 3D interactif généré par Opus 5.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Environnement virtuel 3D photoréaliste enneigé, incluant un personnage animé, des effets de traînée et de particules dans la neige, un soleil éclatant avec reflets atmosphériques et des formations de glace.</p>
+                        <p><strong>Action / Démonstration :</strong> Le personnage évolue dynamiquement à travers le décor enneigé, provoquant des déformations physiques réalistes du terrain et interagissant avec les effets de particules.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_035_00-05-03.jpg" alt="Rendu graphique en temps réel montrant un personnage dans un paysage enneigé avec des effets de particules et d&#x27;éclairage dynamiques." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_035_00-05-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:03</span>
+                        <span class="caption-text">Rendu graphique en temps réel montrant un personnage dans un paysage enneigé avec des effets de particules et d&#x27;éclairage dynamiques.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_036_00-05-12.jpg" alt="Vue aérienne montrant la déformation du terrain et les traînées laissées par le personnage glissant sur la neige." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_036_00-05-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:12</span>
+                        <span class="caption-text">Vue aérienne montrant la déformation du terrain et les traînées laissées par le personnage glissant sur la neige.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_037_00-05-20.jpg" alt="Vue panoramique d&#x27;un environnement enneigé étendu sous un ciel lumineux, illustrant la qualité des reflets et de l&#x27;éclairage." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_037_00-05-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:20</span>
+                        <span class="caption-text">Vue panoramique d&#x27;un environnement enneigé étendu sous un ciel lumineux, illustrant la qualité des reflets et de l&#x27;éclairage.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:22 - 00:05:56</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si c&#x27;est ce que l&#x27;IA peut créer en moins d&#x27;un jour aujourd&#x27;hui, imaginez à quoi le développement de jeux, la création et les simulations pourraient ressembler au cours des prochaines années. Le rythme des progrès est franchement incroyable. Une chose rapide avant de conclure. Ne croyez pas chaque démo virale d&#x27;Opus 5 que vous voyez sur X. Par exemple, cette publication affirme qu&#x27;Opus 5 a généré un jeu 3D de style GTA réaliste dans un navigateur, situé sur un site de lancement de SpaceX Starship, en utilisant un seul prompt et la boucle de gant (gauntlet loop) où des agents IA construisent, critiquent et améliorent à plusieurs reprises le projet.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (anciennement Twitter) affichant un tweet et un profil utilisateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de l&#x27;utilisateur @MarlburroW38 mentionnant : &quot;GTA SpaceX running in the browser 👀, built by Claude in one prompt using a Gauntlet Loop.&quot; et détaillant la pile technique (Stack: three.js + WebGPU, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur illustre ses propos en affichant des exemples de rendus visuels générés par IA puis une publication sur les réseaux sociaux pour mettre en garde contre les fausses démos virales.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_038_00-05-24.jpg" alt="Démonstration visuelle de simulation ou de jeu montrant un personnage se déplaçant au-dessus de nuages dans un environnement enneigé." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_038_00-05-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:24</span>
+                        <span class="caption-text">Démonstration visuelle de simulation ou de jeu montrant un personnage se déplaçant au-dessus de nuages dans un environnement enneigé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_039_00-05-34.jpg" alt="Poursuite de la démonstration visuelle avec une vue en mouvement au ras du sol ou d&#x27;une surface enneigée." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_039_00-05-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:34</span>
+                        <span class="caption-text">Poursuite de la démonstration visuelle avec une vue en mouvement au ras du sol ou d&#x27;une surface enneigée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_040_00-05-45.jpg" alt="Capture d&#x27;écran d&#x27;une publication sur le réseau social X montrant un tweet sur un jeu GTA généré par Claude avec des détails techniques et un aperçu vidéo." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_040_00-05-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:45</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication sur le réseau social X montrant un tweet sur un jeu GTA généré par Claude avec des détails techniques et un aperçu vidéo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:56 - 00:06:20</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ça a l&#x27;air impressionnant, mais cet exemple est presque certainement faux. Voici pourquoi. Le gameplay lui-même montre de multiples signes qu&#x27;il n&#x27;a pas été généré de zéro par un agent de codage IA. Les animations, le mouvement de caméra, le comportement des PNJ, l&#x27;éclairage et la cohérence globale de la scène ressemblent beaucoup plus à un jeu existant lourdement modifié qu&#x27;à un projet de navigateur créé en un seul prompt.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web (plateforme X/Twitter) et moteur de jeu (Unreal Engine 5 avec HUD de débogage et mini-carte style GTA).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Publication textuelle : &quot;GTA SpaceX running in the browser, built by Claude in one prompt using a Gauntlet Loop...&quot; avec spécifications techniques (three.js + WebGPU, baked lighting + HDRI, wet-ground SSR...). Interface de jeu avec les objectifs &quot;Reach the Starship&quot;, &quot;Board the Starship&quot; et des statistiques de performance (FPS, mémoire, triangles).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre d&#x27;abord un post X détaillant un prétendu jeu généré par IA, puis diffuse des images de gameplay en vue à la troisième personne avec un personnage en combinaison blanche évoluant dans un décor sophistiqué.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_041_00-05-58.jpg" alt="Capture d&#x27;écran d&#x27;une publication X (Twitter) montrant le texte descriptif du projet de jeu &quot;GTA SpaceX&quot; et un aperçu vidéo en bas." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_041_00-05-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:58</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication X (Twitter) montrant le texte descriptif du projet de jeu &quot;GTA SpaceX&quot; et un aperçu vidéo en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_042_00-06-04.jpg" alt="Vue de gameplay montrant un personnage en combinaison spatiale blanche marchant dans un environnement humide avec des reflets au sol et l&#x27;interface de débogage Unreal Engine 5 à droite." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_042_00-06-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:04</span>
+                        <span class="caption-text">Vue de gameplay montrant un personnage en combinaison spatiale blanche marchant dans un environnement humide avec des reflets au sol et l&#x27;interface de débogage Unreal Engine 5 à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_043_00-06-12.jpg" alt="Vue de gameplay similaire avec un grand vaisseau spatial (Starship) visible à l&#x27;arrière-plan et des PNJ autour du personnage principal." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_043_00-06-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:12</span>
+                        <span class="caption-text">Vue de gameplay similaire avec un grand vaisseau spatial (Starship) visible à l&#x27;arrière-plan et des PNJ autour du personnage principal.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_044_00-06-18.jpg" alt="Mouvement de caméra panoramique dans le jeu montrant des structures de base, des PNJ et des moniteurs de performance technique (HUD) sur le côté droit." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_044_00-06-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:18</span>
+                        <span class="caption-text">Mouvement de caméra panoramique dans le jeu montrant des structures de base, des PNJ et des moniteurs de performance technique (HUD) sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:20 - 00:06:50</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Deuxièmement, il n&#x27;y a pas de code source, pas de journaux de développement, pas de démo jouable et aucune preuve technique pour étayer une affirmation aussi extraordinaire. Pour des projets aussi avancés, les développeurs publient normalement un dépôt GitHub, une version pour navigateur, ou expliquent au moins comment ils l&#x27;ont construit. Rien de tout cela n&#x27;existe ici. Et bien que la boucle de gantelet soit une réelle technique de prompting qui améliore le code généré par l&#x27;IA en utilisant des agents constructeurs et critiques, elle ne génère pas magiquement un jeu de qualité GTA à partir d&#x27;une seule invite sans aucune preuve.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant des publications sur le réseau social X (Twitter) ainsi qu&#x27;une capture d&#x27;écran de jeu vidéo dotée d&#x27;un HUD de débogage.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de MarlburroW : &quot;GTA SpaceX running in the browser 👀, built by Claude in one prompt using a Gauntlet Loop... Stack: three.js + WebGPU...&quot;. Texte du tweet de Matt Schumer : &quot;Claude Opus 5 one-shotted this game. EVERYTHING you see in this demo is custom code...&quot;. Affichage des métriques de performance sur l&#x27;écran du jeu (FPS, frame time, triangles, mémoire VRAM).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre des exemples de publications virales sur X affirmant la génération de jeux vidéo par IA pour appuyer son argumentation sur l&#x27;absence de preuves techniques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_045_00-06-22.jpg" alt="Capture d&#x27;écran du jeu en cours avec un personnage en combinaison spatiale blanche courant sur une piste mouillée devant une fusée SpaceX." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_045_00-06-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:22</span>
+                        <span class="caption-text">Capture d&#x27;écran du jeu en cours avec un personnage en combinaison spatiale blanche courant sur une piste mouillée devant une fusée SpaceX.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_046_00-06-30.jpg" alt="Publication X (Twitter) de MarlburroW détaillant le fonctionnement de &quot;GTA SpaceX&quot; généré par Claude via un Gauntlet Loop." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_046_00-06-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:30</span>
+                        <span class="caption-text">Publication X (Twitter) de MarlburroW détaillant le fonctionnement de &quot;GTA SpaceX&quot; généré par Claude via un Gauntlet Loop.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_047_00-06-41.jpg" alt="Publication X (Twitter) de Matt Schumer affirmant que Claude Opus 5 a généré un jeu complet en une seule invite." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_047_00-06-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:41</span>
+                        <span class="caption-text">Publication X (Twitter) de Matt Schumer affirmant que Claude Opus 5 a généré un jeu complet en une seule invite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:51 - 00:07:12</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc, chaque fois que vous voyez des présentations virales d&#x27;Opus 5, cherchez toujours des preuves : code source, démo jouable, documentation technique ou processus de développement transparent. Les vrais exemples d&#x27;Opus 5 que nous avons examinés aujourd&#x27;hui sont déjà incroyables. Nous n&#x27;avons pas besoin de fausses démos pour apprécier la rapidité avec laquelle l&#x27;intelligence artificielle progresse. Et c&#x27;est tout pour le rapport de recherche d&#x27;aujourd&#x27;hui.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur les réseaux sociaux (X/Twitter) et lecteur vidéo illustrant des démos techniques.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;GTA SpaceX running in the browser 👀, built by Claude in one prompt using a Gauntlet Loop. No hand-holding: the agent split the job...&quot; et détails de la pile (three.js + WebGPU, baked lighting, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;exemples concrets de code généré par IA et de démonstrations visuelles à l&#x27;écran pour illustrer les propos sur la vérification des sources.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_048_00-06-53.jpg" alt="Capture d&#x27;écran d&#x27;un tweet montrant un projet type GTA SpaceX généré par Claude dans un navigateur, avec des détails techniques sur la pile logicielle." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_048_00-06-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:53</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet montrant un projet type GTA SpaceX généré par Claude dans un navigateur, avec des détails techniques sur la pile logicielle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_049_00-07-01.jpg" alt="Démonstration vidéo côte à côte de scènes générées en 3D, montrant à gauche un véhicule tout-terrain en forêt et à droite un personnage marchant dans la neige." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_049_00-07-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:01</span>
+                        <span class="caption-text">Démonstration vidéo côte à côte de scènes générées en 3D, montrant à gauche un véhicule tout-terrain en forêt et à droite un personnage marchant dans la neige.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_050_00-07-10.jpg" alt="Suite de la démonstration vidéo côte à côte avec une caméra en mouvement au-dessus de paysages enneigés." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_050_00-07-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:10</span>
+                        <span class="caption-text">Suite de la démonstration vidéo côte à côte avec une caméra en mouvement au-dessus de paysages enneigés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:13 - 00:07:48</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Opus 5 repousse clairement les limites de ce qui est possible avec l&#x27;IA. Qu&#x27;il s&#x27;agisse de générer des environnements de jeu réalistes, de construire des jeux par navigateur complets ou même de déboguer son propre travail, il devient évident que l&#x27;IA n&#x27;aide plus seulement les développeurs. Elle commence à en devenir un. En même temps, il est important de séparer les réelles avancées des faux posts viraux. C&#x27;est exactement ce que je continuerai à faire sur cette chaîne. Trouver les développements d&#x27;IA les plus impressionnants, tester les affirmations et vous montrer ce qui est réellement vrai. Si vous avez apprécié ce rapport de recherche, n&#x27;oubliez pas de laisser un pouce bleu et de vous abonner à Pursuing AI car je couvrirai chaque</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran partagé présentant des environnements de jeux vidéo générés ou rendus par intelligence artificielle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Éléments visuels de jeux vidéo (véhicule, tableau de bord, paysages enneigés), logo circulaire « PAI » avec un cerveau robotisé et le texte « The Research Report », ainsi que des boutons de likes et d&#x27;abonnement.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;environnements de jeux vidéo dynamiques générés par IA pour illustrer les capacités d&#x27;Opus 5.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_051_00-07-15.jpg" alt="Démonstration à l&#x27;écran divisé montrant un véhicule vert tout-terrain d&#x27;un côté et un personnage sur un paysage enneigé de l&#x27;autre, générés par l&#x27;IA." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_051_00-07-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:15</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran divisé montrant un véhicule vert tout-terrain d&#x27;un côté et un personnage sur un paysage enneigé de l&#x27;autre, générés par l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_052_00-07-25.jpg" alt="Vue intérieure depuis le poste de pilotage du véhicule vert et le personnage volant au-dessus des nuages." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_052_00-07-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:25</span>
+                        <span class="caption-text">Vue intérieure depuis le poste de pilotage du véhicule vert et le personnage volant au-dessus des nuages.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4lFiMR0DilQ/frame_053_00-07-46.jpg" alt="Vue de l&#x27;habitacle sombre d&#x27;un véhicule avec le logo de la chaîne « Pursuing AI » et le texte « The Research Report » sur le côté droit." loading="lazy" onclick="openLightbox('screenshots/YT-4lFiMR0DilQ/frame_053_00-07-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:46</span>
+                        <span class="caption-text">Vue de l&#x27;habitacle sombre d&#x27;un véhicule avec le logo de la chaîne « Pursuing AI » et le texte « The Research Report » sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:48 - 00:07:54</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">majeure percée en IA au moment même où elle se produit. Merci d&#x27;avoir regardé et je vous vois dans le prochain rapport de recherche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation sans interface logicielle active.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Animation graphique illustrant un cerveau stylisé.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un visuel de transition sur fond noir.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
