@@ -271,98 +271,98 @@ Dans ce tutoriel complet intitulé **Fable 5.5, GPT-6.1 Astra & Google’s Myste
 ### ⏱️ `[00:05:55 - 00:06:13]` | Segment #18
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> And the output is wild, because instead of producing one basic image, the model created what looks like an entire collection of fictional phone screenshots. There's a Notes app, Messages, Safari history, Reminders, a Journal, Mail Drafts, and even a State of Mind screen with a graph and statistics.
+> Et le résultat est époustouflant, car au lieu de produire une simple image de base, le modèle a créé ce qui ressemble à toute une collection de captures d'écran de téléphone fictives. Il y a une application Notes, Messages, l'historique Safari, des Rappels, un Journal, des brouillons d'E-mails, et même un écran État d'esprit avec un graphique et des statistiques.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : le créateur face caméra ou transition sans partage d'écran.
+**Interface & Outils** : Présentation face caméra, l'animateur s'adresse directement au public avec enthousiasme.
 
-**Contenu textuel & Code** : Explications orales des concepts et des méthodes de création vidéo IA.
+**Contenu textuel & Code** : Analyse des capacités avancées du modèle d'IA à générer non pas une image isolée, mais un ensemble cohérent d'interfaces utilisateur et d'applications mobiles fictives interconnectées.
 
-**Action / Démonstration** : Démonstration pédagogique et présentation du workflow.
+**Action / Démonstration** : Démonstration à l'écran du résultat généré, faisant défiler les différentes applications (Notes, Messages, Safari, etc.) pour prouver la cohérence visuelle et narrative du modèle.
 
 ---
 
 ### ⏱️ `[00:06:13 - 00:06:47]` | Segment #19
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> And there's a lot of text. So this isn't simply, generate a cool looking phone. The model has to maintain multiple interfaces, different layouts, different pieces of text, consistent visual concept all inside one generation. Now we still don't have official confirmation from Google that resplendent underscore flash is actually a Google model. What we have is the arena sighting and Chetislua's report that it's a new Google image model being tested there, so we should treat the identity as unconfirmed, but if it really is Google's next image model then Google
+> Et il y a beaucoup de texte. Il ne s'agit donc pas simplement de générer un téléphone au look sympa. Le modèle doit maintenir de multiples interfaces, des dispositions différentes, différents morceaux de texte, un concept visuel cohérent, le tout en une seule génération. Maintenant, nous n'avons toujours pas de confirmation officielle de la part de Google que "resplendent underscore flash" est réellement un modèle de Google. Ce que nous avons, c'est l'apparition dans l'arène et le rapport de Chetislua selon lequel il s'agit d'un nouveau modèle d'image de Google en cours de test là-bas, nous devons donc considérer l'identité comme non confirmée, mais s'il s'agit vraiment du prochain modèle d'image de Google, alors Google
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : le créateur face caméra ou transition sans partage d'écran.
+**Interface & Outils** : Présentation face caméra par le narrateur.
 
-**Contenu textuel & Code** : Explications orales des concepts et des méthodes de création vidéo IA.
+**Contenu textuel & Code** : Analyse de la complexité technique de la génération d'images par IA, notamment la gestion simultanée de plusieurs interfaces, dispositions et textes cohérents, ainsi que l'incertitude autour du nouveau modèle mystère attribué à Google ("resplendent_flash").
 
-**Action / Démonstration** : Démonstration pédagogique et présentation du workflow.
+**Action / Démonstration** : Affichage à l'écran de captures d'écran comparatives des interfaces générées par IA et des rapports d'évaluation issus de l'Arena.
 
 ---
 
 ### ⏱️ `[00:06:47 - 00:07:20]` | Segment #20
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> could already be testing something much more capable behind the scenes. And that brings us back to the biggest question of this whole report. What's coming next because we might actually have a clue. Remember Tebow? Yeah, the reset guy. He dropped a very short post that immediately got everyone's attention, 6.1 coming soon. And naturally, people started guessing GPT 6.1 Astra, but then Tebow clarified what he meant. He said 6.1 Sol Ultra Fast, that is. So this isn't him confirming Astra, he's specifically talking about 6.1 Sol
+> pourvait déjà tester quelque chose de bien plus capable dans les coulisses. Et cela nous ramène à la plus grande question de tout ce rapport. Qu'est-ce qui arrive ensuite, car nous avons peut-être réellement un indice. Vous vous souvenez de Tebow ? Oui, le gars de la réinitialisation. Il a publié un très court message qui a immédiatement attiré l'attention de tout le monde, 6.1 arrive bientôt. Et naturellement, les gens ont commencé à deviner GPT 6.1 Astra, mais ensuite Tebow a clarifié ce qu'il voulait dire. Il a dit 6.1 Sol Ultra Rapide, c'est tout. Ce n'est donc pas lui qui confirme Astra, il parle spécifiquement de 6.1 Sol.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : le créateur face caméra ou transition sans partage d'écran.
+**Interface & Outils** : Présentation face caméra, ton dynamique d'analyste tech, plan serré sur le présentateur dans le studio de Pursuing AI.
 
-**Contenu textuel & Code** : Explications orales des concepts et des méthodes de création vidéo IA.
+**Contenu textuel & Code** : Analyse des fuites et des rumeurs concernant les futures versions de modèles d'IA, en décortiquant un message énigmatique publié sur les réseaux sociaux.
 
-**Action / Démonstration** : Démonstration pédagogique et présentation du workflow.
+**Action / Démonstration** : Affichage en incrustation (picture-in-picture) d'une capture d'écran du post mentionné pour illustrer l'analyse du workflow d'investigation.
 
 ---
 
 ### ⏱️ `[00:07:20 - 00:07:56]` | Segment #21
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> ultrafast. And now this gets really interesting. Because while Tebow is saying 6.1 Sol ultrafast is coming soon, people are already noticing changes in GPT's 6.1 Sol itself. Ivana ran the exact same prompt she had tested on September 29th, and when she ran it again on October 2nd, she got a noticeably better-looking city. She also said it felt faster and that it was now getting very very close to Astra. Now look at the comparison. September 29th is on top, October 2nd is on the bottom. It's the same basic interactive scene, the city is folding. And as the camera
+> ultra-rapide. Et maintenant, ça devient vraiment intéressant. Parce que pendant que Tebow dit que Sol 6.1 ultra-rapide arrive bientôt, les gens remarquent déjà des changements dans GPT Sol 6.1 lui-même. Ivana a exécuté exactement le même prompt qu'elle avait testé le 29 septembre, et quand elle l'a réexécuté le 2 octobre, elle a obtenu une ville nettement plus belle. Elle a également dit que ça semblait plus rapide et que ça se rapprochait maintenant très fort d'Astra. Regardez maintenant la comparaison. Le 29 septembre est en haut, le 2 octobre est en bas. C'est la même scène interactive de base, la ville se replie. Et alors que la caméra
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : le créateur face caméra ou transition sans partage d'écran.
+**Interface & Outils** : Présentation face caméra ou transition sans écran partagé.
 
-**Contenu textuel & Code** : Explications orales des concepts et des méthodes de création vidéo IA.
+**Contenu textuel & Code** : Explications orales du sujet.
 
-**Action / Démonstration** : Démonstration pédagogique et présentation du workflow.
+**Action / Démonstration** : Présentation du workflow.
 
 ---
 
 ### ⏱️ `[00:07:56 - 00:08:30]` | Segment #22
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> moves through the environment, you can see the differences. The newer result has a more developed looking city in several shots. More buildings fill the environment, the train remains present as the scene changes. And the bizarre folded roads and city geometry continue across different camera angles. And this isn't just one screenshot. The comparison shows multiple views from the train tracks to the roads to those completely folded sections of the city. But again, let's keep this grounded. This doesn't prove GPT 6.1's Sol was upgraded. And it definitely doesn't prove that Sol
+> se déplace dans l'environnement, on peut voir les différences. Le résultat le plus récent présente une ville d'apparence plus développée dans plusieurs plans. Davantage de bâtiments remplissent l'environnement, le train reste présent alors que la scène change. Et les routes aux formes bizarres et la géométrie de la ville persistent à travers différents angles de caméra. Et il ne s'agit pas d'une seule capture d'écran. La comparaison montre de multiples vues, des voies ferrées aux routes jusqu'à ces sections de la ville complètement repliées. Mais encore une fois, restons les pieds sur terre. Cela ne prouve pas que le modèle Sol de GPT 6.1 a été mis à niveau. Et cela ne prouve certainement pas que Sol
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : le créateur face caméra ou transition sans partage d'écran.
+**Interface & Outils** : Présentation face caméra, plan moyen du narrateur dans le studio de Pursuing AI, sans écran partagé.
 
-**Contenu textuel & Code** : Explications orales des concepts et des méthodes de création vidéo IA.
+**Contenu textuel & Code** : Analyse comparative de l'évolution des détails visuels (bâtiments, train, géométrie complexe des routes repliées) entre deux versions de génération vidéo par IA, tout en appelant à la modération quant aux spéculations sur de prétendues mises à jour du modèle Sol de GPT 6.1.
 
-**Action / Démonstration** : Démonstration pédagogique et présentation du workflow.
+**Action / Démonstration** : Le narrateur s'adresse directement au public avec des gestes mesurés de la main pour souligner les divergences observées dans les différentes captures d'écran présentées précédemment.
 
 ---
 
 ### ⏱️ `[00:08:30 - 00:08:49]` | Segment #23
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> is now equal to Astra. It's one person's rerun of the same prompt. Generation results can vary, but it is interesting that the same user reran the same test just a few days later and felt the difference was significant enough to post about, and now put that next to TiBow saying 6.1 Sol ultra-fast.
+> est maintenant égal à Astra. C'est la ré exécution d'un même prompt par une seule personne. Les résultats de génération peuvent varier, mais il est intéressant que le même utilisateur ait réexécuté le même test quelques jours plus tard et ait estimé que la différence était suffisamment importante pour faire une publication, et maintenant, mettez cela à côté de TiBow disant que 6.1 Sol est ultra-rapide.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : le créateur face caméra ou transition sans partage d'écran.
+**Interface & Outils** : Présentation face caméra, l'analyste s'adresse directement au public sans affichage d'écran partagé, soulignant l'importance des variations de résultats dans les outils d'IA.
 
-**Contenu textuel & Code** : Explications orales des concepts et des méthodes de création vidéo IA.
+**Contenu textuel & Code** : Analyse des variations de performance d'un modèle d'intelligence artificielle vidéo à travers les retours d'utilisateurs et comparaison avec la vitesse d'exécution de 6.1 Sol.
 
-**Action / Démonstration** : Démonstration pédagogique et présentation du workflow.
+**Action / Démonstration** : Explication de la méthode de test comparative et observation des retours de la communauté sur les réseaux sociaux.
 
 ---
 
 ### ⏱️ `[00:08:49 - 00:09:22]` | Segment #24
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> Suddenly we have a much more interesting picture, because if Sol is already showing better results and an ultra-fast version is supposedly coming, what exactly is OpenAI preparing? We don't know yet, but if this is real, OpenAI could be preparing a much faster everyday version of Sol. And just when you think the AI model race can't get any stranger, we leave the software world completely because the final story is about robots. And these robots have a very unusual retirement plan. Finally, we have to talk about Figure, because this might be the most insane
+> Soudain, nous avons un tableau beaucoup plus intéressant, car si Sol montre déjà de meilleurs résultats et qu'une version ultra-rapide est censée arriver, qu'est-ce que OpenAI prépare exactement ? Nous ne le savons pas encore, mais si c'est réel, OpenAI pourrait préparer une version quotidienne de Sol beaucoup plus rapide. Et juste au moment où vous pensez que la course aux modèles d'IA ne peut pas devenir plus étrange, nous quittons complètement le monde du logiciel car la dernière histoire concerne des robots. Et ces robots ont un plan de retraite très inhabituel. Enfin, nous devons parler de Figure, car c'est peut-être le plus insensé.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : le créateur face caméra ou transition sans partage d'écran.
+**Interface & Outils** : Le présentateur apparaît à l'écran, face caméra, dans le studio de Pursuing AI, marquant une transition fluide entre l'analyse des logiciels d'IA et le sujet suivant.
 
-**Contenu textuel & Code** : Explications orales des concepts et des méthodes de création vidéo IA.
+**Contenu textuel & Code** : Le narrateur fait monter le suspense concernant la stratégie d'OpenAI face à la concurrence, puis annonce un changement radical de thématique vers la robotique humanoïde avec l'entreprise Figure.
 
-**Action / Démonstration** : Démonstration pédagogique et présentation du workflow.
+**Action / Démonstration** : Aucun affichage d'écran partagé ou de démonstration logicielle pour le moment ; l'accent est mis sur l'expression faciale, le rythme de la voix et la gestuelle pour capter l'attention de l'audience avant la révélation majeure.
 
 ---
 
@@ -397,14 +397,14 @@ Dans ce tutoriel complet intitulé **Fable 5.5, GPT-6.1 Astra & Google’s Myste
 ### ⏱️ `[00:10:12 - 00:10:35]` | Segment #27
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> Then they took them to a foundry in Imatra, Finland. And now look at the footage. These are actual F-02 humanoid robots. They're walking onto the platform, getting into position, and then jumping into molten steel. Figure says the operation involved six melts over 24 hours, with roughly a 20-minute window for each melt before the steel cooled enough to form a crust.
+> Ensuite, ils les ont emmenés dans une fonderie à Imatra, en Finlande. Et regardez maintenant les images. Ce sont de véritables robots humanoïdes F-02. Ils marchent sur la plateforme, se mettent en position, puis sautent dans de l'acier en fusion. Figure indique que l'opération a impliqué six coulées sur 24 heures, avec une fenêtre d'environ 20 minutes pour chaque coulée avant que l'acier ne refroidisse suffisamment pour former une croûte.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : le créateur face caméra ou transition sans partage d'écran.
+**Interface & Outils** : Présentation face caméra avec un ton sérieux et captivant, préparant le public à l'analyse d'images spectaculaires.
 
-**Contenu textuel & Code** : Explications orales des concepts et des méthodes de création vidéo IA.
+**Contenu textuel & Code** : Explication des tests extrêmes menés par l'entreprise Figure avec ses robots humanoïdes F-02 dans une fonderie industrielle finlandaise, illustrant les limites physiques et thermiques testées en conditions réelles.
 
-**Action / Démonstration** : Démonstration pédagogique et présentation du workflow.
+**Action / Démonstration** : Affichage à l'écran du workflow d'analyse vidéo par IA, décryptant la chronologie des 24 heures de tests et la gestion des fenêtres de temps thermique (20 minutes par coulée).
 
 ---
 
