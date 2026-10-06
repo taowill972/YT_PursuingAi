@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 La vidéo n&#x27;est désormais plus une preuve — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 La vidéo n&#x27;est désormais plus une preuve</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-03-07</span>
+                <span class="badge">⏱️ 04m 04s</span>
+                <span class="badge">🆔 <code>5q4YKN-hMJo</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=5q4YKN-hMJo" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* intitulée « La vidéo n'est désormais plus une preuve » met en lumière une avancée technologique majeure signée ByteDance : **DreamID Omni**. Ce générateur vidéo nouvelle génération ne se contente pas d'interpréter un simple prompt textuel (« taper et prier »), il fusionne de multiples flux d'entrée — texte, image et échantillons audio de véritables voix. Cette approche multimodale permet de cloner à la fois l'identité visuelle (visage) et vocale d'individus, qu'il s'agisse de personnalités publiques comme Anne Hathaway ou Will Smith, ou de réussir des interactions complexes entre plusieurs personnages dotés d'identités et de timbres distincts. Le processus étape par étape présenté démontre comment, à partir d'une image de référence et d'un court clip audio, l'outil génère des séquences inédites où le sujet prononce de nouveaux dialogues avec une synchronisation labiale et une intonation saisissantes de réalisme.</p><p>Au-delà de la simple génération de contenu ex nihilo, *DreamID Omni* franchit un cap inquiétant et révolutionnaire en permettant le remixage de vidéos existantes. Il devient possible de remplacer totalement le visage et la voix d'un acteur dans une séquence préexistante tout en conservant la dynamique de la scène. Cette flexibilité absolue — combinant création originale, gestion multi-personnages et édition vidéo destructive — positionne l'outil comme le « couteau suisse des humains synthétiques ». Pour les créateurs de vidéo, les départements marketing et l'industrie du divertissement, les bénéfices concrets sont immenses : réduction drastique des coûts de casting, suppression des tournages physiques pour des spots publicitaires, et automatisation du doublage.</p><p>Cependant, cette puissance technologique, dont l'arrivée imminente d'une version open-source sur GitHub est annoncée pour mars, redéfinit profondément notre rapport à la vérité. En permettant de modifier à loisir la preuve visuelle et auditive, l'outil illustre parfaitement le basculement dans une ère où « voir ne suffit plus pour croire ». Les flux de production vidéo doivent désormais intégrer cette nouvelle donne où la falsification hyper-réaliste devient accessible au plus grand nombre, posant des défis éthiques et juridiques considérables pour l'authentification des médias à l'avenir.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">flux</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Approche multimodale intégrée** : L&#x27;utilisation simultanée de textes, d&#x27;images et de flux audio réels représente un bond qualitatif majeur par rapport aux générateurs text-to-video traditionnels.</span></li><li><span class="point-bullet">✦</span><span>Clonage vocal et facial synchrone** : Le couplage d&#x27;une image de référence fixe et d&#x27;un échantillon audio garantit non seulement la fidélité physique du personnage, mais aussi l&#x27;exactitude de son intonation et de sa tessiture vocale.</span></li><li><span class="point-bullet">✦</span><span>Gestion multi-personnages avancée** : Capacité à injecter plusieurs voix et plusieurs identités visuelles distinctes dans une même scène pour orchestrer des interactions complexes et des dialogues fluides.</span></li><li><span class="point-bullet">✦</span><span>Remixage de vidéos existantes** : Possibilité de prendre une séquence vidéo déjà tournée et d&#x27;y substituer entièrement le visage et la voix d&#x27;un protagoniste tout en préservant le contexte de la scène.</span></li><li><span class="point-bullet">✦</span><span>Disruption des workflows publicitaires** : Les départements marketing peuvent désormais faire vendre des produits par des célébrités ou des acteurs sans jamais organiser de tournage physique ni de session d&#x27;enregistrement en studio.</span></li><li><span class="point-bullet">✦</span><span>Réduction des coûts de production** : Remplacement potentiel des castings traditionnels, des équipes de doublage et d&#x27;une grande partie de la logistique de plateau par des pipelines entièrement synthétiques.</span></li><li><span class="point-bullet">✦</span><span>Démocratisation open-source imminente** : L&#x27;annonce d&#x27;une version 1 open-source sur GitHub pour le mois de mars garantit que ces technologies ne resteront pas cantonnées aux laboratoires fermés des grandes entreprises.</span></li><li><span class="point-bullet">✦</span><span>Obsolescence de la preuve visuelle** : La facilité avec laquelle les vidéos peuvent être modifiées et réinventées acte la fin du dogme « voir c&#x27;est croire », nécessitant de repenser l&#x27;authentification des preuves numériques.</span></li><li><span class="point-bullet">✦</span><span>Saturation du marché des deepfakes** : Bien que des outils comme Ovi, Phantom, Vase ou LTX2 existent déjà, DreamID Omni se démarque par sa flexibilité globale et son statut de « couteau suisse » du domaine.</span></li><li><span class="point-bullet">✦</span><span>Vigilance éthique et juridique accrue** : L&#x27;utilisation non autorisée d&#x27;images et de voix de personnalités (comme Anne Hathaway ou Will Smith) soulève des urgences réglementaires majeures pour protéger le droit à l&#x27;image et contrer la désinformation.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:36</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cette semaine, ByteDance a décidé que les générateurs de vidéo ordinaires étaient trop ennuyeux, alors ils ont lancé quelque chose appelé DreamID Omni, et oui, cela fait exactement ce que vous pensez. C&#x27;est Pursuing AI et vous regardez le rapport de recherche. DreamID Omni est un autre générateur de vidéo, mais pas juste un générateur de type « taper et prier ». Ce truc prend de multiples entrées : un prompt textuel, une image et même la voix d&#x27;une personne, parce qu&#x27;apparemment, un seul flux d&#x27;entrée n&#x27;était pas assez dystopique. Commençons par Anne Hathaway. Vous entrez un prompt, vous téléchargez une image d&#x27;Anne Hathaway, mais avant de générer la vidéo, vous intégrez un clip de référence de sa véritable voix.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de présentation de recherche académique pour le projet DreamID Omni / R2AV, intégrant des lecteurs vidéo, des commandes de timbre vocal et des infobulles de prompts textuels.</p>
+                        <p><strong>Contenu textuel & Code :</strong> En haut : &quot;Human-Reference Audio-Video Generation (R2AV)&quot;. Texte du prompt visible en surbrillance : &quot;A lively open-kitchen café at night; stove flames flare, steam rises, and warm pendant lights swing slightly as staff move behind her. sub1 is a young woman with thick dark wavy hair and a side part. She wears a fitted black top under a light apron, a thin gold chain necklace, and small stud earrings. sub1 tastes the sauce with a spoon, then turns her face toward the camera while still holding the spoon, her expression shifting from focused to conflicted. sub1 maintains eye contact, swallows as if choosing her words, and says, &#x27;I keep telling myself I am fine, but some nights it feels like I am just performing calm.&#x27;&quot; Commandes visibles : &quot;0:00 / 0:05&quot;, &quot;Timbre:&quot;, icônes de lecture et de sourdine.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la recherche et de la grille d&#x27;exemples vidéo illustrant la génération audio-vidéo contrôlée par référence humaine (R2AV) avec DreamID Omni, affichant les détails des prompts et les options audio interactives.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_001_00-00-24.jpg" alt="Grille de présentation de la recherche &quot;Human-Reference Audio-Video Generation (R2AV)&quot; montrant plusieurs exemples de vidéos générées avec le modèle DreamID Omni, avec des visages de référence et des boutons de lecture." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_001_00-00-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:24</span>
+                        <span class="caption-text">Grille de présentation de la recherche &quot;Human-Reference Audio-Video Generation (R2AV)&quot; montrant plusieurs exemples de vidéos générées avec le modèle DreamID Omni, avec des visages de référence et des boutons de lecture.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_002_00-00-34.jpg" alt="Interface web du projet montrant deux vidéos de démonstration côte à côte avec des options de lecture, un contrôle de timbre vocal et l&#x27;affichage d&#x27;un prompt textuel en surbrillance." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_002_00-00-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:34</span>
+                        <span class="caption-text">Interface web du projet montrant deux vidéos de démonstration côte à côte avec des options de lecture, un contrôle de timbre vocal et l&#x27;affichage d&#x27;un prompt textuel en surbrillance.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:36 - 00:00:58</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;audio de référence ressemble à ceci. Je suis venu à New York pour être journaliste et j&#x27;ai envoyé des lettres partout jusqu&#x27;à ce que j&#x27;obtienne enfin un appel d&#x27;Elias. Totalement normal, totalement innocent. Ensuite, DreamID Omni génère une vidéo d&#x27;Anne Hathaway prononçant de nouveaux dialogues. Je ne cesse de me dire que ça va, mais certaines nuits, j&#x27;ai l&#x27;impression de faire semblant d&#x27;être calme.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur d&#x27;un site web de démonstration vidéo, présentant un lecteur multimédia avec des boutons de lecture et des aperçus de personnages.</p>
+                        <p><strong>Contenu textuel & Code :</strong> On peut lire un prompt textuel en anglais sur la vidéo de droite : « A lively open-kitchen café at night; stove flames flare, steam rises... sub1 tastes the sauce with a spoon, then turns her face toward the camera... and says, &quot;I keep telling myself I am fine, but some nights it feels like I&#x27;m just performing calm.&quot; »</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran présente des exemples de vidéos générées par IA avec DreamID Omni, mettant en évidence la manipulation de l&#x27;audio et de la vidéo d&#x27;un personnage (Anne Hathaway).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_003_00-00-38.jpg" alt="Interface web montrant deux vidéos côte à côte avec des exemples de génération par DreamID Omni, incluant une vidéo d&#x27;Anne Hathaway dans une cuisine et son prompt textuel associé." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_003_00-00-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:38</span>
+                        <span class="caption-text">Interface web montrant deux vidéos côte à côte avec des exemples de génération par DreamID Omni, incluant une vidéo d&#x27;Anne Hathaway dans une cuisine et son prompt textuel associé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:59 - 00:01:31</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Même visage, même voix, nouvelle phrase. Donc oui, cela peut créer une vidéo d&#x27;Anne Hathaway qui parle en utilisant sa vraie voix. Les agents d&#x27;Hollywood viennent de ressentir une perturbation dans la Force. Mais c&#x27;est peut-être juste un exemple isolé, non ? Eh bien non. Voici Will Smith. D&#x27;abord, vous entrez sa voix de référence. Je prends mes chances en frappant ce mec au visage ou en insultant cette fille ou peu importe, mais euh euh je ne peux pas faire preuve de bienveillance aimante alors Dream ID Omni génère une toute nouvelle vidéo de lui.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de démonstration de recherche en IA (Human-Reference Audio-Video Generation / R2AV / Dream ID Omni) avec lecteur vidéo interactif et sélection de timbres vocaux.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Human-Reference Audio-Video Generation (R2AV)&quot;, &quot;Timbre:&quot;, et un prompt textuel détaillé sur fond semi-transparent : &quot;The scene is set in a clothing store with artificial lighting. Racks of clothes are visible in the background...&quot;. Visuels de plusieurs personnalités clonées (Anne Hathaway, Will Smith, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation à travers une galerie de vidéos de démonstration d&#x27;génération audio-vidéo par IA, lecture des clips et affichage des prompts textuels au survol.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_004_00-01-01.jpg" alt="Interface web montrant des exemples de vidéos générées avec le visage d&#x27;Anne Hathaway et d&#x27;autres personnes." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_004_00-01-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:01</span>
+                        <span class="caption-text">Interface web montrant des exemples de vidéos générées avec le visage d&#x27;Anne Hathaway et d&#x27;autres personnes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_005_00-01-10.jpg" alt="Grille de plusieurs vidéos de démonstration étiquetée &quot;Human-Reference Audio-Video Generation (R2AV)&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_005_00-01-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Grille de plusieurs vidéos de démonstration étiquetée &quot;Human-Reference Audio-Video Generation (R2AV)&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_006_00-01-21.jpg" alt="Gros plan sur l&#x27;interface vidéo avec une incrustation affichant le prompt textuel descriptif et Will Smith tenant un débardeur rose." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_006_00-01-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:21</span>
+                        <span class="caption-text">Gros plan sur l&#x27;interface vidéo avec une incrustation affichant le prompt textuel descriptif et Will Smith tenant un débardeur rose.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:31 - 00:01:53</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">en disant que ce débardeur est exactement ce dont vous avez besoin pour cet été, passez votre commande maintenant, pour que Will Smith puisse vous vendre des vêtements d&#x27;été sans jamais enregistrer la publicité. Les départements marketing respirent bruyamment en ce moment, et ça devient encore mieux ou pire selon votre tolérance à la distorsion de la réalité. Cela ne fonctionne pas seulement avec un seul personnage.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration vidéo montrant plusieurs exemples de génération de vidéos par IA (R2AV) disposés en grille avec des contrôles de lecture.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché en haut : « Human-Reference Audio-Video Generation (R2AV) ». Dans l&#x27;une des fenêtres, un texte de description en anglais détaille la scène : « The scene is set in a clothing store with artificial lighting... ».</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une interface web affichant des exemples de vidéos générées par IA où des personnages virtuels parlent et bougent de manière réaliste à partir de références audio et vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_007_00-01-33.jpg" alt="Démonstration à l&#x27;écran de la génération vidéo IA montrant un personnage ressemblant à Will Smith présentant un débardeur rose dans un magasin, avec une bulle de texte descriptif et un encadré de référence." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_007_00-01-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:33</span>
+                        <span class="caption-text">Démonstration à l&#x27;écran de la génération vidéo IA montrant un personnage ressemblant à Will Smith présentant un débardeur rose dans un magasin, avec une bulle de texte descriptif et un encadré de référence.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_008_00-01-42.jpg" alt="Vue rapprochée de la vidéo générée par IA montrant le personnage de Will Smith souriant et montrant un vêtement dans un magasin." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_008_00-01-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:42</span>
+                        <span class="caption-text">Vue rapprochée de la vidéo générée par IA montrant le personnage de Will Smith souriant et montrant un vêtement dans un magasin.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_009_00-01-51.jpg" alt="Interface de présentation montrant une grille de plusieurs vidéos générées par IA sous le titre « Human-Reference Audio-Video Generation (R2AV) »." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_009_00-01-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:51</span>
+                        <span class="caption-text">Interface de présentation montrant une grille de plusieurs vidéos générées par IA sous le titre « Human-Reference Audio-Video Generation (R2AV) ».</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:53 - 00:02:16</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez télécharger plusieurs personnages avec plusieurs voix. Dans un exemple, ils fournissent deux voix de référence différentes. Vous savez, pendant deux ans, une tournée de deux ans, et j&#x27;étais plutôt déprimé. J&#x27;ai pleuré occasionnellement. Le format de film indien, il en a été ainsi pendant longtemps, et c&#x27;est ce sur quoi nous avons grandi, et les gens adorent ça absolument.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de démonstration de recherche en intelligence artificielle pour la génération audio-vidéo (Human-Reference Audio-Video Generation - R2AV).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : « Human-Reference Audio-Video Generation (R2AV) », des commandes de lecture vidéo (0:00 / 0:05), ainsi que des boutons « Timbre 1 » et « Timbre 2 » avec des portraits de référence. Sur la deuxième image, un encadré de texte descriptif détaille la scène : « A bright, sunny day on a mountain hiking trail... ».</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de plusieurs exemples vidéo démontrant la génération de dialogues synchronisés avec des voix de référence multiples pour des duos de personnages.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_010_00-01-55.jpg" alt="Interface montrant des exemples de génération audio-vidéo avec référence humaine (R2AV) impliquant plusieurs personnages et voix." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_010_00-01-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Interface montrant des exemples de génération audio-vidéo avec référence humaine (R2AV) impliquant plusieurs personnages et voix.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_011_00-02-01.jpg" alt="Gros plan sur une démonstration vidéo avec des boîtes de texte descriptives et des miniatures de timbres vocaux pour les personnages." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_011_00-02-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:01</span>
+                        <span class="caption-text">Gros plan sur une démonstration vidéo avec des boîtes de texte descriptives et des miniatures de timbres vocaux pour les personnages.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:16 - 00:02:39</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je pense que cela reflète également notre culture, qui est le format de film indien. Ensuite, la scène générée met en scène les personnages qui interagissent. Es-tu sûr que c&#x27;est le bon chemin ? Absolument, le point de vue est juste devant. Ainsi, vous pouvez maintenant générer des scènes de dialogue à plusieurs personnages avec des voix et des identités distinctes. Félicitations, vous venez de remplacer le casting, le doublage et peut-être la petite discussion sur le plateau.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de recherche ou de démonstration sur l&#x27;IA vidéo (Human-Reference Audio-Video Generation - R2AV), affichant des vignettes vidéo interactives avec des curseurs de lecture, des boutons de sélection de timbres (&quot;Timbre 1&quot;, &quot;Timbre 2&quot;) et des miniatures de visages.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de prompt visible dans la vidéo centrale : &quot;A bright, sunny day on a mountain hiking trail. Lush green trees and a clear blue sky are visible in the background, sub1 is on the left, wearing a blue hiking shirt. sub2 is on the right, wearing a dark athletic tank top... Are you sure this is the right path? Absolutely, the viewpoint is just ahead.&quot; Titre de la page : &quot;Human-Reference Audio-Video Generation (R2AV)&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et affichage de différentes vidéos générées par IA démontrant des interactions de dialogues entre deux personnages avec des voix distinctes associées (Timbre 1 et Timbre 2).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_012_00-02-18.jpg" alt="Interface de démonstration montrant une grille de vidéos générées avec des options de sélection de timbres vocaux et des prompts textuels descriptifs." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_012_00-02-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:18</span>
+                        <span class="caption-text">Interface de démonstration montrant une grille de vidéos générées avec des options de sélection de timbres vocaux et des prompts textuels descriptifs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_013_00-02-37.jpg" alt="Vue d&#x27;ensemble de la page &quot;Human-Reference Audio-Video Generation (R2AV)&quot; présentant plusieurs exemples de scènes de dialogue multi-personnages." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_013_00-02-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:37</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de la page &quot;Human-Reference Audio-Video Generation (R2AV)&quot; présentant plusieurs exemples de scènes de dialogue multi-personnages.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:39 - 00:03:13</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais c&#x27;est là que ça devient particulièrement fou. Vous pouvez prendre une vidéo existante et modifier le visage et la voix de cette personne. Clip original. Aujourd&#x27;hui, vous avez utilisé votre enfant comme appât pendant un mois. Ensuite, vous remplacez le visage d&#x27;une autre femme et une nouvelle voix de référence. Ouais, je pense que c&#x27;est les deux, je pense que c&#x27;est ok. Ça peut être les deux, c&#x27;est les deux choses, comme il y a le genre de confiance et de respect et d&#x27;amour que vous avez pour les gens que et ensuite vous régénérez la scène avec le visage échangé et la voix échangée en prononçant vous avez utilisé votre enfant comme appât pour un monstre</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;un outil de recherche ou de démonstration en IA intitulé &quot;Human-Reference Audio-Video Generation (R2AV)&quot; et &quot;Human-Reference Video Editing (RV2AV)&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titres des sections &quot;Human-Reference Audio-Video Generation (R2AV)&quot; et &quot;Human-Reference Video Editing (RV2AV)&quot;, étiquettes &quot;Original video&quot;, curseurs de lecture temporelle (0:00 / 0:04, 0:00 / 0:03), boutons &quot;Timbre&quot;, et un prompt textuel décrivant la scène : &quot;The scene takes place in a modern indoor setting, characterized by cool, blue-tinted lighting that creates a tense atmosphere...&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et affichage d&#x27;exemples de modification de visages et de voix sur des vidéos existantes, démontrant l&#x27;échange d&#x27;identité et de voix synchronisée (face-swap et voice-swap).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_014_00-02-41.jpg" alt="Interface web montrant des exemples de génération de vidéos avec référence humaine (Human-Reference Audio-Video Generation ou R2AV) sous forme de grille de clips." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_014_00-02-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:41</span>
+                        <span class="caption-text">Interface web montrant des exemples de génération de vidéos avec référence humaine (Human-Reference Audio-Video Generation ou R2AV) sous forme de grille de clips.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_015_00-02-51.jpg" alt="Interface web montrant des exemples d&#x27;édition de vidéos avec référence humaine (Human-Reference Video Editing ou RV2AV), comparant des vidéos originales et des clips modifiés." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_015_00-02-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:51</span>
+                        <span class="caption-text">Interface web montrant des exemples d&#x27;édition de vidéos avec référence humaine (Human-Reference Video Editing ou RV2AV), comparant des vidéos originales et des clips modifiés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_016_00-03-02.jpg" alt="Interface web de RV2AV avec un prompt textuel affiché au survol d&#x27;une vidéo montrant la description détaillée de la scène en cours d&#x27;édition." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_016_00-03-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:02</span>
+                        <span class="caption-text">Interface web de RV2AV avec un prompt textuel affiché au survol d&#x27;une vidéo montrant la description détaillée de la scène en cours d&#x27;édition.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:13 - 00:03:31</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc maintenant, la preuve vidéo est fondamentalement modifiable. Ce n&#x27;est pas seulement de la création de contenu, c&#x27;est du remixage de réalité. Maintenant, pour être juste, ce n&#x27;est pas la première méthode de deepfake qui existe. Il y a des tonnes d&#x27;outils déjà. Ovi, Phantom, Vase, LTX2 et d&#x27;autres. Mais DreamID Omni est de loin le plus flexible.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web académique du projet DreamID-Omni.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre &quot;DreamID-Omni&quot;, sous-titre &quot;Unified Framework for Controllable Human-Centric Audio-Video Generation&quot;, noms des auteurs et boutons de liens vers les articles et GitHub.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle des capacités de modification de vidéos humaines et présentation de la plateforme DreamID-Omni.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_017_00-03-15.jpg" alt="Présentation des exemples de montage vidéo de référence humaine (RV2AV) avec une grille de clips vidéo." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_017_00-03-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:15</span>
+                        <span class="caption-text">Présentation des exemples de montage vidéo de référence humaine (RV2AV) avec une grille de clips vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_018_00-03-22.jpg" alt="Page d&#x27;accueil du projet DreamID-Omni montrant le titre et les auteurs." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_018_00-03-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:22</span>
+                        <span class="caption-text">Page d&#x27;accueil du projet DreamID-Omni montrant le titre et les auteurs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_019_00-03-29.jpg" alt="Page d&#x27;accueil alternative du projet DreamID-Omni avec un arrière-plan de chercheurs." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_019_00-03-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:29</span>
+                        <span class="caption-text">Page d&#x27;accueil alternative du projet DreamID-Omni avec un arrière-plan de chercheurs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:31 - 00:03:53</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Saisie de texte, saisie d&#x27;image, saisie vocale, personnages multiples, échange de visages, échange de voix, édition de vidéos existantes. C&#x27;est fondamentalement le couteau suisse des humains synthétiques. Et en haut de la page, ils ont publié un répertoire GitHub. Il est indiqué qu&#x27;ils font les derniers préparatifs pour une version open source. La version 1 est attendue en mars, ce qui signifie que cela ne reste pas derrière les murs d&#x27;une entreprise.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de présentation du projet de recherche DreamID-Omni (cadre unifié pour la génération audio-vidéo centrée sur l&#x27;humain).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titres et sous-titres : &#x27;DreamID-Omni&#x27;, &#x27;Unified Framework for Controllable Human-Centric Audio-Video Generation&#x27;, mentions des auteurs (Xu Guo, Fulong Ye, Qichao Sun, etc.), boutons &#x27;Research Paper&#x27;, &#x27;DreamID-Omni GitHub&#x27;, &#x27;DreamID-V GitHub&#x27;. Textes en bas : &#x27;Text Input&#x27;, &#x27;Image Input&#x27;, &#x27;Voice Input&#x27;. Section &#x27;Code Release&#x27; : &#x27;We are currently making final preparations for the open-source release. Pending internal company approval, we aim to release the v1 version in March. Please stay tuned!&#x27;. Section &#x27;News&#x27; : &#x27;[02/13/2026] Our paper is released!&#x27;, &#x27;[01/05/2026] The code for our previous work, DreamID-V, has been released!&#x27;. Lecteur vidéo intégré montrant une femme avec le sous-titre &#x27;We introduce DreamID-Omni. A unified model for Controllable Audio Video Generation&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement de la page web de présentation du projet DreamID-Omni mettant en avant les fonctionnalités, la vidéo de démonstration et la section de publication du code source.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_020_00-03-33.jpg" alt="Page de présentation du projet DreamID-Omni avec le titre principal et les options Text Input, Image Input, Voice Input." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_020_00-03-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:33</span>
+                        <span class="caption-text">Page de présentation du projet DreamID-Omni avec le titre principal et les options Text Input, Image Input, Voice Input.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_021_00-03-42.jpg" alt="Page web de DreamID-Omni montrant le sous-titre &#x27;Unified Framework for Controllable Human-Centric Audio-Video Generation&#x27; avec des chercheurs en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_021_00-03-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:42</span>
+                        <span class="caption-text">Page web de DreamID-Omni montrant le sous-titre &#x27;Unified Framework for Controllable Human-Centric Audio-Video Generation&#x27; avec des chercheurs en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_022_00-03-51.jpg" alt="Section Code Release du site de DreamID-Omni affichant l&#x27;annonce d&#x27;une publication open source prévue pour mars." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_022_00-03-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:51</span>
+                        <span class="caption-text">Section Code Release du site de DreamID-Omni affichant l&#x27;annonce d&#x27;une publication open source prévue pour mars.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:53 - 00:04:03</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Bref, si vous voulez lire plus de détails, la page principale est liée ci-dessous. Et oui, nous entrons définitivement dans l&#x27;ère où voir ne suffit plus pour croire. Je vous retrouve dans le prochain rapport de recherche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web académique ou de présentation de projet de recherche.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre principal : &quot;DreamID-Omni&quot;, sous-titre : &quot;Unified Framework for Controllable Human-Centric Audio-Video Generation&quot;, noms des auteurs, mentions légales, et boutons de liens (&quot;Research Paper&quot;, &quot;DreamID-Omni GitHub&quot;, &quot;DreamID-Omni Huggingface&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de la page d&#x27;accueil du projet DreamID-Omni en fond d&#x27;écran pendant la conclusion de la vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-5q4YKN-hMJo/frame_023_00-03-58.jpg" alt="Page de présentation du projet de recherche DreamID-Omni sur un navigateur web." loading="lazy" onclick="openLightbox('screenshots/YT-5q4YKN-hMJo/frame_023_00-03-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:58</span>
+                        <span class="caption-text">Page de présentation du projet de recherche DreamID-Omni sur un navigateur web.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
