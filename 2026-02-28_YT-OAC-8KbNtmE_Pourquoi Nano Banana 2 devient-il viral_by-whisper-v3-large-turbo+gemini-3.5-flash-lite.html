@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Pourquoi Nano Banana 2 devient-il viral ? — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Pourquoi Nano Banana 2 devient-il viral ?</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-02-28</span>
+                <span class="badge">⏱️ 03m 01s</span>
+                <span class="badge">🆔 <code>OAC-8KbNtmE</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=OAC-8KbNtmE" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* intitulée « Pourquoi Nano Banana 2 devient-il viral ? » met en lumière la toute dernière révolution de Google en matière de génération d'images par intelligence artificielle : **Nano Banana 2**. Ce supermodèle combine habilement la vitesse d'exécution fulgurante de Gemini Flash avec une qualité visuelle professionnelle, démocratisant ainsi la création de contenus ultra-rapides et accessibles à tous, du simple amateur au marketeur aguerri. Le créateur structure sa présentation en démontrant comment cet outil métamorphose un simple prompt textuel en visuels complexes, allant du diagramme scientifique détaillé au photoréalisme en 4K, tout en éliminant la barrière des compétences techniques traditionnelles comme Photoshop.</p><p>Sur le plan méthodologique, la vidéo adopte un format de "Research Report" dynamique, rythmé par l'énumération des six piliers fondamentaux qui font le succès viral du modèle : vitesse accrue, compréhension sémantique de haut niveau, ancrage dans la réalité via la recherche web, rendu 4K photoréaliste, cohérence parfaite des personnages et des scènes, ainsi que la capacité native à générer et traduire du texte multilingue directement dans l'image. Le créateur montre comment Google intègre ce modèle de manière transversale dans l'ensemble de son écosystème (application Gemini, Google Search, Google Ads, Flow et API Cloud), illustrant une stratégie de fluidification des workflows créatifs.</p><p>Pour les créateurs de vidéo et les professionnels de l'image, les bénéfices concrets sont immenses. Nano Banana 2 résout les problématiques historiques de l'IA générative : la lenteur, l'incohérence visuelle d'une image à l'autre et l'accès restreint par des barrières financières. En permettant de conserver la structure des personnages sous plusieurs angles et de générer du texte typographique lisible à la volée, l'outil s'impose comme un accélérateur de production incontournable, permettant de concevoir des campagnes marketing et des visuels narratifs percutants sans nécessiter d'années d'apprentissage en design.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Nano Banana</span><span class="tool-tag">Nano banana</span><span class="tool-tag">Photoshop</span><span class="tool-tag">flux</span><span class="tool-tag">nano banana</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Fusion de la vitesse et de la qualité** : Nano Banana 2 associe la rapidité d&#x27;exécution de Gemini Flash à un rendu professionnel auparavant réservé aux utilisateurs payants, éliminant les temps d&#x27;attente.</span></li><li><span class="point-bullet">✦</span><span>Compréhension sémantique avancée** : Le modèle interprète des instructions complexes (comme la création de diagrammes du cycle de l&#x27;eau avec flèches et étiquettes) sans se bloquer, surpassant la précision des anciens modèles.</span></li><li><span class="point-bullet">✦</span><span>Ancrage dans la réalité par le web** : L&#x27;IA ne se contente pas de produire des pixels aléatoires ; elle pioche dans les recherches web en temps réel pour garantir l&#x27;exactitude des objets, des lieux et des textes représentés.</span></li><li><span class="point-bullet">✦</span><span>Résolution 4K et photoréalisme poussé** : Capacité à générer des images atteignant la résolution 4K avec un éclairage riche, des textures minutieuses et des détails dignes d&#x27;un peintre numérique.</span></li><li><span class="point-bullet">✦</span><span>Cohérence accrue des scènes et des personnages** : Mémorisation efficace des éléments pour conserver le même personnage sous plusieurs angles ou maintenir la cohérence d&#x27;une scène complexe comportant de nombreux objets.</span></li><li><span class="point-bullet">✦</span><span>Intégration native du texte multilingue** : Génération directe de typographies lisibles à l&#x27;intérieur des images avec une fonction de traduction à la volée, agissant comme des sous-titres visuels.</span></li><li><span class="point-bullet">✦</span><span>Déploiement écosystémique global** : L&#x27;outil n&#x27;est pas confiné à une application unique mais est disséminé dans Gemini, Google Search, Google Lens, Google Ads et les plateformes Cloud pour développeurs.</span></li><li><span class="point-bullet">✦</span><span>Démocratisation des barrières techniques** : Le workflow permet de s&#x27;affranchir de logiciels lourds comme Photoshop ou de décennies d&#x27;expérience en design graphique pour obtenir des résultats professionnels instantanément.</span></li><li><span class="point-bullet">✦</span><span>Élimination des obstacles économiques** : Google met fin aux contraintes des &quot;paywalls&quot; bloquant l&#x27;accès aux IA de pointe, ouvrant la voie à une nouvelle génération de créateurs et de marketeurs.</span></li><li><span class="point-bullet">✦</span><span>Optimisation des flux de travail vidéo (Flow)** : Intégration directe de la génération d&#x27;images au sein des processus de production vidéo pour accélérer la création de story-boards et de visuels de campagne.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Imaginez que vous puissiez penser à une image et boum ! Elle est instantanément créée en ultra-haute qualité avec du texte, des diagrammes, des photos, et même une précision réaliste. Tout à partir d&#x27;un simple anglais. Eh bien, arrêtez d&#x27;imaginer. Parce que Nano Banana 2 vient de le faire. C&#x27;est Pursuing AI, et vous regardez le Research Report.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de présentation vidéo illustrant des concepts d&#x27;intelligence artificielle générative et de traitement d&#x27;images.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Beach&quot;, diagramme avec des blocs empilés (&quot;Ocean Waves&quot;, &quot;Sandy Shoreline&quot;, &quot;Palm Trees &amp; Sunset&quot;), et logo &quot;PAI&quot; sur un processeur relié à un cerveau.</p>
+                        <p><strong>Action / Démonstration :</strong> Transition visuelle illustrant la création instantanée d&#x27;une image réaliste à partir d&#x27;une idée, suivie d&#x27;un graphique conceptuel sur l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_001_00-00-02.jpg" alt="Image générée par IA floue représentant une femme en bikini sur une plage au coucher du soleil." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Image générée par IA floue représentant une femme en bikini sur une plage au coucher du soleil.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_002_00-00-10.jpg" alt="Image nette d&#x27;une femme habillée sur une plage avec le mot &#x27;Beach&#x27; en gros caractères et un diagramme de flux d&#x27;éléments (&#x27;Ocean Waves&#x27;, &#x27;Sandy Shoreline&#x27;, &#x27;Palm Trees &amp; Sunset&#x27;)." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_002_00-00-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Image nette d&#x27;une femme habillée sur une plage avec le mot &#x27;Beach&#x27; en gros caractères et un diagramme de flux d&#x27;éléments (&#x27;Ocean Waves&#x27;, &#x27;Sandy Shoreline&#x27;, &#x27;Palm Trees &amp; Sunset&#x27;).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_003_00-00-19.jpg" alt="Illustration 3D d&#x27;un cerveau humain connecté à une puce électronique portant l&#x27;inscription &#x27;PAI&#x27; entourée d&#x27;un anneau lumineux bleu." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_003_00-00-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:19</span>
+                        <span class="caption-text">Illustration 3D d&#x27;un cerveau humain connecté à une puce électronique portant l&#x27;inscription &#x27;PAI&#x27; entourée d&#x27;un anneau lumineux bleu.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:21 - 00:00:53</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Bon, écoutez bien. Nano Banana 2, non, ce n&#x27;est pas une nouvelle boisson énergétique pour programmeurs. C&#x27;est le supermodèle d&#x27;image IA ultra rapide de Google qui transforme littéralement vos idées en visuels à la vitesse de l&#x27;éclair. Voici ce qu&#x27;il fait concrètement : premièrement, une magie d&#x27;image ultra rapide. Nano banana 2 combine la vitesse de Gemini Flash de Google avec la qualité de niveau professionnel auparavant réservée aux utilisateurs payants. Donc, si nano banana était une voiture de sport, ceci est la version propulsée par fusée. Le modèle 2 comprend ce que vous voulez dire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Article de blog Google DeepMind et interface de démonstration web &quot;WINDOW SEAT&quot; ainsi que l&#x27;interface de Gemini.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de l&#x27;article : &quot;Nano Banana 2: Combining Pro capabilities with lightning-fast speed&quot;, nom de l&#x27;auteur Naina Raisinghani (Product Manager, Google DeepMind). Interface Window Seat avec champs &quot;Location&quot;, &quot;Specific view&quot;, &quot;Weather source&quot;, &quot;Window size (aspect ratio)&quot;. Interface Gemini avec le prompt concernant une fusée en forme de banane.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des spécifications du nouveau modèle Google, manipulation des interfaces de génération visuelle et affichage des résultats générés par l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_004_00-00-23.jpg" alt="Article de présentation de Google DeepMind titré &quot;Nano Banana 2: Combining Pro capabilities with lightning-fast speed&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_004_00-00-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:23</span>
+                        <span class="caption-text">Article de présentation de Google DeepMind titré &quot;Nano Banana 2: Combining Pro capabilities with lightning-fast speed&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_005_00-00-32.jpg" alt="Interface de l&#x27;application de démonstration &quot;WINDOW SEAT&quot; montrant les paramètres de localisation et de vue spécifique (&quot;Brighton Beach, UK&quot;, &quot;West pier&quot;)." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_005_00-00-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:32</span>
+                        <span class="caption-text">Interface de l&#x27;application de démonstration &quot;WINDOW SEAT&quot; montrant les paramètres de localisation et de vue spécifique (&quot;Brighton Beach, UK&quot;, &quot;West pier&quot;).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_006_00-00-43.jpg" alt="Résultat de la génération dans l&#x27;interface &quot;WINDOW SEAT&quot; affichant une vue depuis une tente dans le Lake District au Royaume-Uni." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_006_00-00-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:43</span>
+                        <span class="caption-text">Résultat de la génération dans l&#x27;interface &quot;WINDOW SEAT&quot; affichant une vue depuis une tente dans le Lake District au Royaume-Uni.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_007_00-00-51.jpg" alt="Interface de Gemini affichant l&#x27;image générée d&#x27;une fusée en forme de banane avec l&#x27;inscription &quot;NANO BANANA 2&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_007_00-00-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:51</span>
+                        <span class="caption-text">Interface de Gemini affichant l&#x27;image générée d&#x27;une fusée en forme de banane avec l&#x27;inscription &quot;NANO BANANA 2&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:53 - 00:01:17</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vraiment, vous pouvez lui donner des choses complexes comme faire un diagramme du cycle de l&#x27;eau avec des flèches et des étiquettes et il ne va pas débloquer. Il suit des instructions de niveau supérieur beaucoup plus précisément que les anciens modèles. Troisièmement, le cerveau de la connaissance du monde. Il ne crache pas seulement des pixels. Il puise dans la recherche web réelle et des connaissances actualisées pour créer des visuels précis d&#x27;objets réels, d&#x27;endroits ou de texte dans les images.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur de texte et navigateur web affichant un article de documentation de Google The Keyword.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt numéro 1 en anglais détaillant la création d&#x27;une infographie sur le cycle de l&#x27;eau style DIY, puis l&#x27;infographie générée correspondante avec les termes &quot;Evaporation&quot;, &quot;Condensation&quot;, &quot;Precipitation&quot; et &quot;Runoff &amp; Collection&quot;, et enfin la page web &quot;Google The Keyword&quot; avec le titre &quot;Improved world knowledge&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation consécutive du prompt textuel, du résultat généré correspondant par l&#x27;IA, puis d&#x27;une page de documentation de Google soulignant les capacités de connaissance du monde et de recherche web.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_008_00-00-55.jpg" alt="Affichage d&#x27;un prompt textuel détaillé demandant une infographie sur le cycle de l&#x27;eau." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_008_00-00-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:55</span>
+                        <span class="caption-text">Affichage d&#x27;un prompt textuel détaillé demandant une infographie sur le cycle de l&#x27;eau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_009_00-01-02.jpg" alt="Résultat visuel généré montrant une infographie détaillée et illustrée du cycle de l&#x27;eau avec des étiquettes et des flèches." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_009_00-01-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:02</span>
+                        <span class="caption-text">Résultat visuel généré montrant une infographie détaillée et illustrée du cycle de l&#x27;eau avec des étiquettes et des flèches.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_010_00-01-10.jpg" alt="Page web de documentation &quot;Google The Keyword&quot; illustrant l&#x27;amélioration de la connaissance du monde et l&#x27;intégration de la recherche web." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_010_00-01-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Page web de documentation &quot;Google The Keyword&quot; illustrant l&#x27;amélioration de la connaissance du monde et l&#x27;intégration de la recherche web.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:17 - 00:01:38</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela signifie que vos graphismes sont ancrés dans la réalité, et non pas simplement des hallucinations aléatoires de l&#x27;IA. 4. Le photoréalisme allié à la puissance de la 4K. Cet outil ne se contente pas de créer des visuels au niveau des mèmes. Il génère une résolution allant jusqu&#x27;à 4K avec un éclairage riche, des détails précis et des textures réalistes, comme un peintre numérique en vitesse accélérée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un article de blog technique de Google (The Keyword) sur le modèle Nano Banana 2.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte sur l&#x27;amélioration des connaissances du monde, spécifications prêtes pour la production, prise en charge de la 4K, et affichage de visuels générés par IA (vue de fenêtre sur Brighton Beach et paysage de vallée luxuriante).</p>
+                        <p><strong>Action / Démonstration :</strong> Le navigateur présente des captures d&#x27;écran et des exemples de génération d&#x27;images haute résolution démontrant la fidélité visuelle et le réalisme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_011_00-01-19.jpg" alt="Page web de Google The Keyword présentant les fonctionnalités de Nano Banana 2 et l&#x27;application exemple &#x27;Window Seat&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_011_00-01-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:19</span>
+                        <span class="caption-text">Page web de Google The Keyword présentant les fonctionnalités de Nano Banana 2 et l&#x27;application exemple &#x27;Window Seat&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_012_00-01-28.jpg" alt="Page web montrant les spécifications prêtes pour la production et un exemple de paysage montagneux brumeux." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_012_00-01-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:28</span>
+                        <span class="caption-text">Page web montrant les spécifications prêtes pour la production et un exemple de paysage montagneux brumeux.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_013_00-01-36.jpg" alt="Gros plan en plein écran sur l&#x27;image générée de la vallée verdoyante et du lac entouré de montagnes." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_013_00-01-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:36</span>
+                        <span class="caption-text">Gros plan en plein écran sur l&#x27;image générée de la vallée verdoyante et du lac entouré de montagnes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:38 - 00:02:03</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">5. Conserve la cohérence des personnages et des scènes. Vous voulez le même personnage sous 5 angles différents ou 14 objets dans 1 scène ? Nano Banana 2 les mémorise, pour que vos visuels n&#x27;aient pas l&#x27;air d&#x27;être passés au mixeur. 6. Texte multilingue et traduction. Nano Banana 2 peut générer du texte lisible directement à l&#x27;intérieur des images et le traduire à la volée, comme des sous-titres visuels à l&#x27;intérieur de votre photo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de présentation du modèle d&#x27;intelligence artificielle Nano Banana 2 (documentation ou site officiel de présentation de fonctionnalités).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;Production-ready specs...&quot;, &quot;Visual fidelity upgrade...&quot;, &quot;Highly stylized pop-art fashion portrait in different aspect ratios&quot;, &quot;Joyful characters and items at a farm&quot;, &quot;Precision text rendering and translation: Nano Banana 2 allows you to generate accurate, legible text...&quot;, &quot;Localized &#x27;Native Wildlife&#x27; sign&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur ou l&#x27;interface fait défiler des exemples visuels illustrant les points 5 et 6 sur la cohérence des scènes/objets et la traduction de texte intégrée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_014_00-01-40.jpg" alt="Présentation des fonctionnalités de Nano Banana 2 montrant la cohérence des personnages et des scènes avec un portrait de mode pop-art stylisé dans différents formats." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_014_00-01-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:40</span>
+                        <span class="caption-text">Présentation des fonctionnalités de Nano Banana 2 montrant la cohérence des personnages et des scènes avec un portrait de mode pop-art stylisé dans différents formats.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_015_00-01-47.jpg" alt="Démonstration de Nano Banana 2 montrant la génération d&#x27;une scène de ferme cohérente intégrant de multiples objets et personnages à partir d&#x27;images sources." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_015_00-01-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:47</span>
+                        <span class="caption-text">Démonstration de Nano Banana 2 montrant la génération d&#x27;une scène de ferme cohérente intégrant de multiples objets et personnages à partir d&#x27;images sources.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_016_00-01-55.jpg" alt="Illustration de la fonction de texte multilingue et de traduction de Nano Banana 2 avec un panneau dans la nature affichant du texte localisé." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_016_00-01-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Illustration de la fonction de texte multilingue et de traduction de Nano Banana 2 avec un panneau dans la nature affichant du texte localisé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:03 - 00:02:27</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Où vous pouvez l&#x27;utiliser. Nano Banana 2 n&#x27;est pas dans une seule application. Il se déploie dans tout l&#x27;écosystème d&#x27;IA de Google. L&#x27;application Gemini, votre espace de création, le mode IA de Google Search et Lens, les images alimentées par la recherche de connaissances, Google Ads, les visuels de campagnes alimentés par l&#x27;IA, Flow, la génération d&#x27;images au sein des flux de travail vidéo, et les plateformes d&#x27;API et cloud pour l&#x27;accès des développeurs.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de documentation ou de présentation sur fond noir avec du texte en blanc et des liens en bleu.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre : &quot;Try Nano Banana 2 today&quot;. Texte décrivant la disponibilité du modèle à travers divers produits Google : Gemini app, Search, AI Studio + API, Google Cloud, Flow et Google Ads.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran de la liste des applications et plateformes Google où Nano Banana 2 est déployé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_017_00-02-05.jpg" alt="Page de présentation listant les différentes intégrations de Nano Banana 2 dans l&#x27;écosystème Google." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_017_00-02-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:05</span>
+                        <span class="caption-text">Page de présentation listant les différentes intégrations de Nano Banana 2 dans l&#x27;écosystème Google.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:27 - 00:02:56</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pourquoi c&#x27;est important. Avant Nano Banana 2, les visuels IA de haute qualité étaient soit lents, soit incohérents, soit bloqués derrière des paywalls. Maintenant, Google met des outils d&#x27;IA de niveau professionnel à la portée de tout le monde, et littéralement des générations de créateurs et de marketeurs vont surfer sur cette vague. Nano Banana 2, c&#x27;est comme projeter des super-pouvoirs de peinture colorée directement depuis votre clavier, tout cela sans nécessiter de compétences sur Photoshop, 10 ans d&#x27;expérience en design, ou vendre votre âme à un gourou.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration visuelle de résultats générés par intelligence artificielle (visuels de haute qualité illustrant les capacités du modèle).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Visuels artistiques et cinématiques variés produits par IA, démontrant la qualité et la diversité des rendus (typographie artistique, architecture complexe, scène de rue nocturne brumeuse).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation défilée d&#x27;exemples d&#x27;images et de scènes générées par IA illustrant la qualité professionnelle des résultats.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_018_00-02-29.jpg" alt="Image générée par IA montrant le texte stylisé en typographie noire et blanche avec des formes d&#x27;ondes graphiques et le texte &quot;WAVE FORM&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_018_00-02-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:29</span>
+                        <span class="caption-text">Image générée par IA montrant le texte stylisé en typographie noire et blanche avec des formes d&#x27;ondes graphiques et le texte &quot;WAVE FORM&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_019_00-02-37.jpg" alt="Image générée par IA d&#x27;un bâtiment architectural aux formes organiques et cuivrées au bord d&#x27;une rivière, avec une personne qui marche sur un sentier au crépuscule." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_019_00-02-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:37</span>
+                        <span class="caption-text">Image générée par IA d&#x27;un bâtiment architectural aux formes organiques et cuivrées au bord d&#x27;une rivière, avec une personne qui marche sur un sentier au crépuscule.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-OAC-8KbNtmE/frame_020_00-02-47.jpg" alt="Scène cinématique générée par IA montrant une voiture classique rouge roulant sur une route de nuit dans une brume épaisse aux teintes verdâtres." loading="lazy" onclick="openLightbox('screenshots/YT-OAC-8KbNtmE/frame_020_00-02-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:47</span>
+                        <span class="caption-text">Scène cinématique générée par IA montrant une voiture classique rouge roulant sur une route de nuit dans une brume épaisse aux teintes verdâtres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

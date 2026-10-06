@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `44 / 84` (`52.4%`)
+- **Vidéos traitées** : `45 / 84` (`53.6%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -60,6 +60,7 @@
 | 2026-03-13 | [L'IA se moque des développeurs… Test LeetCode HARD](2026-03-13_YT-uP3CLiz35ZY_L'IA se moque des développeurs… Test LeetCode HARD_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-03-13_YT-uP3CLiz35ZY_L'IA se moque des développeurs… Test LeetCode HARD_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 6m 27s | `30 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=uP3CLiz35ZY) | `uP3CLiz35ZY` |
 | 2026-03-09 | [ChatGPT n'a pas su trouver ça… Et vous ?](2026-03-09_YT-t3EEGWERGFc_ChatGPT n'a pas su trouver ça… Et vous_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-03-09_YT-t3EEGWERGFc_ChatGPT n'a pas su trouver ça… Et vous_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 48s | `26 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=t3EEGWERGFc) | `t3EEGWERGFc` |
 | 2026-03-06 | [OpenAI vient de lâcher GPT-5.4… C'est littéralement hallucinant](2026-03-06_YT-eI7gfK5E9N4_OpenAI vient de lâcher GPT-5.4… C'est littéralement hallucinant_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-03-06_YT-eI7gfK5E9N4_OpenAI vient de lâcher GPT-5.4… C'est littéralement hallucinant_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 09s | `27 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=eI7gfK5E9N4) | `eI7gfK5E9N4` |
+| 2026-02-28 | [Pourquoi Nano Banana 2 devient-il viral ?](2026-02-28_YT-OAC-8KbNtmE_Pourquoi Nano Banana 2 devient-il viral_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-02-28_YT-OAC-8KbNtmE_Pourquoi Nano Banana 2 devient-il viral_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 01s | `20 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=OAC-8KbNtmE) | `OAC-8KbNtmE` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
