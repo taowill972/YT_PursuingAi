@@ -30,7 +30,8 @@
     "Zk9o9CQy8NA",
     "Q0XpvTcubPU",
     "kB1HjgYIoMw",
-    "4j3laLc7b8M"
+    "4j3laLc7b8M",
+    "C8qfKF6XhjM"
   ],
   "processed_videos": [
     {
@@ -462,9 +463,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-10-05_YT-4j3laLc7b8M_Fable 5.5, GPT-6.1 Astra & Google’s Mystery AI Model Just Appeared_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-06T02:03:32Z",
       "status": "completed"
+    },
+    {
+      "video_id": "C8qfKF6XhjM",
+      "title": "GPT-5.6 Is WAY More Powerful Than We Thought",
+      "raw_title": "GPT-5.6 Is WAY More Powerful Than We Thought",
+      "filename_md": "2026-06-22_YT-C8qfKF6XhjM_GPT-5.6 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-06-22_YT-C8qfKF6XhjM_GPT-5.6 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-06-22",
+      "duration": 196,
+      "screenshots_count": 0,
+      "filepath_md": "/root/YT_PursuingAi/2026-06-22_YT-C8qfKF6XhjM_GPT-5.6 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-06-22_YT-C8qfKF6XhjM_GPT-5.6 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-06T03:32:17Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 31,
+  "completed_count": 32,
   "last_run_timestamp": "2026-10-05T22:00:05Z",
   "status": "running",
   "total_catalog_count": 84
