@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `51 / 84` (`60.7%`)
+- **Vidéos traitées** : `52 / 84` (`61.9%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -67,6 +67,7 @@
 | 2026-02-13 | [L'IA va-t-elle vous balancer ? Je l'ai testée avec la police](2026-02-13_YT-jL3T7O-aCfs_L'IA va-t-elle vous balancer Je l'ai testée avec la police_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-02-13_YT-jL3T7O-aCfs_L'IA va-t-elle vous balancer Je l'ai testée avec la police_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 49s | `14 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=jL3T7O-aCfs) | `jL3T7O-aCfs` |
 | 2026-02-09 | [Les IA peuvent-elles résoudre un simple labyrinthe ou est-ce juste du bluff ?](2026-02-09_YT-yLLPCBRuNDU_Les IA peuvent-elles résoudre un simple labyrinthe ou est-ce juste du bluff_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-02-09_YT-yLLPCBRuNDU_Les IA peuvent-elles résoudre un simple labyrinthe ou est-ce juste du bluff_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 52s | `24 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=yLLPCBRuNDU) | `yLLPCBRuNDU` |
 | 2026-02-01 | [Cadeau mystère ou gage impossible avec l'IA (ChatGPT, Gemini & Grok)](2026-02-01_YT-wOQnqihYD6g_Cadeau mystère ou gage impossible avec l'IA (ChatGPT, Gemini & Grok)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-02-01_YT-wOQnqihYD6g_Cadeau mystère ou gage impossible avec l'IA (ChatGPT, Gemini & Grok)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 6m 28s | `1 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=wOQnqihYD6g) | `wOQnqihYD6g` |
+| 2026-01-17 | [Gemini Just Became Personal AI](2026-01-17_YT-CAXuTKoog48_Gemini Just Became Personal AI_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-01-17_YT-CAXuTKoog48_Gemini Just Became Personal AI_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 2m 28s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=CAXuTKoog48) | `CAXuTKoog48` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
