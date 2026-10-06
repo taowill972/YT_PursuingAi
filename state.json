@@ -32,7 +32,8 @@
     "kB1HjgYIoMw",
     "4j3laLc7b8M",
     "C8qfKF6XhjM",
-    "v5Dq686BiOA"
+    "v5Dq686BiOA",
+    "JUTCIrfnQqc"
   ],
   "processed_videos": [
     {
@@ -490,12 +491,26 @@
       "screenshots_count": 0,
       "filepath_md": "/root/YT_PursuingAi/2026-05-28_YT-v5Dq686BiOA_Figure AI's Darkest Experiment_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
       "filepath_html": "/root/YT_PursuingAi/2026-05-28_YT-v5Dq686BiOA_Figure AI's Darkest Experiment_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
-      "processed_at": "2026-10-06T05:47:40Z",
+      "processed_at": "2026-10-06T05:19:35Z",
+      "status": "completed"
+    },
+    {
+      "video_id": "JUTCIrfnQqc",
+      "title": "OpenAI Has A New Problem",
+      "raw_title": "OpenAI Has A New Problem",
+      "filename_md": "2026-05-18_YT-JUTCIrfnQqc_OpenAI Has A New Problem_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-05-18_YT-JUTCIrfnQqc_OpenAI Has A New Problem_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-05-18",
+      "duration": 508,
+      "screenshots_count": 13,
+      "filepath_md": "/root/YT_PursuingAi/2026-05-18_YT-JUTCIrfnQqc_OpenAI Has A New Problem_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-05-18_YT-JUTCIrfnQqc_OpenAI Has A New Problem_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-06T07:07:16Z",
       "status": "completed"
     }
   ],
-  "completed_count": 33,
-  "last_run_timestamp": "2026-10-06T04:00:04Z",
+  "completed_count": 34,
+  "last_run_timestamp": "2026-10-05T22:00:05Z",
   "status": "running",
   "total_catalog_count": 84
 }

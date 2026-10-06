@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 OpenAI Has A New Problem — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 OpenAI Has A New Problem</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-05-18</span>
+                <span class="badge">⏱️ 08m 28s</span>
+                <span class="badge">🆔 <code>JUTCIrfnQqc</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=JUTCIrfnQqc" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* intitulée « OpenAI Has A New Problem » met en lumière les démonstrations révolutionnaires de *Thinking Machines Labs*, une entreprise fondée par Mira Murati (ancienne PDG par intérim d'OpenAI) et composée d'ex-chercheurs d'OpenAI, Google DeepMind et Anthropic. Loin des simples améliorations de scores sur des benchmarks, ces démos révèlent des comportements d'interaction radicalement novateurs. Le cœur de cette technologie réside dans un modèle vocal multimodal capable de gérer une conversation fluide en temps réel, marquant une rupture nette avec les assistants vocaux classiques et les architectures de type "attente-traitement-réponse".</p><p>L'analyse démontre une maîtrise technique impressionnante : traduction simultanée en cours de parole sans pause, gestion fine des silences et des hésitations (le modèle sait si la phrase est finie ou non), comptage dynamique d'éléments (comme des mots clés ou des animaux) tout en écoutant, et interruption proactive basée sur la conscience contextuelle et l'urgence (par exemple, dissuader un utilisateur d'emmener ses parents de 80 ans faire du VTT sur un volcan). De plus, le modèle intègre une conscience temporelle continue (capacité à tenir compte d'une durée précise comme quatre minutes et demie) et une utilisation simultanée et concurrente d'outils (navigation web, génération de graphiques en barres, recherche de temps de réaction sensorielle) pendant que l'échange verbal se poursuit naturellement.</p><p>Pour les créateurs de contenu, les réalisateurs et les professionnels de la vidéo par IA, cette avancée redéfinit les standards de l'interaction homme-machine. Bien que le modèle ne soit pas encore public — avec un aperçu de recherche limité prévu dans les mois à venir —, ces nouveaux paradigmes annoncent la fin des interfaces rigides. Les créateurs doivent anticiper l'arrivée de couches de communication en direct aussi fluides que des interactions humaines, permettant de piloter des logiciels de montage, des générateurs d'images ou des scripts par la simple voix de manière non séquentielle et hautement contextuelle.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude</span><span class="tool-tag">flux</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Rupture comportementale vs benchmarks** : L&#x27;innovation ne réside pas dans une hausse de 2 % des scores sur les benchmarks, mais dans l&#x27;émergence de comportements d&#x27;interaction véritablement inédits et naturels.</span></li><li><span class="point-bullet">✦</span><span>Traduction vocale en temps réel** : Le modèle traduit et superpose sa voix dans une autre langue pendant que l&#x27;utilisateur parle encore, éliminant les temps de latence et les pauses artificielles.</span></li><li><span class="point-bullet">✦</span><span>Gestion intelligente des silences et des hésitations** : Capacité à comprendre qu&#x27;une phrase n&#x27;est pas terminée malgré des pauses prolongées, évitant les interruptions intempestives typiques des anciens systèmes vocaux.</span></li><li><span class="point-bullet">✦</span><span>Exécution de tâches multitâches en arrière-plan** : Le modèle peut écouter, parler, naviguer sur le web, rechercher des données et générer des éléments d&#x27;interface utilisateur (comme des graphiques) de manière strictement concurrente.</span></li><li><span class="point-bullet">✦</span><span>Conscience contextuelle et proactive** : L&#x27;IA est capable d&#x27;analyser le contenu d&#x27;une conversation pour intervenir spontanément face à un danger ou une incohérence (ex. : déconseiller des activités extrêmes à des personnes âgées).</span></li><li><span class="point-bullet">✦</span><span>Suivi et détection comportementale continue** : Surveillance en temps réel de la posture de l&#x27;utilisateur (détection de l&#x27;affaissement des épaules) avec des rappels vocaux correctifs immédiats et répétés.</span></li><li><span class="point-bullet">✦</span><span>Comptage dynamique en direct** : Aptitude à identifier et compter des occurrences spécifiques (ex. : noms d&#x27;animaux) au fil du discours de l&#x27;utilisateur tout en maintenant la conversation.</span></li><li><span class="point-bullet">✦</span><span>Conscience temporelle intégrée** : Capacité à décompter le temps en arrière-plan selon une consigne précise (ex. : « parlons pendant quatre minutes et demie ») et à clore l&#x27;échange exactement au terme imparti.</span></li><li><span class="point-bullet">✦</span><span>Exode des talents et nouvelles dynamiques de marché** : La création de *Thinking Machines Labs* par d&#x27;anciens cadres et chercheurs d&#x27;OpenAI, DeepMind et Anthropic redistribue les cartes de la RAG et de l&#x27;IA conversationnelle.</span></li><li><span class="point-bullet">✦</span><span>Disponibilité sélective et anticipation stratégique** : Le modèle reste pour l&#x27;instant confiné à des démonstrations fermées, nécessitant pour les créateurs de se préparer à intégrer ces nouveaux workflows fluides dès l&#x27;ouverture des programmes de recherche bêta.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:02 - 00:00:22</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">You&#x27;re starting to slouch forward. Try pulling your shoulders back. And tilting your head like that can strain your neck. Try keeping it level. Thinking Machines Labs just dropped some of the most impressive AI demos we&#x27;ve seen in a long time. And honestly, this actually feels different.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:23 - 00:00:48</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Not we increased benchmark scores by 2% different. I mean genuinely new behavior. This is Pursuing AI and you are watching the research report. Now, if you&#x27;re not familiar with Thinking Machines Labs, this is the company founded by Mira Marati. Back when OpenAI fired Sam Altman for like a weekend, Mira Marati became the interim CEO for a couple of days before Sam returned.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:48 - 00:01:09</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">A few months later, she left OpenAI and started Thinking Machines Labs, bringing over multiple researchers and engineers from OpenAI. Some people reportedly came from Google DeepMind too, and possibly even from Anthropic. For months, the company stayed mostly quiet behind the scenes. No giant launches, no endless benchmark flexing.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:10 - 00:01:28</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Just silence. But this week, they finally revealed demos of their new interaction models. And honestly, the results are kind of wild. One of the demos shows real-time language translation happening while someone is actively speaking. Not after they finish talking. Not with awkward pauses.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:28 - 00:01:48</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">The model listens in real time, translates the speech instantly into another language, and speaks over it naturally while the conversation is still happening. Amazing interaction model. I have a few things to add, but to make it interesting, I&#x27;ll do it in Hindi. Can you translate it into English in real time for my friend and for audience?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:49 - 00:02:12</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Absolutely, I&#x27;ll translate as you go. Today we&#x27;re taking a look at our preview model. To release it, which makes conversation between humans and AI easier. It has many features like web search and artifacts. Friend.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:13 - 00:02:33</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Hey, guys. I just heard something really cool about search and artifact generation. Perfect timing for me, because just now I was wondering what are typical humans&#x27; simple reaction time for auditory, visual, and tactile communication cues. Could you search for me? Let me find those typical reaction times for you.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:33 - 00:02:55</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Got it. Thank you. So tactile is fastest at around 150 milliseconds, then auditory at 140 to 170, and visual is the slowest at 180 to 250. Oh, interesting. Can you visualize them in a bar chart for me? Absolutely. Let me generate a quick bar chart for those reaction times. In the meantime, could you quickly explain to me why is auditory even faster than visual? That&#x27;s a little bit unexpected.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:55 - 00:03:20</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Sure thing. Auditory is faster because sound signals travel a shorter, more direct neural path to the brain than visual info does. It feels less like a chatbot and more like a live communication layer between humans. Another demo showed something even more impressive. The speaker intentionally paused mid-sentence multiple times, but the model understood she wasn&#x27;t actually finished speaking yet.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:20 - 00:03:56</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Instead of interrupting her like most AI voice systems do, it waited patiently for her to continue before responding. I&#x27;m gonna tell you a story and whenever you hear an animal word, please count the number immediately. Gotcha! I&#x27;ll count them out as you go. Let&#x27;s hear it. Okay, last weekend I drove down to South Bay to visit a farm. On the way there I saw a deer and when we got to the farm we watched</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:56 - 00:04:18</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une démonstration de tonte de moutons. Deux. Ensuite, sur le chemin du retour, nous avons vu un coyote. Trois. Et j&#x27;aurais vraiment aimé voir un capybara à la place. Quatre. Tu as dit cerf une fois, mouton une fois, coyote une fois et capybara une fois. Quatre au total. Ce niveau de timing conversationnel a l&#x27;air simple, mais il est en réalité incroyablement difficile.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra sans partage d&#x27;écran spécifique d&#x27;outil logiciel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte incrusté à l&#x27;écran : « The model can talk over the user if needed », « The model determines the end of the story from the context and jumps in », « THINKING MACHINES » et « Dialog Management ».</p>
+                        <p><strong>Action / Démonstration :</strong> Une jeune femme est assise à une table avec un téléphone portable posé devant elle, tandis qu&#x27;un texte explicatif s&#x27;affiche à l&#x27;écran concernant la gestion du dialogue et la capacité du modèle à intervenir.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:19 - 00:04:39</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, ils ont ajouté une autre instruction par-dessus. L&#x27;oratrice a demandé au modèle de l&#x27;interrompre à chaque fois qu&#x27;elle mentionnait le nom d&#x27;un animal. Et d&#x27;une certaine manière, cela a vraiment fonctionné. Le modèle a écouté en temps réel, a détecté chaque référence à un animal, a interrompu aux bons moments, puis a résumé plus tard combien d&#x27;animaux avaient été mentionnés tout au long de la conversation.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface d&#x27;appel vocal / application d&#x27;assistant IA avec affichage d&#x27;ondes sonores sur smartphone.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Ondes sonores animées représentant la conversation en temps réel et chronomètre d&#x27;appel visible sur l&#x27;écran du smartphone.</p>
+                        <p><strong>Action / Démonstration :</strong> La créatrice interagit vocalement avec le smartphone posé sur la table pour tester la capacité de l&#x27;IA à l&#x27;interrompre lorsqu&#x27;elle mentionne des animaux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JUTCIrfnQqc/frame_001_00-04-21.jpg" alt="Gros plan sur un smartphone posé sur une table affichant une interface audio vocale avec une onde sonore active, avec une incrustation vidéo (PiP) montrant la créatrice dans son studio." loading="lazy" onclick="openLightbox('screenshots/YT-JUTCIrfnQqc/frame_001_00-04-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:21</span>
+                        <span class="caption-text">Gros plan sur un smartphone posé sur une table affichant une interface audio vocale avec une onde sonore active, avec une incrustation vidéo (PiP) montrant la créatrice dans son studio.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JUTCIrfnQqc/frame_002_00-04-37.jpg" alt="Gros plan rapproché sur le smartphone posé sur la table affichant l&#x27;interface vocale en cours d&#x27;utilisation avec des ondes sonores." loading="lazy" onclick="openLightbox('screenshots/YT-JUTCIrfnQqc/frame_002_00-04-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:37</span>
+                        <span class="caption-text">Gros plan rapproché sur le smartphone posé sur la table affichant l&#x27;interface vocale en cours d&#x27;utilisation avec des ondes sonores.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:40 - 00:05:03</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce n&#x27;est plus seulement de la reconnaissance vocale. C&#x27;est de la conscience contextuelle en temps réel pendant la conversation. Une autre démonstration montrait le modèle surveillant activement quelqu&#x27;un pendant qu&#x27;il travaillait. L&#x27;utilisatrice lui a demandé de la réprimander chaque fois qu&#x27;elle commençait à s&#x27;avachir. Et le plus drôle, c&#x27;est qu&#x27;il l&#x27;a vraiment attrapée à chaque fois. Pas une seule fois. De manière répétée. Bon, je fais un peu de travail.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface d&#x27;appel vocal minimaliste sur smartphone avec des ondes sonores animées.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte incrusté à l&#x27;écran : &quot;The model can talk over the user if needed&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Un smartphone est posé sur une table en bois lors d&#x27;une démonstration des capacités vocales et contextuelles de l&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JUTCIrfnQqc/frame_003_00-04-42.jpg" alt="Démonstration d&#x27;un smartphone posé sur une table montrant une interface vocale avec un graphique d&#x27;ondes sonores et le texte explicatif &quot;The model can talk over the user if needed&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-JUTCIrfnQqc/frame_003_00-04-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:42</span>
+                        <span class="caption-text">Démonstration d&#x27;un smartphone posé sur une table montrant une interface vocale avec un graphique d&#x27;ondes sonores et le texte explicatif &quot;The model can talk over the user if needed&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:03 - 00:05:46</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dis-moi si je commence à me voûter. Je m&#x27;en occupe. Tiens-toi bien droite et tout ira bien. Tu commences à te pencher en avant. Essaie de ramener tes épaules en arrière. C&#x27;est bien mieux. Tu es redressée à nouveau. Pencher ta tête comme ça peut fatiguer ton cou. Essaie de la garder droite. Voilà que tu te penches en avant à nouveau. Recule-toi dans ta chaise. Ouais, tu es complètement courbée maintenant. Roule ces</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra sans partage d&#x27;écran</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte incrusté à l&#x27;écran : &quot;THINKING MACHINES&quot;, &quot;Visual Interjection&quot; et &quot;The model instantly reacts to visual cues&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> La présentatrice est assise face caméra devant son ordinateur portable et bouge en simulant une mauvaise posture pour illustrer la réaction du modèle d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:46 - 00:06:18</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">redressez les épaules quand vous le pouvez. Il suivait les changements de posture en continu et réagissait naturellement dès que le comportement se produisait. Ensuite, il y a eu une autre démonstration où le modèle interrompait activement la conversation s&#x27;il estimait qu&#x27;une interruption était nécessaire. Pas de manière aléatoire, ni maladroite. Il redirigeait la conversation en temps réel en fonction du contexte et de l&#x27;urgence. J&#x27;ai entendu dire que le vélo de montagne est très amusant. J&#x27;avais donc envie d&#x27;aller faire du vélo de montagne et je pensais emmener mes parents avec moi.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra sans partage d&#x27;écran</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun contenu logiciel ou technique affiché à l&#x27;écran (uniquement des personnes interagissant avec leur ordinateur portable lors d&#x27;une démonstration extérieure ou intérieure).</p>
+                        <p><strong>Action / Démonstration :</strong> Les personnes présentes à l&#x27;écran utilisent ou interagissent avec un ordinateur portable, tandis que le narrateur commente les fonctionnalités du modèle d&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:19 - 00:06:49</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ils sont assez âgés. Ils ont 70, presque 80 ans, mais je pensais que ce serait un voyage sympa à faire ensemble. Attends, non, ne les emmène pas faire du vélo de montagne à 80 ans. C&#x27;est incroyablement risqué. Ils pourraient facilement se blesser gravement. Choisis quelque chose de plus sûr. Hmm. Je pense que peut-être, tu sais, si c&#x27;est risqué sur un VTT normal, on peut faire du vélo tandem, peut-être que c&#x27;est plus solide, et on peut trouver un volcan, ou mieux, un volcan actif pour y aller tous ensemble et faire des [activités/montagnes].</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Apple Maps (Plans d&#x27;Apple) affiché à l&#x27;écran avec un encadré PiP vidéo du créateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Carte géographique d&#x27;Hawaï avec les repères &quot;Mauna Kea&quot; et &quot;Hawaiian Volcanoes National Park&quot;. Texte incrusté en bas à gauche : &quot;The model proactively jumps in, not waiting for the user to finish&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et affichage cartographique de l&#x27;île d&#x27;Hawaï sur l&#x27;application Plans d&#x27;Apple, illustrant la recherche d&#x27;un volcan actif.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JUTCIrfnQqc/frame_004_00-06-30.jpg" alt="Interface de l&#x27;application Apple Maps affichant l&#x27;île d&#x27;Hawaï (Big Island) avec les volcans et le parc national des volcans d&#x27;Hawaï, avec un encadré PiP du créateur en bas à droite et du texte à gauche." loading="lazy" onclick="openLightbox('screenshots/YT-JUTCIrfnQqc/frame_004_00-06-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:30</span>
+                        <span class="caption-text">Interface de l&#x27;application Apple Maps affichant l&#x27;île d&#x27;Hawaï (Big Island) avec les volcans et le parc national des volcans d&#x27;Hawaï, avec un encadré PiP du créateur en bas à droite et du texte à gauche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:49 - 00:07:12</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Non, arrête, un volcan actif est mortel. Tu ne peux pas emmener des parents âgés alors que de la lave est en train de jaillir. Je pense que tu ne veux tout simplement pas que je m&#x27;amuse. Et honnêtement, c&#x27;est la première fois depuis un moment que des démos d&#x27;interaction avec l&#x27;IA donnent l&#x27;impression d&#x27;être significativement différentes, au lieu d&#x27;être juste ChatGPT en un peu plus intelligent. L&#x27;une des fonctionnalités les plus cool est que le modèle a réellement conscience du temps qui passe pendant la conversation.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra sans partage d&#x27;écran</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun contenu logiciel affiché. Des incrustations textuelles apparaissent à l&#x27;écran : &quot;The model proactively jumps in, not waiting for the user to finish&quot; puis &quot;THINKING MACHINES&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur est assis dans un fauteuil en plein air, un ordinateur portable ouvert sur les genoux, en train de s&#x27;exprimer face caméra en faisant des gestes.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:12 - 00:07:34</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez littéralement lui dire quelque chose comme, parlons pendant quatre minutes et demie. Et tout en parlant avec vous, il garde une trace du temps en arrière-plan. Puis exactement lorsque le temps est écoulé, il met fin naturellement à la conversation. Les modèles actuels comme ChatGPT ou Claude ne gèrent pas vraiment ce genre de conscience temporelle continue naturellement lors d&#x27;une interaction en direct.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application Apple Maps sur macOS et page web de Thinking Machines.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1, l&#x27;application Apple Maps affiche l&#x27;île d&#x27;Hawaï avec un texte incrusté : &quot;The model proactively jumps in, not waiting for the user to finish&quot;. Sur l&#x27;image 2, la page web de Thinking Machines présente le titre &quot;Interaction Models: A Scalable Approach to Human-AI Collaboration&quot; daté du 11 mai 2026, avec une vidéo intégrée montrant deux personnes en interaction.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente des interfaces logicielles et des articles de recherche illustrant l&#x27;interaction avec des modèles d&#x27;intelligence artificielle dotés d&#x27;une conscience temporelle et contextuelle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JUTCIrfnQqc/frame_005_00-07-14.jpg" alt="Capture d&#x27;écran montrant l&#x27;application Apple Maps sur macOS avec un encadré PiP du créateur en bas à droite." loading="lazy" onclick="openLightbox('screenshots/YT-JUTCIrfnQqc/frame_005_00-07-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:14</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;application Apple Maps sur macOS avec un encadré PiP du créateur en bas à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JUTCIrfnQqc/frame_006_00-07-23.jpg" alt="Page web de Thinking Machines affichant l&#x27;article &quot;Interaction Models: A Scalable Approach to Human-AI Collaboration&quot; avec une vidéo de démonstration." loading="lazy" onclick="openLightbox('screenshots/YT-JUTCIrfnQqc/frame_006_00-07-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:23</span>
+                        <span class="caption-text">Page web de Thinking Machines affichant l&#x27;article &quot;Interaction Models: A Scalable Approach to Human-AI Collaboration&quot; avec une vidéo de démonstration.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:34 - 00:07:52</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une autre énorme capacité est l&#x27;utilisation simultanée d&#x27;outils. Tout en vous écoutant activement et en vous parlant, le modèle est apparemment en train de naviguer sur le web, de rechercher des informations, de générer des éléments d&#x27;interface utilisateur et d&#x27;intégrer les résultats dans la conversation en même temps. Pas séquentiellement, de manière concurrente.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une page d&#x27;article de recherche (&quot;Thinking Machines&quot;) et un bureau macOS avec une application de vidéoconférence et une fenêtre de visualisation de données.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de la page web : &quot;Interaction Models: A Scalable Approach to Human-AI Collaboration&quot;, date &quot;May 11, 2026&quot;. Sur l&#x27;image 2, texte : &quot;Human Reaction Times by Modality&quot;, &quot;Milliseconds (ms) - lower is faster&quot;, et en bas à gauche un sous-titre : &quot;The model can produce visualization while keeping the conversation going&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;un article de recherche sur les modèles d&#x27;interaction homme-IA et démonstration d&#x27;une interface affichant simultanément une vidéoconférence et des graphiques/visualisations générés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JUTCIrfnQqc/frame_007_00-07-36.jpg" alt="Page web de &#x27;Thinking Machines&#x27; présentant l&#x27;article &#x27;Interaction Models: A Scalable Approach to Human-AI Collaboration&#x27; avec une vidéo intégrée montrant des personnes assises devant un bureau." loading="lazy" onclick="openLightbox('screenshots/YT-JUTCIrfnQqc/frame_007_00-07-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:36</span>
+                        <span class="caption-text">Page web de &#x27;Thinking Machines&#x27; présentant l&#x27;article &#x27;Interaction Models: A Scalable Approach to Human-AI Collaboration&#x27; avec une vidéo intégrée montrant des personnes assises devant un bureau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JUTCIrfnQqc/frame_008_00-07-50.jpg" alt="Capture d&#x27;écran d&#x27;un bureau virtuel montrant une vidéoconférence avec trois personnes à gauche et une fenêtre de présentation affichant &#x27;Human Reaction Stages by Modality&#x27; à droite." loading="lazy" onclick="openLightbox('screenshots/YT-JUTCIrfnQqc/frame_008_00-07-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:50</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un bureau virtuel montrant une vidéoconférence avec trois personnes à gauche et une fenêtre de présentation affichant &#x27;Human Reaction Stages by Modality&#x27; à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:52 - 00:08:14</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est un changement massif par rapport au flux typique d&#x27;attente de réponse, de traitement puis de réponse sur lequel la plupart des systèmes d&#x27;IA comptent encore aujourd&#x27;hui. Malheureusement, le modèle n&#x27;est toujours pas disponible publiquement. Pour l&#x27;instant, nous ne voyons que des démonstrations, mais Thinking Machines Lab indique qu&#x27;ils prévoient d&#x27;ouvrir un aperçu de recherche limité dans les mois à venir, suivi d&#x27;une version plus large plus tard cette année.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une page de documentation et de recherche de Thinking Machines Lab.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte technique de la documentation sur les modèles d&#x27;interaction, les tailles de modèles MoE, et le graphique comparant les temps de réaction humains (tactile, auditif, visuel).</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement de la page web de documentation technique présentant les recherches et les perspectives de sortie des modèles d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JUTCIrfnQqc/frame_009_00-07-54.jpg" alt="Capture d&#x27;écran montrant une démonstration vidéo avec trois personnes et un graphique intitulé &quot;Human Reaction Times by Modality&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-JUTCIrfnQqc/frame_009_00-07-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:54</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une démonstration vidéo avec trois personnes et un graphique intitulé &quot;Human Reaction Times by Modality&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JUTCIrfnQqc/frame_010_00-08-03.jpg" alt="Page de documentation textuelle de &quot;Thinking Machines&quot; détaillant les aspects techniques, la taille du modèle et le déploiement." loading="lazy" onclick="openLightbox('screenshots/YT-JUTCIrfnQqc/frame_010_00-08-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:03</span>
+                        <span class="caption-text">Page de documentation textuelle de &quot;Thinking Machines&quot; détaillant les aspects techniques, la taille du modèle et le déploiement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JUTCIrfnQqc/frame_011_00-08-12.jpg" alt="Page web du site &quot;Thinking Machines&quot; intitulée &quot;Interaction Models: A Scalable Approach to Human-AI Collaboration&quot; avec une vidéo intégrée." loading="lazy" onclick="openLightbox('screenshots/YT-JUTCIrfnQqc/frame_011_00-08-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:12</span>
+                        <span class="caption-text">Page web du site &quot;Thinking Machines&quot; intitulée &quot;Interaction Models: A Scalable Approach to Human-AI Collaboration&quot; avec une vidéo intégrée.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:14 - 00:08:28</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et honnêtement, de toutes les démos d&#x27;IA qu&#x27;on a vues récemment, c&#x27;est l&#x27;une des premières qui donne vraiment l&#x27;impression d&#x27;être novatrice. Pas juste des modèles plus grands, pas juste de meilleurs scores aux benchmarks, mais un véritable nouveau comportement d&#x27;interaction.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site web de recherche &quot;Thinking Machines&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre de l&#x27;article : &quot;Interaction Models: A Scalable Approach to Human-AI Collaboration&quot;, date du 11 mai 2026, sections de menu à gauche (Introduction, Capabilities, Our approach, Benchmarks), et sous-titres techniques comme &quot;Seamless dialog management&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et défilement sur la page web présentant l&#x27;article de recherche sur les modèles d&#x27;interaction homme-IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JUTCIrfnQqc/frame_012_00-08-16.jpg" alt="Page web de Thinking Machines affichant l&#x27;article &quot;Interaction Models: A Scalable Approach to Human-AI Collaboration&quot; avec une vidéo de démonstration." loading="lazy" onclick="openLightbox('screenshots/YT-JUTCIrfnQqc/frame_012_00-08-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:16</span>
+                        <span class="caption-text">Page web de Thinking Machines affichant l&#x27;article &quot;Interaction Models: A Scalable Approach to Human-AI Collaboration&quot; avec une vidéo de démonstration.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JUTCIrfnQqc/frame_013_00-08-26.jpg" alt="Suite de l&#x27;article sur le site de Thinking Machines montrant différentes sections de capacités et des vidéos intégrées sur la gestion des dialogues." loading="lazy" onclick="openLightbox('screenshots/YT-JUTCIrfnQqc/frame_013_00-08-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:26</span>
+                        <span class="caption-text">Suite de l&#x27;article sur le site de Thinking Machines montrant différentes sections de capacités et des vidéos intégrées sur la gestion des dialogues.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
