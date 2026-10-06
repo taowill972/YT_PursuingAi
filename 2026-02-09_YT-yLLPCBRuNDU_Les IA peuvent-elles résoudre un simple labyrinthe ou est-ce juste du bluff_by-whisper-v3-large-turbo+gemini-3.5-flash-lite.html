@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Les IA peuvent-elles résoudre un simple labyrinthe ou est-ce juste du bluff ? — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Les IA peuvent-elles résoudre un simple labyrinthe ou est-ce juste du bluff ?</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-02-09</span>
+                <span class="badge">⏱️ 03m 52s</span>
+                <span class="badge">🆔 <code>yLLPCBRuNDU</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=yLLPCBRuNDU" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* dissèque avec un mélange d'humour et de rigueur critique l'écart abyssal entre le battage médiatique omniprésent autour des modèles de langage avancés et leurs capacités réelles de raisonnement spatial basique. Le sujet central interroge la fiabilité des IA génératives lorsqu'elles sont confrontées à des tâches logiques simples mais inédites, comme la résolution d'un labyrinthe, loin des sentiers battus de la mémorisation textuelle ou du code standardisé. Le créateur orchestre un test empirique en conditions réelles pour confronter les mastodontes du secteur (ChatGPT et Gemini) à une épreuve cognitive enfantine, démontrant ainsi les limites structurelles des architectures actuelles face à l'abstraction visuelle et géométrique.</p><p>La méthodologie étape par étape adoptée par le créateur repose sur une escalade progressive de la précision des consignes. Dans un premier temps, il soumet un labyrinthe brut à ChatGPT avec une requête ouverte de résolution graphique, mettant en lumière une propension à générer des hallucinations visuelles multiples et erronées. Face à cet échec, il affine ses prompts en imposant des contraintes strictes d'unicité de chemin et de respect des frontières, révélant un comportement troublant : l'IA modifie carrément la structure physique du labyrinthe (en effaçant des murs virtuellement) pour faire correspondre l'image générée à sa prétendue solution. Le test est ensuite répliqué sur l'écosystème concurrent (Gemini via l'outil **Nano Banana Pro**), d'abord en mode standard, puis en activant les modes de réflexion avancée, aboutissant invariablement à des échecs similaires ou à un barbouillage chaotique des couloirs.</p><p>Pour les créateurs de contenu vidéo et les analystes de l'IA, cet épisode livre des enseignements précieux sur la dramaturgie narrative et l'art de déconstruire le *hype* technologique. Sur le plan technique, il illustre comment illustrer visuellement les limites des benchmarks académiques (tels que ARK AGI 2) par des démonstrations physiques et intuitives. Sur le plan créatif, la vidéo montre l'efficacité d'un format d'investigation axé sur la confrontation directe entre les promesses marketing des géants de la Tech (OpenAI, Google) et la réalité empirique, offrant ainsi une grille de lecture critique indispensable pour aborder l'avenir de l'automatisation sans céder au technosolutionnisme béat.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Nano Banana Pro</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Dystopie du battage médiatique** : Le marché est saturé par des annonces permanentes de remplacement des emplois qualifiés par l&#x27;IA, créant un décalage criant avec les performances réelles sur des tâches logiques élémentaires.</span></li><li><span class="point-bullet">✦</span><span>Le piège de la surconfiance textuelle** : ChatGPT génère des solutions fausses avec une assurance déconcertante (« *énergie classique de surdoué zélé* »), illustrant l&#x27;incapacité des LLM à douter de leurs propres productions visuelles.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;hallucination structurelle (modification de la réalité)** : Face à l&#x27;échec d&#x27;un calcul de chemin, l&#x27;IA préfère altérer les données d&#x27;entrée (transformer un mur en couloir ouvert) plutôt que d&#x27;admettre son incapacité à résoudre le problème.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;inefficacité des prompts directifs stricts** : Même en formulant des instructions extrêmement précises interdisant les embranchements multiples et exigeant un tracé unique, les modèles persistent à violer les règles géométriques de base.</span></li><li><span class="point-bullet">✦</span><span>La persistance des failles malgré les modes de réflexion** : Activer les nouveaux « modes de réflexion » sophistiqués (comme sur Gemini) ne garantit aucunement une amélioration de la logique spatiale et de la vision par ordinateur appliquée à des puzzles inédits.</span></li><li><span class="point-bullet">✦</span><span>Le paradoxe des benchmarks académiques** : Des scores élevés sur des tests standardisés comme *ARK AGI 2* (72,9 % pour GPT 5.2 Refine, 45,1 % pour Gemini 3 DeepThink) contrastent violemment avec l&#x27;incapacité totale à résoudre un labyrinthe niveau école primaire.</span></li><li><span class="point-bullet">✦</span><span>La supériorité de l&#x27;intuition humaine précoce** : Résoudre un labyrinthe relève d&#x27;une compétence cognitive acquise par les humains bien avant l&#x27;apprentissage de l&#x27;algèbre, soulignant le gouffre séparant l&#x27;intelligence artificielle statistique de l&#x27;intelligence naturelle structurée.</span></li><li><span class="point-bullet">✦</span><span>Structuration d&#x27;un scénario de test empirique** : Le workflow narratif efficace consiste à tester d&#x27;abord une consigne naïve, à observer l&#x27;échec, puis à resserrer les contraintes techniques pour piéger l&#x27;outil en flagrant délit de manipulation.</span></li><li><span class="point-bullet">✦</span><span>Mise en cause de la responsabilité industrielle** : La vidéo soulève une question stratégique adressée aux dirigeants (Sundar Pichai, Sam Altman) concernant la pertinence des axes d&#x27;entraînement des modèles actuels au regard de leur manque de bon sens physique.</span></li><li><span class="point-bullet">✦</span><span>Préparation de la transition vers des cas réels** : Annoncer une suite thématique axée sur des problèmes du monde réel (« *au lieu de puzzles* ») constitue une excellente tactique de fidélisation (retention loop) pour inciter à l&#x27;abonnement.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:24</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Depuis ces derniers jours, ou honnêtement ces derniers mois, nous nous noyons dans le battage médiatique autour de l&#x27;IA. Chaque semaine, il y a un tout nouveau modèle d&#x27;IA, un nouveau LLM, et le tout nouveau gros titre qui vous dit que votre travail est terminé. L&#x27;IA remplacera les développeurs. L&#x27;IA remplacera les designers. L&#x27;IA vous remplacera avant même que vous n&#x27;ayez fini cette phrase. Mais voici la vraie question que personne ne pose.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interfaces de réseaux sociaux (style X/Twitter) et classements de modèles de langage (LLM Leaderboard).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes mentionnant &quot;Grok 4.20 is absolutely crushing Alpha Arena&quot;, &quot;GPT-5.3-Codex is now available in Codex&quot;, &quot;LLM Leaderboard&quot;, et &quot;Introducing Claude Opus 4.6&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement de captures d&#x27;écran illustrant l&#x27;afflux constant de nouvelles annonces de modèles d&#x27;IA sur les réseaux sociaux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_001_00-00-02.jpg" alt="Capture d&#x27;écran montrant un message sur les réseaux sociaux concernant les performances du modèle Grok 4.20 sur l&#x27;Alpha Arena." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un message sur les réseaux sociaux concernant les performances du modèle Grok 4.20 sur l&#x27;Alpha Arena.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_002_00-00-09.jpg" alt="Publication officielle d&#x27;OpenAI annonçant la sortie de GPT-5.3-Codex." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_002_00-00-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Publication officielle d&#x27;OpenAI annonçant la sortie de GPT-5.3-Codex.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_003_00-00-17.jpg" alt="Classement des LLM (LLM Leaderboard) affichant Kimi K2.5, Gemini 3 Flash Preview, Claude Sonnet 4.5 et DeepSeek V3.2." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_003_00-00-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:17</span>
+                        <span class="caption-text">Classement des LLM (LLM Leaderboard) affichant Kimi K2.5, Gemini 3 Flash Preview, Claude Sonnet 4.5 et DeepSeek V3.2.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_004_00-00-22.jpg" alt="Annonce de la sortie de Claude Opus 4.6 avec un aperçu vidéo en incrustation devant un tableau noir rempli de formules mathématiques." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_004_00-00-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:22</span>
+                        <span class="caption-text">Annonce de la sortie de Claude Opus 4.6 avec un aperçu vidéo en incrustation devant un tableau noir rempli de formules mathématiques.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:24 - 00:00:51</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;IA peut-elle seulement résoudre un simple puzzle ou tout cela n&#x27;est-il qu&#x27;une bulle très coûteuse ? Ici Pursuing AI et vous regardez le rapport de recherche. Pour ce test, j&#x27;utilise l&#x27;un des modèles d&#x27;IA les plus populaires du moment, ChatGPT par OpenAI. Mais avant cela, commençons par quelque chose de basique. Pas de codage, pas de maths de niveau doctorat, juste un labyrinthe. Alors d&#x27;abord, j&#x27;ai demandé : est-ce que ChatGPT peut résoudre ce labyrinthe ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web (réseau social / X/Twitter et interface de ChatGPT).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de présentation de Claude Opus 4.6 (« Introducing Claude Opus 4.6. Our smartest model got an upgrade... ») et l&#x27;interface de ChatGPT avec le prompt textuel « draw the solution to this maze on the image ».</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage successif des actualités de l&#x27;IA (Claude), du logo de la chaîne, puis de l&#x27;interface de ChatGPT avec l&#x27;image du labyrinthe soumise par l&#x27;utilisateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_005_00-00-26.jpg" alt="Capture d&#x27;écran d&#x27;un tweet et d&#x27;une publication concernant l&#x27;annonce de Claude Opus 4.6 avec des visuels de scans IRM." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_005_00-00-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:26</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet et d&#x27;une publication concernant l&#x27;annonce de Claude Opus 4.6 avec des visuels de scans IRM.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_006_00-00-34.jpg" alt="Superposition du logo animé de la chaîne Pursuing AI représentant un cerveau relié à une puce « PAI » avec le titre « The Research Report » par-dessus le post Twitter de Claude." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_006_00-00-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:34</span>
+                        <span class="caption-text">Superposition du logo animé de la chaîne Pursuing AI représentant un cerveau relié à une puce « PAI » avec le titre « The Research Report » par-dessus le post Twitter de Claude.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_007_00-00-43.jpg" alt="Interface sombre de ChatGPT montrant une zone de saisie avec une image miniature de labyrinthe téléchargée et le texte « draw the solution to this maze on the image »." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_007_00-00-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:43</span>
+                        <span class="caption-text">Interface sombre de ChatGPT montrant une zone de saisie avec une image miniature de labyrinthe téléchargée et le texte « draw the solution to this maze on the image ».</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:51 - 00:01:12</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;ai téléchargé le labyrinthe dans ChatGPT et j&#x27;ai dit, dessine la solution de ce labyrinthe sur l&#x27;image. C&#x27;est en train d&#x27;analyser. ChatGPT a dessiné avec assurance de multiples solutions. Une énergie classique de surdoué zélé. Mais voici le problème. Sauf une, absolument chaque solution était fausse. Et même pour la bonne, le point de départ était faux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de ChatGPT sur fond sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;What&#x27;s on your mind today?&quot;, image miniature d&#x27;un labyrinthe et prompt saisi : &quot;draw the solution to this maze on the image&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Saisie du prompt et de l&#x27;image du labyrinthe dans ChatGPT, puis affichage du résultat généré avec le tracé de la solution.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_008_00-00-53.jpg" alt="Interface de ChatGPT montrant l&#x27;importation d&#x27;une image de labyrinthe avec le prompt textuel demandant d&#x27;en dessiner la solution." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_008_00-00-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:53</span>
+                        <span class="caption-text">Interface de ChatGPT montrant l&#x27;importation d&#x27;une image de labyrinthe avec le prompt textuel demandant d&#x27;en dessiner la solution.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_009_00-01-10.jpg" alt="Résultat de l&#x27;analyse dans l&#x27;interface de ChatGPT affichant le labyrinthe avec une solution tracée en rouge par l&#x27;IA." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_009_00-01-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Résultat de l&#x27;analyse dans l&#x27;interface de ChatGPT affichant le labyrinthe avec une solution tracée en rouge par l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:13 - 00:01:33</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Seuls le milieu et la fin étaient corrects. Je me suis donc dit, bon, je n&#x27;ai peut-être pas été assez clair. Donnons-lui une chance de plus. Cette fois, j&#x27;ai dit : résous soigneusement le labyrinthe et trace un seul chemin de solution précis sur l&#x27;image. Le chemin doit commencer à l&#x27;entrée et à la sortie et suivre uniquement les couloirs ouverts valides.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de ChatGPT (version sombre).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt visible : « Carefully solve the maze and draw a single, accurate solution path on the image. The path must start at the entrance, end at the exit, and follow only valid open corridors. Do not draw trial paths or multiple options. »</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un test de résolution de labyrinthe sur ChatGPT avec saisie d&#x27;un nouveau prompt plus directif.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_010_00-01-15.jpg" alt="Résultat d&#x27;un labyrinthe généré et partiellement résolu par l&#x27;IA avec un tracé en rouge." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_010_00-01-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:15</span>
+                        <span class="caption-text">Résultat d&#x27;un labyrinthe généré et partiellement résolu par l&#x27;IA avec un tracé en rouge.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_011_00-01-23.jpg" alt="Interface de ChatGPT montrant l&#x27;historique de la conversation avec le prompt textuel et l&#x27;image du labyrinthe." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_011_00-01-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:23</span>
+                        <span class="caption-text">Interface de ChatGPT montrant l&#x27;historique de la conversation avec le prompt textuel et l&#x27;image du labyrinthe.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:33 - 00:01:58</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ne tracez pas de chemins d&#x27;essai ou d&#x27;options multiples. Maintenant, faites une pause d&#x27;une seconde. Avez-vous remarqué quelque chose d&#x27;étrange ? Oui, ChatGPT a littéralement modifié le labyrinthe pour qu&#x27;il corresponde à sa solution. Voici le labyrinthe original et voici la version de ChatGPT. Dans le dernier coin, il y a une ligne bloquée dans le puzzle original, mais dans la solution de ChachiBT, ce blocage devient magiquement un chemin ouvert.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface sombre de ChatGPT 5.2.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt : &quot;Carefully solve the maze and draw a single, accurate solution path on the image. The path must start at the entrance, end at the exit, and follow only valid open corridors. Do not draw trial paths or multiple options.&quot; Texte sous l&#x27;image : &quot;Image created - Red path through the maze&quot;. Comparaison étiquetée &quot;Original&quot; et &quot;ChaGpt&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la conversation ChatGPT et analyse comparative des labyrinthes pour mettre en évidence la modification illicite du puzzle par l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_012_00-01-35.jpg" alt="Interface de ChatGPT affichant le prompt demandant de résoudre le labyrinthe et l&#x27;image générée en réponse." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_012_00-01-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:35</span>
+                        <span class="caption-text">Interface de ChatGPT affichant le prompt demandant de résoudre le labyrinthe et l&#x27;image générée en réponse.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_013_00-01-42.jpg" alt="Gros plan sur la solution générée par ChatGPT montrant le labyrinthe résolu par un chemin rouge." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_013_00-01-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:42</span>
+                        <span class="caption-text">Gros plan sur la solution générée par ChatGPT montrant le labyrinthe résolu par un chemin rouge.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_014_00-01-50.jpg" alt="Comparaison côte à côte entre le labyrinthe original et la version modifiée générée par ChatGPT." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_014_00-01-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:50</span>
+                        <span class="caption-text">Comparaison côte à côte entre le labyrinthe original et la version modifiée générée par ChatGPT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:58 - 00:02:35</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Qu&#x27;est-ce que cela signifie ? Cela signifie que ChachiBT n&#x27;a pas pu résoudre correctement le labyrinthe, alors il a modifié la réalité à la place. À ce stade, je me suis dit que j&#x27;étais peut-être injuste. Peut-être que ChachiBT n&#x27;est tout simplement pas conçu pour les énigmes. Essayons donc Gemini. Même labyrinthe, même instruction. Il charge Nano Banana Pro, ce qui a déjà l&#x27;air puissant, et voici le résultat : il échoue encore. Au lieu de dessiner une seule solution précise, il trace des lignes dans tous les couloirs ouverts du labyrinthe. Il ignore complètement la partie où j&#x27;ai clairement dit de dessiner une seule solution précise. Pas de problème.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface sombre de ChatGPT et Gemini affichant les conversations avec les modèles d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt visible : « Carefully solve the maze and draw a single, accurate solution path on the image. The path must start at the entrance, end at the exit, and follow only valid open corridors. Do not draw trial paths or multiple options. »</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur teste et compare les performances de ChatGPT et Gemini sur la résolution d&#x27;un même labyrinthe complexe.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_015_00-02-00.jpg" alt="Interface de ChatGPT montrant le labyrinthe résolu par une ligne rouge incorrecte à travers les murs et les couloirs." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_015_00-02-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:00</span>
+                        <span class="caption-text">Interface de ChatGPT montrant le labyrinthe résolu par une ligne rouge incorrecte à travers les murs et les couloirs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_016_00-02-24.jpg" alt="Interface de Gemini affichant le même labyrinthe avec des lignes bleues tracées dans tous les couloirs." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_016_00-02-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:24</span>
+                        <span class="caption-text">Interface de Gemini affichant le même labyrinthe avec des lignes bleues tracées dans tous les couloirs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_017_00-02-33.jpg" alt="Gros plan sur l&#x27;image générée par Gemini montrant le labyrinthe saturé de lignes bleues et le prompt textuel au-dessus." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_017_00-02-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:33</span>
+                        <span class="caption-text">Gros plan sur l&#x27;image générée par Gemini montrant le labyrinthe saturé de lignes bleues et le prompt textuel au-dessus.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:35 - 00:03:01</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donnons une dernière chance à Gemini cette fois avec le nouveau mode de réflexion, nouveau prompt : analyse le labyrinthe et superpose exactement un chemin correct continu du début à la fin sur l&#x27;image. Assure-toi que le chemin ne traverse jamais les murs, ne se ramifie pas et représente uniquement la vraie solution. Et il échoue encore. J&#x27;ai donc une vraie question pour Sundar Pichai et Sam Altman.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Google Gemini sur fond sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt : &quot;Analyze the maze and overlay exactly one continuous, correct path from start to finish on the image. Ensure the path never crosses walls, never branches, and represents the true solution only.&quot; Bouton &quot;Thinking&quot; actif et options de saisie en bas de l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;interface de Gemini où le modèle d&#x27;intelligence artificielle tente de résoudre un labyrinthe avec le mode &quot;Thinking&quot; activé et échoue à nouveau.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_018_00-02-37.jpg" alt="Interface de Gemini affichant l&#x27;interaction avec le prompt de résolution du labyrinthe et le résultat échoué." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_018_00-02-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:37</span>
+                        <span class="caption-text">Interface de Gemini affichant l&#x27;interaction avec le prompt de résolution du labyrinthe et le résultat échoué.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_019_00-02-44.jpg" alt="Vue défilée de l&#x27;interface de Gemini montrant l&#x27;historique de la conversation et les instructions du prompt." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_019_00-02-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:44</span>
+                        <span class="caption-text">Vue défilée de l&#x27;interface de Gemini montrant l&#x27;historique de la conversation et les instructions du prompt.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_020_00-02-59.jpg" alt="Résultat final de Gemini affichant l&#x27;image du labyrinthe avec un chemin bleu incorrect." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_020_00-02-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:59</span>
+                        <span class="caption-text">Résultat final de Gemini affichant l&#x27;image du labyrinthe avec un chemin bleu incorrect.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:01 - 00:03:20</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Qu&#x27;est-ce que vous demandez exactement à ces modèles d&#x27;entraîner à faire ? Parce que résoudre un labyrinthe est quelque chose que la plupart des humains savent faire avant d&#x27;apprendre l&#x27;algèbre. Passons maintenant aux benchmarks. Si vous regardez le benchmark ARK AGI 2, il est conçu pour tester si une IA peut comprendre des schémas et résoudre des problèmes qu&#x27;elle n&#x27;a jamais vus auparavant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Gemini (interface de chat avec images) et site web officiel de présentation ARC-AGI-2.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1 : interface de chat &quot;Ask Gemini 3&quot;, texte explicatif en haut, images générées ou affichées. Sur l&#x27;image 2 : en-tête &quot;ARC-AGI-2, 2025 - Challenges Reasoning Models&quot;, liens vers des dépôts, versions, et texte d&#x27;introduction &quot;Introducing ARC-AGI-2: A new benchmark that challenges frontier AI reasoning systems.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran présente des exemples de tâches de raisonnement visuel (labyrinthe) puis bascule sur la documentation officielle du benchmark ARC-AGI-2.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_021_00-03-03.jpg" alt="Interface de Gemini montrant trois volets : une photo de Sundar Pichai à gauche, un labyrinthe irrésolu au centre et un dessin au crayon à droite." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_021_00-03-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:03</span>
+                        <span class="caption-text">Interface de Gemini montrant trois volets : une photo de Sundar Pichai à gauche, un labyrinthe irrésolu au centre et un dessin au crayon à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_022_00-03-11.jpg" alt="Page web de présentation du benchmark ARC-AGI-2 pour les modèles de raisonnement en 2025." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_022_00-03-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:11</span>
+                        <span class="caption-text">Page web de présentation du benchmark ARC-AGI-2 pour les modèles de raisonnement en 2025.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:20 - 00:03:38</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Selon les résultats, GPT 5.2 Refine obtient un score de 72,9 %. Gemini 3 DeepThink obtient 45,1 %. Des chiffres impressionnants, mais voici l&#x27;ironie. Les deux modèles ont échoué à un simple puzzle de labyrinthe. Et pourtant, les gens disent que l&#x27;IA va voler votre travail.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Tableau de classement des performances de systèmes d&#x27;IA (Leaderboard Breakdown).</p>
+                        <p><strong>Contenu textuel & Code :</strong> En-têtes de colonnes : AI System, Author, System Type, ARC-AGI-1, ARC-AGI-2, Cost/Task, Code / Paper. Lignes visibles incluant Human Panel, GPT-5.2 (Refine) avec 72,9 % en surbrillance, Claude Opus 4.6, GPT-5.2 Pro, Gemini 3 Pro, et Gemini 3 Deep Think (Preview) avec 45,1 %.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran du tableau de classement des performances des modèles d&#x27;intelligence artificielle avec le score de GPT-5.2 encadré.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_023_00-03-22.jpg" alt="Tableau comparatif des performances de différents modèles d&#x27;IA (Leaderboard Breakdown) montrant le score de 72,9 % pour GPT-5.2 (Refine) et 45,1 % pour Gemini 3 Deep Think." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_023_00-03-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:22</span>
+                        <span class="caption-text">Tableau comparatif des performances de différents modèles d&#x27;IA (Leaderboard Breakdown) montrant le score de 72,9 % pour GPT-5.2 (Refine) et 45,1 % pour Gemini 3 Deep Think.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:38 - 00:03:51</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Un futur incroyable de l&#x27;IA est officiellement révélé. Dans la prochaine vidéo, je vais tester des problèmes du monde réel plus intéressants au lieu de puzzles, alors assurez-vous de vous abonner si vous voulez vraiment connaître la vraie vérité sur l&#x27;IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Un tableau de données comparatif affiché à l&#x27;écran, listant divers modèles d&#x27;intelligence artificielle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le tableau présente des colonnes telles que « AI System », « Author », « System Type », « ARC-AGI-1 », « ARC-AGI-2 », « Cost/Task » et « Code / Paper ». On y lit des modèles comme Human Panel, GPT-5.2, Claude Opus 4.6, Gemini 3 Pro, etc., avec leurs scores de performance respectifs.</p>
+                        <p><strong>Action / Démonstration :</strong> Le tableau de classement s&#x27;affiche à l&#x27;écran pour illustrer les performances comparées des différentes intelligences artificielles mentionnées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-yLLPCBRuNDU/frame_024_00-03-40.jpg" alt="Un tableau de classement (Leaderboard Breakdown) détaillant les performances de différents systèmes d&#x27;IA sur des tests de référence comme ARC-AGI-1 et ARC-AGI-2." loading="lazy" onclick="openLightbox('screenshots/YT-yLLPCBRuNDU/frame_024_00-03-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:40</span>
+                        <span class="caption-text">Un tableau de classement (Leaderboard Breakdown) détaillant les performances de différents systèmes d&#x27;IA sur des tests de référence comme ARC-AGI-1 et ARC-AGI-2.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

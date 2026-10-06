@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `49 / 84` (`58.3%`)
+- **Vidéos traitées** : `50 / 84` (`59.5%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -65,6 +65,7 @@
 | 2026-02-23 | [Cet outil vocal IA ne devrait pas exister…](2026-02-23_YT-0KVNZDz1ggg_Cet outil vocal IA ne devrait pas exister…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-02-23_YT-0KVNZDz1ggg_Cet outil vocal IA ne devrait pas exister…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 6m 26s | `20 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=0KVNZDz1ggg) | `0KVNZDz1ggg` |
 | 2026-02-17 | [Défi Diviser ou Voler avec ChatGPT et Gemini 😲](2026-02-17_YT-IJTAs4ZFk_w_Défi Diviser ou Voler avec ChatGPT et Gemini 😲_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-02-17_YT-IJTAs4ZFk_w_Défi Diviser ou Voler avec ChatGPT et Gemini 😲_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 6m 37s | `24 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=IJTAs4ZFk_w) | `IJTAs4ZFk_w` |
 | 2026-02-13 | [L'IA va-t-elle vous balancer ? Je l'ai testée avec la police](2026-02-13_YT-jL3T7O-aCfs_L'IA va-t-elle vous balancer Je l'ai testée avec la police_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-02-13_YT-jL3T7O-aCfs_L'IA va-t-elle vous balancer Je l'ai testée avec la police_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 49s | `14 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=jL3T7O-aCfs) | `jL3T7O-aCfs` |
+| 2026-02-09 | [Les IA peuvent-elles résoudre un simple labyrinthe ou est-ce juste du bluff ?](2026-02-09_YT-yLLPCBRuNDU_Les IA peuvent-elles résoudre un simple labyrinthe ou est-ce juste du bluff_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-02-09_YT-yLLPCBRuNDU_Les IA peuvent-elles résoudre un simple labyrinthe ou est-ce juste du bluff_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 52s | `24 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=yLLPCBRuNDU) | `yLLPCBRuNDU` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
