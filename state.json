@@ -49,7 +49,8 @@
     "0KVNZDz1ggg",
     "IJTAs4ZFk_w",
     "jL3T7O-aCfs",
-    "yLLPCBRuNDU"
+    "yLLPCBRuNDU",
+    "wOQnqihYD6g"
   ],
   "processed_videos": [
     {
@@ -747,9 +748,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-02-09_YT-yLLPCBRuNDU_Les IA peuvent-elles résoudre un simple labyrinthe ou est-ce juste du bluff_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-06T16:41:46Z",
       "status": "completed"
+    },
+    {
+      "video_id": "wOQnqihYD6g",
+      "title": "Cadeau mystère ou gage impossible avec l'IA (ChatGPT, Gemini & Grok)",
+      "raw_title": "Mystery Gift vs Dare Challenge With AI (ChatGPT, Gemini & Grok)",
+      "filename_md": "2026-02-01_YT-wOQnqihYD6g_Cadeau mystère ou gage impossible avec l'IA (ChatGPT, Gemini & Grok)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-02-01_YT-wOQnqihYD6g_Cadeau mystère ou gage impossible avec l'IA (ChatGPT, Gemini & Grok)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-02-01",
+      "duration": 388,
+      "screenshots_count": 1,
+      "filepath_md": "/root/YT_PursuingAi/2026-02-01_YT-wOQnqihYD6g_Cadeau mystère ou gage impossible avec l'IA (ChatGPT, Gemini & Grok)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-02-01_YT-wOQnqihYD6g_Cadeau mystère ou gage impossible avec l'IA (ChatGPT, Gemini & Grok)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-06T18:59:11Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 50,
+  "completed_count": 51,
   "last_run_timestamp": "2026-10-06T16:00:05Z",
   "status": "running",
   "total_catalog_count": 84
