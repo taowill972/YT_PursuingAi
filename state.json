@@ -34,7 +34,8 @@
     "C8qfKF6XhjM",
     "v5Dq686BiOA",
     "JUTCIrfnQqc",
-    "MLtl-sRcsxU"
+    "MLtl-sRcsxU",
+    "PuzCpo9dBEY"
   ],
   "processed_videos": [
     {
@@ -522,9 +523,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-05-12_YT-MLtl-sRcsxU_Unitree GD01 vient de révolutionner la robotique pour toujours 🤯 Premier mécha h_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-06T07:14:49Z",
       "status": "completed"
+    },
+    {
+      "video_id": "PuzCpo9dBEY",
+      "title": "ChatGPT Image 2 est hallucinant 🤯 Test complet + Guide d'accès pas cher",
+      "raw_title": "ChatGPT Image 2 is Insane 🤯 Full Test + Cheap Access Guide",
+      "filename_md": "2026-04-27_YT-PuzCpo9dBEY_ChatGPT Image 2 est hallucinant 🤯 Test complet + Guide d'accès pas cher_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-04-27_YT-PuzCpo9dBEY_ChatGPT Image 2 est hallucinant 🤯 Test complet + Guide d'accès pas cher_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-04-27",
+      "duration": 288,
+      "screenshots_count": 0,
+      "filepath_md": "/root/YT_PursuingAi/2026-04-27_YT-PuzCpo9dBEY_ChatGPT Image 2 est hallucinant 🤯 Test complet + Guide d'accès pas cher_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-04-27_YT-PuzCpo9dBEY_ChatGPT Image 2 est hallucinant 🤯 Test complet + Guide d'accès pas cher_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-06T07:19:40Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 35,
+  "completed_count": 36,
   "last_run_timestamp": "2026-10-06T04:00:04Z",
   "status": "running",
   "total_catalog_count": 84
