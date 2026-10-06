@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 OpenAI vient de lâcher GPT-5.4… C&#x27;est littéralement hallucinant — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 OpenAI vient de lâcher GPT-5.4… C&#x27;est littéralement hallucinant</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-03-06</span>
+                <span class="badge">⏱️ 04m 09s</span>
+                <span class="badge">🆔 <code>eI7gfK5E9N4</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=eI7gfK5E9N4" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de Pursuing AI décrypte la sortie surprise de ChatGPT 5.4 (initialement masqué sous le nom de code « Galapagos » sur LM Arena), un modèle qui redéfinit les standards de l'intelligence artificielle générative et pulvérise les benchmarks de développement. Le créateur structure sa démonstration en soumettant l'IA à des tests de résistance technique de haute volée : génération d'un globe 3D interactif avec animations dorées, modélisation d'une pièce en 3D dotée d'une transition dynamique jour/nuit sophistiquée, conception d'un outil de recadrage d'image en temps réel et simulation ultra-réaliste d'une main articulée aux mouvements biomécaniques précis.</p><p>Pour les créateurs de contenu vidéo, cette percée technologique transforme radicalement l'approche de la production visuelle et interactive. Grâce à une fenêtre de contexte colossale d'un million de tokens en entrée et de 128 000 tokens en sortie, combinée à une compréhension native des interfaces logicielles, le modèle permet de prototyper des applications web complexes et des visualisations 3D fluides en un temps record. La méthode étape par étape du créateur consiste à confronter directement les résultats de GPT-5.4 aux anciennes versions (comme GPT-5.2 Codex) et aux concurrents (comme Claude Sonnet 4.5 et Qwen 3.5), démontrant visuellement un bond en avant spectaculaire en matière de raisonnement spatial et d'exécution logicielle.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Effet de surprise et disponibilité immédiate** : La sortie inopinée de modèles sous nom de code sur les plateformes de test (LM Arena) constitue un signal fort d&#x27;accélération des cycles de déploiement dans l&#x27;industrie de l&#x27;IA.</span></li><li><span class="point-bullet">✦</span><span>Explosion de la fenêtre de contexte** : Avec 1 million de tokens en entrée et 128 000 en sortie, il devient possible d&#x27;injecter des bases de code entières ou des documentations massives dans une seule invite sans perte de cohérence.</span></li><li><span class="point-bullet">✦</span><span>Maîtrise du raisonnement spatial** : GPT-5.4 démontre une capacité inédite à concevoir des environnements 3D complexes (comme une pièce ou un globe) avec des textures, des reflets et des transitions d&#x27;éclairage fluides.</span></li><li><span class="point-bullet">✦</span><span>Gestion dynamique des ambiances** : La transition réussie entre une vue de jour et une vue de nuit chaleureuse sur un modèle 3D prouve l&#x27;aptitude de l&#x27;IA à gérer des logiques d&#x27;interface utilisateur contextuelles et sophistiquées.</span></li><li><span class="point-bullet">✦</span><span>Interactivité biomécanique poussée** : La simulation de la main interactive avec des curseurs de contrôle indépendants pour chaque articulation illustre le réalisme accru du code généré pour des applications graphiques avancées.</span></li><li><span class="point-bullet">✦</span><span>Supériorité face aux benchmarks humains** : En atteignant 75 % de réussite sur OS World Verified (dépassant la référence humaine de 72,4 %), le modèle s&#x27;impose comme un outil redoutable pour l&#x27;automatisation de tâches complexes.</span></li><li><span class="point-bullet">✦</span><span>Interaction native avec les interfaces** : La capacité à comprendre les captures d&#x27;écran et à interagir directement avec les logiciels ouvre la voie à la création d&#x27;agents autonomes capables de manipuler des applications et des sites web à la place des humains.</span></li><li><span class="point-bullet">✦</span><span>Obsolescence rapide des versions antérieures** : Les tests comparatifs directs (face à GPT-5.2 Codex ou Qwen 3.5) soulignent l&#x27;obsolescence fulgurante des générations précédentes, incapables de rivaliser en termes de robustesse et de design.</span></li><li><span class="point-bullet">✦</span><span>Orientation professionnelle et d&#x27;entreprise** : Le positionnement de GPT-5.4 répond directement aux besoins des développeurs et des structures cherchant à optimiser la planification, le codage itératif et l&#x27;automatisation multi-étapes.</span></li><li><span class="point-bullet">✦</span><span>Défis psychologiques pour les utilisateurs** : L&#x27;accélération constante des performances technologiques soulève des questions légitimes sur l&#x27;obsolescence des compétences humaines et le sentiment d&#x27;écrasement face au flux incessant de nouveautés.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:22</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">OpenAI vient de lâcher par surprise ChatGPT 5.4, ruinant complètement mes projets de week-end. Il se cachait sur LM Arena sous le nom de code Galapagos, mais à partir d&#x27;aujourd&#x27;hui, il est en ligne. Il possède une fenêtre de contexte d&#x27;un million de tokens, il pulvérise les références humaines et fait passer les anciens modèles pour du code en HTML basique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web d&#x27;annonce d&#x27;OpenAI, interface de LM Arena (LMSYS), navigateur web avec Gmail et simulation interactive 3D dans le navigateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte d&#x27;introduction &quot;Introducing GPT-5.4 - Designed for professional work&quot;, nom de code &quot;galapagos&quot; sur LM Arena, interface de messagerie Gmail avec des actions automatisées et application web interactive nommée &quot;Golden Gate Flight Experience&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des notes de version de GPT-5.4, affichage du modèle sur LM Arena, démonstration de l&#x27;interaction de GPT-5.4 avec une interface de messagerie et de la navigation 3D en temps réel dans une simulation de pont.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_001_00-00-02.jpg" alt="Article d&#x27;annonce officiel d&#x27;OpenAI présentant le nouveau modèle GPT-5.4 conçu pour le travail professionnel." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Article d&#x27;annonce officiel d&#x27;OpenAI présentant le nouveau modèle GPT-5.4 conçu pour le travail professionnel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_002_00-00-08.jpg" alt="Interface de LM Arena montrant le modèle masqué sous le nom de code &quot;galapagos&quot; dans la liste des New Arena Models." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_002_00-00-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:08</span>
+                        <span class="caption-text">Interface de LM Arena montrant le modèle masqué sous le nom de code &quot;galapagos&quot; dans la liste des New Arena Models.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_003_00-00-15.jpg" alt="Démonstration de l&#x27;utilisation d&#x27;un ordinateur et de la vision par GPT-5.4 interagissant avec une interface Gmail." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_003_00-00-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:15</span>
+                        <span class="caption-text">Démonstration de l&#x27;utilisation d&#x27;un ordinateur et de la vision par GPT-5.4 interagissant avec une interface Gmail.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_004_00-00-20.jpg" alt="Démonstration de code et de simulation 3D interactive du Golden Gate Bridge générée par GPT-5.4." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_004_00-00-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:20</span>
+                        <span class="caption-text">Démonstration de code et de simulation 3D interactive du Golden Gate Bridge générée par GPT-5.4.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:23 - 00:00:45</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Aujourd&#x27;hui, nous testons ses capacités de développement web avec des globes 3D, des simulations de pièces interactives et des doigts articulés. C&#x27;est Pursuing AI et vous regardez le Research Report. Hier, je préparais une vidéo pour vous parler de ce mystérieux modèle Galapagos sur LM Arena, mais OpenAI a appuyé sur la gâchette un peu trop tôt.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de test et de simulation interactive intégrant des graphismes 3D en temps réel et des panneaux de contrôle textuels.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte visible : &quot;Golden Gate Flight Experience&quot;, boutons de sélection (&quot;Theme park simulation game&quot;, &quot;RPG game&quot;, &quot;Golden Gate Bridge flyover&quot;), contrôles de vol (Fly: W A S D, Rise / Drop: Space / Q, Boost: Shift, Look: Drag mouse, Viewports: 1 2 3 4, Speed trim: Mouse wheel) et curseurs de manipulation de doigts.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et démonstration interactive d&#x27;une simulation 3D de survol d&#x27;un pont ainsi que de la manipulation des articulations d&#x27;une main virtuelle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_005_00-00-25.jpg" alt="Interface de simulation montrant une expérience de vol au-dessus du Golden Gate Bridge (&quot;Golden Gate Flight Experience&quot;) avec des options de navigation et des contrôles interactifs." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_005_00-00-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:25</span>
+                        <span class="caption-text">Interface de simulation montrant une expérience de vol au-dessus du Golden Gate Bridge (&quot;Golden Gate Flight Experience&quot;) avec des options de navigation et des contrôles interactifs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_006_00-00-31.jpg" alt="Interface de modélisation 3D interactive montrant une main stylisée avec des curseurs de réglage pour chaque doigt (Index, Middle, Ring, Pinky)." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_006_00-00-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:31</span>
+                        <span class="caption-text">Interface de modélisation 3D interactive montrant une main stylisée avec des curseurs de réglage pour chaque doigt (Index, Middle, Ring, Pinky).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_007_00-00-38.jpg" alt="Vue similaire à l&#x27;image 1 de la simulation de vol interactive du Golden Gate Bridge avec l&#x27;affichage des commandes à l&#x27;écran." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_007_00-00-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:38</span>
+                        <span class="caption-text">Vue similaire à l&#x27;image 1 de la simulation de vol interactive du Golden Gate Bridge avec l&#x27;affichage des commandes à l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:45 - 00:01:04</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est arrivé bien plus tôt que prévu, et spoiler, ses capacités de codage sont insensées. Laissez-moi vous montrer les tests de résistance que j&#x27;ai menés. Tout d&#x27;abord, regardez ce globe 3D interactif. À première vue, il est absolument saisissant. Je peux zoomer, dézoomer et faire glisser la carte du monde en douceur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une application web interactive de globe 3D (Atlas Terminal) et une publication sur X (Twitter)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &#x27;5.4 sooner than you think&#x27; (OpenAI), &#x27;Interactive globe with living borders and signal markers.&#x27;, &#x27;Rotation&#x27;, &#x27;Highlight&#x27;, &#x27;Markers&#x27;, &#x27;Focused Marker: Osaka&#x27;, &#x27;Texture Mode&#x27;, &#x27;Geometry&#x27;, &#x27;Marker Set&#x27;</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une publication sur les réseaux sociaux puis démontre un globe 3D interactif sur une page web, en explorant ses fonctionnalités et ses options de contrôle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_008_00-00-47.jpg" alt="Capture d&#x27;un tweet d&#x27;OpenAI annonçant &#x27;5.4 sooner than you think&#x27;" loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_008_00-00-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:47</span>
+                        <span class="caption-text">Capture d&#x27;un tweet d&#x27;OpenAI annonçant &#x27;5.4 sooner than you think&#x27;</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_009_00-00-54.jpg" alt="Interface d&#x27;un site web interactif &#x27;Atlas Terminal&#x27; présentant un globe 3D avec des descriptions techniques et des marqueurs" loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_009_00-00-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:54</span>
+                        <span class="caption-text">Interface d&#x27;un site web interactif &#x27;Atlas Terminal&#x27; présentant un globe 3D avec des descriptions techniques et des marqueurs</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_010_00-01-02.jpg" alt="Vue rapprochée du globe 3D interactif avec des options de contrôle, des modes de texture et de géométrie" loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_010_00-01-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:02</span>
+                        <span class="caption-text">Vue rapprochée du globe 3D interactif avec des options de contrôle, des modes de texture et de géométrie</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:04 - 00:01:23</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si je sélectionne le pays, cela déclenche cette animation dorée en survol qui a l&#x27;air incroyablement cool. Si je dois noter cette génération de GPT 5.4, c&#x27;est facilement un 9 sur 10. Pour le contexte, le globe fait par GPT 5.2 codex ne ressemble absolument à rien comparé à celui-ci.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web &quot;Orbital Atlas&quot; présentant un globe interactif procédural avec des panneaux d&#x27;information contextuels, des réglages de rotation, de texture et des marqueurs de localisation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Interactive procedural globe&quot;, &quot;Active location: United States&quot;, &quot;Country highlights&quot; (avec les pays United States, Brazil, France, Egypt, South Africa, India), ainsi que divers paramètres techniques sur l&#x27;image 1 (Rotation, Highlight, Markers, Texture Mode, Geometry, Marker Set).</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole ou sélectionne des pays sur le globe interactif, déclenchant des animations de surbrillance dorée et des affichages d&#x27;informations textuelles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_011_00-01-06.jpg" alt="Interface interactive affichant un globe en gros plan avec la sélection du Groenland et des panneaux de contrôle détaillés." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_011_00-01-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:06</span>
+                        <span class="caption-text">Interface interactive affichant un globe en gros plan avec la sélection du Groenland et des panneaux de contrôle détaillés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_012_00-01-21.jpg" alt="Vue d&#x27;ensemble d&#x27;un atlas orbital interactif avec un globe 3D et une liste de pays sur le panneau latéral gauche." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_012_00-01-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:21</span>
+                        <span class="caption-text">Vue d&#x27;ensemble d&#x27;un atlas orbital interactif avec un globe 3D et une liste de pays sur le panneau latéral gauche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:24 - 00:01:43</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, nous avons cette vue de pièce en 3D. et c&#x27;est magnifique. C&#x27;est une petite scène construite à partir de géométrie de base, un lit, un bureau, une étagère, un tapis, une plante et une fenêtre. Et il y a un objet spécifique ici. Je ne sais pas exactement ce que c&#x27;est. Si vous le savez, laissez un commentaire ci-dessous.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web interactive avec un panneau latéral de description et de contrôle à gauche, et une vue 3D interactive au centre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;INTERIOR STUDY&quot;, &quot;Simple 3D room with orbit exploration.&quot;, &quot;A small scene built from basic geometry: bed, desk, shelf, rug, plant, and a window that shifts from warm daylight to lamp-lit night&quot;, &quot;LIGHTING&quot; avec les boutons &quot;Day&quot; et &quot;Night&quot;, et &quot;Furniture placement&quot;. Le rendu 3D montre une chambre simplifiée avec un lit, un bureau, une étagère et une fenêtre.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;une démo interactive de pièce 3D dans le navigateur web avec un curseur de souris visible au centre.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_013_00-01-26.jpg" alt="Interface interactive d&#x27;une étude d&#x27;intérieur montrant une pièce 3D minimaliste avec des options d&#x27;éclairage et de placement de mobilier." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_013_00-01-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:26</span>
+                        <span class="caption-text">Interface interactive d&#x27;une étude d&#x27;intérieur montrant une pièce 3D minimaliste avec des options d&#x27;éclairage et de placement de mobilier.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:43 - 00:02:09</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, c&#x27;est la vue de jour, mais voyons comment elle gère la transition nocturne. Oh mon Dieu, ça a l&#x27;air vraiment bien. Ça passe à cette vue de nuit calme, chaleureuse et éclairée par une lampe. Une lumière chaude irradie de ceci, c&#x27;est peut-être un tableau, et illumine parfaitement l&#x27;espace. Si vous comparez directement ce résultat de GPT 5.4 avec le Claude Sonnet 4.5, la différence est le jour et la nuit.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de visualisation 3D interactive (&#x27;Interior Study&#x27; / &#x27;3D Room Viewer&#x27;) avec contrôles de lumière et d&#x27;orbite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Simple 3D room with orbit exploration.&quot;, &quot;LIGHTING: Day / Night&quot;, &quot;Furniture placement&quot;, &quot;3D Room Viewer&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et basculement interactif entre le mode d&#x27;éclairage diurne et nocturne dans un environnement 3D simulé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_014_00-01-45.jpg" alt="Interface montrant une scène 3D simple d&#x27;une chambre avec un sélecteur d&#x27;éclairage en mode &#x27;Day&#x27; (jour)." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_014_00-01-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:45</span>
+                        <span class="caption-text">Interface montrant une scène 3D simple d&#x27;une chambre avec un sélecteur d&#x27;éclairage en mode &#x27;Day&#x27; (jour).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_015_00-01-52.jpg" alt="Interface de la pièce 3D basculée en mode &#x27;Night&#x27; (nuit) avec un éclairage de lampe tamisé." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_015_00-01-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:52</span>
+                        <span class="caption-text">Interface de la pièce 3D basculée en mode &#x27;Night&#x27; (nuit) avec un éclairage de lampe tamisé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_016_00-02-07.jpg" alt="Visualiseur 3D affichant une pièce différente avec un lit, un bureau, une chaise et une bibliothèque." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_016_00-02-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:07</span>
+                        <span class="caption-text">Visualiseur 3D affichant une pièce différente avec un lit, un bureau, une chaise et une bibliothèque.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:09 - 00:02:28</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez facilement repérer le bond en avant en matière de raisonnement spatial. Ensuite, j&#x27;ai demandé un outil de recadrage d&#x27;image, et les résultats ont été choquants. Par défaut, une image est déjà chargée. Je peux recadrer, zoomer, dézoomer et faire pivoter. Les boutons de format d&#x27;image fonctionnent parfaitement et il y a un aperçu en temps réel de l&#x27;image recadrée juste en dessous.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web interactive &#x27;Precision Crop Studio&#x27; et &#x27;3D Room Viewer&#x27;</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titres et paramètres de l&#x27;outil : &#x27;Crop motion and geometry without leaving the frame&#x27;, &#x27;Aspect presets&#x27; (Free, 1:1, 4:5, 3:2, 16:9), &#x27;Adjustments&#x27;, &#x27;Preview pane&#x27;, &#x27;Room Features&#x27;</p>
+                        <p><strong>Action / Démonstration :</strong> Manipulation d&#x27;un cadre de recadrage sur une image géométrique avec des curseurs de zoom et de rotation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_017_00-02-11.jpg" alt="Interface 3D Room Viewer montrant une pièce sombre avec un lit, une chaise et un bureau avec une lampe." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_017_00-02-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:11</span>
+                        <span class="caption-text">Interface 3D Room Viewer montrant une pièce sombre avec un lit, une chaise et un bureau avec une lampe.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_018_00-02-19.jpg" alt="Interface de l&#x27;outil de recadrage &#x27;Precision Crop Studio&#x27; montrant les options de recadrage, de zoom et de rotation avec un aperçu." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_018_00-02-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:19</span>
+                        <span class="caption-text">Interface de l&#x27;outil de recadrage &#x27;Precision Crop Studio&#x27; montrant les options de recadrage, de zoom et de rotation avec un aperçu.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_019_00-02-26.jpg" alt="Gros plan sur le panneau de prévisualisation et les contrôles de rotation de l&#x27;outil de recadrage en temps réel." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_019_00-02-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:26</span>
+                        <span class="caption-text">Gros plan sur le panneau de prévisualisation et les contrôles de rotation de l&#x27;outil de recadrage en temps réel.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:29 - 00:02:50</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, ce test final est dingue. Une simulation de main interactive. Avec GPT 5.4, j&#x27;ai des curseurs de contrôle pour absolument chaque doigt. Si je plie l&#x27;index, regardez avec quel réalisme les articulations bougent. Tout fonctionne parfaitement. Pendant ce temps, la génération QN 3.5 était une perte totale de temps.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation interactive de main (Realistic Hand Simulation) avec un panneau de contrôle latéral comportant des curseurs pour chaque doigt.</p>
+                        <p><strong>Contenu textuel & Code :</strong> On peut lire des libellés de doigts sur les panneaux latéraux : Thumb, Index, Middle, Ring, Pinky, ainsi que des curseurs de flexion (Open / Closed).</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de l&#x27;index est manipulé pour montrer l&#x27;articulation et la flexion réaliste des doigts de la main simulée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_020_00-02-31.jpg" alt="Interface de simulation montrant une main stylisée en 3D avec des curseurs de réglage pour chaque doigt sur le panneau latéral." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_020_00-02-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:31</span>
+                        <span class="caption-text">Interface de simulation montrant une main stylisée en 3D avec des curseurs de réglage pour chaque doigt sur le panneau latéral.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_021_00-02-48.jpg" alt="Interface de simulation montrant une vue schématique d&#x27;une main fermée avec le panneau de contrôle &quot;Realistic Hand Simulation&quot; sur la droite." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_021_00-02-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:48</span>
+                        <span class="caption-text">Interface de simulation montrant une vue schématique d&#x27;une main fermée avec le panneau de contrôle &quot;Realistic Hand Simulation&quot; sur la droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:50 - 00:03:23</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">complètement cassé. Très bien, voici les spécifications principales que vous devez connaître sur GPT-5.4. Numéro un, il comprend les captures d&#x27;écran et interagit directement avec les interfaces logicielles, ce qui en fait une bête pour créer des agents IA capables de réellement manipuler vos applications et sites web. Numéro deux, il prend en charge une fenêtre de contexte massive, environ 1 million de jetons d&#x27;entrée et jusqu&#x27;à 128 000 jetons de sortie. Vous pouvez lui fournir des bases de code entières ou des documents massifs dans une seule invite.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de documentation web d&#x27;OpenAI et interface de démonstration d&#x27;utilisation d&#x27;ordinateur (navigateur avec Gmail).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de présentation de GPT-5.4, interface Gmail avec curseur interactif, et spécifications techniques sur la fenêtre de contexte de 1 million de tokens (`model_context_window`).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des notes de version de GPT-5.4, démonstration d&#x27;interaction logicielle et affichage des détails techniques sur la gestion des tokens et de la tarification.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_022_00-02-52.jpg" alt="Article de présentation de GPT-5.4 sur une interface web sombre décrivant ses capacités de raisonnement et de codage." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_022_00-02-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:52</span>
+                        <span class="caption-text">Article de présentation de GPT-5.4 sur une interface web sombre décrivant ses capacités de raisonnement et de codage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_023_00-03-02.jpg" alt="Démonstration de l&#x27;utilisation d&#x27;une interface de messagerie (Gmail) contrôlée par l&#x27;IA avec une fenêtre contextuelle de composition de message." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_023_00-03-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:02</span>
+                        <span class="caption-text">Démonstration de l&#x27;utilisation d&#x27;une interface de messagerie (Gmail) contrôlée par l&#x27;IA avec une fenêtre contextuelle de composition de message.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_024_00-03-12.jpg" alt="Documentation technique de GPT-5.4 dans Codex détaillant la prise en charge de la fenêtre de contexte de 1M et la grille tarifaire de l&#x27;API." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_024_00-03-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:12</span>
+                        <span class="caption-text">Documentation technique de GPT-5.4 dans Codex détaillant la prise en charge de la fenêtre de contexte de 1M et la grille tarifaire de l&#x27;API.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:23 - 00:03:47</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais voici la partie la plus folle. Dans le benchmark OS World Verified, GPT 5.2 a obtenu un score de 47,3 %. La référence humaine est de 72,4 %. GPT 5.4 atteint un taux de réussite de 75 %. Laissez-moi vous répéter ça. GPT 5.4 dépasse réellement la référence humaine dans ce test.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Documentation officielle ou rapport technique d&#x27;évaluation de modèle d&#x27;IA affichant du texte descriptif et des tableaux de benchmarks sur fond noir.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte sur OSWorld-Verified indiquant le taux de réussite de 75,0 % pour GPT-5.4, 47,3 % pour GPT-5.2 et 72,4 % pour le niveau humain. Tableau comparatif avec les colonnes GPT-5.4, GPT-5.3-Codex et GPT-5.2 affichant les scores respectifs (ex: OSWorld-Verified : 75,0 %, 74,0%*, 47,3 %).</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement de la page de documentation textuelle et du tableau de comparaison des performances des différents modèles d&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_025_00-03-25.jpg" alt="Capture d&#x27;écran du site officiel présentant les résultats des benchmarks, notamment OSWorld-Verified où GPT-5.4 atteint un taux de réussite de 75,0 % face à GPT-5.2 à 47,3 % et l&#x27;humain à 72,4 %." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_025_00-03-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:25</span>
+                        <span class="caption-text">Capture d&#x27;écran du site officiel présentant les résultats des benchmarks, notamment OSWorld-Verified où GPT-5.4 atteint un taux de réussite de 75,0 % face à GPT-5.2 à 47,3 % et l&#x27;humain à 72,4 %.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_026_00-03-45.jpg" alt="Tableau comparatif des performances montrant les scores de GPT-5.4, GPT-5.3-Codex et GPT-5.2 sur différents benchmarks comme GDPval, SWE-Bench Pro, OSWorld-Verified, Toolathlon et BrowseComp." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_026_00-03-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:45</span>
+                        <span class="caption-text">Tableau comparatif des performances montrant les scores de GPT-5.4, GPT-5.3-Codex et GPT-5.2 sur différents benchmarks comme GDPval, SWE-Bench Pro, OSWorld-Verified, Toolathlon et BrowseComp.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:47 - 00:04:06</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il est fortement positionné pour les développeurs et l&#x27;utilisation en entreprise, en particulier pour la planification avancée, le codage et l&#x27;automatisation en plusieurs étapes. Je dois donc vous poser la question : croyez-vous que ChatGPT remplacera les humains ? Et aimez-vous réellement utiliser ces nouveaux modèles, ou cela devient-il trop écrasant ? Dites-le-moi dans les commentaires.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation de benchmarks de modèles d&#x27;IA sur fond sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte descriptif en haut : &quot;Together with advances in general reasoning, coding, and professional knowledge work, GPT-5.4 enables more reliable agents, faster developer workflows, and higher-quality outputs across ChatGPT, the API, and Codex.&quot; Tableau comparant GPT-5.4, GPT-5.3-Codex et GPT-5.2 sur des critères tels que GDPval (83.0% / 70.9% / 70.9%), SWE-Bench Pro (57.7% / 56.8% / 55.6%), OSWorld-Verified (75.0% / 74.0%* / 47.3%), Toolathlon (54.6% / 51.9% / 46.3%) et BrowseComp (82.7% / 77.3% / 65.8%). Note de bas de page concernant GPT-5.3-Codex.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des résultats de performance comparative des modèles GPT avec un curseur de souris pointant sur &quot;OSWorld-Verified&quot;.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-eI7gfK5E9N4/frame_027_00-03-49.jpg" alt="Tableau comparatif des performances des modèles GPT-5.4, GPT-5.3-Codex et GPT-5.2 sur divers benchmarks." loading="lazy" onclick="openLightbox('screenshots/YT-eI7gfK5E9N4/frame_027_00-03-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:49</span>
+                        <span class="caption-text">Tableau comparatif des performances des modèles GPT-5.4, GPT-5.3-Codex et GPT-5.2 sur divers benchmarks.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:07 - 00:04:09</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Merci d&#x27;avoir regardé, et je vous retrouve dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation graphique de fin de vidéo sans partage d&#x27;écran (logo de la chaîne Pursuing AI avec un cerveau connecté à une puce).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Affichage d&#x27;une illustration générée par IA représentant un cerveau humain relié par des câbles à une puce électronique portant l&#x27;inscription &quot;PAI&quot; (Pursuing AI), le tout encerclé par un anneau lumineux bleu sur fond noir.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de l&#x27;écran de fin de la vidéo avec le logo de la chaîne.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
