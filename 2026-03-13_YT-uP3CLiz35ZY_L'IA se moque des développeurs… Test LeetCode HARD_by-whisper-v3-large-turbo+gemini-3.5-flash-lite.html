@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 L&#x27;IA se moque des développeurs… Test LeetCode HARD — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 L&#x27;IA se moque des développeurs… Test LeetCode HARD</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-03-13</span>
+                <span class="badge">⏱️ 06m 27s</span>
+                <span class="badge">🆔 <code>uP3CLiz35ZY</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=uP3CLiz35ZY" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* intitulée « L'IA se moque des développeurs… Test LeetCode HARD » s'attaque frontalement au mythe ambiant de l'obsolescence programmée des ingénieurs logiciels face aux progrès fulgurants de l'intelligence artificielle. Le créateur orchestre un test comparatif rigoureux et progressif — allant de problèmes simples à des défis de niveau *Hard* issus d'entretiens techniques de Big Tech — pour évaluer objectivement la frontière entre la simple saisie semi-automatique dopée aux GPU et la véritable ingénierie logicielle complexe. En soumettant une sélection de tests algorithmiques et SQL à quatre grands modèles du marché (Gemini, ChatGPT, Claude et Grok), la vidéo démontre que l'IA ne se contente plus de générer du code superficiel, mais qu'elle est désormais capable de raisonner, d'expliquer des architectures sous-jacentes et de résoudre des problèmes algorithmiques ardus.</p><p>Sur le plan de la réalisation et de la narration vidéo, le créateur structure son récit selon une courbe dramatique classique mais redoutablement efficace : la promesse alarmiste initiale (« votre patron va licencier toute l'équipe »), l'escalade de la difficulté (Easy ➔ Medium ➔ Hard) et l'élimination progressive des candidats, culminant avec l'élimination de Grok sur un problème de niveau moyen. L'utilisation habile de l'outil Claude, mis en avant dans l'analyse pour sa capacité à décortiquer les subtilités d'une logique SQL complexe (comme la gestion des ex-aequo avec les sous-requêtes corrélées), renforce la crédibilité technique de la capsule. Le montage s'appuie sur le rythme des tests en temps réel (collage du prompt, exécution dans l'IDE/LeetCode, validation des cas de test), créant un suspense palpable.</p><p>Pour les créateurs de contenu vidéo et les monteurs spécialisés dans la tech, cette vidéo offre une masterclass sur la manière de traiter un sujet abstrait et technique en un divertissement captivant. En transformant un benchmark technique aride en un tournoi éliminatoire, le créateur maximise l'engagement du spectateur (*retention rate*), utilise l'humour (« réparer le vieux code de production écrit en 2011 par un stagiaire ») pour dédramatiser la menace de l'IA, et conclut par un appel à l'action naturel et contextuel. Les bénéfices concrets résident dans la maîtrise du *storytelling* par la preuve empirique, l'incarnation d'un test grandeur nature et la capacité à transformer une analyse de code source en un contenu grand public hautement viral.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Structurer le contenu en paliers de difficulté croissants** : Faire progresser le test du niveau le plus simple (*Two Sum*) au niveau le plus complexe (*Hard SQL*) crée une rampe de progression dramatique naturelle qui retient l&#x27;attention du spectateur jusqu&#x27;à la fin.</span></li><li><span class="point-bullet">✦</span><span>Mettre en place une règle du jeu claire et stricte** : Fixer des limites précises (par exemple, accorder exactement trois chances à chaque IA par problème) instaure un cadre rigoureux qui transforme un simple test technique en une véritable compétition sportive.</span></li><li><span class="point-bullet">✦</span><span>Humaniser le test par la mise en scène du direct** : Montrer l&#x27;action de copier-coller le prompt, d&#x27;observer la génération du code et de valider les résultats dans l&#x27;interface de test (LeetCode) renforce instantanément l&#x27;authenticité et la transparence de la vidéo.</span></li><li><span class="point-bullet">✦</span><span>Valoriser les nuances comportementales des modèles** : Ne pas se contenter de dire si l&#x27;IA a bon ou faux, mais analyser *comment* elle résout le problème (par exemple, Grok choisissant un tableau pour optimiser la localité du cache) apporte une valeur ajoutée hautement professionnelle.</span></li><li><span class="point-bullet">✦</span><span>Intégrer une touche d&#x27;humour et d&#x27;autodérision** : Utiliser des blagues bienvenues (comme évoquer le code de production d&#x27;un stagiaire en 2011) permet de désamorcer l&#x27;anxiété liée au remplacement des développeurs par l&#x27;IA tout en captant la sympathie de la communauté tech.</span></li><li><span class="point-bullet">✦</span><span>Créer de faux suspenses et éliminations** : Éliminer un modèle en cours de route (comme l&#x27;élimination de Grok au milieu de la vidéo) insuffle un rebondissement narratif qui relance l&#x27;intérêt au moment où la fatigue pourrait s&#x27;installer.</span></li><li><span class="point-bullet">✦</span><span>Ancrer le sujet dans l&#x27;actualité et la peur collective** : Surfer sur un sujet viral et anxiogène (« l&#x27;IA va remplacer les programmeurs ») pour ensuite le nuancer par la réalité du terrain offre le parfait équilibre entre racolage intelligent et journalisme technique rigoureux.</span></li><li><span class="point-bullet">✦</span><span>Exploiter la force des exemples concrets d&#x27;entretiens** : Utiliser des problèmes célèbres et redoutés des développeurs (comme *Two Sum* ou le calcul de salaires par département) garantit une résonance immédiate auprès de la cible visée.</span></li><li><span class="point-bullet">✦</span><span>Conclure par un appel à l&#x27;action contextuel** : Lier l&#x27;abonnement et le like non pas à une demande générique, mais à la promesse de continuer à tester les limites de l&#x27;IA et la sécurité de l&#x27;emploi des spectateurs, maximisant ainsi la conversion.</span></li><li><span class="point-bullet">✦</span><span>Démontrer la polyvalence des outils** : Mettre en avant le fait que plusieurs modèles réussissent les tests (ChatGPT, Gemini et Claude) évite le piège du publi-reportage unilatéral et dresse un portrait réaliste et nuancé de l&#x27;état actuel de la technologie.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:23</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout le monde sur internet ne cesse de répéter la même chose. L&#x27;intelligence artificielle va remplacer les programmeurs. Je pense, je ne sais pas, que nous sommes peut-être à 6 ou 12 mois du moment où le modèle fera la majeure partie, voire la totalité, de ce que font les ingénieurs logiciels, et 10. Apparemment, d&#x27;un jour à l&#x27;autre, votre patron va débarquer au bureau, licencier toute l&#x27;équipe de développeurs et la remplacer par un seul prompt et un GPU.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> B-roll vidéo et illustrations graphiques d&#x27;illustration.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte sous-titré/animé &#x27;THE SAME THING&#x27; et incrustations textuelles &#x27;World Economic Forum | YT, Davos, Switzerland, 20 JANUARY, 2026, CREDIT @MINT&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Illustrations visuelles dynamiques illustrant les propos de l&#x27;orateur sur le remplacement des développeurs par l&#x27;IA et le matériel informatique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_001_00-00-02.jpg" alt="Texte animé en surbrillance jaune et blanche sur fond noir affichant &#x27;THE SAME THING&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Texte animé en surbrillance jaune et blanche sur fond noir affichant &#x27;THE SAME THING&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_002_00-00-08.jpg" alt="Extrait vidéo d&#x27;un panel de discussion du World Economic Forum à Davos en Suisse avec des intervenants assis sur scène." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_002_00-00-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:08</span>
+                        <span class="caption-text">Extrait vidéo d&#x27;un panel de discussion du World Economic Forum à Davos en Suisse avec des intervenants assis sur scène.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_003_00-00-16.jpg" alt="Scène de bureau illustrant un homme souriant apportant une grande boîte de matériel informatique (GPU) devant des employés travaillant sur des ordinateurs portables." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_003_00-00-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:16</span>
+                        <span class="caption-text">Scène de bureau illustrant un homme souriant apportant une grande boîte de matériel informatique (GPU) devant des employés travaillant sur des ordinateurs portables.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_004_00-00-21.jpg" alt="Gros plan sur un homme posant une grande boîte de carte graphique sur un bureau devant des employés surpris." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_004_00-00-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:21</span>
+                        <span class="caption-text">Gros plan sur un homme posant une grande boîte de carte graphique sur un bureau devant des employés surpris.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:24 - 00:00:42</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais est-ce vraiment vrai ? Parce que coder une simple application de tâches à partir d&#x27;une consigne, c&#x27;est facile. Mais la vraie ingénierie logicielle est complexe. Alors aujourd&#x27;hui, nous allons faire un test simple pour découvrir la vérité. L&#x27;IA peut-elle réellement résoudre de vrais problèmes LeetCode ? Ou s&#x27;agit-il simplement d&#x27;une saisie semi-automatique sous stéroïdes ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur de développement web / application et mème vidéo illustratif.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Theme park simulation game made with GPT-5.4 from a single lightly specified prompt, using Playwright Interactive for browser playtesting and image generation for the isometric...&quot; et un mème avec le texte &quot;NeedSize&quot; et &quot;A I&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;une démo de simulation de parc d&#x27;attractions générée par IA, suivie d&#x27;une illustration humoristique métaphorique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_005_00-00-26.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface d&#x27;un outil de développement miniature ou de simulation de jeu avec un rendu graphique isométrique et du code." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_005_00-00-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:26</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface d&#x27;un outil de développement miniature ou de simulation de jeu avec un rendu graphique isométrique et du code.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_006_00-00-40.jpg" alt="Mème vidéo illustrant un culturiste bodybuildé avec un logo « AI » sur le visage, symbolisant la métaphore des stéroïdes." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_006_00-00-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:40</span>
+                        <span class="caption-text">Mème vidéo illustrant un culturiste bodybuildé avec un logo « AI » sur le visage, symbolisant la métaphore des stéroïdes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:43 - 00:01:03</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est Pursuing AI, et vous regardez le rapport de recherche. Aujourd&#x27;hui, nous mettons les plus grands modèles d&#x27;IA à l&#x27;épreuve. Gemini, ChatGPT, Claude et Grok. Nous commencerons par des problèmes faciles, passerons aux moyens, et terminerons par les difficiles. La règle la plus importante, chaque IA a trois chances pour résoudre un problème particulier.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphismes animés et présentation visuelle des modèles d&#x27;IA testés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &#x27;Easy -&gt; Medium -&gt; Hard&#x27; et logos de Gemini, ChatGPT, Claude et Grok.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage graphique des étapes de difficulté et des logos des IA comparées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_007_00-00-45.jpg" alt="Illustration graphique montrant un cerveau humain connecté à un processeur portant l&#x27;inscription &#x27;PAI&#x27; entouré d&#x27;un anneau néon bleu sur fond noir." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_007_00-00-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:45</span>
+                        <span class="caption-text">Illustration graphique montrant un cerveau humain connecté à un processeur portant l&#x27;inscription &#x27;PAI&#x27; entouré d&#x27;un anneau néon bleu sur fond noir.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_008_00-00-53.jpg" alt="Écran affichant le texte &#x27;Easy -&gt; Medium -&gt; Hard&#x27; ainsi que les logos des quatre modèles d&#x27;IA : Gemini, ChatGPT, Claude et Grok." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_008_00-00-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:53</span>
+                        <span class="caption-text">Écran affichant le texte &#x27;Easy -&gt; Medium -&gt; Hard&#x27; ainsi que les logos des quatre modèles d&#x27;IA : Gemini, ChatGPT, Claude et Grok.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:04 - 00:01:27</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voyons quelle IA peut réellement réussir et rendre officiellement les codeurs obsolètes partout. Donc, nous commençons d&#x27;abord par la question la plus posée par les grandes entreprises, le grand classique des entretiens, Two Sum. Si vous avez déjà passé un entretien dans une entreprise technologique, il y a environ 90 % de chances qu&#x27;on vous ait posé cette question. La tâche est simple. Trouver deux nombres qui s&#x27;additionnent pour donner une valeur cible.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de présentation graphique (diapositive) et interface web d&#x27;une plateforme de résolution de problèmes de code (type LeetCode).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1 : Texte &quot;Easy → Medium → Hard&quot;, les logos de Gemini, ChatGPT, Claude et un autre modèle, et le texte &quot;3 Chances For A Particular Problem&quot;. Sur l&#x27;image 2 : Titre &quot;1. Two Sum&quot;, description de la tâche (&quot;Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.&quot;), et trois exemples d&#x27;entrées/sorties.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente visuellement la structure de l&#x27;évaluation des IA selon la difficulté des problèmes, puis affiche l&#x27;énoncé exact du problème &quot;Two Sum&quot; pour expliquer l&#x27;exercice de code soumis aux IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_009_00-01-06.jpg" alt="Diapositive affichant la structure des tests avec les niveaux de difficulté et les logos de quatre IA (Gemini, ChatGPT, Claude, et une autre)." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_009_00-01-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:06</span>
+                        <span class="caption-text">Diapositive affichant la structure des tests avec les niveaux de difficulté et les logos de quatre IA (Gemini, ChatGPT, Claude, et une autre).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_010_00-01-12.jpg" alt="Capture d&#x27;écran de l&#x27;énoncé du problème algorithmique classique &quot;Two Sum&quot; sur une plateforme de type LeetCode, avec les exemples et explications." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_010_00-01-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:12</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;énoncé du problème algorithmique classique &quot;Two Sum&quot; sur une plateforme de type LeetCode, avec les exemples et explications.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:28 - 00:01:57</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La cible est 9, 6, et encore 6 à partir des paires suivantes. En commençant donc par ChatGPT, je colle la question et lui demande de résoudre le problème en Java, et immédiatement il écrit le code. Il utilise une table de hachage pour résoudre le problème, ce que la plupart des développeurs feraient exactement. Nous copions donc le code, le collons dans LeetCode, et l&#x27;exécutons. Et le code est correct. Il valide tous les cas de test. Jusqu&#x27;ici, tout va bien.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> LeetCode (navigateur web)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le problème numéro 1 intitulé &quot;Two Sum&quot; avec la description demandant de retourner les indices de deux nombres dont la somme est égale à la cible (target), accompagné de trois exemples (Exemple 1 : nums = [2,7,11,15], target = 9 ; Exemple 2 : nums = [3,2,4], target = 6 ; Exemple 3 : nums = [3,3], target = 6).</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole les exemples de tests du problème sur LeetCode pendant que le créateur présente le problème à résoudre.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_011_00-01-30.jpg" alt="Interface de la plateforme LeetCode affichant le problème de programmation &quot;Two Sum&quot; avec ses exemples d&#x27;entrées et de sorties." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_011_00-01-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:30</span>
+                        <span class="caption-text">Interface de la plateforme LeetCode affichant le problème de programmation &quot;Two Sum&quot; avec ses exemples d&#x27;entrées et de sorties.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:57 - 00:02:18</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, je colle la même question à tous les modèles d&#x27;IA. Et honnêtement, ils les ont tous résolues très facilement. Pas de drame, pas d&#x27;hallucinations, juste des solutions correctes. Donc problème facile, l&#x27;IA réussit. Les développeurs sont toujours en sécurité, pour l&#x27;instant. Il est maintenant temps de passer aux problèmes de niveau moyen.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> LeetCode et interfaces de chat de modèles d&#x27;IA (dont Grok).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste de problèmes de programmation sur LeetCode (ex: &quot;Two Sum&quot;, &quot;Add Two Numbers&quot;, &quot;Median of Two Sorted Arrays&quot;) avec leurs niveaux de difficulté et pourcentages de réussite. Fenêtres de discussion avec des IA montrant des codes et solutions.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre les interfaces de différentes IA résolvant facilement un problème de programmation facile sur LeetCode avant de passer à des problèmes de niveau moyen.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_012_00-01-59.jpg" alt="Capture d&#x27;écran double affichant des fenêtres de chat avec des modèles d&#x27;IA et le logo Grok." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_012_00-01-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:59</span>
+                        <span class="caption-text">Capture d&#x27;écran double affichant des fenêtres de chat avec des modèles d&#x27;IA et le logo Grok.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_013_00-02-16.jpg" alt="Interface de la plateforme LeetCode montrant la liste des problèmes de programmation avec des catégories (Easy, Med, Hard)." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_013_00-02-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:16</span>
+                        <span class="caption-text">Interface de la plateforme LeetCode montrant la liste des problèmes de programmation avec des catégories (Easy, Med, Hard).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:18 - 00:02:39</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est là que les choses commencent à devenir intéressantes. Parce que si l&#x27;IA peut résoudre des problèmes LeetCode de niveau moyen de manière cohérente, les développeurs devraient probablement commencer à y prêter attention. J&#x27;ai donc choisi ce problème. Le numéro trois, un classique. La plus longue sous-chaîne sans caractères répétés. Si vous avez déjà fait du LeetCode, vous savez déjà que celui-ci est célèbre.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> LeetCode (plateforme web d&#x27;entraînement au code).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste de problèmes de programmation avec des scores de difficulté (Easy, Med, Hard), incluant notamment &quot;1. Two Sum&quot;, &quot;2. Add Two Numbers&quot;, et &quot;3. Longest Substring Without Repeating Characters&quot;, ainsi qu&#x27;un panneau latéral avec des catégories de sujets et des filtres d&#x27;entreprises (Trending Companies).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de la bibliothèque de problèmes LeetCode pour présenter le problème classique sélectionné pour le test.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_014_00-02-20.jpg" alt="Interface de la plateforme LeetCode affichant une liste de problèmes de programmation, incluant &quot;3. Longest Substring Without Repeating Characters&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_014_00-02-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:20</span>
+                        <span class="caption-text">Interface de la plateforme LeetCode affichant une liste de problèmes de programmation, incluant &quot;3. Longest Substring Without Repeating Characters&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:40 - 00:02:59</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je colle une question à tous les modèles d&#x27;IA et leur demande d&#x27;expliquer l&#x27;approche. Voici ce qui se passe. Gemini utilise une fenêtre glissante avec une table de hachage. ChatGPT utilise une fenêtre glissante plus un ensemble de hachage. Claude utilise également une fenêtre glissante et une table de hachage. Et ensuite nous avons Grok. Grok décide de faire quelque chose de légèrement différent.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interfaces web de chatbots d&#x27;IA (ChatGPT) affichant des réponses de programmation en Java.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code source en Java (classe Solution, méthode lengthOfLongestSubstring), explications des approches algorithmiques (&#x27;Sliding Window + HashSet&#x27;, &#x27;Optimized Sliding Window with Array&#x27;), complexité temporelle O(n) et spatiale O(1) ou O(n).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage et comparaison des réponses de différents modèles d&#x27;IA concernant un problème de programmation LeetCode.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_015_00-02-42.jpg" alt="Capture d&#x27;écran divisée en quatre parties montrant différentes interfaces d&#x27;IA (ChatGPT et Gemini) avec du code Java et des explications sur l&#x27;algorithme de la plus longue sous-chaîne sans caractères répétés." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_015_00-02-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:42</span>
+                        <span class="caption-text">Capture d&#x27;écran divisée en quatre parties montrant différentes interfaces d&#x27;IA (ChatGPT et Gemini) avec du code Java et des explications sur l&#x27;algorithme de la plus longue sous-chaîne sans caractères répétés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_016_00-02-49.jpg" alt="Interface de ChatGPT en mode sombre affichant une solution en Java et l&#x27;approche utilisée (&#x27;Sliding Window + HashSet&#x27;) avec l&#x27;explication de la complexité temporelle et spatiale." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_016_00-02-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:49</span>
+                        <span class="caption-text">Interface de ChatGPT en mode sombre affichant une solution en Java et l&#x27;approche utilisée (&#x27;Sliding Window + HashSet&#x27;) avec l&#x27;explication de la complexité temporelle et spatiale.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_017_00-02-57.jpg" alt="Interface de l&#x27;IA affichant une approche optimisée en Java (&#x27;Optimized Sliding Window with Array&#x27;) avec les complexités temporelle et spatiale, ainsi que les idées clés." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_017_00-02-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:57</span>
+                        <span class="caption-text">Interface de l&#x27;IA affichant une approche optimisée en Java (&#x27;Optimized Sliding Window with Array&#x27;) avec les complexités temporelle et spatiale, ainsi que les idées clés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:00 - 00:03:19</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il utilise une fenêtre glissante avec un tableau, et Grok explique même pourquoi il a choisi cette méthode. L&#x27;accès au tableau est plus rapide que la méthode get d&#x27;une table de hachage. Une taille fixe et restreinte offre une meilleure localité de cache. Pas de mise en boîte ou de déballage des entiers. Ce qui, honnêtement, ressemble au genre d&#x27;explication que l&#x27;on donne en entretien pour impressionner le recruteur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de chat web (style Grok / LLM) avec un panneau de code en haut et une liste de points explicatifs textuels.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code source en haut (extrait Java avec `lastSeen` et `Math.max`), suivi du texte « Approach Used: Optimized Sliding Window with Array (most efficient in Java) », la complexité temporelle et spatiale, des idées clés sur l&#x27;utilisation de pointeurs `left` et `right`, et les avantages par rapport à une version HashMap.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation d&#x27;une explication technique générée par une IA détaillant l&#x27;algorithme de fenêtre glissante en Java.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_018_00-03-02.jpg" alt="Interface de discussion de l&#x27;IA affichant une portion de code Java et une explication détaillée de l&#x27;approche par fenêtre glissante optimisée avec un tableau." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_018_00-03-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:02</span>
+                        <span class="caption-text">Interface de discussion de l&#x27;IA affichant une portion de code Java et une explication détaillée de l&#x27;approche par fenêtre glissante optimisée avec un tableau.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:20 - 00:03:42</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Passons donc au test décisif. Est-ce que les solutions fonctionnent réellement ? L&#x27;approche de Grok est correcte. Celle de Claude l&#x27;est également. Le code de Gemini est correct. Et ChatGPT, également correct. Chaque modèle d&#x27;intelligence artificielle a résolu avec succès un problème LeetCode de niveau moyen, ce qui est impressionnant, mais aussi légèrement terrifiant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme LeetCode et éditeur de texte sombre pour l&#x27;analyse de code.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Problème LeetCode &quot;3. Longest Substring Without Repeating Characters&quot;, code Java, cas de tests réussis (&quot;Accepted&quot;), et notes d&#x27;explication textuelles sur la complexité algorithmique.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative des résultats de code validés (&quot;Accepted&quot;) obtenus par différents modèles d&#x27;IA sur un problème LeetCode moyen.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_019_00-03-22.jpg" alt="Interface textuelle affichant les explications détaillées et les idées clés de résolution d&#x27;algorithme." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_019_00-03-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:22</span>
+                        <span class="caption-text">Interface textuelle affichant les explications détaillées et les idées clés de résolution d&#x27;algorithme.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_020_00-03-28.jpg" alt="Interface de la plateforme LeetCode en mode écran partagé montrant l&#x27;énoncé du problème et les résultats des tests de code validés." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_020_00-03-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:28</span>
+                        <span class="caption-text">Interface de la plateforme LeetCode en mode écran partagé montrant l&#x27;énoncé du problème et les résultats des tests de code validés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_021_00-03-35.jpg" alt="Vue en quadrillage (split-screen) comparant les interfaces LeetCode des quatre modèles d&#x27;IA : Grok, Gemini, Claude et ChatGPT." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_021_00-03-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:35</span>
+                        <span class="caption-text">Vue en quadrillage (split-screen) comparant les interfaces LeetCode des quatre modèles d&#x27;IA : Grok, Gemini, Claude et ChatGPT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:43 - 00:04:01</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;étape suivante est évidente. Rendons les choses plus difficiles. Maintenant, nous essayons un autre problème de niveau moyen qui est réellement posé lors des entretiens chez Google. Meilleur moment pour acheter et vendre une action, II. L&#x27;objectif est de maximiser le profit en achetant et en vendant une action plusieurs fois, mais vous devez vendre avant d&#x27;acheter à nouveau.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web sombre d&#x27;une plateforme de préparation aux entretiens techniques (type LeetCode) avec un menu de navigation latéral à gauche (&quot;Library&quot;, &quot;Quest&quot;, &quot;Study Plan&quot;), une barre de recherche de questions, des filtres par thématiques (&quot;All Topics&quot;, &quot;Algorithms&quot;, &quot;Database&quot;, &quot;Shell&quot;, etc.) et un panneau latéral des entreprises tendance à droite (&quot;Uber&quot;, &quot;Amazon&quot;, &quot;Google&quot;, &quot;Bloomberg&quot;, etc.).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste de problèmes d&#x27;algorithmique visibles à l&#x27;écran : &quot;1. Two Sum&quot;, &quot;2. Add Two Numbers&quot;, &quot;3. Longest Substring Without Repeating Characters&quot;, &quot;4. Median of Two Sorted Arrays&quot;, &quot;5. Longest Palindromic Substring&quot;, &quot;6. Zigzag Conversion&quot;, etc., avec leurs niveaux de difficulté respectifs (Easy, Med, Hard) et pourcentages de réussite.</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran présente la bibliothèque de problèmes de programmation pour sélectionner et résoudre le prochain défi algorithmique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_022_00-03-45.jpg" alt="Interface d&#x27;une plateforme de questions d&#x27;algorithmique et de programmation (type LeetCode) affichant la liste des problèmes classés par difficulté." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_022_00-03-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:45</span>
+                        <span class="caption-text">Interface d&#x27;une plateforme de questions d&#x27;algorithmique et de programmation (type LeetCode) affichant la liste des problèmes classés par difficulté.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:02 - 00:04:20</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc fondamentalement, le genre de problème qui ruine les weekends des développeurs. Est-ce que l&#x27;IA peut résoudre ça ? On commence avec Claude. Claude écrit le code, et l&#x27;explication est plutôt bonne. Il utilise une approche gloutonne. L&#x27;idée clé est que le profit maximum est égal à la somme de chaque mouvement de prix à la hausse.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> LeetCode (plateforme web d&#x27;entraînement algorithmique) avec un panneau de description du problème à gauche et un éditeur de code en Java à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le problème LeetCode numéro 122 &quot;Best Time to Buy and Sell Stock II&quot; (niveau Moyen), avec les exemples d&#x27;entrées/sorties et l&#x27;éditeur de code affichant la signature de la méthode en Java (`class Solution { public int maxProfit(int[] prices) { } }`).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;énoncé d&#x27;un problème algorithmique complexe sur LeetCode que l&#x27;IA va devoir résoudre.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_023_00-04-04.jpg" alt="Interface de la plateforme de programmation LeetCode affichant le problème &quot;122. Best Time to Buy and Sell Stock II&quot; avec l&#x27;éditeur de code source à droite." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_023_00-04-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:04</span>
+                        <span class="caption-text">Interface de la plateforme de programmation LeetCode affichant le problème &quot;122. Best Time to Buy and Sell Stock II&quot; avec l&#x27;éditeur de code source à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:20 - 00:04:39</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Par exemple, du jour un au jour deux, le prix est de sept à un, donc le gain est de zéro. Du jour deux au jour trois, le prix passe de un à cinq, donc le profit est de quatre. Et cela continue. Nous exécutons le code de Claude et félicitations, Claude a réussi à le résoudre.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;assistant IA Claude avec un panneau de discussion sombre et une zone de réponse.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Un texte explicatif (&quot;Approach: Greedy&quot;), un exemple de tableau (&quot;Walk-through with Example 1 -&gt; prices = [7, 1, 5, 3, 6, 4]&quot;) avec les colonnes Day, prices[i], prices[i-1], Gain et Total Profit.</p>
+                        <p><strong>Action / Démonstration :</strong> Un curseur de souris survole le tableau affichant les détails des prix et des gains calculés par l&#x27;algorithme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_024_00-04-22.jpg" alt="Interface de Claude affichant une explication textuelle et un tableau détaillé d&#x27;un problème algorithmique." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_024_00-04-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:22</span>
+                        <span class="caption-text">Interface de Claude affichant une explication textuelle et un tableau détaillé d&#x27;un problème algorithmique.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:40 - 00:05:01</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, nous testons les autres. Gemini utilise également la méthode gloutonne. ChatGPT utilise également la méthode gloutonne. Mais Grok, Grok ne peut pas résoudre ce problème. Donc à ce stade, Grok est malheureusement éliminé, ce qui signifie que les concurrents restants sont ChatGPT, Gemini et Claude. Et honnêtement, ils s&#x27;en sortent très bien.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de Google Gemini et écran de présentation avec les logos des IA concurrentes.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte en anglais dans Gemini expliquant que le problème récompense une approche &quot;gloutonne&quot; (greedy mindset) pour maximiser le profit. Logos de ChatGPT, Claude et Gemini affichés côte à côte.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la réponse de Gemini sur l&#x27;algorithme glouton, suivie d&#x27;un récapitulatif visuel des trois IA restantes en compétition.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_025_00-04-42.jpg" alt="Interface de Gemini affichant l&#x27;explication de la méthode gloutonne (greedy method) pour résoudre le problème." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_025_00-04-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:42</span>
+                        <span class="caption-text">Interface de Gemini affichant l&#x27;explication de la méthode gloutonne (greedy method) pour résoudre le problème.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_026_00-04-59.jpg" alt="Écran noir affichant les logos des trois finalistes : ChatGPT, Claude et Gemini." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_026_00-04-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:59</span>
+                        <span class="caption-text">Écran noir affichant les logos des trois finalistes : ChatGPT, Claude et Gemini.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:02 - 00:05:34</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais maintenant, c&#x27;est l&#x27;heure du problème difficile. C&#x27;est là que les choses se brisent généralement. Le problème concerne les trois meilleurs salaires par département. Ce problème vous demande de trouver les trois salaires les plus élevés de chaque département. Il s&#x27;agit plutôt d&#x27;une logique SQL complexe. Claude utilise une méthode appelée sous-requête corrélée. Il explique même l&#x27;exemple. Dans le département informatique, deux employés partagent le même salaire. Joe et Randy gagnent tous deux 85 000 $. Comme ils partagent le même salaire, ils comptent tous les deux comme le deuxième salaire unique, pas le deuxième et</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de codage en ligne type LeetCode avec un panneau latéral de navigation, une barre de recherche de questions et une liste de défis classés par niveau de difficulté.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste de problèmes de programmation avec des scores de difficulté (Easy, Med, Hard) et des filtres thématiques comme &quot;All Topics&quot;, &quot;Algorithms&quot;, &quot;Database&quot;, &quot;Shell&quot;, &quot;Concurrency&quot;, &quot;JavaScript&quot;, &quot;Pandas&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et affichage de la bibliothèque de problèmes de code SQL/algorithmes sur l&#x27;interface web.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_027_00-05-04.jpg" alt="Interface de la plateforme LeetCode affichant une liste de problèmes de programmation et d&#x27;algorithmes" loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_027_00-05-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:04</span>
+                        <span class="caption-text">Interface de la plateforme LeetCode affichant une liste de problèmes de programmation et d&#x27;algorithmes</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:34 - 00:05:54</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Troisièmement. Ce qui est exactement la façon dont le problème devrait fonctionner. Nous testons la réponse de Claude et Et elle est correcte. ChatGPT, également correct. Ensuite, Gemini essaie quelque chose de différent. Il utilise des fonctions de fenêtrage. Et sa réponse est également correcte. Les trois modèles d&#x27;IA ont résolu avec succès un problème difficile de LeetCode.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;assistant IA Claude avec un champ de saisie de texte &quot;Reply...&quot; en bas et la mention du modèle &quot;Sonnet 4.6&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte explicatif sur l&#x27;utilisation du mot-clé DISTINCT en SQL avec un tableau de données pour le département informatique (&quot;Walk-through for IT Department&quot;) listant les employés Max, Joe, Randy, Will, Janet avec leurs salaires, salaires supérieurs, nombre et statut d&#x27;inclusion (&quot;Included?&quot;), ainsi que des puces explicatives sur la gestion des égalités (&quot;Handles ties&quot;) et des petits départements (&quot;Handles small departments&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une réponse de l&#x27;intelligence artificielle Claude détaillant l&#x27;analyse d&#x27;un problème de logique de programmation ou de base de données.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_028_00-05-36.jpg" alt="Interface de Claude montrant un tableau d&#x27;explication de données SQL avec des employés, des salaires et des coches de validation." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_028_00-05-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:36</span>
+                        <span class="caption-text">Interface de Claude montrant un tableau d&#x27;explication de données SQL avec des employés, des salaires et des coches de validation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:55 - 00:06:14</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc, félicitations à l&#x27;humanité. Parce que nous venons peut-être de construire quelque chose qui finira par nous rendre obsolètes. Mais d&#x27;ici ce jour-là, les développeurs sont toujours en sécurité. Parce que l&#x27;IA résout peut-être des problèmes de code, mais elle n&#x27;a toujours pas réparé le vieux code de production écrit en 2011 par un stagiaire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Illustration graphique de type dessin animé vectoriel avec sous-titres animés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché en bas de l&#x27;écran : &quot;SO CONGRATULATIONS TO HUMANITY&quot; (avec le mot &quot;TO&quot; mis en valeur sur fond bleu).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une illustration métaphorique sur l&#x27;évolution de l&#x27;humanité liée au passage de témoin technologique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_029_00-05-57.jpg" alt="Illustration graphique montrant une main en bas à gauche passant le relais d&#x27;une file de silhouettes humaines évoluant vers une autre main en bas à droite, avec le texte sous-titré &quot;SO CONGRATULATIONS TO HUMANITY&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_029_00-05-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:57</span>
+                        <span class="caption-text">Illustration graphique montrant une main en bas à gauche passant le relais d&#x27;une file de silhouettes humaines évoluant vers une autre main en bas à droite, avec le texte sous-titré &quot;SO CONGRATULATIONS TO HUMANITY&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:14 - 00:06:26</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si vous voulez voir plus de tests montrant ce que l&#x27;IA peut réellement faire, alors aimez cette vidéo et abonnez-vous, car nous allons continuer à tester les limites de l&#x27;IA, et probablement notre propre sécurité de l&#x27;emploi.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de montage ou de sous-titrage vidéo affichant du texte stylisé.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;SHOWING WHAT AI CAN&quot; avec le mot &quot;SHOWING&quot; surligné en bleu.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de sous-titres animés textuels en superposition sur fond noir au cours de la narration.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uP3CLiz35ZY/frame_030_00-06-16.jpg" alt="Écran noir affichant le texte sous-titré &quot;SHOWING WHAT AI CAN&quot; en majuscules blanches avec un fond bleu sur le mot &quot;SHOWING&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-uP3CLiz35ZY/frame_030_00-06-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:16</span>
+                        <span class="caption-text">Écran noir affichant le texte sous-titré &quot;SHOWING WHAT AI CAN&quot; en majuscules blanches avec un fond bleu sur le mot &quot;SHOWING&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
