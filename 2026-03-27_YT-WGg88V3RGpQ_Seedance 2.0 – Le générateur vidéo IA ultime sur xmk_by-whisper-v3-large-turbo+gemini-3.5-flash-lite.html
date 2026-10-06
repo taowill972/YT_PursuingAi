@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Seedance 2.0 – Le générateur vidéo IA ultime sur xmk — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Seedance 2.0 – Le générateur vidéo IA ultime sur xmk</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-03-27</span>
+                <span class="badge">⏱️ 06m 38s</span>
+                <span class="badge">🆔 <code>WGg88V3RGpQ</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=WGg88V3RGpQ" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de Pursuing AI met en lumière l'arrivée en accès anticipé de **Seedance 2.0** (phonétiquement transcrit « C-Dance 2 »), un générateur vidéo par IA de pointe associé officiellement à la plateforme **xmk.com** (xmk). Ce modèle s'impose comme une révolution dans l'écosystème de la création audiovisuelle grâce à son réalisme saisissant, sa capacité à gérer des prompts complexes et sa faculté native à synchroniser l'audio et la vidéo. Le présentateur démontre comment contourner le lancement mondial officiel pour tester immédiatement le modèle sur une interface centralisée, ouvrant la voie à des productions cinématiques d'une fluidité inédite.</p><p>La méthode présentée repose sur un parcours utilisateur fluide au sein de la plateforme xmk.com, où le créateur sélectionne explicitement Seedance 2.0 parmi le menu des modèles disponibles. Le workflow s'articule autour de trois modes de génération majeurs : la référence multimodale (autorisant jusqu'à 12 fichiers combinant images, vidéos et audio), l'interpolation entre une première et une dernière image, et le classique mode texte-vers-vidéo. Pour chaque génération, l'utilisateur peut arbitrer entre les versions **Fast** et **Pro**, ajuster le format (16:9), définir la durée (de 4 à 15 secondes) et consommer des crédits payants adaptés à ses ambitions créatives.</p><p>Pour les créateurs de contenu, les réalisateurs et les agences, Seedance 2.0 représente un bond en avant technologique considérable pour concevoir des scènes ultra-détaillées sans artefacts visuels majeurs. Qu'il s'agisse de simuler des effets d'explosion complexes, de reproduire la viscosité naturelle du miel ou d'animer des personnages avec des micro-expressions oculaires et des mouvements fluides, l'outil redéfinit les standards de l'industrie. L'intégration de guides de prompts et la prise en charge de formats longs (jusqu'à 15 secondes) permettent de s'affranchir des limites habituelles de l'IA générative et d'accélérer les pipelines de production professionnelle.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance</span><span class="tool-tag">Seedance 2.0</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Accès anticipé stratégique** : Utiliser des plateformes partenaires comme xmk.com permet de contourner les calendriers de déploiement mondial pour tester et maîtriser les nouveaux modèles avant la concurrence.</span></li><li><span class="point-bullet">✦</span><span>Flexibilité des modes de génération** : Exploiter la diversité des approches — texte-vers-vidéo, interpolation première/dernière image et génération par référence multimodale — selon la nature du projet créatif.</span></li><li><span class="point-bullet">✦</span><span>Puissance de la référence multimodale** : Télécharger jusqu&#x27;à 12 fichiers simultanés (combinant images, clips vidéo et pistes audio) pour exercer un contrôle maximal sur l&#x27;esthétique et l&#x27;ambiance de la vidéo finale.</span></li><li><span class="point-bullet">✦</span><span>Arbitrage entre versions Fast et Pro** : Choisir la version *Fast* (64 crédits) pour le prototypage rapide et la version *Pro* (120 crédits pour 15 secondes) pour obtenir un rendu cinématique maximal et des détails haut de gamme.</span></li><li><span class="point-bullet">✦</span><span>Gestion optimale des formats et de la durée** : Paramétrer le format en 16:9 et calibrer la durée de génération de 4 à 15 secondes en fonction de la complexité narrative et du budget de crédits disponibles.</span></li><li><span class="point-bullet">✦</span><span>Maîtrise de la physique et des textures** : Capitaliser sur la capacité de Seedance 2.0 à restituer des mouvements complexes et fluides sans saccades, comme la viscosité du miel ou la propagation d&#x27;ondes de choc urbaines.</span></li><li><span class="point-bullet">✦</span><span>Synchronisation audio-visuelle native** : Tirer parti de la génération audio intégrée au modèle pour lier automatiquement les bruitages contextuels (battements d&#x27;ailes, bruits ambiants) aux actions affichées à l&#x27;écran.</span></li><li><span class="point-bullet">✦</span><span>Animation organique des personnages** : Expérimenter le mode image-vers-vidéo pour insuffler de la vie aux visages, obtenant des micro-mouvements oculaires et des interactions réalistes (comme manger un burger) d&#x27;un naturel confondant.</span></li><li><span class="point-bullet">✦</span><span>Utilisation des guides de prompts intégrés** : S&#x27;appuyer sur la documentation et les guides de prompts fournis par la plateforme xmk.com pour structurer les requêtes et maximiser la pertinence des résultats générés.</span></li><li><span class="point-bullet">✦</span><span>Anticipation de la forte demande** : Prendre en compte le fait que Seedance 2.0 subit une forte sollicitation mondiale, ce qui peut induire des temps de rendu plus longs lors des pics d&#x27;utilisation.</span></li><li><span class="point-bullet">✦</span><span>Investissement dans les crédits adaptés** : Analgriser les grilles tarifaires de la plateforme pour acheter des forfaits de crédits alignés sur le volume de production et la récurrence des projets cinématiques.</span></li><li><span class="point-bullet">✦</span><span>Veille technologique agressive** : Maintenir une formation continue face à l&#x27;évolution rapide de l&#x27;IA pour éviter l&#x27;obsolescence des compétences et intégrer immédiatement les standards les plus récents de l&#x27;industrie.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:19</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C-Dance 2 est enfin là ! Et aujourd&#x27;hui, je vais vous montrer exactement comment y accéder. Oui, vous avez bien entendu. Vous pouvez réellement obtenir un accès anticipé à C-Dance 2 avant son lancement mondial officiel. Et non, il ne s&#x27;agit pas d&#x27;un faux modèle qui circule sur Internet.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de génération vidéo XMK.com (Seedance 2.0 AI Video Generator) et extraits vidéo de démonstration générés par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles sur l&#x27;interface : &quot;Seedance 2.0 AI Video Generator&quot;, &quot;Supports text, image, audio, and video references with precise motion, consistency, and immersive audio-visual output. Create cinematic AI videos with unified multimodal control.&quot;, &quot;Reference Generation&quot;, &quot;Text to Video&quot;, &quot;Upload Media&quot;, &quot;Click to upload assets&quot;, &quot;Prompt&quot;, &quot;Cinematic Creation&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de l&#x27;outil Seedance 2.0 sur le web, suivie d&#x27;extraits vidéo cinématographiques générés par IA montrant une troupe de danseurs de rue dans une rue humide la nuit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_001_00-00-02.jpg" alt="Interface du site web XMK.com affichant le générateur de vidéo IA Seedance 2.0 avec une prévisualisation vidéo." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Interface du site web XMK.com affichant le générateur de vidéo IA Seedance 2.0 avec une prévisualisation vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_002_00-00-10.jpg" alt="Scène de danse de rue nocturne générée par IA montrant un danseur en plein breakdance entouré d&#x27;une foule." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_002_00-00-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Scène de danse de rue nocturne générée par IA montrant un danseur en plein breakdance entouré d&#x27;une foule.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_003_00-00-17.jpg" alt="Vue plus large de la scène de danse de rue nocturne avec un groupe de personnes dansant sous la pluie." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_003_00-00-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:17</span>
+                        <span class="caption-text">Vue plus large de la scène de danse de rue nocturne avec un groupe de personnes dansant sous la pluie.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:20 - 00:00:40</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ceci est le véritable modèle C-Dance 2. Et tout ce que vous voyez en ce moment, tous ces résultats vidéo, ont été générés en utilisant C-Dance 2 lui-même. Je joue avec ça depuis un moment maintenant, et c&#x27;est différent de tout ce que j&#x27;ai jamais vu auparavant. C&#x27;est Pursuing AI, et vous regardez The Research Report.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Modèle de génération vidéo par intelligence artificielle (C-Dance 2) et graphismes de la chaîne Pursuing AI.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Résultats de vidéos générées par IA (danse de rue nocturne, intérieur luxueux) et logo animé de la chaîne « PAI » avec un cerveau et des connexions.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de séquences vidéo entièrement générées par le modèle C-Dance 2 suivies du logo de la chaîne.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_004_00-00-22.jpg" alt="Démonstration vidéo du modèle C-Dance 2 montrant un groupe de personnes dansant dans une rue nocturne humide." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_004_00-00-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:22</span>
+                        <span class="caption-text">Démonstration vidéo du modèle C-Dance 2 montrant un groupe de personnes dansant dans une rue nocturne humide.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_005_00-00-30.jpg" alt="Démonstration vidéo générée montrant un mouvement de caméra fluide dans un escalier luxueux avec un grand lustre." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_005_00-00-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:30</span>
+                        <span class="caption-text">Démonstration vidéo générée montrant un mouvement de caméra fluide dans un escalier luxueux avec un grand lustre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_006_00-00-38.jpg" alt="Logo graphique de Pursuing AI représentant un cerveau connecté à une puce électronique dans un cercle lumineux." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_006_00-00-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:38</span>
+                        <span class="caption-text">Logo graphique de Pursuing AI représentant un cerveau connecté à une puce électronique dans un cercle lumineux.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:40 - 00:01:04</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans cette vidéo, je vais vous montrer étape par étape comment vous pouvez y accéder dès maintenant et commencer à créer des vidéos incroyables comme celle-ci. Donc, sans perdre plus de temps, plongeons directement dans la vidéo. D&#x27;accord, c&#x27;est donc le site web dont je parlais. Ils se sont officiellement associés à ByteDance, et le modèle C-Dance 2 est déjà en ligne sur leur plateforme, ce qui signifie que vous pouvez y accéder dès maintenant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web XMK.com et extraits de vidéos générées par intelligence artificielle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles sur le site XMK.com : &quot;XMK is your Ai eXtreme Media Kit. Try it now on XMK.com&quot;, &quot;Create your image &amp; video all-in-one with XMK.COM. Free try our advanced AI generation features now!&quot;, et le bouton bleu &quot;Free Try Seedance 2.0&quot;. Menu supérieur avec Home, AI Video, AI Image, Pricing, Referral, Login.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;exemples de vidéos générées par IA suivie de la transition vers la page d&#x27;accueil du site web XMK.com.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_007_00-00-42.jpg" alt="Extrait vidéo généré par IA montrant une femme blonde de dos marchant sur un pont devant le Tower Bridge." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_007_00-00-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Extrait vidéo généré par IA montrant une femme blonde de dos marchant sur un pont devant le Tower Bridge.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_008_00-00-48.jpg" alt="Extrait vidéo généré par IA montrant une femme portant un chapeau de cowboy au milieu de dunes de désert." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_008_00-00-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:48</span>
+                        <span class="caption-text">Extrait vidéo généré par IA montrant une femme portant un chapeau de cowboy au milieu de dunes de désert.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_009_00-00-56.jpg" alt="Page d&#x27;accueil du site XMK.com avec un arrière-plan animé de vagues de mer et un titre promotionnel sur les outils média par IA." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_009_00-00-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:56</span>
+                        <span class="caption-text">Page d&#x27;accueil du site XMK.com avec un arrière-plan animé de vagues de mer et un titre promotionnel sur les outils média par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_010_00-01-02.jpg" alt="Page d&#x27;accueil du site XMK.com avec un arrière-plan de rocher ruisselant et les options de navigation du site." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_010_00-01-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:02</span>
+                        <span class="caption-text">Page d&#x27;accueil du site XMK.com avec un arrière-plan de rocher ruisselant et les options de navigation du site.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:04 - 00:01:25</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour commencer, cliquez simplement sur le lien dans la description et inscrivez-vous en utilisant votre identifiant e-mail. Une fois inscrit, vous serez dirigé directement vers cette interface. À partir de là, survolez le menu supérieur, et vous verrez l&#x27;option pour sélectionner différents modèles. Choisissez simplement le modèle C-Dance 2 dans la liste. Et une fois que vous l&#x27;aurez sélectionné, voici l&#x27;interface principale où vous pourrez commencer à créer vos vidéos.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web XMK.com, interface de la plateforme de génération de vidéo Seedance 2.0.</p>
+                        <p><strong>Contenu textuel & Code :</strong> &quot;XMK is your Ai eXtreme Media Kit. Try it now on XMK.com&quot;, &quot;Create your image &amp; video all-in-one with XMK.COM. Free to try our advanced AI generation features now!&quot;, &quot;Free Try Seedance 2.0&quot;, &quot;Seedance 2.0 AI Video Generator&quot;, &quot;Supports text, image, audio, and video references with precise motion, consistency, and immersive audio-visual output.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site web de la plateforme d&#x27;intelligence artificielle et affichage de l&#x27;interface de génération vidéo Seedance 2.0.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_011_00-01-06.jpg" alt="Page d&#x27;accueil du site XMK.com avec un arrière-plan montrant des vagues déchaînées et le texte principal annonçant le kit multimédia d&#x27;intelligence artificielle." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_011_00-01-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:06</span>
+                        <span class="caption-text">Page d&#x27;accueil du site XMK.com avec un arrière-plan montrant des vagues déchaînées et le texte principal annonçant le kit multimédia d&#x27;intelligence artificielle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_012_00-01-14.jpg" alt="Page d&#x27;accueil du site XMK.com affichant une animation de vagues et un bouton bleu pour essayer gratuitement Seedance 2.0." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_012_00-01-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:14</span>
+                        <span class="caption-text">Page d&#x27;accueil du site XMK.com affichant une animation de vagues et un bouton bleu pour essayer gratuitement Seedance 2.0.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_013_00-01-23.jpg" alt="Interface principale de génération de vidéo Seedance 2.0 sur XMK.com, avec des options d&#x27;importation de médias et un aperçu vidéo montrant un joueur de volley-ball." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_013_00-01-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:23</span>
+                        <span class="caption-text">Interface principale de génération de vidéo Seedance 2.0 sur XMK.com, avec des options d&#x27;importation de médias et un aperçu vidéo montrant un joueur de volley-ball.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:25 - 00:01:50</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, voici la partie intéressante. Il y a trois façons différentes de générer des vidéos. La première est le modèle de génération par référence. Ici, vous pouvez télécharger des images, des vidéos et même des fichiers audio. Oui, vous avez bien entendu. Vous pouvez télécharger plusieurs types de médias en même temps. Comme vous pouvez le voir, vous pouvez télécharger jusqu&#x27;à 12 fichiers, y compris des vidéos et de l&#x27;audio, ce qui est franchement assez fou.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Seedance 2.0 AI Video Generator.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre &quot;Seedance 2.0 AI Video Generator&quot;, onglets &quot;Reference Generation&quot; et &quot;Text to Video&quot;, zone &quot;Upload Media&quot; avec le texte &quot;Click to upload assets. Max 12 files (img ≤9, vid ≤3, audio ≤3)&quot;, et le champ de prompt &quot;Describe the video... Type @ to reference assets&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de génération vidéo par référence de Seedance 2.0, en se concentrant sur les options de téléchargement de multiples types de fichiers multimédias.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_014_00-01-27.jpg" alt="Interface du générateur de vidéo Seedance 2.0 AI montrant l&#x27;option de génération par référence et un exemple vidéo de volley-ball sur la plage." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_014_00-01-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:27</span>
+                        <span class="caption-text">Interface du générateur de vidéo Seedance 2.0 AI montrant l&#x27;option de génération par référence et un exemple vidéo de volley-ball sur la plage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_015_00-01-34.jpg" alt="Gros plan sur la zone de téléchargement de médias de Seedance 2.0 indiquant la limite de 12 fichiers maximum." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_015_00-01-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:34</span>
+                        <span class="caption-text">Gros plan sur la zone de téléchargement de médias de Seedance 2.0 indiquant la limite de 12 fichiers maximum.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:50 - 00:02:08</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela vous donne beaucoup plus de contrôle sur l&#x27;apparence de votre vidéo finale. Elle dispose également d&#x27;une option de première et dernière image, ce qui est assez explicite. Vous pouvez télécharger une image de départ et une image de fin, et le modèle générera une transition fluide entre elles. Et puis vous avez aussi la classique option texte-vers-vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Seedance 2.0 AI Video Generator sur XMK.com avec un panneau de génération par référence et un lecteur vidéo de prévisualisation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre : &quot;Seedance 2.0 AI Video Generator&quot;. Sous-titre : &quot;Supports text, image, audio, and video references with precise motion, consistency, and immersive audio-visual output.&quot; Onglets : &quot;Reference Generation&quot;, &quot;Text to Video&quot;. Bouton : &quot;Upload Media&quot; avec &quot;Click to upload assets&quot;. Champ de texte prompt : &quot;Describe the video... Type @ to reference assets&quot;. Aperçu vidéo avec légende : &quot;Cinematic Creation&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de l&#x27;interface de génération vidéo de Seedance 2.0, montrant les zones de téléchargement de médias et les options de prompt textuel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_016_00-01-52.jpg" alt="Interface du générateur de vidéo par IA Seedance 2.0 sur le site XMK.com, affichant les options de téléchargement de médias et un aperçu vidéo." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_016_00-01-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:52</span>
+                        <span class="caption-text">Interface du générateur de vidéo par IA Seedance 2.0 sur le site XMK.com, affichant les options de téléchargement de médias et un aperçu vidéo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:09 - 00:02:27</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc maintenant, allons-y pour créer quelques vidéos et voir cela en action. D&#x27;abord, essayons l&#x27;option texte-vers-vidéo. Ici, j&#x27;ai collé mon prompt. Comme vous pouvez le voir, il y a deux versions de C-Dance 2 disponibles, Fast et Pro. Je choisis le modèle Pro. Vous pouvez également sélectionner différents formats d&#x27;image selon vos besoins.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Seedance 2.0 AI Video Generator (XMK.com).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte : &quot;Seedance 2.0 AI Video Generator&quot;, champ de prompt avec un texte descriptif d&#x27;une ville américaine au coucher du soleil, options de modèle (&quot;Seedance 2.0 Fast&quot;), format d&#x27;image (&quot;16:9&quot;), curseur de durée (réglé sur 5s), et bouton &quot;GENERATE&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;interface de génération texte-vers-vidéo, survole les options de modèle et de format, et affiche un exemple de rendu vidéo à droite.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_017_00-02-11.jpg" alt="Interface de Seedance 2.0 AI Video Generator sur le site XMK.com, montrant la section de génération avec un aperçu vidéo de volley-ball." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_017_00-02-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:11</span>
+                        <span class="caption-text">Interface de Seedance 2.0 AI Video Generator sur le site XMK.com, montrant la section de génération avec un aperçu vidéo de volley-ball.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_018_00-02-18.jpg" alt="Interface de Seedance 2.0 montrant le champ de prompt textuel rempli et les options de sélection du modèle (Seedance 2.0 Fast) et du format 16:9." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_018_00-02-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:18</span>
+                        <span class="caption-text">Interface de Seedance 2.0 montrant le champ de prompt textuel rempli et les options de sélection du modèle (Seedance 2.0 Fast) et du format 16:9.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:28 - 00:02:49</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je choisis le 16 par 9. Vous pouvez générer des vidéos de 4 secondes jusqu&#x27;à 15 secondes. Maintenant, une chose importante. La version Pro coûte 120 crédits pour une vidéo de 15 secondes, et la version Fast coûte 64 crédits. De plus, cela peut prendre un certain temps pour générer votre vidéo, car C-Dance 2 est très demandé dans le monde entier.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme XMK.com (génération de vidéo par IA) avec menu de navigation (Home, AI Video, AI Image, Pricing, Referral) et solde de crédits (3300).</p>
+                        <p><strong>Contenu textuel & Code :</strong> On peut lire le prompt textuel : &quot;A cinematic montage of a modern American city skyline at sunset...&quot;. Paramètres visibles : Modèle réglé sur &quot;Seedance 2.0 Pro&quot;, Aspect Ratio sur &quot;16:9&quot;, curseur de durée (Duration) réglé sur 9s, et un bouton bleu &quot;GENERATE 120&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole le bouton &quot;GENERATE&quot; ou manipule les options de format d&#x27;image et de durée dans l&#x27;interface de génération.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_019_00-02-30.jpg" alt="Interface du site web XMK.com montrant les paramètres de génération vidéo avec le modèle Seedance 2.0 Pro, le format 16:9 et un curseur de durée." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_019_00-02-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:30</span>
+                        <span class="caption-text">Interface du site web XMK.com montrant les paramètres de génération vidéo avec le modèle Seedance 2.0 Pro, le format 16:9 et un curseur de durée.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:50 - 00:03:09</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et voici le résultat. Regardez le niveau de détail.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application mobile affichée sur l&#x27;écran d&#x27;un smartphone.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Icône rouge d&#x27;une cloche avec des ondes sonores concentriques à l&#x27;intérieur d&#x27;une interface d&#x27;application mobile, ainsi qu&#x27;une vue de synthèse générée par IA représentant une ville dévastée par les flammes.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du résultat généré par l&#x27;IA à l&#x27;écran, alternant entre un plan rapproché sur une application mobile et un plan large d&#x27;une ville en feu.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_020_00-02-52.jpg" alt="Un smartphone tenu à la main affichant une application avec une icône de cloche rouge sur fond blanc." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_020_00-02-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:52</span>
+                        <span class="caption-text">Un smartphone tenu à la main affichant une application avec une icône de cloche rouge sur fond blanc.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_021_00-02-59.jpg" alt="Vue aérienne montrant une rue urbaine en ruines avec des bâtiments endommagés et des voitures incendiées." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_021_00-02-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:59</span>
+                        <span class="caption-text">Vue aérienne montrant une rue urbaine en ruines avec des bâtiments endommagés et des voitures incendiées.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_022_00-03-07.jpg" alt="Gros plan du même smartphone affichant l&#x27;application avec l&#x27;icône de cloche rouge." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_022_00-03-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:07</span>
+                        <span class="caption-text">Gros plan du même smartphone affichant l&#x27;application avec l&#x27;icône de cloche rouge.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:09 - 00:03:28</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Franchement, aucun autre modèle ne fait ça en ce moment. Même VO 3.1 a du mal à égaler cela. L&#x27;alerte sur le téléphone, l&#x27;explosion, la façon dont les effets se propagent dans la ville. C&#x27;est incroyable. Et la synchronisation audio est également parfaite. Maintenant, cette fois, j&#x27;utilise un prompt beaucoup plus complexe et délicat.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;outil XMK.com avec panneau de prompt, paramètres de modèle (Seedance 2.5 Pro) et lecteur vidéo.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte visible dans le champ de prompt : &quot;[Camera &amp; Style] 10-second ultra-cinematic, hyper-realistic first-person POV of a frantically flying bee. Single continuous shot, constant Dutch angle. Extreme macro fisheye lens...&quot; avec les paramètres de modèle Seedance 2.5 Pro et un ratio de 16:9.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente des exemples de rendus vidéo générés par intelligence artificielle, puis bascule sur l&#x27;interface de l&#x27;outil de génération pour tester un prompt complexe.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_023_00-03-11.jpg" alt="Rendu vidéo généré par IA montrant une immense explosion nucléaire au-dessus d&#x27;une ville avec des gratte-ciels." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_023_00-03-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:11</span>
+                        <span class="caption-text">Rendu vidéo généré par IA montrant une immense explosion nucléaire au-dessus d&#x27;une ville avec des gratte-ciels.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_024_00-03-19.jpg" alt="Rendu vidéo montrant des personnes marchant dans la rue en contre-jour avec une forte lumière vive." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_024_00-03-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:19</span>
+                        <span class="caption-text">Rendu vidéo montrant des personnes marchant dans la rue en contre-jour avec une forte lumière vive.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_025_00-03-26.jpg" alt="Interface de l&#x27;outil XMK.com affichant un prompt textuel complexe et une vidéo en cours de lecture avec une balle de volley-ball." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_025_00-03-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:26</span>
+                        <span class="caption-text">Interface de l&#x27;outil XMK.com affichant un prompt textuel complexe et une vidéo en cours de lecture avec une balle de volley-ball.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:29 - 00:03:48</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voyons voir s&#x27;il peut gérer ça. Et voici le résultat. Regardez ça ! C&#x27;est dingue ! Aucun autre modèle ne produit ce niveau de détail.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration vidéo générée par intelligence artificielle (modèle de génération vidéo avancé).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Génération de vidéo ultra-réaliste avec effet de lentille grand angle / caméra subjective (POV) suivant une abeille en mouvement rapide à l&#x27;extérieur et à l&#x27;intérieur d&#x27;une maison.</p>
+                        <p><strong>Action / Démonstration :</strong> Lecture d&#x27;une séquence vidéo générée par IA montrant un mouvement de caméra ultra-rapide et immersif.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_026_00-03-31.jpg" alt="Vue en gros plan à l&#x27;intérieur d&#x27;un tuyau ou tube, montrant une abeille volant à l&#x27;extérieur au-dessus d&#x27;une pelouse avec des maisons en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_026_00-03-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:31</span>
+                        <span class="caption-text">Vue en gros plan à l&#x27;intérieur d&#x27;un tuyau ou tube, montrant une abeille volant à l&#x27;extérieur au-dessus d&#x27;une pelouse avec des maisons en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_027_00-03-39.jpg" alt="Poursuite de la vidéo montrant l&#x27;abeille volant à travers un couloir sombre ou l&#x27;intérieur d&#x27;une maison près d&#x27;un réfrigérateur." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_027_00-03-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:39</span>
+                        <span class="caption-text">Poursuite de la vidéo montrant l&#x27;abeille volant à travers un couloir sombre ou l&#x27;intérieur d&#x27;une maison près d&#x27;un réfrigérateur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_028_00-03-46.jpg" alt="L&#x27;abeille continue sa trajectoire de vol dynamique à l&#x27;intérieur d&#x27;une cuisine équipée." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_028_00-03-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:46</span>
+                        <span class="caption-text">L&#x27;abeille continue sa trajectoire de vol dynamique à l&#x27;intérieur d&#x27;une cuisine équipée.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:49 - 00:04:21</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le mouvement du miel est fluide, sans saccades, sans artefacts bizarres, et même le son des ailes est parfaitement synchronisé. Maintenant, essayons quelque chose d&#x27;amusant, puisque C-Dance 2 peut également générer de l&#x27;audio. J&#x27;utilise cette image et un simple prompt. Et voici le résultat. Des burgers délicieux. Un incontournable.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de génération vidéo (Seedance 2.0 Fast / XMK.com) avec options de modèle, ratio (16:9), durée et bouton de génération bleu.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt visible dans l&#x27;interface : &quot;The character in the painting @Image1 has a guilty expression, eyes darting left and right before leaning out of the frame...&quot; avec le texte publicitaire final &quot;Delicious Burgers, A Must-Try!&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration successive d&#x27;une génération vidéo d&#x27;abeille, de l&#x27;interface de configuration de Seedance, de l&#x27;image source de départ, et du résultat animé final avec sous-titres et audio.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_029_00-03-51.jpg" alt="Gros plan en caméra subjective (effet œil-de-bœuf) d&#x27;une abeille s&#x27;approchant d&#x27;un pot de miel posé sur une table en bois." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_029_00-03-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:51</span>
+                        <span class="caption-text">Gros plan en caméra subjective (effet œil-de-bœuf) d&#x27;une abeille s&#x27;approchant d&#x27;un pot de miel posé sur une table en bois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_030_00-04-00.jpg" alt="Interface Web de l&#x27;outil de génération vidéo XMK.com (Seedance 2.0 Fast) avec champ de prompt textuel et aperçu d&#x27;un panneau de basket." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_030_00-04-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:00</span>
+                        <span class="caption-text">Interface Web de l&#x27;outil de génération vidéo XMK.com (Seedance 2.0 Fast) avec champ de prompt textuel et aperçu d&#x27;un panneau de basket.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_031_00-04-10.jpg" alt="Image source utilisée pour la génération, représentant un tableau encadré de type Mona Lisa posé sur une table en bois, tenant un gros burger avec des frites à côté." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_031_00-04-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:10</span>
+                        <span class="caption-text">Image source utilisée pour la génération, représentant un tableau encadré de type Mona Lisa posé sur une table en bois, tenant un gros burger avec des frites à côté.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_032_00-04-19.jpg" alt="Rendu final montrant un burger appétissant sur fond noir avec un éclairage zénithal, accompagné du texte sous-titré &quot;Delicious Burgers, A Must-Try!&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_032_00-04-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:19</span>
+                        <span class="caption-text">Rendu final montrant un burger appétissant sur fond noir avec un éclairage zénithal, accompagné du texte sous-titré &quot;Delicious Burgers, A Must-Try!&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:21 - 00:04:42</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Regardez ça. La fille bouge ses yeux, mange le burger, le remet sur l&#x27;assiette, et puis bouge ses yeux à nouveau. Ça a l&#x27;air tellement naturel. Maintenant, la plateforme que j&#x27;utilise pour accéder à Seedance 2 est xmk.com. Ici, vous pouvez également accéder à différentes versions de Seedance, ainsi qu&#x27;à d&#x27;autres modèles et outils de génération de vidéo par IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Le site web xmk.com affichant l&#x27;interface de Seedance 2.0 AI Video Generator avec des onglets de navigation (Home, AI Video, AI Image, Pricing, Referral) et des sous-menus pour Seedance (Seedance AI, Seedance 2.0 Pro, Seedance 1.5 Pro, Seedance 1.0 Pro, etc.).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché sur la page : &quot;Seedance 2.0 AI Video Generator&quot; et &quot;Supports text, image, audio, and video references with precise motion, consistency, and immersive audio-visual output. Create cinematic AI videos with unified multimodal control.&quot; Dans l&#x27;image 2, le texte incrusté est &quot;Delicious Burgers, A Must-Try!&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre des exemples de vidéos générées par IA (Mona Lisa mangeant un burger, un homme interagissant avec des burgers géants), puis navigue sur le site xmk.com pour présenter l&#x27;interface de Seedance 2.0.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_033_00-04-23.jpg" alt="Démonstration vidéo générée par IA montrant Mona Lisa animée interagissant avec un burger posé sur une table." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_033_00-04-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:23</span>
+                        <span class="caption-text">Démonstration vidéo générée par IA montrant Mona Lisa animée interagissant avec un burger posé sur une table.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_034_00-04-31.jpg" alt="Démonstration vidéo de Seedance 2 montrant un homme coiffé d&#x27;un chapeau de cowboy interagissant avec de gros burgers, avec le texte &quot;Delicious Burgers, A Must-Try!&quot; affiché en bas." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_034_00-04-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:31</span>
+                        <span class="caption-text">Démonstration vidéo de Seedance 2 montrant un homme coiffé d&#x27;un chapeau de cowboy interagissant avec de gros burgers, avec le texte &quot;Delicious Burgers, A Must-Try!&quot; affiché en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_035_00-04-40.jpg" alt="Capture d&#x27;écran de la plateforme web xmk.com affichant l&#x27;interface du générateur de vidéo Seedance 2.0 AI Video Generator." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_035_00-04-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:40</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme web xmk.com affichant l&#x27;interface du générateur de vidéo Seedance 2.0 AI Video Generator.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:42 - 00:05:01</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si vous ne savez pas comment rédiger des prompts, ils fournissent également un guide de prompts C-Dance, ce qui vous aide à obtenir de meilleurs résultats. Inversement, vous pouvez également consulter les tarifs ici. Choisissez simplement un forfait qui correspond à vos besoins, achetez des crédits et obtenez un accès anticipé à C-Dance 2. C&#x27;est tout pour cette vidéo. Maintenant, c&#x27;est à votre tour d&#x27;essayer.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web XMK.com (plateforme d&#x27;IA génératrice multimédia).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Seedance 2.0 AI Video Generator&quot;, &quot;Premium Plans &amp; Pricing of XMK AI Platform&quot;, &quot;Base $9.9&quot;, &quot;Pro $29.9&quot;, &quot;Ultimate $49.9&quot;, &quot;Creator $99.9&quot;, &quot;XMK is your Ai eXtreme Media Kit. Try it now on XMK.com&quot;, &quot;Free Try Seedance 2.0&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site web de XMK, visualisation des guides, des tarifs et de la page d&#x27;accueil de fin de vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_036_00-04-44.jpg" alt="Page web du générateur de vidéo Seedance 2.0 sur la plateforme XMK.com montrant le menu des options et un exemple vidéo." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_036_00-04-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:44</span>
+                        <span class="caption-text">Page web du générateur de vidéo Seedance 2.0 sur la plateforme XMK.com montrant le menu des options et un exemple vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_037_00-04-51.jpg" alt="Page des tarifs et abonnements (Pricing) de la plateforme XMK.com avec quatre forfaits différents (Base, Pro, Ultimate, Creator)." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_037_00-04-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:51</span>
+                        <span class="caption-text">Page des tarifs et abonnements (Pricing) de la plateforme XMK.com avec quatre forfaits différents (Base, Pro, Ultimate, Creator).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_038_00-04-59.jpg" alt="Page d&#x27;accueil finale de XMK.com invitant les utilisateurs à essayer Seedance 2.0 gratuitement avec un arrière-plan marin agité." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_038_00-04-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:59</span>
+                        <span class="caption-text">Page d&#x27;accueil finale de XMK.com invitant les utilisateurs à essayer Seedance 2.0 gratuitement avec un arrière-plan marin agité.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:01 - 00:05:23</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si vous avez trouvé cela utile, assurez-vous de vous abonner. Parce que l&#x27;IA évolue rapidement, et vous ne voulez pas vous faire distancer. C-Dance 2.0 est maintenant sur XMK.com. C&#x27;est plus rapide, plus puissant, et conçu pour la création de vidéos IA cinématiques. Vous pouvez ainsi créer des scènes époustouflantes en quelques secondes. Rendez-vous sur xmk.com et obtenez CDance 2.0, ainsi que tous les principaux modèles d&#x27;IA, et commencez à créer sans limites.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web XMK.com et extraits de démonstration vidéo générés par Seedance 2.0.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché sur le site web : &quot;XMK is your Ai eXtreme Media Kit. Try it now on XMK.com&quot; et &quot;Free Try Seedance 2.0&quot;, ainsi que le titre &quot;SEEEDANCE 2.0&quot; et la mention &quot;AI 生成&quot; (Généré par IA).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation promotionnelle du site web XMK.com et démonstration de clips vidéo cinématiques générés par Seedance 2.0.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_039_00-05-03.jpg" alt="Capture d&#x27;écran du site web XMK.com affichant l&#x27;interface de présentation avec un fond de cascade et le bouton d&#x27;essai gratuit de Seedance 2.0." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_039_00-05-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:03</span>
+                        <span class="caption-text">Capture d&#x27;écran du site web XMK.com affichant l&#x27;interface de présentation avec un fond de cascade et le bouton d&#x27;essai gratuit de Seedance 2.0.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_040_00-05-12.jpg" alt="Scène cinématique générée par IA montrant une grande créature sous-marine derrière une vitre renforcée fissurée." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_040_00-05-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:12</span>
+                        <span class="caption-text">Scène cinématique générée par IA montrant une grande créature sous-marine derrière une vitre renforcée fissurée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-WGg88V3RGpQ/frame_041_00-05-21.jpg" alt="Écran de titre affichant le texte &quot;SEEEDANCE 2.0&quot; sur fond sombre avec la mention &quot;AI 生成&quot; en haut à gauche." loading="lazy" onclick="openLightbox('screenshots/YT-WGg88V3RGpQ/frame_041_00-05-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:21</span>
+                        <span class="caption-text">Écran de titre affichant le texte &quot;SEEEDANCE 2.0&quot; sur fond sombre avec la mention &quot;AI 生成&quot; en haut à gauche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

@@ -37,7 +37,8 @@
     "MLtl-sRcsxU",
     "PuzCpo9dBEY",
     "oWIRBWQfD08",
-    "pwcrhSd92j4"
+    "pwcrhSd92j4",
+    "WGg88V3RGpQ"
   ],
   "processed_videos": [
     {
@@ -567,9 +568,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-04-13_YT-pwcrhSd92j4_Cette IA vient de devenir beaucoup trop dangereuse..._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-06T07:32:51Z",
       "status": "completed"
+    },
+    {
+      "video_id": "WGg88V3RGpQ",
+      "title": "Seedance 2.0 – Le générateur vidéo IA ultime sur xmk",
+      "raw_title": "Seedance 2.0 – AI Video Generator on xmk",
+      "filename_md": "2026-03-27_YT-WGg88V3RGpQ_Seedance 2.0 – Le générateur vidéo IA ultime sur xmk_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-03-27_YT-WGg88V3RGpQ_Seedance 2.0 – Le générateur vidéo IA ultime sur xmk_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-03-27",
+      "duration": 398,
+      "screenshots_count": 41,
+      "filepath_md": "/root/YT_PursuingAi/2026-03-27_YT-WGg88V3RGpQ_Seedance 2.0 – Le générateur vidéo IA ultime sur xmk_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-03-27_YT-WGg88V3RGpQ_Seedance 2.0 – Le générateur vidéo IA ultime sur xmk_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-06T07:48:28Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 38,
+  "completed_count": 39,
   "last_run_timestamp": "2026-10-06T04:00:04Z",
   "status": "running",
   "total_catalog_count": 84
