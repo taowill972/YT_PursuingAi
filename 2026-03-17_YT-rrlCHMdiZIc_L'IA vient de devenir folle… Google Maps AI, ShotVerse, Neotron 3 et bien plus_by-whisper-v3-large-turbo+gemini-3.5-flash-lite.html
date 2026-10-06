@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 L&#x27;IA vient de devenir folle… Google Maps AI, ShotVerse, Neotron 3 et bien plus — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 L&#x27;IA vient de devenir folle… Google Maps AI, ShotVerse, Neotron 3 et bien plus</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-03-17</span>
+                <span class="badge">⏱️ 05m 43s</span>
+                <span class="badge">🆔 <code>rrlCHMdiZIc</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=rrlCHMdiZIc" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La récente vague d'innovations en intelligence artificielle redéfinit les frontières technologiques, englobant aussi bien l'optimisation des outils du quotidien que les avancées majeures en robotique et en génération visuelle. Google redéfinit l'expérience utilisateur de son application de navigation grâce à l'intégration de Gemini, transformant l'outil de cartographie en un véritable agent conversationnel contextuel capable de planifier des voyages, d'analyser des avis et d'offrir une navigation immersive en 3D ultra-détaillée. Parallèlement, le secteur de la robotique repousse ses limites physiques avec l'émergence de machines novatrices, à l'instar du cheval robotique quadrupède de Deep Robotics et des robots humanoïdes sur roues de Reflex Robotics, capables d'exécuter des tâches de manipulation fine en cuisine ou en milieu industriel.</p><p>Dans l'univers de la création visuelle par IA, la dynamique s'accélère avec l'émergence de technologies capables de produire des séquences complexes et multi-angles en un minimum de temps. Le nouveau modèle **Shotverse** illustre cette révolution en générant des vidéos cinématographiques composées de plans multiples et de transitions fluides en une seule et unique génération, tout en garantissant une stricte cohérence des personnages. L'approche méthodologique repose sur un entraînement intensif réalisé exclusivement sur de véritables séquences cinématographiques issues de tournages réels, évitant ainsi la dégradation qualitative inhérente à l'utilisation de données synthétiques.</p><p>Pour les créateurs de contenu et les réalisateurs vidéo, ces innovations ouvrent des perspectives inédites en matière de productivité et de mise en scène. L'intégration d'outils de génération multi-plans permet de s'affranchir des contraintes du montage traditionnel plan par plan, réduisant considérablement les frictions dans le processus de pré-visualisation et de réalisation. En s'appuyant sur des workflows basés sur des modèles ouverts et des pipelines d'inférence robustes, les créateurs disposent désormais de leviers puissants pour concevoir des récits visuels immersifs, dynamiques et d'une qualité esthétique comparable aux standards professionnels du cinéma.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>L&#x27;intégration d&#x27;agents conversationnels comme Gemini dans les interfaces cartographiques démontre l&#x27;importance de coupler l&#x27;IA générative avec des bases de données massives en temps réel pour obtenir des recommandations contextuelles hautement pertinentes.</span></li><li><span class="point-bullet">✦</span><span>Le passage de indications textuelles basiques à la planification intégrée d&#x27;itinéraires complexes (voyages, arrêts multiples, estimation du temps de marche) illustre le glissement vers des assistants proactifs et décisionnels.</span></li><li><span class="point-bullet">✦</span><span>La fonctionnalité de Navigation Immersive résout les problématiques critiques de stress au volant en anticipant visuellement les changements de voies et les intersections délicates grâce au rendu 3D.</span></li><li><span class="point-bullet">✦</span><span>Le développement de robots non humanoïdes, comme le cheval mécanique de Deep Robotics, prouve que l&#x27;inspiration biologique peut être combinée à des applications de divertissement ou marketing à forte visibilité.</span></li><li><span class="point-bullet">✦</span><span>Les robots humanoïdes équipés d&#x27;une base roulante (Reflex Robotics) sacrifient la mobilité sur terrain accidenté au profit d&#x27;une efficacité redoutable et d&#x27;un équilibre stable sur surfaces planes pour des tâches de précision.</span></li><li><span class="point-bullet">✦</span><span>La manipulation fine d&#x27;objets (couper des fruits, verser des liquides, retourner un steak) reste l&#x27;un des défis majeurs résolus progressivement par l&#x27;apprentissage robotique couplé à une vision par ordinateur avancée.</span></li><li><span class="point-bullet">✦</span><span>Shotverse** révolutionne la génération vidéo en s&#x27;affranchissant du format de scène continue unique pour basculer automatiquement entre plusieurs angles de caméra et plans au sein d&#x27;une même instruction.</span></li><li><span class="point-bullet">✦</span><span>Le maintien de la cohérence des personnages à travers des changements d&#x27;angles multiples constitue une avancée technique majeure pour la crédibilité des récits visuels générés par IA.</span></li><li><span class="point-bullet">✦</span><span>S&#x27;entraîner sur de véritables séquences cinématographiques plutôt que sur des données synthétiques générées par IA s&#x27;avère être la stratégie gagnante pour préserver la qualité visuelle et le réalisme des modèles de vidéo.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;adoption future de modèles open source (incluant le code d&#x27;inférence, les jeux de données et le pipeline d&#x27;entraînement de Shotverse) démocratisera l&#x27;accès aux techniques de réalisation multi-plans pour l&#x27;ensemble des créateurs indépendants.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cette semaine dans la recherche en IA a été absolument folle. Google intègre une IA puissante directement dans Google Maps. Un nouveau système peut générer des vidéos cinématiques multi-plans en une seule génération. NVIDIA a lancé un nouveau modèle d&#x27;IA agentique massif. Il existe un outil qui peut littéralement voler des effets visuels d&#x27;une vidéo et les appliquer sur une autre.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de galerie de démonstration (EffectMaker Gallery) affichant des exemples de transfert d&#x27;effets visuels entre vidéos.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre &#x27;EffectMaker Gallery&#x27;, pagination &#x27;Page 1 / 7&#x27;, &#x27;Total: 131 items&#x27;, boutons de navigation &#x27;Previous Page&#x27;, &#x27;Next Page&#x27;, &#x27;Go to page&#x27;, et trois sections intitulées &#x27;Reference Video&#x27;, &#x27;Target Image&#x27; et &#x27;Target Video&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la galerie de résultats d&#x27;un outil permettant de transférer des effets visuels d&#x27;une vidéo de référence vers une image ou vidéo cible.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_001_00-00-02.jpg" alt="Un robot humanoïde blanc manipule un flacon de produit nettoyant pour verser du liquide bleu dans une cuvette de toilettes." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Un robot humanoïde blanc manipule un flacon de produit nettoyant pour verser du liquide bleu dans une cuvette de toilettes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_002_00-00-11.jpg" alt="Une grille de 12 vignettes vidéo montrant différents personnages, contextes et ambiances lumineuses cinématographiques." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_002_00-00-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:11</span>
+                        <span class="caption-text">Une grille de 12 vignettes vidéo montrant différents personnages, contextes et ambiances lumineuses cinématographiques.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_003_00-00-19.jpg" alt="Interface de l&#x27;outil EffectMaker Gallery montrant trois colonnes : &#x27;Reference Video&#x27; avec un bébé, &#x27;Target Image&#x27; avec une femme, et &#x27;Target Video&#x27; avec la même femme dotée d&#x27;ailes lumineuses." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_003_00-00-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:19</span>
+                        <span class="caption-text">Interface de l&#x27;outil EffectMaker Gallery montrant trois colonnes : &#x27;Reference Video&#x27; avec un bébé, &#x27;Target Image&#x27; avec une femme, et &#x27;Target Video&#x27; avec la même femme dotée d&#x27;ailes lumineuses.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:22 - 00:00:41</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Nous voyons également des outils de clonage vocal extrêmement avancés et de très étranges démos de robots. Faisons donc le point sur tout cela avant que les robots n&#x27;apprennent à nous cuisiner à la place. C&#x27;est Pursuing AI, et vous regardez le Research Report. Commençons par Google. Cette semaine, Google a introduit plusieurs nouvelles fonctionnalités alimentées par l&#x27;IA pour Google Maps.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Hugging Face Spaces (TADA - Text-Acoustic Dual Alignment LLM) et interface de présentation Google Maps.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;TADA - Text-Acoustic Dual Alignment LLM&quot;, &quot;HumeAI/tada-3b-ml&quot;, &quot;Load Model&quot;, &quot;Voice Prompt&quot;, &quot;Transcript&quot;, &quot;Text to Speak&quot;, un graphique d&#x27;onde audio, et la mention en bas de l&#x27;image de la fillette : &quot;*Do Not Attempt Without Professional Guidance&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;outils d&#x27;IA vocale, démonstration vidéo d&#x27;un robot quadrupède monté par une enfant, puis animation graphique de la fonctionnalité de recherche IA pour Google Maps.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_004_00-00-24.jpg" alt="Interface de l&#x27;outil TADA (Text-Acoustic Dual Alignment LLM) sur Hugging Face Spaces montrant les paramètres de modèle vocal et le champ de transcription." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_004_00-00-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:24</span>
+                        <span class="caption-text">Interface de l&#x27;outil TADA (Text-Acoustic Dual Alignment LLM) sur Hugging Face Spaces montrant les paramètres de modèle vocal et le champ de transcription.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_005_00-00-32.jpg" alt="Démonstration d&#x27;un robot quadrupède rouge et noir en forme de cheval monté par un enfant dans un parc, avec un avertissement textuel en bas." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_005_00-00-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:32</span>
+                        <span class="caption-text">Démonstration d&#x27;un robot quadrupède rouge et noir en forme de cheval monté par un enfant dans un parc, avec un avertissement textuel en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_006_00-00-39.jpg" alt="Animation du logo « Ask Maps » sur fond blanc avec des lignes de construction graphiques bleues." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_006_00-00-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:39</span>
+                        <span class="caption-text">Animation du logo « Ask Maps » sur fond blanc avec des lignes de construction graphiques bleues.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:42 - 00:01:03</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La première s&#x27;appelle Ask Maps. Considérez-le comme un assistant IA intégré directement dans l&#x27;application Maps. Au lieu de chercher manuellement des endroits comme un homme des cavernes, vous pouvez simplement poser une question à Gemini. Par exemple, vous pourriez lui demander de trouver des endroits chaleureux et esthétiques dans une zone spécifique. Le système analyse d&#x27;énormes quantités d&#x27;informations et vous donne des recommandations personnalisées.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application mobile Google Maps intégrant l&#x27;assistant IA Gemini (Ask Maps).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Search here&quot;, &quot;Ask Maps&quot;, &quot;Home&quot;, &quot;Restauran...&quot;, &quot;Birdland Jazz Club&quot;, &quot;Times Square&quot;, et les bulles de dialogue de l&#x27;assistant IA proposant des recommandations à Chelsea.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la fonctionnalité de recherche conversationnelle &quot;Ask Maps&quot; sur Google Maps avec des requêtes en langage naturel et des suggestions de lieux et de tables.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_007_00-00-44.jpg" alt="Interface de l&#x27;application Google Maps montrant le bouton de la fonctionnalité Ask Maps." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_007_00-00-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:44</span>
+                        <span class="caption-text">Interface de l&#x27;application Google Maps montrant le bouton de la fonctionnalité Ask Maps.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_008_00-01-01.jpg" alt="Interface de Google Maps affichant un échange de conversation textuelle avec des recommandations personnalisées et des suggestions de tables." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_008_00-01-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:01</span>
+                        <span class="caption-text">Interface de Google Maps affichant un échange de conversation textuelle avec des recommandations personnalisées et des suggestions de tables.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:04 - 00:01:28</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais voici la partie intéressante. Elle ne se contente pas de lister des restaurants ou des emplacements. L&#x27;IA lit réellement les avis et les commentaires, extrait des informations utiles et résume les informations clés pour vous. Et comme Google Maps a déjà accès à des quantités astronomiques de données, du trafic en temps réel, des milliards de photos, des avis, des fiches d&#x27;établissement et des détails de localisation, l&#x27;IA peut générer des suggestions étonnamment détaillées.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;application Google Maps sur mobile et écrans de présentation graphique animée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Willow Vegan Bistro&quot;, &quot;4.7&quot;, &quot;Open - Closes 10 PM&quot;, &quot;abcV&quot;, &quot;People call the mushroom walnut bolognese a must-order&quot;, &quot;Real-time traffic&quot;, &quot;Crash ahead&quot;, &quot;Imagine a map that&#x27;s more&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle des fonctionnalités d&#x27;IA et de résumé d&#x27;avis de Google Maps, illustrée par des captures d&#x27;interface mobiles et des infographies dynamiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_009_00-01-06.jpg" alt="Interface Google Maps sur mobile montrant la fiche du restaurant &quot;Willow Vegan Bistro&quot; avec sa note et ses horaires." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_009_00-01-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:06</span>
+                        <span class="caption-text">Interface Google Maps sur mobile montrant la fiche du restaurant &quot;Willow Vegan Bistro&quot; avec sa note et ses horaires.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_010_00-01-12.jpg" alt="Interface Google Maps sur mobile affichant une bulle de synthèse textuelle générée par l&#x27;IA basée sur les avis (&quot;People call the mushroom walnut bolognese a must-order&quot;)." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_010_00-01-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:12</span>
+                        <span class="caption-text">Interface Google Maps sur mobile affichant une bulle de synthèse textuelle générée par l&#x27;IA basée sur les avis (&quot;People call the mushroom walnut bolognese a must-order&quot;).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_011_00-01-20.jpg" alt="Grille de captures et d&#x27;interfaces Google Maps illustrant le trafic en temps réel (&quot;Real-time traffic&quot;) avec des cartes de navigation et des alertes d&#x27;incidents." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_011_00-01-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:20</span>
+                        <span class="caption-text">Grille de captures et d&#x27;interfaces Google Maps illustrant le trafic en temps réel (&quot;Real-time traffic&quot;) avec des cartes de navigation et des alertes d&#x27;incidents.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_012_00-01-26.jpg" alt="Écran de transition sur fond clair avec le texte &quot;Imagine a map that&#x27;s more&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_012_00-01-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:26</span>
+                        <span class="caption-text">Écran de transition sur fond clair avec le texte &quot;Imagine a map that&#x27;s more&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:29 - 00:01:50</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Un autre exemple est la planification de voyage. Vous pourriez demander à l&#x27;assistant d&#x27;aider à planifier un voyage en voiture, et il générera un itinéraire complet. Il peut suggérer des itinéraires, mettre en valeur des arrêts intéressants en chemin, et recommander des activités ou des lieux incontournables. En gros, votre agent de voyage vient d&#x27;être remplacé par un chatbot. Google a également introduit une autre fonctionnalité appelée Navigation Immersive.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application Google Maps (fonctionnalité Ask Maps et Navigation Immersive) sur smartphone et système de navigation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte « Hi, Elise. Ask anything, about anywhere. » avec des suggestions de trajets et un clavier virtuel. Sur la carte GPS : indications de direction (« Seneca St »), heure d&#x27;arrivée, vitesse et nom des parcs.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la recherche d&#x27;itinéraire par IA avec l&#x27;assistant Google Maps suivie de la démonstration de la navigation immersive.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_013_00-01-31.jpg" alt="Interface d&#x27;un smartphone affichant l&#x27;assistant de planification de voyage Ask Maps." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_013_00-01-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:31</span>
+                        <span class="caption-text">Interface d&#x27;un smartphone affichant l&#x27;assistant de planification de voyage Ask Maps.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_014_00-01-48.jpg" alt="Interface de navigation GPS immersive montrant une carte routière détaillée en 3D avec les indications de direction." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_014_00-01-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:48</span>
+                        <span class="caption-text">Interface de navigation GPS immersive montrant une carte routière détaillée en 3D avec les indications de direction.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:50 - 00:02:08</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela améliore considérablement la navigation en fournissant un guidage visuel en 3D extrêmement détaillé. Au lieu de simples flèches sur une carte, vous pouvez réellement voir des vues réalistes des bâtiments, des routes, du terrain et des structures environnantes. Le système met en évidence des détails importants tels que les changements de voie, les insertions sur autoroute et les ponts.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de système de navigation automobile en 3D (type CarPlay / Google Maps immersif).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Indications de direction (&quot;0.3 mi Seneca St&quot;, &quot;400 ft Seneca St&quot;), temps d&#x27;arrivée (&quot;2:06 arrival 3 min 0.9 mi&quot;), limitations de vitesse (&quot;60&quot;, &quot;25&quot;), noms de lieux (&quot;Goat Hill Park&quot;, &quot;5th Ave&quot;, &quot;Seneca St&quot;, &quot;Freeway Park&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle d&#x27;un guidage de navigation GPS en 3D montrant le trajet d&#x27;un véhicule à travers un environnement urbain modélisé en trois dimensions.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_015_00-01-52.jpg" alt="Interface de navigation en 3D réaliste montrant une vue aérienne détaillée des autoroutes et des bâtiments environnants avec un itinéraire en surbrillance bleue." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_015_00-01-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:52</span>
+                        <span class="caption-text">Interface de navigation en 3D réaliste montrant une vue aérienne détaillée des autoroutes et des bâtiments environnants avec un itinéraire en surbrillance bleue.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_016_00-02-06.jpg" alt="Interface de navigation en 3D montrant un guidage de rue détaillé avec indication des intersections, des feux de circulation et des noms de rues." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_016_00-02-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:06</span>
+                        <span class="caption-text">Interface de navigation en 3D montrant un guidage de rue détaillé avec indication des intersections, des feux de circulation et des noms de rues.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:08 - 00:02:28</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Par exemple, s&#x27;il y a une voie de tourne-à-gauche spécifique que vous devez emprunter, le système la met clairement en surbrillance. Et parfois, il vous avertit même qu&#x27;immédiatement après le virage, vous devrez changer de voie à nouveau, ce qui est extrêmement utile, surtout si vous êtes du genre de conducteur qui panique et traverse quatre voies à la dernière seconde. La navigation sur autoroute est un autre domaine où cela brille.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application de navigation mobile avec interface cartographique 3D épurée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Indications de direction en haut avec &quot;15th St&quot;, tracé bleu de l&#x27;itinéraire suggéré depuis &quot;Market St&quot;, panneaux de limitation de vitesse (25 / 20 mph), et estimation du temps de trajet (2 min, 500 ft, 2:06 PM).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une simulation de navigation GPS illustrant le guidage précis sur une intersection avec mise en surbrillance de la voie.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_017_00-02-10.jpg" alt="Capture d&#x27;écran d&#x27;une application de navigation sur smartphone montrant l&#x27;itinéraire détaillé pour un tourne-à-gauche sur 15th St." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_017_00-02-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:10</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une application de navigation sur smartphone montrant l&#x27;itinéraire détaillé pour un tourne-à-gauche sur 15th St.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:29 - 00:02:52</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Quand il y a des tonnes de voies, il n&#x27;est souvent pas clair où aller. Le système met en surbrillance la bonne voie, afin que les conducteurs puissent éviter les changements de voie chaotiques de dernière seconde. Et lorsque vous arrivez à destination, l&#x27;application peut également afficher les zones de stationnement à proximité et estimer le temps de marche entre le parking et votre emplacement final. Selon Google, ces fonctionnalités sont actuellement en cours de déploiement à travers les États-Unis et seront bientôt étendues à d&#x27;autres régions.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface mobile de navigation GPS (type Google Maps) et document de présentation textuelle officiel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;Master the final stretch of your drive with helpful guidance...&quot; et &quot;Immersive Navigation starts rolling out today across the U.S...&quot;. Sur l&#x27;interface mobile : indications de voies, vitesse (55 mph, 3 mph), temps de trajet estimé (16 min).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de l&#x27;interface de navigation avec indication des voies complexes et présentation textuelle du déploiement géographique de la fonctionnalité.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_018_00-02-31.jpg" alt="Capture d&#x27;écran d&#x27;un smartphone montrant l&#x27;application de navigation GPS avec la mise en surbrillance des voies." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_018_00-02-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:31</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un smartphone montrant l&#x27;application de navigation GPS avec la mise en surbrillance des voies.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_019_00-02-50.jpg" alt="Capture d&#x27;écran d&#x27;une page de présentation textuelle de Google détaillant le déploiement de la navigation immersive." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_019_00-02-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:50</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une page de présentation textuelle de Google détaillant le déploiement de la navigation immersive.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:53 - 00:03:13</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, parlons des robots. Une entreprise de robotique chinoise appelée Deep Robotics a récemment présenté une machine très inhabituelle. Au lieu de construire un robot humanoïde, ils ont construit un cheval robotique. Oui, un cheval robotique. Le robot peut marcher, trotter et même se dresser sur ses pattes arrière, exactement comme un vrai cheval.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra sans partage d&#x27;écran (extraits vidéo d&#x27;illustration de robots uniquement)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Logos &quot;DEEP Robotics&quot; et texte promotionnel &quot;REDEFINING WHAT&#x27;S POSSIBLE&quot; incrustés à l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle du cheval robotique se déplaçant et se dressant sur ses pattes arrière dans un parc urbain.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:13 - 00:03:37</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il est également assez robuste pour supporter le poid d&#x27;un passager adulte. Les ingénieurs ont même conçu les pattes pour ressembler à la véritable anatomie d&#x27;un cheval. L&#x27;entreprise n&#x27;a pas encore totalement expliqué les cas d&#x27;usage pratiques, mais des robots de ce type pourraient potentiellement être utilisés dans des environnements de divertissement comme les parcs à thèmes. Il est intéressant de noter que le lancement coïncide également avec l&#x27;année du cheval dans le zodiaque chinois, ce qui pourrait donc être en partie une innovation en robotique et en partie un coup marketing.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo d&#x27;illustration sans interface logicielle ni partage d&#x27;écran</p>
+                        <p><strong>Contenu textuel & Code :</strong> Vidéo montrant un robot quadrupède en forme de cheval rouge et noir évoluant sur une pelouse, avec du texte incrusté (*Do Not Attempt Without Professional Guidance et YEAR OF HORSE 2026).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle du robot cheval robotique en mouvement sur l&#x27;herbe et transportant un passager.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:38 - 00:03:58</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une autre démonstration de robotique est venue d&#x27;une startup appelée Reflex Robotics, basée à New York. Ils construisent des robots humanoïdes polyvalents conçus pour les entrepôts, les usines et éventuellement les maisons. Mais leur robot a une particularité. Au lieu de marcher sur des jambes, il utilise une base à roulettes. Cela signifie qu&#x27;il ne peut pas monter les escaliers ni naviguer sur des terrains accidentés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration montrant un prototype de robot en conditions réelles (mode &quot;2X SPEED&quot; affiché en bas à gauche).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Affichage de la mention &quot;2X SPEED&quot; en bas à gauche de la vidéo. Le robot humanoïde à bras articulés et base roulante est en action dans un intérieur domestique (salle de bains).</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot utilise ses bras articulés pour interagir avec des objets du quotidien (flacon, brosse) près des toilettes, démontrant ses capacités de manipulation dans un espace restreint.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_020_00-03-40.jpg" alt="Démonstration du robot Reflex Robotics doté d&#x27;une base à roulettes, manipulant un flacon de produit dans une salle de bains." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_020_00-03-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:40</span>
+                        <span class="caption-text">Démonstration du robot Reflex Robotics doté d&#x27;une base à roulettes, manipulant un flacon de produit dans une salle de bains.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_021_00-03-48.jpg" alt="Le robot sur roues en train d&#x27;effectuer une tâche de nettoyage ou d&#x27;entretien dans les toilettes." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_021_00-03-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:48</span>
+                        <span class="caption-text">Le robot sur roues en train d&#x27;effectuer une tâche de nettoyage ou d&#x27;entretien dans les toilettes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_022_00-03-56.jpg" alt="Vue en plongée du robot humanoïde à base mobile dans une petite pièce, montrant sa structure sans jambes." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_022_00-03-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:56</span>
+                        <span class="caption-text">Vue en plongée du robot humanoïde à base mobile dans une petite pièce, montrant sa structure sans jambes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:58 - 00:04:21</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais sur des surfaces planes, il peut se déplacer très efficacement. Lors de démonstrations, le robot exécute une variété de tâches quotidiennes. Il peut ouvrir des stores de fenêtres, préparer des ingrédients dans la cuisine, couper des fruits, verser des liquides, ajouter des ingrédients en poudre et placer des objets dans un blender. Ces tâches semblent simples pour les humains, mais pour les robots, elles sont extrêmement difficiles car elles exigent un contrôle précis des mains et une manipulation minutieuse des objets.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration robotique montrant le robot domestique blanc et violet &quot;REFLEX&quot; en action dans un intérieur réel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Mentions textuelles incrustées dans les coins de l&#x27;écran : &quot;5X SPEED&quot; et &quot;2X SPEED&quot;, ainsi que le logo ou nom &quot;REFLEX&quot; sur le châssis du robot.</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot effectue des tâches ménagères et culinaires : déplacement sur surface plane, manipulation d&#x27;objets, découpe et préparation d&#x27;aliments dans une cuisine.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_023_00-04-00.jpg" alt="Le robot se déplace dans un appartement et manipule des stores/portes en mode accéléré (5X SPEED)." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_023_00-04-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:00</span>
+                        <span class="caption-text">Le robot se déplace dans un appartement et manipule des stores/portes en mode accéléré (5X SPEED).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_024_00-04-06.jpg" alt="Le robot prépare des ingrédients sur un plan de travail de cuisine, tenant une banane (2X SPEED)." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_024_00-04-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:06</span>
+                        <span class="caption-text">Le robot prépare des ingrédients sur un plan de travail de cuisine, tenant une banane (2X SPEED).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_025_00-04-14.jpg" alt="Le robot coupe ou manipule des fruits (fraises) sur une planche à découper dans la cuisine (2X SPEED)." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_025_00-04-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:14</span>
+                        <span class="caption-text">Le robot coupe ou manipule des fruits (fraises) sur une planche à découper dans la cuisine (2X SPEED).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_026_00-04-19.jpg" alt="Le robot déplace ou place des éléments vers un blender posé sur le comptoir de la cuisine (2X SPEED)." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_026_00-04-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:19</span>
+                        <span class="caption-text">Le robot déplace ou place des éléments vers un blender posé sur le comptoir de la cuisine (2X SPEED).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:22 - 00:04:55</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans une autre démo, le robot ouvre un paquet de steak, le place dans une poêle, le retourne pendant la cuisson et ajoute du beurre. Le résultat est un plat cuisiné prêt à être servi. Maintenant, pour être juste, les démonstrations contiennent des coupes entre les scènes, il n&#x27;est donc pas tout à fait clair quelle partie du processus a été automatisée en continu, mais les capacités restent très impressionnantes. Passons maintenant à la génération de vidéos par IA ; un nouveau système appelé Shotverse peut générer des vidéos cinématographiques à plans multiples en une seule génération, au lieu de produire une seule scène continue, le modèle...</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration vidéo de robotique et de génération de vidéo par IA (Shotverse).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché à l&#x27;écran : &quot;AI Video Generation&quot; et mention &quot;2X SPEED&quot; dans les vidéos de démonstration du robot.</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot de cuisine manipule des ingrédients et des ustensiles pour cuisiner un steak, puis une transition introduit des exemples de génération vidéo cinématique multi-plans par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_027_00-04-24.jpg" alt="Démonstration d&#x27;un robot humanoïde dans une cuisine préparant un steak." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_027_00-04-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:24</span>
+                        <span class="caption-text">Démonstration d&#x27;un robot humanoïde dans une cuisine préparant un steak.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_028_00-04-34.jpg" alt="Gros plan sur le robot manipulant une poêle pour cuire la viande sur une cuisinière." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_028_00-04-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:34</span>
+                        <span class="caption-text">Gros plan sur le robot manipulant une poêle pour cuire la viande sur une cuisinière.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_029_00-04-53.jpg" alt="Exemple de vidéo générée par le système Shotverse montrant une personne en train de travailler sur une structure métallique." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_029_00-04-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:53</span>
+                        <span class="caption-text">Exemple de vidéo générée par le système Shotverse montrant une personne en train de travailler sur une structure métallique.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:55 - 00:05:32</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">bascule automatiquement entre plusieurs angles de caméra et plans, exactement comme un vrai film. Dans l&#x27;exemple montré par les chercheurs, la vidéo générée effectue des transitions fluides entre les scènes tout en maintenant la cohérence des personnages, ce qui confère au résultat un rendu beaucoup plus cinématographique par rapport aux modèles de vidéo par IA traditionnels. La raison pour laquelle cela fonctionne si bien est que le modèle a été entraîné sur de véritables séquences cinématographiques. Selon les chercheurs, l&#x27;entraînement sur des vidéos générées par IA de manière synthétique réduit en réalité la qualité des résultats. Le projet sera éventuellement entièrement en open source. Les développeurs prévoient de publier le modèle, le jeu de données, le pipeline d&#x27;entraînement et l&#x27;inférence.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation de recherche / Article web et exemples vidéo de ShotVerse</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;Training Data&quot;, &quot;Synthetic supervision hurts film-like rendering. Aesthetics drops noticeably and semantics slightly weakens, suggesting real cinematic triplets provide crucial composition/lighting cues beyond what synthetic triplets capture.&quot;, &quot;w/ Synthetic Data&quot;, &quot;Real Cinematic Data (Ours)&quot;, &quot;Code Release Plan&quot;, et bloc BibTeX &quot;@misc{yang2026shotverseadvancingcinematiccamera...}&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle de vidéos générées avec différentes techniques d&#x27;entraînement et affichage du planning de publication du code de recherche.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_030_00-04-57.jpg" alt="Exemple de vidéo générée montrant une transition de plan sur un personnage." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_030_00-04-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:57</span>
+                        <span class="caption-text">Exemple de vidéo générée montrant une transition de plan sur un personnage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_031_00-05-08.jpg" alt="Exemple supplémentaire de vidéo générée par le modèle montrant la cohérence des personnages." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_031_00-05-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:08</span>
+                        <span class="caption-text">Exemple supplémentaire de vidéo générée par le modèle montrant la cohérence des personnages.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_032_00-05-20.jpg" alt="Présentation des données d&#x27;entraînement comparant les données synthétiques et les données cinématiques réelles." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_032_00-05-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:20</span>
+                        <span class="caption-text">Présentation des données d&#x27;entraînement comparant les données synthétiques et les données cinématiques réelles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-rrlCHMdiZIc/frame_033_00-05-30.jpg" alt="Plan du projet open source avec les sections sur les modèles pré-entraînés, le code d&#x27;inférence, le jeu de données et le code de l&#x27;article de recherche (BibTeX)." loading="lazy" onclick="openLightbox('screenshots/YT-rrlCHMdiZIc/frame_033_00-05-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:30</span>
+                        <span class="caption-text">Plan du projet open source avec les sections sur les modèles pré-entraînés, le code d&#x27;inférence, le jeu de données et le code de l&#x27;article de recherche (BibTeX).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:32 - 00:05:43</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">codez une fois que l&#x27;article de recherche est officiellement accepté. Et c&#x27;est tout pour les actualités de la recherche en IA de cette semaine. Si vous souhaitez explorer plus en profondeur l&#x27;un de ces projets, je mettrai les liens dans la description. Merci d&#x27;avoir regardé.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de conclusion de la vidéo avec illustration animée, sans interface logicielle ni démonstration active.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Illustration d&#x27;un cerveau connecté à une puce électronique portant le logo &quot;PAI&quot; dans un cercle néon bleu, avec le texte &quot;The Resea&quot; partiellement visible à l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un écran graphique de clôture de la vidéo de la chaîne Pursuing AI.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

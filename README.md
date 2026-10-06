@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `40 / 84` (`47.6%`)
+- **Vidéos traitées** : `41 / 84` (`48.8%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -56,6 +56,7 @@
 | 2026-04-13 | [Cette IA vient de devenir beaucoup trop dangereuse...](2026-04-13_YT-pwcrhSd92j4_Cette IA vient de devenir beaucoup trop dangereuse..._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-04-13_YT-pwcrhSd92j4_Cette IA vient de devenir beaucoup trop dangereuse..._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 6m 22s | `32 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=pwcrhSd92j4) | `pwcrhSd92j4` |
 | 2026-03-27 | [Seedance 2.0 – Le générateur vidéo IA ultime sur xmk](2026-03-27_YT-WGg88V3RGpQ_Seedance 2.0 – Le générateur vidéo IA ultime sur xmk_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-03-27_YT-WGg88V3RGpQ_Seedance 2.0 – Le générateur vidéo IA ultime sur xmk_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 6m 38s | `41 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=WGg88V3RGpQ) | `WGg88V3RGpQ` |
 | 2026-03-20 | [L'IA est en train de se réinventer... Et personne n'est prêt](2026-03-20_YT-2rgqYDoAETs_L'IA est en train de se réinventer... Et personne n'est prêt_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-03-20_YT-2rgqYDoAETs_L'IA est en train de se réinventer... Et personne n'est prêt_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 57s | `19 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=2rgqYDoAETs) | `2rgqYDoAETs` |
+| 2026-03-17 | [L'IA vient de devenir folle… Google Maps AI, ShotVerse, Neotron 3 et bien plus](2026-03-17_YT-rrlCHMdiZIc_L'IA vient de devenir folle… Google Maps AI, ShotVerse, Neotron 3 et bien plus_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-03-17_YT-rrlCHMdiZIc_L'IA vient de devenir folle… Google Maps AI, ShotVerse, Neotron 3 et bien plus_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 5m 43s | `33 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=rrlCHMdiZIc) | `rrlCHMdiZIc` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
