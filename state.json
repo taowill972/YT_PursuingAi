@@ -41,7 +41,8 @@
     "WGg88V3RGpQ",
     "2rgqYDoAETs",
     "rrlCHMdiZIc",
-    "uP3CLiz35ZY"
+    "uP3CLiz35ZY",
+    "t3EEGWERGFc"
   ],
   "processed_videos": [
     {
@@ -627,9 +628,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-03-13_YT-uP3CLiz35ZY_L'IA se moque des développeurs… Test LeetCode HARD_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-06T10:19:02Z",
       "status": "completed"
+    },
+    {
+      "video_id": "t3EEGWERGFc",
+      "title": "ChatGPT n'a pas su trouver ça… Et vous ?",
+      "raw_title": "ChatGPT Couldn't Find This… Can You?",
+      "filename_md": "2026-03-09_YT-t3EEGWERGFc_ChatGPT n'a pas su trouver ça… Et vous_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-03-09_YT-t3EEGWERGFc_ChatGPT n'a pas su trouver ça… Et vous_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-03-09",
+      "duration": 228,
+      "screenshots_count": 26,
+      "filepath_md": "/root/YT_PursuingAi/2026-03-09_YT-t3EEGWERGFc_ChatGPT n'a pas su trouver ça… Et vous_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-03-09_YT-t3EEGWERGFc_ChatGPT n'a pas su trouver ça… Et vous_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-06T10:24:58Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 42,
+  "completed_count": 43,
   "last_run_timestamp": "2026-10-06T10:00:03Z",
   "status": "running",
   "total_catalog_count": 84

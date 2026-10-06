@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 ChatGPT n&#x27;a pas su trouver ça… Et vous ? — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 ChatGPT n&#x27;a pas su trouver ça… Et vous ?</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-03-09</span>
+                <span class="badge">⏱️ 03m 48s</span>
+                <span class="badge">🆔 <code>t3EEGWERGFc</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=t3EEGWERGFc" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>Tutoriel de pointe sur ChatGPT n'a pas su trouver ça… Et vous ? par Pursuing AI.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Dichotomie texte/image** : ChatGPT excelle souvent dans la logique textuelle et l&#x27;analyse sémantique d&#x27;une image, mais échoue systématiquement lorsqu&#x27;il s&#x27;agit de traduire cette compréhension en repères visuels précis.</span></li><li><span class="point-bullet">✦</span><span>Le piège de l&#x27;assurance artificielle** : L&#x27;IA a tendance à donner des réponses avec une certitude absolue, même lorsqu&#x27;elle se trompe lourdement, agissant à l&#x27;instar d&#x27;un observateur qui devine sans savoir.</span></li><li><span class="point-bullet">✦</span><span>Gestion des bugs techniques** : Le processus de génération d&#x27;images marquées par l&#x27;IA souffre encore de défaillances techniques, comme des liens de téléchargement brisés ou des boucles de régénération hasardeuses.</span></li><li><span class="point-bullet">✦</span><span>Graduation de la difficulté** : Tester un modèle d&#x27;IA par paliers progressifs (du mode facile au mode complexe) est la méthode la plus efficace pour cartographier ses limites réelles.</span></li><li><span class="point-bullet">✦</span><span>Supériorité humaine en perception spatiale** : Pour les tâches nécessitant une finesse de repérage géométrique (comme trouver un crayon minuscule dans un décor chargé), l&#x27;humain surclasse nettement l&#x27;IA.</span></li><li><span class="point-bullet">✦</span><span>Hallucinations graphiques** : Les marquages visuels produits par l&#x27;IA s&#x27;apparentent souvent à des erreurs grossières (&quot;niveau maternel&quot;), contrastant avec la justesse relative de son raisonnement textuel.</span></li><li><span class="point-bullet">✦</span><span>Stratégie de contournement par la description** : En cas d&#x27;échec du marquage visuel, demander une description textuelle détaillée des coordonnées et des couleurs permet de valider si l&#x27;IA a réellement compris l&#x27;image.</span></li><li><span class="point-bullet">✦</span><span>Limites de la vision par IA** : Bien que puissante pour assister l&#x27;œil humain, la vision artificielle souffre encore d&#x27;un manque de précision chirurgicale dans l&#x27;espace 2D.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;importance de l&#x27;esprit critique** : Pour les créateurs de contenu, ces outils doivent être utilisés avec un œil critique aiguisé, l&#x27;intervention humaine restant indispensable pour corriger les erreurs de l&#x27;IA.</span></li><li><span class="point-bullet">✦</span><span>Valeur du divertissement technique** : Mettre en scène les ratés et les contradictions d&#x27;une IA dans une vidéo de type &quot;test&quot; crée un contenu captivant, pédagogique et hautement engageant pour l&#x27;audience.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:19</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Aujourd&#x27;hui, nous allons tester quelque chose d&#x27;intéressant. Est-ce que ChatGPT peut réellement trouver des objets cachés à l&#x27;intérieur d&#x27;images comme un humain, ou devine-t-il simplement avec assurance comme votre ami qui n&#x27;a jamais étudié mais dit quand même que l&#x27;examen est facile ? C&#x27;est Pursuing AI, et vous regardez le rapport de recherche. Alors voici la première image.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de titre de la chaîne Pursuing AI et visuels d&#x27;illustration thématiques.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;The Research Report&quot; avec un logo de cerveau et une puce électronique portant la mention &quot;PAI&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de la première image testée pour évaluer la capacité de ChatGPT à identifier des objets cachés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_001_00-00-02.jpg" alt="Illustration d&#x27;une femme dans une cuisine style dessin animé avec des objets à chercher, en lien avec le test des capacités de ChatGPT." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Illustration d&#x27;une femme dans une cuisine style dessin animé avec des objets à chercher, en lien avec le test des capacités de ChatGPT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_002_00-00-17.jpg" alt="Écran de titre du rapport de recherche de Pursuing AI avec un cerveau connecté à une puce PAI dans un cercle néon bleu." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_002_00-00-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:17</span>
+                        <span class="caption-text">Écran de titre du rapport de recherche de Pursuing AI avec un cerveau connecté à une puce PAI dans un cercle néon bleu.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:19 - 00:00:37</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La tâche de ChatGPT est de trouver cinq éléments. Voyons s&#x27;il a de la vision ou juste du feeling. Il me donne l&#x27;emplacement de tous les éléments. Vérifions-les un par un. D&#x27;abord, le crayon. ChatGPT dit dans la zone en bas à droite au-dessus d&#x27;un carnet ouvert. Vérifions. Ouais, c&#x27;est correct.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de ChatGPT affichant un jeu d&#x27;objets cachés et une réponse textuelle détaillée listant les coordonnées de chaque objet.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de la réponse de ChatGPT : &quot;I identified the five numbered items and marked their positions in the image. Items found: 1. Pencil - bottom-right area, above an open notebook...&quot; et le prompt initial &quot;Find all the numbered items shown in this image. Identify each item and mark its location in the image&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;image de test avec les objets numérotés, puis bascule sur l&#x27;interface de ChatGPT pour lire les emplacements identifiés par l&#x27;IA et les vérifier un par un.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_003_00-00-21.jpg" alt="Image d&#x27;un jeu de recherche d&#x27;objets cachés avec une liste numérotée de 1 à 5 montrant un crayon, une petite pelle, une capsule, un téléphone et un sac à dos." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_003_00-00-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:21</span>
+                        <span class="caption-text">Image d&#x27;un jeu de recherche d&#x27;objets cachés avec une liste numérotée de 1 à 5 montrant un crayon, une petite pelle, une capsule, un téléphone et un sac à dos.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_004_00-00-28.jpg" alt="Interface de ChatGPT affichant les résultats textuels de l&#x27;analyse avec la liste numérotée des 5 objets trouvés et leurs emplacements précis dans l&#x27;image." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_004_00-00-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:28</span>
+                        <span class="caption-text">Interface de ChatGPT affichant les résultats textuels de l&#x27;analyse avec la liste numérotée des 5 objets trouvés et leurs emplacements précis dans l&#x27;image.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:38 - 00:01:03</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, pelle. ChatGPT dit en bas à gauche au centre près du livre ouvert et des petites notes. Voici les notes. Voici le livre. Oui, c&#x27;est également correct. Élément suivant, bouchon de bouteille. En bas au centre près du bouton vert et des papiers. Voici le bouton, les papiers et oui, correct à nouveau. Prochain, smartphone. À gauche du genou du garçon près de la tomate. Amusé. À gauche du genou près de la tomate.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de ChatGPT (mode sombre) affichant des réponses textuelles structurées avec listes à puces et images miniatures de type puzzle/jeu d&#x27;objets cachés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché dans ChatGPT : &quot;Items found: 1. Pencil - bottom-right area, above an open notebook. 2. Shovel - lower-left center, near the open book and small notes. 3. Bottle cap - lower center, close to the green button and papers. 4. Smartphone - left of the boy&#x27;s knee, near the tomato. 5. Backpack - right-lower area, near the cassette player.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole et sélectionne du texte dans l&#x27;interface de ChatGPT tandis que l&#x27;audio détaille l&#x27;analyse et la vérification des objets identifiés par l&#x27;IA sur l&#x27;image illustrée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_005_00-00-40.jpg" alt="Interface de ChatGPT affichant l&#x27;analyse textuelle et la liste des objets trouvés dans l&#x27;image avec mise en surbrillance de l&#x27;élément pelle." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_005_00-00-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:40</span>
+                        <span class="caption-text">Interface de ChatGPT affichant l&#x27;analyse textuelle et la liste des objets trouvés dans l&#x27;image avec mise en surbrillance de l&#x27;élément pelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_006_00-00-47.jpg" alt="Illustration d&#x27;un jeu de type &quot;cherche et trouve&quot; montrant un cercle rouge sur une pelle miniature posée dans l&#x27;herbe près de notes et d&#x27;un livre." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_006_00-00-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:47</span>
+                        <span class="caption-text">Illustration d&#x27;un jeu de type &quot;cherche et trouve&quot; montrant un cercle rouge sur une pelle miniature posée dans l&#x27;herbe près de notes et d&#x27;un livre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_007_00-00-55.jpg" alt="Illustration du jeu montrant un cercle rouge sur un bouchon de bouteille et une flèche orange pointant vers un bouton vert et des papiers." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_007_00-00-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:55</span>
+                        <span class="caption-text">Illustration du jeu montrant un cercle rouge sur un bouchon de bouteille et une flèche orange pointant vers un bouton vert et des papiers.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_008_00-01-01.jpg" alt="Interface de ChatGPT affichant l&#x27;analyse textuelle avec mise en surbrillance de l&#x27;élément smartphone (&quot;left of the boy&#x27;s knee, near the tomato&quot;)." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_008_00-01-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:01</span>
+                        <span class="caption-text">Interface de ChatGPT affichant l&#x27;analyse textuelle avec mise en surbrillance de l&#x27;élément smartphone (&quot;left of the boy&#x27;s knee, near the tomato&quot;).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:08 - 00:01:46</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Jusqu&#x27;à présent, ChatGPT s&#x27;en sort très bien. Mais voici maintenant le dernier élément, le sac à dos. ChatGPT dit qu&#x27;il se trouve dans la zone inférieure droite près du lecteur de cassette. Mais il y a un petit problème. Ce n&#x27;est pas un sac à dos. C&#x27;est en fait un clip de ceinture. Et dans cette zone, il n&#x27;y a même pas de clip de ceinture présent. Le vrai clip est ici sur la taille de la fille. Problème de compétence. Mais attendez, il me donne aussi une image marquée montrant où se trouvent les éléments. Téléchargeons-la. Sauf que le téléchargement est cassé. Quand je lui dis que le lien est mort, il en génère un nouveau. Et c&#x27;est là que ça devient bizarre. Il obtient les emplacements textuels</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de ChatGPT et interface graphique d&#x27;un jeu de puzzle visuel de type &quot;cherche et trouve&quot; avec des éléments numérotés de 1 à 5 en bas de l&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de ChatGPT listant les éléments (&quot;1. Pencil&quot;, &quot;2. Shovel&quot;, &quot;3. Bottle cap&quot;, &quot;4. Smartphone&quot;, &quot;5. Backpack&quot;) avec leurs descriptions de position, et liens hypertextes &quot;Download the marked image&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole le lien de téléchargement de l&#x27;image dans l&#x27;interface de ChatGPT, puis l&#x27;affichage bascule sur l&#x27;image du puzzle avec des flèches et des cercles de marquage.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_009_00-01-10.jpg" alt="Interface de ChatGPT affichant la liste des 5 éléments trouvés et le lien de téléchargement de l&#x27;image marquée." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_009_00-01-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Interface de ChatGPT affichant la liste des 5 éléments trouvés et le lien de téléchargement de l&#x27;image marquée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_010_00-01-21.jpg" alt="Gros plan sur les icônes des objets du jeu de puzzle, avec une flèche rose pointant vers l&#x27;élément numéro 5 (un clip de ceinture)." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_010_00-01-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:21</span>
+                        <span class="caption-text">Gros plan sur les icônes des objets du jeu de puzzle, avec une flèche rose pointant vers l&#x27;élément numéro 5 (un clip de ceinture).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_011_00-01-34.jpg" alt="Interface de ChatGPT montrant à nouveau le texte descriptif et le lien cliquable de téléchargement." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_011_00-01-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:34</span>
+                        <span class="caption-text">Interface de ChatGPT montrant à nouveau le texte descriptif et le lien cliquable de téléchargement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_012_00-01-44.jpg" alt="Image générée par IA d&#x27;un jeu de type &quot;cherche et trouve&quot; en milieu naturel avec des cercles blancs indiquant les emplacements des objets." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_012_00-01-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:44</span>
+                        <span class="caption-text">Image générée par IA d&#x27;un jeu de type &quot;cherche et trouve&quot; en milieu naturel avec des cercles blancs indiquant les emplacements des objets.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:46 - 00:02:18</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">c&#x27;est vrai, mais les marquages réels sur l&#x27;image sont totalement à côté de la plaque. Le texte montre un gros QI, mais le dessin est d&#x27;un niveau maternel. Maintenant, augmentons la difficulté. Voici une autre image. La tâche de ChatGPT est de trouver cette peinture à l&#x27;intérieur de la scène. Pouvez-vous la trouver avant l&#x27;IA ? ChatGPT dit dans la zone supérieure gauche. La femme la tient dans sa main gauche levée vers le mur, directement sous l&#x27;horloge à droite de la guitare bleue. Boum ! Correct ! Il a trouvé la carte postale en un seul prompt. Mais peut-il la marquer ? Pas vraiment.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de ChatGPT en mode sombre montrant l&#x27;historique de conversation et les réponses textuelles de l&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de prompt de l&#x27;utilisateur demandant de trouver l&#x27;objet dans l&#x27;image principale, suivi de la réponse détaillée de l&#x27;IA : &quot;Location in the main image&quot;, &quot;Precise visual path&quot;, et la réponse finale surlignée en bleu.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une nouvelle image plus complexe, puis affiche l&#x27;analyse textuelle détaillée générée par ChatGPT pour localiser précisément l&#x27;objet demandé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_013_00-01-48.jpg" alt="Image illustrant la tâche précédente avec des cercles de marquage sur l&#x27;herbe et des icônes d&#x27;objets en bas." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_013_00-01-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:48</span>
+                        <span class="caption-text">Image illustrant la tâche précédente avec des cercles de marquage sur l&#x27;herbe et des icônes d&#x27;objets en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_014_00-01-57.jpg" alt="Nouvelle image d&#x27;un test de recherche visuelle montrant une femme au centre entourée d&#x27;objets variés." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_014_00-01-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:57</span>
+                        <span class="caption-text">Nouvelle image d&#x27;un test de recherche visuelle montrant une femme au centre entourée d&#x27;objets variés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_015_00-02-08.jpg" alt="Interface sombre de ChatGPT affichant l&#x27;analyse textuelle détaillée de l&#x27;emplacement de l&#x27;objet dans l&#x27;image." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_015_00-02-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:08</span>
+                        <span class="caption-text">Interface sombre de ChatGPT affichant l&#x27;analyse textuelle détaillée de l&#x27;emplacement de l&#x27;objet dans l&#x27;image.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:18 - 00:02:44</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;était proche de la carte postale. Bien essayé, mais raté. Maintenant, il est temps d&#x27;augmenter encore un peu le niveau de difficulté. Pouvez-vous voir le crayon dans cette image ? Essayez de le trouver. Si vous l&#x27;avez trouvé, félicitations, vous avez peut-être le pouvoir de remplacer l&#x27;IA. Déçu, ChatGPT désigne ce robot juste ici, mais ce n&#x27;est pas un crayon. C&#x27;est un livre. Le vrai crayon est par ici. Le marquage est faux. Encore.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Séquence vidéo de test d&#x27;intelligence artificielle avec des images de test visuelles et des repères graphiques superposés (cercles rouges).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Visuels successifs : une scène d&#x27;atelier avec un personnage féminin et divers objets, puis une superposition de livres empilés où l&#x27;IA commet une erreur d&#x27;identification visuelle.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur commente l&#x27;incapacité de l&#x27;IA à identifier correctement un crayon parmi une pile de livres, en montrant les erreurs de ciblage avec des cercles rouges.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_016_00-02-20.jpg" alt="Image générée par IA montrant une femme dans un atelier d&#x27;artiste, avec un cercle rouge pointant vers une zone vide près d&#x27;une carte postale." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_016_00-02-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:20</span>
+                        <span class="caption-text">Image générée par IA montrant une femme dans un atelier d&#x27;artiste, avec un cercle rouge pointant vers une zone vide près d&#x27;une carte postale.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_017_00-02-27.jpg" alt="Image montrant une pile dense de livres empilés horizontalement aux tranches multicolores." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_017_00-02-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:27</span>
+                        <span class="caption-text">Image montrant une pile dense de livres empilés horizontalement aux tranches multicolores.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_018_00-02-42.jpg" alt="Même image de pile de livres avec un cercle rouge et une icône de curseur cliquant sur un livre jaune désigné à tort comme un crayon." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_018_00-02-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:42</span>
+                        <span class="caption-text">Même image de pile de livres avec un cercle rouge et une icône de curseur cliquant sur un livre jaune désigné à tort comme un crayon.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:44 - 00:03:03</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les marquages de ChatGPT sont un désordre, mais son texte est généralement correct. Je lui ai donc demandé une description. Il dit : descendez à partir de la rangée du milieu des livres. Il est allongé horizontalement avec un corps jaune-orange. Honnêtement, cette description m&#x27;a rendu plus confus qu&#x27;un processeur graphique essayant de rendre une main.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de ChatGPT en mode sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de la conversation affichant une question utilisateur « Now tell me where is the pencil » et la réponse détaillée de ChatGPT avec des puces (« Look slightly to the right of the center of the picture », « Move a little downward from the middle row of books », etc.) et un champ de saisie en bas avec la question « Can you describe briefly what&#x27;s the pencil exact location ».</p>
+                        <p><strong>Action / Démonstration :</strong> Un curseur de souris clique sur le bouton d&#x27;envoi en bas à droite du champ de saisie de texte.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_019_00-02-46.jpg" alt="Interface de l&#x27;application ChatGPT affichant la réponse textuelle à une question sur la localisation d&#x27;un crayon." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_019_00-02-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:46</span>
+                        <span class="caption-text">Interface de l&#x27;application ChatGPT affichant la réponse textuelle à une question sur la localisation d&#x27;un crayon.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:03 - 00:03:21</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour être sûr à 100 %, je lui ai demandé la couleur. Il a trouvé la bonne couleur, jaune-orange. Mais la position ? Échec total. Joyeux, baissons la difficulté. Pouvez-vous voir le serpent ? Pour les humains, c&#x27;est le mode facile. ChatGPT dit en haut à droite, enroulé sur une banane. Il se fond dans le jaune.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface sombre de ChatGPT avec des zones de texte et des résultats d&#x27;analyse d&#x27;images.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de la question &quot;Can you describe briefly what&#x27;s the pencil exact location&quot; et description détaillée de la position de l&#x27;objet ; description du serpent en haut à droite : &quot;The snake is in the upper-right area of the image, coiled on top of a banana. It blends with the banana&#x27;s yellow color...&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;interface de ChatGPT analysant des images pour tester ses capacités de vision artificielle sur des détails complexes.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_020_00-03-05.jpg" alt="Interface de ChatGPT affichant l&#x27;analyse textuelle de la position exacte d&#x27;un crayon entre des piles de livres." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_020_00-03-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:05</span>
+                        <span class="caption-text">Interface de ChatGPT affichant l&#x27;analyse textuelle de la position exacte d&#x27;un crayon entre des piles de livres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_021_00-03-12.jpg" alt="Gros plan sur une image complexe remplie de bananes jaunes où un serpent camouflé est présent en haut à droite." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_021_00-03-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:12</span>
+                        <span class="caption-text">Gros plan sur une image complexe remplie de bananes jaunes où un serpent camouflé est présent en haut à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_022_00-03-19.jpg" alt="Interface de ChatGPT affichant le résultat de l&#x27;analyse avec le texte décrivant le serpent enroulé sur une banane." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_022_00-03-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:19</span>
+                        <span class="caption-text">Interface de ChatGPT affichant le résultat de l&#x27;analyse avec le texte décrivant le serpent enroulé sur une banane.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:21 - 00:03:40</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Exactement. Ça donne même une image marquée, mais comme toujours, la marque est juste un tout petit peu à côté. C&#x27;est comme si l&#x27;IA jouait aux fléchettes en portant un bandeau sur les yeux. Alors, qu&#x27;avons-nous appris ? ChatGPT peut trouver des objets cachés que les humains pourraient rater. Mais lorsqu&#x27;il s&#x27;agit d&#x27;un marquage visuel précis, il hallucine encore un peu.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de ChatGPT (mode sombre) et interfaces de jeux ou d&#x27;images de type &quot;cherche et trouve&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de prompt : &quot;Find the snake in the image, mark it with a red circle, and briefly describe its exact location in the scene.&quot; Texte de réponse : &quot;I found the snake and marked it. Download the marked image: Download the image. Exact location: The snake is in the upper-right area of the image...&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de l&#x27;interface de ChatGPT affichant les résultats d&#x27;analyse d&#x27;image et affichage d&#x27;exemples visuels de jeux de recherche d&#x27;objets cachés avec des marquages.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_023_00-03-23.jpg" alt="Interface de ChatGPT montrant l&#x27;analyse textuelle et les résultats de la recherche d&#x27;un serpent caché dans une image." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_023_00-03-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:23</span>
+                        <span class="caption-text">Interface de ChatGPT montrant l&#x27;analyse textuelle et les résultats de la recherche d&#x27;un serpent caché dans une image.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_024_00-03-31.jpg" alt="Deux images de jeux ou illustrations de type &quot;cherche et trouve&quot; avec des personnages et des objets cachés." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_024_00-03-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:31</span>
+                        <span class="caption-text">Deux images de jeux ou illustrations de type &quot;cherche et trouve&quot; avec des personnages et des objets cachés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_025_00-03-38.jpg" alt="Deux images de type &quot;cherche et trouve&quot; (une pile de livres et un régime de bananes) avec des cercles rouges indiquant des zones d&#x27;intérêt." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_025_00-03-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:38</span>
+                        <span class="caption-text">Deux images de type &quot;cherche et trouve&quot; (une pile de livres et un régime de bananes) avec des cercles rouges indiquant des zones d&#x27;intérêt.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:40 - 00:03:48</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La vision par IA est puissante. Mais les humains restent les rois de cache-cache. Et c&#x27;était le rapport de recherche. Abonnez-vous pour plus de contenu.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de conclusion / graphique animé de la chaîne Pursuing AI.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;The Research Report&quot;. Illustration visuelle d&#x27;un cerveau humain relié par des câbles à un processeur central portant le logo &quot;PAI&quot; entouré d&#x27;un cercle néon bleu sur fond noir.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage fixe de l&#x27;écran de fin et du titre du rapport de recherche.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-t3EEGWERGFc/frame_026_00-03-44.jpg" alt="Écran de fin de la vidéo affichant un cerveau connecté à un processeur PAI et le texte The Research Report." loading="lazy" onclick="openLightbox('screenshots/YT-t3EEGWERGFc/frame_026_00-03-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:44</span>
+                        <span class="caption-text">Écran de fin de la vidéo affichant un cerveau connecté à un processeur PAI et le texte The Research Report.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
