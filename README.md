@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `37 / 84` (`44.0%`)
+- **Vidéos traitées** : `38 / 84` (`45.2%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -53,6 +53,7 @@
 | 2026-05-12 | [Unitree GD01 vient de révolutionner la robotique pour toujours 🤯 - Premier mécha habité au monde](2026-05-12_YT-MLtl-sRcsxU_Unitree GD01 vient de révolutionner la robotique pour toujours 🤯 Premier mécha h_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-05-12_YT-MLtl-sRcsxU_Unitree GD01 vient de révolutionner la robotique pour toujours 🤯 Premier mécha h_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 6m 32s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=MLtl-sRcsxU) | `MLtl-sRcsxU` |
 | 2026-04-27 | [ChatGPT Image 2 est hallucinant 🤯 Test complet + Guide d'accès pas cher](2026-04-27_YT-PuzCpo9dBEY_ChatGPT Image 2 est hallucinant 🤯 Test complet + Guide d'accès pas cher_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-04-27_YT-PuzCpo9dBEY_ChatGPT Image 2 est hallucinant 🤯 Test complet + Guide d'accès pas cher_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 48s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=PuzCpo9dBEY) | `PuzCpo9dBEY` |
 | 2026-04-19 | [La stratégie d'Opus 4.7 vient d'être dévoilée](2026-04-19_YT-oWIRBWQfD08_La stratégie d'Opus 4.7 vient d'être dévoilée_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-04-19_YT-oWIRBWQfD08_La stratégie d'Opus 4.7 vient d'être dévoilée_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 02s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=oWIRBWQfD08) | `oWIRBWQfD08` |
+| 2026-04-13 | [Cette IA vient de devenir beaucoup trop dangereuse...](2026-04-13_YT-pwcrhSd92j4_Cette IA vient de devenir beaucoup trop dangereuse..._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-04-13_YT-pwcrhSd92j4_Cette IA vient de devenir beaucoup trop dangereuse..._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 6m 22s | `32 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=pwcrhSd92j4) | `pwcrhSd92j4` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
