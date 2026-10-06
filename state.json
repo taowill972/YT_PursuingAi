@@ -46,7 +46,8 @@
     "eI7gfK5E9N4",
     "OAC-8KbNtmE",
     "5q4YKN-hMJo",
-    "0KVNZDz1ggg"
+    "0KVNZDz1ggg",
+    "IJTAs4ZFk_w"
   ],
   "processed_videos": [
     {
@@ -702,9 +703,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-02-23_YT-0KVNZDz1ggg_Cet outil vocal IA ne devrait pas exister…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-06T16:21:48Z",
       "status": "completed"
+    },
+    {
+      "video_id": "IJTAs4ZFk_w",
+      "title": "Défi Diviser ou Voler avec ChatGPT et Gemini 😲",
+      "raw_title": "Split or Steal Challenge With Chatgpt And Gemini 😲",
+      "filename_md": "2026-02-17_YT-IJTAs4ZFk_w_Défi Diviser ou Voler avec ChatGPT et Gemini 😲_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-02-17_YT-IJTAs4ZFk_w_Défi Diviser ou Voler avec ChatGPT et Gemini 😲_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-02-17",
+      "duration": 397,
+      "screenshots_count": 24,
+      "filepath_md": "/root/YT_PursuingAi/2026-02-17_YT-IJTAs4ZFk_w_Défi Diviser ou Voler avec ChatGPT et Gemini 😲_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-02-17_YT-IJTAs4ZFk_w_Défi Diviser ou Voler avec ChatGPT et Gemini 😲_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-06T16:27:34Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 47,
+  "completed_count": 48,
   "last_run_timestamp": "2026-10-06T16:00:05Z",
   "status": "running",
   "total_catalog_count": 84

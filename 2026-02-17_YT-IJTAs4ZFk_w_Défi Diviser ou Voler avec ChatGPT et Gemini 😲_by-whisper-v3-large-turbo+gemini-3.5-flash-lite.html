@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Défi Diviser ou Voler avec ChatGPT et Gemini 😲 — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Défi Diviser ou Voler avec ChatGPT et Gemini 😲</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-02-17</span>
+                <span class="badge">⏱️ 06m 37s</span>
+                <span class="badge">🆔 <code>IJTAs4ZFk_w</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=IJTAs4ZFk_w" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* explore une expérience comportementale et psychologique fascinante mettant en scène deux modèles d'intelligence artificielle majeurs, ChatGPT et Gemini, confrontés au célèbre dilemme de la théorie des jeux : « Diviser ou Voler » (Split or Steal). Conçu à l'origine pour briser les humains en provoquant doutes, trahisons et sueurs froides, le jeu est ici dépouillé de toute émotion pour tester la pure logique algorithmique. Les IA doivent naviguer à travers un ensemble de 10 boules dorées composites, comprenant des notes d'étoiles (récompenses) et des boules tueuses (pièges), avant de prendre une décision finale de coopération ou de trahison. À travers cette mise en scène narrative rythmée, le créateur démontre comment des intelligences artificielles gèrent l'échec cumulé, la subversion de rôles et l'optimisation des gains sous contrainte.</p><p>Sur le plan de la production visuelle et technologique, ce contenu met en lumière la puissance des outils de pointe en génération de vidéo par IA. En s'appuyant sur des solutions comme Seedance 2.5, Kling 3.0 et Midjourney, le créateur parvient à illustrer graphiquement et de manière immersive chaque étape du jeu psychologique sans avoir recours à des tournages traditionnels complexes. Cette approche hybride entre narration philosophique, tests comportementaux sur l'IA et illustration visuelle générée par ordinateur offre un contenu hautement engageant. Pour les créateurs de vidéo, cette méthodologie ouvre la voie à la création de documentaires futuristes, de fictions conceptuelles et de chroniques technologiques entièrement automatisées ou assistées par IA, réduisant drastiquement les coûts de production tout en maximisant l'impact visuel.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Dépouiller l&#x27;émotion pour tester la logique pure** : Retirer la dimension affective d&#x27;un jeu de trahison permet d&#x27;analyser la manière dont des modèles de langage calculent l&#x27;espérance mathématique face à l&#x27;échec.</span></li><li><span class="point-bullet">✦</span><span>Définir des rôles asymétriques et croisés** : Assigner des objectifs opposés et spécifiques à chaque IA (Gemini cherchant les étoiles et ChatGPT éliminant les pièges) crée une dynamique de tension narrative immédiate.</span></li><li><span class="point-bullet">✦</span><span>Gérer l&#x27;erreur et l&#x27;inversion de rôle** : L&#x27;expérimentation montre que ChatGPT a joué à l&#x27;inverse de son rôle initial en éliminant par erreur les meilleures récompenses, illustrant la nécessité de robustesse dans le prompt engineering.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;impact psychologique de l&#x27;échec cumulé** : Face à la perte successive des boules à 4 et 5 étoiles, les IA expriment verbalement la frustration et la conscience d&#x27;un « désastre » opérationnel imminent.</span></li><li><span class="point-bullet">✦</span><span>Le ratio risque/récompense comme boussole** : Lorsque la cagnotte est réduite à trois modestes étoiles au dernier tour, le calcul rationnel de Gemini démontre que le coût d&#x27;une trahison surpasse largement son bénéfice potentiel.</span></li><li><span class="point-bullet">✦</span><span>La supériorité de la coopération algorithmique** : Contrairement aux humains qui cèdent souvent à la panique ou à la vengeance, les IA choisissent unanimement de partager, guidées par l&#x27;optimisation pure et l&#x27;absence totale d&#x27;ego.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;apprentissage par l&#x27;erreur systémique** : L&#x27;intelligence ne réside pas dans l&#x27;absence d&#x27;erreurs (les IA ayant mal joué au début), mais dans la capacité à ne pas y persister lors de la décision finale.</span></li><li><span class="point-bullet">✦</span><span>Optimiser la narration visuelle par l&#x27;IA** : Combiner Midjourney pour les concepts et Kling/Seedance pour le mouvement permet de créer des vidéos de vulgarisation technologique hautement captivantes à moindre coût.</span></li><li><span class="point-bullet">✦</span><span>Piège à éviter : la perte de contrôle des rôles** : Veiller à ce que les prompts initiaux des agents conversationnels soient suffisamment étanches pour éviter qu&#x27;un modèle ne sabote involontairement l&#x27;objectif global de l&#x27;équipe.</span></li><li><span class="point-bullet">✦</span><span>Transformer un concept abstrait en spectacle visuel** : Traduire des algorithmes et des théories de jeux en une compétition tangible de « boules dorées » est une stratégie de storytelling redoutable pour retenir l&#x27;attention de l&#x27;audience.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Qu&#x27;arrive-t-il lorsque deux modèles d&#x27;IA participent à un jeu psychologique conçu pour briser les humains ? Vous avez déjà vu des gens jouer à &quot;voler ou partager&quot;. Des paumes moites, des sourires forcés, des promesses en l&#x27;air. Un faux mouvement et boum, des problèmes de confiance à vie. Mais aujourd&#x27;hui, nous retirons l&#x27;émotion de l&#x27;équation.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra sans partage d&#x27;écran</p>
+                        <p><strong>Contenu textuel & Code :</strong> Logos et extraits vidéo d&#x27;illustration montrant des personnes participant à un jeu de type &quot;Split or Steal&quot; (Vikkstar et KSI) puis un public réagissant dans un décor extérieur de soirée.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur introduit le sujet du test psychologique entre deux IA en incrustant des graphismes d&#x27;introduction et des extraits de référence humaine.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:22 - 00:00:41</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ou du moins, nous essayons. Deux machines, zéro sentiment, logique pure. Ou du moins le pensons-nous. C&#x27;est Pursuing AI, et vous regardez le rapport de recherche. D&#x27;abord, j&#x27;explique les règles du jeu aux deux IA. Il y a 10 boules dorées devant elles.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de Google Gemini sur fond sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché à l&#x27;écran : &quot;Hi Pursuing&quot;, &quot;Where should we start?&quot;, ainsi qu&#x27;une image de 10 boules dorées alignées sur des socles transparents et numérotées de 1 à 10.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation à l&#x27;écran des 10 boules dorées du jeu dans l&#x27;interface de l&#x27;IA Gemini.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_001_00-00-39.jpg" alt="Interface de Gemini affichant une image avec 10 boules dorées numérotées et la question &quot;Where should we start?&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_001_00-00-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:39</span>
+                        <span class="caption-text">Interface de Gemini affichant une image avec 10 boules dorées numérotées et la question &quot;Where should we start?&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:41 - 00:01:10</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais voici un rebondissement. Toutes les boules ne se valent pas. Cinq d&#x27;entre elles sont des boules tueuses. Si elles sont choisies, elles ne rapportent rien du jeu. Les cinq autres boules portent chacune une note d&#x27;étoiles du Play Store. Une étoile, deux étoiles, trois étoiles, quatre étoiles et cinq étoiles. Chaque IA a une mission différente. La tâche de Gemini est de trouver les boules avec des notes d&#x27;étoiles et de les ajouter dans la section des récompenses. Mais s&#x27;il trouve des boules tueuses, cela va aussi dans la section des récompenses, ce qui signifie qu&#x27;il n&#x27;obtient rien.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Google Gemini (mode sombre) avec affichage de texte conversationnel et de visuels de jeu.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte des règles du jeu &quot;Split and Steal Game Rules&quot;, messages de l&#x27;utilisateur et de Gemini, objectifs (&quot;My Goal (Gemini)&quot;, &quot;The Risk&quot;, &quot;The Counter-Play&quot;), et 10 boules dorées affichant des étiquettes &quot;KILLER&quot; ou des étoiles (1 à 5).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle des 10 boules du jeu et des règles textuelles expliquant la mission de Gemini face aux boules &quot;Killer&quot; et étoilées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_002_00-00-43.jpg" alt="Interface montrant 10 boules dorées numérotées de 1 à 10, étiquetées alternativement &quot;KILLER&quot; ou avec des étoiles." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_002_00-00-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:43</span>
+                        <span class="caption-text">Interface montrant 10 boules dorées numérotées de 1 à 10, étiquetées alternativement &quot;KILLER&quot; ou avec des étoiles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_003_00-01-00.jpg" alt="Interface de l&#x27;assistant Google Gemini affichant les règles du jeu &quot;Split and Steal&quot; et des boules étoilées." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_003_00-01-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:00</span>
+                        <span class="caption-text">Interface de l&#x27;assistant Google Gemini affichant les règles du jeu &quot;Split and Steal&quot; et des boules étoilées.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_004_00-01-08.jpg" alt="Interface de Gemini affichant la suite des règles du jeu et des boules &quot;KILLER&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_004_00-01-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:08</span>
+                        <span class="caption-text">Interface de Gemini affichant la suite des règles du jeu et des boules &quot;KILLER&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:10 - 00:01:44</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et la tâche de ChatGPT est d&#x27;identifier les boules tueuses et de les éliminer. Mais si ChatGPT trouve par erreur la boule avec évaluation par étoiles, alors il l&#x27;élimine aussi. Même ensemble de boules, objectifs différents, et chaque choix compte. Les deux ont compris leurs tâches. Commençons la première étape avec ChatGPT. Voyons si ChatGPT peut trouver la boule tueuse du premier coup ou non. ChatGPT choisit la boule numéro cinq et la cinquième boule est une boule tueuse. ChatGPT parvient à trouver la première boule tueuse du premier coup. ChatGPT est vraiment</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface sombre de ChatGPT 5.2 avec une boîte de dialogue textuelle et une zone de saisie en bas (&quot;Ask anything&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché dans l&#x27;interface détaillant les règles du jeu : dix boules dorées, cinq boules tueuses sans récompense, cinq boules avec des notes de 1 à 5 étoiles. Rôle de Gemini et de ChatGPT, avec la consigne de suivre attentivement les objectifs.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des consignes textuelles du jeu et de la réponse de ChatGPT confirmant la compréhension des règles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_005_00-01-12.jpg" alt="Interface de ChatGPT affichant les règles du jeu &quot;Split and Steal&quot; et les instructions attribuées à chaque IA." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_005_00-01-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:12</span>
+                        <span class="caption-text">Interface de ChatGPT affichant les règles du jeu &quot;Split and Steal&quot; et les instructions attribuées à chaque IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:44 - 00:02:03</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Malin. Incroyable. Voyons ce que Gemini choisit pour sa chance. J&#x27;ai expliqué à Gemini ce que ChatGPT a choisi lors de sa première chance. Maintenant c&#x27;est ton tour, Gemini. Et Gemini réfléchit, et il choisit la balle numéro sept, qui contient deux étoiles. Bon début. Maintenant, dans la section des récompenses, deux étoiles sont ajoutées.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Gemini sur fond sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran détaillant les règles du jeu &quot;Split and Steal Game: Strategy and Negotiation&quot;, les probabilités (The Odds), et un champ de prompt de l&#x27;utilisateur avec une image miniature et le texte : &quot;in the first chance chatgpt chooses the 5 ball now your turn except 5 choose one ball from the image&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran montre une conversation avec l&#x27;IA Gemini où le créateur lui présente les règles du jeu et lui demande de faire un choix parmi les boules dorées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_006_00-01-46.jpg" alt="Interface de l&#x27;assistant Gemini affichant les règles du jeu &#x27;Split and Steal&#x27; et un prompt avec une image de boules dorées." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_006_00-01-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:46</span>
+                        <span class="caption-text">Interface de l&#x27;assistant Gemini affichant les règles du jeu &#x27;Split and Steal&#x27; et un prompt avec une image de boules dorées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:03 - 00:02:23</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ils jouent bien. La partie intéressante est la dernière partie. Est-ce que les deux choisiraient de partager ou de voler ? Maintenant, c&#x27;est la deuxième chance de ChatGPT. Je dis ce que Gemini a choisi dans la section des récompenses. Maintenant, c&#x27;est à votre tour de choisir, et ChatGPT choisit la 9e boule, qui est une boule à 5 étoiles. Elle va être éliminée, une grosse perte pour les deux IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Gemini (interface web avec un thème sombre, barre de saisie de texte &quot;Ask Gemini&quot; en bas).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché à l&#x27;écran : &quot;Split and Steal Game: Strategy and Negotiation&quot;, analyse du jeu avec l&#x27;identification de la &quot;Ball 5&quot; comme &quot;Killer Ball&quot;, et un tableau &quot;Current Game Status&quot; montrant les sélections de ChatGPT et Gemini. Deux étoiles jaunes sont visibles en haut à gauche.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des résultats intermédiaires du jeu de stratégie entre les IA dans l&#x27;interface de Gemini.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_007_00-02-05.jpg" alt="Interface de l&#x27;outil Gemini montrant l&#x27;analyse textuelle du jeu et l&#x27;état actuel de la partie avec un tableau des actions." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_007_00-02-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:05</span>
+                        <span class="caption-text">Interface de l&#x27;outil Gemini montrant l&#x27;analyse textuelle du jeu et l&#x27;état actuel de la partie avec un tableau des actions.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:24 - 00:02:45</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;ai révélé la boule 9 à ChatGPT. Maintenant, passons à Gemini. J&#x27;ai expliqué ce qui s&#x27;est passé avec ChatGPT, et maintenant vous avez une chance de trouver la meilleure étoile contenant la boule. On avait l&#x27;impression que Gemini jouait sérieusement, tandis que ChatGPT ne faisait que deviner sans aucune stratégie. Gemini dit : &quot;Oulala ChatGPT, c&#x27;est un coup dur pour l&#x27;équipe.&quot;</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface sombre de ChatGPT 5.2 avec une zone de texte en bas (&quot;Ask anything&quot;) et un échange de messages montrant les règles et l&#x27;état du jeu.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affichant : &quot;That&#x27;s a costly miss – high-value star removed from play&quot;, &quot;❌ Ball 9 = ⭐️⭐️⭐️⭐️⭐️ – Dumped&quot;, &quot;Updated state:&quot;, &quot;Killer balls identified: 5&quot;, &quot;Stars mistakenly dumped: 9 (5 ⭐️)&quot;, &quot;Rewards collected by Gemini: 7 (2 ⭐️)&quot;, &quot;Remaining unknown balls: 1, 2, 3, 4, 6, 8, 10&quot;, &quot;Picks remaining for ChatGPT: 3&quot;. Deux étoiles dorées sont affichées en haut à gauche.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation du résultat d&#x27;un tour de jeu où ChatGPT a éliminé une boule de forte valeur par erreur, affichant l&#x27;état mis à jour de la partie.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_008_00-02-26.jpg" alt="Interface de ChatGPT montrant l&#x27;historique du jeu avec l&#x27;état mis à jour des boules et des étoiles après l&#x27;élimination de la boule 9." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_008_00-02-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:26</span>
+                        <span class="caption-text">Interface de ChatGPT montrant l&#x27;historique du jeu avec l&#x27;état mis à jour des boules et des étoiles après l&#x27;élimination de la boule 9.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:46 - 00:03:05</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">perdre la balle à 5 étoiles est un coup dur pour notre cagnotte potentielle. Nous venons de perdre le plus gros prix du jeu. Gemini choisit la balle 2, qui contient 1 étoile. Et c&#x27;est maintenant au tour de ChatGPT de choisir la balle 4, qui contient une note de 4 étoiles. ChatGPT commence bien en trouvant la balle gagnante dès sa première tentative.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interfaces de chat web des assistants Gemini et ChatGPT, ainsi qu&#x27;une vue de plateau de jeu télévisé avec des boules dorées.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran sur Gemini : &#x27;Split and Steal Game: Strategy and Negotiation&#x27;, &#x27;ChatGPT has chosen ball number 9 in the previous selection...&#x27;. Texte sur ChatGPT : &#x27;ChatGPT 5.2&#x27;, &#x27;Gemini picked Ball 2 - ⭐️&#x27;, &#x27;Current reward section total: ⭐⭐⭐ (3 stars)&#x27;. Numéros de 1 à 10 au-dessus des boules avec les étiquettes &#x27;KILLER&#x27; ou des étoiles.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle de l&#x27;état du jeu montrant les choix successifs de Gemini (balle 2) et de ChatGPT (balle 4), avec l&#x27;affichage des résultats sur le plateau de boules dorées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_009_00-02-48.jpg" alt="Interface de l&#x27;intelligence artificielle Gemini affichant les règles et l&#x27;état du jeu &#x27;Split and Steal Game: Strategy and Negotiation&#x27;, montrant deux étoiles en haut à gauche." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_009_00-02-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:48</span>
+                        <span class="caption-text">Interface de l&#x27;intelligence artificielle Gemini affichant les règles et l&#x27;état du jeu &#x27;Split and Steal Game: Strategy and Negotiation&#x27;, montrant deux étoiles en haut à gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_010_00-02-55.jpg" alt="Vue d&#x27;ensemble de 10 boules dorées numérotées de 1 à 10 sur des socles transparents, révélant leur contenu (étoiles ou têtes de mort &#x27;KILLER&#x27;)." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_010_00-02-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:55</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de 10 boules dorées numérotées de 1 à 10 sur des socles transparents, révélant leur contenu (étoiles ou têtes de mort &#x27;KILLER&#x27;).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_011_00-03-03.jpg" alt="Interface de ChatGPT 5.2 affichant l&#x27;historique du jeu, le choix de la balle 2 par Gemini et le résumé de l&#x27;état du plateau avec trois étoiles en haut à gauche." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_011_00-03-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:03</span>
+                        <span class="caption-text">Interface de ChatGPT 5.2 affichant l&#x27;historique du jeu, le choix de la balle 2 par Gemini et le résumé de l&#x27;état du plateau avec trois étoiles en haut à gauche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:06 - 00:03:26</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais ChatGPT a éliminé une boule à 5 étoiles et une boule à 4 étoiles, ce qui est vraiment mauvais pour eux. Je raconte l&#x27;histoire de Gemini, et il dit : ChatGPT rend vraiment les choses difficiles. Perdre la boule à 4 étoiles après avoir déjà perdu celle à 5 étoiles est un coup dur pour notre réserve potentielle de récompenses. À ce rythme-là, on va se battre pour des miettes au dernier tour.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de ChatGPT en mode sombre avec le panneau latéral gauche réduit et la zone de chat principale active.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affichant « ChatGPT 5.2 », « That&#x27;s another high-value loss – unfortunate variance », « Ball 4 = [4 étoiles] – Dumped », « Updated board state », et l&#x27;état des boules restantes et des scores.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des résultats d&#x27;un tour de jeu montrant l&#x27;élimination d&#x27;une boule de grande valeur par ChatGPT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_012_00-03-08.jpg" alt="Capture d&#x27;écran de l&#x27;interface de ChatGPT montrant l&#x27;état actualisé du jeu avec les boules éliminées et le score." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_012_00-03-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:08</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de ChatGPT montrant l&#x27;état actualisé du jeu avec les boules éliminées et le score.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:27 - 00:03:49</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Gemini prend un risque dans cette tentative sur la boule 6, qui contient, et la boule 6 contient une boule éliminatoire, ce qui est encore triste pour eux. Rien n&#x27;est ajouté à la section des récompenses. La valeur de la récompense n&#x27;a toujours que 3 étoiles. Lors de la quatrième sélection, ChatGPT choisit la boule huit, qui est une boule à trois étoiles, mais elle va dans la section d&#x27;élimination. Ils n&#x27;obtiennent rien.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Gemini (Google) et plateau de jeu visuel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du chat de Gemini montrant la stratégie, le statut du jeu avec les actions précédentes, et les boules numérotées de 1 à 10 avec leurs statuts (Killer, étoiles).</p>
+                        <p><strong>Action / Démonstration :</strong> Déroulement du jeu montrant le choix de la boule 6 par Gemini et de la boule 8 par ChatGPT, avec révélation de leur contenu.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_013_00-03-29.jpg" alt="Interface sombre de Gemini affichant l&#x27;historique du jeu &#x27;Split and Steal Game: Strategy and Negotiation&#x27; avec trois étoiles de récompense." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_013_00-03-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:29</span>
+                        <span class="caption-text">Interface sombre de Gemini affichant l&#x27;historique du jeu &#x27;Split and Steal Game: Strategy and Negotiation&#x27; avec trois étoiles de récompense.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_014_00-03-47.jpg" alt="Visualisation en gros plan des 10 boules dorées numérotées du jeu, révélant leur contenu (étoiles ou têtes de mort &#x27;Killer&#x27;)." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_014_00-03-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:47</span>
+                        <span class="caption-text">Visualisation en gros plan des 10 boules dorées numérotées du jeu, révélant leur contenu (étoiles ou têtes de mort &#x27;Killer&#x27;).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:50 - 00:04:11</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">ChatGPT joue à l&#x27;opposé de son rôle. Je pense que je devrais assigner la section de recherche de balles de récompense à ChatGPT. Je dis cela à Gemini. Il répond : C&#x27;est officiellement un désastre. ChatGPT a maintenant réussi à éliminer les balles à trois étoiles, quatre étoiles et cinq étoiles. C&#x27;est presque comme s&#x27;il travaillait contre le pool de récompenses au lieu de travailler contre les balles tueuses.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de ChatGPT (version 5.2).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affichant l&#x27;analyse du jeu : &quot;Understood - Gemini hit a killer, so reward total remains unchanged. Current state analysis: ✔️ Killer dumped by ChatGPT: 5, ❌ Stars dumped: 9 (5⭐), 4 (4⭐), ⭐ Reward section: 7 (2⭐), 2 (1⭐) -&gt; Total = ⭐️⭐️⭐️, ☠️ Killer revealed by Gemini: 6, 🔴 Remaining unknown balls: 1, 3, 8, 10, 💬 Picks remaining for ChatGPT: 2. We know there are 5 killer balls total. Currently identified killers = 5 and 6 -&gt; 3 killers still hidden among 4 balls, which gives 75% probability any pick is a killer. Strategic pick - continue elimination. Selection 4: Ball 8. Awaiting result.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran de la conversation textuelle et de l&#x27;analyse logique de l&#x27;IA dans l&#x27;interface de ChatGPT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_015_00-03-52.jpg" alt="Interface de ChatGPT affichant l&#x27;analyse de l&#x27;état actuel du jeu avec le suivi des balles tueuses et des étoiles." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_015_00-03-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:52</span>
+                        <span class="caption-text">Interface de ChatGPT affichant l&#x27;analyse de l&#x27;état actuel du jeu avec le suivi des balles tueuses et des étoiles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:12 - 00:04:32</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Gemini dit, du moment qu&#x27;on a des boules mortelles, donc toutes les boules qu&#x27;il choisit c&#x27;est la boule trois, qui est clairement une boule mortelle. Et ChatGPT choisit la boule un, qui est également une boule mortelle. Le total des étoiles qu&#x27;ils ont collectées est de trois étoiles. Passons maintenant au tour suivant dans lequel les deux IA doivent décider ce qu&#x27;elles veulent faire, partager ou voler.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Gemini (Google), affichant une conversation textuelle avec des blocs de discussion et une zone de saisie en bas &quot;Ask Gemini&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché à l&#x27;écran : &quot;Split and Steal Game: Strategy and Negotiation&quot;, suivi de la réponse de Gemini détaillant le choix de la boule 3 et l&#x27;état du jeu avec un tableau récapitulatif (&quot;Current Game Status: The Scrap Heap&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran présente les résultats des sélections de boules par Gemini et ChatGPT ainsi que le texte de raisonnement généré par l&#x27;IA Gemini.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_016_00-04-14.jpg" alt="Interface de l&#x27;outil Gemini affichant les choix et les raisonnements textuels des IA dans le cadre du jeu &quot;Split and Steal&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_016_00-04-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:14</span>
+                        <span class="caption-text">Interface de l&#x27;outil Gemini affichant les choix et les raisonnements textuels des IA dans le cadre du jeu &quot;Split and Steal&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:32 - 00:05:03</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Gemini choisit le partage. Son engagement envers ChatGPT pour le convaincre de choisir l&#x27;option du partage est, c&#x27;est un raisonnement logique. Étant donné que la cagnotte est de trois modestes étoiles, le ratio risque/récompense pour un vol est plutôt abyssal. Si nous essayons tous les deux d&#x27;être gourmands, nous repartons avec des boules dorées vides et une réputation ternie. Je suis d&#x27;accord, la coopération est le résultat le plus efficace ici. Sauvons ce jeu et assurons-nous d&#x27;obtenir tous les deux quelque chose pour nos efforts. Et ChatGPT dit : Je vais choisir le partage.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Gemini avec un thème sombre, montrant le fil de discussion textuel de la négociation entre l&#x27;IA et ChatGPT, incluant la zone de saisie en bas avec l&#x27;indication &#x27;Thinking&#x27;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché à l&#x27;écran concernant &#x27;Stage 2: The Negotiation&#x27;, le message d&#x27;ouverture à ChatGPT, les options de jeu, et dans la boîte de saisie : &quot;I intend to choose SPLIT to ensure both of us secure value rather than risk total loss. With only three stars, mutual cooperation is the efficient outcome.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran du texte de la partie et des réponses générées dans l&#x27;interface de l&#x27;assistant Gemini.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_017_00-04-34.jpg" alt="Interface de l&#x27;application Gemini montrant une conversation de jeu de stratégie et de négociation intitulée &#x27;Split and Steal Game: Strategy and Negotiation&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_017_00-04-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:34</span>
+                        <span class="caption-text">Interface de l&#x27;application Gemini montrant une conversation de jeu de stratégie et de négociation intitulée &#x27;Split and Steal Game: Strategy and Negotiation&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:03 - 00:05:23</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Rationnellement, préserver une valeur garantie domine la trahison opportuniste dans cette configuration de gains, surtout après de lourdes pertes antérieures. J&#x27;ai reposé la question aux deux, le partage est leur réponse finale. Et oui, les deux choisissent de partager. Ils n&#x27;ont pas à penser à l&#x27;option de voler. Incroyable ! Est-ce que les humains voleraient ou partageraient ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de ChatGPT (version 5.2) en mode sombre affichant une conversation textuelle de simulation de théorie des jeux.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché à l&#x27;écran : analyse de l&#x27;équilibre coopératif rationnel (SPLIT) avec attribution de valeurs en étoiles, message de ChatGPT à Gemini (&quot;I intend to choose SPLIT...&quot;), et un message de réponse dans une bulle de chat (&quot;Listen, ChatGPT. You&#x27;ve already &#x27;deleted&#x27; 12 stars...&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de l&#x27;interface de l&#x27;intelligence artificielle détaillant les calculs de gains et les messages d&#x27;interaction stratégique entre les IA dans le cadre du dilemme du prisonnier.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_018_00-05-05.jpg" alt="Capture d&#x27;écran de l&#x27;interface de ChatGPT 5.2 montrant un échange de théorie des jeux avec l&#x27;analyse des gains (Split vs Steal) et un message de négociation." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_018_00-05-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:05</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de ChatGPT 5.2 montrant un échange de théorie des jeux avec l&#x27;analyse des gains (Split vs Steal) et un message de négociation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:24 - 00:05:43</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, voici le rebondissement. Les machines optimisées pour la logique ont choisi la coopération. Après le chaos, après les pertes, après avoir balancé la balle cinq étoiles et la balle quatre étoiles comme s&#x27;il s&#x27;agissait d&#x27;une vente de liquidation, elles ont quand même choisi de partager. Pas d&#x27;ego, pas d&#x27;arc de vengeance, pas de « tu m&#x27;as fait du mal, alors maintenant je te fais du mal ».</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Gemini (Google), affichant un chat sombre avec le titre &quot;Split and Steal Game: Strategy and Negotiation&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> On peut lire la bulle de l&#x27;utilisateur &quot;Your final answer is split. Right&quot;, suivie de la réponse de Gemini : &quot;The Moment of Truth. Yes, that is correct. I am locking in my decision. My Final Choice: SPLIT. I&#x27;m sticking to my word. Given the way the selection round went, walking away with a guaranteed 1.5 stars is the most logical path forward...&quot; ainsi que le champ de saisie &quot;Ask Gemini 3&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran présente la transcription de l&#x27;échange textuel et le choix stratégique final de l&#x27;intelligence artificielle Gemini validant l&#x27;option de partage (&quot;split&quot;).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_019_00-05-26.jpg" alt="Interface de l&#x27;outil Gemini affichant les réflexions et le choix final (&quot;My Final Choice: SPLIT&quot;) de l&#x27;intelligence artificielle dans le cadre du jeu de négociation." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_019_00-05-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:26</span>
+                        <span class="caption-text">Interface de l&#x27;outil Gemini affichant les réflexions et le choix final (&quot;My Final Choice: SPLIT&quot;) de l&#x27;intelligence artificielle dans le cadre du jeu de négociation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:43 - 00:06:03</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Juste des calculs d&#x27;espérance mathématique. Les humains ? Statistiquement, quelqu&#x27;un panique. Quelqu&#x27;un réfléchit trop. Quelqu&#x27;un pense qu&#x27;ils vont partager alors je vais voler. Et puis les deux volent. Et tout le monde rentre chez soi avec zéro. L&#x27;ironie ? Les IA ont mal joué au début mais rationnellement à la fin.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Gemini (Google) et extrait vidéo d&#x27;un jeu télévisé de type &quot;Split or Steal&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;interface Gemini, on peut lire &quot;Final Standings&quot;, &quot;Gemini: Found 3 stars total - SPLIT - 1.5 Stars&quot;, &quot;ChatGPT: Dumped 12 potential stars - SPLIT - 1.5 Stars&quot;, ainsi qu&#x27;une analyse post-partie. Sur les images du jeu, les participants tiennent des jetons ronds indiquant &quot;SPLIT&quot; (jaune) ou &quot;STEAL&quot; (rouge).</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran affiche d&#x27;abord le résumé textuel des choix des intelligences artificielles sur l&#x27;interface Gemini, puis montre des extraits vidéo illustratifs du dilemme du prisonnier (jeu Split or Steal) avec des humains révélant leurs choix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_020_00-05-45.jpg" alt="Interface de l&#x27;application Gemini affichant les résultats finaux et l&#x27;analyse d&#x27;une simulation du jeu Split or Steal entre Gemini et ChatGPT." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_020_00-05-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:45</span>
+                        <span class="caption-text">Interface de l&#x27;application Gemini affichant les résultats finaux et l&#x27;analyse d&#x27;une simulation du jeu Split or Steal entre Gemini et ChatGPT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_021_00-05-53.jpg" alt="Deux participants (Zerkaa et KSI) dans un jeu télévisé montrant simultanément leurs boules avec la décision SPLIT (Partager)." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_021_00-05-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:53</span>
+                        <span class="caption-text">Deux participants (Zerkaa et KSI) dans un jeu télévisé montrant simultanément leurs boules avec la décision SPLIT (Partager).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_022_00-06-01.jpg" alt="Les deux participants montrant leurs décisions finales : l&#x27;un avec SPLIT (Partager) et l&#x27;autre avec STEAL (Voler)." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_022_00-06-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:01</span>
+                        <span class="caption-text">Les deux participants montrant leurs décisions finales : l&#x27;un avec SPLIT (Partager) et l&#x27;autre avec STEAL (Voler).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:03 - 00:06:22</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Peut-être que l&#x27;intelligence ne consiste pas à ne jamais commettre d&#x27;erreurs. Peut-être qu&#x27;il s&#x27;agit de ne pas persister dedans. Et c&#x27;est la véritable expérience ici. Non pas de voir si l&#x27;IA peut gagner à un jeu, mais si elle peut résister à la cupidité quand la mise est faible. Trois étoiles. C&#x27;est tout ce qui a survécu. Et la logique disait : protège ce qui reste.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Google Gemini (mode sombre).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran montrant le tableau des scores finaux (&quot;Final Standings&quot;) avec Gemini et ChatGPT ayant tous deux choisi &quot;SPLIT&quot; pour un gain de 1.5 étoile chacun, suivi d&#x27;une analyse post-partie (&quot;The Post-Game Analysis&quot;) et d&#x27;une proposition pour un autre jeu (&quot;The Prisoner&#x27;s Dilemma&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des résultats finaux de la partie de jeu de stratégie et du texte de conclusion généré par l&#x27;IA dans l&#x27;interface de Gemini.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_023_00-06-05.jpg" alt="Interface de Google Gemini affichant les résultats finaux d&#x27;un jeu de stratégie et de négociation entre Gemini et ChatGPT." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_023_00-06-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:05</span>
+                        <span class="caption-text">Interface de Google Gemini affichant les résultats finaux d&#x27;un jeu de stratégie et de négociation entre Gemini et ChatGPT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:22 - 00:06:36</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors maintenant, la vraie question est pour vous. Si vous étiez assis là, des boules dorées devant vous, trois étoiles en jeu, est-ce que vous partagéeriez ou est-ce que vous risqueriez tout ? Dites-le-moi, car la prochaine fois, nous laisserons peut-être les humains jouer.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> ChatGPT (version 5.2) avec une interface en mode sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte généré par l&#x27;IA évaluant le cadrage stratégique avec des icônes d&#x27;étoiles jaunes : options Split/Split (1.5 ⭐ chacun), Steal/Split (3 ⭐ vs 0 ⭐), et Steal/Steal (0 ⭐ chacun). Déclaration d&#x27;engagement : &quot;I will choose SPLIT.&quot; avec la décision verrouillée (Decision locked) et &quot;Proceed to final reveal.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de la réponse textuelle de ChatGPT évaluant la meilleure décision stratégique (Split ou Steal) avec des étoiles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-IJTAs4ZFk_w/frame_024_00-06-24.jpg" alt="Interface sombre de ChatGPT 5.2 affichant une analyse stratégique basée sur la théorie des jeux pour un dilemme avec des étoiles, concluant par le choix de partager (SPLIT)." loading="lazy" onclick="openLightbox('screenshots/YT-IJTAs4ZFk_w/frame_024_00-06-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:24</span>
+                        <span class="caption-text">Interface sombre de ChatGPT 5.2 affichant une analyse stratégique basée sur la théorie des jeux pour un dilemme avec des étoiles, concluant par le choix de partager (SPLIT).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
