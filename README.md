@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `32 / 84` (`38.1%`)
+- **Vidéos traitées** : `33 / 84` (`39.3%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -48,6 +48,7 @@
 | 2026-06-07 | [NVIDIA vient de sortir une IA totalement folle](2026-06-07_YT-kB1HjgYIoMw_NVIDIA vient de sortir une IA totalement folle_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-06-07_YT-kB1HjgYIoMw_NVIDIA vient de sortir une IA totalement folle_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 6m 31s | `39 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=kB1HjgYIoMw) | `kB1HjgYIoMw` |
 | 2026-10-05 | [Fable 5.5, GPT-6.1 Astra & Google’s Mystery AI Model Just Appeared](2026-10-05_YT-4j3laLc7b8M_Fable 5.5, GPT-6.1 Astra & Google’s Mystery AI Model Just Appeared_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-10-05_YT-4j3laLc7b8M_Fable 5.5, GPT-6.1 Astra & Google’s Mystery AI Model Just Appeared_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 12m 10s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=4j3laLc7b8M) | `4j3laLc7b8M` |
 | 2026-06-22 | [GPT-5.6 Is WAY More Powerful Than We Thought](2026-06-22_YT-C8qfKF6XhjM_GPT-5.6 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-06-22_YT-C8qfKF6XhjM_GPT-5.6 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 16s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=C8qfKF6XhjM) | `C8qfKF6XhjM` |
+| 2026-05-28 | [Figure AI's Darkest Experiment?](2026-05-28_YT-v5Dq686BiOA_Figure AI's Darkest Experiment_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-05-28_YT-v5Dq686BiOA_Figure AI's Darkest Experiment_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 46s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=v5Dq686BiOA) | `v5Dq686BiOA` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
