@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `34 / 84` (`40.5%`)
+- **Vidéos traitées** : `35 / 84` (`41.7%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -50,6 +50,7 @@
 | 2026-06-22 | [GPT-5.6 Is WAY More Powerful Than We Thought](2026-06-22_YT-C8qfKF6XhjM_GPT-5.6 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-06-22_YT-C8qfKF6XhjM_GPT-5.6 Is WAY More Powerful Than We Thought_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 16s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=C8qfKF6XhjM) | `C8qfKF6XhjM` |
 | 2026-05-28 | [Figure AI's Darkest Experiment?](2026-05-28_YT-v5Dq686BiOA_Figure AI's Darkest Experiment_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-05-28_YT-v5Dq686BiOA_Figure AI's Darkest Experiment_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 46s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=v5Dq686BiOA) | `v5Dq686BiOA` |
 | 2026-05-18 | [OpenAI Has A New Problem](2026-05-18_YT-JUTCIrfnQqc_OpenAI Has A New Problem_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-05-18_YT-JUTCIrfnQqc_OpenAI Has A New Problem_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 8m 28s | `17 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=JUTCIrfnQqc) | `JUTCIrfnQqc` |
+| 2026-05-12 | [Unitree GD01 vient de révolutionner la robotique pour toujours 🤯 - Premier mécha habité au monde](2026-05-12_YT-MLtl-sRcsxU_Unitree GD01 vient de révolutionner la robotique pour toujours 🤯 Premier mécha h_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-05-12_YT-MLtl-sRcsxU_Unitree GD01 vient de révolutionner la robotique pour toujours 🤯 Premier mécha h_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 6m 32s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=MLtl-sRcsxU) | `MLtl-sRcsxU` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

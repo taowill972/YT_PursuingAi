@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Unitree GD01 vient de révolutionner la robotique pour toujours 🤯 | Premier mécha habité au monde — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Unitree GD01 vient de révolutionner la robotique pour toujours 🤯 | Premier mécha habité au monde</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-05-12</span>
+                <span class="badge">⏱️ 06m 32s</span>
+                <span class="badge">🆔 <code>MLtl-sRcsxU</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=MLtl-sRcsxU" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>Cette vidéo de *Pursuing AI*, intitulée « Unitree GD01 vient de révolutionner la robotique pour toujours 🤯 », propose une analyse percutante et immersive des dernières avancées mondiales en matière de robotique humanoïde, de méchas pilotés et d'intelligence artificielle appliquée à la recherche scientifique. Le créateur y décortique les performances sidérantes des nouveaux robots (comme le Boston Dynamics Atlas, le Unitree G1 et le robot de combat d'Engine AI), tout en levant le voile sur le GD-01 de Unitree Robotics, un mécha habité de 500 kilogrammes qui propulse la science-fiction directement dans la réalité industrielle. L'analyse aborde également une innovation majeure pour les laboratoires : *LabOS*, un co-scientifique virtuel couplé à des lunettes XR capables de superviser et d'assister les expérimentations physiques en temps réel.</p><p>Sur le plan de la production vidéo et de la création de contenu IA, le créateur déploie un style dynamique, ancré dans la pop-culture (références à *Elden Ring*, *Real Steel*, *Neon Genesis Evangelism* ou encore *Jarvis*). Visuellement, la vidéo s'appuie massivement sur des illustrations et des séquences générées ou augmentées par des outils de pointe tels que **Seedance 2.5**, **Kling 3.0** et **Midjourney**. Le workflow repose sur l'alternance rythmée de plans cinématiques futuristes hyper-réalistes et de séquences de démonstration technique brute, créant un contraste saisissant entre le divertissement geek et la prospective technologique sérieuse.</p><p>Pour les créateurs de contenu vidéo et les monteurs spécialisés dans l'IA, cette vidéo offre une masterclass sur le storytelling d'actualité technologique. L'utilisation d'un ton humoristique, cynique et ultra-rythmé permet de maintenir une rétention d'audience maximale sur des sujets complexes et austères en apparence. Le bénéfice concret réside dans la maîtrise de l'éditorialisation : transformer une revue de presse technique en un récit captivant, taillé pour les algorithmes des plateformes vidéo, tout en intégrant des transitions fluides entre des thématiques aussi variées que la robotique bipède, les méchas militaires et la biologie computationnelle.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Adopter un ton pop-culturel et décalé** : Mélanger des références au jeu vidéo (*Elden Ring*, *PNJ*) et au cinéma de science-fiction (*Real Steel*) pour rendre l&#x27;actualité robotique immédiatement accessible et divertissante.</span></li><li><span class="point-bullet">✦</span><span>Maîtriser le contraste visuel** : Alterner entre des rendus ultra-léchés générés par IA (**Midjourney**, **Kling 3.0**) et de véritables séquences de recherche pour crédibiliser le propos tout en captivant l&#x27;œil.</span></li><li><span class="point-bullet">✦</span><span>Scénariser l&#x27;actualité technologique** : Structurer le récit sous forme de chapitres narratifs progressifs (de l&#x27;agilité des robots aux méchas habités, puis aux IA scientifiques) pour éviter l&#x27;effet &quot;catalogue de news&quot;.</span></li><li><span class="point-bullet">✦</span><span>Exploiter l&#x27;humour cynique pour booster la rétention** : Utiliser l&#x27;autodérision et des métaphores absurdes (comme la crise de la quarantaine à 650 000 dollars) pour relancer l&#x27;attention du spectateur lors des pics de complexité technique.</span></li><li><span class="point-bullet">✦</span><span>Optimiser l&#x27;intégration des flux d&#x27;actualité** : Sélectionner des sujets de rupture (Boston Dynamics, Unitree GD-01, LabOS) qui possèdent un fort potentiel viral grâce à leur aspect visuellement déstabilisant ou &quot;dystopique&quot;.</span></li><li><span class="point-bullet">✦</span><span>Soigner le sound design et le rythme de montage** : Maintenir un débit de parole rapide, soutenu par des ruptures de ton, pour refléter la vitesse fulgudiante à laquelle évoluent les technologies d&#x27;intelligence artificielle.</span></li><li><span class="point-bullet">✦</span><span>Piège à éviter : La monotonie informative** : Ne jamais se limiter à la simple description technique ; toujours rattacher chaque innovation à ses implications sociétales, professionnelles ou humoristiques.</span></li><li><span class="point-bullet">✦</span><span>Miser sur les transitions thématiques fluides** : Relier des univers apparemment éloignés (le combat de robots et l&#x27;IA en laboratoire de chimie) par le prisme d&#x27;une même question centrale : l&#x27;autonomisation croissante de la machine face à l&#x27;humain.</span></li><li><span class="point-bullet">✦</span><span>Utiliser l&#x27;anthropomorphisme inversé** : Souligner avec humour les limites de l&#x27;anatomie humaine face à des robots qui s&#x27;affranchissent des contraintes biologiques (rotation à 180 degrés) pour créer un effet de sidération visuelle.</span></li><li><span class="point-bullet">✦</span><span>Valoriser l&#x27;open-source et l&#x27;accessibilité future** : Mettre en avant le fait que les technologies présentées (comme les piles logicielles et matérielles open-source) finissent par tomber entre les mains de créateurs indépendants, stimulant ainsi l&#x27;imaginaire de la communauté.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:20</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si l&#x27;apocalypse des robots ne commençait pas par des lasers et des explosions, mais par un androïde qui fait un poirier avec un salto arrière tout en fixant directement votre âme ? Ou et si l&#x27;ère des robots méchas venait tout juste de commencer officiellement aujourd&#x27;hui ? C&#x27;est Pursuing AI et vous regardez le Research Report.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra du présentateur dans un studio moderne aux teintes bleutées et futuristes, sur fond d&#x27;écrans affichant des flux de données et des extraits robotiques.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Introduction aux récentes avancées spectaculaires et troublantes de la robotique humanoïde, posant la question de l&#x27;impact psychologique et technologique de ces innovations sur notre société.</p>
+                        <p><strong>Action / Démonstration :</strong> Transition dynamique avec un effet de glitch numérique pour introduire le sommaire et le déroulement des actualités de recherche de la semaine.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:20 - 00:00:56</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans l&#x27;actualité des robots humanoïdes, nous venons d&#x27;obtenir une toute nouvelle démo de Boston Dynamics. Et honnêtement, ce truc bouge comme s&#x27;il avait débloqué le mode développeur de la physique elle-même. Leur robot Atlas entièrement électrique exécute maintenant des mouvements qui font passer les humains pour du matériel en accès anticipé. Dans un clip, Atlas fait littéralement un équilibre sur la tête tout en faisant basculer tout son corps sur lui-même, comme si la gravité avait tout simplement abandonné la simulation. Et le plus flippant n&#x27;est pas la force, c&#x27;est la façon dont il bouge. À la fin de la démo, Boston Dynamics montre que les robots humanoïdes n&#x27;ont pas vraiment besoin</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plan moyen fixe du présentateur face caméra, sur fond de studio moderne aux teintes bleutées, adoptant un ton à la fois enthousiaste et analytique typique de la chaîne Pursuing AI.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Analyse détaillée de la nouvelle démonstration impressionnante du robot Atlas tout électrique de Boston Dynamics, mettant en avant la fluidité surhumaine de ses mouvements et sa rupture totale avec les standards robotiques traditionnels.</p>
+                        <p><strong>Action / Démonstration :</strong> Incrustation dynamique à l&#x27;écran de extraits vidéo de la démo de Boston Dynamics, illustrant les mouvements acrobatiques d&#x27;Atlas pendant que le présentateur commente les capacités techniques.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:56 - 00:01:32</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">pour copier l&#x27;anatomie humaine. Contrairement à nous, fragiles organismes à base de viande, Atlas peut faire pivoter des parties de son corps d&#x27;une manière que les articulations humaines ne peuvent physiquement pas faire. Genre, au lieu de se retourner normalement comme un PNJ de base, il peut simplement faire pivoter son torse ou son visage à 180 degrés instantanément. Ce qui a l&#x27;air terrifiant, mais qui est en fait incroyablement efficace. Parce que les humains ont évolué pour la survie. Les robots ont évolué pour les notes de mise à jour. Pendant ce temps, cette semaine, nous avons également eu une nouvelle démo présentant le G1 de Unitree Robotics luttant contre</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plan moyen de l&#x27;analyste en studio, regard direct vers la caméra, expressions dynamiques et ton enthousiaste typique des créateurs de contenu tech.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Analyse des capacités biomécaniques surhumaines du robot Atlas de Boston Dynamics et de sa liberté de mouvement affranchie des contraintes biologiques, comparées à l&#x27;évolution naturelle, suivies d&#x27;une transition vers les dernières avancées concurrentes de Unitree Robotics avec le modèle G1.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage progressif d&#x27;extraits vidéo côte à côte (split-screen) comparant la rotation à 180 degrés d&#x27;Atlas et les images de la nouvelle démo du robot G1 de Unitree Robotics en action.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:32 - 00:02:07</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le robot PM1 d&#x27;Engine AI. Et oui, le Robot Fight Club est officiellement entré en bêta. Maintenant, nous avons déjà vu des démonstrations de Kung Fu de la part de ces deux robots, mais c&#x27;est la première fois qu&#x27;on les voit réellement se battre entre eux. Ou, plus précisément, envoyer des coups de pied directement dans le vide. Tout au long du combat, les deux robots n&#x27;arrêtent pas de rater leurs attaques comme deux joueurs ivres d&#x27;Elden Ring qui se battent avec 400 de ping. Mais si l&#x27;un de ces coups de pied touchait vraiment, cela renverrait probablement l&#x27;autre robot directement à l&#x27;écran de mise à jour du micrologiciel. Ce qui est intéressant, cependant, c&#x27;est la différence d&#x27;équilibre.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra par l&#x27;animateur de Pursuing AI, avec des graphismes incrustés en arrière-plan montrant le logo du &quot;Robot Fight Club&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Analyse humoristique et technique d&#x27;un combat de robots humanoïdes, en comparant leur maladresse à des joueurs de jeux vidéo avec du lag, tout en soulignant les progrès de leur matériel et de leur équilibre.</p>
+                        <p><strong>Action / Démonstration :</strong> Diffusion d&#x27;un extrait vidéo montrant les robots PM1 et son rival s&#x27;affrontant maladroitement avec des zooms sur leurs mouvements de jambes et leurs ratés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:08 - 00:02:47</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le robot d&#x27;Engine AI semble beaucoup plus susceptible de perdre la stabilité, tandis que le Unitree G1 se déplace avec un contrôle étonnamment solide. C&#x27;est honnêtement difficile de dire si ce combat est entièrement autonome ou télé-opéré par des humains dans les coulisses. Mais la partie la plus drôle est que le combat se termine par un double KO, ce qui signifie que l&#x27;humanité a officiellement inventé la comédie burlesque robotique. Quoi qu&#x27;il en soit, à ce rythme, Real Steel n&#x27;est plus de la science-fiction. C&#x27;est juste une catégorie de startup. Parce que Unitree Robotics vient de dévoiler le GD-01, un vrai robot mécha piloté qui a l&#x27;air d&#x27;s&#x27;être échappé d&#x27;une cutscene d&#x27;animé.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plan moyen fixe sur l&#x27;analyste en studio, fond technologique aux couleurs de la chaîne Pursuing AI, aucun écran partagé affiché à ce moment précis.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Analyse comparative de la stabilité des robots humanoïdes (Engine AI vs Unitree G1), interrogation sur l&#x27;autonomie réelle des machines (IA autonome ou télé-opération), puis transition vers l&#x27;actualité des robots géants pilotés avec le nouveau GD-01 de Unitree Robotics.</p>
+                        <p><strong>Action / Démonstration :</strong> Gestuelle explicative des mains pour appuyer les propos sur le double KO, puis bascule de posture pour introduire la transition vers la présentation du workflow technique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:47 - 00:03:22</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le GD-01 pèse environ 500 kilogrammes, transporte un véritable être humain à l&#x27;intérieur, peut prétendument transformer sa structure et coûte environ 650 000 dollars. Ce qui, honnêtement, ressemble moins à un qu&#x27;à la crise de la quarantaine la plus chère du monde. Maintenant, ils sont passés du robot danseur rigolo à la chose qui vous poursuit dans vos cauchemars. Et soyons honnêtes, on ne peut absolument pas faire confiance à l&#x27;humanité avec cette technologie. Parce que quelqu&#x27;un, quelque part, essaie déjà d&#x27;installer des lumières RGB, des packs de voix d&#x27;anime,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra du présentateur dans le studio de Pursuing AI, avec un ton ironique et sceptique, simulant l&#x27;incrédulité face aux dérives de la robotique humanoïde.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Analyse critique du robot GD-01 : décryptage de ses spécificités techniques (poids de 500 kg, habitacle humain, capacité de transformation) et de son coût exorbitant ($650k), tout en soulignant l&#x27;imprévisibilité et l&#x27;absurdité des usages potentiels par le grand public.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran d&#x27;un graphique comparatif des coûts et du poids des robots humanoïdes récents, suivi d&#x27;une transition dynamique vers un extrait vidéo du GD-01 en mouvement.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:22 - 00:03:55</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">et un accessoire lance-flammes sur ce truc. Mais le plus effrayant, c&#x27;est la vitesse à laquelle la robotique évolue en ce moment. Aujourd&#x27;hui, c&#x27;est un exosquelette de luxe. Demain ? Des travailleurs d&#x27;entrepôt, des systèmes militaires, des robots de construction. Et finalement, votre manager remplace tout le bureau par des robots qui ne demandent jamais de congés ou de pauses toilettes. Très cool. Très dystopique. Également cette semaine, nous avons obtenu quelque chose qui pourrait discrètement devenir l&#x27;un des outils d&#x27;IA les plus importants pour la recherche scientifique. Ça s&#x27;appelle LabOS,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra du présentateur dans le studio de Pursuing AI, sur fond d&#x27;animations graphiques futuristes évoquant l&#x27;évolution rapide de la robotique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Analyse de l&#x27;accélération fulgurante de la robotique et de son impact sociologique, passant des gadgets futuristes aux applications industrielles et de bureau, avec une transition vers les nouvelles avancées de l&#x27;IA pour la recherche scientifique.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage dynamique de mots-clés à l&#x27;écran (&quot;Robotique&quot;, &quot;Dystopie&quot;, &quot;LabOS&quot;) et zoom subtil sur le visage du présentateur pour accentuer le ton ironique et sérieux du discours.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:55 - 00:04:33</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et c&#x27;est en gros un co-scientifique en IA pour les laboratoires du monde réel. Normalement, quand les gens disent de l&#x27;IA pour la science, ils pensent à un autre chatbot qui aide à résumer des articles tout en hallucinat des citations avec une confiance absolue. Mais LabOS est différent. Au lieu de rester coincé à l&#x27;intérieur d&#x27;un ordinateur portable, ce système connecte réellement le raisonnement de l&#x27;IA au laboratoire physique lui-même. Il prend des objectifs scientifiques, des protocoles de laboratoire, des entrées visuelles et des actions humaines, puis aide à guider les chercheurs à travers de véritables expériences se déroulant dans le monde réel. Pensez-y comme si on donnait à ChatGPT une paire d&#x27;yeux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra par le narrateur, sans écran partagé, pour introduire un changement radical dans l&#x27;application de l&#x27;intelligence artificielle à la recherche scientifique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explication du concept de LabOS en tant qu&#x27;&quot;IA co-scientifique&quot;, différenciée des chatbots classiques générateurs d&#x27;hallucinations, en insistant sur son utilité concrète dans les laboratoires physiques.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du workflow du système : intégration des objectifs scientifiques, des protocoles, des données visuelles et des actions humaines pour guider les chercheurs en temps réel.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:33 - 00:05:07</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">mémoire à court terme, et la capacité de vous regarder paniquer dans un laboratoire de chimie. La partie vraiment cool, c&#x27;est que cela fonctionne avec des lunettes intelligentes XR. Cela signifie que l&#x27;IA peut littéralement voir ce que le chercheur fait en temps réel. Donc, si quelqu&#x27;un saisit le mauvais outil, saute une étape, ou commence à improviser un protocole comme s&#x27;il s&#x27;agissait d&#x27;une improvisation de jazz, le système peut l&#x27;avertir avant que le désastre ne se produise. Ce qui est honnêtement énorme, car une grande partie des connaissances scientifiques est incroyablement difficile à coucher par écrit. Des choses comme l&#x27;angle d&#x27;une main, le rythme du pipetage, ou la subtile</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra par le présentateur, s&#x27;exprimant avec enthousiasme sur les innovations en IA et XR.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explication de l&#x27;intégration entre l&#x27;intelligence artificielle, les lunettes XR et la surveillance en temps réel des expériences de laboratoire pour éviter les erreurs humaines.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration conceptuelle du workflow montrant la capture vidéo en temps réel par les lunettes et l&#x27;analyse instantanée par l&#x27;IA pour détecter les écarts de protocole.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:07 - 00:05:31</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">l&#x27;instinct qu&#x27;un scientifique expérimenté développe après des années dans un laboratoire. Ce genre de connaissances tacites ne se transmet pas bien par PDF et messages Slack. Mais avec les lunettes XR, l&#x27;intelligence artificielle peut désormais observer directement ces minuscules comportements humains et potentiellement en apprendre. Ce qui signifie que nous passons lentement d&#x27;une IA qui parle de science à une IA qui participe réellement à la science.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra, le présentateur s&#x27;adresse directement au public avec un ton captif et engagé, illustrant la transition entre la théorie et la pratique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explication de la manière dont les technologies XR et l&#x27;IA capturent le savoir-faire tacite des scientifiques en laboratoire pour doter les machines d&#x27;une véritable capacité d&#x27;apprentissage comportemental et scientifique.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du workflow technique montrant l&#x27;interaction entre les lunettes XR, l&#x27;observation par l&#x27;IA des micro-comportements en laboratoire, et l&#x27;intégration de ces données pour transformer l&#x27;IA en participante active de la recherche.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:31 - 00:05:53</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et c&#x27;est à la fois passionnant et légèrement terrifiant. Le projet comprend également un système de laboratoire sec, où des agents d&#x27;IA aident aux tâches informatiques comme la planification d&#x27;expériences, la sélection d&#x27;outils et l&#x27;analyse de données. Ainsi, une partie du système réfléchit, l&#x27;autre observe la réalité se dérouler. En gros, les scientifiques ont maintenant droit à Jarvis pour la biologie.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra par le présentateur, dans le studio de Pursuing AI, sur fond d&#x27;animations graphiques futuristes en arrière-plan.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explication de l&#x27;intégration des agents IA dans un laboratoire sec, combinant la réflexion computationnelle et l&#x27;observation de la réalité biologique pour faire avancer la recherche.</p>
+                        <p><strong>Action / Démonstration :</strong> Animation à l&#x27;écran illustrant le workflow du système binaire : d&#x27;un côté la réflexion algorithmique de l&#x27;IA, de l&#x27;autre l&#x27;exécution et l&#x27;observation des expériences biologiques.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:53 - 00:06:12</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et le meilleur dans tout ça ? L&#x27;équipe affirme que la pile logicielle et matérielle, y compris l&#x27;installation XR, devrait être open source. Ce qui signifie que quelque part, un étudiant surdoué se prépare déjà à construire un laboratoire de garage autonome alimenté uniquement par des nouilles instantanées et des commits GitHub.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra par l&#x27;analyste, souriant, sur fond d&#x27;atelier high-tech minimaliste.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Analyse de l&#x27;impact de l&#x27;open source dans la robotique et l&#x27;IA, facilitant l&#x27;accès à des technologies de pointe pour les développeurs indépendants et la communauté.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran d&#x27;un schéma simplifié illustrant le workflow reliant le code open source, le matériel XR et l&#x27;expérimentation en temps réel.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:12 - 00:06:34</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors oui, l&#x27;avenir arrive incroyablement vite, les robots humanoïdes apprennent le kung-fu, des scientifiques en IA intègrent des laboratoires physiques, pendant ce temps, j&#x27;ai toujours besoin de redémarrer mon routeur Wi-Fi deux fois par semaine parce qu&#x27;il oublie soudainement comment fonctionnent les paquets, l&#x27;humanité évolue vraiment à un rythme équilibré.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra, plan moyen du narrateur avec un léger sourire, ton ironique et complice, aucun écran partagé.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le contraste humoristique entre les avancées fulgurantes de la robotique humanoïde et de l&#x27;intelligence artificielle d&#x27;un côté, et les pannes technologiques du quotidien (comme le routeur Wi-Fi) de l&#x27;autre.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un montage vidéo juxtaposant des images de robots humanoïdes en laboratoire et l&#x27;icône d&#x27;un routeur Wi-Fi en train de clignoter.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
