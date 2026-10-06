@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 L&#x27;IA est en train de se réinventer... Et personne n&#x27;est prêt — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 L&#x27;IA est en train de se réinventer... Et personne n&#x27;est prêt</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-03-20</span>
+                <span class="badge">⏱️ 03m 57s</span>
+                <span class="badge">🆔 <code>2rgqYDoAETs</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=2rgqYDoAETs" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de Pursuing AI met en lumière un tournant civilisationnel et technique majeur : l'industrie de l'IA est au bord d'une rupture architecturale totale. Alors que les fondations actuelles de l'apprentissage profond (les *Transformers*) atteignent un mur économique et mathématique en raison d'une explosion exponentielle des coûts de calcul, les leaders du secteur comme Sam Altman annoncent déjà leur remplacement potentiel. Cette transition d'ampleur – comparable au passage des réseaux LSTM vers les Transformers – s'accompagne d'une accélération vertigineuse où l'IA elle-même commence à concevoir les générations futures de modèles, enclenchant une boucle d'intelligence récursive menant potentiellement à l'AGI d'ici deux ans.</p><p>Sur le plan technique et créatif, la vidéo décrypte l'émergence d'une nouvelle génération d'outils capables de modéliser la physique et la réalité tridimensionnelle avec une précision inédite. Des innovations telles que *Leto* d'Apple, qui convertit une simple image 2D en un objet 3D entièrement cohérent (avec gestion parfaite de l'éclairage et des reflets), ou encore *World FM*, qui résout les aberrations spatiales des vidéos générées par IA grâce à une cohérence multi-vue en temps réel sur un matériel grand public (RTX 4090), redéfinissent les standards de la production visuelle.</p><p>Pour les créateurs de vidéo, ces avancées annoncent la fin des artefacts visuels aberrants (objets qui dérivent, géographies impossibles) et l'intégration native de la structure physique dans les pipelines de création. Le flux de travail de production bascule d'une simulation 2D trompeuse à une modélisation spatiale unifiée, permettant de générer des environnements complexes, des actifs 3D et des plans vidéo d'une stabilité physique irréprochable, tout en réduisant la complexité technique autrefois réservée aux studios lourds.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Obsolescence programmée des architectures** : Les *Transformers*, qui alimentent l&#x27;ensemble de l&#x27;écosystème IA actuel (ChatGPT, assistants de code), font face à une loi d&#x27;évolution extrêmement défavorable où multiplier l&#x27;entrée par 10 multiplie le coût de calcul par 100.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;analogie historique des LSTM** : Le passage de l&#x27;architecture actuelle vers la prochaine génération ne sera pas une simple mise à niveau incrémentale, mais un effacement total et une réinstallation du paradigme technique.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;intelligence récursive auto-accélérée** : L&#x27;IA actuelle a atteint un seuil de maturité suffisant pour participer activement à la conception de la prochaine génération d&#x27;IA, provoquant une téléportation technologique du progrès plutôt qu&#x27;une progression linéaire.</span></li><li><span class="point-bullet">✦</span><span>Horizon temporel de l&#x27;AGI** : Les estimations concordent vers une émergence de l&#x27;AGI d&#x27;ici environ deux ans, obligeant les professionnels à réévaluer d&#x27;urgence leurs compétences et plans de carrière.</span></li><li><span class="point-bullet">✦</span><span>La fin de la tyrannie du multi-angle** : Grâce à des modèles comme *Leto*, posséder plusieurs prises de vue d&#x27;un objet n&#x27;est plus nécessaire ; une seule image suffit pour inférer la géométrie, l&#x27;éclairage et les reflets sous tous les angles.</span></li><li><span class="point-bullet">✦</span><span>Compréhension de la structure physique** : Les outils de nouvelle génération ne manipulent plus seulement du texte ou des pixels, mais intègrent la physique du monde réel, évitant l&#x27;effondrement visuel lors des mouvements de caméra.</span></li><li><span class="point-bullet">✦</span><span>Éradication des artefacts spatiaux** : Des solutions comme *World FM* corrigent la plus grande tare des vidéos IA actuelles (la dérive des objets et les agencements aberrants) en garantissant une stricte cohérence multi-vue.</span></li><li><span class="point-bullet">✦</span><span>Démocratisation du calcul temps réel** : Les percées architecturales permettent désormais d&#x27;exécuter des simulations spatiales complexes et des calculs multi-vues directement sur du matériel grand public haut de gamme (une simple carte graphique RTX 4090).</span></li><li><span class="point-bullet">✦</span><span>Piège de la surface esthétique** : Ne plus se fier uniquement à l&#x27;aspect flatteur de surface d&#x27;une vidéo générée ; l&#x27;analyse critique doit désormais porter sur la stabilité spatiale et la logique physique à long terme.</span></li><li><span class="point-bullet">✦</span><span>Transition vers les pipelines 3D natifs** : Les créateurs de contenu doivent anticiper l&#x27;intégration d&#x27;actifs 3D instantanés générés par IA dans leurs flux de montage pour s&#x27;affranchir des contraintes des moteurs CGI traditionnels.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:19</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Sam Ullman vient de dire que ce qui alimente ChatGPT pourrait être obsolète. Oui, l&#x27;air de rien. Quoi ? C&#x27;est Pursuing AI et vous regardez le rapport de recherche. Toute la fondation de l&#x27;IA moderne, les transformers, pourrait être remplacée. Rien de grave, il s&#x27;agit juste de réécrire les lois de l&#x27;IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique explicatif animé sur fond noir illustrant l&#x27;architecture des transformers et le traitement de matrices numériques en intelligence artificielle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;TRANSFORMERS&quot; en haut de l&#x27;écran en lettres bleues et blanches, matrices numériques affichées sous forme de tableaux de vecteurs avec des valeurs décimales (ex: [0.3, 9.0, 8.1...]), flèche jaune pointant vers un système de probabilités avec des barres horizontales bleues et des valeurs numériques (ex: 0.78, 0.16).</p>
+                        <p><strong>Action / Démonstration :</strong> Animation graphique illustrant le traitement de données matricielles au sein des architectures de type transformer en IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_001_00-00-17.jpg" alt="Schéma technique animé illustrant le fonctionnement des transformers avec des matrices de vecteurs numériques et des graphiques de probabilité." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_001_00-00-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:17</span>
+                        <span class="caption-text">Schéma technique animé illustrant le fonctionnement des transformers avec des matrices de vecteurs numériques et des graphiques de probabilité.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:19 - 00:00:40</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pendant ce temps, Apple lance Leto, un modèle qui transforme une simple image en un objet 3D entièrement réaliste avec un éclairage et des reflets corrects. Parce qu&#x27;apparemment, une seule image est tout ce dont vous avez besoin maintenant. Les angles multiples sont pour les plébéiens. Commençons par la partie qui devrait légèrement préoccuper votre avenir. Sam Wallman est retourné à Stanford et a déclaré que les transformers ne sont pas la dernière étape.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de recherche / présentation technique (LiTo d&#x27;Apple) et enregistrement vidéo d&#x27;une conférence académique (Stanford ETL).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1, le titre &quot;LiTo: Surface Light Field Tokenization&quot;, &quot;Image-to-3D Generation Comparison&quot;, et des vignettes d&#x27;objets 3D comparant l&#x27;image de conditionnement, le modèle &quot;Ours&quot; et &quot;TRELLIS&quot;. Sur l&#x27;image 2, les bannières de l&#x27;événement &quot;ETL - Entrepreneurship Thought Leaders&quot; de Stanford avec deux intervenants assis.</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran affiche d&#x27;abord la documentation technique et les résultats visuels du modèle 3D d&#x27;Apple, puis passe à un extrait d&#x27;interview sur scène avec Sam Wallman à Stanford.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_002_00-00-21.jpg" alt="Capture d&#x27;écran du site web de présentation du modèle &quot;LiTo: Surface Light Field Tokenization&quot; d&#x27;Apple montrant une comparaison de génération d&#x27;image vers 3D." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_002_00-00-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:21</span>
+                        <span class="caption-text">Capture d&#x27;écran du site web de présentation du modèle &quot;LiTo: Surface Light Field Tokenization&quot; d&#x27;Apple montrant une comparaison de génération d&#x27;image vers 3D.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_003_00-00-38.jpg" alt="Extrait vidéo d&#x27;une conférence à Stanford montrant deux hommes assis sur des chaises lors d&#x27;une session de discussion (talk)." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_003_00-00-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:38</span>
+                        <span class="caption-text">Extrait vidéo d&#x27;une conférence à Stanford montrant deux hommes assis sur des chaises lors d&#x27;une session de discussion (talk).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:40 - 00:01:01</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce qui a l&#x27;air inoffensif. Jusqu&#x27;à ce que vous réalisiez que les transformers alimentent littéralement tout ce que vous avez vu dans l&#x27;IA. ChatGPT ? Des transformers. L&#x27;assistance au code ? Des transformers. Votre crise existentielle générée par l&#x27;IA ? Des transformers aussi. Donc, quand le PDG d&#x27;OpenAI dit que cette fondation pourrait être remplacée, ce n&#x27;est pas un tweet.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Éléments graphiques et textuels animés en plein écran illustrant le montage vidéo de la chaîne Pursuing AI.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 2 : Le logo d&#x27;OpenAI et un autre logo d&#x27;IA alignés en face du mot &#x27;Transformers&#x27;. Sur l&#x27;image 3 : Le texte &#x27;THAT&#x27;S NOT A TWEET&#x27; avec le mot &#x27;THAT&#x27;S&#x27; encadré en violet.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de graphiques animés textuels et visuels pour illustrer les propos de l&#x27;analyste sur les architectures d&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_004_00-00-51.jpg" alt="Graphique textuel montrant des logos d&#x27;IA associés au mot &#x27;Transformers&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_004_00-00-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:51</span>
+                        <span class="caption-text">Graphique textuel montrant des logos d&#x27;IA associés au mot &#x27;Transformers&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_005_00-00-59.jpg" alt="Texte graphique affichant la phrase clé &#x27;THAT&#x27;S NOT A TWEET&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_005_00-00-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:59</span>
+                        <span class="caption-text">Texte graphique affichant la phrase clé &#x27;THAT&#x27;S NOT A TWEET&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:01 - 00:01:23</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est un avertissement. Voici le problème. Les Transformers évoluent terriblement mal. Vous rendez votre entrée 10 fois plus longue et le coût de calcul est multiplié par 100. Ce n&#x27;est pas linéaire. Ce n&#x27;est pas raisonnable. C&#x27;est juste de la douleur. C&#x27;est le mur. Et nous l&#x27;avons heurté. Ensuite, il lâche la vraie bombe. La prochaine architecture pourrait être comme les transformers remplaçant les LSTM.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Affichage de graphiques animés de texte (sous-titres dynamiques) et d&#x27;une capture d&#x27;écran d&#x27;un article d&#x27;actualité technologique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes animés &quot;HERE&#x27;S THE PROBLEM TRANSFORMER&quot;, &quot;NOT LINEAR NOT REASONABLE&quot; et un article en anglais titrant &quot;Altman declares the death of Transformer. AGI will arrive within two years, and the next-generation architecture is on the way.&quot; avec la date 2026-03-17 et la source &quot;新智元&quot; (Xinzhiyuan).</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement de sous-titres animés rythmés par la voix off, puis affichage d&#x27;un article de presse/citation illustrant le propos sur l&#x27;abandon des transformers.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_006_00-01-03.jpg" alt="Texte animé à l&#x27;écran affichant &quot;HERE&#x27;S THE PROBLEM TRANSFORMER&quot; avec des mots mis en surbrillance violette." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_006_00-01-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:03</span>
+                        <span class="caption-text">Texte animé à l&#x27;écran affichant &quot;HERE&#x27;S THE PROBLEM TRANSFORMER&quot; avec des mots mis en surbrillance violette.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_007_00-01-12.jpg" alt="Texte animé à l&#x27;écran affichant &quot;NOT LINEAR NOT REASONABLE&quot; avec des mots mis en surbrillance violette." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_007_00-01-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:12</span>
+                        <span class="caption-text">Texte animé à l&#x27;écran affichant &quot;NOT LINEAR NOT REASONABLE&quot; avec des mots mis en surbrillance violette.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_008_00-01-21.jpg" alt="Capture d&#x27;article sur fond bleu et gris citant : &quot;Altman declares the death of Transformer. AGI will arrive within two years, and the next-generation architecture is on the way.&quot;" loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_008_00-01-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:21</span>
+                        <span class="caption-text">Capture d&#x27;article sur fond bleu et gris citant : &quot;Altman declares the death of Transformer. AGI will arrive within two years, and the next-generation architecture is on the way.&quot;</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:23 - 00:01:43</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Traduction, pas une mise à niveau, un effacement total et une réinstallation. Et maintenant, ça devient légèrement terrifiant. Il dit que l&#x27;IA actuelle est peut-être déjà assez intelligente pour aider à inventer la prochaine IA. Donc maintenant, nous avons l&#x27;IA qui aide les humains à construire une meilleure IA, qui construit une IA encore meilleure, qui aide à construire une IA encore meilleure.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Schéma explicatif animé sur fond noir.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Logos et icônes représentant l&#x27;intelligence artificielle (OpenAI), un développeur humain travaillant sur des écrans informatiques, et une icône d&#x27;une nouvelle génération d&#x27;IA reliés par des flèches blanches.</p>
+                        <p><strong>Action / Démonstration :</strong> Illustration visuelle du concept de récursion où l&#x27;IA et les humains collaborent pour créer de nouvelles versions d&#x27;IA de plus en plus performantes.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_009_00-01-41.jpg" alt="Schéma explicatif montrant le cycle de développement avec le logo OpenAI, un humain devant des écrans, et une icône d&#x27;IA." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_009_00-01-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:41</span>
+                        <span class="caption-text">Schéma explicatif montrant le cycle de développement avec le logo OpenAI, un humain devant des écrans, et une icône d&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:43 - 00:02:01</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">À ce stade, c&#x27;est fondamentalement de l&#x27;intelligence récursive avec un abonnement à la salle de sport. Une fois que cette boucle est lancée, le progrès n&#x27;avance plus. Il se téléporte. Allman a également parlé de son histoire d&#x27;origine. À l&#x27;époque à Stanford, il pensait que l&#x27;IA n&#x27;allait nulle part. Puis AlexNet est sorti, et il s&#x27;est dit, cool. C&#x27;est tout. Juste cool.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Extrait vidéo / Illustration textuelle à l&#x27;écran</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le mot &quot;AlexNet&quot; écrit en grandes lettres blanches sur fond noir.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du nom du modèle de réseau de neurones lors de l&#x27;explication historique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_010_00-01-59.jpg" alt="Écran noir affichant le texte &quot;AlexNet&quot; en caractères blancs." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_010_00-01-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:59</span>
+                        <span class="caption-text">Écran noir affichant le texte &quot;AlexNet&quot; en caractères blancs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:02 - 00:02:21</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pendant ce temps, l&#x27;histoire se disait, genre, mec, c&#x27;est le début. Finalement, il a réalisé que quelque chose d&#x27;important se préparait. Il a donc fondé OpenAI en 2015. Et les débuts ? Le chaos total d&#x27;une startup. Ils se sont rencontrés dans un appartement, ne savaient pas ce qu&#x27;ils faisaient, n&#x27;avaient même pas de tableau blanc, et ont dû en commander un en ligne comme si c&#x27;était une quête secondaire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> ChatGPT 5.4 Thinking</p>
+                        <p><strong>Contenu textuel & Code :</strong> On peut lire le prompt utilisateur : &quot;a baby japanese macaque has stolen my heart, where can i volunteer in nyc to be closer to animals?&quot; ainsi que la réponse en cours de génération de l&#x27;IA : &quot;I&#x27;m pulling together current NYC volunteer options that actually let you spend time around animals, with a bias toward places that are practical for regular volunteering.&quot; et l&#x27;indicateur &quot;Thinking&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de l&#x27;interface de l&#x27;application ChatGPT sur fond dégradé coloré, illustrant l&#x27;évolution technologique et les outils conversationnels modernes d&#x27;OpenAI.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_011_00-02-11.jpg" alt="Interface de ChatGPT 5.4 Thinking affichant une conversation textuelle avec une zone de saisie et un arrière-plan coloré." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_011_00-02-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:11</span>
+                        <span class="caption-text">Interface de ChatGPT 5.4 Thinking affichant une conversation textuelle avec une zone de saisie et un arrière-plan coloré.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:21 - 00:02:40</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais d&#x27;une manière ou d&#x27;une autre, en une semaine, ils avaient déjà les idées qui ont façonné OpenAI. Passons directement à maintenant, Allman dit que l&#x27;AGI pourrait arriver d&#x27;ici deux ans. Deux ans, ce qui est soit passionnant, soit profondément incommode selon vos choix de carrière. Maintenant, de l&#x27;autre côté du chaos, Apple.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web présentant des articles de recherche et des actualités sur l&#x27;intelligence artificielle (notamment sur LiTo par Apple et des déclarations sur l&#x27;AGI).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 2 : &quot;Altman declares the death of Transformer. AGI will arrive within two years, and the next-generation architecture is on the way.&quot; et &quot;Stanford real - life record reveals shocking news&quot;. Sur l&#x27;image 3 : &quot;LiTo: Surface Light Field Tokenization&quot;, &quot;Image-to-3D Generation Comparison&quot;, &quot;Conditioning Image&quot;, &quot;Ours&quot;, &quot;TRELLIS&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur de la vidéo fait défiler ou présente à l&#x27;écran des articles et des articles de recherche technique pour illustrer ses propos sur l&#x27;arrivée prochaine de l&#x27;AGI et les travaux d&#x27;Apple.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_012_00-02-30.jpg" alt="Capture d&#x27;écran affichant un article de presse ou un tweet sur fond bleu turquoise avec une citation en anglais concernant Altman et l&#x27;AGI." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_012_00-02-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:30</span>
+                        <span class="caption-text">Capture d&#x27;écran affichant un article de presse ou un tweet sur fond bleu turquoise avec une citation en anglais concernant Altman et l&#x27;AGI.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_013_00-02-38.jpg" alt="Capture d&#x27;écran d&#x27;une page web de recherche intitulée &quot;LiTo: Surface Light Field Tokenization&quot; montrant une comparaison de génération d&#x27;image en 3D." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_013_00-02-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:38</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une page web de recherche intitulée &quot;LiTo: Surface Light Field Tokenization&quot; montrant une comparaison de génération d&#x27;image en 3D.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:40 - 00:02:59</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ils ont construit Leto, et c&#x27;est ridicule. Vous lui donnez une seule image, juste une, et il génère un objet 3D complet. Pas seulement la forme, mais l&#x27;éclairage, les reflets, le tout cohérent sous tous les angles. Les anciens systèmes ont essayé cela et ont échoué. Déplacez légèrement la caméra et tout s&#x27;effondre comme un film CGI à petit budget.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de recherche / démonstration académique (LiTo : Surface Light Field Tokenization).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre &quot;LiTo: Surface Light Field Tokenization&quot;, section &quot;Image-to-3D Generation Comparison&quot;, étiquettes &quot;Conditioning Image&quot;, &quot;Ours&quot;, et &quot;TRELLIS&quot;. Texte d&#x27;explication concernant TRELLIS.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative de résultats de génération 3D à partir d&#x27;une image unique entre le modèle LiTo et le modèle concurrent TRELLIS.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_014_00-02-42.jpg" alt="Page de présentation de LiTo (Surface Light Field Tokenization) montrant une comparaison de génération image-à-3D." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_014_00-02-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:42</span>
+                        <span class="caption-text">Page de présentation de LiTo (Surface Light Field Tokenization) montrant une comparaison de génération image-à-3D.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_015_00-02-50.jpg" alt="Comparaison interactive en 3D côte à côte entre le modèle LiTo (&#x27;Ours&#x27;) et TRELLIS représentant une pomme sur une grille." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_015_00-02-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:50</span>
+                        <span class="caption-text">Comparaison interactive en 3D côte à côte entre le modèle LiTo (&#x27;Ours&#x27;) et TRELLIS représentant une pomme sur une grille.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:00 - 00:03:20</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Leto résout ce problème en apprenant la forme et l&#x27;éclairage en même temps. Au lieu de tout mémoriser, il comprend l&#x27;objet, puis le reconstruit. Une image en entrée, un objet 3D complet en sortie. Cela semble de niche, mais ça ne l&#x27;est pas. Cela signifie que l&#x27;IA commence à comprendre la réalité. Pas seulement du texte, pas seulement des pixels, mais la structure physique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de visualisation 3D en grille avec deux fenêtres de comparaison côte à côte (&quot;Ours&quot; à gauche et &quot;TRELLIS&quot; à droite).</p>
+                        <p><strong>Contenu textuel & Code :</strong> À gauche, le texte indique : &quot;Ours. Notice the view-dependent appearance.&quot; À droite, le texte indique : &quot;TRELLIS. TRELLIS does not respect the camera coordinate system, so sometimes their output objects will be oriented incorrectly.&quot; Au centre de chaque fenêtre, une pomme en 3D repose sur une grille noire avec des axes de coordonnées (X, Y, Z).</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison comparative de modèles 3D d&#x27;une pomme affichée sur une grille virtuelle pour illustrer la reconstruction 3D.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_016_00-03-02.jpg" alt="Comparaison 3D côte à côte montrant une pomme modélisée sur une grille avec des annotations textuelles sur les performances." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_016_00-03-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:02</span>
+                        <span class="caption-text">Comparaison 3D côte à côte montrant une pomme modélisée sur une grille avec des annotations textuelles sur les performances.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:20 - 00:03:43</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et cela nous mène à Inspiro World FM. L&#x27;objectif est de corriger la plus grande faiblesse de l&#x27;IA : la fausse compréhension de l&#x27;espace. Les vidéos IA actuelles ont l&#x27;air bien jusqu&#x27;à ce qu&#x27;on les regarde vraiment. Les objets dérivent, les agencements buguent. World FM résout ce problème grâce à la cohérence multi-vue. Il s&#x27;exécute en temps réel sur une seule RTX 4090, juste votre GPU de jeu hors de prix.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration 3D et page web comparative de recherche (LiTo).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;Ours - Notice the view-dependent appearance&quot; et &quot;TRELLIS - TRELLIS does not respect the camera coordinate system&quot;. Sur l&#x27;image 2 : &quot;LiTo: Surface Light Field Tokenization&quot;, &quot;Reconstruction Comparison&quot;, &quot;Ground Truth&quot;, &quot;Ours&quot;, &quot;TRELLIS&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative visuelle des performances de modélisation et de cohérence spatiale entre différents modèles d&#x27;IA 3D.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_017_00-03-22.jpg" alt="Comparaison 3D côte à côte entre le modèle &#x27;Ours&#x27; et &#x27;TRELLIS&#x27; affichant un robot articulé." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_017_00-03-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:22</span>
+                        <span class="caption-text">Comparaison 3D côte à côte entre le modèle &#x27;Ours&#x27; et &#x27;TRELLIS&#x27; affichant un robot articulé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_018_00-03-28.jpg" alt="Interface web &#x27;LiTo: Surface Light Field Tokenization&#x27; montrant une section de comparaison de reconstruction de modèles 3D." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_018_00-03-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:28</span>
+                        <span class="caption-text">Interface web &#x27;LiTo: Surface Light Field Tokenization&#x27; montrant une section de comparaison de reconstruction de modèles 3D.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:44 - 00:03:57</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors, que se passe-t-il vraiment ici ? De meilleures architectures, l&#x27;IA qui conçoit l&#x27;IA, une compréhension du monde réel. Ce n&#x27;est pas un progrès graduel. C&#x27;est un changement de phase, et nous y sommes pleinement plongés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de présentation de recherche académique / démonstration de modèle d&#x27;IA (LiTo: Surface Light Field Tokenization par Apple).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titres visibles : &quot;LiTo: Surface Light Field Tokenization&quot;, &quot;Apple&quot;, &quot;Paper&quot;, &quot;arXiv&quot;, &quot;Reconstruction Comparison&quot;. Une galerie d&#x27;objets miniatures (scooter, casque, robot, etc.) et trois fenêtres de comparaison sous le scooter étiquetées &quot;Ground Truth&quot;, &quot;Ours&quot;, et &quot;TRELLIS&quot;, présentant des rendus 3D sous différents angles.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une page de démonstration de recherche en IA comparant les performances de reconstruction 3D de différents modèles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2rgqYDoAETs/frame_019_00-03-46.jpg" alt="Présentation du projet de recherche LiTo par Apple, montrant une interface de comparaison de reconstruction 3D d&#x27;objets (comme un scooter)." loading="lazy" onclick="openLightbox('screenshots/YT-2rgqYDoAETs/frame_019_00-03-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:46</span>
+                        <span class="caption-text">Présentation du projet de recherche LiTo par Apple, montrant une interface de comparaison de reconstruction 3D d&#x27;objets (comme un scooter).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

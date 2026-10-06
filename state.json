@@ -38,7 +38,8 @@
     "PuzCpo9dBEY",
     "oWIRBWQfD08",
     "pwcrhSd92j4",
-    "WGg88V3RGpQ"
+    "WGg88V3RGpQ",
+    "2rgqYDoAETs"
   ],
   "processed_videos": [
     {
@@ -582,10 +583,24 @@
       "filepath_html": "/root/YT_PursuingAi/2026-03-27_YT-WGg88V3RGpQ_Seedance 2.0 – Le générateur vidéo IA ultime sur xmk_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-06T07:48:28Z",
       "status": "completed"
+    },
+    {
+      "video_id": "2rgqYDoAETs",
+      "title": "L'IA est en train de se réinventer... Et personne n'est prêt",
+      "raw_title": "AI Is Reinventing Itself Right Now… And No One Is Ready",
+      "filename_md": "2026-03-20_YT-2rgqYDoAETs_L'IA est en train de se réinventer... Et personne n'est prêt_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-03-20_YT-2rgqYDoAETs_L'IA est en train de se réinventer... Et personne n'est prêt_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-03-20",
+      "duration": 237,
+      "screenshots_count": 19,
+      "filepath_md": "/root/YT_PursuingAi/2026-03-20_YT-2rgqYDoAETs_L'IA est en train de se réinventer... Et personne n'est prêt_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-03-20_YT-2rgqYDoAETs_L'IA est en train de se réinventer... Et personne n'est prêt_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-06T10:04:36Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 39,
-  "last_run_timestamp": "2026-10-06T04:00:04Z",
+  "completed_count": 40,
+  "last_run_timestamp": "2026-10-06T10:00:03Z",
   "status": "running",
   "total_catalog_count": 84
 }
