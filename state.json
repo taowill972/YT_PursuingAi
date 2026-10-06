@@ -45,7 +45,8 @@
     "t3EEGWERGFc",
     "eI7gfK5E9N4",
     "OAC-8KbNtmE",
-    "5q4YKN-hMJo"
+    "5q4YKN-hMJo",
+    "0KVNZDz1ggg"
   ],
   "processed_videos": [
     {
@@ -687,9 +688,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-03-07_YT-5q4YKN-hMJo_La vidéo n'est désormais plus une preuve_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-06T16:14:26Z",
       "status": "completed"
+    },
+    {
+      "video_id": "0KVNZDz1ggg",
+      "title": "Cet outil vocal IA ne devrait pas exister…",
+      "raw_title": "This AI Voice Tool Shouldn’t Exist…",
+      "filename_md": "2026-02-23_YT-0KVNZDz1ggg_Cet outil vocal IA ne devrait pas exister…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-02-23_YT-0KVNZDz1ggg_Cet outil vocal IA ne devrait pas exister…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-02-23",
+      "duration": 386,
+      "screenshots_count": 20,
+      "filepath_md": "/root/YT_PursuingAi/2026-02-23_YT-0KVNZDz1ggg_Cet outil vocal IA ne devrait pas exister…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-02-23_YT-0KVNZDz1ggg_Cet outil vocal IA ne devrait pas exister…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-06T16:21:48Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 46,
+  "completed_count": 47,
   "last_run_timestamp": "2026-10-06T16:00:05Z",
   "status": "running",
   "total_catalog_count": 84
