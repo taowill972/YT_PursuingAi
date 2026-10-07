@@ -56,7 +56,7 @@
     "6MwYurap49Q",
     "N5cWXftiq-g",
     "vSHSC4TTO3A",
-    "dzqjuVLQrU8"
+    "7xpwqOhx3Lo"
   ],
   "processed_videos": [
     {
@@ -836,26 +836,26 @@
       "screenshots_count": 0,
       "filepath_md": "/root/YT_PursuingAi/2026-01-06_YT-vSHSC4TTO3A_I Asked Gemini & ChatGPT to Make a Zebra Simulation_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
       "filepath_html": "/root/YT_PursuingAi/2026-01-06_YT-vSHSC4TTO3A_I Asked Gemini & ChatGPT to Make a Zebra Simulation_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
-      "processed_at": "2026-10-07T04:18:01Z",
+      "processed_at": "2026-10-07T05:24:04Z",
       "status": "completed"
     },
     {
-      "video_id": "dzqjuVLQrU8",
-      "title": "Open Source vs Closed AI: GLM 4.7 Shocks GPT-5.2, Gemini & Opus",
-      "raw_title": "Open Source vs Closed AI: GLM 4.7 Shocks GPT-5.2, Gemini & Opus",
-      "filename_md": "2025-12-28_YT-dzqjuVLQrU8_Open Source vs Closed AI GLM 4.7 Shocks GPT-5.2, Gemini & Opus_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
-      "filename_html": "2025-12-28_YT-dzqjuVLQrU8_Open Source vs Closed AI GLM 4.7 Shocks GPT-5.2, Gemini & Opus_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
-      "pub_date": "2025-12-28",
-      "duration": 206,
+      "video_id": "7xpwqOhx3Lo",
+      "title": "I’m attempting to rebuild GTA 5 using AI",
+      "raw_title": "I’m attempting to rebuild GTA 5 using AI",
+      "filename_md": "2026-01-01_YT-7xpwqOhx3Lo_I’m attempting to rebuild GTA 5 using AI_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-01-01_YT-7xpwqOhx3Lo_I’m attempting to rebuild GTA 5 using AI_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-01-01",
+      "duration": 180,
       "screenshots_count": 0,
-      "filepath_md": "/root/YT_PursuingAi/2025-12-28_YT-dzqjuVLQrU8_Open Source vs Closed AI GLM 4.7 Shocks GPT-5.2, Gemini & Opus_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
-      "filepath_html": "/root/YT_PursuingAi/2025-12-28_YT-dzqjuVLQrU8_Open Source vs Closed AI GLM 4.7 Shocks GPT-5.2, Gemini & Opus_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
-      "processed_at": "2026-10-07T06:53:11Z",
+      "filepath_md": "/root/YT_PursuingAi/2026-01-01_YT-7xpwqOhx3Lo_I’m attempting to rebuild GTA 5 using AI_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-01-01_YT-7xpwqOhx3Lo_I’m attempting to rebuild GTA 5 using AI_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-07T07:00:10Z",
       "status": "completed"
     }
   ],
   "completed_count": 57,
-  "last_run_timestamp": "2026-10-06T22:00:05Z",
+  "last_run_timestamp": "2026-10-07T04:00:03Z",
   "status": "running",
   "total_catalog_count": 84
 }
