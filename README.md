@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `56 / 84` (`66.7%`)
+- **Vidéos traitées** : `57 / 84` (`67.9%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -72,6 +72,7 @@
 | 2026-01-10 | [Hollywood Is Finished… AI Just Took Over](2026-01-10_YT-6MwYurap49Q_Hollywood Is Finished… AI Just Took Over_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-01-10_YT-6MwYurap49Q_Hollywood Is Finished… AI Just Took Over_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 7m 06s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=6MwYurap49Q) | `6MwYurap49Q` |
 | 2026-01-08 | [AI wifu is here - CES 2026](2026-01-08_YT-N5cWXftiq-g_AI wifu is here CES 2026_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-01-08_YT-N5cWXftiq-g_AI wifu is here CES 2026_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 11s | `2 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=N5cWXftiq-g) | `N5cWXftiq-g` |
 | 2026-01-06 | [I Asked Gemini & ChatGPT to Make a Zebra Simulation](2026-01-06_YT-vSHSC4TTO3A_I Asked Gemini & ChatGPT to Make a Zebra Simulation_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-01-06_YT-vSHSC4TTO3A_I Asked Gemini & ChatGPT to Make a Zebra Simulation_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 05s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=vSHSC4TTO3A) | `vSHSC4TTO3A` |
+| 2025-12-28 | [Open Source vs Closed AI: GLM 4.7 Shocks GPT-5.2, Gemini & Opus](2025-12-28_YT-dzqjuVLQrU8_Open Source vs Closed AI GLM 4.7 Shocks GPT-5.2, Gemini & Opus_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-12-28_YT-dzqjuVLQrU8_Open Source vs Closed AI GLM 4.7 Shocks GPT-5.2, Gemini & Opus_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 26s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=dzqjuVLQrU8) | `dzqjuVLQrU8` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
