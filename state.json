@@ -69,7 +69,8 @@
     "2vmgejjKkPw",
     "owYisYT9akg",
     "CtR8KRHsOSo",
-    "mhryTXdg0S4"
+    "mhryTXdg0S4",
+    "HFq1xncPrIc"
   ],
   "processed_videos": [
     {
@@ -1047,9 +1048,23 @@
       "filepath_html": "/root/YT_PursuingAi/2025-11-17_YT-mhryTXdg0S4_Les fuites de Nano Banana 2 deviennent incontrôlables…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-07T16:06:30Z",
       "status": "completed"
+    },
+    {
+      "video_id": "HFq1xncPrIc",
+      "title": "Tout ce que vous devez savoir sur GPT 5.1 : les détails complets",
+      "raw_title": "GPT 5.1 Full Details — Everything You Need to Know",
+      "filename_md": "2025-11-14_YT-HFq1xncPrIc_Tout ce que vous devez savoir sur GPT 5.1 les détails complets_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2025-11-14_YT-HFq1xncPrIc_Tout ce que vous devez savoir sur GPT 5.1 les détails complets_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2025-11-14",
+      "duration": 190,
+      "screenshots_count": 17,
+      "filepath_md": "/root/YT_PursuingAi/2025-11-14_YT-HFq1xncPrIc_Tout ce que vous devez savoir sur GPT 5.1 les détails complets_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2025-11-14_YT-HFq1xncPrIc_Tout ce que vous devez savoir sur GPT 5.1 les détails complets_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-07T16:10:44Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 70,
+  "completed_count": 71,
   "last_run_timestamp": "2026-10-07T16:00:04Z",
   "status": "running",
   "total_catalog_count": 84
