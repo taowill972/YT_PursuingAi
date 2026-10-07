@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Gemini 3 vs GPT 5.1 vs Opus 4.5 : Le test ultime au sommet — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Gemini 3 vs GPT 5.1 vs Opus 4.5 : Le test ultime au sommet</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-11-29</span>
+                <span class="badge">⏱️ 03m 50s</span>
+                <span class="badge">🆔 <code>JluJkVTXh-0</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=JluJkVTXh-0" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>Dans cette vidéo de "Pursuing AI" intitulée « Gemini 3 vs GPT 5.1 vs Opus 4.5 : Le test ultime au sommet », le créateur pousse les limites des modèles d'intelligence artificielle de pointe à travers des tests de génération de code et de simulations interactives complexes (3.js, animations et interfaces graphiques dynamiques). L'objectif est d'évaluer la capacité de ces super-intelligences à concevoir des applications visuelles en temps réel, depuis un jeu de vol d'oiseaux en essaim jusqu'à des simulations de spirographes et de mains articulées, en passant par la gestion précise des caméras et de l'UI.</p><p>La méthodologie du créateur repose sur une batterie de prompts ultra-exigeants comportant des contraintes géométriques, comportementales et fonctionnelles strictes (gestion de bibliothèques 3D, boucles d'animation continues, cinématiques à la première personne et contrôles utilisateur). Chaque modèle est soumis aux mêmes exigences de rendu et d'interactivité, permettant d'analyser en profondeur leurs forces et leurs faiblesses structurelles, qu'il s'agisse de la fidélité plastique des textures, de la fluidité des mouvements de foule ou de la robustesse de la logique de programmation embarquée.</p><p>Pour les créateurs de vidéo et développeurs, cette analyse comparative offre des enseignements majeurs sur l'état de l'art des générateurs multimodaux et text-to-code. Elle met en lumière les arbitrages actuels entre la richesse esthétique des environnements et la précision de la logique algorithmique. Les créateurs apprennent ainsi à anticiper les artefacts visuels — tels que les mouvements de caméra erratiques ou les bugs de modélisation anatomique —, tout en identifiant quel modèle privilégier selon que l'on recherche une interface riche en fonctionnalités ou une simulation physique rigoureuse et continue.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Complexité des prompts de simulation** : L&#x27;utilisation de bibliothèques tierces comme 3.js exige des instructions textuelles extrêmement rigoureuses pour espérer obtenir des comportements physiques et des rendus 3D exploitables.</span></li><li><span class="point-bullet">✦</span><span>Le piège de la cinématique erratique** : Opus 4.5 a démontré une fâcheuse tendance à générer des mouvements de caméra beaucoup trop agités, nuisant à la lisibilité et à l&#x27;immersion de la scène en vue subjective.</span></li><li><span class="point-bullet">✦</span><span>Gestion des morphologies complexes** : La modélisation de groupes d&#x27;animaux (comme les oiseaux en essaim) reste un défi critique, les modèles générant souvent des formes rigides en papier plié ou des dynamiques de vol non réalistes.</span></li><li><span class="point-bullet">✦</span><span>Arbitrage entre richesse d&#x27;UI et logique** : Opus 4.5 excelle dans la quantité de fonctionnalités d&#x27;interface proposées (boutons de sauvegarde, effets de lueur, réglages fins), mais pèche sur la logique de boucle continue (arrêt prématuré du spirographe).</span></li><li><span class="point-bullet">✦</span><span>La supériorité de Gemini 3 sur la continuité** : Seul Gemini 3 a réussi à intégrer nativement une rotation fluide et ininterrompue pour la simulation de spirographe, surpassant ses rivaux sur la durabilité des scripts d&#x27;animation.</span></li><li><span class="point-bullet">✦</span><span>Échelle et grandeur des mondes générés** : Gemini 3 se démarque par sa capacité à concevoir des environnements virtuels beaucoup plus vastes et immersifs que GPT 5.1 et Opus 4.5 lors des tests d&#x27;essaims.</span></li><li><span class="point-bullet">✦</span><span>Défis anatomiques de l&#x27;IA** : Le test de la main interactive a révélé des ratés spectaculaires (comme les artefacts grotesques d&#x27;Opus 4.5), rappelant que la cinématique inverse et le respect des articulations corporelles restent complexes pour les IA text-to-code.</span></li><li><span class="point-bullet">✦</span><span>Progrès du réalisme ostéo-articulaire** : GPT 5.1 et Gemini 3 ont montré d&#x27;excellents résultats sur le contrôle digital par curseurs, Gemini 3 se distinguant particulièrement par le mimétisme organique et les mouvements réalistes du pouce.</span></li><li><span class="point-bullet">✦</span><span>Gestion des collisions et limites physiques** : Un défaut récurrent observé chez GPT 5.1 lors de la simulation de main réside dans le franchissement des limites anatomiques (les doigts se replient trop loin sous la paume).</span></li><li><span class="point-bullet">✦</span><span>Sélection du modèle selon l&#x27;objectif créatif** : Il est stratégique de choisir son IA en fonction du besoin précis : opter pour la richesse d&#x27;interface d&#x27;Opus 4.5 (malgré ses bugs), ou privilégier la robustesse cinématique et spatiale de Gemini 3.</span></li><li><span class="point-bullet">✦</span><span>Importance du débogage itératif** : Aucun modèle n&#x27;atteint la perfection du premier coup ; les créateurs doivent intégrer une phase de correction de code pour palier les arrêts de scripts intempestifs ou les défauts de rendu géométrique.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:30</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans cette vidéo, je vais pousser Opus 4.5 dans ses derniers retranchements et le comparer directement à Gemini 3 et GPT 5.1. C&#x27;est Pursuing AI, et vous regardez le Research Report. Notre premier test est un jeu de vol d&#x27;oiseaux en essaim. Le modèle doit générer une simulation 3D complète avec un comportement de vol réaliste, située au cœur d&#x27;un magnifique environnement naturel rempli de végétation, d&#x27;arbres et de tout élément supplémentaire que le modèle souhaite ajouter.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation 3D interactive, page de présentation logicielle et diapositives de test.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte « GPT-5.1: A smarter, more conversational ChatGPT », « Flocking Bird Requirements », options « Realistic Flocking Behaviour », « Natural Environment (Vegetation, trees, extras) » et contrôles de simulation d&#x27;essaim (« Flock Size », « Speed », « World View », « Bird View »).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des exigences du test et affichage des simulations interactives 3D et des interfaces de modèles d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_001_00-00-02.jpg" alt="Simulation 3D interactive montrant un modèle de main articulée avec des panneaux de contrôle des doigts sur le côté droit." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Simulation 3D interactive montrant un modèle de main articulée avec des panneaux de contrôle des doigts sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_002_00-00-10.jpg" alt="Écran de présentation de GPT-5.1 affichant le titre « GPT-5.1: A smarter, more conversational ChatGPT » avec une illustration de cerveau lumineux." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_002_00-00-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Écran de présentation de GPT-5.1 affichant le titre « GPT-5.1: A smarter, more conversational ChatGPT » avec une illustration de cerveau lumineux.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_003_00-00-20.jpg" alt="Simulation 3D d&#x27;un jeu de vol d&#x27;oiseaux en essaim au-dessus d&#x27;une forêt stylisée, avec un panneau « Flock Controls » en haut à droite." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_003_00-00-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:20</span>
+                        <span class="caption-text">Simulation 3D d&#x27;un jeu de vol d&#x27;oiseaux en essaim au-dessus d&#x27;une forêt stylisée, avec un panneau « Flock Controls » en haut à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_004_00-00-28.jpg" alt="Diapositive titrée « Flocking Bird Requirements » listant les exigences de la simulation d&#x27;oiseaux, accompagnée d&#x27;un extrait vidéo de la simulation." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_004_00-00-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:28</span>
+                        <span class="caption-text">Diapositive titrée « Flocking Bird Requirements » listant les exigences de la simulation d&#x27;oiseaux, accompagnée d&#x27;un extrait vidéo de la simulation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:30 - 00:00:49</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il devrait également inclure un mode de vue d&#x27;oiseau où la caméra suit un oiseau sélectionné ainsi que des commandes de base telles que l&#x27;ajustement de l&#x27;intensité du vol et le changement de vue de la caméra. Et toute la scène doit être construite en utilisant 3.js plus toutes les bibliothèques d&#x27;animation compatibles. Voici le résultat d&#x27;Opus 4.5.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo avec diapositive textuelle et interface utilisateur de simulation 3D interactive (panneau de contrôle de la simulation avec curseurs et boutons).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : « Flocking Bird Requirements », « Realistic Flocking Behaviour », « Natural Environment (Vegetation, trees, extras) », « Bird View Mode ». Sur l&#x27;image 2, le panneau affiche « Bird Flocking Simulation », « Flock Size », « Simulation Speed », « Camera View » (World View / Bird View), et des boutons « Pause » et « Reset Flock ».</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des exigences de développement de la simulation 3D, puis démonstration du résultat interactif généré par Opus 4.5 montrant un paysage arboré en 3D avec des oiseaux en vol et une interface de contrôle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_005_00-00-32.jpg" alt="Diapositive présentant les exigences de la simulation de vol d&#x27;oiseaux avec une vidéo en médaillon montrant des oiseaux en 3D dans un environnement naturel." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_005_00-00-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:32</span>
+                        <span class="caption-text">Diapositive présentant les exigences de la simulation de vol d&#x27;oiseaux avec une vidéo en médaillon montrant des oiseaux en 3D dans un environnement naturel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_006_00-00-47.jpg" alt="Interface de la simulation interactive de vol d&#x27;oiseaux (« Bird Flocking Simulation ») en 3D avec des contrôles de paramètres à gauche et un rendu graphique en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_006_00-00-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:47</span>
+                        <span class="caption-text">Interface de la simulation interactive de vol d&#x27;oiseaux (« Bird Flocking Simulation ») en 3D avec des contrôles de paramètres à gauche et un rendu graphique en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:50 - 00:01:24</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il génère le monde tel qu&#x27;il lui est demandé, avec de la verdure et de la végétation. Mais regardez les oiseaux. Ils ont de grandes queues. Et depuis la vue en contre-plongée, ils ressemblent à des oiseaux en papier plié. La caméra bouge aussi beaucoup trop et ceci est généré par GPT 5.1, le monde est formidable mais les oiseaux ne le sont pas, leur mouvement de vol en groupe n&#x27;est pas très réaliste et les formes des oiseaux ont l&#x27;air bizarres et ceci est généré par Gemini 3, il est plus grand que les mondes générés par les autres modèles. L&#x27;oiseau rouge est le principal oiseau utilisé pour le mode vue d&#x27;oiseau. Cependant, le mouvement de vol en groupe n&#x27;est toujours pas aussi bon que prévu.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation interactive en 3D (panneau de contrôle &#x27;Bird Flocking Simulation&#x27; / &#x27;Flock Controls&#x27; avec curseurs de taille de vol et de vitesse, options &#x27;World View&#x27; et &#x27;Bird View&#x27;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte visible sur les interfaces : &#x27;Bird Flocking Simulation&#x27;, &#x27;Flock Size&#x27;, &#x27;Simulation Speed&#x27;, &#x27;Camera View&#x27;, &#x27;World View&#x27;, &#x27;Bird View&#x27;, &#x27;Simulation&#x27;, &#x27;Pause&#x27;, &#x27;Reset Flock&#x27;, et &#x27;FLOCK CONTROLS&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et démonstration d&#x27;une simulation interactive en 3D représentant un monde low-poly avec des arbres et des oiseaux en mouvement, en ajustant les paramètres de la caméra et du vol.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_007_00-00-52.jpg" alt="Simulation de vol d&#x27;oiseaux montrant un paysage en 3D low-poly avec des arbres verts, un ciel bleu, des nuages et un panneau de contrôle à gauche." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_007_00-00-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:52</span>
+                        <span class="caption-text">Simulation de vol d&#x27;oiseaux montrant un paysage en 3D low-poly avec des arbres verts, un ciel bleu, des nuages et un panneau de contrôle à gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_008_00-01-02.jpg" alt="Vue rapprochée de la simulation de vol d&#x27;oiseaux avec des contrôles de taille de vol et de vitesse de simulation affichés sur le panneau latéral gauche." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_008_00-01-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:02</span>
+                        <span class="caption-text">Vue rapprochée de la simulation de vol d&#x27;oiseaux avec des contrôles de taille de vol et de vitesse de simulation affichés sur le panneau latéral gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_009_00-01-13.jpg" alt="Vue aérienne de la simulation montrant un paysage avec des sapins low-poly et des objets ressemblant à des oiseaux en papier, avec un panneau de contrôle &#x27;FLOCK CONTROLS&#x27; à droite." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_009_00-01-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:13</span>
+                        <span class="caption-text">Vue aérienne de la simulation montrant un paysage avec des sapins low-poly et des objets ressemblant à des oiseaux en papier, avec un panneau de contrôle &#x27;FLOCK CONTROLS&#x27; à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:24 - 00:01:53</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, j&#x27;ai exécuté une simulation de spirographe. Les exigences étaient une rotation continue, plusieurs options de formes, des contrôles de couleur et d&#x27;autres fonctionnalités de base. Voici le résultat d&#x27;Opus 4.5. Il génère la simulation de spirographe comme prévu. Je peux choisir différentes formes, couleurs, et une section d&#x27;animation où je peux ajuster la vitesse de dessin, l&#x27;épaisseur des traits, la taille de l&#x27;engrenage fixe, la taille de l&#x27;engrenage mobile, la distance du crayon et les rotations.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration de &quot;Spirograph Studio&quot; générée par une IA (Opus 4.5), avec des panneaux latéraux pour les préréglages de design, les animations et les paramètres d&#x27;engrenage.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;Spirograph Simulation&quot;, &quot;Continuous Rotation&quot;, &quot;Multiple Shapes&quot;, &quot;Colour Controls&quot;, &quot;Other Basic Features&quot;, &quot;DESIGN PRESETS&quot; (Flower, Star, Mandala, Galaxy, Lotus, Vortex, Snowflake, Atom, DNA Helix, Chaos, Heart, Custom), &quot;ANIMATION&quot; (Drawing Speed 1.0x, Line Thickness 2px), &quot;GEAR PARAMETERS&quot; (Fixed Gear (R) 200, Moving Gear (r) 75, Status: Drawing..., Progress: 68.5%, Points: 365).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des résultats de la simulation de spirographe et affichage des paramètres de contrôle de l&#x27;application.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_010_00-01-26.jpg" alt="Résultat d&#x27;une simulation de spirographe aux motifs géométriques complexes jaunes et cyan sur fond sombre." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_010_00-01-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:26</span>
+                        <span class="caption-text">Résultat d&#x27;une simulation de spirographe aux motifs géométriques complexes jaunes et cyan sur fond sombre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_011_00-01-34.jpg" alt="Diapositive de présentation listant les exigences de la simulation de spirographe avec une illustration à droite." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_011_00-01-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:34</span>
+                        <span class="caption-text">Diapositive de présentation listant les exigences de la simulation de spirographe avec une illustration à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_012_00-01-43.jpg" alt="Interface du logiciel Spirograph Studio affichant un motif en étoile et des panneaux de contrôle à gauche." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_012_00-01-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:43</span>
+                        <span class="caption-text">Interface du logiciel Spirograph Studio affichant un motif en étoile et des panneaux de contrôle à gauche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:53 - 00:02:14</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il offre également des options supplémentaires comme l&#x27;affichage et le masquage des engrenages, un bouton d&#x27;activation de l&#x27;effet de lueur, l&#x27;atténuation de la traînée, la pause, le redémarrage, l&#x27;effacement et un bouton de sauvegarde qui enregistre réellement le design créé. Une petite erreur, il ne tourne pas en continu. Il s&#x27;arrête après avoir généré la forme complète. C&#x27;est la génération de GPT 5.1.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web interactive de type &quot;Dynamic Spirograph Studio&quot; générée par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneaux de configuration avec des curseurs (Gear Parameters, Fixed Gear, Moving Gear, Pen Distance, Rotations, Drawing Speed, Line Thickness), palettes de couleurs, boutons de contrôle (Pause, Restart, Save) et affichage d&#x27;un tracé géométrique lumineux.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration des fonctionnalités de l&#x27;interface avec affichage des paramètres de configuration et visualisation de la génération d&#x27;un motif de spirographe lumineux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_013_00-01-55.jpg" alt="Interface de l&#x27;application montrant les paramètres des engrenages, les palettes de couleurs, les options d&#x27;affichage et le rendu géométrique en cours de dessin." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_013_00-01-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Interface de l&#x27;application montrant les paramètres des engrenages, les palettes de couleurs, les options d&#x27;affichage et le rendu géométrique en cours de dessin.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_014_00-02-12.jpg" alt="Interface de Dynamic Spirograph Studio montrant le tracé en cours avec les options de vitesse de dessin et d&#x27;épaisseur de ligne." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_014_00-02-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:12</span>
+                        <span class="caption-text">Interface de Dynamic Spirograph Studio montrant le tracé en cours avec les options de vitesse de dessin et d&#x27;épaisseur de ligne.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:14 - 00:02:32</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il ne génère pas beaucoup d&#x27;options. Je peux modifier la forme, la vitesse de dessin et l&#x27;épaisseur des traits, et il y a des boutons de redémarrage et de pause. Il s&#x27;arrête également après avoir généré un diagramme complet. Et voici le résultat de Gemini 3. Il a l&#x27;air bien, et quand je l&#x27;essaie, il comprend différentes formes, couleurs et contrôles de vitesse.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web &quot;Dynamic Spirograph Studio&quot; avec panneaux de contrôle latéraux et zone de visualisation graphique centrale.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;Dynamic Spirograph Studio&quot;, curseurs &quot;Drawing Speed&quot;, &quot;Line Thickness&quot;, &quot;Simulation Speed&quot;, &quot;Outer Radius (R)&quot;, &quot;Inner Radius (r)&quot;, &quot;Pen Offset (d)&quot;, boutons &quot;Pause&quot;, &quot;Restart Pattern&quot;, et options de design rapide (&quot;Classic&quot;, &quot;Starflower&quot;, &quot;Dense Mesh&quot;, &quot;Hypnotic&quot;, &quot;Loops&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de l&#x27;application web montrant le tracé dynamique d&#x27;une courbe spirographe et la modification des paramètres de configuration.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_015_00-02-16.jpg" alt="Interface de l&#x27;application Dynamic Spirograph Studio affichant les réglages et le tracé d&#x27;une forme géométrique en temps réel." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_015_00-02-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:16</span>
+                        <span class="caption-text">Interface de l&#x27;application Dynamic Spirograph Studio affichant les réglages et le tracé d&#x27;une forme géométrique en temps réel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_016_00-02-30.jpg" alt="Interface de configuration du spirographe montrant les boutons de design rapide et les curseurs de simulation." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_016_00-02-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:30</span>
+                        <span class="caption-text">Interface de configuration du spirographe montrant les boutons de design rapide et les curseurs de simulation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:32 - 00:02:51</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et elle possède une fonctionnalité que GPT 5.1 et Opus 4.5 n&#x27;ont pas pu générer. Une rotation continue. Si je zoome sur la forme, vous pouvez clairement la voir tourner sans s&#x27;arrêter. Exactement ce dont j&#x27;avais besoin. J&#x27;adore cette génération Gemini 3. Ensuite, c&#x27;est la simulation de main. La condition est simple.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de simulation et de génération 3D interactive (outil de modélisation/simulation géométrique et articulée).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de configuration : &quot;Quick Designs&quot; (Classic, Starflower, Dense Mesh, Hypnotic, Loops), &quot;Simulation Speed: 79x&quot;, &quot;Outer Radius (R): 196&quot;, &quot;Inner Radius (r): 52&quot;, &quot;Pen Offset (d): 185&quot;. Commandes 3D pour la simulation de main : &quot;Controls&quot;, &quot;Wrist&quot;, &quot;Global Hand&quot;, &quot;Fingers&quot;, &quot;Fine Finger Control&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une forme géométrique en rotation continue, puis effectue un zoom avant pour montrer les détails de la texture, avant de passer à une interface de simulation 3D de main articulée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_017_00-02-34.jpg" alt="Interface montrant un motif géométrique circulaire complexe en cours de génération avec des paramètres de configuration et de vitesse de simulation." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_017_00-02-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:34</span>
+                        <span class="caption-text">Interface montrant un motif géométrique circulaire complexe en cours de génération avec des paramètres de configuration et de vitesse de simulation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_018_00-02-41.jpg" alt="Gros plan zoomé sur le motif circulaire coloré en bleu et orange avec un cercle blanc entourant une zone de détails." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_018_00-02-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:41</span>
+                        <span class="caption-text">Gros plan zoomé sur le motif circulaire coloré en bleu et orange avec un cercle blanc entourant une zone de détails.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_019_00-02-49.jpg" alt="Interface 3D de simulation d&#x27;une main articulée en bois avec des panneaux de contrôle latéraux pour les doigts et le poignet." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_019_00-02-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:49</span>
+                        <span class="caption-text">Interface 3D de simulation d&#x27;une main articulée en bois avec des panneaux de contrôle latéraux pour les doigts et le poignet.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:51 - 00:03:10</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je devrais être capable de contrôler tous les doigts de la main. Rien de plus. C&#x27;est le résultat d&#x27;Opus 4.5. Honnêtement, je pense que je devrais rire très fort. Parce que les gens disent que l&#x27;IA va leur voler leur travail, mais là, qu&#x27;est-ce que c&#x27;est que ce truc généré ? Je suis choqué. Ça génère bien des contrôles pour tous les doigts, et ils fonctionnent, mais regardez juste la main.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de visualisation et de contrôle 3D avec des panneaux de réglages sur le côté droit (Wrist, Global Hand, Fingers, Fine Finger Control).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles dans l&#x27;interface : &quot;Drag to rotate&quot;, &quot;Scroll to zoom&quot;, &quot;Use sliders to bend each finger&quot;, &quot;Controls&quot;, &quot;Wrist&quot;, &quot;Global Hand&quot;, &quot;Fingers (0=open, 1=flat)&quot;, &quot;Thumb&quot;, &quot;Index&quot;, &quot;Middle&quot;, &quot;Ring&quot;, &quot;Pinky&quot;, &quot;Fine Finger Control (deg)&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le rendu 3D d&#x27;une main rudimentaire composée de blocs et de cylindres, dont les proportions et l&#x27;apparence générées par l&#x27;IA sont anormales, ainsi que les curseurs de contrôle associés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_020_00-02-53.jpg" alt="Interface 3D montrant un modèle de main cubique rudimentaire généré et ses panneaux de contrôle latéraux." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_020_00-02-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:53</span>
+                        <span class="caption-text">Interface 3D montrant un modèle de main cubique rudimentaire généré et ses panneaux de contrôle latéraux.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:10 - 00:03:43</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est trop bizarre. Opus 4.5 a vraiment fait un truc bizarre ici. Ensuite, c&#x27;est la génération de GPT 5.1. C&#x27;est bien mieux qu&#x27;Opus 4.5. Regardez la paume. Ça a l&#x27;air réaliste. Je peux contrôler tous les doigts à l&#x27;aide de curseurs et tout fonctionne. Une erreur que j&#x27;ai remarquée : lorsque l&#x27;on plie les doigts, ils vont trop loin sous la paume au lieu de s&#x27;arrêter à la paume. Mais dans l&#x27;ensemble, ça a l&#x27;air bien et réaliste, et ça, c&#x27;est la génération de Gemini 3. Ça a l&#x27;air vraiment bien aussi. Ça génère une main robotique et je peux contrôler tous les doigts à l&#x27;aide de curseurs, tout fonctionne et elle bouge comme une vraie main humaine, et remarquez le pouce.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation 3D interactive de modélisation de mains avec panneaux de contrôle par curseurs (sliders) et boutons de configuration.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Realistic Hand Simulation&quot;, &quot;Left Hand&quot;, &quot;Right Hand&quot;, commandes des doigts (&quot;THUMB&quot;, &quot;INDEX&quot;, &quot;MIDDLE&quot;, &quot;RING&quot;, &quot;PINKY&quot;), préréglages (&quot;Fist&quot;, &quot;Open&quot;, &quot;Peace&quot;, &quot;Rock&quot;, &quot;Thumbs Up&quot;, &quot;Point&quot;), et paramètres de contrôle de la main et du poignet (&quot;Wrist&quot;, &quot;Global Hand&quot;, &quot;Fingers&quot;, &quot;Fine Finger Control&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de simulations de mains 3D interactives où les doigts et les mouvements sont contrôlés via des curseurs et des boutons d&#x27;interface.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_021_00-03-12.jpg" alt="Interface de simulation montrant une modélisation de main avec des boutons de contrôle pour chaque doigt (Thumb, Index, Middle, Ring, Pinky) et des préréglages (Fist, Open, Peace, Rock, Thumbs Up, Point)." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_021_00-03-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:12</span>
+                        <span class="caption-text">Interface de simulation montrant une modélisation de main avec des boutons de contrôle pour chaque doigt (Thumb, Index, Middle, Ring, Pinky) et des préréglages (Fist, Open, Peace, Rock, Thumbs Up, Point).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_022_00-03-21.jpg" alt="Interface 3D montrant un modèle de main articulée beige sur fond sombre, avec un panneau de réglages à droite (Wrist, Global Hand, Fingers, Fine Finger Control)." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_022_00-03-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:21</span>
+                        <span class="caption-text">Interface 3D montrant un modèle de main articulée beige sur fond sombre, avec un panneau de réglages à droite (Wrist, Global Hand, Fingers, Fine Finger Control).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_023_00-03-33.jpg" alt="Modélisation 3D d&#x27;une main robotique cyan et bleue sur fond noir, avec des curseurs de contrôle sur le côté droit pour chaque doigt." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_023_00-03-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:33</span>
+                        <span class="caption-text">Modélisation 3D d&#x27;une main robotique cyan et bleue sur fond noir, avec des curseurs de contrôle sur le côté droit pour chaque doigt.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:43 - 00:03:50</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ça bouge de façon réaliste aussi. C&#x27;est la recherche pour la vidéo d&#x27;aujourd&#x27;hui. Si vous avez aimé, mettez un pouce bleu, abonnez-vous et laissez un commentaire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration 3D avec des curseurs de contrôle sur le côté droit (Thumb, Index, Middle, Ring, Pinky, Pitch/Yaw) et le logo &quot;PAI&quot; dans un cercle lumineux bleu à gauche.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché en haut : &quot;Drag controls. Left drag on blank space background to rotate&quot;. Curseurs de contrôle pour chaque doigt (Thumb, Index, Middle, Ring, Pinky) et l&#x27;orientation (Pitch/Yaw). Logo &quot;PAI&quot; sur un processeur connecté à un cerveau dans un cercle lumineux.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;un modèle 3D interactif d&#x27;une main robotique permettant de tester et de visualiser les mouvements et l&#x27;articulation des doigts.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-JluJkVTXh-0/frame_024_00-03-47.jpg" alt="Modélisation 3D d&#x27;une main robotique interactive avec des curseurs de contrôle, accompagnée du logo de la chaîne PAI représentant un cerveau relié à un processeur dans un cercle lumineux." loading="lazy" onclick="openLightbox('screenshots/YT-JluJkVTXh-0/frame_024_00-03-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:47</span>
+                        <span class="caption-text">Modélisation 3D d&#x27;une main robotique interactive avec des curseurs de contrôle, accompagnée du logo de la chaîne PAI représentant un cerveau relié à un processeur dans un cercle lumineux.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
