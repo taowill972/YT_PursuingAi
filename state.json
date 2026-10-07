@@ -52,7 +52,8 @@
     "yLLPCBRuNDU",
     "wOQnqihYD6g",
     "CAXuTKoog48",
-    "aoDtfg52NPI"
+    "aoDtfg52NPI",
+    "6MwYurap49Q"
   ],
   "processed_videos": [
     {
@@ -792,9 +793,23 @@
       "filepath_html": "/root/YT_PursuingAi/2026-01-13_YT-aoDtfg52NPI_ELLE VEUT TOUT ÇA La techno la plus folle du CES 2026 (Ongles E-Ink)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-06T22:57:00Z",
       "status": "completed"
+    },
+    {
+      "video_id": "6MwYurap49Q",
+      "title": "Hollywood Is Finished… AI Just Took Over",
+      "raw_title": "Hollywood Is Finished… AI Just Took Over",
+      "filename_md": "2026-01-10_YT-6MwYurap49Q_Hollywood Is Finished… AI Just Took Over_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-01-10_YT-6MwYurap49Q_Hollywood Is Finished… AI Just Took Over_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-01-10",
+      "duration": 426,
+      "screenshots_count": 0,
+      "filepath_md": "/root/YT_PursuingAi/2026-01-10_YT-6MwYurap49Q_Hollywood Is Finished… AI Just Took Over_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-01-10_YT-6MwYurap49Q_Hollywood Is Finished… AI Just Took Over_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-07T01:10:41Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 53,
+  "completed_count": 54,
   "last_run_timestamp": "2026-10-06T22:00:05Z",
   "status": "running",
   "total_catalog_count": 84
