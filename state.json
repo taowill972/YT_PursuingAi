@@ -66,7 +66,8 @@
     "vTcGkM5wMvc",
     "vcRnzyhBikA",
     "JluJkVTXh-0",
-    "2vmgejjKkPw"
+    "2vmgejjKkPw",
+    "owYisYT9akg"
   ],
   "processed_videos": [
     {
@@ -1002,9 +1003,23 @@
       "filepath_html": "/root/YT_PursuingAi/2025-11-25_YT-2vmgejjKkPw_Cette IA crée des vidéos ultra-réalistes ! wan ai_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-07T10:38:15Z",
       "status": "completed"
+    },
+    {
+      "video_id": "owYisYT9akg",
+      "title": "Gemini 3 vs GPT 5.1 : Leurs résultats vont vous choquer !",
+      "raw_title": "Gemini 3 vs GPT 5.1: The Results Will Shock You!",
+      "filename_md": "2025-11-23_YT-owYisYT9akg_Gemini 3 vs GPT 5.1 Leurs résultats vont vous choquer !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2025-11-23_YT-owYisYT9akg_Gemini 3 vs GPT 5.1 Leurs résultats vont vous choquer !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2025-11-23",
+      "duration": 273,
+      "screenshots_count": 26,
+      "filepath_md": "/root/YT_PursuingAi/2025-11-23_YT-owYisYT9akg_Gemini 3 vs GPT 5.1 Leurs résultats vont vous choquer !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2025-11-23_YT-owYisYT9akg_Gemini 3 vs GPT 5.1 Leurs résultats vont vous choquer !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-07T10:45:08Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 67,
+  "completed_count": 68,
   "last_run_timestamp": "2026-10-07T10:00:03Z",
   "status": "running",
   "total_catalog_count": 84

@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Gemini 3 vs GPT 5.1 : Leurs résultats vont vous choquer ! — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Gemini 3 vs GPT 5.1 : Leurs résultats vont vous choquer !</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-11-23</span>
+                <span class="badge">⏱️ 04m 33s</span>
+                <span class="badge">🆔 <code>owYisYT9akg</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=owYisYT9akg" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de Pursuing AI, intitulée « Gemini 3 vs GPT 5.1 : Leurs résultats vont vous choquer ! », plonge au cœur de la compétition acharnée entre les mastodontes de l'intelligence artificielle pour déterminer quel modèle propriétaire et payant offre le meilleur retour sur investissement aux utilisateurs. Le créateur orchestre un comparatif rigoureux et méthodique en soumettant les deux intelligences artificielles à une série de tests de génération de code applicatif et de simulation visuelle interactive — incluant des interfaces complexes comme une main robotique, un pied articulé, un globe 3D informatif et un éditeur de Lego 3D.</p><p>La méthodologie du créateur repose sur l'utilisation de prompts textuels uniques et l'injection d'images de référence (image-to-code/UI), qu'il teste à l'identique sur les deux plateformes pour évaluer non seulement la qualité de la génération graphique, mais surtout la fiabilité de l'exécution et la robustesse des fonctionnalités interactives. À travers ce processus étape par étape, il met en évidence la supériorité technique de Gemini 3 dans la compréhension contextuelle et le rendu visuel fonctionnel, là où son concurrent échoue à plusieurs reprises lors des phases de prévisualisation ou d'exécution du code.</p><p>Pour les créateurs de contenu, les vidéastes et les développeurs no-code, cette analyse livre des enseignements cruciaux sur l'évolution des assistants IA génératifs. Elle démontre comment exploiter ces outils pour prototyper rapidement des interfaces utilisateur sophistiquées, concevoir des éléments interactifs sans compétences techniques avancées, et identifier les solutions les plus performantes pour optimiser son budget logiciel. Les résultats soulignent l'accessibilité croissante des technologies de pointe pour le grand public, redéfinissant les standards de la production numérique assistée par IA.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Supériorité de Gemini 3 sur le prototypage visuel** : Le modèle surpasse son concurrent direct dans la génération d&#x27;éléments graphiques réalistes et cohérents à partir d&#x27;un simple prompt et d&#x27;une image de référence.</span></li><li><span class="point-bullet">✦</span><span>Gestion réaliste de la cinématique (Cas de la main)** : Gemini 3 code un mouvement de pouce anatomiquement correct, évitant les flexions rigides ou standardisées observées sur les doigts classiques.</span></li><li><span class="point-bullet">✦</span><span>Efficacité de l&#x27;approche text-to-code pour les non-techniciens** : Les utilisateurs sans compétences en programmation peuvent générer des interfaces complexes et fonctionnelles rien qu&#x27;en décrivant leurs attentes textuellement.</span></li><li><span class="point-bullet">✦</span><span>Fiabilité des contrôleurs interactifs** : Les curseurs de contrôle (doigts, poings, relâchement, serrage, randomisation) générés par Gemini 3 s&#x27;avèrent immédiatement opérationnels et fluides lors de la prévisualisation.</span></li><li><span class="point-bullet">✦</span><span>Gestion des limites graphiques (Cas du pied)** : Même si Gemini 3 commet de légères erreurs géométriques lors du repli total des ốcorteils, le rendu reste visuellement supérieur et facilement corrigeable par un prompt affiné.</span></li><li><span class="point-bullet">✦</span><span>Faiblesses d&#x27;OpenAI sur l&#x27;exécution du code** : GPT 5.1 montre des difficultés récurrentes à exécuter des applications complexes dans son environnement de prévisualisation, renvoyant des bugs d&#x27;accès réseau bloquants.</span></li><li><span class="point-bullet">✦</span><span>Capacités géographiques et de data-viz** : Gemini 3 parvient à intégrer des bases de données interactives dans un globe 3D, restituant avec exactitude les informations démographiques et géographiques au clic.</span></li><li><span class="point-bullet">✦</span><span>Création d&#x27;applications ludiques complexes** : La génération d&#x27;un éditeur de Lego 3D entièrement fonctionnel (ajout, suppression, rotation, changement de taille et de couleur des briques) démontre la puissance de calcul et de logique du modèle de Google.</span></li><li><span class="point-bullet">✦</span><span>Optimisation du retour sur investissement** : L&#x27;analyse comparative aide directement les créateurs à orienter leurs investissements vers l&#x27;outil le plus rentable et le plus stable pour leurs besoins quotidiens.</span></li><li><span class="point-bullet">✦</span><span>Importance de l&#x27;itération par le prompt** : Un prompt détaillé et structuré permet de corriger instantanément les micro-défauts de génération (comme le doublage visuel des orteils), soulignant l&#x27;importance du prompting itératif.</span></li><li><span class="point-bullet">✦</span><span>Accessibilité multiplateforme** : La disponibilité de Gemini 3 via son application dédiée et Google AI Studio garantit une transition fluide entre usage grand public et exigences professionnelles.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:22</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est quoi ce bordel ? À quel point c&#x27;est incroyable ? Donc Google a sorti Gemini 3, leur modèle le plus puissant. Et il y a quelques jours, OpenAI a sorti GPT 5.1. Les deux sont des modèles propriétaires et payants. Donc aujourd&#x27;hui, je vais faire des recherches pour savoir quel modèle en vaut vraiment la peine et lequel peut vous faire économiser de l&#x27;argent.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration interactive avec des panneaux de contrôle de mouvements et de simulation physique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte visible : &quot;Finger Control Panel&quot;, &quot;THUMB&quot;, &quot;INDEX&quot;, &quot;MIDDLE&quot;, &quot;RING&quot;, &quot;PINKY&quot;, &quot;Reset&quot;, &quot;Relax (soft)&quot;, &quot;Clench (full)&quot;, &quot;Randomize&quot;, &quot;Touch-friendly buttons and sliders – physics simulated with damped springs for realistic motion.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Manipulation de curseurs numériques pour contrôler les articulations d&#x27;une main modélisée en 3D avec simulation physique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_001_00-00-02.jpg" alt="Panneau de contrôle de doigts numérique avec des curseurs de réglage et une main stylisée." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Panneau de contrôle de doigts numérique avec des curseurs de réglage et une main stylisée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_002_00-00-15.jpg" alt="Interface web avec des fenêtres empilées montrant des paysages naturels." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_002_00-00-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:15</span>
+                        <span class="caption-text">Interface web avec des fenêtres empilées montrant des paysages naturels.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_003_00-00-20.jpg" alt="Démonstration vidéo d&#x27;un utilisateur interagissant avec une interface de suivi de mouvements de la main." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_003_00-00-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:20</span>
+                        <span class="caption-text">Démonstration vidéo d&#x27;un utilisateur interagissant avec une interface de suivi de mouvements de la main.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:23 - 00:00:56</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ceci est Pursuing AI et vous regardez le rapport de recherche. D&#x27;abord, je voulais faire une simulation de main. J&#x27;ai donc écrit un simple prompt dans lequel j&#x27;ai donné des instructions pour contrôler chaque doigt de la main, et j&#x27;ai téléchargé cette image de paume. Et voici le résultat de Gemini 3. Et honnêtement, ça dépasse mes attentes. Ça a codé une main robotique qui a l&#x27;air réaliste. Je peux contrôler tous les doigts en utilisant ces curseurs. Par exemple, si je veux bouger le pouce, je peux. Je peux contrôler l&#x27;index, le majeur,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;outil Gemini (avec mode Canvas) et interface de simulation 3D interactive.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt : « Generate a simulation in which I can move all the fingers through button control background of simulation is dark and I can control all the fingers movements through different different button which is controlled through touch control. Physics must be realistic. Put all things i... » et curseurs de contrôle étiquetés THUMB, INDEX, MIDDLE, RING, PINKY, MOVE (ALL).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de l&#x27;interface de génération avec image de référence et présentation d&#x27;une simulation 3D de main robotique manipulable via des curseurs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_004_00-00-34.jpg" alt="Interface de Gemini montrant une image de main importée et un prompt textuel demandant une simulation interactive avec des contrôles de boutons." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_004_00-00-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:34</span>
+                        <span class="caption-text">Interface de Gemini montrant une image de main importée et un prompt textuel demandant une simulation interactive avec des contrôles de boutons.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_005_00-00-45.jpg" alt="Simulation 3D interactive d&#x27;une main robotique avec des curseurs de contrôle sur le côté droit pour chaque doigt." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_005_00-00-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:45</span>
+                        <span class="caption-text">Simulation 3D interactive d&#x27;une main robotique avec des curseurs de contrôle sur le côté droit pour chaque doigt.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:56 - 00:01:32</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">annulaire et auriculaire. Et si je veux contrôler tous les doigts ensemble, j&#x27;utilise simplement ce curseur de poing et je peux tout contrôler parfaitement. C&#x27;génial. Et notez particulièrement le mouvement du pouce. Il ne se plie pas comme les doigts normaux qui font des va-et-vient. Il se plie de manière réaliste, tout comme un vrai pouce humain. Et voici le résultat de GPT 5.1 en utilisant le même prompt et la même image. Il génère bien une simulation de main et des curseurs, mais si vous regardez la main, elle ne ressemble pas à une main humaine et les doigts sont bizarrement faits, oui tous les contrôleurs fonctionnent</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de ChatGPT 5.1 avec affichage de code et simulation HTML interactive.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt utilisateur : &quot;Generate a simulation in which i can move all the fingers through button control background of simulation is dark and i can control all the fingers movements through different different button which is controlled through touch control. Physics must be realistic. Put all things in a stand alone html file&quot;. Panneau de contrôle des doigts avec curseurs (Thumb, Index, Middle, Ring, Pinky).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une simulation interactive 3D d&#x27;une main pilotée par des curseurs, puis montre l&#x27;interface de ChatGPT 5.1 générant le code et le résultat de la simulation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_006_00-00-58.jpg" alt="Simulation 3D interactive d&#x27;une main géométrique avec des curseurs de contrôle sur le côté droit." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_006_00-00-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:58</span>
+                        <span class="caption-text">Simulation 3D interactive d&#x27;une main géométrique avec des curseurs de contrôle sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_007_00-01-21.jpg" alt="Interface de ChatGPT 5.1 affichant un prompt textuel et un aperçu de code HTML pour une simulation de main." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_007_00-01-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:21</span>
+                        <span class="caption-text">Interface de ChatGPT 5.1 affichant un prompt textuel et un aperçu de code HTML pour une simulation de main.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_008_00-01-30.jpg" alt="Résultat généré par ChatGPT 5.1 montrant une simulation de main stylisée en beige avec un panneau de contrôle des doigts." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_008_00-01-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:30</span>
+                        <span class="caption-text">Résultat généré par ChatGPT 5.1 montrant une simulation de main stylisée en beige avec un panneau de contrôle des doigts.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:32 - 00:01:55</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">et en bas, il a ajouté une option de relâchement ce qui signifie une ouverture douce, une option de serrage ce qui signifie une ouverture complète, un randomiseur qui déplace la main dans n&#x27;importe quel motif et une option de réinitialisation. Pour ce test, je donnerai les points à Gemini 3. Ensuite, je voulais créer une simulation de pied, alors j&#x27;ai utilisé cette image de pied, j&#x27;ai donné le même prompt et j&#x27;ai juste changé main par pied.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de ChatGPT (avec panneau Canvas et panneau de contrôle interactif à droite).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt : &quot;Generate a simulation in which I can move all the fingers through button control background of simulation is dark and I can control all the fingers movements through different different button which is controlled through touch control. Physics must be realistic. Put all things in a stand alone html file&quot;. Boutons visibles : &quot;Reset&quot;, &quot;Relax (soft)&quot;, &quot;Clench (full)&quot;, &quot;Randomize&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente l&#x27;interface interactive générée par l&#x27;IA avec les options de contrôle des doigts, puis montre la transition vers la création d&#x27;une simulation de pied en réutilisant le même prompt.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_009_00-01-34.jpg" alt="Interface ChatGPT montrant un panneau de contrôle interactif pour simuler les doigts avec des boutons pour relâcher, serrer et randomiser." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_009_00-01-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:34</span>
+                        <span class="caption-text">Interface ChatGPT montrant un panneau de contrôle interactif pour simuler les doigts avec des boutons pour relâcher, serrer et randomiser.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_010_00-01-48.jpg" alt="Interface ChatGPT affichant l&#x27;utilisation d&#x27;une image de pied avec le même prompt textuel pour générer une simulation similaire." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_010_00-01-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:48</span>
+                        <span class="caption-text">Interface ChatGPT affichant l&#x27;utilisation d&#x27;une image de pied avec le même prompt textuel pour générer une simulation similaire.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:56 - 00:02:16</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et voici le résultat de Gemini. Il génère le pied. Et comme vous pouvez le voir, c&#x27;est bien un pied. Et voici les curseurs à l&#x27;aide desquels je peux contrôler les doigts du pied. Par exemple, si j&#x27;utilise le curseur du gros orteil, oui, cela fléchit le gros orteil. Et chaque curseur fonctionne. Et si j&#x27;utilise « tout replier », cela fléchit tous les orteils.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Gemini (Canvas / interface de développement).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Modèle 3D d&#x27;un pied (« FOOT SIMULATION ») avec des curseurs nommés Big Toe, 2nd Toe, 3rd Toe, 4th Toe, Little Toe et Curl All. Panneau latéral gauche affichant l&#x27;historique de chat et les modifications apportées (« I have updated the Foot Simulation to place the controls on the right side... »).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente la simulation 3D interactive d&#x27;un pied générée par l&#x27;IA et démontre le fonctionnement des curseurs pour plier les différents orteils.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_011_00-01-58.jpg" alt="Interface de Gemini affichant une simulation de pied en 3D avec des curseurs de contrôle sur le côté droit." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_011_00-01-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:58</span>
+                        <span class="caption-text">Interface de Gemini affichant une simulation de pied en 3D avec des curseurs de contrôle sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_012_00-02-06.jpg" alt="Gros plan sur la simulation de pied en 3D générée avec les curseurs de contrôle des orteils visibles à droite." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_012_00-02-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:06</span>
+                        <span class="caption-text">Gros plan sur la simulation de pied en 3D générée avec les curseurs de contrôle des orteils visibles à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:16 - 00:02:41</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La seule petite erreur que je peux voir, c&#x27;est que lorsque je ferme tous les orteils, ils ont l&#x27;air doublés de face, comme vous pouvez le voir ici. Mais ce n&#x27;est pas un gros problème. Cela peut facilement être corrigé avec un prompt plus détaillé. Voici le résultat de GPT 5.1. Et comme vous l&#x27;avez vu plus tôt, il a tout fait de la même manière. Tous les contrôleurs fonctionnent. La seule erreur réside à nouveau dans la génération du pied, tout comme il a eu du mal avec la main.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de simulation 3D interactive et de contrôle des mouvements d&#x27;orteils.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &#x27;FOOT SIMULATION&#x27;, &#x27;Toe Control Panel&#x27;, curseurs de réglage &#x27;Big&#x27;, &#x27;Second&#x27;, &#x27;Middle&#x27;, &#x27;Fourth&#x27;, &#x27;Little&#x27;, et boutons &#x27;Reset&#x27;, &#x27;Relax&#x27;, &#x27;Curl (full)&#x27;, &#x27;Randomize&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Manipulation d&#x27;une interface de simulation numérique démontrant le rendu 3D d&#x27;un pied et le comportement des orteils.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_013_00-02-18.jpg" alt="Simulation 3D d&#x27;un pied avec un panneau de contrôle latéral comportant des curseurs pour chaque orteil." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_013_00-02-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:18</span>
+                        <span class="caption-text">Simulation 3D d&#x27;un pied avec un panneau de contrôle latéral comportant des curseurs pour chaque orteil.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_014_00-02-33.jpg" alt="Interface de contrôle des orteils (&#x27;Toe Control Panel&#x27;) avec des curseurs pour chaque doigt de pied (Big, Second, Middle, Fourth, Little) et des boutons d&#x27;action." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_014_00-02-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:33</span>
+                        <span class="caption-text">Interface de contrôle des orteils (&#x27;Toe Control Panel&#x27;) avec des curseurs pour chaque doigt de pied (Big, Second, Middle, Fourth, Little) et des boutons d&#x27;action.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:41 - 00:03:16</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc encore une fois, le point revient à Gemini 3. Ensuite, j&#x27;ai généré un globe 3D qui vous donne les informations de n&#x27;importe quel pays lorsque vous cliquez dessus et voici le résultat de Gemini. Trouvons les États-Unis et les voici. Si je clique dessus, il donne les informations sur le pays comme le nom du pays, la population, la région, la monnaie, les langues et les coordonnées, ce qui est également correct. Si je clique sur un autre pays, oui il donne les informations correctes. Cependant, GPT 5.1 n&#x27;est pas capable de générer un globe 3D.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Gemini avec panneau de génération et prévisualisation, et interface ChatGPT.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt &quot;Generate a 3d globe which gives you all the information about any country when I tap and click&quot;, code HTML/CSS, et rendu visuel du globe terrestre 3D &quot;GEODATA SPHERE&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de la création d&#x27;un globe 3D interactif avec Gemini et affichage du code source.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_015_00-02-43.jpg" alt="Interface montrant une modélisation 3D de pieds avec des panneaux de contrôle des orteils." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_015_00-02-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:43</span>
+                        <span class="caption-text">Interface montrant une modélisation 3D de pieds avec des panneaux de contrôle des orteils.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_016_00-02-53.jpg" alt="Interface de Gemini affichant un globe 3D interactif et le prompt de génération." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_016_00-02-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:53</span>
+                        <span class="caption-text">Interface de Gemini affichant un globe 3D interactif et le prompt de génération.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_017_00-03-14.jpg" alt="Interface de ChatGPT 5.1 affichant le code HTML/CSS généré pour un globe interactif." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_017_00-03-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:14</span>
+                        <span class="caption-text">Interface de ChatGPT 5.1 affichant le code HTML/CSS généré pour un globe interactif.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:16 - 00:03:43</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il écrit le code, mais quand je prévisualise, parfois cela montre un bug et demande un accès à Internet. Mais ça échoue à chaque fois, même après l&#x27;avoir autorisé et avoir cliqué sur corriger le bug, ça échoue. Sur X, j&#x27;ai vu cet exemple. Cette personne a fait un éditeur de Lego 3D, qui a l&#x27;air incroyable. J&#x27;ai donc utilisé un simple prompt textuel unique qui est : créer un éditeur de Lego 3D. Et voici le résultat de Gemini.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de ChatGPT et de Gemini, ainsi qu&#x27;une publication sur le réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code source HTML, balises de style, texte de prévisualisation &quot;Interactive Globe&quot;, publication sur X de Pietro Schirano (@skirano) mentionnant la création d&#x27;un éditeur de Lego 3D via Gemini 3 Pro, prompt &quot;create a 3D LEGO editor&quot;, et panneau de fonctionnalités de Gemini listant &quot;3D Building Environment&quot; et &quot;Brick Selection&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur montre d&#x27;abord des bugs de code et de prévisualisation sur ChatGPT, puis présente un exemple réussi trouvé sur X, et enfin le résultat généré par un prompt simple dans Gemini affichant l&#x27;éditeur 3D.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_018_00-03-18.jpg" alt="Image #1 : Interface de ChatGPT affichant du code HTML brut dans un panneau de prévisualisation sombre." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_018_00-03-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:18</span>
+                        <span class="caption-text">Image #1 : Interface de ChatGPT affichant du code HTML brut dans un panneau de prévisualisation sombre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_019_00-03-25.jpg" alt="Image #2 : Interface de ChatGPT montrant un volet latéral avec des options de configuration et une zone de prévisualisation sombre." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_019_00-03-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:25</span>
+                        <span class="caption-text">Image #2 : Interface de ChatGPT montrant un volet latéral avec des options de configuration et une zone de prévisualisation sombre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_020_00-03-34.jpg" alt="Image #3 : Publication sur le réseau social X par Pietro Schirano montrant une capture d&#x27;écran d&#x27;un éditeur de Lego 3D fonctionnel." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_020_00-03-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:34</span>
+                        <span class="caption-text">Image #3 : Publication sur le réseau social X par Pietro Schirano montrant une capture d&#x27;écran d&#x27;un éditeur de Lego 3D fonctionnel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_021_00-03-41.jpg" alt="Image #4 : Interface de Gemini affichant le prompt textuel &quot;create a 3D LEGO editor&quot; et un aperçu graphique de l&#x27;éditeur 3D avec une brique rouge." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_021_00-03-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:41</span>
+                        <span class="caption-text">Image #4 : Interface de Gemini affichant le prompt textuel &quot;create a 3D LEGO editor&quot; et un aperçu graphique de l&#x27;éditeur 3D avec une brique rouge.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:43 - 00:04:04</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il génère effectivement un éditeur 3D de Lego à partir d&#x27;une simple invite textuelle. Je peux ajouter des Lego, changer les briques, ce qui signifie la taille et la couleur des Lego, faire pivoter, supprimer. Et si je clique sur tout effacer, cela efface tous les Lego. Il a également ajouté des instructions sur la façon d&#x27;utiliser toutes ces options. Incroyable. Gemini fait vraiment du bon travail.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Éditeur de code et application 3D &quot;Brick Builder 3D&quot; propulsée par Gemini (HTML, Three.js, Tailwind CSS).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de l&#x27;invite &quot;create a 3D LEGO editor.&quot;, description des fonctionnalités, palette de sélection de briques (1x1, 1x2, 2x2, 2x4, etc.) et de couleurs, bouton &quot;Clear All&quot;, et instructions d&#x27;utilisation (Left Click, Right Drag, Scroll, R Key, Delete Key).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de l&#x27;éditeur 3D de Lego généré par IA, placement de briques, modification des tailles/couleurs, et affichage du panneau d&#x27;aide.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_022_00-03-45.jpg" alt="Interface de Gemini affichant l&#x27;éditeur 3D de Lego généré par IA avec les blocs rouges placés sur une grille verte." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_022_00-03-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:45</span>
+                        <span class="caption-text">Interface de Gemini affichant l&#x27;éditeur 3D de Lego généré par IA avec les blocs rouges placés sur une grille verte.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_023_00-03-53.jpg" alt="Vue agrandie de l&#x27;éditeur Brick Builder 3D montrant plusieurs briques Lego rouges et une brique jaune assemblées sur l&#x27;espace de travail." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_023_00-03-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:53</span>
+                        <span class="caption-text">Vue agrandie de l&#x27;éditeur Brick Builder 3D montrant plusieurs briques Lego rouges et une brique jaune assemblées sur l&#x27;espace de travail.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_024_00-04-02.jpg" alt="Fenêtre d&#x27;instructions &quot;How to Build&quot; affichant les raccourcis clavier et les commandes de la souris pour manipuler l&#x27;éditeur 3D." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_024_00-04-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:02</span>
+                        <span class="caption-text">Fenêtre d&#x27;instructions &quot;How to Build&quot; affichant les raccourcis clavier et les commandes de la souris pour manipuler l&#x27;éditeur 3D.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:04 - 00:04:33</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">De l&#x27;autre côté, GPT 5.1 génère le code, mais n&#x27;est pas capable de l&#x27;exécuter. Il affiche un certain type d&#x27;erreur. J&#x27;ai essayé plusieurs fois, mais ça ne fonctionne pas. Ça a encore échoué. À partir de ces exemples, une chose est claire. Gemini peut comprendre votre invite simple et donner le résultat requis. C&#x27;est très utile pour les non-techniciens. Vous pouvez utiliser Gemini 3 dans l&#x27;application Gemini et Google AI Studio. C&#x27;est ma recherche. Si vous l&#x27;aimez, veuillez vous abonner.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de développement et de génération de code (type ChatGPT/interface de prévisualisation de code React avec options Copy, Edit, Download, Preview).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code source en TypeScript/React pour un éditeur de briques LEGO 3D (utilisation de React, useRef, useState, useMemo, useEffect, Canvas de @react-three/fiber, OrbitControls, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du code généré par l&#x27;IA et de l&#x27;éditeur de briques 3D interactif généré pour illustrer la comparaison des performances.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_025_00-04-06.jpg" alt="Affichage d&#x27;un éditeur de code et de composants React pour un éditeur 3D de LEGO." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_025_00-04-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:06</span>
+                        <span class="caption-text">Affichage d&#x27;un éditeur de code et de composants React pour un éditeur 3D de LEGO.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-owYisYT9akg/frame_026_00-04-24.jpg" alt="Affichage côte à côte d&#x27;une interface cartographique interactive (globe terrestre avec fiche d&#x27;information sur les États-Unis) et d&#x27;un éditeur de briques LEGO interactif." loading="lazy" onclick="openLightbox('screenshots/YT-owYisYT9akg/frame_026_00-04-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:24</span>
+                        <span class="caption-text">Affichage côte à côte d&#x27;une interface cartographique interactive (globe terrestre avec fiche d&#x27;information sur les États-Unis) et d&#x27;un éditeur de briques LEGO interactif.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
