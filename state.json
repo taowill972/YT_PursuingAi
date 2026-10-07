@@ -60,7 +60,8 @@
     "dzqjuVLQrU8",
     "GGRpVBQV2yg",
     "dW74ziq6PGg",
-    "EygX7S0lWEc"
+    "EygX7S0lWEc",
+    "Msrj1lQBonI"
   ],
   "processed_videos": [
     {
@@ -912,9 +913,23 @@
       "filepath_html": "/root/YT_PursuingAi/2025-12-20_YT-EygX7S0lWEc_GPT-5.2 vs Gemini 3 Flash, Opus 4.5 — C'était inattendu_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-07T07:27:27Z",
       "status": "completed"
+    },
+    {
+      "video_id": "Msrj1lQBonI",
+      "title": "Révélation sur les images de GPT-1.5 : Vraie évolution ou simple coup marketing ?",
+      "raw_title": "GPT-1.5 Images Exposed: Real Upgrade or Marketing Hype?",
+      "filename_md": "2025-12-18_YT-Msrj1lQBonI_Révélation sur les images de GPT-1.5 Vraie évolution ou simple coup marketing_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2025-12-18_YT-Msrj1lQBonI_Révélation sur les images de GPT-1.5 Vraie évolution ou simple coup marketing_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2025-12-18",
+      "duration": 225,
+      "screenshots_count": 24,
+      "filepath_md": "/root/YT_PursuingAi/2025-12-18_YT-Msrj1lQBonI_Révélation sur les images de GPT-1.5 Vraie évolution ou simple coup marketing_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2025-12-18_YT-Msrj1lQBonI_Révélation sur les images de GPT-1.5 Vraie évolution ou simple coup marketing_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-07T07:33:30Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 61,
+  "completed_count": 62,
   "last_run_timestamp": "2026-10-07T04:00:03Z",
   "status": "running",
   "total_catalog_count": 84

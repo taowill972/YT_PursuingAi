@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Révélation sur les images de GPT-1.5 : Vraie évolution ou simple coup marketing ? — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Révélation sur les images de GPT-1.5 : Vraie évolution ou simple coup marketing ?</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-12-18</span>
+                <span class="badge">⏱️ 03m 45s</span>
+                <span class="badge">🆔 <code>Msrj1lQBonI</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=Msrj1lQBonI" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* dissèque la nouvelle mise à jour « ChatGPT Images 1.5 » d'OpenAI afin de séparer la véritable révolution technologique du simple argument marketing. L'analyste adopte une approche pragmatique et comparative, s'éloignant des démos superficiellement parfaites pour soumettre le modèle à des cas d'usage réels du quotidien (retouche photo, essayage virtuel et génération d'infographies). En confrontant directement l'outil à un cador du marché, *Nano Banana Pro*, il évalue froidement la précision, le respect du contexte et les limites structurelles des intelligences artificielles génératives actuelles.</p><p>Pour mener à bien son investigation, le créateur déploie une méthodologie empirique rigoureuse basée sur des scénarios concrets. Il teste d'abord la suppression d'éléments indésirables sur une photo de Noël pour mesurer l'intégrité de la retouche, puis éprouve la capacité d'essayage virtuel en habillant un sujet à partir d'un plan mi-corps, avant d'explorer la création d'infographies et les affiches publicitaires. Chaque cas d'usage est décortiqué pour observer la gestion des proportions, le réalisme des textures et la fidélité des sujets.</p><p>Cette analyse approfondie offre des bénéfices concrets majeurs pour les créateurs de vidéo et professionnels du numérique. Elle démontre que si les modèles actuels excellent dans la manipulation chirurgicale d'images (comme l'inpainting contextuel), ils pèchent encore sur la cohérence multisuport et la persistance des personnages d'un plan à l'autre. Pour les créateurs, comprendre ces seuils de rupture permet d'optimiser leurs workflows de production, d'éviter les pièges de l'hallucination visuelle et d'utiliser à bon escient les forces combinées de ces nouveaux outils génératifs.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Nano Banana Pro</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Priorité aux cas d&#x27;usage réels** : Il est impératif de tester les IA génératives sur des problématiques quotidiennes (retouche, détourage, mise en situation) plutôt de se fier uniquement aux démos marketing tape-à-l&#x27;œil.</span></li><li><span class="point-bullet">✦</span><span>Maîtrise de l&#x27;inpainting contextuel** : Image 1.5 démontre une excellente capacité à supprimer des personnes en arrière-plan tout en préservant l&#x27;intégrité des expressions faciales et du sujet principal.</span></li><li><span class="point-bullet">✦</span><span>Gestion rigoureuse des limites de cadrage** : Lors d&#x27;un essayage virtuel à partir d&#x27;un plan mi-corps, un bon modèle génératif ne doit pas halluciner des éléments hors champ (comme des pantalons ou des bottes invisibles).</span></li><li><span class="point-bullet">✦</span><span>Supériorité subtile du réalisme vestimentaire** : Face à *Nano Banana Pro*, Image 1.5 ajuste plus naturellement les vêtements sur un corps, évitant l&#x27;effet trop ample et peu naturel.</span></li><li><span class="point-bullet">✦</span><span>Bond en avant pour les infographies** : Les nouveaux modèles structurent nettement mieux la mise en page, la hiérarchie visuelle et la clarté des infographies comparés aux anciennes générations.</span></li><li><span class="point-bullet">✦</span><span>Transparence des failles par les éditeurs** : OpenAI liste lui-même ses limites (inexactitudes scientifiques, contraintes de style artistique), ce qui aide les créateurs à anticiper les erreurs de rendu.</span></li><li><span class="point-bullet">✦</span><span>Persistance des sujets en multi-sujets** : Un point de friction majeur reste la cohérence visuelle lorsqu&#x27;une seule image intègre plusieurs personnages, entraînant des variations morphologiques d&#x27;un sujet à l&#x27;autre.</span></li><li><span class="point-bullet">✦</span><span>Limites linguistiques persistantes** : Des barrières subsistent dans la compréhension fine de certaines requêtes textuelles complexes intégrées aux images.</span></li><li><span class="point-bullet">✦</span><span>Approche comparative indispensable** : L&#x27;utilisation d&#x27;un benchmark direct (comme *Nano Banana Pro*) est la seule méthode fiable pour nuancer le battage médiatique autour d&#x27;une nouvelle version.</span></li><li><span class="point-bullet">✦</span><span>Adaptation des workflows de création** : Connaître les forces de retouche d&#x27;Image 1.5 permet aux créateurs de contenu d&#x27;accélérer la post-production photographique sans recourir systématiquement à des logiciels lourds.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:22</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">OpenAI vient de sortir une nouvelle version de ChatGPT Images 1.5. Et à première vue, ça a l&#x27;air impressionnant. Mais la vraie question est de savoir si c&#x27;est réellement utile dans le monde réel, ou si c&#x27;est juste un autre générateur d&#x27;images avec un meilleur marketing. La plupart des critiques s&#x27;arrêtent aux démos tape-à-l&#x27;œil et aux jolies images.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de présentation de ChatGPT Images (OpenAI) avec des exemples de générations visuelles et de prompts.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte principal &quot;The new ChatGPT Images is here&quot;, boutons &quot;Try in ChatGPT&quot;, &quot;Learn more&quot;, ainsi que des exemples d&#x27;images générées et de prompts textuels (ex: &quot;Combine the two men and the dog in a 2000s film camera-style photo of them looking bored at a kids birthday party&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des capacités de génération et de modification d&#x27;images de la nouvelle version 1.5 de ChatGPT Images.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_001_00-00-02.jpg" alt="Page de présentation de ChatGPT Images affichant le texte &quot;The new ChatGPT Images is here&quot; avec l&#x27;exemple d&#x27;une photo générée d&#x27;une femme en extérieur." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Page de présentation de ChatGPT Images affichant le texte &quot;The new ChatGPT Images is here&quot; avec l&#x27;exemple d&#x27;une photo générée d&#x27;une femme en extérieur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_002_00-00-11.jpg" alt="Page de présentation montrant une autre image générée d&#x27;une femme posant à côté d&#x27;un bonhomme de neige dans un décor hivernal." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_002_00-00-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:11</span>
+                        <span class="caption-text">Page de présentation montrant une autre image générée d&#x27;une femme posant à côté d&#x27;un bonhomme de neige dans un décor hivernal.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_003_00-00-20.jpg" alt="Page de présentation de ChatGPT Images montrant des exemples de combinaisons d&#x27;images et de prompts textuels complexes générant de nouvelles scènes de groupe." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_003_00-00-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:20</span>
+                        <span class="caption-text">Page de présentation de ChatGPT Images montrant des exemples de combinaisons d&#x27;images et de prompts textuels complexes générant de nouvelles scènes de groupe.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:22 - 00:00:44</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je ne l&#x27;ai pas fait. Au lieu de faire des tests irréalistes, j&#x27;ai recherché et testé Image 1.5 sur des cas d&#x27;usage réels, le genre de tâches qui importent vraiment aux gens, aux créateurs, aux développeurs et aux entreprises. Et pour comprendre où il se situe réellement, je l&#x27;ai comparé directement avec Nano Banana Pro, l&#x27;un des modèles d&#x27;image les plus puissants du moment.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de présentation web et logicielle présentant de nouveaux modèles d&#x27;IA générative d&#x27;images (&quot;The new ChatGPT Images is here&quot; et &quot;Nano Banana Pro&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;The new ChatGPT Images is here&quot;, boutons &quot;Try in ChatGPT&quot;, &quot;Learn more&quot;, et le titre &quot;Nano Banana Pro&quot; avec des vignettes d&#x27;exemples d&#x27;images générées et des prompts textuels de modification.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle et comparaison des capacités de génération et de modification d&#x27;images entre les nouveaux modèles ChatGPT Images et Nano Banana Pro.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_004_00-00-24.jpg" alt="Interface de présentation montrant &quot;The new ChatGPT Images is here&quot; avec des exemples de modification d&#x27;image et une comparaison visuelle." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_004_00-00-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:24</span>
+                        <span class="caption-text">Interface de présentation montrant &quot;The new ChatGPT Images is here&quot; avec des exemples de modification d&#x27;image et une comparaison visuelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_005_00-00-33.jpg" alt="Interface de présentation comparant de nouvelles générations d&#x27;images ChatGPT avec des astronautes et le modèle Nano Banana Pro." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_005_00-00-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:33</span>
+                        <span class="caption-text">Interface de présentation comparant de nouvelles générations d&#x27;images ChatGPT avec des astronautes et le modèle Nano Banana Pro.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_006_00-00-42.jpg" alt="Interface de présentation avec le texte &quot;The new ChatGPT Images is here&quot; à gauche et le modèle &quot;Nano Banana Pro&quot; à droite illustré par plusieurs exemples." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_006_00-00-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Interface de présentation avec le texte &quot;The new ChatGPT Images is here&quot; à gauche et le modèle &quot;Nano Banana Pro&quot; à droite illustré par plusieurs exemples.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:44 - 00:01:10</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pas de battage médiatique, pas d&#x27;exemples sélectionnés sur le volet. Juste de vrais tests, de vraies comparaisons et de vrais résultats. C&#x27;est Pursuing AI, et vous regardez le rapport de recherche. Commençons donc par le premier test, l&#x27;édition d&#x27;image. Car dans la vraie vie, les photos sont rarement parfaites. Par exemple, à Noël, vous prenez une photo près d&#x27;un sapin de Noël, mais des personnes aléatoires s&#x27;immiscent en arrière-plan et soudainement votre photo est gâchée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de ChatGPT (version sombre) affichant des discussions avec des images générées et éditées.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt dans l&#x27;interface : &quot;Remove all people from the background completely while keeping the main subject untouched. Preserve the face, facial features, skin texture, hair details, expression, clothing, body proportions, lighting, shadows, and overall image quality exactly as original. Do not alter the subject&#x27;s appearance in any way. Ensure the background looks natural, clean, and seamless with no blur artifacts, distortions, or loss of detail. Maintain high resolution and realistic colors.&quot; Des flèches roses dessinées pointent sur les passants en arrière-plan de la photo.</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran montre une interface de chat avec un prompt détaillé pour la retouche d&#x27;image (suppression d&#x27;arrière-plan), puis zoome sur la photo originale montrant une femme faisant un selfie devant un sapin de Noël avec des passants en arrière-plan signalés par des flèches.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_007_00-01-02.jpg" alt="Interface de ChatGPT montrant un prompt d&#x27;édition d&#x27;image pour supprimer les personnes en arrière-plan d&#x27;un selfie de Noël." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_007_00-01-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:02</span>
+                        <span class="caption-text">Interface de ChatGPT montrant un prompt d&#x27;édition d&#x27;image pour supprimer les personnes en arrière-plan d&#x27;un selfie de Noël.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_008_00-01-08.jpg" alt="Gros plan de la photo de selfie de Noël avec des flèches roses pointant vers les personnes en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_008_00-01-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:08</span>
+                        <span class="caption-text">Gros plan de la photo de selfie de Noël avec des flèches roses pointant vers les personnes en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:11 - 00:01:33</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc la vraie question est de savoir à quel point image 1.5 est douée pour supprimer des objets et des personnes sans détruire l&#x27;image ? Voici l&#x27;image que j&#x27;ai utilisée. J&#x27;ai demandé au modèle de supprimer les personnes en arrière-plan, et voici le résultat. Il a préservé les expressions faciales correctement, a supprimé toutes les personnes en arrière-plan, et a gardé le sujet principal complètement intact.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface sombre de ChatGPT 5.2 avec une zone de chat et des éléments de saisie textuelle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt visible : &quot;Remove all people from the background completely while keeping the main subject untouched. Preserve the face, facial features, skin texture, hair details, expression, clothing, body proportions, lighting, shadows, and overall image quality exactly as original...&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran présente l&#x27;interface de ChatGPT avec l&#x27;image source et le prompt de modification, puis affiche le résultat avant/après de la suppression d&#x27;objets.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_009_00-01-13.jpg" alt="Interface de ChatGPT montrant une image avec un prompt textuel demandant la suppression des personnes en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_009_00-01-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:13</span>
+                        <span class="caption-text">Interface de ChatGPT montrant une image avec un prompt textuel demandant la suppression des personnes en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_010_00-01-31.jpg" alt="Comparaison avant/après de l&#x27;image montrant le sujet principal avec les personnes en arrière-plan supprimées." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_010_00-01-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:31</span>
+                        <span class="caption-text">Comparaison avant/après de l&#x27;image montrant le sujet principal avec les personnes en arrière-plan supprimées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:33 - 00:01:57</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, voici le résultat de Nano Banana Pro. Il a également supprimé les personnes en arrière-plan avec succès. Donc, dans ce test, les deux modèles fonctionnent bien. Passons maintenant à un cas d&#x27;usage plus pratique. Et si vous vouliez essayer un costume de Père Noël sur votre corps avant de l&#x27;acheter en ligne ? J&#x27;ai donc utilisé l&#x27;image d&#x27;un homme et demandé à un modèle d&#x27;ajuster ce costume sur son corps.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de type chat IA (ChatGPT) et fenêtres de comparaison d&#x27;images.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt visible : &quot;Dress the man in a realistic Santa Claus costume. Replace his current clothing with a classic red Santa suit including the red coat with white fur trim, matching pants, black belt with gold buckle, and Santa hat. Preserve the man&#x27;s original face, facial features, skin tone, expression, hairstyle, and body proportions exactly as they are...&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur compare les résultats visuels de suppression d&#x27;arrière-plan de deux modèles d&#x27;IA, puis introduit un test de retouche vestimentaire (essayage virtuel d&#x27;un costume de Père Noël) en montrant les images source et le prompt associé dans l&#x27;interface de l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_011_00-01-35.jpg" alt="Comparaison côte à côte entre Nano Banana Pro et GPT Image 1.5 montrant le résultat de suppression d&#x27;arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_011_00-01-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:35</span>
+                        <span class="caption-text">Comparaison côte à côte entre Nano Banana Pro et GPT Image 1.5 montrant le résultat de suppression d&#x27;arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_012_00-01-49.jpg" alt="Affichage des images source utilisées pour le test : un costume de Père Noël complet et une photo d&#x27;un homme portant une chemise bleue." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_012_00-01-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:49</span>
+                        <span class="caption-text">Affichage des images source utilisées pour le test : un costume de Père Noël complet et une photo d&#x27;un homme portant une chemise bleue.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_013_00-01-55.jpg" alt="Interface de ChatGPT montrant le prompt textuel et les images jointes pour habiller l&#x27;homme en costume de Père Noël." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_013_00-01-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Interface de ChatGPT montrant le prompt textuel et les images jointes pour habiller l&#x27;homme en costume de Père Noël.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:57 - 00:02:18</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voici le résultat de l&#x27;image 1.5. Les vêtements s&#x27;ajustent naturellement. Le modèle préserve le visage correct, la tonalité de la peau et le réalisme global. Un détail important ici. Comme j&#x27;ai fourni uniquement une image à mi-corps, le modèle a correctement généré uniquement la partie supérieure des vêtements. Il n&#x27;a pas halluciné de pantalon ou de bottes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation visuelle de résultats d&#x27;essayage virtuel d&#x27;intelligence artificielle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> À gauche, les éléments du costume de Père Noël (manteau, bonnet, ceinture, bottes, barbe). Au centre, l&#x27;image originale d&#x27;un homme en chemise bleue. À droite, le résultat de l&#x27;essayage virtuel où l&#x27;homme porte le costume de Père Noël.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le résultat de l&#x27;essayage virtuel et souligne que le modèle n&#x27;a généré que le haut du corps en fonction de l&#x27;image source fournie.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_014_00-01-59.jpg" alt="Comparatif d&#x27;essayage virtuel avec l&#x27;image source, les vêtements de Père Noël et le résultat généré." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_014_00-01-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:59</span>
+                        <span class="caption-text">Comparatif d&#x27;essayage virtuel avec l&#x27;image source, les vêtements de Père Noël et le résultat généré.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:18 - 00:02:38</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est en fait un bon signe. Voici maintenant le résultat de Nano Banana Pro. Ça va aussi avec les vêtements, mais comme vous pouvez le voir, la tenue a l&#x27;air plus ample et moins naturelle. Donc dans ce cas, les deux résultats sont bons, mais l&#x27;image 1.5 gère légèrement mieux le réalisme. Maintenant, et si vous vouliez créer une infographie ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration et de comparaison d&#x27;images IA, puis interface d&#x27;affichage de résultats (style interface web / application de génération d&#x27;infographie).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Nano Banana Pro&quot;, &quot;GPT Image 1.5&quot;, et sur l&#x27;infographie de l&#x27;image 2 : &quot;HOW MANY CALORIES ARE THERE IN YOUR HAMBURGER&quot; avec la liste des ingrédients et des calories (Top Bun, Cheddar Cheese, Onions, Fresh Lettuce, etc., pour un total estimé de 1,090 kcal).</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur compare visuellement deux images de vêtements générées par IA, puis passe à la présentation d&#x27;une infographie nutritionnelle générée par l&#x27;outil.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_015_00-02-20.jpg" alt="Comparaison côte à côte de deux images de modèles habillés en Père Noël générées par &#x27;Nano Banana Pro&#x27; et &#x27;GPT Image 1.5&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_015_00-02-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:20</span>
+                        <span class="caption-text">Comparaison côte à côte de deux images de modèles habillés en Père Noël générées par &#x27;Nano Banana Pro&#x27; et &#x27;GPT Image 1.5&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_016_00-02-36.jpg" alt="Affichage d&#x27;une interface de génération montrant une infographie détaillée sur les calories d&#x27;un hamburger." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_016_00-02-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:36</span>
+                        <span class="caption-text">Affichage d&#x27;une interface de génération montrant une infographie détaillée sur les calories d&#x27;un hamburger.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:38 - 00:02:58</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Oui, vous pouvez générer des infographies comme celle-ci. La mise en page, la structure et la clarté sont nettement améliorées par rapport aux anciens modèles. Parlons des limitations car aucun modèle n&#x27;est parfait. Et pour être juste, OpenAI a lui-même listé les limitations d&#x27;Image 1.5 sur son site web.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;analyse ou de présentation de modèles d&#x27;IA avec des onglets de navigation (Markdown rendering, Calorie infographic, Coding, Deep sea poster, etc.)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1 : Une infographie titrée &quot;HOW MANY CALORIES ARE THERE IN YOUR HAMBURGER&quot; détaillant les ingrédients de 1 à 11 et indiquant un total estimé de 1,090 kcal. Sur l&#x27;image 2 : Un panneau &quot;New&quot; avec un prompt texte &quot;create a poster of deep sea creatures at different depths...&quot; et son résultat graphique comparé au panneau &quot;Previous&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur illustre ses propos en affichant à l&#x27;écran des exemples concrets d&#x27;infographies générées pour appuyer l&#x27;amélioration de la disposition et de la structure.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_017_00-02-40.jpg" alt="Affichage d&#x27;une infographie détaillée sur les calories d&#x27;un hamburger, illustrant la clarté et la structure améliorées de la génération." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_017_00-02-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:40</span>
+                        <span class="caption-text">Affichage d&#x27;une infographie détaillée sur les calories d&#x27;un hamburger, illustrant la clarté et la structure améliorées de la génération.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_018_00-02-48.jpg" alt="Comparaison visuelle entre un nouveau modèle et un ancien modèle montrant une affiche de créatures sous-marines avec les améliorations de mise en page." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_018_00-02-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:48</span>
+                        <span class="caption-text">Comparaison visuelle entre un nouveau modèle et un ancien modèle montrant une affiche de créatures sous-marines avec les améliorations de mise en page.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:58 - 00:03:18</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Par exemple, si vous lui demandez de générer une affiche, les résultats sont bien meilleurs que les modèles précédents, mais il reste des problèmes. Il peut y avoir des inexactitudes scientifiques, quelques limitations de style artistique, et des problèmes de cohérence lorsque plusieurs sujets apparaissent dans une seule image. Comme vous pouvez le voir ici, cette fille change à travers l&#x27;image.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur web de présentation d&#x27;améliorations et de limitations d&#x27;un modèle d&#x27;intelligence artificielle (génération d&#x27;images).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt dans l&#x27;interface : &quot;create a poster of deep sea creatures at different depths, with a vertical ocean cutaway, styled in a beautiful japanese detailed anime style&quot;. Légende en bas : &quot;Still some scientific inaccuracies, but ~70% correct and much more vivid graphics, avoids premature cropping.&quot; Onglets de navigation : &quot;Deep sea poster (Improvement)&quot;, &quot;World capitals (Improvement)&quot;, &quot;Styles (Limitation)&quot;, &quot;Multiple faces (Limitation)&quot;, &quot;Multilingual (Limitation)&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle entre un ancien et un nouveau modèle de génération d&#x27;images, puis affichage d&#x27;une image générée démontrant des incohérences sur les visages de plusieurs sujets.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_019_00-03-00.jpg" alt="Interface de démonstration comparative d&#x27;une IA affichant les onglets et les résultats entre une version &quot;New&quot; et &quot;Previous&quot; pour la création d&#x27;une affiche d&#x27;animaux marins." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_019_00-03-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:00</span>
+                        <span class="caption-text">Interface de démonstration comparative d&#x27;une IA affichant les onglets et les résultats entre une version &quot;New&quot; et &quot;Previous&quot; pour la création d&#x27;une affiche d&#x27;animaux marins.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_020_00-03-16.jpg" alt="Image générée par IA montrant un groupe de personnes posant ensemble, illustrant des problèmes de cohérence faciale et morphologique d&#x27;un sujet féminin au sein de l&#x27;image." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_020_00-03-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:16</span>
+                        <span class="caption-text">Image générée par IA montrant un groupe de personnes posant ensemble, illustrant des problèmes de cohérence faciale et morphologique d&#x27;un sujet féminin au sein de l&#x27;image.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:19 - 00:03:37</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cependant, une chose reste cohérente, Sam Altman. Et honnêtement, si le modèle modifiait Sam Altman, cette image serait probablement supprimée. Il y a aussi quelques limitations linguistiques, mais dans l&#x27;ensemble, c&#x27;est une nette amélioration par rapport au modèle précédent. C&#x27;est ma recherche pour la vidéo d&#x27;aujourd&#x27;hui.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de ChatGPT et pages de présentation du modèle d&#x27;image d&#x27;OpenAI.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de l&#x27;interface : &quot;can you make them wear shirts that say &#x27;OpenAI&#x27; and have everyone smiling&quot;, &quot;When there are many people, the model has difficulty maintaining the exact identity of every person during editing tasks.&quot;, &quot;How to Order Food in Chinese&quot;, &quot;The new ChatGPT Images is here&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des limitations du modèle d&#x27;IA lors de la modification d&#x27;images complexes et de la gestion du texte dans différentes langues.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_021_00-03-21.jpg" alt="Interface de ChatGPT montrant une modification d&#x27;image avec un groupe de personnes et le prompt textuel demandant de porter des t-shirts &quot;OpenAI&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_021_00-03-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:21</span>
+                        <span class="caption-text">Interface de ChatGPT montrant une modification d&#x27;image avec un groupe de personnes et le prompt textuel demandant de porter des t-shirts &quot;OpenAI&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_022_00-03-28.jpg" alt="Affiche illustrée en chinois et en anglais intitulée &quot;How to Order Food in Chinese&quot; démontrant les capacités linguistiques du modèle." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_022_00-03-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:28</span>
+                        <span class="caption-text">Affiche illustrée en chinois et en anglais intitulée &quot;How to Order Food in Chinese&quot; démontrant les capacités linguistiques du modèle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_023_00-03-35.jpg" alt="Page web de présentation &quot;The new ChatGPT Images is here&quot; montrant une image générée d&#x27;une femme souriante dans un parc d&#x27;automne." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_023_00-03-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:35</span>
+                        <span class="caption-text">Page web de présentation &quot;The new ChatGPT Images is here&quot; montrant une image générée d&#x27;une femme souriante dans un parc d&#x27;automne.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:38 - 00:03:45</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous avez trouvé cela utile, assurez-vous d&#x27;aimer, de vous abonner et de commenter vos réflexions ci-dessous. Je vous verrai dans le prochain rapport de recherche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web / superpositions graphiques d&#x27;appel à l&#x27;action YouTube.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte partiel visible en arrière-plan lié à &quot;GPT Images is here&quot;, logo &quot;PAI&quot; avec un cerveau relié à des circuits électroniques dans un cercle néon bleu, boutons d&#x27;interaction YouTube superposés (Like, Subscribe, notification).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des éléments graphiques d&#x27;appel à l&#x27;action (incitation à s&#x27;abonner et à interagir avec la vidéo).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Msrj1lQBonI/frame_024_00-03-41.jpg" alt="Écran affichant le logo de la chaîne Pursuing AI (cerveau robotique) et des icônes d&#x27;appel à l&#x27;action (pouce levé, bouton &quot;Subscribed&quot; avec une main qui clique, et cloche de notification)." loading="lazy" onclick="openLightbox('screenshots/YT-Msrj1lQBonI/frame_024_00-03-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:41</span>
+                        <span class="caption-text">Écran affichant le logo de la chaîne Pursuing AI (cerveau robotique) et des icônes d&#x27;appel à l&#x27;action (pouce levé, bouton &quot;Subscribed&quot; avec une main qui clique, et cloche de notification).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
