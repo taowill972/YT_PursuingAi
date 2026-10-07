@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `66 / 84` (`78.6%`)
+- **Vidéos traitées** : `67 / 84` (`79.8%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -82,6 +82,7 @@
 | 2025-12-07 | [Nouveau modèle Seedream 4.5 testé : rebondissement choc dans le benchmark !](2025-12-07_YT-vTcGkM5wMvc_Nouveau modèle Seedream 4.5 testé rebondissement choc dans le benchmark !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-12-07_YT-vTcGkM5wMvc_Nouveau modèle Seedream 4.5 testé rebondissement choc dans le benchmark !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 07s | `21 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=vTcGkM5wMvc) | `vTcGkM5wMvc` |
 | 2025-12-02 | [Les images IA sont TROP réalistes... Protégez-vous !](2025-12-02_YT-vcRnzyhBikA_Les images IA sont TROP réalistes... Protégez-vous !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-12-02_YT-vcRnzyhBikA_Les images IA sont TROP réalistes... Protégez-vous !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 39s | `24 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=vcRnzyhBikA) | `vcRnzyhBikA` |
 | 2025-11-29 | [Gemini 3 vs GPT 5.1 vs Opus 4.5 : Le test ultime au sommet](2025-11-29_YT-JluJkVTXh-0_Gemini 3 vs GPT 5.1 vs Opus 4.5 Le test ultime au sommet_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-11-29_YT-JluJkVTXh-0_Gemini 3 vs GPT 5.1 vs Opus 4.5 Le test ultime au sommet_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 50s | `24 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=JluJkVTXh-0) | `JluJkVTXh-0` |
+| 2025-11-25 | [Cette IA crée des vidéos ultra-réalistes ! wan ai](2025-11-25_YT-2vmgejjKkPw_Cette IA crée des vidéos ultra-réalistes ! wan ai_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-11-25_YT-2vmgejjKkPw_Cette IA crée des vidéos ultra-réalistes ! wan ai_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 01s | `23 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=2vmgejjKkPw) | `2vmgejjKkPw` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

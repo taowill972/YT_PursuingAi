@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Cette IA crée des vidéos ultra-réalistes ! wan ai — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Cette IA crée des vidéos ultra-réalistes ! wan ai</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-11-25</span>
+                <span class="badge">⏱️ 03m 01s</span>
+                <span class="badge">🆔 <code>2vmgejjKkPw</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=2vmgejjKkPw" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de Pursuing AI met en lumière **WAN 2.5**, un outil de pointe en matière d'intelligence artificielle générative, capable de produire des vidéos ultra-réalistes dotées d'un audio natif parfaitement synchronisé. En explorant les fonctionnalités de cette plateforme, le créateur démontre la puissance des technologies de conversion d'image en vidéo (*image-to-video*) et de texte en vidéo (*text-to-video*). À travers des démonstrations saisissantes de réalisme — qu'il s'agisse de capturer un moment estival nostalgique à partir d'une simple photo ou de modéliser une musicienne face à des montagnes — la vidéo illustre la capacité de WAN 2.5 à gérer avec une précision troublante les expressions faciales, les mouvements anatomiques complexes et les arrière-plans cinématographiques.</p><p>La méthode présentée repose sur un workflow accessible mais hautement performant : l'utilisateur peut soit importer une image de référence pour l'animer, soit rédiger un prompt textuel détaillé, en s'appuyant si nécessaire sur un guide de prompts externe pour maîtriser l'éclairage et les dynamiques de plans. De plus, l'outil intègre une fonctionnalité performante de création d'humains numériques (*digital humans*) à partir d'une image fixe et d'un fichier audio, ouvrant la voie à des applications narratives et publicitaires poussées. Structurée autour de différents paliers tarifaires basés sur un système de crédits, la plateforme démocratise l'accès à la production audiovisuelle haute définition tout en répondant aux exigences des professionnels de la création de contenu.</p><p>Pour les créateurs vidéo, l'adoption de WAN 2.5 représente un levier stratégique majeur pour réduire drastiquement les coûts de production tout en maximisant l'impact visuel. L'intégration native de l'audio et la flexibilité des formats permettent d'itérer rapidement sur des concepts créatifs variés, qu'il s'agisse de clips promotionnels, de fictions ou de contenus réseaux sociaux. En maîtrisant la tarification par crédits (qui module le coût selon la résolution, de 480p à 720p) et en s'appuyant sur les options de licence commerciale incluses dès les premiers abonnements, les vidéastes disposent d'un arsenal technologique complet pour transformer radicalement leur pipeline de production sans nécessiter de lourdes équipes de tournage.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">WAN 2.5</span><span class="tool-tag">wan</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Maîtrise du double paradigme de génération** : Exploiter à la fois le *text-to-video* pour partir d&#x27;une feuille blanche et l&#x27;*image-to-video* pour insuffler du mouvement à des assets visuels existants garantit une polyvalence artistique maximale.</span></li><li><span class="point-bullet">✦</span><span>Gestion économique des crédits** : Adapter la résolution de sortie en fonction des besoins du projet — en privilégiant le 480p (5 crédits) pour les phases de test et le 720p (9 crédits) pour les rendus finaux — permet d&#x27;optimiser l&#x27;investissement financier.</span></li><li><span class="point-bullet">✦</span><span>Immersion et synchronisation audio native** : Profiter de la capacité de WAN 2.5 à générer un audio parfaitement calé sur les mouvements de la scène visuelle pour renforcer instantanément l&#x27;illusion de réalisme.</span></li><li><span class="point-bullet">✦</span><span>Optimisation des prompts par des guides dédiés** : S&#x27;appuyer sur des frameworks de rédaction structurés pour spécifier explicitement l&#x27;éclairage, la cinématographie et le comportement des personnages, éliminant ainsi le hasard dans les résultats.</span></li><li><span class="point-bullet">✦</span><span>Création simplifiée d&#x27;humains numériques** : Combiner une image fixe de personnage avec un flux audio et une description textuelle du mouvement pour produire rapidement des avatars parlants hautement expressifs.</span></li><li><span class="point-bullet">✦</span><span>Rendu anatomique et facial de haute précision** : Observer le comportement des mains, des expressions du visage et de la profondeur de champ dans les arrières-plans pour s&#x27;assurer que l&#x27;IA gère correctement la complexité physique.</span></li><li><span class="point-bullet">✦</span><span>Exploration de la galerie communautaire** : Utiliser la section d&#x27;exploration de la plateforme comme source d&#x27;inspiration pour identifier les types de prompts et de styles visuels qui fonctionnent le mieux.</span></li><li><span class="point-bullet">✦</span><span>Stratégie d&#x27;entrée de gamme flexible** : Démarrer avec la formule starter à 9,90 $ (100 crédits) pour valider le retour sur investissement avant de basculer vers des forfaits supérieurs (Basic, Plus, Professionnel) offrant des files d&#x27;attente accélérées.</span></li><li><span class="point-bullet">✦</span><span>Exploitation commerciale des livrables** : S&#x27;assurer que le plan d&#x27;abonnement choisi autorise l&#x27;utilisation commerciale des vidéos générées pour sécuriser la monétisation des projets professionnels.</span></li><li><span class="point-bullet">✦</span><span>Évaluation du coût par crédit** : Calculer le ratio coût/unité (environ 0,09 $ par crédit en formule starter) pour budgétiser précisément chaque campagne de production vidéo.</span></li><li><span class="point-bullet">✦</span><span>Anticipation des limites de file d&#x27;attente** : Choisir son niveau d&#x27;abonnement en fonction de l&#x27;urgence de livraison, les forfaits supérieurs garantissant des vitesses de traitement et des quotas adaptés aux cadences professionnelles.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:01 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Bonsoir à tous. Ce soir, je veux partager de puissantes leçons sur l&#x27;intelligence artificielle que j&#x27;ai apprises en explorant l&#x27;IA. Ce time-lapse a l&#x27;air réel. Cette vidéo a aussi l&#x27;air réelle. Et honnêtement, celle-ci est absolument insensée. Et devinez quoi ? Tous ces clips sont générés par IA à l&#x27;aide d&#x27;un seul outil, WAN 2.5.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation de clips vidéo générés par IA (outil WAN 2.5).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Visuels réalistes générés par intelligence artificielle : timelapse, scène de forêt, patinoire, danseur sous la pluie, chantier de grues.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle de différents clips vidéo générés par le modèle WAN 2.5.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_001_00-00-11.jpg" alt="Clip vidéo généré par IA montrant un jeune homme dans une forêt sous le soleil couchant." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_001_00-00-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:11</span>
+                        <span class="caption-text">Clip vidéo généré par IA montrant un jeune homme dans une forêt sous le soleil couchant.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_002_00-00-19.jpg" alt="Grille de quatre clips vidéo générés par IA montrant diverses scènes (patinage artistique, danseur sous la pluie, grues de chantier, jeune homme dans la forêt)." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_002_00-00-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:19</span>
+                        <span class="caption-text">Grille de quatre clips vidéo générés par IA montrant diverses scènes (patinage artistique, danseur sous la pluie, grues de chantier, jeune homme dans la forêt).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:22 - 00:00:44</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est Pursuing AI, et vous regardez le rapport de recherche. WAN 2.5 est actuellement l&#x27;un des outils les plus puissants pour générer de l&#x27;audio et de la vidéo natifs. Ce soir, je veux partager un site web puissant sur les vidéos par IA qui... Vous pouvez créer à la fois de l&#x27;image vers vidéo et du texte vers vidéo, avec un contrôle total sur les formats d&#x27;image, les résolutions et la durée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site internet officiel de l&#x27;outil de génération vidéo WAN 2.5.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Create Cinematic AI Videos — with Wan2.5&quot;, &quot;Image-to-Video&quot;, &quot;Text-to-Video&quot;, &quot;Duration: 5s&quot;, &quot;Resolution: 480P&quot;, &quot;Aspect Ratio: 16:9&quot;, et un champ de prompt textuel.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et navigation sur le site web de l&#x27;outil WAN 2.5, mettant en avant les fonctionnalités de création de vidéos à partir d&#x27;images ou de textes avec des options de configuration.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_003_00-00-24.jpg" alt="Page d&#x27;accueil du site Wan 2.5 avec un logo représentant un cerveau en incrustation circulaire." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_003_00-00-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:24</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Wan 2.5 avec un logo représentant un cerveau en incrustation circulaire.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_004_00-00-30.jpg" alt="Page d&#x27;accueil du site Wan 2.5 montrant une femme jouant de la guitare dans un paysage montagneux avec le texte de présentation." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_004_00-00-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:30</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Wan 2.5 montrant une femme jouant de la guitare dans un paysage montagneux avec le texte de présentation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_005_00-00-37.jpg" alt="Interface de génération vidéo de Wan 2.5 avec les options Image-to-Video et Text-to-Video, les réglages de durée et de résolution, ainsi qu&#x27;un aperçu vidéo." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_005_00-00-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:37</span>
+                        <span class="caption-text">Interface de génération vidéo de Wan 2.5 avec les options Image-to-Video et Text-to-Video, les réglages de durée et de résolution, ainsi qu&#x27;un aperçu vidéo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:45 - 00:01:04</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour référence, générer une vidéo de 5 secondes en 480p coûte 5 crédits, et générer la même vidéo de 5 secondes en 720p coûte 9 crédits. Maintenant, laissez-moi vous montrer quelques tests que j&#x27;ai effectués en utilisant WAN 2.5. D&#x27;abord, j&#x27;ai téléchargé cette image et je lui ai demandé de créer un moment estival nostalgique. Le résultat était impressionnant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;outil de génération vidéo WAN (version 2.5).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de navigation (Home, Wan 2.5, Digital Human, Explore, Prompt Guide, Referral, Price), options de durée (5s, 10s), de résolution (480P, 720P, 1080P), et boutons de génération violet &quot;Generate Video&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des coûts de génération en crédits selon la résolution et démonstration d&#x27;un test de génération vidéo à partir d&#x27;une image.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_006_00-00-47.jpg" alt="Interface de l&#x27;outil WAN montrant les options de génération de vidéo (durée, résolution, ratio) et le coût en crédits (5 credits)." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_006_00-00-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:47</span>
+                        <span class="caption-text">Interface de l&#x27;outil WAN montrant les options de génération de vidéo (durée, résolution, ratio) et le coût en crédits (5 credits).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_007_00-01-02.jpg" alt="Interface de WAN montrant une image importée, le prompt textuel et le résultat vidéo généré avec un bouton de téléchargement." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_007_00-01-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:02</span>
+                        <span class="caption-text">Interface de WAN montrant une image importée, le prompt textuel et le résultat vidéo généré avec un bouton de téléchargement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:04 - 00:01:28</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les visuels semblaient authentiques et l&#x27;audio était parfaitement synchronisé avec la scène. Ensuite, j&#x27;ai essayé l&#x27;option texte-vidéo. Je lui ai demandé de générer une femme jouant de la guitare avec un arrière-plan de montagnes. Et voici le résultat. Regardez simplement l&#x27;arrière-plan, les mouvements des mains et les expressions faciales.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;outil de génération vidéo IA &quot;Wan&quot; (Wan 2.5).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt visible : &quot;A vintage tram glides along the coast. Outside, blue sky and sparkling sea. A girl sits by the window, holding sunflowers, gazing softly. Sunlight dances, wind brushes her hair - a quiet, nostalgic summer moment.&quot; Paramètres affichés : Durée 5s, Résolution 720P.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de génération vidéo par IA et visualisation des résultats de rendu vidéo (tramway et femme jouant de la guitare).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_008_00-01-06.jpg" alt="Interface de Wan montrant l&#x27;option Image-to-Video et le résultat généré d&#x27;un tramway vintage." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_008_00-01-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:06</span>
+                        <span class="caption-text">Interface de Wan montrant l&#x27;option Image-to-Video et le résultat généré d&#x27;un tramway vintage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_009_00-01-13.jpg" alt="Gros plan sur la vidéo générée montrant le tramway vintage longeant la côte avec une fille assise à l&#x27;intérieur." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_009_00-01-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:13</span>
+                        <span class="caption-text">Gros plan sur la vidéo générée montrant le tramway vintage longeant la côte avec une fille assise à l&#x27;intérieur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_010_00-01-21.jpg" alt="Résultat de génération vidéo par IA montrant une femme blonde jouant de la guitare dans un décor de montagne." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_010_00-01-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:21</span>
+                        <span class="caption-text">Résultat de génération vidéo par IA montrant une femme blonde jouant de la guitare dans un décor de montagne.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_011_00-01-26.jpg" alt="Gros plan sur la femme jouant de la guitare démontrant la fluidité des mouvements des mains et du visage générés par l&#x27;IA." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_011_00-01-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:26</span>
+                        <span class="caption-text">Gros plan sur la femme jouant de la guitare démontrant la fluidité des mouvements des mains et du visage générés par l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:29 - 00:01:48</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout a l&#x27;air incroyablement réel. Vraiment incroyable. Et si vous n&#x27;avez pas confiance en vous pour rédiger des prompts, ne vous inquiétez pas. Vous pouvez utiliser leur guide de prompts lié dans la description et le commentaire épinglé. Ce guide vous aide à créer facilement des vidéos de haute qualité. Il explique tout, comment gérer l&#x27;éclairage, créer des plans cinématographiques, contrôler le mouvement, façonner les émotions des personnages, et bien plus encore.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un guide de prompts et des exemples de vidéos générées par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titres visibles : &quot;Cinematic Aesthetics&quot;, &quot;Light Source Type&quot;, &quot;Motion Control&quot;, &quot;Movement&quot;, accompagnés de descriptions textuelles de prompts et de mini-lecteurs vidéo.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur fait défiler le guide de prompts en ligne pour illustrer la structure et les exemples fournis pour maîtriser la génération de vidéos.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_012_00-01-31.jpg" alt="Extrait vidéo généré par IA montrant une femme blonde souriante jouant de la guitare dans un champ verdoyant avec des montagnes en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_012_00-01-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:31</span>
+                        <span class="caption-text">Extrait vidéo généré par IA montrant une femme blonde souriante jouant de la guitare dans un champ verdoyant avec des montagnes en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_013_00-01-38.jpg" alt="Page web du guide de prompts montrant la section &quot;Cinematic Aesthetics&quot; avec des exemples sur le type de source lumineuse (&quot;Light Source Type&quot;)." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_013_00-01-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:38</span>
+                        <span class="caption-text">Page web du guide de prompts montrant la section &quot;Cinematic Aesthetics&quot; avec des exemples sur le type de source lumineuse (&quot;Light Source Type&quot;).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_014_00-01-46.jpg" alt="Page web du guide de prompts montrant la section &quot;Motion Control&quot; avec des exemples de mouvements de danse et de course." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_014_00-01-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:46</span>
+                        <span class="caption-text">Page web du guide de prompts montrant la section &quot;Motion Control&quot; avec des exemples de mouvements de danse et de course.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:48 - 00:02:06</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez également créer des humains numériques sur ce site Web. Il vous suffit de télécharger une image de votre personnage, d&#x27;ajouter de l&#x27;audio, de décrire le mouvement, de cliquer sur générer, et vous obtiendrez instantanément votre humain numérique. J&#x27;ai été second après Joe toute ma vie dans tout. Et je ne serai pas la personne dont vous vous contentez simplement parce que vous ne pouvez pas l&#x27;avoir.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de création d&#x27;humains numériques et de génération vidéo par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus &quot;Create Your Digital Human&quot;, &quot;Upload Image&quot;, &quot;Upload Audio&quot;, &quot;Prompt&quot;, &quot;Resolution&quot; (480P, 720P) et bouton &quot;Generate Now&quot;.
+[SS_ACTION] Démonstration visuelle de l&#x27;interface de création d&#x27;humains virtuels et présentation de différents exemples de générations vidéo réussies.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_015_00-01-50.jpg" alt="Interface de création d&#x27;humains numériques montrant les options de téléchargement d&#x27;image, d&#x27;audio et de description textuelle." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_015_00-01-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:50</span>
+                        <span class="caption-text">Interface de création d&#x27;humains numériques montrant les options de téléchargement d&#x27;image, d&#x27;audio et de description textuelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_016_00-01-57.jpg" alt="Exemples de vidéos générées montrant des personnages animés dans divers décors (train et scène d&#x27;époque)." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_016_00-01-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:57</span>
+                        <span class="caption-text">Exemples de vidéos générées montrant des personnages animés dans divers décors (train et scène d&#x27;époque).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_017_00-02-04.jpg" alt="Présentation d&#x27;autres exemples de rendus vidéo générés par IA, incluant des scènes de piano au bord de l&#x27;eau et un portrait d&#x27;Albert Einstein." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_017_00-02-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:04</span>
+                        <span class="caption-text">Présentation d&#x27;autres exemples de rendus vidéo générés par IA, incluant des scènes de piano au bord de l&#x27;eau et un portrait d&#x27;Albert Einstein.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:07 - 00:02:25</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous explorez la section d&#x27;exploration du site web, vous trouverez des tonnes d&#x27;exemples incroyables de WAN 2.5 qui montrent à quel point cet outil est vraiment puissant. Le lien du site web est dans la description et le commentaire épinglé. Maintenant, parlons des tarifs. Comme vous le savez, chaque bon produit a un coût. Et WAN 2.5 ne fait pas exception.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web officiel de Wan 2.5 (section Explore et page Tarifs / Pricing).</p>
+                        <p><strong>Contenu textuel & Code :</strong> En-tête &quot;Wan2.5 Explore&quot;, description &quot;Discover stunning AI-generated videos...&quot;, cartes d&#x27;exemples avec boutons &quot;Copy Prompt&quot; et &quot;Details&quot;. Page de tarification affichant quatre formules : Starter (9,9 $ / 100 crédits), Basic (29,9 $ / 330 crédits), Plus (49,9 $ / 600 crédits, marqué &quot;Most Popular&quot;) et Professional (99,9 $ / 1250 crédits) avec les détails de chaque offre (accès unique, export HD, licence commerciale, support).</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement (scroll) à travers la galerie d&#x27;exemples de la section explore du site web, puis transition vers l&#x27;affichage des différentes options de tarification.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_018_00-02-09.jpg" alt="Section d&#x27;exploration du site web de Wan 2.5 présentant des exemples de vidéos générées par IA avec les prompts associés." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_018_00-02-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:09</span>
+                        <span class="caption-text">Section d&#x27;exploration du site web de Wan 2.5 présentant des exemples de vidéos générées par IA avec les prompts associés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_019_00-02-16.jpg" alt="Grille d&#x27;exemples supplémentaires de vidéos générées par IA sur la page d&#x27;exploration de Wan 2.5." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_019_00-02-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:16</span>
+                        <span class="caption-text">Grille d&#x27;exemples supplémentaires de vidéos générées par IA sur la page d&#x27;exploration de Wan 2.5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_020_00-02-23.jpg" alt="Grille tarifaire de Wan 2.5 montrant les différentes offres : Starter, Basic, Plus et Professional." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_020_00-02-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:23</span>
+                        <span class="caption-text">Grille tarifaire de Wan 2.5 montrant les différentes offres : Starter, Basic, Plus et Professional.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:26 - 00:02:44</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il propose quatre formules. La formule starter commence à 9,9, vous donnant 100 crédits, ce qui signifie que chaque crédit coûte environ 0,09 dollar. Plutôt bien. Avec la formule starter, vous pouvez créer des vidéos HD à partir de texte et d&#x27;images, utiliser les résultats commercialement, bénéficier d&#x27;une vitesse de file d&#x27;attente standard et recevoir un support par e-mail.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web affichant les grilles de tarification d&#x27;un outil vidéo par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Quatre colonnes de formules : &quot;Starter&quot; à 9,9 $ (100 crédits, 0,090 $ par crédit, création de vidéos HD texte/image, exportation 720p sans filigrane, licence commerciale, file d&#x27;attente standard, support email), &quot;Basic&quot; à 29,9 $, &quot;Plus&quot; à 49,9 $ (marquée &quot;Most Popular&quot;), et &quot;Professional&quot; à 99,9 $.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de la grille tarifaire pour illustrer les différentes options de prix et les fonctionnalités incluses.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_021_00-02-28.jpg" alt="Tableau comparatif des quatre formules d&#x27;abonnement (Starter, Basic, Plus, Professional) avec leurs tarifs et fonctionnalités." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_021_00-02-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:28</span>
+                        <span class="caption-text">Tableau comparatif des quatre formules d&#x27;abonnement (Starter, Basic, Plus, Professional) avec leurs tarifs et fonctionnalités.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:44 - 00:03:00</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, vous avez le forfait de base, à partir de 29,9, avec 330 crédits, suivi des forfaits plus et professionnel qui offrent une génération plus rapide et des limites plus élevées. Donc, si vous souhaitez créer des vidéos cinématiques de haute qualité pour vos projets, vous pouvez consulter le lien dans la description et le commentaire épinglé.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de tarification et interface principale de l&#x27;outil Wan 2.5 AI Video Generator.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1, les options de tarification : Starter (9,9$), Basic (29,9$), Plus (49,9$) et Professional (99,9$) avec leurs crédits respectifs (100, 330, 600, 1250 crédits). Sur l&#x27;image 2, le titre &quot;Wan 2.5 AI Video Generator with Audio Sync&quot; et les options de prompt.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des différents abonnements et des fonctionnalités de l&#x27;outil de génération de vidéo par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_022_00-02-46.jpg" alt="Tableau des différents forfaits et tarifs de la plateforme (Starter à 9,9$, Basic à 29,9$, Plus à 49,9$ et Professional à 99,9$)." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_022_00-02-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:46</span>
+                        <span class="caption-text">Tableau des différents forfaits et tarifs de la plateforme (Starter à 9,9$, Basic à 29,9$, Plus à 49,9$ et Professional à 99,9$).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-2vmgejjKkPw/frame_023_00-02-58.jpg" alt="Page d&#x27;accueil de l&#x27;outil Wan 2.5 AI Video Generator avec l&#x27;interface de génération vidéo et un aperçu vidéo." loading="lazy" onclick="openLightbox('screenshots/YT-2vmgejjKkPw/frame_023_00-02-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:58</span>
+                        <span class="caption-text">Page d&#x27;accueil de l&#x27;outil Wan 2.5 AI Video Generator avec l&#x27;interface de génération vidéo et un aperçu vidéo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
