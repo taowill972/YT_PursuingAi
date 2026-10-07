@@ -74,7 +74,8 @@
     "4nYriaeipLA",
     "ftfnt6B36eI",
     "xYQtWa_YPFw",
-    "3xfuY-CL9Fw"
+    "3xfuY-CL9Fw",
+    "OsF11o1YNBI"
   ],
   "processed_videos": [
     {
@@ -1122,9 +1123,23 @@
       "filepath_html": "/root/YT_PursuingAi/2025-10-26_YT-3xfuY-CL9Fw_Atlas vs. Comet OpenAI's New Browser CRUSHED by This Underdog (Honest 2025 Showd_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-07T19:52:45Z",
       "status": "completed"
+    },
+    {
+      "video_id": "OsF11o1YNBI",
+      "title": "Highly Detailed Panaromic Images With This New AI tool.",
+      "raw_title": "Highly Detailed Panaromic Images With This New AI tool.",
+      "filename_md": "2025-10-22_YT-OsF11o1YNBI_Highly Detailed Panaromic Images With This New AI tool._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2025-10-22_YT-OsF11o1YNBI_Highly Detailed Panaromic Images With This New AI tool._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2025-10-22",
+      "duration": 181,
+      "screenshots_count": 0,
+      "filepath_md": "/root/YT_PursuingAi/2025-10-22_YT-OsF11o1YNBI_Highly Detailed Panaromic Images With This New AI tool._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2025-10-22_YT-OsF11o1YNBI_Highly Detailed Panaromic Images With This New AI tool._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-07T21:13:43Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 75,
+  "completed_count": 76,
   "last_run_timestamp": "2026-10-07T16:00:04Z",
   "status": "running",
   "total_catalog_count": 84
