@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `60 / 84` (`71.4%`)
+- **Vidéos traitées** : `61 / 84` (`72.6%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -76,6 +76,7 @@
 | 2025-12-28 | [Open Source vs IA fermée : GLM 4.7 secoue GPT-5.2, Gemini & Opus](2025-12-28_YT-dzqjuVLQrU8_Open Source vs IA fermée GLM 4.7 secoue GPT-5.2, Gemini & Opus_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-12-28_YT-dzqjuVLQrU8_Open Source vs IA fermée GLM 4.7 secoue GPT-5.2, Gemini & Opus_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 26s | `24 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=dzqjuVLQrU8) | `dzqjuVLQrU8` |
 | 2025-12-24 | [GPT 5.2, GEMINI 3, Opus 4.5 et GLM 4.7 🎄🎁](2025-12-24_YT-GGRpVBQV2yg_GPT 5.2, GEMINI 3, Opus 4.5 et GLM 4.7 🎄🎁_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-12-24_YT-GGRpVBQV2yg_GPT 5.2, GEMINI 3, Opus 4.5 et GLM 4.7 🎄🎁_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 7m 32s | `41 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=GGRpVBQV2yg) | `GGRpVBQV2yg` |
 | 2025-12-22 | [C'est probablement la farce générée par IA la plus flippante de tous les temps](2025-12-22_YT-dW74ziq6PGg_C'est probablement la farce générée par IA la plus flippante de tous les temps_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-12-22_YT-dW74ziq6PGg_C'est probablement la farce générée par IA la plus flippante de tous les temps_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 16s | `22 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=dW74ziq6PGg) | `dW74ziq6PGg` |
+| 2025-12-20 | [GPT-5.2 vs Gemini 3 Flash, Opus 4.5 — C'était inattendu](2025-12-20_YT-EygX7S0lWEc_GPT-5.2 vs Gemini 3 Flash, Opus 4.5 — C'était inattendu_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-12-20_YT-EygX7S0lWEc_GPT-5.2 vs Gemini 3 Flash, Opus 4.5 — C'était inattendu_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 6m 38s | `38 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=EygX7S0lWEc) | `EygX7S0lWEc` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
