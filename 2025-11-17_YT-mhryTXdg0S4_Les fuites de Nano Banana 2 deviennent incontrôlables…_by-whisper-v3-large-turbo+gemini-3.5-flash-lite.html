@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Les fuites de Nano Banana 2 deviennent incontrôlables… — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Les fuites de Nano Banana 2 deviennent incontrôlables…</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-11-17</span>
+                <span class="badge">⏱️ 03m 00s</span>
+                <span class="badge">🆔 <code>mhryTXdg0S4</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=mhryTXdg0S4" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* lève le voile sur les fuites et les premières générations exclusives du très attendu modèle **Nano Banana 2** de Google, actuellement testé en circuit fermé par des créateurs et des plateformes sélectionnés. Ce rapport de recherche met en lumière une avancée technologique majeure dans le domaine de la génération d'images et de vidéos par IA, notamment en matière de cohérence textuelle, de réalisme anatomique et de gestion des détails complexes qui mettaient jusqu'à présent tous les modèles concurrents en échec. Le créateur structure sa démonstration en comparant frontalement les résultats de Nano Banana 2 avec les cadors du marché (ChatGPT, Grok, Human Image 3.0 et Seadream 4 High Resolution), prouvant la supériorité flagrante du nouveau modèle sur des cas d'usage réputés impossibles.</p><p>Sur le plan technique, la méthode du créateur repose sur l'analyse comparative de prompts d'extrême précision appliqués à l'ensemble de ces générateurs pour isoler les failles des IA actuelles face aux prouesses de Nano Banana 2. À travers l'examen de cas pratiques — comme le rendu parfait d'une heure précise sur le cadran d'une montre, l'intégration de texte complexe sur des surfaces en perspective (murs, feuilles de papier) ou encore la génération ultra-réaliste de visages de célébrités et de personnages de fiction —, la vidéo décortique les capacités brutes du modèle. Cette démarche méthodique permet de cartographier avec précision le fossé qualitatif qui sépare cette nouvelle version des standards actuels de l'industrie.</p><p>Pour les créateurs de contenu vidéo et les spécialistes de l'IA, les bénéfices de cette fuite sont considérables. Non seulement Nano Banana 2 redéfinit les attentes en matière de photoréalisme et de fidélité textuelle, mais il préfigure également un changement radical dans les workflows de production visuelle. La capacité du modèle à maintenir un réalisme saisissant sur des animations et à générer des visages de célébrités sans artéfacts — avant une censure publique inévitable lors de sa sortie officielle — offre des perspectives créatives inédites. Cette analyse offre ainsi aux professionnels une vision anticipée des standards de qualité qui domineront le marché dès le lancement public de l'outil.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Nano Banana</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Supériorité absolue sur le rendu textuel** : Nano Banana 2 est le premier modèle capable d&#x27;afficher un texte parfaitement exact sur des supports complexes (murs en perspective, feuilles de papier tenues en main) sans aucune distorsion orthographique.</span></li><li><span class="point-bullet">✦</span><span>Résolution du défi horloger** : Le modèle surmonte l&#x27;un des plus grands écueils des générateurs d&#x27;images actuels en affichant l&#x27;heure exacte et cohérente (comme 6:32) sur le cadran d&#x27;une montre.</span></li><li><span class="point-bullet">✦</span><span>Gestion avancée de la perspective** : L&#x27;IA démontre une capacité inédite à appliquer du texte et des motifs tout en respectant une rotation de caméra à 30 degrés, garantissant un ancrage visuel réaliste.</span></li><li><span class="point-bullet">✦</span><span>Intégration d&#x27;éléments cachés complexes** : Le modèle réussit haut la main des prompts sophistiqués impliquant de dissimuler des solutions de énigmes ou des indices directement à l&#x27;intérieur de traits anatomiques (comme le visage du Père Noël).</span></li><li><span class="point-bullet">✦</span><span>Benchmark concurrentiel impitoyable** : Les tests croisés avec ChatGPT, Grok et Seadream 4K révèlent que les autres IA échouent systématiquement (images en noir et blanc, foule manquante, yeux fermés ou hallucinations de visages non désirés).</span></li><li><span class="point-bullet">✦</span><span>Photoréalisme de niveau supérieur** : Le réalisme des images générées est tel qu&#x27;il élimine les artefacts visuels typiques de l&#x27;IA, rendant les productions indiscernables de véritables photographies.</span></li><li><span class="point-bullet">✦</span><span>Génération de visages de célébrités non censurés** : En phase de test bêta, le modèle génère des figures publiques (Elon Musk, IShowSpeed) avec une précision photographique effrayante, un niveau de liberté qui sera inévitablement bridé par des filtres de censure lors du lancement officiel.</span></li><li><span class="point-bullet">✦</span><span>Performances exceptionnelles en animation** : Au-delà de l&#x27;image fixe, le modèle transpose son ultra-réalisme à la vidéo animée (comme le personnage de Goku), offrant un rendu fluide et organique &quot;directement réel&quot;.</span></li><li><span class="point-bullet">✦</span><span>Fenêtre d&#x27;opportunité des versions bêta** : L&#x27;analyse souligne l&#x27;intérêt stratégique d&#x27;étudier les fuites et versions de test des IA, souvent dépourvues des garde-fous et des restrictions de sécurité imposées lors des versions grand public.</span></li><li><span class="point-bullet">✦</span><span>Anticipation des workflows futurs** : L&#x27;arrivée imminente de Nano Banana 2 oblige les créateurs de contenu à revoir leurs exigences de prompt engineering et à se préparer à des standards de qualité visuelle radicalement rehaussés.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Google se prépare à lancer Nano Banana 2, mais avant la grande sortie, ils le confient discrètement à certaines plateformes et créateurs sélectionnés. Et bien sûr, les gens commencent à le tester comme des fous. Aujourd&#x27;hui, je me suis plongé dans ces premières générations et ce que j&#x27;ai trouvé est absolument insensé. C&#x27;est Pursuing AI et vous regardez le Research Report.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra et extraits visuels d&#x27;illustration (générations d&#x27;images IA) sans interface logicielle active démontrée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes illustratifs affichés à l&#x27;écran : &quot;Nano Banana 2&quot;, &quot;I AM SORRY JON.&quot;, ainsi que le logo de la chaîne &quot;PAI&quot; avec un cerveau relié à une puce et le titre &quot;The Research Report&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;illustrations générées par IA et de séquences d&#x27;introduction de la chaîne vidéo.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:21 - 00:00:40</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est le genre d&#x27;exemple qui brise presque tous les générateurs d&#x27;images du marché. Aucun modèle ne peut rendre parfaitement l&#x27;heure sur une montre, comme 6:32, sans se tromper. Mais Nano Banana 2 le peut. J&#x27;ai testé exactement le même prompt sur ChatGPT, Grok, Human Image 3.0, Seadream 4 High Resolution.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo comparative avec des captures d&#x27;écran de résultats de génération d&#x27;images.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt en haut : &quot;generate an image of a watch showing 6:32&quot;. Noms des modèles affichés sur les images : Seadr..., Grok, CHATGPT, Hunyan.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage comparatif des images de montres générées par divers modèles d&#x27;intelligence artificielle pour illustrer leurs limites à afficher correctement l&#x27;heure demandée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_001_00-00-23.jpg" alt="Présentation de plusieurs images de montres générées par IA avec le prompt textuel en haut." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_001_00-00-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:23</span>
+                        <span class="caption-text">Présentation de plusieurs images de montres générées par IA avec le prompt textuel en haut.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_002_00-00-38.jpg" alt="Comparaison côte à côte des résultats de différents modèles d&#x27;IA pour le rendu de la montre." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_002_00-00-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:38</span>
+                        <span class="caption-text">Comparaison côte à côte des résultats de différents modèles d&#x27;IA pour le rendu de la montre.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:40 - 00:00:58</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Chaque modèle a échoué. Seul Nano Banana 2 a réussi. Ensuite, regardez cet exemple. Il montre à quel point Nano Banana 2 est doué pour rendre du texte sur les murs. Le modèle a pivoté la caméra de 30 degrés et a quand même écrit le texte exact parfaitement, exactement comme le demandait le prompt.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de présentation vidéo comparatif affichant des exemples de rendus de différents modèles d&#x27;IA et des prompts textuels.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Noms des modèles affichés (Seedream, Grok, CHATGPT, Hunyan) et texte du prompt : &quot;write this sentence on the wall and rotate camera 30 degrees left: &#x27;new work even of sometimes out time make no will have see then now say garden the into would him on day can other tomorrow go some get it up&#x27;&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle des performances de différents modèles d&#x27;intelligence artificielle sur le rendu d&#x27;éléments complexes comme des cadrans de montres et du texte sur des murs avec mouvement de caméra.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_003_00-00-42.jpg" alt="Comparaison de quatre modèles différents (Seedream, Grok, ChatGPT, Hunyan) générant des images de montres." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_003_00-00-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Comparaison de quatre modèles différents (Seedream, Grok, ChatGPT, Hunyan) générant des images de montres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_004_00-00-49.jpg" alt="Démonstration du prompt textuel demandant d&#x27;écrire une phrase sur un mur avec une rotation de caméra de 30 degrés, illustrée par deux rendus de murs graffités." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_004_00-00-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:49</span>
+                        <span class="caption-text">Démonstration du prompt textuel demandant d&#x27;écrire une phrase sur un mur avec une rotation de caméra de 30 degrés, illustrée par deux rendus de murs graffités.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:58 - 00:01:18</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et puis il y a celle-ci. Elle a généré une image où la solution de la question est cachée à l&#x27;intérieur du visage du Père Noël et elle a réussi haut la main. Trop fort. Ensuite, regardez cet exemple. Vous voyez le papier dans la main de l&#x27;homme ? Le texte sur ce papier est également parfaitement exact. J&#x27;ai essayé les mêmes invites sur ChatGPT, Grok et Seadream 4K.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo de démonstration d&#x27;IA générative d&#x27;images.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte mathématique sur tableau noir (&quot;Theorem: √2 is irrational... Q.E.D.&quot;). Prompt textuel : &quot;a man holds up a letter on a podium, he is in front of a crowd, the letter says &#x27;I have a dream...&#x27;&quot;. Texte sur les pancartes des images générées comparant différentes IA (ChatGPT, Grok, Seadream 4K).</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur illustre ses propos en affichant des exemples d&#x27;images générées par IA démontrant la précision de rendu du texte textuel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_005_00-01-00.jpg" alt="Image générée par IA montrant un tableau noir avec une démonstration mathématique encadrée dans la barbe et le bonnet d&#x27;un personnage de type Père Noël." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_005_00-01-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:00</span>
+                        <span class="caption-text">Image générée par IA montrant un tableau noir avec une démonstration mathématique encadrée dans la barbe et le bonnet d&#x27;un personnage de type Père Noël.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_006_00-01-08.jpg" alt="Exemple d&#x27;image générée par IA montrant un homme derrière un pupitre tenant une pancarte avec du texte, accompagnée du prompt textuel au-dessus." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_006_00-01-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:08</span>
+                        <span class="caption-text">Exemple d&#x27;image générée par IA montrant un homme derrière un pupitre tenant une pancarte avec du texte, accompagnée du prompt textuel au-dessus.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_007_00-01-16.jpg" alt="Comparatif en quatre panneaux affichant différents essais de génération d&#x27;images avec des personnalités tenant des pancrates textuelles." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_007_00-01-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:16</span>
+                        <span class="caption-text">Comparatif en quatre panneaux affichant différents essais de génération d&#x27;images avec des personnalités tenant des pancrates textuelles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:18 - 00:01:38</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">ChatGPT a bien produit une image similaire, mais elle était en noir et blanc, la foule manquait, et les yeux de la personne étaient fermés. Grok, je n&#x27;ai aucune idée pourquoi il a généré un visage ressemblant à Elon Musk. Oui, il a réussi le texte, et la génération de Grok est bonne. Mais comparé à tout cela, la génération de Nano Banana 2 est à un autre niveau.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de présentation comparative de résultats d&#x27;IA générative.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le prompt textuel affiché en haut à gauche : &quot;a man holds up a letter on a podium, he is in front of a crowd, the letter says &#x27;I have a dream, a dream that nano banana 2 will be better than any openai product that&#x27;s come before. From better text to better styling, let it take the Mandate of Heaven&#x27;&quot;. Quatre images différentes illustrant des variations de rendu (dont une étiquetée ChatGPT en haut à droite en noir et blanc, une image avec un visage ressemblant à Elon Musk en bas à gauche, et une autre en bas à droite).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative côte à côte de différentes images générées par des intelligences artificielles pour évaluer leurs performances textuelles et visuelles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_008_00-01-20.jpg" alt="Comparaison de quatre images générées par différentes IA à partir du même prompt textuel." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_008_00-01-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:20</span>
+                        <span class="caption-text">Comparaison de quatre images générées par différentes IA à partir du même prompt textuel.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:38 - 00:01:57</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En matière de réalisme, Nano Banana 2 surpasse tous les modèles d&#x27;IA du marché. Regardez simplement ces exemples. Il génère le visage d&#x27;Elon Musk sans aucune erreur, et l&#x27;arrière-plan est impeccable. On dirait même l&#x27;une des premières photos d&#x27;Elon. Et puis il y a l&#x27;image de IShowSpeed. Personne ne croirait qu&#x27;elle a été générée par IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo d&#x27;exemples d&#x27;images générées par intelligence artificielle (Nano Banana 2).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Des visages de célébrités générés par IA dans des contextes réalistes, avec notamment un tampon de date &quot;OCT 2018&quot; sur la première image.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement visuel des exemples d&#x27;images générées par l&#x27;IA pour illustrer son réalisme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_009_00-01-40.jpg" alt="Image générée par IA montrant MrBeast assis à une table de café en extérieur à côté de Jeffrey Epstein." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_009_00-01-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:40</span>
+                        <span class="caption-text">Image générée par IA montrant MrBeast assis à une table de café en extérieur à côté de Jeffrey Epstein.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_010_00-01-48.jpg" alt="Image générée par IA d&#x27;Elon Musk jeune portant un sweat-shirt rouge Adidas devant un mur tapissé de photos." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_010_00-01-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:48</span>
+                        <span class="caption-text">Image générée par IA d&#x27;Elon Musk jeune portant un sweat-shirt rouge Adidas devant un mur tapissé de photos.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_011_00-01-55.jpg" alt="Image générée par IA de IShowSpeed jeune portant un sweat-shirt rouge Adidas devant un mur tapissé de photos." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_011_00-01-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Image générée par IA de IShowSpeed jeune portant un sweat-shirt rouge Adidas devant un mur tapissé de photos.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:57 - 00:02:16</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est incroyablement réaliste. Comme le modèle est toujours en phase de test, il est capable de générer des visages de célébrités avec ce niveau de précision. Mais une fois qu&#x27;il sortira officiellement, il sera censuré, donc il ne pourra plus générer de visages de célébrités comme ça. Cela rend ces premiers résultats encore plus époustouflants.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation de démonstrations visuelles et de clips générés par intelligence artificielle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Vues divisées et exemples d&#x27;images/vidéos de personnalités publiques générées de manière hyper-réaliste.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle à l&#x27;écran illustrant les capacités du modèle d&#x27;IA à générer des visages de célébrités.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_012_00-01-59.jpg" alt="Génération d&#x27;images ultra-réalistes de célébrités (IShowSpeed et Elon Musk) dans un style de photos vintage." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_012_00-01-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:59</span>
+                        <span class="caption-text">Génération d&#x27;images ultra-réalistes de célébrités (IShowSpeed et Elon Musk) dans un style de photos vintage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_013_00-02-07.jpg" alt="Vidéo générée par IA montrant Donald Trump sortant d&#x27;un établissement sous les projecteurs avec ses gardes du corps." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_013_00-02-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:07</span>
+                        <span class="caption-text">Vidéo générée par IA montrant Donald Trump sortant d&#x27;un établissement sous les projecteurs avec ses gardes du corps.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_014_00-02-14.jpg" alt="Grille d&#x27;exemples montrant diverses scènes générées par IA mettant en scène des personnalités (Trump, Elon Musk, P. Diddy, Jeffrey Epstein)." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_014_00-02-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:14</span>
+                        <span class="caption-text">Grille d&#x27;exemples montrant diverses scènes générées par IA mettant en scène des personnalités (Trump, Elon Musk, P. Diddy, Jeffrey Epstein).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:16 - 00:02:39</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En ce qui concerne l&#x27;animation, Nano Banana 2 est également à un autre niveau. Il connaît parfaitement le visage de Goku, et regardez juste cet exemple. Le réalisme est fou. Si je ne vous avais pas dit que c&#x27;était généré par IA, vous ne l&#x27;auriez jamais deviné. Ça a l&#x27;air directement réel. Chaque exemple de Nano Banana 2 sur Internet a l&#x27;air incroyable. Les résultats sont propres, puissants et honnêtement bien en avance sur ce que la plupart des modèles peuvent faire en ce moment.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration de vidéos et images générées par intelligence artificielle (modèle Nano Banana 2).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Visuels de styles variés : anime (Saitama, Goku), photoréalisme (horloge et verre de vin), personnages de jeux vidéo (Crash Bandicoot) et portraits générés.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de différents exemples de rendus visuels de haute qualité générés par le modèle Nano Banana 2 pour illustrer son réalisme et sa maîtrise des personnages.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_015_00-02-18.jpg" alt="Image de synthèse style animé montrant le personnage de Saitama (One-Punch Man) en action avec un effet de vitesse et des débris." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_015_00-02-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:18</span>
+                        <span class="caption-text">Image de synthèse style animé montrant le personnage de Saitama (One-Punch Man) en action avec un effet de vitesse et des débris.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_016_00-02-24.jpg" alt="Animation montrant Goku de Dragon Ball en train de courir et tendre le main vers l&#x27;avant dans un décor rocheux." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_016_00-02-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:24</span>
+                        <span class="caption-text">Animation montrant Goku de Dragon Ball en train de courir et tendre le main vers l&#x27;avant dans un décor rocheux.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_017_00-02-32.jpg" alt="Vue réaliste d&#x27;une horloge murale ancienne avec des chiffres romains et un verre de vin rouge posé sur une table en bois." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_017_00-02-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:32</span>
+                        <span class="caption-text">Vue réaliste d&#x27;une horloge murale ancienne avec des chiffres romains et un verre de vin rouge posé sur une table en bois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_018_00-02-37.jpg" alt="Collage de quatre images incluant Crash Bandicoot, un tableau noir mathématique et des portraits réalistes." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_018_00-02-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:37</span>
+                        <span class="caption-text">Collage de quatre images incluant Crash Bandicoot, un tableau noir mathématique et des portraits réalistes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:39 - 00:02:48</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vraiment impatient de le tester moi-même quand il sortira enfin. C&#x27;était donc mes recherches sur Nano Banana 2. Si vous avez aimé, assurez-vous d&#x27;aimer la vidéo et de vous abonner.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Jeu vidéo / Vidéo générée par IA (style Minecraft).</p>
+                        <p><strong>Contenu textuel & Code :</strong> On aperçoit des avatars cubiques représentant Donald Trump et Joe Biden armés d&#x27;épées en diamant, faisant face à des monstres (zombie, araignée, creeper) au pied des tours du World Trade Center dans un décor en blocs. La barre de vie et l&#x27;inventaire typiques de Minecraft sont visibles en bas de l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;un exemple de contenu vidéo absurde ou humoristique généré par intelligence artificielle pour illustrer les capacités de l&#x27;outil présenté.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-mhryTXdg0S4/frame_019_00-02-44.jpg" alt="Capture d&#x27;écran d&#x27;une vidéo générée par IA montrant une scène parodiant Minecraft avec des personnages politiques devant les tours jumelles." loading="lazy" onclick="openLightbox('screenshots/YT-mhryTXdg0S4/frame_019_00-02-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:44</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une vidéo générée par IA montrant une scène parodiant Minecraft avec des personnages politiques devant les tours jumelles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
