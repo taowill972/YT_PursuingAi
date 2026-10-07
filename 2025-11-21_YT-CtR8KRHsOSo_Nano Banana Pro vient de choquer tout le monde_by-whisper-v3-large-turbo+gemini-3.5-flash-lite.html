@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Nano Banana Pro vient de choquer tout le monde — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Nano Banana Pro vient de choquer tout le monde</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-11-21</span>
+                <span class="badge">⏱️ 03m 56s</span>
+                <span class="badge">🆔 <code>CtR8KRHsOSo</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=CtR8KRHsOSo" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* met en lumière une avancée majeure dans le domaine de l'intelligence artificielle générative : **Nano Banana Pro**, un nouveau modèle développé par Google et adossé à la puissance de Gemini 3. Conçu pour redéfinir les standards de la génération et de l'édition d'images, cet outil se distingue par une compréhension contextuelle poussée du monde réel et une précision chirurgicale dans le traitement visuel. Le présentateur structure sa démonstration de manière immersive, en enchaînant rapidement les cas d'usage concrets — de la typographie parfaite à la manipulation d'images complexes — pour prouver la supériorité technique du modèle face aux solutions concurrentes actuelles.</p><p>Sur le plan méthodologique, le créateur adopte une approche empirique et comparative, démontrant le fonctionnement de l'outil par l'exemple visuel direct (preuves à l'appui pour chaque fonctionnalité). Il décompose les workflows en actions simples mais puissantes : l'injection de liens pour générer des infographies documentées, l'importation de croquis ou de logos pour des variations créatives, et l'utilisation de commandes textuelles pour modifier la mise au point ou l'éclairage d'une scène existante. Cette démonstration pas à pas met en évidence les bénéfices concrets pour les créateurs de contenu, les graphistes et les étudiants, qui disposent désormais d'un outil de qualité studio capable de gérer simultanément plusieurs personnages et objets sans perte de cohérence.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Nano Banana Pro</span><span class="tool-tag">flux</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Maîtrise absolue du texte intégré** : Nano Banana Pro résout le problème historique des IA génératives en restituant des textes parfaitement orthographiés, sans distorsion ni bavure, directement au sein des images.</span></li><li><span class="point-bullet">✦</span><span>Génération d&#x27;infographies contextuelles** : Il est possible de créer des infographies détaillées et propres en combinant un simple prompt textuel avec l&#x27;ajout d&#x27;un lien web.</span></li><li><span class="point-bullet">✦</span><span>Analyse et extraction botanique** : Le modèle peut identifier une plante à partir d&#x27;une photo importée, en extraire les détails pertinents et générer automatiquement une infographie éducative visuellement irréprochable.</span></li><li><span class="point-bullet">✦</span><span>Traduction visuelle intégrée** : L&#x27;outil permet de traduire instantanément tout texte présent à l&#x27;intérieur d&#x27;une image source tout en conservant la mise en page et la cohérence visuelle.</span></li><li><span class="point-bullet">✦</span><span>Variations de logos et branding** : En téléchargeant le logo d&#x27;une marque, le modèle génère des déclinaisons de design multiples, propres et parfaitement cohérentes avec l&#x27;identité visuelle initiale.</span></li><li><span class="point-bullet">✦</span><span>Conversion croquis-réalisme** : Le workflow permet de transformer un simple dessin ou croquis en une image hyperréaliste, avec la possibilité d&#x27;ajouter des images de référence pour personnaliser les arrière-plans.</span></li><li><span class="point-bullet">✦</span><span>Contrôle de la mise au point (Depth of Field) de qualité studio** : Il est possible de déplacer dynamiquement le plan de netteté d&#x27;un sujet à un autre (par exemple, d&#x27;un visage vers une foule ou une main) tout en maintenant un flou naturel, l&#x27;éclairage et le réalisme.</span></li><li><span class="point-bullet">✦</span><span>Manipulation dynamique de l&#x27;éclairage** : Le modèle sait réinterpréter l&#x27;illumination d&#x27;une scène sur simple commande textuelle (transformer la nuit en jour, appliquer un éclairage volumétrique) en modifiant toute la configuration lumineuse de manière cohérente.</span></li><li><span class="point-bullet">✦</span><span>Upscaling haute résolution natif** : Amélioration de la clarté et de la résolution de n&#x27;importe quelle image aux formats 1K, 2K ou 4K avec un niveau de détail impressionnant.</span></li><li><span class="point-bullet">✦</span><span>Gestion multi-personnages et multi-objets** : Le modèle gère de manière fluide la ressemblance de jusqu&#x27;à 5 personnages distincts et la fidélité de jusqu&#x27;à 14 objets dans un seul et même flux de travail.</span></li><li><span class="point-bullet">✦</span><span>Combinaison de références multiples** : Possibilité de fusionner plusieurs images de référence en un rendu unique, cohérent et de haute qualité, ou de générer plusieurs images différentes à partir d&#x27;une seule et unique invite textuelle.</span></li><li><span class="point-bullet">✦</span><span>Gain de productivité massif** : Grâce à sa précision chirurgicale et à l&#x27;absence d&#x27;artefacts, Nano Banana Pro réduit considérablement le besoin de retouches post-production sur les créations visuelles.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:35</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Google vient de lâcher une mise à jour majeure. Juste au moment où j&#x27;enregistrais ma vidéo sur Gemini 3, ils ont sorti Nano Banana Pro et ce modèle est une tuerie. Voici quelques exemples insensés que vous devez voir. C&#x27;est Pursuing AI et vous regardez The Research Report. D&#x27;abord, Nano Banana Pro vous permet d&#x27;ajouter du texte à n&#x27;importe quelle image et il le restitue parfaitement. Pas de fautes d&#x27;orthographe, pas de distorsions, juste un placement de texte propre et précis. Voici d&#x27;autres exemples montrant à quel point le texte est impeccable</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo de démonstration de résultats de génération d&#x27;images par IA (Nano Banana Pro) avec affichage de prompts en bas de l&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché sur l&#x27;image 3 : &quot;HOW MUCH WOOD WOULD A WOODCHUCK CHUCK IF A WOODCHUCK COULD CHUCK WOOD?&quot;. Prompt visible en bas : &quot;Prompt: Create an image showing the phrase &#x27;How much wood would a woodchuck chuck if a woodchuck could chuck wood&#x27; made out of wood chucked by a woodchuck&quot;. Texte affiché sur l&#x27;image 4 : &quot;MAGIC&quot; en typographie décorative.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement successif d&#x27;exemples d&#x27;images générées par IA illustrant la précision du rendu textuel de Nano Banana Pro.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_001_00-00-24.jpg" alt="Image générée montrant du texte en bois sculpté dans un décor boisé avec une marmotte" loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_001_00-00-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:24</span>
+                        <span class="caption-text">Image générée montrant du texte en bois sculpté dans un décor boisé avec une marmotte</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_002_00-00-33.jpg" alt="Image générée montrant le mot &quot;MAGIC&quot; stylisé en papier roulé (quilling) aux teintes violettes et roses sur fond noir" loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_002_00-00-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:33</span>
+                        <span class="caption-text">Image générée montrant le mot &quot;MAGIC&quot; stylisé en papier roulé (quilling) aux teintes violettes et roses sur fond noir</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:35 - 00:01:11</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">le rendu l&#x27;est vraiment. En matière de rendu de texte, Google a vraiment fait un travail incroyable. Comme Nano Banana Pro repose sur Gemini 3, il possède une solide compréhension du monde réel. Vous pouvez créer des infographies entièrement détaillées en fournissant simplement un prompt et en ajoutant un lien. Regardez à quel point cette infographie est propre et précise, extrêmement utile pour les étudiants. Vous pouvez même télécharger l&#x27;image d&#x27;une plante, demander une infographie, et il identifiera la plante, en extraira des détails pertinents,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration de Nano Banana Pro (basé sur Gemini 3).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte visible : &quot;SCENE: URBAN ASTRONAUT&quot;, plans 1 à 4 avec descriptions. Schéma infographique sur l&#x27;énergie solaire (&quot;SOLAR PANELS&quot;, &quot;INVERTER&quot;, &quot;HOME ELECTRICITY&quot;, &quot;STORAGE BATTERY&quot;, &quot;GRID UTILITY&quot;). Infographie sur la plante &quot;STRING OF TURTLES: Peperomia prostrata&quot; avec sections &quot;LEAF PATTERN&quot;, &quot;ORIGIN &amp; HABITAT&quot;, &quot;GROWTH HABIT&quot;, &quot;CARE ESSENTIALS&quot;. Prompt affiché en bas : &quot;Prompt: Create an infographic about this plant focusing on interesting information&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle d&#x27;infographies détaillées générées par IA à partir d&#x27;images d&#x27;entrée et de prompts textuels, démontrant la compréhension du monde réel et les capacités de rendu de texte de l&#x27;outil.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_003_00-00-37.jpg" alt="Interface montrant un storyboard en 4 plans illustrant un astronaute urbain, généré à partir d&#x27;une image d&#x27;entrée." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_003_00-00-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:37</span>
+                        <span class="caption-text">Interface montrant un storyboard en 4 plans illustrant un astronaute urbain, généré à partir d&#x27;une image d&#x27;entrée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_004_00-00-48.jpg" alt="Infographie détaillée et illustrée sur le fonctionnement de l&#x27;énergie solaire, avec un encart miniature d&#x27;une plante en bas à droite." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_004_00-00-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:48</span>
+                        <span class="caption-text">Infographie détaillée et illustrée sur le fonctionnement de l&#x27;énergie solaire, avec un encart miniature d&#x27;une plante en bas à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_005_00-01-00.jpg" alt="Vue plein écran de l&#x27;infographie illustrée sur l&#x27;énergie solaire montrant le cycle de l&#x27;électricité depuis les panneaux photovoltaïques jusqu&#x27;au réseau." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_005_00-01-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:00</span>
+                        <span class="caption-text">Vue plein écran de l&#x27;infographie illustrée sur l&#x27;énergie solaire montrant le cycle de l&#x27;électricité depuis les panneaux photovoltaïques jusqu&#x27;au réseau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_006_00-01-09.jpg" alt="Infographie détaillée générée à partir de l&#x27;image d&#x27;une plante, identifiant le &quot;String of Turtles&quot; (Peperomia prostrata) avec ses caractéristiques et conseils d&#x27;entretien." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_006_00-01-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:09</span>
+                        <span class="caption-text">Infographie détaillée générée à partir de l&#x27;image d&#x27;une plante, identifiant le &quot;String of Turtles&quot; (Peperomia prostrata) avec ses caractéristiques et conseils d&#x27;entretien.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:11 - 00:01:49</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">et générer une infographie visuellement propre. C&#x27;est d&#x27;une précision choquante. Nano Banana Pro peut également traduire du texte qui apparaît à l&#x27;intérieur de n&#x27;importe quelle image. Il suffit de télécharger l&#x27;image et de lui demander de la traduire, et la traduction est parfaite. Voici d&#x27;autres exemples montrant à quel point le modèle gère les traductions. La précision est vraiment impressionnante. Téléchargez votre logo de marque et il génère plusieurs versions et variations de design, toutes cohérentes, toutes propres, et sans aucune erreur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration de Nano Banana Pro avec affichage comparatif d&#x27;images d&#x27;entrée (Input image) et de résultats générés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : « Prompt: Create an infographic about this plant focusing on interesting information » et infographie détaillée sur la plante « String of Turtles », ainsi que divers textes publicitaires traduits (« Aura Fizz », « Zestful », « Schwungvoll »).</p>
+                        <p><strong>Action / Démonstration :</strong> Le modèle analyse une image source pour en extraire du texte, effectuer des traductions contextuelles et générer des infographies ou des variations de design cohérentes.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_007_00-01-13.jpg" alt="Démonstration de la création d&#x27;une infographie botanique à partir d&#x27;une photo de plante avec Nano Banana Pro." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_007_00-01-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:13</span>
+                        <span class="caption-text">Démonstration de la création d&#x27;une infographie botanique à partir d&#x27;une photo de plante avec Nano Banana Pro.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_008_00-01-25.jpg" alt="Exemples de traduction de texte intégré dans des affiches publicitaires urbaines de canettes de boisson." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_008_00-01-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:25</span>
+                        <span class="caption-text">Exemples de traduction de texte intégré dans des affiches publicitaires urbaines de canettes de boisson.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_009_00-01-37.jpg" alt="Exemples de traduction de texte publicitaire illustré sur des affiches de rue dans un style animé." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_009_00-01-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:37</span>
+                        <span class="caption-text">Exemples de traduction de texte publicitaire illustré sur des affiches de rue dans un style animé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_010_00-01-47.jpg" alt="Démonstration de génération de variations de design de meubles à partir d&#x27;un croquis et d&#x27;une image de référence." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_010_00-01-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:47</span>
+                        <span class="caption-text">Démonstration de génération de variations de design de meubles à partir d&#x27;un croquis et d&#x27;une image de référence.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:49 - 00:02:10</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez également télécharger un croquis et le transformer en image hyperréaliste. Si vous souhaitez un arrière-plan personnalisé, téléchargez simplement l&#x27;image de référence supplémentaire, et le résultat est honnêtement insensé. Voici d&#x27;autres exemples de conversions de croquis en images réalistes, et chacun d&#x27;eux est incroyable.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration logicielle ou site web présentant des exemples de conversion d&#x27;images (sketch-to-realistic).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Affichage des images d&#x27;entrée (« Input image ») sous forme de croquis et de textures, accompagnées de grands rendus finaux générés par IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de la transformation de croquis simples en images réalistes complexes grâce à l&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_011_00-01-51.jpg" alt="Démonstration de conversion d&#x27;un croquis de voiture et d&#x27;une texture en une image hyperréaliste de véhicule en papier." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_011_00-01-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:51</span>
+                        <span class="caption-text">Démonstration de conversion d&#x27;un croquis de voiture et d&#x27;une texture en une image hyperréaliste de véhicule en papier.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_012_00-02-08.jpg" alt="Exemples multiples de conversion d&#x27;un croquis architectural de modules fixés sur une falaise en différents rendus 3D réalistes." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_012_00-02-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:08</span>
+                        <span class="caption-text">Exemples multiples de conversion d&#x27;un croquis architectural de modules fixés sur une falaise en différents rendus 3D réalistes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:11 - 00:02:37</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Nano Banana Pro débloque également un contrôle d&#x27;image de qualité studio. Par exemple, téléchargez une image, puis demandez-lui de déplacer la mise au point de la fille vers la foule. Il le fait parfaitement, en maintenant la cohérence, l&#x27;éclairage et le réalisme. Voici un autre exemple, changeant la mise au point du visage d&#x27;un homme vers sa main, en floutant naturellement le visage.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation logicielle avec interface de démonstration d&#x27;IA pour le contrôle d&#x27;image et de profondeur de champ.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : « Studio-quality control. Exercise fine control over every aspect of your images, for high-fidelity results. Explore different angles and shot types. Wide angle, panoramic, close up - choose an angle and a type of shot. Or alter the depth of field to focus on different subjects in your image. » et les prompts « Prompt: Focus on the faces of the crowd and make woman blurry » et « Prompt: Focus on man&#x27;s hand, blur his face ».</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des fonctionnalités de contrôle de la profondeur de champ et de la mise au point sur des images fixes à l&#x27;aide de prompts textuels.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_013_00-02-13.jpg" alt="Diapositive de présentation introduisant le contrôle d&#x27;image de qualité studio et l&#x27;exploration de différents angles de prise de vue." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_013_00-02-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:13</span>
+                        <span class="caption-text">Diapositive de présentation introduisant le contrôle d&#x27;image de qualité studio et l&#x27;exploration de différents angles de prise de vue.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_014_00-02-20.jpg" alt="Démonstration visuelle avec l&#x27;image d&#x27;entrée et l&#x27;image modifiée, montrant le déplacement de la mise au point de la femme vers la foule." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_014_00-02-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:20</span>
+                        <span class="caption-text">Démonstration visuelle avec l&#x27;image d&#x27;entrée et l&#x27;image modifiée, montrant le déplacement de la mise au point de la femme vers la foule.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_015_00-02-35.jpg" alt="Démonstration visuelle en noir et blanc montrant le déplacement de la mise au point du visage de l&#x27;homme vers sa main." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_015_00-02-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:35</span>
+                        <span class="caption-text">Démonstration visuelle en noir et blanc montrant le déplacement de la mise au point du visage de l&#x27;homme vers sa main.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:38 - 00:02:57</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ces résultats sont honnêtement d&#x27;un autre niveau. Vous pouvez aussi ajuster la couleur et l&#x27;éclairage. Dites-lui de transformer la nuit en jour, et il modifie parfaitement toute la configuration d&#x27;éclairage. Regardez cet exemple avec un éclairage volumétrique. Le résultat est incroyable.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de présentation de résultats de modèle d&#x27;IA générative avec affichage de comparaisons avant/après et de prompts textuels.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Input image&quot;, &quot;Prompt: Change to daytime&quot; (sur l&#x27;image 2), &quot;Prompt: Replace volumetric lighting with bokeh&quot; (sur l&#x27;image 3).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation à l&#x27;écran de comparaisons visuelles et d&#x27;exemples de modifications d&#x27;éclairage et d&#x27;ambiance par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_016_00-02-40.jpg" alt="Démonstration de résultats visuels générés avec différentes perspectives et personnages." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_016_00-02-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:40</span>
+                        <span class="caption-text">Démonstration de résultats visuels générés avec différentes perspectives et personnages.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_017_00-02-47.jpg" alt="Comparaison avant/après illustrant la modification de l&#x27;éclairage d&#x27;une image de cerf sur une falaise suite à un prompt." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_017_00-02-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:47</span>
+                        <span class="caption-text">Comparaison avant/après illustrant la modification de l&#x27;éclairage d&#x27;une image de cerf sur une falaise suite à un prompt.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_018_00-02-55.jpg" alt="Comparaison avant/après illustrant le remplacement de l&#x27;éclairage volumétrique par un effet bokeh suite à un prompt." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_018_00-02-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:55</span>
+                        <span class="caption-text">Comparaison avant/après illustrant le remplacement de l&#x27;éclairage volumétrique par un effet bokeh suite à un prompt.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:58 - 00:03:22</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez améliorer la résolution de n&#x27;importe quelle image en 1K, 2K ou même 4K avec une clarté impressionnante. Et bien sûr, vous pouvez générer des images dans plusieurs formats d&#x27;image instantanément. Écoutez ceci. Il peut maintenir la ressemblance de jusqu&#x27;à 5 personnages et la fidélité de jusqu&#x27;à 14 objets dans un seul flux de travail.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de présentation logicielle avec titres textuels en haut à gauche et panneaux visuels de démonstration d&#x27;intelligence artificielle générative.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;Upscale with precision - Generate crisp visuals at 1k, 2k or 4k resolution.&quot; (Image 1). Texte à l&#x27;écran : &quot;Subject consistency - Maintain the consistency and resemblance of up to five characters and the fidelity of up to fourteen objects in a single workflow.&quot; (Image 3). Nombreuses images d&#x27;entrée étiquetées &quot;Input image&quot; et grands visuels générés.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle des fonctionnalités de l&#x27;IA, montrant l&#x27;amélioration de résolution, les différents formats d&#x27;image et le maintien de la consistance de multiples personnages et objets.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_019_00-03-00.jpg" alt="Démonstration de la fonction d&#x27;upscaling avec des illustrations de style gravure montrant un astronaute sur un pont face à une ville volante, avec le texte explicatif en haut à gauche." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_019_00-03-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:00</span>
+                        <span class="caption-text">Démonstration de la fonction d&#x27;upscaling avec des illustrations de style gravure montrant un astronaute sur un pont face à une ville volante, avec le texte explicatif en haut à gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_020_00-03-06.jpg" alt="Collage d&#x27;images montrant un personnage en armure marchant dans un paysage enneigé montagneux, illustrant la génération d&#x27;images en plusieurs formats (aspect ratios)." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_020_00-03-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:06</span>
+                        <span class="caption-text">Collage d&#x27;images montrant un personnage en armure marchant dans un paysage enneigé montagneux, illustrant la génération d&#x27;images en plusieurs formats (aspect ratios).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_021_00-03-14.jpg" alt="Démonstration de la cohérence de sujets montrant de multiples petites images de créatures en entrée et une grande scène finale regroupant tous ces personnages sur un canapé et un tapis." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_021_00-03-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:14</span>
+                        <span class="caption-text">Démonstration de la cohérence de sujets montrant de multiples petites images de créatures en entrée et une grande scène finale regroupant tous ces personnages sur un canapé et un tapis.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:23 - 00:03:45</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voici quelques exemples. Plusieurs images de référence combinées en un seul rendu cohérent et de haute qualité. Vous pouvez même générer plusieurs images différentes en une seule invite. Super efficace. Et enfin, ces exemples. Je ne pense pas qu&#x27;aucun autre modèle actuellement ne puisse atteindre ce niveau de détail.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration de rendu d&#x27;IA générative et de combinaison d&#x27;images multiples.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;Input image&quot; sous de petites vignettes de référence à gauche de l&#x27;écran principal, affichant des éléments visuels variés (personnage, mobilier, plantes, cadre).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;exemples de résultats générés par IA illustrant la cohérence d&#x27;images multiples et un niveau de détail élevé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_022_00-03-25.jpg" alt="Démonstration de la combinaison de plusieurs images de référence (Input image) pour générer une image finale cohérente montrant un designer ajustant une robe sur un mannequin dans un studio." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_022_00-03-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:25</span>
+                        <span class="caption-text">Démonstration de la combinaison de plusieurs images de référence (Input image) pour générer une image finale cohérente montrant un designer ajustant une robe sur un mannequin dans un studio.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_023_00-03-38.jpg" alt="Rendu visuel d&#x27;une architecture intérieure circulaire en béton avec un escalier en colimaçon monumental et une silhouette humaine au centre." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_023_00-03-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:38</span>
+                        <span class="caption-text">Rendu visuel d&#x27;une architecture intérieure circulaire en béton avec un escalier en colimaçon monumental et une silhouette humaine au centre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_024_00-03-43.jpg" alt="Rendu visuel d&#x27;un paysage urbain futuriste de science-fiction au crépuscule avec des vaisseaux spatiaux en vol stationnaire au-dessus des gratte-ciels, observé par un couple depuis un balcon." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_024_00-03-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:43</span>
+                        <span class="caption-text">Rendu visuel d&#x27;un paysage urbain futuriste de science-fiction au crépuscule avec des vaisseaux spatiaux en vol stationnaire au-dessus des gratte-ciels, observé par un couple depuis un balcon.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:46 - 00:03:56</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ces générations sont vraiment d&#x27;un tout autre niveau. C&#x27;était la recherche complète de Nano Banana Pro. Si vous avez aimé cette vidéo, n&#x27;oubliez pas de l&#x27;aimer.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Affichage plein écran d&#x27;une image générée par IA (rendu visuel de démonstration).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Une grenouille rainette aux yeux rouges vifs, peau texturée verte et orange, pattes orangées, posée sur une grande feuille verte luisante avec des gouttes d&#x27;eau.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du résultat visuel d&#x27;une génération par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-CtR8KRHsOSo/frame_025_00-03-51.jpg" alt="Image générée par IA représentant une grenouille aux yeux rouges posée sur une feuille tropicale couverte de gouttes de rosée." loading="lazy" onclick="openLightbox('screenshots/YT-CtR8KRHsOSo/frame_025_00-03-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:51</span>
+                        <span class="caption-text">Image générée par IA représentant une grenouille aux yeux rouges posée sur une feuille tropicale couverte de gouttes de rosée.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
