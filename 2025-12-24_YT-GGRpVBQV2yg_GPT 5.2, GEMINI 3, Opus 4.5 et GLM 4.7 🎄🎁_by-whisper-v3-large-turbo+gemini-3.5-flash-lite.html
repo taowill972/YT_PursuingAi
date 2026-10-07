@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 GPT 5.2, GEMINI 3, Opus 4.5 et GLM 4.7 🎄🎁 — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 GPT 5.2, GEMINI 3, Opus 4.5 et GLM 4.7 🎄🎁</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-12-24</span>
+                <span class="badge">⏱️ 07m 32s</span>
+                <span class="badge">🆔 <code>GGRpVBQV2yg</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=GGRpVBQV2yg" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* intitulée « GPT 5.2, GEMINI 3, Opus 4.5 et GLM 4.7 🎄🎁 » explore de manière ludique et comparative le potentiel des modèles de langage de pointe (ou de nouvelle génération) pour concevoir des applications web interactives de Noël. À travers trois cas d'usage précis — une carte romantique pour sa petite amie, une farce effrayante pour son meilleur ami et l'affichage d'un message personnalisé sur le Burj Khalifa —, le créateur teste la capacité de ces intelligences artificielles à coder, itérer et produire des interfaces web fonctionnelles uniquement à partir de descriptions textuelles.</p><p>La méthode repose sur une approche itérative rigoureuse : chaque modèle est soumis à un prompt initial, puis affiné par des instructions correctives successives pour corriger les bugs d'affichage, ajuster les ambiances sonores ou perfectionner le design visuel. L'expérience montre que si aucun modèle ne parvient à un résultat parfait du premier coup, les performances varient grandement d'une IA à l'autre selon la complexité de la tâche, qu'il s'agisse de générer du code HTML autonome, de concevoir des animations fluides ou de respecter des contraintes structurelles précises.</p><p>Pour les créateurs de contenu et les développeurs, ce type de workflow illustre l'abaissement spectaculaire de la barrière technique : il est désormais possible de prototyper des expériences web immersives et personnalisées en quelques minutes sans écrire une seule ligne de code manuellement. Cette vidéo démontre que l'avenir de la création de contenu réside dans la co-création pilotée par le prompt, où la qualité du résultat dépend autant de la persévérance de l'utilisateur dans l'itération que de la puissance brute du modèle d'IA employé.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>L&#x27;importance cruciale de l&#x27;itération** : Aucun modèle n&#x27;est capable de produire une application web parfaite du premier coup ; le processus exige une suite de prompts correctifs pour ajuster le comportement, le design et l&#x27;interactivité.</span></li><li><span class="point-bullet">✦</span><span>La gestion du code exportable** : Lorsque les liens web générés directement par l&#x27;IA affichent des erreurs de routage, l&#x27;option de téléchargement du fichier HTML brut s&#x27;impose comme une alternative indispensable pour tester le projet localement.</span></li><li><span class="point-bullet">✦</span><span>La spécialisation des modèles selon les tâches** : ChatGPT 5.2 excelle dans la création d&#x27;ambiances dramatiques et de surprises interactives (comme la farce du Père Noël effrayant), tandis que d&#x27;autres modèles brillent par la structure visuelle de leurs décors.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;intégration du design émotionnel** : Les IA modernes comprennent parfaitement les consignes d&#x27;ambiance (styles de police romantiques, palettes de couleurs chaleureuses, émojis animés) pour maximiser l&#x27;impact émotionnel auprès du destinataire.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;autonomie rédactionnelle des LLM** : Lorsqu&#x27;aucun texte n&#x27;est spécifié dans le prompt, des modèles comme Gemini 3 démontrent une forte capacité à rédiger de manière autonome des messages touchants et contextuels.</span></li><li><span class="point-bullet">✦</span><span>Le piège des rendus architecturaux** : Reproducer des monuments réels complexes comme le Burj Khalifa nécessite des instructions extrêmement précises, les IA ayant tendance à générer des structures de bâtiments génériques si elles ne sont pas guidées.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;optimisation de l&#x27;expérience sonore** : L&#x27;ajout de sons d&#x27;ambiance et d&#x27;effets sonores terrifiants ou musicaux demande généralement plusieurs essais pour synchroniser parfaitement l&#x27;audio avec l&#x27;action visuelle à l&#x27;ouverture des boîtes-cadeaux.</span></li><li><span class="point-bullet">✦</span><span>La démocratisation du prototypage rapide** : Ces outils permettent à des non-développeurs de concevoir des mini-applications web (HTML/CSS/JS intégrés) en quelques minutes, transformant une idée créative en un produit partageable instantanément.</span></li><li><span class="point-bullet">✦</span><span>La gestion des animations fluides** : Obtenir des transitions harmonieuses (comme l&#x27;apparition d&#x27;une lettre pop-up ou le mouvement de boutons) requiert de prompter explicitement le modèle sur la fluidité des mouvements graphiques.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;évaluation comparative multi-modèles** : Face à l&#x27;échec ou aux limites d&#x27;un modèle (comme GLM 4.7 sur la farce effrayante), basculer rapidement vers un concurrent (Opus 4.5 ou ChatGPT 5.2) garantit d&#x27;atteindre le résultat escompté sans perdre de temps.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Hé, quelqu&#x27;un m&#x27;a envoyé un cadeau. Ouvrons-le. Aujourd&#x27;hui c&#x27;est le réveillon de Noël, mais ce n&#x27;est pas un réveillon de Noël normal. Nous vivons à l&#x27;ère de l&#x27;IA, et cette année, l&#x27;IA est partout. De nouveaux modèles, de nouveaux outils, presque chaque semaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web interactive avec animations graphiques, moteur de recherche de date et interface de modélisation 3D/voxel avec commentaires textuels.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Open Gift&quot;, &quot;*Pls Low The Volume*&quot;, &quot;Christmas Eve › Date&quot;, &quot;Wed, Dec 24, 2025&quot;, et commentaires de code textuels sur l&#x27;ajout de hamsters voxélisés et animés.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;une animation d&#x27;ouverture de cadeau interactif, vérification de la date de Noël 2025, puis affichage d&#x27;un modèle 3D interactif d&#x27;un arbre en voxels.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_001_00-00-02.jpg" alt="Interface sombre affichant une boîte cadeau rouge et jaune avec l&#x27;indication &#x27;Open Gift&#x27; et le texte d&#x27;avertissement &#x27;*Pls Low The Volume*&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Interface sombre affichant une boîte cadeau rouge et jaune avec l&#x27;indication &#x27;Open Gift&#x27; et le texte d&#x27;avertissement &#x27;*Pls Low The Volume*&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_002_00-00-10.jpg" alt="Interface de recherche montrant la date du mercredi 24 décembre 2025 et une image de vœux de Noël." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_002_00-00-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Interface de recherche montrant la date du mercredi 24 décembre 2025 et une image de vœux de Noël.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_003_00-00-19.jpg" alt="Interface de développement ou de création 3D montrant un arbre voxélisé style voxel art sur une île flottante avec un panneau de code/commentaires textuels à gauche." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_003_00-00-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:19</span>
+                        <span class="caption-text">Interface de développement ou de création 3D montrant un arbre voxélisé style voxel art sur une île flottante avec un panneau de code/commentaires textuels à gauche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:21 - 00:00:44</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Franchement, on a l&#x27;impression qu&#x27;il pleut de l&#x27;IA cette année. Et voici la partie passionnante. Tous ces outils d&#x27;IA peuvent réellement rendre notre Noël plus amusant, plus créatif et plus impressionnant. Alors j&#x27;ai creusé le sujet. J&#x27;ai fait des recherches sur des manières folles et incroyables d&#x27;utiliser l&#x27;IA ce Noël. C&#x27;est Pursuing AI, et vous regardez The Research Report.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra et animations graphiques thématiques sans partage d&#x27;écran logiciel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Animations graphiques illustrant le sujet de l&#x27;intelligence artificielle et de Noël, incluant le logo &quot;The Research Report&quot; avec un cerveau cybernétique et une lettre de vœux.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;animations de transition et d&#x27;illustrations visuelles pour accompagner la voix off du créateur.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:44 - 00:01:05</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout d&#x27;abord, j&#x27;ai cherché comment impressionner votre petite amie ce Noël, alors j&#x27;ai créé une petite application web. Lorsque votre petite amie l&#x27;ouvre, un Père Noël apparaît à l&#x27;écran avec une animation fluide et magnifique. Ensuite, le Père Noël lui donne une lettre, mais ce n&#x27;est pas une lettre normale. À l&#x27;intérieur de la lettre se trouve votre propre message, écrit par vous, pour elle.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de présentation de l&#x27;application web développée par le créateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;How To Impress Your Girlfriend&quot; puis animation d&#x27;une lettre interactive.</p>
+                        <p><strong>Action / Démonstration :</strong> Le texte apparaît en typographie blanche simple sur fond noir, suivi d&#x27;une animation graphique d&#x27;enveloppe sur un fond sombre constellé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_004_00-00-46.jpg" alt="Titre textuel à l&#x27;écran sur fond noir indiquant &#x27;How To Impress Your Girlfriend&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_004_00-00-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:46</span>
+                        <span class="caption-text">Titre textuel à l&#x27;écran sur fond noir indiquant &#x27;How To Impress Your Girlfriend&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_005_00-00-55.jpg" alt="Animation montrant une enveloppe de lettre stylisée avec un cachet en forme de cœur rouge." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_005_00-00-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:55</span>
+                        <span class="caption-text">Animation montrant une enveloppe de lettre stylisée avec un cachet en forme de cœur rouge.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:05 - 00:01:24</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc ça a l&#x27;air personnel, ça a l&#x27;air spécial. Passons maintenant au premier résultat. C&#x27;est le résultat de Gemini 3. D&#x27;abord, il génère ceci. Quand je clique sur ouvrir, un Père Noël apparaît, et une lettre pop-up apparaît. Ensuite, le message apparaît avec une animation. Mais voici le problème.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration vidéo d&#x27;un résultat généré par Gemini 3 avec des animations de Noël.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte sur l&#x27;enveloppe et la lettre de vœux : vœux de joyeux Noël, message personnalisé et signature.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du premier résultat généré par l&#x27;IA Gemini 3, montrant l&#x27;ouverture d&#x27;une enveloppe et l&#x27;apparition d&#x27;une animation du Père Noël avec un message.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_006_00-01-07.jpg" alt="Aperçu du premier résultat généré (Gemini 3) montrant une enveloppe ouverte avec une lettre de vœux de Noël." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_006_00-01-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:07</span>
+                        <span class="caption-text">Aperçu du premier résultat généré (Gemini 3) montrant une enveloppe ouverte avec une lettre de vœux de Noël.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_007_00-01-22.jpg" alt="Animation avec le Père Noël et une lettre pop-up affichant un message personnalisé sur fond rouge avec des flocons." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_007_00-01-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:22</span>
+                        <span class="caption-text">Animation avec le Père Noël et une lettre pop-up affichant un message personnalisé sur fond rouge avec des flocons.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:24 - 00:01:47</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je ne lui ai donné aucun message. Le message à l&#x27;intérieur de la lettre a été écrit par le modèle lui-même. Voyons donc ce qu&#x27;il a écrit. Je voulais faire quelque chose de spécial pour toi cette année. Quelque chose d&#x27;aussi magique que tu rends ma vie chaque jour. Tu es mon cadeau préféré. Aujourd&#x27;hui et pour toujours. Que tes fêtes soient remplies de toute la joie et de l&#x27;amour que tu apportes dans mon cœur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Animation graphique thématique de Noël.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte manuscrit en anglais sur la lettre : « I wanted to do something special for you this year, something as magical as you make my life every single day. » avec une illustration du Père Noël en haut.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage à l&#x27;écran du contenu de la lettre générée par l&#x27;intelligence artificielle pendant que le créateur en fait la lecture.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_008_00-01-26.jpg" alt="Animation montrant le Père Noël tenant une lettre avec le texte généré par l&#x27;IA sur un fond rouge avec des flocons de neige." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_008_00-01-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:26</span>
+                        <span class="caption-text">Animation montrant le Père Noël tenant une lettre avec le texte généré par l&#x27;IA sur un fond rouge avec des flocons de neige.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:47 - 00:02:05</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je t&#x27;aime plus que les mots ne peuvent le dire. Pour toujours ton ou ta. Et en bas, Joyeux Noël. Fait spécialement pour toi. C&#x27;est un message vraiment adorable. Et remarquez particulièrement l&#x27;arrière-plan. C&#x27;est vraiment romantique. Mais ce n&#x27;est pas ce que je veux. Je donne donc une autre consigne pour affiner le résultat.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Google Gemini</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de l&#x27;application web de cadeau de Noël avec des instructions de téléchargement et un champ de saisie de message romantique.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le rendu visuel généré puis bascule sur l&#x27;interface de Google Gemini pour modifier le prompt.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_009_00-01-49.jpg" alt="Aperçu du rendu graphique avec un personnage de Père Noël tenant une carte de vœux sur fond rouge et des paillettes." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_009_00-01-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:49</span>
+                        <span class="caption-text">Aperçu du rendu graphique avec un personnage de Père Noël tenant une carte de vœux sur fond rouge et des paillettes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_010_00-02-03.jpg" alt="Interface de Google Gemini affichant le code et le panneau de prévisualisation d&#x27;une application web de cadeau de Noël." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_010_00-02-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:03</span>
+                        <span class="caption-text">Interface de Google Gemini affichant le code et le panneau de prévisualisation d&#x27;une application web de cadeau de Noël.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:06 - 00:02:24</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et le voilà. Maintenant c&#x27;est exactement ce que je veux. À l&#x27;intérieur de la boîte, je peux écrire mon propre message personnel, comme &quot;Merry Christmas by pursuing AI&quot;. Je peux télécharger le lien et obtenir le fichier HTML. Le lien généré ne fonctionne pas. Il affiche une erreur car le lien n&#x27;existe pas.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de Google Gemini et navigateur web affichant une application web interactive et une page d&#x27;erreur 404.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes &quot;Christmas Web App For Girlfriend&quot;, &quot;Create Your Gift&quot;, &quot;Write your romantic message below:&quot;, &quot;MERRY Christmas By Pursuing AI&quot;, boutons &quot;Download Gift File&quot; et &quot;Get Link&quot;, et message d&#x27;erreur Google &quot;404. That&#x27;s an error. The requested URL ... was not found on this server.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente l&#x27;application web mise à jour, tape un message personnalisé dans la boîte de texte, puis montre l&#x27;erreur générée par le lien de partage défectueux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_011_00-02-08.jpg" alt="Interface de Gemini affichant l&#x27;application web de Noël avec le code source et la zone de saisie." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_011_00-02-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:08</span>
+                        <span class="caption-text">Interface de Gemini affichant l&#x27;application web de Noël avec le code source et la zone de saisie.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_012_00-02-15.jpg" alt="Gros plan sur l&#x27;interface de l&#x27;application web avec le texte personnalisé &quot;MERRY Christmas By Pursuing AI&quot; saisi dans la zone de message." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_012_00-02-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:15</span>
+                        <span class="caption-text">Gros plan sur l&#x27;interface de l&#x27;application web avec le texte personnalisé &quot;MERRY Christmas By Pursuing AI&quot; saisi dans la zone de message.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_013_00-02-22.jpg" alt="Page d&#x27;erreur Google 404 indiquant que l&#x27;URL demandée pour le lien généré est introuvable sur le serveur." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_013_00-02-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:22</span>
+                        <span class="caption-text">Page d&#x27;erreur Google 404 indiquant que l&#x27;URL demandée pour le lien généré est introuvable sur le serveur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:24 - 00:02:47</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais le téléchargement fonctionne. Quand je clique sur télécharger, il télécharge le fichier HTML. Quand je l&#x27;ouvre, une boîte cadeau apparaît. Quand j&#x27;ouvre la boîte cadeau, un petit Père Noël apparaît avec une lettre. Et à l&#x27;intérieur de la lettre, mon message personnel apparaît. Exactement ce que je veux qu&#x27;il envoie. Des émojis en forme de cœur apparaissent avec une animation. Maintenant, remarquez le style de police. Il correspond parfaitement à l&#x27;ambiance romantique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web interactive de création de messages-cadeaux personnalisés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du message : &quot;MERRY Christmas By Pursuing AI&quot;, boutons &quot;Download Gift File&quot; et &quot;Get Link&quot;, avec un lien blob généré et un bouton &quot;Copy Link&quot;. Sur l&#x27;image 2, la lettre affiche le texte stylisé &quot;MERRY Christmas By Pursuing AI&quot; avec des cœurs rouges animés.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration du téléchargement et de l&#x27;affichage du fichier HTML généré avec le message personnalisé et les animations de cœurs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_014_00-02-26.jpg" alt="Interface Web de création de cadeau avec un champ de saisie de message et des boutons de téléchargement de fichier." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_014_00-02-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:26</span>
+                        <span class="caption-text">Interface Web de création de cadeau avec un champ de saisie de message et des boutons de téléchargement de fichier.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_015_00-02-40.jpg" alt="Affichage du message personnalisé dans une lettre ouverte avec des cœurs animés en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_015_00-02-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:40</span>
+                        <span class="caption-text">Affichage du message personnalisé dans une lettre ouverte avec des cœurs animés en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:47 - 00:03:07</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je pense que ta petite amie serait vraiment heureuse quand tu lui envoies un message personnel comme celui-ci. C&#x27;est vraiment incroyable comme Gemini a compris cela en seulement deux invites. Donc la prochaine méthode consiste à faire une farce à ton meilleur ami. Dans la méthode précédente, j&#x27;ai utilisé Gemini. Mais pour cette méthode, j&#x27;ai utilisé le nouveau modèle open source, GLM 4.7.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface vidéo et page web de présentation du modèle d&#x27;intelligence artificielle GLM-4.7.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;MERRY Christmas By Pursuing AI&quot;, &quot;Merry Christmas — Made specialty for you&quot;, &quot;Scary Prank To Your Best Friend&quot;, et &quot;GLM-4.7: Advancing the Coding Capability&quot; avec des détails sur les performances et fonctionnalités du modèle.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur illustre ses propos en affichant une carte virtuelle de Noël, un titre thématique sur la farce, puis la documentation officielle du modèle de langage GLM-4.7.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_016_00-02-49.jpg" alt="Carte postale de vœux animée affichant un message de Noël sur fond sombre avec des cœurs flottants." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_016_00-02-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:49</span>
+                        <span class="caption-text">Carte postale de vœux animée affichant un message de Noël sur fond sombre avec des cœurs flottants.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_017_00-02-57.jpg" alt="Texte stylisé en rouge et blanc coiffé d&#x27;un bonnet de Noël, introduisant la farce à destination du meilleur ami." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_017_00-02-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:57</span>
+                        <span class="caption-text">Texte stylisé en rouge et blanc coiffé d&#x27;un bonnet de Noël, introduisant la farce à destination du meilleur ami.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_018_00-03-05.jpg" alt="Page web officielle de présentation du modèle GLM-4.7 détaillant ses capacités de codage et d&#x27;évaluation." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_018_00-03-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:05</span>
+                        <span class="caption-text">Page web officielle de présentation du modèle GLM-4.7 détaillant ses capacités de codage et d&#x27;évaluation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:08 - 00:03:29</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce modèle surpasse Gemini dans certains tests. S&#x27;il n&#x27;avait pas été capable de réussir ce test, j&#x27;avais prévu d&#x27;utiliser Opus 4.5 et ChatGPT 5.2. Maintenant, les exigences de la farce étaient simples. Créez un site web où, lorsque quelqu&#x27;un l&#x27;ouvre, une boîte-cadeau apparaît avec un joli arrière-plan. Sous la boîte, une option pour ouvrir la boîte-cadeau est disponible.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Diapositives et écrans de présentation textuels sur fond noir.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;LLM Performance Evaluation: Agentic, Reasoning and Coding&quot;, &quot;Scary Prank Requirements&quot;, et la description des exigences : &quot;Make a website where when anyone opens it, a gift box appears with a lovely background. Below the box, an &quot;Open Gift Box&quot; option is available.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des graphiques de performance des modèles d&#x27;IA, suivi de l&#x27;apparition textuelle des critères de conception de la farce sur fond noir.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_019_00-03-10.jpg" alt="Graphique de performance des LLM montrant l&#x27;évaluation sur divers benchmarks (agentique, raisonnement et codage)." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_019_00-03-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:10</span>
+                        <span class="caption-text">Graphique de performance des LLM montrant l&#x27;évaluation sur divers benchmarks (agentique, raisonnement et codage).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_020_00-03-18.jpg" alt="Écran noir affichant le titre en texte blanc &#x27;Scary Prank Requirements&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_020_00-03-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:18</span>
+                        <span class="caption-text">Écran noir affichant le titre en texte blanc &#x27;Scary Prank Requirements&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_021_00-03-27.jpg" alt="Écran affichant le titre &#x27;Scary Prank Requirements&#x27; avec le texte descriptif de la farce qui s&#x27;écrit progressivement en dessous." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_021_00-03-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:27</span>
+                        <span class="caption-text">Écran affichant le titre &#x27;Scary Prank Requirements&#x27; avec le texte descriptif de la farce qui s&#x27;écrit progressivement en dessous.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:29 - 00:03:57</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Lorsque l&#x27;on clique dessus, un visage de Père Noël effrayant apparaît soudainement avec des effets sonores terrifiants. Et à la fin, un message apparaît : &quot;bonne année par Pursuing AI&quot;. Maintenant voici le résultat de GLM 4.7. D&#x27;abord, il a fait un arrière-plan normal. Une boîte cadeau apparaît, mais en ouvrant le cadeau, aucun Père Noël n&#x27;apparaît. Et le son n&#x27;est pas non plus très effrayant, alors j&#x27;ai relancé un prompt pour obtenir un meilleur résultat. C&#x27;est le deuxième résultat.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de GLM-4.7 montrant une zone de chat textuel à gauche et un panneau de prévisualisation web à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompts textuels saisis par l&#x27;utilisateur demandant de créer une page web interactive avec une boîte cadeau, un effet effrayant de Père Noël et un message de fin d&#x27;année.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre les différentes étapes de génération et d&#x27;itération du code d&#x27;une application web interactive via GLM-4.7.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_022_00-03-31.jpg" alt="Texte sur fond noir détaillant les exigences de la farce effrayante (&quot;Scary Prank Requirements&quot;)." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_022_00-03-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:31</span>
+                        <span class="caption-text">Texte sur fond noir détaillant les exigences de la farce effrayante (&quot;Scary Prank Requirements&quot;).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_023_00-03-48.jpg" alt="Interface de GLM-4.7 montrant le premier résultat généré avec une boîte cadeau rouge sur fond de flocons de neige." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_023_00-03-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:48</span>
+                        <span class="caption-text">Interface de GLM-4.7 montrant le premier résultat généré avec une boîte cadeau rouge sur fond de flocons de neige.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_024_00-03-55.jpg" alt="Interface de GLM-4.7 montrant le deuxième résultat amélioré avec un nouveau prompt et un arrière-plan bleu." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_024_00-03-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:55</span>
+                        <span class="caption-text">Interface de GLM-4.7 montrant le deuxième résultat amélioré avec un nouveau prompt et un arrière-plan bleu.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:57 - 00:04:39</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ça améliore le son, mais encore une fois le visage effrayant du Père Noël ne vient pas, alors je lui donne une dernière instruction. Et voici le résultat final. La première impression n&#x27;est pas très bonne. En ouvrant la boîte, le visage effrayant du Père Noël apparaît bien, avec du son, mais ce n&#x27;est pas ce à quoi je m&#x27;attendais. Ce n&#x27;est pas assez effrayant pour piéger vos amis. C&#x27;est donc le moment de passer à Opus 4.5, et voici le résultat. C&#x27;est bien meilleur que GLM 4.7. Ensuite, j&#x27;ai aussi essayé ChatGPT 5.2,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de GLM-4.7 avec un panneau de discussion à gauche et une fenêtre de prévisualisation (Preview/Code) à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de prompt visible : &#x27;Make the sound more scary and also add a scary Santa face. Also make the starting beautiful with better animation like the gift inside the box is really amazing.&#x27; Texte de fin : &#x27;Happy New Year By Pursuing AI&#x27; et &#x27;A Little Festive Surprise&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente les différents résultats de génération et de prévisualisation obtenus via l&#x27;outil GLM-4.7 suite à ses instructions correctives.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_025_00-03-59.jpg" alt="Interface de GLM-4.7 affichant le panneau de discussion avec le prompt de modification du son et de l&#x27;animation." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_025_00-03-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:59</span>
+                        <span class="caption-text">Interface de GLM-4.7 affichant le panneau de discussion avec le prompt de modification du son et de l&#x27;animation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_026_00-04-11.jpg" alt="Interface de GLM-4.7 montrant la prévisualisation d&#x27;un cadeau rouge avec un bouton &#x27;OPEN GIFT&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_026_00-04-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:11</span>
+                        <span class="caption-text">Interface de GLM-4.7 montrant la prévisualisation d&#x27;un cadeau rouge avec un bouton &#x27;OPEN GIFT&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_027_00-04-25.jpg" alt="Interface de GLM-4.7 affichant un écran de fin avec le texte &#x27;Happy New Year By Pursuing AI&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_027_00-04-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:25</span>
+                        <span class="caption-text">Interface de GLM-4.7 affichant un écran de fin avec le texte &#x27;Happy New Year By Pursuing AI&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_028_00-04-37.jpg" alt="Interface en plein écran montrant le rendu d&#x27;une surprise festive avec un cadeau interactif et le texte &#x27;A Little Festive Surprise&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_028_00-04-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:37</span>
+                        <span class="caption-text">Interface en plein écran montrant le rendu d&#x27;une surprise festive avec un cadeau interactif et le texte &#x27;A Little Festive Surprise&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:39 - 00:05:06</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">et voici le résultat. Regardez la première impression. C&#x27;est vraiment impressionnant. Notez le message au-dessus de la boîte disant que c&#x27;est chaleureux. Cela donne probablement envie aux gens d&#x27;ouvrir la boîte. Cela a également ajouté un son d&#x27;ambiance dès la première impression. Le son est vraiment incroyable. Maintenant, ouvrons le cadeau. L&#x27;apparition soudaine du Père Noël est vraiment effrayante. C&#x27;est exactement ce que je voulais.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web interactive de surprise de Noël animée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;A Little Festive Surprise&quot;, &quot;Tap the gift to open it. It&#x27;s cozy... probably.&quot;, &quot;Open Gift&quot;, &quot;Sound enabled&quot;, &quot;Tip: Works best with volume at a comfortable level.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente l&#x27;interface interactive de la boîte cadeau, clique pour l&#x27;ouvrir et montre l&#x27;animation surprise avec effet sonore.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_029_00-04-41.jpg" alt="Interface interactive affichant un cadeau rouge avec le titre &quot;A Little Festive Surprise&quot; et le message &quot;It&#x27;s cozy... probably.&quot;" loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_029_00-04-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:41</span>
+                        <span class="caption-text">Interface interactive affichant un cadeau rouge avec le titre &quot;A Little Festive Surprise&quot; et le message &quot;It&#x27;s cozy... probably.&quot;</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_030_00-04-58.jpg" alt="Gros plan effrayant du visage du Père Noël qui apparaît soudainement lors de l&#x27;ouverture du cadeau." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_030_00-04-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:58</span>
+                        <span class="caption-text">Gros plan effrayant du visage du Père Noël qui apparaît soudainement lors de l&#x27;ouverture du cadeau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_031_00-05-04.jpg" alt="Retour à l&#x27;écran initial montrant la boîte cadeau rouge interactive avec les options de son." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_031_00-05-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:04</span>
+                        <span class="caption-text">Retour à l&#x27;écran initial montrant la boîte cadeau rouge interactive avec les options de son.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:06 - 00:05:30</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Incroyable ! Nous avons essayé tous les outils, sauf Gemini. J&#x27;ai donc réessayé Gemini, et voici le résultat de Gemini. Ouvrons la boîte. C&#x27;est bien, mais ce n&#x27;est toujours pas aussi bon que le résultat de ChatGPT. Maintenant, après la farce effrayante, vous devriez envoyer le nom de votre ami sur le plus grand bâtiment du monde, le Burj Khalifa.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web interactive avec un design festif (fond rouge et étoiles scintillantes).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;A Little Festive Surprise&quot;, &quot;Tap the gift to open it, it&#x27;s cozy... probably.&quot;, &quot;Open Gift&quot;, &quot;Sound enabled&quot;, &quot;Tip: Works best with volume at a comfortable level&quot; sur la première image ; et &quot;World&#x27;s Tallest Building&quot; sur la deuxième.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;une interface interactive avec un cadeau virtuel à ouvrir, suivie d&#x27;une transition textuelle annonçant le plus haut bâtiment du monde.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_032_00-05-08.jpg" alt="Interface interactive affichant une boîte cadeau rouge sur fond étoilé avec le titre &quot;A Little Festive Surprise&quot; et un bouton &quot;Open Gift&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_032_00-05-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:08</span>
+                        <span class="caption-text">Interface interactive affichant une boîte cadeau rouge sur fond étoilé avec le titre &quot;A Little Festive Surprise&quot; et un bouton &quot;Open Gift&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_033_00-05-28.jpg" alt="Écran noir affichant le texte en blanc &quot;World&#x27;s Tallest Building&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_033_00-05-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:28</span>
+                        <span class="caption-text">Écran noir affichant le texte en blanc &quot;World&#x27;s Tallest Building&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:30 - 00:05:52</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et voici le résultat de GLM 4.7. Le bouton se déplace sur l&#x27;écran. Il y a une zone de nom où je peux mettre le nom de mon ami. Mettons-le. Je mets des abonnés. Je clique sur créer. La musique commence. Du texte apparaît avec une animation. La musique de fond rend le tout incroyable. À la fin, une fenêtre pop-up apparaît disant, Je vous souhaite un très joyeux Noël.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web interactive générée par GLM 4.7 sur le thème de Noël.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &#x27;Christmas Magic&#x27;, &#x27;Enter your friend\&#x27;s name&#x27;, bouton &#x27;Create Christmas Surprise&#x27;, et le message final &#x27;Merry Christmas! Wishing you a very Merry Christmas from your best friend&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;utilisateur saisit un nom dans le champ prévu, clique sur le bouton de création, puis la vidéo animée se lance avec de la musique jusqu&#x27;à afficher la fenêtre pop-up de vœux finale.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_034_00-05-32.jpg" alt="Interface de GLM 4.7 montrant la carte interactive &#x27;Christmas Magic&#x27; avec un champ de texte et un bouton orange interactif." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_034_00-05-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:32</span>
+                        <span class="caption-text">Interface de GLM 4.7 montrant la carte interactive &#x27;Christmas Magic&#x27; avec un champ de texte et un bouton orange interactif.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_035_00-05-45.jpg" alt="Animation vidéo générée montrant une tour décorée avec des lumières de Noël et des textes textuels animés." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_035_00-05-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:45</span>
+                        <span class="caption-text">Animation vidéo générée montrant une tour décorée avec des lumières de Noël et des textes textuels animés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_036_00-05-50.jpg" alt="Pop-up finale de vœux de Noël avec les emojis sapin, cadeau et cœur, affichant le message &#x27;Merry Christmas!&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_036_00-05-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:50</span>
+                        <span class="caption-text">Pop-up finale de vœux de Noël avec les emojis sapin, cadeau et cœur, affichant le message &#x27;Merry Christmas!&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:52 - 00:06:21</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tu es mon meilleur ami. Nous venons d&#x27;atteindre 200 abonnés. Veux-tu être mon abonné ? Commente ta décision dans les commentaires. Maintenant voici le résultat de Gemini. Mettons le nom de l&#x27;ami. C&#x27;est incroyable.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra / capture de la chaîne YouTube sans démonstration active de logiciel de création d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Affichage de la page d&#x27;accueil de la chaîne YouTube &quot;Pursuing AI&quot; avec des éléments graphiques de Noël et des miniatures de vidéos.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la chaîne YouTube pour célébrer l&#x27;atteinte des 200 abonnés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:22 - 00:06:56</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Remarquez la musique, comme elle est bonne. Mais il y a une erreur. Le bâtiment ne ressemble pas au Burj Khalifa. C&#x27;est quand même vraiment impressionnant. Ensuite, c&#x27;est le résultat de ChatGPT 5.2. J&#x27;ai mis le nom. Il n&#x27;y a pas de musique de fond, juste un bâtiment droit avec du texte dessus. Pas aussi bien que le modèle précédent. Et enfin, c&#x27;est Opus 4.5. Le thème a l&#x27;air incroyable. Remarquez les ampoules colorées en haut et l&#x27;animation de neige. Mettons le nom et cliquons sur créer. Pas de musique de fond, mais la structure du bâtiment a l&#x27;air vraiment bien par rapport aux autres.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web interactive de génération de cartes de vœux ou de messages festifs personnalisés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &#x27;Merry Christmas&#x27;, &#x27;Create a magical surprise for your friend&#x27;, &#x27;Enter your friend\&#x27;s name&#x27;, et un bouton rouge &#x27;Create Christmas Surprise 🎄&#x27;. Sur l&#x27;image 1 : &#x27;HAPPY HOLIDAYS&#x27;, &#x27;Best wishes for you, SUBSCRIBERS&#x27;, et un bouton rouge &#x27;Send Gift to SUBSCRIBERS&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation et démonstration des résultats de génération de différents modèles (notamment Opus 4.5 et d&#x27;autres) avec les éléments visuels de Noël, les ampoules colorées et les animations de neige.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_037_00-06-24.jpg" alt="Résultat généré montrant un panneau noir avec un message de vœux, un fond sombre avec des effets de neige et un bouton rouge." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_037_00-06-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:24</span>
+                        <span class="caption-text">Résultat généré montrant un panneau noir avec un message de vœux, un fond sombre avec des effets de neige et un bouton rouge.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_038_00-06-45.jpg" alt="Interface de création affichant le titre &#x27;Merry Christmas&#x27; avec des guirlandes lumineuses colorées en haut et un champ de saisie de nom." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_038_00-06-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:45</span>
+                        <span class="caption-text">Interface de création affichant le titre &#x27;Merry Christmas&#x27; avec des guirlandes lumineuses colorées en haut et un champ de saisie de nom.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:56 - 00:07:31</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">des modèles. L&#x27;éclairage sur le bâtiment a l&#x27;air génial. Et remarquez les bâtiments secondaires. On a clairement l&#x27;impression que c&#x27;est le plus grand de tous. Commentez maintenant ci-dessous. Quelle méthode avez-vous préférée ? Et laquelle enverriez-vous à votre ami ? Remarquez aussi que j&#x27;ai fait plusieurs essais pour améliorer les résultats. Aucun de ces modèles n&#x27;a généré de résultats parfaits du premier coup. Je ne montre que les résultats finaux. Cela a pris beaucoup de temps de réaliser toutes ces méthodes. Si vous avez adoré, mettez un pouce bleu, abonnez-vous et commentez. Et enfin, Joyeux Noël à tous. Profitez de vos vacances.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface Google Gemini et application web interactive de simulation de messages de Noël.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes &quot;Merry Christmas, Subscribers! You are my best friend&quot;, &quot;BURJ SURPRISE HOLIDAY EDITION&quot;, instructions d&#x27;utilisation, et bouton &quot;CREATE MAGIC&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des résultats finaux des animations et présentation de l&#x27;application interactive Gemini de création de vœux personnalisés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_039_00-06-58.jpg" alt="Animation du Burj Khalifa de nuit avec des lumières de Noël et des flocons de neige qui tombent, affichant le texte &quot;Merry Christmas, Subscribers! You are my best friend&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_039_00-06-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:58</span>
+                        <span class="caption-text">Animation du Burj Khalifa de nuit avec des lumières de Noël et des flocons de neige qui tombent, affichant le texte &quot;Merry Christmas, Subscribers! You are my best friend&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_040_00-07-08.jpg" alt="Interface de fin d&#x27;animation montrant les vœux de Noël &quot;Merry Christmas! Wishing you a wonderful holiday season&quot; et un bouton &quot;Download &amp; Share&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_040_00-07-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:08</span>
+                        <span class="caption-text">Interface de fin d&#x27;animation montrant les vœux de Noël &quot;Merry Christmas! Wishing you a wonderful holiday season&quot; et un bouton &quot;Download &amp; Share&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-GGRpVBQV2yg/frame_041_00-07-20.jpg" alt="Interface de Gemini affichant l&#x27;application interactive &quot;Burj Khalifa Christmas Surprise&quot; avec des instructions d&#x27;utilisation et un panneau de prévisualisation &quot;CREATE MAGIC&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-GGRpVBQV2yg/frame_041_00-07-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:20</span>
+                        <span class="caption-text">Interface de Gemini affichant l&#x27;application interactive &quot;Burj Khalifa Christmas Surprise&quot; avec des instructions d&#x27;utilisation et un panneau de prévisualisation &quot;CREATE MAGIC&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
