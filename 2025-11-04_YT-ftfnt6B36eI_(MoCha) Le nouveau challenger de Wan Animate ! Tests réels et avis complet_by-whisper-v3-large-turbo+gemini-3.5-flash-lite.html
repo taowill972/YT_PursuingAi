@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 (MoCha) Le nouveau challenger de Wan Animate ! Tests réels et avis complet — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 (MoCha) Le nouveau challenger de Wan Animate ! Tests réels et avis complet</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-11-04</span>
+                <span class="badge">⏱️ 03m 18s</span>
+                <span class="badge">🆔 <code>ftfnt6B36eI</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=ftfnt6B36eI" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* explore **Mocha**, un nouveau système de remplacement de personnages en vidéo développé par l'Orange Team, positionné en tant que challenger direct de *Wan Animate*. Contrairement aux méthodes traditionnelles lourdes, Mocha se distingue par sa capacité à substituer des personnages de manière fluide sans nécessiter de guidage structurel complexe image par image. En s'appuyant sur un modèle amont affiné à partir de l'architecture texte-vidéo **WAN**, l'outil promet de réels gains de productivité pour les créateurs cherchant à insérer de nouvelles identités visuelles tout en respectant la cinétique et les expressions de la vidéo source.</p><p>La méthode présentée repose sur un workflow épuré : l'utilisateur fournit simplement un masque sur la toute première trame pour identifier la zone du personnage à remplacer, puis injecte quelques portraits de référence de face pour ancrer la nouvelle identité. L'analyse critique des résultats révèle toutefois des cas d'usage très tranchés. Si Mocha excelle dans le domaine du dessin animé et de la stylisation artistique grâce à une excellente conservation des mouvements rapides, il pèche encore sur les visages humains en live-action, produisant des textures de peau parfois lisses et artéfactées là où *Wan Animate* conserve un réalisme photographique saisissant.</p><p>Pour les professionnels de la vidéo par IA, cette confrontation met en lumière la nécessité d'adapter son pipeline technologique selon la direction artistique visée. Entre un Mocha redoutable pour l'animation stylisée et un *Wan Animate* suprême pour le photoréalisme humain, les créateurs disposent désormais d'une cartographie précise des forces en présence. Le déploiement de Mocha nécessite toutefois des ressources matérielles conséquentes (notamment un espace disque d'environ 30 à 50 Go et une VRAM musclée), tout en imposant la vigilance quant à sa licence AGPL 3.0 orientée vers la recherche académique.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">WAN</span><span class="tool-tag">Wan</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Principe du masque initial** : Mocha s&#x27;affranchit du masquage par image en n&#x27;exigeant qu&#x27;un unique masque sur la première frame pour cibler le personnage à remplacer.</span></li><li><span class="point-bullet">✦</span><span>Injection d&#x27;identités** : L&#x27;utilisation de quelques photographies de face propres (références) permet au modèle d&#x27;adopter et de maintenir une nouvelle identité visuelle cohérente tout au long de la vidéo.</span></li><li><span class="point-bullet">✦</span><span>Préservation dynamique** : Le système restitue fidèlement les actions, les expressions faciales complexes et les interactions avec les objets, même lors de mouvements rapides.</span></li><li><span class="point-bullet">✦</span><span>Gestion des environnements** : L&#x27;algorithme préserve l&#x27;éclairage complexe d&#x27;origine (lumières tremblantes, contre-jours) pour intégrer visuellement le nouveau personnage dans la scène.</span></li><li><span class="point-bullet">✦</span><span>Limitation sur le photoréalisme** : Mocha éprouve des difficultés avec les humains en prises de vue réelles, générant des visages lissés et un rendu parfois &quot;cartoonesque&quot; manquant de texture de peau naturelle.</span></li><li><span class="point-bullet">✦</span><span>Suprématie de Wan Animate pour l&#x27;organique** : Pour un rendu live-action réaliste, détaillé et fidèle à l&#x27;éclairage de la scène originale, *Wan Animate* reste le choix incontesté.</span></li><li><span class="point-bullet">✦</span><span>Domaine d&#x27;excellence de Mocha** : Le modèle brille par sa fluidité et sa cohérence visuelle lorsqu&#x27;il est appliqué à des personnages de dessins animés ou à des animations stylisées.</span></li><li><span class="point-bullet">✦</span><span>Exigences matérielles lourdes** : L&#x27;exécution locale de Mocha requiert une configuration robuste, prévoyant au moins 30 à 50 Go d&#x27;espace disque libre et un GPU doté d&#x27;une VRAM élevée.</span></li><li><span class="point-bullet">✦</span><span>Contraintes de licence (AGPL 3.0)** : Le projet étant initialement positionné pour la recherche académique et la démonstration, une vérification rigoureuse des conditions d&#x27;utilisation est impérative avant tout usage commercial.</span></li><li><span class="point-bullet">✦</span><span>Arbitrage selon la direction artistique** : Le choix de l&#x27;outil ne dépend pas de la puissance brute, mais du style recherché : l&#x27;animation artistique pour Mocha, le réalisme humain pour Wan Animate.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:25</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Do you remember the AI that went viral a few weeks ago? Juan Anime? The one everyone&#x27;s been talking about for its ability to replace characters and animations with jaw-dropping realism. Well, meet the new contender. This is Pursuing AI, and you&#x27;re watching The Research Report. Today we&#x27;re diving into Mocha, an N-Tech and video character replacement system from the Orange Team that aims to replace characters in videos without relying on complicated structural guidance.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:25 - 00:00:49</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mocha performs high-quality character replacement directly from a source video. It keeps strong consistency in lighting, facial expressions, animation, and the character&#x27;s identity, which helps the replacement feel naturally integrated into the scene. Mocha needs only a first-frame mask to mark the character that should be replaced. From that single mask, it re-renders the character across the video frames, avoiding per-frame structural inputs.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:50 - 00:01:15</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">You can feed reference images, for example, a few clean front-facing headshots, so Mocha can adopt a new character&#x27;s appearance and identity consistently. Mocha performs impressively when working with cartoon characters, producing high fidelity and visually consistent results. However, it still struggles with human character replacement. In several examples, you can clearly see that the replaced faces look overly smooth and cartoonish, lacking realistic skin texture and depth.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:15 - 00:01:36</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">For instance, in one clip, Superman&#x27;s face appears almost animated. It doesn&#x27;t quite blend naturally with the live-action environment. Similarly, in another example, the boy&#x27;s face looks stylized and artificial. On the other hand, Wan Animate handles human replacement far better. Its results appear more realistic, detailed, and lifelike, maintaining the original video&#x27;s texture and lighting.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> le créateur face caméra ou transition sans partage d&#x27;écran.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des concepts et des méthodes de création vidéo IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:36 - 00:01:58</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le modèle préserve l&#x27;éclairage et la tonalité des couleurs d&#x27;origine, ce qui aide le personnage remplacé à s&#x27;intégrer sous un éclairage complexe, des lumières tremblantes, un contre-jour, etc. Préservation. Mocha reproduit fidèlement les actions et les expressions faciales des artistes source, même lors de mouvements rapides et d&#x27;interactions avec des objets, minimisant ainsi les artéfacts temporels. La page du projet Mocha précise que ce travail est destiné à la recherche académique et à la démonstration.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de présentation du projet de recherche Mocha affichant des exemples comparatifs de vidéos générées par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes : &quot;Precise Action Preservation&quot;, &quot;Origin&quot;, &quot;Kling&quot;, &quot;Wan-Animate&quot;, &quot;Ours&quot;, avec des images de référence de personnages et des fenêtres vidéo comparatives.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration comparative de l&#x27;outil Mocha face à d&#x27;autres modèles (Kling, Wan-Animate) pour le remplacement de personnages dans des scènes dynamiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ftfnt6B36eI/frame_001_00-01-38.jpg" alt="Comparaison côte à côte entre la vidéo originale avec un acteur en costume et la version générée par l&#x27;IA montrant un personnage remplacé." loading="lazy" onclick="openLightbox('screenshots/YT-ftfnt6B36eI/frame_001_00-01-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:38</span>
+                        <span class="caption-text">Comparaison côte à côte entre la vidéo originale avec un acteur en costume et la version générée par l&#x27;IA montrant un personnage remplacé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ftfnt6B36eI/frame_002_00-01-47.jpg" alt="Interface du projet Mocha illustrant la préservation précise des actions avec une comparaison en grille entre Origin, Kling, Wan-Animate et Ours." loading="lazy" onclick="openLightbox('screenshots/YT-ftfnt6B36eI/frame_002_00-01-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:47</span>
+                        <span class="caption-text">Interface du projet Mocha illustrant la préservation précise des actions avec une comparaison en grille entre Origin, Kling, Wan-Animate et Ours.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ftfnt6B36eI/frame_003_00-01-56.jpg" alt="Comparaison en grille montrant une scène d&#x27;action d&#x27;arts martiaux avec différentes méthodes (Origin, Kling, Wan-Animate, Ours)." loading="lazy" onclick="openLightbox('screenshots/YT-ftfnt6B36eI/frame_003_00-01-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:56</span>
+                        <span class="caption-text">Comparaison en grille montrant une scène d&#x27;action d&#x27;arts martiaux avec différentes méthodes (Origin, Kling, Wan-Animate, Ours).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:58 - 00:02:17</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le modèle amont sur Hugging Face répertorie le dépôt et montre que le modèle publié pèse environ 28,6 gigaoctets, sous licence AGPL 3.0. Cela signifie que vous devez lire et respecter la licence avant de l&#x27;utiliser dans des projets commerciaux. De plus, le code et les poids de Mocha sont affinés sur une base texte-vidéo WAN.AI.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du site web Hugging Face (dépôt du modèle Orange-3DV-Team/MoCha).</p>
+                        <p><strong>Contenu textuel & Code :</strong> On peut lire le nom du dépôt « Orange-3DV-Team/MoCha », la licence « agpl-3.0 », l&#x27;onglet « Files and versions », la taille du modèle « 28,6 GB », ainsi que les dossiers et fichiers « preview », « .gitattributes » et « README.md ».</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de la page Hugging Face du modèle MoCha pour illustrer sa source en ligne, sa taille et sa licence.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ftfnt6B36eI/frame_004_00-02-00.jpg" alt="Page du dépôt Hugging Face pour le modèle MoCha de Orange-3DV-Team, montrant la licence AGPL-3.0, la taille du modèle de 28,6 Go et la liste des fichiers." loading="lazy" onclick="openLightbox('screenshots/YT-ftfnt6B36eI/frame_004_00-02-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:00</span>
+                        <span class="caption-text">Page du dépôt Hugging Face pour le modèle MoCha de Orange-3DV-Team, montrant la licence AGPL-3.0, la taille du modèle de 28,6 Go et la liste des fichiers.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:17 - 00:02:36</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Assurez-vous d&#x27;avoir au moins 30, 40, 50 Go d&#x27;espace disque libre et un GPU doté d&#x27;une VRAM suffisante pour l&#x27;inférence. Le dépôt Hugging Face répertorie actuellement le modèle à environ 28,6 Go. Les auteurs qualifiant ce projet de recherche académique et de démonstration, veuillez consulter le fichier README et les conditions de la licence AGPL avant de l&#x27;utiliser en production ou dans un contenu commercial.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une page de dépôt de modèle sur la plateforme Hugging Face.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché à l&#x27;écran : &quot;Downloads last month&quot;, &quot;Downloads are not tracked for this model&quot;, &quot;Inference Providers&quot;, &quot;Model tree for Orange-3DV-Team/MoCha&quot;, &quot;Base model: Wan-AI/Wan2.1-T2V-14B&quot;, ainsi que les chiffres blancs géants &quot;30, 40, 50&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente visuellement les prérequis en matière d&#x27;espace disque (30, 40, 50 Go) en superposant ces chiffres sur la page du dépôt Hugging Face.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ftfnt6B36eI/frame_005_00-02-19.jpg" alt="Capture d&#x27;écran du navigateur montrant un dépôt Hugging Face avec des chiffres superposés en surimpression (30, 40, 50) et des informations sur les fournisseurs d&#x27;inférence." loading="lazy" onclick="openLightbox('screenshots/YT-ftfnt6B36eI/frame_005_00-02-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:19</span>
+                        <span class="caption-text">Capture d&#x27;écran du navigateur montrant un dépôt Hugging Face avec des chiffres superposés en surimpression (30, 40, 50) et des informations sur les fournisseurs d&#x27;inférence.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:36 - 00:03:06</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors, lequel est réellement le meilleur ? Juan Animate ou Mocha ? Tout dépend de ce que vous créez. Si votre objectif est le remplacement de personnages humains réalistes, Wan Anime mène clairement la course. Ses détails faciaux, la cohérence de son éclairage et sa texture naturelle en font l&#x27;outil idéal pour les scènes en prise de vue réelle. Mais si vous travaillez avec des personnages de dessin animé, des animations stylisées ou des expériences créatives, Mocha offre des résultats plus fluides et visuellement plus cohérents, en particulier lorsque le réalisme n&#x27;est pas votre objectif principal.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web présentant les pages de présentation des projets Wan-Animate et MoCha avec des exemples vidéo intégrés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> À gauche : Titre &quot;Wan-Animate: Unified Character Animation and Replacement with Holistic Replication&quot;, boutons de liens (Paper, GitHub, HF Model, etc.) et vidéo d&#x27;un personnage de cochon animé. À droite : Titre &quot;MoCha&quot;, sous-titre &quot;End-to-End Video Character Replacement without Structural Guidance&quot; par Orange Team, avec des exemples de remplacement de personnages de films (Harry Potter).</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle des interfaces et des résultats de démonstration des deux technologies de remplacement de personnages par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ftfnt6B36eI/frame_006_00-02-38.jpg" alt="Comparaison côte à côte des interfaces des projets Wan-Animate (Tongyi Lab, Alibaba) à gauche et MoCha (Orange Team) à droite." loading="lazy" onclick="openLightbox('screenshots/YT-ftfnt6B36eI/frame_006_00-02-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:38</span>
+                        <span class="caption-text">Comparaison côte à côte des interfaces des projets Wan-Animate (Tongyi Lab, Alibaba) à gauche et MoCha (Orange Team) à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:06 - 00:03:18</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En bref, Wan Anime domine le réalisme, tandis que Mocha brille dans l&#x27;animation artistique stylisée. Les deux sont puissants. Cela dépend simplement de la façon dont vous souhaitez donner vie à votre imagination. Tous les liens sont dans la description.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant deux pages de présentation de projets d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> À gauche, la page de Wan-Animate par Tongyi Lab (Alibaba) avec une vidéo montrant un personnage animé style dessin animé qui fait un signe de la main. À droite, la page de MoCha par Orange Team avec des exemples de remplacement de personnages en vidéo.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative des deux outils d&#x27;intelligence artificielle pour l&#x27;animation et le remplacement de personnages dans les vidéos.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ftfnt6B36eI/frame_007_00-03-12.jpg" alt="Comparaison côte à côte des interfaces web de Wan-Animate et MoCha présentant leurs technologies de remplacement et d&#x27;animation de personnages." loading="lazy" onclick="openLightbox('screenshots/YT-ftfnt6B36eI/frame_007_00-03-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:12</span>
+                        <span class="caption-text">Comparaison côte à côte des interfaces web de Wan-Animate et MoCha présentant leurs technologies de remplacement et d&#x27;animation de personnages.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

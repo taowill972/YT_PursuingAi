@@ -71,7 +71,8 @@
     "CtR8KRHsOSo",
     "mhryTXdg0S4",
     "HFq1xncPrIc",
-    "4nYriaeipLA"
+    "4nYriaeipLA",
+    "ftfnt6B36eI"
   ],
   "processed_videos": [
     {
@@ -1077,9 +1078,23 @@
       "filepath_html": "/root/YT_PursuingAi/2025-11-10_YT-4nYriaeipLA_1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-07T16:14:48Z",
       "status": "completed"
+    },
+    {
+      "video_id": "ftfnt6B36eI",
+      "title": "(MoCha) Le nouveau challenger de Wan Animate ! Tests réels et avis complet",
+      "raw_title": "(MoCha) The New AI Challenging Wan Animate! Real Tests & Performance Review",
+      "filename_md": "2025-11-04_YT-ftfnt6B36eI_(MoCha) Le nouveau challenger de Wan Animate ! Tests réels et avis complet_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2025-11-04_YT-ftfnt6B36eI_(MoCha) Le nouveau challenger de Wan Animate ! Tests réels et avis complet_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2025-11-04",
+      "duration": 198,
+      "screenshots_count": 7,
+      "filepath_md": "/root/YT_PursuingAi/2025-11-04_YT-ftfnt6B36eI_(MoCha) Le nouveau challenger de Wan Animate ! Tests réels et avis complet_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2025-11-04_YT-ftfnt6B36eI_(MoCha) Le nouveau challenger de Wan Animate ! Tests réels et avis complet_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-07T17:11:22Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 72,
+  "completed_count": 73,
   "last_run_timestamp": "2026-10-07T16:00:04Z",
   "status": "running",
   "total_catalog_count": 84
