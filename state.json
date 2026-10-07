@@ -61,7 +61,8 @@
     "GGRpVBQV2yg",
     "dW74ziq6PGg",
     "EygX7S0lWEc",
-    "Msrj1lQBonI"
+    "Msrj1lQBonI",
+    "PVf0LdCCxuQ"
   ],
   "processed_videos": [
     {
@@ -927,10 +928,24 @@
       "filepath_html": "/root/YT_PursuingAi/2025-12-18_YT-Msrj1lQBonI_Révélation sur les images de GPT-1.5 Vraie évolution ou simple coup marketing_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-07T07:33:30Z",
       "status": "completed"
+    },
+    {
+      "video_id": "PVf0LdCCxuQ",
+      "title": "GPT-5.2 vs Gemini 3 — Vrais Tests",
+      "raw_title": "GPT-5.2 vs Gemini 3 — Real Tests",
+      "filename_md": "2025-12-14_YT-PVf0LdCCxuQ_GPT-5.2 vs Gemini 3 — Vrais Tests_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2025-12-14_YT-PVf0LdCCxuQ_GPT-5.2 vs Gemini 3 — Vrais Tests_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2025-12-14",
+      "duration": 255,
+      "screenshots_count": 22,
+      "filepath_md": "/root/YT_PursuingAi/2025-12-14_YT-PVf0LdCCxuQ_GPT-5.2 vs Gemini 3 — Vrais Tests_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2025-12-14_YT-PVf0LdCCxuQ_GPT-5.2 vs Gemini 3 — Vrais Tests_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-07T10:06:57Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 62,
-  "last_run_timestamp": "2026-10-07T04:00:03Z",
+  "completed_count": 63,
+  "last_run_timestamp": "2026-10-07T10:00:03Z",
   "status": "running",
   "total_catalog_count": 84
 }

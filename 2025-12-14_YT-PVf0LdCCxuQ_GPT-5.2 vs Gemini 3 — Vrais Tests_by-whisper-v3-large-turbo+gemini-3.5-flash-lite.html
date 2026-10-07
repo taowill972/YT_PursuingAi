@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 GPT-5.2 vs Gemini 3 — Vrais Tests — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 GPT-5.2 vs Gemini 3 — Vrais Tests</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-12-14</span>
+                <span class="badge">⏱️ 04m 15s</span>
+                <span class="badge">🆔 <code>PVf0LdCCxuQ</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=PVf0LdCCxuQ" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* intitulée « GPT-5.2 vs Gemini 3 — Vrais Tests » propose une analyse comparative rigoureuse des performances de pointe en matière de génération de code et de simulations interactives complexes par intelligence artificielle. Face aux promesses marketing d'OpenAI concernant son modèle le plus récent, le créateur soumet les prétendants à une batterie de tests exigeants comprenant des simulations physiques, le comportement d'essaims d'oiseaux et la cinématique anatomique. L'approche méthodologique repose sur une évaluation empirique stricte : l'utilisation d'un prompt unique et standardisé appliqué successivement à chaque IA pour juger de sa capacité à traduire des concepts mathématiques, physiques et visuels en applications interactives fonctionnelles, dotées de curseurs de contrôle et de rendus fluides.</p><p>Les résultats de ce benchmark bousculent la hiérarchie établie, révélant un paysage concurrentiel très nuancé où la domination technique n'est plus l'exclusivité d'un seul acteur. Alors que GPT-5.2 brille sur la simulation physique de la roue hexagonale en proposant un éventail de réglages poussés (restitution, frottement, résistance de l'air), il s'effondre curieusement sur des tests pourtant basiques comme la modélisation d'une main articulée ou l'essaim d'oiseaux. À l'inverse, Gemini 3 s'impose comme un outil redoutable d'équilibre et de robustesse — l'emportant haut la main sur la simulation anatomique —, tandis que Claude (notamment Opus 4.5, invité surprise du test) surclasse ses rivaux en matière de naturel organique sur le vol des oiseaux.</p><p>Pour les créateurs de contenu vidéo et les développeurs, ces enseignements soulignent l'importance cruciale de ne pas se fier aveuglément aux communiqués de presse ou aux benchmarks théoriques standardisés. Le choix d'un modèle d'IA doit désormais s'opérer au cas par cas, en fonction de la nature spécifique du projet créatif (physique pure, animation organique ou interactivité complexe). Cette étude comparative offre une vision pragmatique des forces et faiblesses actuelles des grands modèles de langage, permettant d'optimiser les workflows de prototypage rapide et d'éviter les pièges des performances en trompe-l'œil.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Défiance envers le marketing** : Ne jamais baser ses choix technologiques uniquement sur les pages de blog des éditeurs ou les scores de benchmarks théoriques.</span></li><li><span class="point-bullet">✦</span><span>Méthode du prompt unique** : Utiliser un prompt rigoureusement identique pour chaque modèle afin de garantir l&#x27;équité et la pertinence des tests comparatifs.</span></li><li><span class="point-bullet">✦</span><span>Granularité des contrôles** : Évaluer la capacité d&#x27;une IA à intégrer des interfaces de contrôle interactives (curseurs de gravité, vitesse, échelle temporelle) directement dans le code généré.</span></li><li><span class="point-bullet">✦</span><span>Robustesse de la simulation physique** : Vérifier si le modèle comprend intuitivement les lois fondamentales (inertie, accélération selon la distance, rebonds proportionnels à la vitesse).</span></li><li><span class="point-bullet">✦</span><span>Supériorité contextuelle** : Accepter qu&#x27;aucun modèle ne soit universellement le meilleur ; GPT-5.2 excelle sur certains calculs physiques mais échoue sur des cinématiques simples.</span></li><li><span class="point-bullet">✦</span><span>Spécialisation organique de Claude** : Intégrer Claude (Opus 4.5) dans son workflow dès qu&#x27;un projet nécessite un rendu visuel fluide, naturel et vivant (comme le comportement animal).</span></li><li><span class="point-bullet">✦</span><span>Gestion de la déception technique** : Savoir réévaluer un modèle très attendu (comme GPT-5.2) face à des échecs répétés sur des tâches pratiques d&#x27;animation de mains.</span></li><li><span class="point-bullet">✦</span><span>Fiabilité de Gemini 3** : Considérer Gemini 3 comme une option extrêmement solide pour le prototypage rapide d&#x27;applications interactives complexes et fonctionnelles du premier coup.</span></li><li><span class="point-bullet">✦</span><span>Optimisation des paramètres d&#x27;essaim** : Analyser l&#x27;impact de curseurs comportementaux précis (séparation, alignement, cohésion, portée visuelle) pour juger de la maturité du code généré.</span></li><li><span class="point-bullet">✦</span><span>Importance du point de vue caméra** : Tester la flexibilité des environnements 3D générés en alternant les perspectives (vue subjective de l&#x27;oiseau versus vue globale du monde) pour déceler les bugs de saccade.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:23</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le 11 décembre, OpenAI a publié son modèle le plus performant, GPT 5.2. Et sur leur page de blog, la partie la plus intéressante est cette simulation de vagues océaniques, qui a l&#x27;air vraiment réaliste et bien faite. Dans les benchmarks de code, il surpasse également les benchmarks SWE et tous les autres benchmarks. Et comme vous pouvez le voir ici, il bat Opus 4.5 et Gemini 3 dans tous les benchmarks.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le blog officiel d&#x27;OpenAI et un tableau de benchmarks.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affichant « Introducing GPT-5.2 », « The most advanced frontier model for professional work and long-running agents », et tableau comparatif avec des scores pour SWE-Bench Pro (55,6% pour GPT-5.2 Thinking), GPQA Diamond (92,4%), FrontierMath, ARC-AGI, etc.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur affiche à l&#x27;écran l&#x27;annonce officielle de GPT-5.2 puis le tableau des benchmarks montrant sa supériorité sur les modèles concurrents.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_001_00-00-02.jpg" alt="Page de blog d&#x27;OpenAI annonçant la sortie de GPT-5.2 le 11 décembre 2025." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Page de blog d&#x27;OpenAI annonçant la sortie de GPT-5.2 le 11 décembre 2025.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_002_00-00-16.jpg" alt="Tableau comparatif des performances de GPT-5.2 par rapport à GPT-5.1, Claude Opus 4.5 et Gemini 3 Pro sur différents benchmarks." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_002_00-00-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:16</span>
+                        <span class="caption-text">Tableau comparatif des performances de GPT-5.2 par rapport à GPT-5.1, Claude Opus 4.5 et Gemini 3 Pro sur différents benchmarks.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:24 - 00:00:45</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc je vais tester ce modèle avec mes tests de simulation de recherche et aussi le comparer avec Gemini 3. C&#x27;est Pursuing AI et vous regardez le rapport de recherche. Le premier test est le test de physique pour voir à quel point le modèle est bon en compréhension de la physique. J&#x27;ai donc donné un simple prompt pour générer cette simulation physique et ce résultat provient de GPT 5.2.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation interactive en ligne basée sur le Web avec des panneaux de contrôle de paramètres physiques (vitesse, gravité, frottement).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Ocean Wave Simulation&quot;, &quot;Physics Simulat...&quot;, &quot;Ball in a Rotating Hexagon&quot;, curseurs pour &quot;Wind speed&quot;, &quot;Wave height&quot;, &quot;Lighting&quot;, &quot;Rotation&quot;, &quot;Gravity&quot;, &quot;Restitution&quot;, &quot;Wall friction&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de différentes simulations physiques interactives générées par IA, montrant le comportement des vagues et d&#x27;une balle dans une forme géométrique rotative.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_003_00-00-26.jpg" alt="Simulation de vagues océaniques avec curseurs de réglage du vent et de la hauteur des vagues." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_003_00-00-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:26</span>
+                        <span class="caption-text">Simulation de vagues océaniques avec curseurs de réglage du vent et de la hauteur des vagues.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_004_00-00-34.jpg" alt="Simulation physique montrant une balle verte rebondissant dans un hexagone aux contours rouges néon." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_004_00-00-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:34</span>
+                        <span class="caption-text">Simulation physique montrant une balle verte rebondissant dans un hexagone aux contours rouges néon.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_005_00-00-43.jpg" alt="Interface de simulation physique « Ball in a Rotating Hexagon » avec panneaux de contrôle des paramètres." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_005_00-00-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:43</span>
+                        <span class="caption-text">Interface de simulation physique « Ball in a Rotating Hexagon » avec panneaux de contrôle des paramètres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:45 - 00:01:10</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La balle à l&#x27;intérieur de la roue hexagonale est correcte. Si vous remarquez, la physique de la balle est également correcte. Elle tourne avec la roue conformément à la physique. Regardez la balle au ralenti et voyez comment elle rebondit avec précision. Remarquez ici, lorsque la balle rebondit depuis une petite zone, elle saute peu. Mais lorsqu&#x27;elle vient d&#x27;une grande distance le long d&#x27;une paroi, sa vitesse augmente et elle rebondit plus haut avec plus de vitesse, ce qui est correct selon la physique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web interactive de simulation physique (&quot;Ball in a Rotating Hexagon&quot;) avec un panneau de contrôle à droite et une vue 2D de la simulation à gauche.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre &quot;Ball in a Rotating Hexagon&quot;, sous-titre &quot;Real-time rigid-body style collision response with gravity and wall friction&quot;, et des curseurs de contrôle (Rotation, Gravity, Restitution, Wall friction, Air drag) ainsi que des boutons &quot;Kick&quot; et &quot;Pause&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le panneau présente une simulation en temps réel d&#x27;une sphère blanche rebondissant à l&#x27;intérieur d&#x27;un hexagone en rotation avec des mesures de vitesse affichées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_006_00-00-47.jpg" alt="Simulation interactive de physique montrant une balle rebondissant à l&#x27;intérieur d&#x27;un hexagone en rotation avec des curseurs de contrôle des paramètres." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_006_00-00-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:47</span>
+                        <span class="caption-text">Simulation interactive de physique montrant une balle rebondissant à l&#x27;intérieur d&#x27;un hexagone en rotation avec des curseurs de contrôle des paramètres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:10 - 00:01:30</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous avez également des curseurs grâce auxquels vous pouvez contrôler la rotation de la roue. Vous pouvez faire pivoter la roue de gauche à droite, augmenter ou diminuer la gravité. Et comme vous pouvez le voir ici, si vous augmentez la gravité, la balle reste collée au sol et ne rebondit pas trop, et si vous diminuez la gravité, elle flotte, ce qui est correct selon la physique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web interactive de simulation physique (&quot;Ball in a Rotating Hexagon&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau de contrôles avec curseurs pour la rotation (0.90 rad/s), la gravité (1200 px/s²), la restitution (0.85), la friction des murs (0.38) et la résistance de l&#x27;air (0.035). Boutons &quot;Kick&quot; et &quot;Pause&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;interface de simulation physique et les curseurs permettant de modifier en temps réel des paramètres comme la gravité et la rotation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_007_00-01-12.jpg" alt="Interface de simulation physique montrant une balle dans un hexagone rotatif avec des curseurs de contrôle pour la gravité, la rotation et la friction." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_007_00-01-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:12</span>
+                        <span class="caption-text">Interface de simulation physique montrant une balle dans un hexagone rotatif avec des curseurs de contrôle pour la gravité, la rotation et la friction.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:30 - 00:01:49</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Grâce à la restitution, vous pouvez contrôler le rebond de la balle. Vous pouvez également contrôler la quantité de frottement, la résistance de l&#x27;air et il y a un bouton de pause grâce auquel vous pouvez suspendre le mouvement à tout moment. Vous pouvez aussi donner une impulsion à la balle en utilisant l&#x27;option de coup de pied, et dans le coin supérieur droit, il y a un curseur d&#x27;échelle temporelle grâce auquel vous pouvez voir ces moments en mouvement ralenti et rapide.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application Web interactive de simulation physique (&quot;Ball in a Rotating Hexagon&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau de contrôles avec les curseurs suivants : Rotation (rad/s), Gravity (px/s²), Restitution, Wall friction (μ), Air drag, ainsi que des boutons &quot;Kick&quot; et &quot;Pause&quot;. Un curseur &quot;Time scale&quot; est visible en haut à droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Simulation en temps réel d&#x27;une balle rebondissant à l&#x27;intérieur d&#x27;un hexagone en rotation avec affichage des paramètres physiques ajustables.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_008_00-01-32.jpg" alt="Interface de simulation physique montrant une balle à l&#x27;intérieur d&#x27;un hexagone en rotation avec des curseurs de contrôle pour la restitution, la friction et la gravité." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_008_00-01-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:32</span>
+                        <span class="caption-text">Interface de simulation physique montrant une balle à l&#x27;intérieur d&#x27;un hexagone en rotation avec des curseurs de contrôle pour la restitution, la friction et la gravité.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:49 - 00:02:12</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et voici le résultat de Gemini 3. Sa physique est également correcte, avec la balle qui glisse et rebondit parfaitement. Ici, je n&#x27;ai que trois curseurs. Premièrement, le contrôleur de vitesse de rotation, deuxièmement, le contrôleur de gravité, et troisièmement, le contrôleur de rebond, et tous fonctionnent. Les deux résultats sont bons, mais GPT 5.2 a plus d&#x27;options que Gemini 3.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface logicielle ou de simulation interactive de physique avec affichage graphique et curseurs de réglage.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Trois curseurs visibles en bas de l&#x27;écran avec les libellés : &#x27;ROTATION SPEED&#x27;, &#x27;GRAVITY&#x27;, et &#x27;BOUNCINESS&#x27;. Une forme géométrique hexagonale lumineuse en néon rouge et une petite sphère lumineuse turquoise à l&#x27;intérieur.</p>
+                        <p><strong>Action / Démonstration :</strong> Simulation physique d&#x27;une sphère se déplaçant à l&#x27;intérieur d&#x27;un hexagone en rotation, contrôlée par les paramètres de l&#x27;interface.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_009_00-01-51.jpg" alt="Interface interactive affichant un hexagone lumineux rouge contenant une balle turquoise en mouvement, avec trois curseurs de contrôle en bas (vitesse de rotation, gravité, rebond)." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_009_00-01-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:51</span>
+                        <span class="caption-text">Interface interactive affichant un hexagone lumineux rouge contenant une balle turquoise en mouvement, avec trois curseurs de contrôle en bas (vitesse de rotation, gravité, rebond).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:12 - 00:02:33</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans ce résultat, je préfère le résultat de GPT 5.2. Ensuite, c&#x27;est le jeu de vol d&#x27;oiseaux. Les exigences sont simples, un monde dans lequel des oiseaux volent en essaim et je peux voir les mouvements de vol d&#x27;oiseaux à travers une vue d&#x27;oiseau. Voici le résultat de Gemini 3. Le monde est grand. Voici quelques paramètres à travers lesquels vous pouvez contrôler la taille de l&#x27;essaim et la taille maximale de l&#x27;essaim est de 300.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation de jeu en ligne avec panneaux de contrôle interactifs.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Bird Flocking Game&quot;, &quot;A world in which birds are flocking Bird View&quot;, &quot;Flock Controls&quot;, &quot;Flock Size&quot;, &quot;Separation (Space)&quot;, &quot;Alignment (Steer)&quot;, &quot;Cohesion (Group)&quot;, &quot;Speed&quot;, &quot;Switch Camera: World&quot;. Paramètre de taille d&#x27;essaim réglé à 300.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente différents résultats de génération de code/monde virtuel, montrant d&#x27;abord une simulation physique puis un jeu de vol d&#x27;oiseaux avec réglage des paramètres de l&#x27;essaim.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_010_00-02-14.jpg" alt="Comparaison de deux simulations physiques interactives dont une avec un hexagone rotatif." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_010_00-02-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:14</span>
+                        <span class="caption-text">Comparaison de deux simulations physiques interactives dont une avec un hexagone rotatif.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_011_00-02-22.jpg" alt="Présentation du titre &#x27;Bird Flocking Game&#x27; avec un monde 3D affichant une vue d&#x27;ensemble des oiseaux." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_011_00-02-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:22</span>
+                        <span class="caption-text">Présentation du titre &#x27;Bird Flocking Game&#x27; avec un monde 3D affichant une vue d&#x27;ensemble des oiseaux.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_012_00-02-31.jpg" alt="Simulation 3D du vol d&#x27;oiseaux avec le panneau de contrôle &#x27;Flock Controls&#x27; affichant une taille d&#x27;essaim de 300." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_012_00-02-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:31</span>
+                        <span class="caption-text">Simulation 3D du vol d&#x27;oiseaux avec le panneau de contrôle &#x27;Flock Controls&#x27; affichant une taille d&#x27;essaim de 300.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:33 - 00:03:11</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez contrôler la vitesse, vous pouvez mettre le monde en pause, et vous disposez de quelques contrôles de comportement, un curseur de séparation qui signifie l&#x27;espace personnel requis par chaque oiseau, l&#x27;alignement où les oiseaux essaient fortement de voler dans la même direction que leurs voisins, créant des vagues de mouvement fluides et synchronisées. La cohésion, qui contrôle le regroupement, et la portée visuelle, qui contrôle la distance de vision. Vous pouvez également changer la vue de la caméra. Vous pouvez voir depuis la vue de l&#x27;oiseau et la vue du monde. Si vous regardez le mouvement des oiseaux, il est correct et fluide. Mais si vous regardez depuis la vue de l&#x27;oiseau, ça secoue trop. Voici le résultat de GPT 5.2. Qu&#x27;est-ce que c&#x27;est que ça, mon frère ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation interactive en 3D (&quot;Bird Flocking Simulation&quot;) avec un panneau de réglages &quot;Flock Controls&quot; (taille du groupe, séparation, alignement, cohésion, vitesse) et des boutons de changement de vue caméra.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau &quot;Flock Controls&quot; affichant des curseurs pour Flock Size (300), Separation (1.5), Alignment (1.0), Cohesion (1.0), Speed (1.5), ainsi qu&#x27;un bouton &quot;Switch Camera: World&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;écran présente la simulation interactive de vol d&#x27;oiseaux en 3D low-poly, avec des ajustements des paramètres de comportement et des basculements entre la vue du monde et la vue de l&#x27;oiseau.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_013_00-02-35.jpg" alt="Simulation de vol d&#x27;oiseaux en vue globale (World View) avec le panneau de contrôle des comportements &quot;Flock Controls&quot; à droite." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_013_00-02-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:35</span>
+                        <span class="caption-text">Simulation de vol d&#x27;oiseaux en vue globale (World View) avec le panneau de contrôle des comportements &quot;Flock Controls&quot; à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_014_00-02-59.jpg" alt="Simulation de vol d&#x27;oiseaux en gros plan rapproché avec les paramètres de &quot;Flock Controls&quot; ajustés à droite." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_014_00-02-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:59</span>
+                        <span class="caption-text">Simulation de vol d&#x27;oiseaux en gros plan rapproché avec les paramètres de &quot;Flock Controls&quot; ajustés à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_015_00-03-09.jpg" alt="Interface de simulation &quot;Bird Flocking Simulation&quot; montrant les options de vue World View, Bird View et Pause en haut à gauche." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_015_00-03-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:09</span>
+                        <span class="caption-text">Interface de simulation &quot;Bird Flocking Simulation&quot; montrant les options de vue World View, Bird View et Pause en haut à gauche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:11 - 00:03:29</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ça a vraiment brisé mes attentes. Les résultats de Gemini sont vraiment meilleurs. Voici le résultat de Claude Opus 4.5. Vous voyez les oiseaux ? Ça a l&#x27;air vraiment naturel et incroyable. C&#x27;est encore mieux que le résultat de Gemini 3. Claude Opus 4.5 l&#x27;emporte ici. C&#x27;est le dernier test, la simulation de main.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation de vol d&#x27;oiseaux (« Bird Flocking ») avec panneaux de configuration et contrôles interactifs.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : « Bird Flocking », « Flock Size », « Flocking Speed », « Cohesion Strength », « World View », « Bird View », « Pause », « Scatter », et le titre « Hand Simulation ».</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative des résultats de génération d&#x27;IA (oiseaux en vol et simulation de main 3D).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_016_00-03-13.jpg" alt="Démonstration du résultat de simulation généré, montrant des oiseaux en vol dans un paysage minimaliste en 3D." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_016_00-03-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:13</span>
+                        <span class="caption-text">Démonstration du résultat de simulation généré, montrant des oiseaux en vol dans un paysage minimaliste en 3D.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_017_00-03-20.jpg" alt="Interface de contrôle de simulation (« Bird Flocking ») avec des curseurs de réglage pour la taille du vol, la vitesse et la cohésion." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_017_00-03-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:20</span>
+                        <span class="caption-text">Interface de contrôle de simulation (« Bird Flocking ») avec des curseurs de réglage pour la taille du vol, la vitesse et la cohésion.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_018_00-03-27.jpg" alt="Écran de titre et démonstration d&#x27;une simulation 3D de main stylisée en blocs (« Hand Simulation »)." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_018_00-03-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:27</span>
+                        <span class="caption-text">Écran de titre et démonstration d&#x27;une simulation 3D de main stylisée en blocs (« Hand Simulation »).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:29 - 00:03:48</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les exigences sont simples. Je peux contrôler chaque doigt de la main grâce à des curseurs. Et voici le résultat de GPT 5.2. Et je suis totalement déçu par cela. C&#x27;est le modèle pour lequel ils annoncent une alerte rouge ? Quelle mise à jour est-ce ? J&#x27;ai même essayé plusieurs fois mais ça échoue. Voici le résultat de Gemini 3.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Simulation 3D interactive (Hand Finger Physics Simulator / HTML autonome) avec des boutons de contrôle des doigts et un encadré de type mème/réaction vidéo.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Hand Simulation&quot;, &quot;Control Every Fingers of the Hand&quot;, &quot;Hand Finger Physics Simulator (standalone Html)&quot;, boutons &quot;Thumb Open&quot;, &quot;Thumb Close&quot;, &quot;Index Open&quot;, &quot;Index Close&quot;, &quot;Middle Open&quot;, &quot;Middle Close&quot;, &quot;Ring Open&quot;, &quot;Ring Close&quot;, et le texte &quot;ME...&quot; sur l&#x27;encadré de réaction.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;une simulation 3D de main avec des contrôles interactifs pour chaque doigt, accompagnée d&#x27;une réaction émotionnelle de déception.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_019_00-03-31.jpg" alt="Simulation 3D d&#x27;une main simplifiée avec le titre &#x27;Hand Simulation&#x27; et &#x27;Control Every Fingers of the Hand&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_019_00-03-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:31</span>
+                        <span class="caption-text">Simulation 3D d&#x27;une main simplifiée avec le titre &#x27;Hand Simulation&#x27; et &#x27;Control Every Fingers of the Hand&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_020_00-03-38.jpg" alt="Interface de simulation physique &#x27;Hand Finger Physics Simulator&#x27; avec des boutons de contrôle pour les doigts et un encadré vidéo montrant une réaction déçue." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_020_00-03-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:38</span>
+                        <span class="caption-text">Interface de simulation physique &#x27;Hand Finger Physics Simulator&#x27; avec des boutons de contrôle pour les doigts et un encadré vidéo montrant une réaction déçue.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:48 - 00:04:06</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour la première fois, il crée cela en utilisant le même prompt. Ça a vraiment l&#x27;air fantastique. Comme vous pouvez le voir, vous pouvez contrôler tous les doigts à l&#x27;aide de ces curseurs, et ils fonctionnent tous. Regardez le mouvement des doigts. Il bouge vraiment comme un doigt humain. Encore une fois, Gemini 3 l&#x27;emporte ici, et je n&#x27;ai vraiment pas aimé la mise à jour de GPT 5.2.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Hand Sim (Application de simulation de main 3D) avec un panneau de contrôle latéral comportant des curseurs.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;Hand Sim&quot;, curseurs pour &quot;PINKY&quot; (auriculaire), &quot;RING&quot; (annulaire), &quot;MIDDLE&quot; (majeur), &quot;INDEX&quot;, &quot;THUMB&quot; (pouce) et &quot;ALL&quot; (tous), ainsi que deux boutons &quot;Open&quot; (ouvrir) et &quot;Close&quot; (fermer). Au centre, un modèle 3D simplifié d&#x27;une main articulée.</p>
+                        <p><strong>Action / Démonstration :</strong> Le modèle 3D de la main est affiché à l&#x27;écran tandis que les curseurs permettent de contrôler les mouvements de chaque articulation et doigt.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_021_00-03-50.jpg" alt="Interface d&#x27;une application de simulation de main 3D montrant les curseurs de contrôle pour chaque doigt." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_021_00-03-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:50</span>
+                        <span class="caption-text">Interface d&#x27;une application de simulation de main 3D montrant les curseurs de contrôle pour chaque doigt.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:06 - 00:04:14</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il obtient vraiment de moins bons résultats dans ces tests. C&#x27;est donc mes recherches pour la vidéo d&#x27;aujourd&#x27;hui. Si vous avez aimé, veuillez mettre un pouce bleu, vous abonner et laisser un commentaire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de présentation produit (type OpenAI) avec superposition d&#x27;éléments d&#x27;interface YouTube (boutons Like, Subscribe, Notification et icône de partage).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;December 11, 2025 Product Release&quot;, &quot;Introducing GPT-5.2&quot;, et &quot;Introducing GPT-5.2, the most capable model series yet for professional work and long-running agents.&quot; Illustration graphique à gauche montrant un cerveau humain connecté à un processeur informatique stylisé entouré d&#x27;un anneau lumineux. Boutons interactifs au centre : bouton pouce bleu, gros bouton rouge &quot;SUBSCRIBE&quot; et cloche de notification.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de la page de présentation du modèle GPT-5.2 avec superposition des boutons d&#x27;interaction de la chaîne YouTube pour inciter l&#x27;abonnement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-PVf0LdCCxuQ/frame_022_00-04-10.jpg" alt="Page de présentation du produit Introducing GPT-5.2 avec une illustration de cerveau artificiel lumineux et des boutons d&#x27;appel à l&#x27;action pour s&#x27;abonner." loading="lazy" onclick="openLightbox('screenshots/YT-PVf0LdCCxuQ/frame_022_00-04-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:10</span>
+                        <span class="caption-text">Page de présentation du produit Introducing GPT-5.2 avec une illustration de cerveau artificiel lumineux et des boutons d&#x27;appel à l&#x27;action pour s&#x27;abonner.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
