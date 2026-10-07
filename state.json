@@ -58,7 +58,8 @@
     "vSHSC4TTO3A",
     "7xpwqOhx3Lo",
     "dzqjuVLQrU8",
-    "GGRpVBQV2yg"
+    "GGRpVBQV2yg",
+    "dW74ziq6PGg"
   ],
   "processed_videos": [
     {
@@ -882,9 +883,23 @@
       "filepath_html": "/root/YT_PursuingAi/2025-12-24_YT-GGRpVBQV2yg_GPT 5.2, GEMINI 3, Opus 4.5 et GLM 4.7 🎄🎁_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-07T07:13:54Z",
       "status": "completed"
+    },
+    {
+      "video_id": "dW74ziq6PGg",
+      "title": "C'est probablement la farce générée par IA la plus flippante de tous les temps",
+      "raw_title": "This Might Be the Scariest AI Prank Ever",
+      "filename_md": "2025-12-22_YT-dW74ziq6PGg_C'est probablement la farce générée par IA la plus flippante de tous les temps_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2025-12-22_YT-dW74ziq6PGg_C'est probablement la farce générée par IA la plus flippante de tous les temps_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2025-12-22",
+      "duration": 196,
+      "screenshots_count": 22,
+      "filepath_md": "/root/YT_PursuingAi/2025-12-22_YT-dW74ziq6PGg_C'est probablement la farce générée par IA la plus flippante de tous les temps_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2025-12-22_YT-dW74ziq6PGg_C'est probablement la farce générée par IA la plus flippante de tous les temps_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-07T07:18:05Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 59,
+  "completed_count": 60,
   "last_run_timestamp": "2026-10-07T04:00:03Z",
   "status": "running",
   "total_catalog_count": 84

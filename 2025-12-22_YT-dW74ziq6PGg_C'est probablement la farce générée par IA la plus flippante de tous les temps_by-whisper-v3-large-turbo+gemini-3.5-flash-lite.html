@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 C&#x27;est probablement la farce générée par IA la plus flippante de tous les temps — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 C&#x27;est probablement la farce générée par IA la plus flippante de tous les temps</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-12-22</span>
+                <span class="badge">⏱️ 03m 16s</span>
+                <span class="badge">🆔 <code>dW74ziq6PGg</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=dW74ziq6PGg" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>Dans cette vidéo immersive de la chaîne *Pursuing AI*, le créateur explore les frontières créatives de l'intelligence artificielle en concevant un Noël entièrement généré par des agents conversationnels et des modèles multimodaux. Le sujet central s'articule autour d'une expérience interactive : la création de sites web pièges sous forme de boîtes cadeaux numériques destinées à effrayer les utilisateurs lors du clic final. En mobilisant des technologies de pointe, la démarche démontre la capacité des LLM à concevoir non seulement du texte, mais des applications front-end fonctionnelles intégrant du code HTML, des animations visuelles et des effets sonores dynamiques.</p><p>La méthode employée repose sur un test comparatif rigoureux entre plusieurs fleurons technologiques – ChatGPT 5.2, Gemini 3 Pro et Claude Opus 4.5 (notations fictives ou prospectives utilisées par le créateur) – pour exécuter un même prompt de conception web axé sur l'horreur festive. Chaque modèle a généré une interprétation distincte, allant du glitch visuel anxiogène à l'animation mignonne, en passant par un équilibre parfait entre esthétique de Noël et sursaut horrifique. Cette expérimentation met en lumière la diversité des logiques génératives et la flexibilité du code produit par les intelligences artificielles à partir d'une simple instruction textuelle.</p><p>Pour les créateurs de contenu et développeurs, les bénéfices concrets de cette approche sont immenses. Elle illustre la démocratisation du prototypage rapide : n'importe quel créateur peut désormais concevoir des expériences web interactives, des mini-jeux ou des farces numériques sophistiquées en quelques minutes sans compétences avancées en codage. L'utilisation d'assistants IA comme Claude permet d'automatiser la mise en page, l'intégration de scripts d'animation (neige) et le couplage audio-visuel, ouvrant la voie à des formats de vidéos participatives et virales d'un nouveau genre.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Prototypage web instantané** : Démontre la capacité des LLM à rédiger du code HTML/CSS/JS fonctionnel et interactif à partir d&#x27;un simple prompt conversationnel.</span></li><li><span class="point-bullet">✦</span><span>Diversité comportementale des modèles** : Souligne que face à une même consigne créative, chaque IA (Gemini, ChatGPT, Claude) adopte une interprétation esthétique et technique radicalement différente.</span></li><li><span class="point-bullet">✦</span><span>Gestion des imprévus visuels** : Illustre comment un &quot;bug&quot; génératif (comme le visage non rendu sur Gemini) peut parfois renforcer l&#x27;impact émotionnel recherché, en l&#x27;occurrence la peur.</span></li><li><span class="point-bullet">✦</span><span>Expérience utilisateur multimodale** : Combine habilement des éléments visuels (boîte cadeau, neige, visage du Père Noël) et des retours audio (sifflements, sons terrifiants) pour maximiser l&#x27;immersion.</span></li><li><span class="point-bullet">✦</span><span>Format viral orienté partage** : Utilise le concept de la farce numérique (&quot;prank&quot;) comme levier marketing naturel incitant à l&#x27;engagement et au repartage entre amis.</span></li><li><span class="point-bullet">✦</span><span>Accessibilité du code pour non-codeurs** : Prouve qu&#x27;un créateur de contenu sans bagage en programmation peut concevoir et déployer des applications web interactives complexes.</span></li><li><span class="point-bullet">✦</span><span>Optimisation des prompts créatifs** : Met en avant l&#x27;importance de spécifier clairement les déclencheurs d&#x27;action (le clic sur le bouton &quot;Ouvrir&quot;) pour synchroniser l&#x27;effet de surprise.</span></li><li><span class="point-bullet">✦</span><span>Centralisation des ressources communautaires** : L&#x27;utilisation d&#x27;un serveur Discord pour partager les fichiers sources renforce l&#x27;engagement de l&#x27;audience et la transparence du tutoriel.</span></li><li><span class="point-bullet">✦</span><span>Équilibre entre ton festif et subversion** : Exploite le contraste culturel entre une fête traditionnellement chaleureuse (Noël) et un genre inattendu (l&#x27;horreur) pour capter l&#x27;attention.</span></li><li><span class="point-bullet">✦</span><span>Itération et persistance** : Rappelle que l&#x27;obtention d&#x27;un résultat parfait via l&#x27;IA nécessite souvent plusieurs essais et ajustements de prompts, malgré les capacités avancées des modèles.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Noël approche enfin. Mais je ne sais pas pour vous, cette année me semble un peu différente. L&#x27;année 2025 a été un véritable tourbillon pour l&#x27;IA. Presque chaque semaine, nous nous sommes réveillés avec un tout nouveau modèle, un LLM époustouflant, ou un outil qui a totalement changé la donne.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur futuriste de type affichage tête haute / hologramme bleu avec des blocs de texte et des menus verticaux.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &#x27;take action&#x27; et des lignes de texte simulées sur un panneau virtuel.</p>
+                        <p><strong>Action / Démonstration :</strong> Le panneau holographique se met à jour et met en valeur l&#x27;action textuelle à l&#x27;écran.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_001_00-00-19.jpg" alt="Interface holographique bleue affichant du texte et le texte &#x27;take action&#x27; au centre." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_001_00-00-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:19</span>
+                        <span class="caption-text">Interface holographique bleue affichant du texte et le texte &#x27;take action&#x27; au centre.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:22 - 00:00:54</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;intelligence artificielle n&#x27;est plus seulement un sujet technologique. C&#x27;est pratiquement devenu une partie de notre vie quotidienne maintenant. Alors je me suis dit, pourquoi ne pas s&#x27;y mettre à fond ? Pourquoi ne pas faire de ce Noël un Noël 100% IA ? J&#x27;ai cherché des méthodes pour fabriquer ce Noël avec l&#x27;IA, et pour réaliser ces méthodes, j&#x27;ai utilisé ChatGPT 5.2, Gemini 3 Pro et Claude Opus 4.5. Je suis vraiment ravi que vous soyez là. Ici Pursuing AI, et vous regardez The Research Report.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface logicielle de développement/modélisation 3D (avec éditeur de code/texte à gauche et affichage 3D à droite) et interface web de présentation de Claude Opus 4.5.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte visible sur l&#x27;image 1 : « I&#x27;ve made the hamsters smaller and animated them! They now hop around the island, pausing occasionally to look around. I also increased their number to 15... ». Texte visible sur l&#x27;image 2 : « turn it into a 3D white hologram wireframe with short text labels ». Texte visible sur l&#x27;image 4 : « cing Claude Opus 4.5 ».</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de modifications sur un modèle 3D de type voxel avec une interface de code, suivie de l&#x27;affichage d&#x27;une animation holographique 3D et de la présentation de l&#x27;interface web de Claude Opus 4.5.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_002_00-00-24.jpg" alt="Interface logicielle montrant la modélisation 3D voxel d&#x27;un arbre et d&#x27;un îlot, avec un panneau textuel latéral expliquant les modifications apportées (réduction et animation des hamsters)." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_002_00-00-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:24</span>
+                        <span class="caption-text">Interface logicielle montrant la modélisation 3D voxel d&#x27;un arbre et d&#x27;un îlot, avec un panneau textuel latéral expliquant les modifications apportées (réduction et animation des hamsters).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_003_00-00-33.jpg" alt="Animation montrant une interface flottante avec le prompt textuel « turn it into a 3D white hologram wireframe with short text labels »." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_003_00-00-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:33</span>
+                        <span class="caption-text">Animation montrant une interface flottante avec le prompt textuel « turn it into a 3D white hologram wireframe with short text labels ».</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_004_00-00-52.jpg" alt="Page web présentant « Claude Opus 4.5 » avec à gauche un logo animé représentant un cerveau connecté à une puce « PAI »." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_004_00-00-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:52</span>
+                        <span class="caption-text">Page web présentant « Claude Opus 4.5 » avec à gauche un logo animé représentant un cerveau connecté à une puce « PAI ».</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:55 - 00:01:16</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc, la première idée est une farce de Noël effrayante. J&#x27;ai demandé à l&#x27;IA de créer un site web. Quand quelqu&#x27;un ouvre le site web, il voit une boîte cadeau sur l&#x27;écran. Sous la boîte cadeau, il y a un bouton d&#x27;ouverture. Et quand la personne clique sur le bouton d&#x27;ouverture, boum ! Un Père Noël effrayant apparaît soudainement avec des effets sonores terrifiants.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface d&#x27;un site web simple créé par IA pour une farce de Noël.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &#x27;Scary Christmas Prank&#x27;, &#x27;You have a Christmas Gift!&#x27;, et le bouton rouge &#x27;OPEN&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;idée de farce de Noël avec affichage de l&#x27;interface du site web piégé et de l&#x27;image effrayante du Père Noël.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_005_00-00-57.jpg" alt="Image du Père Noël effrayant avec le texte &#x27;Scary Christmas Prank&#x27; en haut de l&#x27;écran." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_005_00-00-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:57</span>
+                        <span class="caption-text">Image du Père Noël effrayant avec le texte &#x27;Scary Christmas Prank&#x27; en haut de l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_006_00-01-06.jpg" alt="Interface d&#x27;un site web montrant une boîte cadeau lumineuse avec le texte &#x27;You have a Christmas Gift!&#x27; et un bouton rouge &#x27;OPEN&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_006_00-01-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:06</span>
+                        <span class="caption-text">Interface d&#x27;un site web montrant une boîte cadeau lumineuse avec le texte &#x27;You have a Christmas Gift!&#x27; et un bouton rouge &#x27;OPEN&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_007_00-01-14.jpg" alt="Gros plan sur le Père Noël effrayant aux yeux brillants et aux dents pointues." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_007_00-01-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:14</span>
+                        <span class="caption-text">Gros plan sur le Père Noël effrayant aux yeux brillants et aux dents pointues.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:17 - 00:01:41</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est conçu pour surprendre la personne avec un Père Noël effrayant. D&#x27;abord, voici le résultat obtenu par Gemini 3. Très bien les gars, je vais ouvrir la boîte. Et le voilà. Qu&#x27;est-ce que c&#x27;est ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de développement ou de prototype (probablement Artifacts de Claude ou interface similaire basée sur Gemini 3).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Happy Christmas By Pursuing AI&quot;, &quot;Christmas Gift Jump Scare App&quot;, &quot;A special gift for you!&quot;, &quot;Tap to Open&quot;, &quot;HO HO NO...&quot;, &quot;Merry Christmas &amp; Happy Nightmare&quot;.
+[DESC_IMAGE_3] Visualisation du résultat de l&#x27;application interactive générée par IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_008_00-01-19.jpg" alt="Écran titre noir affichant &quot;Happy Christmas&quot; en rouge et &quot;By Pursuing AI&quot; en dessous." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_008_00-01-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:19</span>
+                        <span class="caption-text">Écran titre noir affichant &quot;Happy Christmas&quot; en rouge et &quot;By Pursuing AI&quot; en dessous.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_009_00-01-25.jpg" alt="Interface de l&#x27;application montrant une boîte cadeau dorée avec un ruban rouge et le texte &quot;A special gift for you!&quot; et un bouton &quot;Tap to Open&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_009_00-01-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:25</span>
+                        <span class="caption-text">Interface de l&#x27;application montrant une boîte cadeau dorée avec un ruban rouge et le texte &quot;A special gift for you!&quot; et un bouton &quot;Tap to Open&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_010_00-01-34.jpg" alt="Résultat après ouverture de la boîte montrant un écran sombre avec le texte &quot;HO HO NO...&quot; et &quot;Merry Christmas &amp; Happy Nightmare&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_010_00-01-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:34</span>
+                        <span class="caption-text">Résultat après ouverture de la boîte montrant un écran sombre avec le texte &quot;HO HO NO...&quot; et &quot;Merry Christmas &amp; Happy Nightmare&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:42 - 00:02:02</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est vraiment flippant, mais il y a une erreur. On n&#x27;a pas vraiment un visage de Père Noël flippant. J&#x27;ai essayé plusieurs fois d&#x27;ajouter un visage de Père Noël flippant, mais ça n&#x27;a pas corrigé le problème. Pourtant, c&#x27;est vraiment flippant. Dites-moi dans les commentaires, est-ce que vous enverriez ça à vos amis ? Maintenant, regardons le résultat de ChatGPT 5.2.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de développement / application web (type assistant IA ou IDE).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de l&#x27;interface : &quot;Christmas Gift Jump Scare App&quot;, &quot;A special gift for you!&quot;, &quot;Tap to Open&quot;, et code HTML avec commentaires sur le &quot;Zombie Santa&quot; et l&#x27;interface de surprise.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de l&#x27;application interactive de cadeau de Noël puis de son code source.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_011_00-01-44.jpg" alt="Interface de l&#x27;application affichant le rendu HTML avec un cadeau de Noël et le texte &quot;A special gift for you!&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_011_00-01-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:44</span>
+                        <span class="caption-text">Interface de l&#x27;application affichant le rendu HTML avec un cadeau de Noël et le texte &quot;A special gift for you!&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_012_00-01-52.jpg" alt="Affichage du code source HTML de l&#x27;application avec des commentaires sur les images et les couches d&#x27;interface." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_012_00-01-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:52</span>
+                        <span class="caption-text">Affichage du code source HTML de l&#x27;application avec des commentaires sur les images et les couches d&#x27;interface.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:03 - 00:02:24</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ici, ça crée un thème mignon, et tout a l&#x27;air vraiment sympa. Cliquons sur Ouvrir, et le voilà ! C&#x27;est vraiment mignon ! Un petit son arrive, et ce son est également doux. Globalement, c&#x27;est amical et ludique. Vous devriez l&#x27;envoyer à vos amis et aux membres de votre famille.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de ChatGPT (version 5.2) avec panneau de discussion à gauche et aperçu de l&#x27;application web interactive à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de débogage et de code dans ChatGPT (gestion d&#x27;erreur de syntaxe liée à un accolate en trop), et affichage du message &quot;Happy Christmas - by Pursuing AI&quot; avec un bouton de relecture.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;interface interactive de l&#x27;application web créée avec ChatGPT, illustrant le rendu final avec le bouton &quot;Open&quot; et les options de relecture de la blague.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_013_00-02-05.jpg" alt="Interface de ChatGPT montrant le projet web et un message d&#x27;erreur de syntaxe, avec un aperçu interactif d&#x27;un paquet cadeau de Noël et un bouton &quot;Open&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_013_00-02-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:05</span>
+                        <span class="caption-text">Interface de ChatGPT montrant le projet web et un message d&#x27;erreur de syntaxe, avec un aperçu interactif d&#x27;un paquet cadeau de Noël et un bouton &quot;Open&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_014_00-02-13.jpg" alt="Écran affichant le texte &quot;Happy Christmas - by Pursuing AI&quot; avec un bouton &quot;Replay Prank&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_014_00-02-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:13</span>
+                        <span class="caption-text">Écran affichant le texte &quot;Happy Christmas - by Pursuing AI&quot; avec un bouton &quot;Replay Prank&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_015_00-02-22.jpg" alt="Interface de ChatGPT affichant les détails audio de la blague de Noël (&quot;Bit Scary&quot; Sound) à côté de l&#x27;aperçu du paquet cadeau interactif." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_015_00-02-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:22</span>
+                        <span class="caption-text">Interface de ChatGPT affichant les détails audio de la blague de Noël (&quot;Bit Scary&quot; Sound) à côté de l&#x27;aperçu du paquet cadeau interactif.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:24 - 00:02:50</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, passons au résultat d&#x27;Opus 4.5. Ici, il ajoute une animation de neige, et ça ressemble vraiment à quelque chose que quelqu&#x27;un enverrait comme un joli cadeau. Voyons ce qu&#x27;il y a à l&#x27;intérieur de la boîte cadeau. Ce n&#x27;est pas trop effrayant, mais cela ajoute un visage de Père Noël au style effrayant, et inclut également un effet sonore effrayant, ce qui est bien.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web interactive (ChatGPT / application hébergée).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Merry Christmas! — by Pursuing AI&quot;, bouton &quot;Replay Prank&quot;, instructions dans ChatGPT sur les couches audio (&quot;Bit Scary Sound&quot;, &quot;Layer A - High-pitch sting&quot;, &quot;Layer B - Low rumble&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du résultat généré par Opus 4.5 montrant une animation sur le thème de Noël avec un effet de surprise (jump scare) et des sons effrayants.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_016_00-02-26.jpg" alt="Interface d&#x27;une application ChatGPT avec un panneau latéral montrant du code et des instructions audio (Bit Scary Sound)." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_016_00-02-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:26</span>
+                        <span class="caption-text">Interface d&#x27;une application ChatGPT avec un panneau latéral montrant du code et des instructions audio (Bit Scary Sound).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_017_00-02-42.jpg" alt="Écran de l&#x27;application web avec un fond vert, des flocons de neige animés et le texte &quot;Merry Christmas! - by Pursuing AI&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_017_00-02-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:42</span>
+                        <span class="caption-text">Écran de l&#x27;application web avec un fond vert, des flocons de neige animés et le texte &quot;Merry Christmas! - by Pursuing AI&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_018_00-02-48.jpg" alt="Visage d&#x27;un Père Noël stylisé et effrayant aux yeux rouges et menaçants sur fond sombre." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_018_00-02-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:48</span>
+                        <span class="caption-text">Visage d&#x27;un Père Noël stylisé et effrayant aux yeux rouges et menaçants sur fond sombre.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:51 - 00:03:10</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Globalement, le meilleur résultat effrayant est Gemini 3, parce qu&#x27;il donne l&#x27;impression d&#x27;être le plus intense et le plus effrayant. Commentez ci-dessous, quel cadeau avez-vous préféré ? Tous les fichiers HTML et les prompts que j&#x27;ai utilisés sont téléchargés sur mon serveur Discord. Le lien est dans la description. Joyeux Noël à mon adorable public.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de ChatGPT et navigateur web affichant des applications web HTML interactives générées par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affichant &#x27;Christmas Gift Jump Scare App&#x27;, un paquet cadeau, &#x27;A special gift for you!&#x27;, bouton &#x27;Tap to Open&#x27;, code ChatGPT avec &#x27;Bit Scary Sound (Layered Horror Audio)&#x27;, et &#x27;Happy Christmas - by Pursuing AI&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente différentes versions d&#x27;applications web HTML interactives générées par intelligence artificielle comportant des effets de surprise et des sons effrayants pour Noël.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_019_00-02-53.jpg" alt="Aperçu d&#x27;une application HTML interactive de cadeau de Noël avec un paquet cadeau et un bouton &#x27;Tap to Open&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_019_00-02-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:53</span>
+                        <span class="caption-text">Aperçu d&#x27;une application HTML interactive de cadeau de Noël avec un paquet cadeau et un bouton &#x27;Tap to Open&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_020_00-03-00.jpg" alt="Interface de ChatGPT montrant le code et la configuration audio pour une farce de type &#x27;jump scare&#x27; de Noël." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_020_00-03-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:00</span>
+                        <span class="caption-text">Interface de ChatGPT montrant le code et la configuration audio pour une farce de type &#x27;jump scare&#x27; de Noël.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_021_00-03-08.jpg" alt="Interface Web interactive affichant un paquet cadeau rouge avec le texte &#x27;Merry Christmas! You have a special gift waiting...&#x27; et un bouton &#x27;Open&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_021_00-03-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:08</span>
+                        <span class="caption-text">Interface Web interactive affichant un paquet cadeau rouge avec le texte &#x27;Merry Christmas! You have a special gift waiting...&#x27; et un bouton &#x27;Open&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:11 - 00:03:15</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est Pursuing AI, et vous venez de regarder le rapport de recherche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de fin / carte graphique animée de la chaîne YouTube Pursuing AI.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;The Research Report&quot;, logo de la chaîne avec le cerveau et l&#x27;inscription &quot;PAI&quot;, éléments graphiques de Noël (sapins, bonnets de Noël, cadeaux) et un bouton &quot;Subscribe&quot; (S&#x27;abonner).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de l&#x27;écran de fin de la vidéo avec le logo et les bannières d&#x27;abonnement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dW74ziq6PGg/frame_022_00-03-13.jpg" alt="Écran de fin de la vidéo affichant le logo de la chaîne Pursuing AI avec un cerveau connecté à une puce &quot;PAI&quot; et le titre &quot;The Research Report&quot; aux couleurs de Noël." loading="lazy" onclick="openLightbox('screenshots/YT-dW74ziq6PGg/frame_022_00-03-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:13</span>
+                        <span class="caption-text">Écran de fin de la vidéo affichant le logo de la chaîne Pursuing AI avec un cerveau connecté à une puce &quot;PAI&quot; et le titre &quot;The Research Report&quot; aux couleurs de Noël.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
