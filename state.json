@@ -62,7 +62,8 @@
     "dW74ziq6PGg",
     "EygX7S0lWEc",
     "Msrj1lQBonI",
-    "PVf0LdCCxuQ"
+    "PVf0LdCCxuQ",
+    "vTcGkM5wMvc"
   ],
   "processed_videos": [
     {
@@ -942,9 +943,23 @@
       "filepath_html": "/root/YT_PursuingAi/2025-12-14_YT-PVf0LdCCxuQ_GPT-5.2 vs Gemini 3 — Vrais Tests_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-07T10:06:57Z",
       "status": "completed"
+    },
+    {
+      "video_id": "vTcGkM5wMvc",
+      "title": "Nouveau modèle Seedream 4.5 testé : rebondissement choc dans le benchmark !",
+      "raw_title": "New Seedream 4.5 Model Tested: Shocking Twist in the Benchmark!",
+      "filename_md": "2025-12-07_YT-vTcGkM5wMvc_Nouveau modèle Seedream 4.5 testé rebondissement choc dans le benchmark !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2025-12-07_YT-vTcGkM5wMvc_Nouveau modèle Seedream 4.5 testé rebondissement choc dans le benchmark !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2025-12-07",
+      "duration": 187,
+      "screenshots_count": 21,
+      "filepath_md": "/root/YT_PursuingAi/2025-12-07_YT-vTcGkM5wMvc_Nouveau modèle Seedream 4.5 testé rebondissement choc dans le benchmark !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2025-12-07_YT-vTcGkM5wMvc_Nouveau modèle Seedream 4.5 testé rebondissement choc dans le benchmark !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-07T10:13:02Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 63,
+  "completed_count": 64,
   "last_run_timestamp": "2026-10-07T10:00:03Z",
   "status": "running",
   "total_catalog_count": 84

@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Nouveau modèle Seedream 4.5 testé : rebondissement choc dans le benchmark ! — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Nouveau modèle Seedream 4.5 testé : rebondissement choc dans le benchmark !</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-12-07</span>
+                <span class="badge">⏱️ 03m 07s</span>
+                <span class="badge">🆔 <code>vTcGkM5wMvc</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=vTcGkM5wMvc" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>Tutoriel de pointe sur Nouveau modèle Seedream 4.5 testé : rebondissement choc dans le benchmark ! par Pursuing AI.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Unification des workflows** : Seedream 4.5 prouve qu&#x27;un modèle unifié gérant à la fois la génération pure et l&#x27;édition granulaire simplifie drastiquement la chaîne de production visuelle.</span></li><li><span class="point-bullet">✦</span><span>Préservation anatomique de pointe** : Le modèle excelle dans le rendu des détails complexes, notamment la précision des doigts et des mains, souvent problématiques chez les concurrents.</span></li><li><span class="point-bullet">✦</span><span>Fidélité contextuelle et référentielle** : Capacité impressionnante à préserver les traits du visage, l&#x27;éclairage d&#x27;origine et la palette chromatique d&#x27;une image de référence lors d&#x27;une modification.</span></li><li><span class="point-bullet">✦</span><span>Édition ciblée et soustractive** : Possibilité de supprimer des éléments au premier plan ou à l&#x27;arrière-plan tout en conservant l&#x27;intégrité visuelle du sujet principal.</span></li><li><span class="point-bullet">✦</span><span>Maîtrise typographique intégrée** : Aptitude à traduire du texte directement dans l&#x27;image, à actualiser des designs textuels et à préserver les mises en page publicitaires.</span></li><li><span class="point-bullet">✦</span><span>Automatisation du design d&#x27;affiches** : Remplacement potentiel des outils de PAO traditionnels pour la création rapide d&#x27;affiches marketing propres et professionnelles.</span></li><li><span class="point-bullet">✦</span><span>Gestion multi-images et multi-formats** : Fonctionnalité avancée pour fusionner plusieurs visuels en une seule composition ou décliner une image en différents formats via une seule invite.</span></li><li><span class="point-bullet">✦</span><span>Variations stylistiques cohérentes** : Génération d&#x27;objets ou d&#x27;éléments de jeu (comme des ballons) déclinés sous de multiples styles artistiques tout en gardant une cohérence de structure.</span></li><li><span class="point-bullet">✦</span><span>Le piège des benchmarks publics** : Les scores sur des classements comme *Ella Marina* (seulement deux points de progression entre Seedream 4 et 4.5) ne reflètent pas toujours les gains réels d&#x27;ergonomie et de précision qualitative.</span></li><li><span class="point-bullet">✦</span><span>Évolution de la mesure de performance** : Atteinte d&#x27;un plateau technologique où les améliorations incrémentales des modèles de pointe deviennent difficiles à capturer par de simples métriques quantitatives.</span></li><li><span class="point-bullet">✦</span><span>Supériorité empirique vs théorique** : Nécessité pour les créateurs de tester les outils sur le terrain plutôt que de se fier aveuglément aux comparatifs de performances affichés par les développeurs ou les classements.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:39</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voyez comme cela a l&#x27;air réel ? Même les doigts sont parfaitement précis. Et regardez cette image. Elle gère si bien toutes les personnes et chaque petit détail. Mais voici le problème. Ce ne sont pas de vraies photos. Toutes les images que vous avez vues ont été créées par un nouvel outil d&#x27;image appelé CDream 4.5. J&#x27;ai fait des recherches approfondies sur cet outil et vous devez savoir ce qu&#x27;il peut faire. Et il y a un rebondissement à ce sujet que je révélerai à la fin. C&#x27;est Pursuing AI et vous regardez le Research Report. ByteDance a donc sorti leur nouveau modèle, Seadream 4.5. C&#x27;est un modèle unifié, ce qui signifie que vous pouvez tout faire</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du site web officiel de ByteDance Seed, présentant la section dédiée au modèle d&#x27;intelligence artificielle Seedream 4.5.</p>
+                        <p><strong>Contenu textuel & Code :</strong> On peut lire les textes suivants sur l&#x27;interface : &quot;ByteDance | Seed&quot;, &quot;Seedream 4.5&quot;, ainsi que la description textuelle des performances du modèle en matière d&#x27;édition multi-images, de préservation des détails et de rendu typographique. Des boutons de navigation (&quot;Home&quot;, &quot;Research&quot;, &quot;News&quot;, &quot;Seed Edge&quot;, &quot;Top Seed&quot;, &quot;Join Us&quot;, &quot;Try Now&quot;) sont également visibles.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente des exemples d&#x27;images générées par IA extrêmement réalistes pour illustrer les capacités du modèle Seedream 4.5 avant de dévoiler l&#x27;interface officielle de l&#x27;outil développé par ByteDance.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_001_00-00-02.jpg" alt="Une main tenant quatre photos au format Polaroid en noir et blanc représentant de jeunes adultes dans des poses expressives." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Une main tenant quatre photos au format Polaroid en noir et blanc représentant de jeunes adultes dans des poses expressives.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_002_00-00-14.jpg" alt="Un collage de quatre images générées par IA présentant des scènes cinématographiques : une femme dans un espace architectural lumineux, un jeune homme dans une cabine téléphonique, une personne travaillant dans une pièce tapissée de post-its jaunes, et un homme avec son chien sous une tente." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_002_00-00-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:14</span>
+                        <span class="caption-text">Un collage de quatre images générées par IA présentant des scènes cinématographiques : une femme dans un espace architectural lumineux, un jeune homme dans une cabine téléphonique, une personne travaillant dans une pièce tapissée de post-its jaunes, et un homme avec son chien sous une tente.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_003_00-00-26.jpg" alt="Une vue de l&#x27;interface du site web de ByteDance montrant une animation avec un cerveau humain relié à une puce étiquetée &quot;PAI&quot; et une femme dans un champ de blé en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_003_00-00-26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:26</span>
+                        <span class="caption-text">Une vue de l&#x27;interface du site web de ByteDance montrant une animation avec un cerveau humain relié à une puce étiquetée &quot;PAI&quot; et une femme dans un champ de blé en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_004_00-00-37.jpg" alt="La page d&#x27;accueil officielle du modèle Seedream 4.5 de ByteDance avec un arrière-plan aquatique animé montrant un lapin plongeur et du texte descriptif." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_004_00-00-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:37</span>
+                        <span class="caption-text">La page d&#x27;accueil officielle du modèle Seedream 4.5 de ByteDance avec un arrière-plan aquatique animé montrant un lapin plongeur et du texte descriptif.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:39 - 00:01:01</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">en un seul endroit, du texte à l&#x27;image jusqu&#x27;à l&#x27;édition d&#x27;image avancée. Premièrement, Seadream 4.5 peut parfaitement préserver les traits du visage, l&#x27;éclairage, la tonalité des couleurs et d&#x27;autres détails d&#x27;une image de référence. Donc, si vous voulez supprimer des personnages en arrière-plan ou au premier plan, il peut le faire tout en gardant l&#x27;éclairage et les couleurs du personnage principal exactement identiques.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Seedance / Seedream 4.5 (ByteDance).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Seedream 4.5&quot;, &quot;Consistency with Reference Image&quot;, ainsi que des descriptions textuelles et des exemples visuels (hamburger éclaté, paysages, personnages d&#x27;action).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des capacités de conservation des détails d&#x27;image de référence et de modification sélective des éléments (suppression de personnages).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_005_00-00-41.jpg" alt="Page d&#x27;accueil de la plateforme Seedream 4.5 de ByteDance montrant un lapin en train de faire un selfie sous l&#x27;eau." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_005_00-00-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:41</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Seedream 4.5 de ByteDance montrant un lapin en train de faire un selfie sous l&#x27;eau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_006_00-00-47.jpg" alt="Interface présentant la consistance avec une image de référence et des exemples d&#x27;édition d&#x27;image avec détourage vert." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_006_00-00-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:47</span>
+                        <span class="caption-text">Interface présentant la consistance avec une image de référence et des exemples d&#x27;édition d&#x27;image avec détourage vert.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_007_00-00-54.jpg" alt="Gros plan sur une image d&#x27;action avec un personnage entouré d&#x27;un contour vert pour l&#x27;édition et la suppression d&#x27;arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_007_00-00-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:54</span>
+                        <span class="caption-text">Gros plan sur une image d&#x27;action avec un personnage entouré d&#x27;un contour vert pour l&#x27;édition et la suppression d&#x27;arrière-plan.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:01 - 00:01:20</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez également traduire n&#x27;importe quel texte dans l&#x27;image, changer les matériaux des vêtements et même actualiser les designs de texte tout en conservant la pose cohérente. Il peut également créer des images de présentation de produits propres et réalistes exactement comme celle-ci. Seadream 4.5 est également très fort pour les mises en page d&#x27;affiches.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de présentation de l&#x27;outil d&#x27;IA Seadream 4.5.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché sous les images : &quot;Translate the image into Chinese, using a handwritten font, with all other content unchanged.&quot; et &quot;Generate a best-selling product display image in a modern e-commerce platform style. Top title: &quot;Today&#x27;s Hot Sale&quot;; main product in the middle of the image, price &quot;$9.99&quot; below it. Overall background: a vertical gradient transitioning from orange-pink to light purple-blue.&quot; En-tête : &quot;Poster Layout and Logo Design&quot; avec le texte descriptif &quot;Offers designer-level composition and typography, together with clear and readable small text rendering, ideal for posters, brand visuals, and other creative scenarios.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle des capacités de traduction de texte, de génération d&#x27;images de produits pour le e-commerce et de mise en page d&#x27;affiches par l&#x27;intelligence artificielle Seadream 4.5.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_008_00-01-03.jpg" alt="Interface de Seadream 4.5 montrant la traduction de texte et la structure éclatée d&#x27;un burger avec des légendes en chinois." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_008_00-01-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:03</span>
+                        <span class="caption-text">Interface de Seadream 4.5 montrant la traduction de texte et la structure éclatée d&#x27;un burger avec des légendes en chinois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_009_00-01-10.jpg" alt="Interface de Seadream 4.5 présentant une image de présentation de produit propre et réaliste d&#x27;un pot de miel fait main." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_009_00-01-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Interface de Seadream 4.5 présentant une image de présentation de produit propre et réaliste d&#x27;un pot de miel fait main.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_010_00-01-18.jpg" alt="Interface de Seadream 4.5 présentant des exemples de mises en page d&#x27;affiches et de designs de logos." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_010_00-01-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:18</span>
+                        <span class="caption-text">Interface de Seadream 4.5 présentant des exemples de mises en page d&#x27;affiches et de designs de logos.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:20 - 00:01:38</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ces affiches ont l&#x27;air professionnelles et accrocheuses. On ne devinerait même pas qu&#x27;elles ont été faites avec l&#x27;IA. Avec cet outil, vous n&#x27;avez plus besoin de concevoir des affiches manuellement. Il peut aussi gérer l&#x27;édition multi-images. Si vous lui demandez de combiner plusieurs images en une seule, il préserve parfaitement tous les personnages en arrière-plan.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de présentation d&#x27;un outil de design et de génération d&#x27;images par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : « Poster Layout and Logo Design », « Accurate Multi-Image Editing », et un prompt descriptif sous l&#x27;image agrandie : « Fairy Tale Book Cover: A little girl and a small fox stand in front of a glowing forest cabin... ».</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des fonctionnalités de conception d&#x27;affiches et de fusion d&#x27;images multiples de l&#x27;outil d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_011_00-01-22.jpg" alt="Interface web montrant des exemples de conception d&#x27;affiches et de logos avec des mises en page de niveau professionnel." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_011_00-01-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:22</span>
+                        <span class="caption-text">Interface web montrant des exemples de conception d&#x27;affiches et de logos avec des mises en page de niveau professionnel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_012_00-01-29.jpg" alt="Interface de démonstration de la fonction d&#x27;édition multi-images précise combinant plusieurs visuels." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_012_00-01-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:29</span>
+                        <span class="caption-text">Interface de démonstration de la fonction d&#x27;édition multi-images précise combinant plusieurs visuels.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_013_00-01-36.jpg" alt="Vue agrandie d&#x27;une image combinée centrée avec son prompt textuel descriptif en bas." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_013_00-01-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:36</span>
+                        <span class="caption-text">Vue agrandie d&#x27;une image combinée centrée avec son prompt textuel descriptif en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:38 - 00:02:00</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si vous voulez la même image dans des formats d&#x27;image différents, vous pouvez générer plusieurs versions en une seule invite. Et cela préserve toujours le texte, la mise en page et la scène. Vous pouvez également générer des objets ou des éléments de jeu comme ce ballon dans de nombreux styles différents. Voici des exemples de texte à image. Ils ont l&#x27;air superbes et l&#x27;esthétique globale est très propre et soignée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration logicielle de génération d&#x27;images par IA présentant des exemples de prompts, de variations de formats et de rendus visuels.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : « Based on this banner, create 6 posters. Maintain the same style and elements, but the layout of the elements can be adjusted. The aspect ratios are 1:1, 2:3, 4:3, 16:9, 1:2, and 9:16 respectively. », « Refer to the creativity of the input image and generate 4 separate imaegs for soccer, volleyball, golf, and tennis. », et « Nighttime outdoor photoshoot: A young man stands inside a public phone booth, holding a blue phone receiver to his ear. One hand is cas... »</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle et défilement d&#x27;exemples de générations d&#x27;images par IA illustrant la cohérence de style, les différents formats d&#x27;aspect et la création d&#x27;objets.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_014_00-01-40.jpg" alt="Interface montrant la génération de plusieurs affiches avec des formats d&#x27;image différents à partir d&#x27;une bannière de design moderne." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_014_00-01-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:40</span>
+                        <span class="caption-text">Interface montrant la génération de plusieurs affiches avec des formats d&#x27;image différents à partir d&#x27;une bannière de design moderne.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_015_00-01-49.jpg" alt="Interface présentant un ballon de basketball évidé abritant un terrain miniature à l&#x27;intérieur, avec le prompt associé pour générer d&#x27;autres variantes sportives." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_015_00-01-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:49</span>
+                        <span class="caption-text">Interface présentant un ballon de basketball évidé abritant un terrain miniature à l&#x27;intérieur, avec le prompt associé pour générer d&#x27;autres variantes sportives.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_016_00-01-58.jpg" alt="Interface affichant l&#x27;exemple d&#x27;une image générée représentant un jeune homme dans une cabine téléphonique la nuit, accompagnée de son prompt descriptif." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_016_00-01-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:58</span>
+                        <span class="caption-text">Interface affichant l&#x27;exemple d&#x27;une image générée représentant un jeune homme dans une cabine téléphonique la nuit, accompagnée de son prompt descriptif.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:00 - 00:02:28</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Regardez cette photo de pose longue. Elle gère magnifiquement l&#x27;éclairage et la composition de la scène. Si vous consultez les benchmarks sur leur site web comparant Seedream 4 et Seedream 4.5, la nouvelle version bat l&#x27;ancienne dans toutes les catégories. Mais c&#x27;est là que les choses deviennent intéressantes. Car même si CDream 4.5 montre des améliorations massives de la qualité d&#x27;édition, de la cohérence des personnages et de la génération de posters, les benchmarks publics racontent une histoire légèrement différente.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de présentation et de benchmarks de modèles d&#x27;intelligence artificielle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché sous l&#x27;image : « Dynamic Motion Portrait: A dynamic long-exposure shot of a person in motion against a vivid red background, creating a fluid and artistic visual effect. » Graphiques MagicBench : « Text-to-Image Radar Chart » et « Single-Image Editing Radar Chart » comparant Seedream 4.5 (bleu foncé) et Seedream 4.0 (bleu clair). Tableau des classements avec les modèles : flux-2-pro, seedream-4.5, imagen-4.0-ultra, seedream-4-2k, wan2.5-t2i-preview, gpt-image-1, etc.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des résultats de tests de performance et de génération d&#x27;images par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_017_00-02-02.jpg" alt="Image générée par IA montrant un portrait en mouvement à longue exposition avec un fond rouge vif." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_017_00-02-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:02</span>
+                        <span class="caption-text">Image générée par IA montrant un portrait en mouvement à longue exposition avec un fond rouge vif.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_018_00-02-10.jpg" alt="Graphiques radar multidimensionnels de MagicBench comparant Seedream 4.0 et Seedream 4.5." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_018_00-02-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:10</span>
+                        <span class="caption-text">Graphiques radar multidimensionnels de MagicBench comparant Seedream 4.0 et Seedream 4.5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_019_00-02-19.jpg" alt="Tableau de classement des modèles de texte vers image affichant Seedream-4.5 et d&#x27;autres IA." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_019_00-02-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:19</span>
+                        <span class="caption-text">Tableau de classement des modèles de texte vers image affichant Seedream-4.5 et d&#x27;autres IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:28 - 00:02:55</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Sur le classement texte-image d&#x27;Ella Marina, qui compare des centaines de modèles, CDream 4.5 n&#x27;est que deux points plus haut que CDream 4 au moment de cet enregistrement. Juste deux points. Et cela crée un vrai rebondissement. Soit le classement ne saisit pas pleinement les nouvelles forces du modèle, soit Seedream 4 était déjà si fort qu&#x27;une mise à niveau majeure fait à peine bouger le score.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Tableau de classement en ligne (Leaderboard) avec des onglets de navigation (Overview, Text, WebDev, Vision, Text-to-Image, Image Edit, Search, Text-to-Video, Image-to-Video) et un bouton &quot;Start Voting&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le tableau liste plusieurs modèles d&#x27;IA avec leurs scores et créateurs : rang 6 (flux-2-pro, 1146 points, Black Forest Labs), rang 7 (seedream-4.5, 1146 points, badge &quot;Preliminary&quot;, Bytedance), rang 8 (imagen-4.0-ultra-generate-preview-06-06, 1145 points, Google), rang 9 (seedream-4-2k, 1144 points, Bytedance), rang 10 (imagen-4.0-generate-preview-06-06, 1131 points, Google), rang 11 (seedream-4-high-res-fal, 1124 points, Bytedance), rang 12 (wan2.5-t2i-preview, 1123 points, Alibaba), rang 13 (gpt-image-1, 1119 points, OpenAI), rang 14 (seedream-4-fal, 1118 points, Bytedance), rang 15 (gpt-image-1-mini, 1100 points, OpenAI), rang 16 (mai-image-1, 1091 points, Microsoft AI), rang 17 (seedream-3, 1084 points, Bytedance). Tous les modèles affichent le statut &quot;Proprietary&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage fixe du classement comparatif des modèles d&#x27;intelligence artificielle texte-image.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_020_00-02-30.jpg" alt="Capture d&#x27;écran du classement de modèles d&#x27;IA &quot;Text-to-Image&quot; sur le site Ella Marina, affichant Seedream-4.5 et d&#x27;autres modèles." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_020_00-02-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:30</span>
+                        <span class="caption-text">Capture d&#x27;écran du classement de modèles d&#x27;IA &quot;Text-to-Image&quot; sur le site Ella Marina, affichant Seedream-4.5 et d&#x27;autres modèles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:55 - 00:03:06</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc la grande question est, est-on en train d&#x27;atteindre un point où les améliorations deviennent plus difficiles à mesurer, ou est-ce que Seedream 4.5 surpasse discrètement les attentes d&#x27;une manière que les benchmarks ne montrent pas encore ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Tableau de classement de type LMSYS (Chatbot Arena ou équivalent orienté images) avec des onglets de navigation en haut (Overview, Text, WebDev, Vision, Text-to-Image, Image Edit, Search, Text-to-Video, Image-to-Video).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le tableau présente plusieurs modèles d&#x27;IA avec leurs scores et classements. On peut y voir : flux-2-pro (6e), seedream-4.5 (7e, étiqueté &#x27;Preliminary&#x27;), imagen-4.0-ultra-generate-preview (8e), seedream-4-2k (9e), imagen-4.0-generate-preview (10e), seedream-4-high-res-fal (11e), wan2.5-t2i-preview (12e), gpt-image-1 (13e), seedream-4-fal (14e), gpt-image-1-mini (15e), mai-image-1 (16e). Les colonnes affichent les classements, les scores ELO/scores de performance, et les créateurs (Black Forest Labs, Bytedance, Google, Alibaba, OpenAI, Microsoft AI).</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation d&#x27;un classement de modèles d&#x27;intelligence artificielle text-to-image soulignant la position du modèle Seedream 4.5.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vTcGkM5wMvc/frame_021_00-03-01.jpg" alt="Tableau de classement (Leaderboard) de type LMSYS montrant les performances des modèles Text-to-Image, avec Seedream 4.5 positionné en 7e position." loading="lazy" onclick="openLightbox('screenshots/YT-vTcGkM5wMvc/frame_021_00-03-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:01</span>
+                        <span class="caption-text">Tableau de classement (Leaderboard) de type LMSYS montrant les performances des modèles Text-to-Image, avec Seedream 4.5 positionné en 7e position.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
