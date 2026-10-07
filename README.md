@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `64 / 84` (`76.2%`)
+- **Vidéos traitées** : `65 / 84` (`77.4%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -80,6 +80,7 @@
 | 2025-12-18 | [Révélation sur les images de GPT-1.5 : Vraie évolution ou simple coup marketing ?](2025-12-18_YT-Msrj1lQBonI_Révélation sur les images de GPT-1.5 Vraie évolution ou simple coup marketing_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-12-18_YT-Msrj1lQBonI_Révélation sur les images de GPT-1.5 Vraie évolution ou simple coup marketing_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 45s | `24 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=Msrj1lQBonI) | `Msrj1lQBonI` |
 | 2025-12-14 | [GPT-5.2 vs Gemini 3 — Vrais Tests](2025-12-14_YT-PVf0LdCCxuQ_GPT-5.2 vs Gemini 3 — Vrais Tests_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-12-14_YT-PVf0LdCCxuQ_GPT-5.2 vs Gemini 3 — Vrais Tests_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 15s | `22 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=PVf0LdCCxuQ) | `PVf0LdCCxuQ` |
 | 2025-12-07 | [Nouveau modèle Seedream 4.5 testé : rebondissement choc dans le benchmark !](2025-12-07_YT-vTcGkM5wMvc_Nouveau modèle Seedream 4.5 testé rebondissement choc dans le benchmark !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-12-07_YT-vTcGkM5wMvc_Nouveau modèle Seedream 4.5 testé rebondissement choc dans le benchmark !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 07s | `21 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=vTcGkM5wMvc) | `vTcGkM5wMvc` |
+| 2025-12-02 | [Les images IA sont TROP réalistes... Protégez-vous !](2025-12-02_YT-vcRnzyhBikA_Les images IA sont TROP réalistes... Protégez-vous !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-12-02_YT-vcRnzyhBikA_Les images IA sont TROP réalistes... Protégez-vous !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 39s | `24 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=vcRnzyhBikA) | `vcRnzyhBikA` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

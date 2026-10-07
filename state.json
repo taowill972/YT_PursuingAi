@@ -63,7 +63,8 @@
     "EygX7S0lWEc",
     "Msrj1lQBonI",
     "PVf0LdCCxuQ",
-    "vTcGkM5wMvc"
+    "vTcGkM5wMvc",
+    "vcRnzyhBikA"
   ],
   "processed_videos": [
     {
@@ -957,9 +958,23 @@
       "filepath_html": "/root/YT_PursuingAi/2025-12-07_YT-vTcGkM5wMvc_Nouveau modèle Seedream 4.5 testé rebondissement choc dans le benchmark !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-07T10:13:02Z",
       "status": "completed"
+    },
+    {
+      "video_id": "vcRnzyhBikA",
+      "title": "Les images IA sont TROP réalistes... Protégez-vous !",
+      "raw_title": "AI Images Are TOO Real Now… Protect Yourself!",
+      "filename_md": "2025-12-02_YT-vcRnzyhBikA_Les images IA sont TROP réalistes... Protégez-vous !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2025-12-02_YT-vcRnzyhBikA_Les images IA sont TROP réalistes... Protégez-vous !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2025-12-02",
+      "duration": 219,
+      "screenshots_count": 24,
+      "filepath_md": "/root/YT_PursuingAi/2025-12-02_YT-vcRnzyhBikA_Les images IA sont TROP réalistes... Protégez-vous !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2025-12-02_YT-vcRnzyhBikA_Les images IA sont TROP réalistes... Protégez-vous !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-07T10:21:58Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 64,
+  "completed_count": 65,
   "last_run_timestamp": "2026-10-07T10:00:03Z",
   "status": "running",
   "total_catalog_count": 84

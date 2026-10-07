@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Les images IA sont TROP réalistes... Protégez-vous ! — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Les images IA sont TROP réalistes... Protégez-vous !</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-12-02</span>
+                <span class="badge">⏱️ 03m 39s</span>
+                <span class="badge">🆔 <code>vcRnzyhBikA</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=vcRnzyhBikA" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de Pursuing AI, intitulée « Les images IA sont TROP réalistes... Protégez-vous ! », met en lumière une réalité sociétale et technique alarmante : la prolifération d'images synthétiques hyper-réalistes capables de tromper même les plus aguerris, ouvrant la voie à des menaces d'usurpation et d'extorsion émotionnelle. Le créateur pose un constat implacable : les indices visuels obsolètes (comme les artefacts grossiers sur les mains ou les arrière-plans incohérents) ne suffisent plus face à la précision des nouveaux modèles. Pour contrer ce phénomène, la vidéo expose une méthodologie de défense rigoureuse, articulée autour de solutions technologiques de pointe et d'une analyse humaine minutieuse.</p><p>L'approche pédagogique repose sur un double niveau de vérification. D'une part, l'exploitation des métadonnées cryptographiques et des filigranes invisibles, à l'instar de SynthID, permet de démasquer instantanément les contenus générés par l'écosystème Google, même après le charcutage ou la suppression du watermark visible. D'autre part, lorsque les outils de détection automatisée font défaut face à des modèles tiers, le créateur enseigne une méthode empirique d'investigation visuelle : le « zoom et analyse ». Cette technique cible les angles morts persistants de l'intelligence artificielle — textures épidermiques trop lisses, anomalies anatomiques subtiles au niveau des doigts et asymétries d'accessoires.</p><p>Pour les créateurs de vidéo et les professionnels de l'image, les bénéfices de cette analyse sont immenses. Elle offre non seulement une boussole pour sécuriser ses propres productions et s'armer contre la désinformation, mais elle fournit également les clés pour comprendre les standards actuels du réalisme synthétique. En maîtrisant à la fois les failles des IA génératives et les contre-mesures cryptographiques, les créateurs renforcent leur veille technologique et garantissent l'intégrité de leurs flux de production face aux dérives de la synthetic media.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Nano Banana Pro</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>L&#x27;obsolescence des artefacts classiques** : Les vieux marqueurs d&#x27;erreur de l&#x27;IA (doigts surnuméraires évidents, yeux difformes) ne constituent plus des indicateurs fiables en raison de la fulgurante progression des modèles génératifs.</span></li><li><span class="point-bullet">✦</span><span>La menace du deepfake contextuel** : L&#x27;hyper-réalisme des images permet désormais aux escrocs de fabriquer de fausses preuves visuelles impliquant des proches pour orchestrer des tentatives d&#x27;extorsion.</span></li><li><span class="point-bullet">✦</span><span>Le double rempart de détection** : La sécurité face aux images synthétiques repose sur une approche hybride combinant des outils technologiques invisibles et une analyse visuelle critique.</span></li><li><span class="point-bullet">✦</span><span>La puissance du filigrane visible et invisible** : Google intègre une double protection, combinant un marquage à l&#x27;écran facile à identifier et une empreinte cryptographique de fond.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;infaillibilité relative de SynthID** : Même si un utilisateur malveillant rogne ou supprime le filigrane visuel d&#x27;une image créée par Nano Banana Pro, la signature cachée de SynthID persiste dans les pixels.</span></li><li><span class="point-bullet">✦</span><span>Le rôle pivot des grands modèles de langage** : L&#x27;interface conversationnelle de Gemini sert de scanner accessible au grand public pour interroger une image et révéler sa nature artificielle grâce à la reconnaissance du filigrane invisible.</span></li><li><span class="point-bullet">✦</span><span>La limite écosystémique** : Le principal point de vulnérabilité actuel réside dans le fait que SynthID est cloisonné aux outils de Google, laissant les utilisateurs démunis face aux générateurs tiers non étiquetés.</span></li><li><span class="point-bullet">✦</span><span>La méthode du zoom et de l&#x27;analyse** : En l&#x27;absence de traçabilité numérique, l&#x27;examen minutieux des micro-détails (texture de peau, raccords d&#x27;accessoires) redevient l&#x27;ultime bouclier d&#x27;investigation.</span></li><li><span class="point-bullet">✦</span><span>Le piège de la texture épidermique** : Les générateurs ont tendance à lisser excessivement la peau, éliminant les pores, rides et aspérités naturelles au profit d&#x27;un rendu plastique ou brillant caractéristique.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;inspection anatomique chirurgicale** : L&#x27;analyse des mains et des membres reste un indicateur secondaire précieux, en traquant les zones de fusion anormale avec les objets ou les courbures de doigts contre-intuitives.</span></li><li><span class="point-bullet">✦</span><span>La vérification des accessoires asymétriques** : Les objets complexes comme les montures de lunettes ou les boucles d&#x27;oreilles trahissent souvent l&#x27;IA par des défauts de symétrie ou des incohérences structurelles des deux côtés du visage.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;impératif d&#x27;une norme universelle** : Le déploiement généralisé de standards de traçabilité similaires à SynthID à l&#x27;échelle de toute l&#x27;industrie de l&#x27;IA est présenté comme la condition sine qua non pour sécuriser l&#x27;avenir des contenus numériques.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les images générées par IA sont devenues si réalistes que même des experts se font avoir. Et dans les jours à venir, ce ne sera pas seulement un problème technique. Cela pourrait devenir une menace bien réelle. Des escrocs pourraient créer de fausses photos de votre famille, vous les envoyer dans un mauvais contexte et exiger de l&#x27;argent. Et si vous n&#x27;êtes pas entraîné à reconnaître les images générées par IA, vous pourriez facilement tomber dans le panneau.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation d&#x27;exemples visuels d&#x27;images synthétiques photoréalistes générées par intelligence artificielle (style photos de réseaux sociaux et selfies).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Visualisation de fausses photographies au réalisme saisissant simulant des selfies et des scènes de la vie quotidienne.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilé de visuels trompeurs illustrant le réalisme extrême des créations d&#x27;images par IA pour appuyer le propos sur les risques d&#x27;usurpation et d&#x27;arnaques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_001_00-00-02.jpg" alt="Image générée par IA montrant une jeune femme souriante prenant un selfie dans un miroir de chambre." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Image générée par IA montrant une jeune femme souriante prenant un selfie dans un miroir de chambre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_002_00-00-11.jpg" alt="Image générée par IA montrant une femme vêtue d&#x27;un costume de lapin et faisant une grimace." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_002_00-00-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:11</span>
+                        <span class="caption-text">Image générée par IA montrant une femme vêtue d&#x27;un costume de lapin et faisant une grimace.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_003_00-00-19.jpg" alt="Grille d&#x27;exemples multiples d&#x27;images et de portraits réalistes générés par intelligence artificielle dans divers contextes et environnements." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_003_00-00-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:19</span>
+                        <span class="caption-text">Grille d&#x27;exemples multiples d&#x27;images et de portraits réalistes générés par intelligence artificielle dans divers contextes et environnements.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:21 - 00:00:45</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour vous assurer que cela ne vous arrive jamais, j&#x27;ai recherché des méthodes simples et fiables que tout le monde peut utiliser pour repérer les images générées par IA. C&#x27;est Pursuing AI, et vous regardez le Research Report. Avant de passer aux astuces, comprenons pourquoi les images par IA deviennent si réalistes. Des modèles comme Nano Banana Pro de Google et d&#x27;autres sont entraînés sur des milliards de vraies photos, apprenant le moindre petit détail.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface logicielle d&#x27;analyse d&#x27;images et interface web de présentation du modèle d&#x27;intelligence artificielle Google Nano Banana Pro.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;The model was trained on a large and varied dataset...&quot;, &quot;The training data includes web documents, code, mathematics...&quot;, &quot;The model learns by processing billions of image-text pairs...&quot;, &quot;A key feature of Nano Banana Pro is its ability to connect to Google Search...&quot;. Prompt visible sous l&#x27;image de la grenouille : &quot;This is a stunning close-up photograph of a red-eyed tree frog...&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle illustrant l&#x27;analyse technique d&#x27;images par IA, la présentation du modèle Nano Banana Pro via son site web officiel et l&#x27;affichage de ses spécifications d&#x27;entraînement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_004_00-00-23.jpg" alt="Un utilisateur penché sur un ordinateur portable affichant une interface d&#x27;analyse d&#x27;image avec des graphiques colorés et des données techniques." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_004_00-00-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:23</span>
+                        <span class="caption-text">Un utilisateur penché sur un ordinateur portable affichant une interface d&#x27;analyse d&#x27;image avec des graphiques colorés et des données techniques.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_005_00-00-37.jpg" alt="Page web du modèle Nano Banana Pro montrant des exemples de génération d&#x27;images, notamment une grenouille aux yeux rouges sur une feuille." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_005_00-00-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:37</span>
+                        <span class="caption-text">Page web du modèle Nano Banana Pro montrant des exemples de génération d&#x27;images, notamment une grenouille aux yeux rouges sur une feuille.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_006_00-00-43.jpg" alt="Page de documentation textuelle listant les caractéristiques d&#x27;entraînement du modèle et son lien avec Google Search." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_006_00-00-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:43</span>
+                        <span class="caption-text">Page de documentation textuelle listant les caractéristiques d&#x27;entraînement du modèle et son lien avec Google Search.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:45 - 00:01:08</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Texture de peau, éclairage, ombres, reflets, tout. C&#x27;est pourquoi les vieux signes de l&#x27;IA, doigts supplémentaires, yeux bizarres, arrière-plans brouillons, ne fonctionnent plus toujours. Mais ne vous inquiétez pas, il y a encore des moyens fiables repérer les faux, et nous allons les décortiquer un par un. D&#x27;abord, parlons du principal générateur d&#x27;images actuel, le Nano Banana Pro de Google.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web présentant des exemples d&#x27;images générées par IA, des analyses d&#x27;anomalies visuelles et la page officielle Google DeepMind pour &quot;Nano Banana Pro&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affichant &quot;Nano Banana Pro&quot;, &quot;Built on Gemini 3.erce&quot;, &quot;Try in Gemini&quot;, &quot;Capabilities&quot;, &quot;Performance&quot;, &quot;Safety&quot;, &quot;Try Nano Banana Pro&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle d&#x27;exemples d&#x27;images réalistes et de techniques pour repérer les défauts d&#x27;IA, suivie de la découverte de l&#x27;interface Google Nano Banana Pro.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_007_00-00-47.jpg" alt="Image #1 montrant des détails de textures générées par IA (araignée et portrait de femme en rouge)." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_007_00-00-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:47</span>
+                        <span class="caption-text">Image #1 montrant des détails de textures générées par IA (araignée et portrait de femme en rouge).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_008_00-00-53.jpg" alt="Image #2 montrant une photo de groupe truquée par IA avec Donald Trump et plusieurs femmes, avec des cercles jaunes soulignant les anomalies anatomiques et les défauts d&#x27;arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_008_00-00-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:53</span>
+                        <span class="caption-text">Image #2 montrant une photo de groupe truquée par IA avec Donald Trump et plusieurs femmes, avec des cercles jaunes soulignant les anomalies anatomiques et les défauts d&#x27;arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_009_00-01-00.jpg" alt="Image #3 montrant une page web de présentation avec des exemples d&#x27;infographies textuelles et botaniques générées par IA." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_009_00-01-00.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:00</span>
+                        <span class="caption-text">Image #3 montrant une page web de présentation avec des exemples d&#x27;infographies textuelles et botaniques générées par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_010_00-01-06.jpg" alt="Image #4 montrant la page web officielle de Google DeepMind présentant le générateur d&#x27;images &quot;Nano Banana Pro&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_010_00-01-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:06</span>
+                        <span class="caption-text">Image #4 montrant la page web officielle de Google DeepMind présentant le générateur d&#x27;images &quot;Nano Banana Pro&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:08 - 00:01:40</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il peut créer des images extrêmement réalistes que même les experts ont du mal à identifier comme générées par l&#x27;IA. La question est donc : comment savoir si une image est réelle ou faite par l&#x27;IA ? La première méthode est simple. Vérifiez le filigrane. Mais que se passe-t-il si un escroc supprime le filigrane ? Pas de problème. Vous avez encore une autre option, SynthID. SynthID est le système de filigrane spécial de Google pour le contenu généré par l&#x27;IA. Il ajoute une marque cachée à l&#x27;intérieur des images, des audio, des textes et des vidéos générés par l&#x27;IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web officiel de Google dédié à SynthID (DeepMind) avec un design sombre minimaliste.</p>
+                        <p><strong>Contenu textuel & Code :</strong> En-tête : &quot;What is SynthID?&quot;. Texte descriptif : &quot;Generative AI can help us all to be more creative, productive, and innovative. But it can be hard to tell the difference between content that&#x27;s been AI-generated, and content created without AI.&quot; Onglets de navigation : &quot;Overview&quot;, &quot;How it works&quot;, &quot;Hands-on&quot;, &quot;Become a partner&quot;. Visuels illustratifs incluant un chien aux poils roses et un graphique abstrait de dégradé.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation visuelle de la page web expliquant la technologie de filigrane SynthID de Google.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_011_00-01-30.jpg" alt="Page web officielle de Google expliquant ce qu&#x27;est SynthID avec une image de caniche rose au premier plan." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_011_00-01-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:30</span>
+                        <span class="caption-text">Page web officielle de Google expliquant ce qu&#x27;est SynthID avec une image de caniche rose au premier plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_012_00-01-38.jpg" alt="Visuel abstrait coloré en dégradé bleu et orange illustrant le fonctionnement de SynthID sur le site de Google." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_012_00-01-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:38</span>
+                        <span class="caption-text">Visuel abstrait coloré en dégradé bleu et orange illustrant le fonctionnement de SynthID sur le site de Google.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:41 - 00:02:18</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous ne pouvez pas voir cette marque, mais les outils de Google peuvent la détecter et confirmer si le contenu a été généré par IA. Maintenant, j&#x27;ai créé cette image en utilisant Google Nano Banana Pro. Avec le filigrane, il est facile de dire que c&#x27;est de l&#x27;IA. Mais que se passe-t-il si je supprime le filigrane ? Pouvez-vous toujours l&#x27;identifier ? Cela peut sembler difficile, mais plus maintenant. Vous pouvez utiliser Gemini pour vérifier si l&#x27;image a été générée par IA. Il suffit de télécharger l&#x27;image et de demander à Gemini. Il peut toujours détecter la marque cachée Synth ID même lorsque le filigrane visible est supprimé. Cependant, Synth ID ne fonctionne qu&#x27;avec les propres produits d&#x27;IA de Google. Voici donc le vrai problème.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Google Gemini et site de présentation de Synth ID.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Overview, How it works, Hands-on, Become a partner&quot;, &quot;Hello Pursuing&quot;, et dans le champ de saisie de Gemini : &quot;is this image generated by ai?&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur illustre la détection d&#x27;une image générée par IA en montrant le filigrane visible, puis en utilisant Gemini pour analyser l&#x27;image importée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_013_00-01-43.jpg" alt="Interface de présentation montrant une image de zèbre pixelisée avec un cadre de sélection." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_013_00-01-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:43</span>
+                        <span class="caption-text">Interface de présentation montrant une image de zèbre pixelisée avec un cadre de sélection.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_014_00-01-54.jpg" alt="Image générée par IA d&#x27;une femme dans une salle de sport avec un filigrane Synth ID mis en évidence en bas à droite." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_014_00-01-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:54</span>
+                        <span class="caption-text">Image générée par IA d&#x27;une femme dans une salle de sport avec un filigrane Synth ID mis en évidence en bas à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_015_00-02-06.jpg" alt="Interface de l&#x27;outil Gemini avec une image importée et le prompt textuel demandant si elle a été générée par IA." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_015_00-02-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:06</span>
+                        <span class="caption-text">Interface de l&#x27;outil Gemini avec une image importée et le prompt textuel demandant si elle a été générée par IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:18 - 00:02:36</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si un escroc utilise un autre outil d&#x27;image IA qui ne prend pas en charge SynthID ? Ainsi, lorsque SynthID n&#x27;est pas disponible, le seul outil fiable dont vous disposez est votre propre observation. Voici trois méthodes simples que tout le monde peut utiliser pour repérer les images générées par IA. La première est la méthode du zoom et de l&#x27;analyse.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de présentation du modèle d&#x27;intelligence artificielle FLUX.2.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;FLUX.2&quot;, &quot;Production-grade AI image generation and editing model with 4MP photorealistic output and multi-reference control&quot;, boutons &quot;Try in Playground&quot;, &quot;Access via API&quot;, &quot;Open Weights&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement horizontal à travers différentes images d&#x27;exemples générées par le modèle FLUX.2 pour illustrer les capacités de génération.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_016_00-02-20.jpg" alt="Présentation du modèle FLUX.2 avec une image d&#x27;appareil photo reflex générée par IA." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_016_00-02-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:20</span>
+                        <span class="caption-text">Présentation du modèle FLUX.2 avec une image d&#x27;appareil photo reflex générée par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_017_00-02-27.jpg" alt="Affichage d&#x27;exemples d&#x27;images combinées, incluant le portrait d&#x27;une femme dans un canyon et un logo &quot;GREEN&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_017_00-02-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:27</span>
+                        <span class="caption-text">Affichage d&#x27;exemples d&#x27;images combinées, incluant le portrait d&#x27;une femme dans un canyon et un logo &quot;GREEN&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_018_00-02-34.jpg" alt="Affichage d&#x27;une composition montrant un coureur en mouvement avec des traînées lumineuses et une grille d&#x27;objets divers (moto, dunes de sable, bijoux)." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_018_00-02-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:34</span>
+                        <span class="caption-text">Affichage d&#x27;une composition montrant un coureur en mouvement avec des traînées lumineuses et une grille d&#x27;objets divers (moto, dunes de sable, bijoux).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:36 - 00:02:58</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est le moyen non technique le plus simple pour repérer les erreurs de l&#x27;IA. Il suffit de zoomer et de chercher les petits détails que l&#x27;IA rate généralement. Les mains et les membres. L&#x27;IA a encore du mal avec les mains. Cherchez trop ou trop peu de doigts. Des doigts inhabituellement longs ou pliés de façon étrange. Des mains qui semblent fondre dans les objets. La texture de la peau.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo illustrative avec exemples d&#x27;images générées ou modifiées par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Visuels d&#x27;exemples d&#x27;erreurs d&#x27;IA (mains anormales, artefacts).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage successif d&#x27;images d&#x27;exemples pour illustrer les erreurs commises par l&#x27;intelligence artificielle sur les mains et les textures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_019_00-02-38.jpg" alt="Image générée par IA montrant une femme cuisinant dans une cuisine rustique, utilisée pour illustrer la texture de la peau et les détails." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_019_00-02-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:38</span>
+                        <span class="caption-text">Image générée par IA montrant une femme cuisinant dans une cuisine rustique, utilisée pour illustrer la texture de la peau et les détails.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_020_00-02-47.jpg" alt="Image générée par IA montrant Donald Trump entouré de femmes, avec des cercles jaunes soulignant des anomalies sur les mains et les drapeaux en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_020_00-02-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:47</span>
+                        <span class="caption-text">Image générée par IA montrant Donald Trump entouré de femmes, avec des cercles jaunes soulignant des anomalies sur les mains et les drapeaux en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_021_00-02-56.jpg" alt="Photographie modifiée montrant Diddy posant une main aux doigts anormaux sur l&#x27;épaule de LeBron James, encerclée en rouge." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_021_00-02-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:56</span>
+                        <span class="caption-text">Photographie modifiée montrant Diddy posant une main aux doigts anormaux sur l&#x27;épaule de LeBron James, encerclée en rouge.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:59 - 00:03:18</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La peau générée par l&#x27;IA a souvent l&#x27;air trop lisse ou brillante, presque plastique. La vraie peau a des pores, des rides et des imperfections naturelles. La peau de l&#x27;IA a souvent l&#x27;air trop lisse ou brillante. Accessoires. Vérifiez les petits objets comme les lunettes. Les montures peuvent ne pas correspondre des deux côtés, les boucles d&#x27;oreilles sont souvent manquantes ou dépareillées.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra sans partage d&#x27;écran</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucune interface logicielle, aucun texte ni paramètre technique affiché à l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une vidéo ou des images d&#x27;illustration générées par IA pour illustrer son propos sur les défauts de texture de peau et d&#x27;accessoires.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:18 - 00:03:38</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">À mon avis, Synth ID est actuellement le moyen le plus fiable pour détecter si une image est générée par l&#x27;IA. Il a été créé par Google DeepMind et il ajoute un filigrane invisible qui peut être vérifié même si le filigrane visible est supprimé. Chaque outil d&#x27;IA devrait adopter Synth ID ou un système similaire pour assurer la sécurité des utilisateurs et prévenir les escroqueries à l&#x27;avenir.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Google Gemini et page de présentation Google DeepMind.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;Hi Christopher&quot;, &quot;Is this image generated by AI?&quot;, &quot;Analysis: Based on the analysis, a SynthID watermark was detected in more than 50% of the image...&quot;, &quot;What is SynthID? Generative AI can help us all to be more creative...&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et démonstration dans l&#x27;interface de Gemini pour tester la détection de filigrane d&#x27;une image générée par l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_022_00-03-20.jpg" alt="Interface de Gemini affichant la question posée par l&#x27;utilisateur « Is this image generated by AI? »." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_022_00-03-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:20</span>
+                        <span class="caption-text">Interface de Gemini affichant la question posée par l&#x27;utilisateur « Is this image generated by AI? ».</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_023_00-03-28.jpg" alt="Résultat de l&#x27;analyse dans l&#x27;interface de Gemini montrant la détection d&#x27;un filigrane SynthID sur l&#x27;image d&#x27;une voiture rouge." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_023_00-03-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:28</span>
+                        <span class="caption-text">Résultat de l&#x27;analyse dans l&#x27;interface de Gemini montrant la détection d&#x27;un filigrane SynthID sur l&#x27;image d&#x27;une voiture rouge.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-vcRnzyhBikA/frame_024_00-03-36.jpg" alt="Page de présentation « What is SynthID? » expliquant le fonctionnement du nouvel outil de filigranage de Google." loading="lazy" onclick="openLightbox('screenshots/YT-vcRnzyhBikA/frame_024_00-03-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:36</span>
+                        <span class="caption-text">Page de présentation « What is SynthID? » expliquant le fonctionnement du nouvel outil de filigranage de Google.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
