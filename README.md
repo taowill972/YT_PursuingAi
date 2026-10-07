@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `73 / 84` (`86.9%`)
+- **Vidéos traitées** : `74 / 84` (`88.1%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -89,6 +89,7 @@
 | 2025-11-14 | [Tout ce que vous devez savoir sur GPT 5.1 : les détails complets](2025-11-14_YT-HFq1xncPrIc_Tout ce que vous devez savoir sur GPT 5.1 les détails complets_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-11-14_YT-HFq1xncPrIc_Tout ce que vous devez savoir sur GPT 5.1 les détails complets_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 10s | `17 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=HFq1xncPrIc) | `HFq1xncPrIc` |
 | 2025-11-10 | [1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5 ?](2025-11-10_YT-4nYriaeipLA_1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-11-10_YT-4nYriaeipLA_1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 29s | `24 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=4nYriaeipLA) | `4nYriaeipLA` |
 | 2025-11-04 | [(MoCha) Le nouveau challenger de Wan Animate ! Tests réels et avis complet](2025-11-04_YT-ftfnt6B36eI_(MoCha) Le nouveau challenger de Wan Animate ! Tests réels et avis complet_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-11-04_YT-ftfnt6B36eI_(MoCha) Le nouveau challenger de Wan Animate ! Tests réels et avis complet_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 18s | `7 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=ftfnt6B36eI) | `ftfnt6B36eI` |
+| 2025-11-03 | [(Emu 3.5) The Open-Source AI That Beats Google and OpenAI Models!](2025-11-03_YT-xYQtWa_YPFw_(Emu 3.5) The Open-Source AI That Beats Google and OpenAI Models!_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-11-03_YT-xYQtWa_YPFw_(Emu 3.5) The Open-Source AI That Beats Google and OpenAI Models!_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 13s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=xYQtWa_YPFw) | `xYQtWa_YPFw` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
