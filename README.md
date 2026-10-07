@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `71 / 84` (`84.5%`)
+- **Vidéos traitées** : `72 / 84` (`85.7%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -87,6 +87,7 @@
 | 2025-11-21 | [Nano Banana Pro vient de choquer tout le monde](2025-11-21_YT-CtR8KRHsOSo_Nano Banana Pro vient de choquer tout le monde_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-11-21_YT-CtR8KRHsOSo_Nano Banana Pro vient de choquer tout le monde_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 56s | `25 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=CtR8KRHsOSo) | `CtR8KRHsOSo` |
 | 2025-11-17 | [Les fuites de Nano Banana 2 deviennent incontrôlables…](2025-11-17_YT-mhryTXdg0S4_Les fuites de Nano Banana 2 deviennent incontrôlables…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-11-17_YT-mhryTXdg0S4_Les fuites de Nano Banana 2 deviennent incontrôlables…_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 00s | `19 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=mhryTXdg0S4) | `mhryTXdg0S4` |
 | 2025-11-14 | [Tout ce que vous devez savoir sur GPT 5.1 : les détails complets](2025-11-14_YT-HFq1xncPrIc_Tout ce que vous devez savoir sur GPT 5.1 les détails complets_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-11-14_YT-HFq1xncPrIc_Tout ce que vous devez savoir sur GPT 5.1 les détails complets_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 10s | `17 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=HFq1xncPrIc) | `HFq1xncPrIc` |
+| 2025-11-10 | [1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5 ?](2025-11-10_YT-4nYriaeipLA_1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-11-10_YT-4nYriaeipLA_1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 29s | `24 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=4nYriaeipLA) | `4nYriaeipLA` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

@@ -70,7 +70,8 @@
     "owYisYT9akg",
     "CtR8KRHsOSo",
     "mhryTXdg0S4",
-    "HFq1xncPrIc"
+    "HFq1xncPrIc",
+    "4nYriaeipLA"
   ],
   "processed_videos": [
     {
@@ -1062,9 +1063,23 @@
       "filepath_html": "/root/YT_PursuingAi/2025-11-14_YT-HFq1xncPrIc_Tout ce que vous devez savoir sur GPT 5.1 les détails complets_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-07T16:10:44Z",
       "status": "completed"
+    },
+    {
+      "video_id": "4nYriaeipLA",
+      "title": "1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5 ?",
+      "raw_title": "1 Trillion Parameters… But Can Kimi K2 Beat GPT-5?",
+      "filename_md": "2025-11-10_YT-4nYriaeipLA_1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2025-11-10_YT-4nYriaeipLA_1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2025-11-10",
+      "duration": 209,
+      "screenshots_count": 24,
+      "filepath_md": "/root/YT_PursuingAi/2025-11-10_YT-4nYriaeipLA_1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2025-11-10_YT-4nYriaeipLA_1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-07T16:14:48Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 71,
+  "completed_count": 72,
   "last_run_timestamp": "2026-10-07T16:00:04Z",
   "status": "running",
   "total_catalog_count": 84

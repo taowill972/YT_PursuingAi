@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5 ? — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 1000 milliards de paramètres... Mais Kimi K2 peut-il battre GPT-5 ?</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-11-10</span>
+                <span class="badge">⏱️ 03m 29s</span>
+                <span class="badge">🆔 <code>4nYriaeipLA</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=4nYriaeipLA" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>Dans cette vidéo du créateur *Pursuing AI*, l'analyse se penche sur le modèle **Kimi K2** de Moonshot AI, un mastodonte annoncé à 1 000 milliards de paramètres, censé rivaliser directement avec le redoutable **GPT-5**. Plutôt que de se fier au simple battage médiatique marketing, le vidéaste adopte une démarche empirique et rigoureuse : il soumet Kimi K2 aux mêmes tests et prompts exacts que ceux présentés par OpenAI lors de l'annonce officielle de GPT-5. Cette méthode comparative étape par étape permet de confronter les promesses théoriques des géants de l'IA à la dure réalité des performances pratiques sur des tâches de génération de code applicatif et interactif.</p><p>Sur le plan de la production visuelle et de l'intégration multimédia, la vidéo met en lumière l'utilisation d'outils de pointe tels que **Seedance 2.5**, **Kling 3.0** et **Midjourney** pour dynamiser le support visuel, illustrant la manière dont les créateurs modernes marient analyse technique et esthétique futuriste. Le processus du créateur consiste à lancer des défis de plus en plus complexes — de la création d'un mini-jeu de type *Rolling Ball* jusqu'à une application de peinture pixelisée et un instrument de musique virtuel (batterie virtuelle). Le flux de travail démontre l'importance cruciale de tester la robustesse des modèles d'intelligence artificielle face à des instructions multi-étapes et à la génération d'interfaces graphiques dynamiques.</p><p>Les enseignements pour les créateurs de contenu vidéo et les développeurs s'avèrent précieux. Si Kimi K2 impressionne par son statut open-source et sa capacité à réussir des tâches complexes sur-mesure (comme la batterie virtuelle avec enregistrement audio), il échoue paradoxalement sur des bases HTML/JavaScript standard où GPT-5 excelle. Cette analyse offre une perspective nuancée : le nombre brut de paramètres ne garantit pas une supériorité uniforme, rappelant aux créateurs qu'il est indispensable d'évaluer chaque modèle selon ses cas d'usage spécifiques plutôt que de céder à l'effet d'annonce des benchmarks théoriques.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Ne jamais se fier aux benchmarks théoriques** : Un modèle affichant 1 000 milliards de paramètres (comme Kimi K2) ne garantit pas automatiquement des performances supérieures sur des tâches pratiques du quotidien.</span></li><li><span class="point-bullet">✦</span><span>La puissance du test empirique comparative** : Reproduire exactement les mêmes prompts présentés lors des lancements officiels d&#x27;un concurrent (GPT-5) est la méthode la plus objective pour déceler les failles marketing.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;importance de la logique de jeu (Game Logic)** : Kimi K2 a échoué sur le mini-jeu *Rolling Ball* en raison d&#x27;une gestion défaillante de la physique, de l&#x27;absence de système de fin de partie (*game over*) et d&#x27;une accélération incontrôlable de la vitesse.</span></li><li><span class="point-bullet">✦</span><span>La fragilité sur les interfaces graphiques de base** : Malgré sa grande taille, Kimi K2 a montré des limites sur l&#x27;application *Pixel Painting*, incapable de faire fonctionner des outils basiques comme le crayon, la gomme ou le remplissage de couleur.</span></li><li><span class="point-bullet">✦</span><span>Le succès des prompts longs et personnalisés** : Face à un prompt extrêmement détaillé rédigé par le créateur pour une batterie virtuelle, Kimi K2 a surpris en réussissant à générer des pads fonctionnels avec contrôle de volume et enregistrement.</span></li><li><span class="point-bullet">✦</span><span>Le défi de l&#x27;exécutabilité locale** : Bien que Kimi K2 soit open-source, sa structure lourde à un trillion de paramètres le rend difficilement exécutable en local pour la grande majorité des créateurs et développeurs.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;importance de l&#x27;expérience utilisateur (UX)** : Les tests de GPT-5 intègrent nativement des micro-interactions soignées (boutons de son cliquables, pop-ups de score fluides) que les modèles alternatifs peinent à répliquer du premier coup.</span></li><li><span class="point-bullet">✦</span><span>Optimiser le workflow de test multi-modèle** : L&#x27;utilisation d&#x27;écrans ou de tests côte à côte (*side-by-side*) permet de visualiser instantanément les divergences de rendu et de déboguer l&#x27;efficacité des prompts.</span></li><li><span class="point-bullet">✦</span><span>Gérer les attentes face à l&#x27;open-source** : Si les modèles ouverts progressent à pas de géant, les solutions propriétaires fermées gardent souvent une longueur d&#x27;avance sur la cohérence logique globale à grande échelle.</span></li><li><span class="point-bullet">✦</span><span>Engager la communauté par l&#x27;interactivité** : Intégrer un appel à l&#x27;action ludique (demander le meilleur score au jeu de la balle rebondissante dans les commentaires) renforce l&#x27;engagement et la rétention sur la vidéo.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:23</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Kimi K2 vient de sortir chez Moonshot AI. Et oui, ils affirment que c&#x27;est un monstre à 1 000 milliards de paramètres qui bat presque ChatGPT sur tous les benchmarks. Une affirmation audacieuse, n&#x27;est-ce pas ? Mais nous ne faisons pas confiance au battage médiatique, nous testons la réalité. Alors aujourd&#x27;hui, je lance chaque exemple qu&#x27;OpenAI a présenté lors de son annonce de GPT-5, mais sur Kimi K2.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Pages web de présentation de Kimi K2 et de GPT-5 avec graphiques de performance et vidéo de démonstration.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titres &#x27;Kimi K2: Open Agentic Intelligence&#x27;, texte technique sur le modèle à 32 milliards de paramètres actifs et 1 000 milliards au total, graphiques de benchmarks (&#x27;Humanity&#x27;s Last Exam&#x27;, &#x27;BrowseComp&#x27;, &#x27;Seal-0&#x27;, &#x27;SWE-Multilingual&#x27;, &#x27;SWE-bench Verified&#x27;, &#x27;LiveCodeBench V6&#x27;), ainsi que la page d&#x27;annonce &#x27;Introducing GPT-5&#x27; avec le bouton &#x27;Try on ChatGPT&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des spécifications techniques de Kimi K2, affichage de graphiques de benchmarks comparatifs, puis transition vers la page d&#x27;annonce de GPT-5 montrant une démo de suivi de main.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_001_00-00-02.jpg" alt="Capture d&#x27;écran textuelle présentant l&#x27;annonce de Kimi K2 : Open Agentic Intelligence par Moonshot AI." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Capture d&#x27;écran textuelle présentant l&#x27;annonce de Kimi K2 : Open Agentic Intelligence par Moonshot AI.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_002_00-00-08.jpg" alt="Graphiques comparatifs des performances de Kimi K2 Thinking face à GPT-5 et Claude Sonnet 4.5 sur différents benchmarks." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_002_00-00-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:08</span>
+                        <span class="caption-text">Graphiques comparatifs des performances de Kimi K2 Thinking face à GPT-5 et Claude Sonnet 4.5 sur différents benchmarks.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_003_00-00-16.jpg" alt="Graphiques comparatifs identiques montrant les scores de Kimi K2 Thinking face à la concurrence." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_003_00-00-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:16</span>
+                        <span class="caption-text">Graphiques comparatifs identiques montrant les scores de Kimi K2 Thinking face à la concurrence.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_004_00-00-21.jpg" alt="Capture d&#x27;écran de l&#x27;annonce officielle de GPT-5 montrant une démo vidéo avec un suivi de main et un trait bleu." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_004_00-00-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:21</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;annonce officielle de GPT-5 montrant une démo vidéo avec un suivi de main et un trait bleu.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:23 - 00:00:47</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et vous verrez de vos propres yeux si ce modèle est l&#x27;avenir ou juste de la fumée marketing. C&#x27;est Pursuing AI et vous regardez le Research Report. Trouvons la vérité. Sur la page d&#x27;introduction de GPT-5, le premier exemple était le mini-jeu Rolling Ball. Et honnêtement, c&#x27;est impressionnant. Le nom du jeu apparaît, il y a un tableau des scores, un suivi du meilleur score, une option de vitesse et même un bouton de son fonctionnel.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la page d&#x27;introduction officielle de GPT-5 puis interface d&#x27;un mini-jeu interactif 2D.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Introducing GPT-5&quot;, &quot;Our smartest, fastest, most useful model yet...&quot;, &quot;Try on ChatGPT&quot;, &quot;The Research Report&quot;, et dans le jeu : &quot;Jumping Ball Runner&quot;, &quot;Score: 60&quot;, &quot;Best: 306&quot;, &quot;Speed: 608&quot;, &quot;Muted&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de la page de présentation de GPT-5, superposition du logo de la chaîne, puis démonstration du mini-jeu interactif avec affichage des scores et des options.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_005_00-00-25.jpg" alt="Page web d&#x27;introduction de GPT-5 montrant une structure 3D sphérique et le titre &quot;Introducing GPT-5&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_005_00-00-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:25</span>
+                        <span class="caption-text">Page web d&#x27;introduction de GPT-5 montrant une structure 3D sphérique et le titre &quot;Introducing GPT-5&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_006_00-00-32.jpg" alt="Incrustation du logo &quot;The Research Report&quot; avec un cerveau robotisé et des connexions néon bleue à gauche de la page GPT-5." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_006_00-00-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:32</span>
+                        <span class="caption-text">Incrustation du logo &quot;The Research Report&quot; avec un cerveau robotisé et des connexions néon bleue à gauche de la page GPT-5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_007_00-00-40.jpg" alt="Interface du mini-jeu &quot;Jumping Ball Runner&quot; avec le score, le meilleur score, l&#x27;option de vitesse et le bouton de son." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_007_00-00-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:40</span>
+                        <span class="caption-text">Interface du mini-jeu &quot;Jumping Ball Runner&quot; avec le score, le meilleur score, l&#x27;option de vitesse et le bouton de son.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:48 - 00:01:06</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez couper ou rétablir le son en un clic. Et quand vous touchez les piliers, une fenêtre pop-up affiche &quot;game over&quot;, votre score actuel, votre meilleur score, et une option pour réessayer comme dans un jeu soigné. D&#x27;ailleurs, je ne suis pas très doué à celui-ci, mais d&#x27;une manière ou d&#x27;une autre mon meilleur score est de 306. Et vous ? Quel est votre meilleur score ? Laissez un commentaire ci-dessous.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface d&#x27;un mini-jeu web de type jeu de plateforme ou runner 2D.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Jumping Ball Runner&quot;, &quot;Score: 91&quot; puis &quot;133&quot;, &quot;Best: 306&quot;, &quot;Speed: 683&quot; puis &quot;268&quot;, &quot;Muted&quot;, et sur le pop-up de fin : &quot;Bonk! Game Over&quot;, &quot;Score: 133&quot;, &quot;Best: 306&quot;, bouton &quot;Retry&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration du mini-jeu en cours d&#x27;utilisation, illustrant le gameplay avec la boule qui saute par-dessus les obstacles puis l&#x27;apparition du pop-up de défaite lorsque le joueur percute un pilier.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_008_00-00-50.jpg" alt="Jeu vidéo 2D style runner montrant une boule rose sautant au-dessus de piliers dans un paysage de nuages, avec les scores affichés en haut." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_008_00-00-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:50</span>
+                        <span class="caption-text">Jeu vidéo 2D style runner montrant une boule rose sautant au-dessus de piliers dans un paysage de nuages, avec les scores affichés en haut.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_009_00-00-57.jpg" alt="Écran de fin de partie (&quot;Game Over&quot;) affichant le score actuel de 133, le meilleur score de 306 et un bouton de réessai (&quot;Retry&quot;)." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_009_00-00-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:57</span>
+                        <span class="caption-text">Écran de fin de partie (&quot;Game Over&quot;) affichant le score actuel de 133, le meilleur score de 306 et un bouton de réessai (&quot;Retry&quot;).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:06 - 00:01:27</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Juste en dessous de cette démo, ils ont partagé le prompt exact utilisé pour générer le jeu avec GPT-5. J&#x27;ai donc copié le même prompt, l&#x27;ai collé dans Kimi K2, et par défaut K2 était sélectionné. Exécutons donc ceci. Kimi K2 commence à écrire du code. Je clique sur aperçu. Au début, ça a l&#x27;air correct. Tableau des scores, meilleur score, et la balle saute au clic.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;application Kimi avec affichage du code source et de l&#x27;aperçu en direct.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt : &quot;Create a single-page app in a single HTML file with the following requirements: - Name: Jumping Ball Runner - Goal: Jump over obstacles to survive as long as possible. - Features: Increasing speed, high score tracking, retry button, and funny sounds for actions and events. - The UI should be colorful, with parallax scrolling backgrounds. - The characters should look cartoonish and be fun to watch. - The game should be enjoyable for everyone.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur copie-colle le prompt dans l&#x27;interface de Kimi K2, lance la génération du code et clique sur l&#x27;aperçu du jeu.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_010_00-01-08.jpg" alt="Aperçu du jeu &quot;Jumping Ball Runner&quot; avec le prompt textuel affiché en bas." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_010_00-01-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:08</span>
+                        <span class="caption-text">Aperçu du jeu &quot;Jumping Ball Runner&quot; avec le prompt textuel affiché en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_011_00-01-16.jpg" alt="Interface de Kimi montrant le prompt saisi et le menu déroulant de sélection des modèles (K2 et K1.5)." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_011_00-01-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:16</span>
+                        <span class="caption-text">Interface de Kimi montrant le prompt saisi et le menu déroulant de sélection des modèles (K2 et K1.5).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_012_00-01-25.jpg" alt="Interface de Kimi divisée en deux avec le code HTML à gauche et l&#x27;aperçu du jeu avec le score et la balle rose à droite." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_012_00-01-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:25</span>
+                        <span class="caption-text">Interface de Kimi divisée en deux avec le code HTML à gauche et l&#x27;aperçu du jeu avec le score et la balle rose à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:27 - 00:01:47</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais après un moment, des problèmes surgissent. Pas de système de game over correct, la vitesse continue d&#x27;augmenter de manière incontrôlable et les piliers sont à moitié enterrés dans le sol. Aucune logique de game over présente. Kimi K2 a donc échoué à ce test. Et ensuite, j&#x27;ai exécuté exactement le même prompt sur GPT-5 et le résultat était parfait.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de développement web / éditeur de code avec panneau d&#x27;aperçu du jeu.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt visible : &quot;Create a single-page app in a single HTML file with the following requirements: Name: Jumping Ball Runner, Goal: Jump over obstacles to survive as long as possible...&quot; et code source HTML. Affichage du jeu avec score et personnages cartoon.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration comparative du jeu généré montrant les bugs de Kimi K2 puis le résultat correct de GPT-5.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_013_00-01-29.jpg" alt="Interface de développement montrant le code HTML et l&#x27;aperçu du jeu &quot;Jumping Ball Runner&quot; avec des défauts de génération par Kimi K2." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_013_00-01-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:29</span>
+                        <span class="caption-text">Interface de développement montrant le code HTML et l&#x27;aperçu du jeu &quot;Jumping Ball Runner&quot; avec des défauts de génération par Kimi K2.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_014_00-01-45.jpg" alt="Interface de GPT-5 affichant un résultat fonctionnel et soigné pour le jeu &quot;Jumping Ball Runner&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_014_00-01-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:45</span>
+                        <span class="caption-text">Interface de GPT-5 affichant un résultat fonctionnel et soigné pour le jeu &quot;Jumping Ball Runner&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:47 - 00:02:08</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Score, score élevé, et un système de fin de partie correct qui fonctionne parfaitement. Vient ensuite l&#x27;application Pixel Painting avec Crayon, Gomme, Remplissage de couleur, Affichage et Masquage de la grille, Annuler, Rétablir et une Palette de couleurs, le tout fonctionnant dans l&#x27;exemple de GPT-5. J&#x27;ai copié le prompt, je l&#x27;ai exécuté sur KimiK2 et en même temps sur Chantypt.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant des applications web et des interfaces de génération de code IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes d&#x27;interface, scores, application &quot;Pixel Paint &#x27;99&quot;, options de grille, palette de couleurs, blocs de code HTML.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des fonctionnalités de jeux et d&#x27;applications créées par intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_015_00-01-49.jpg" alt="Interface du jeu Jumping Ball Runner montrant le score et le meilleur score." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_015_00-01-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:49</span>
+                        <span class="caption-text">Interface du jeu Jumping Ball Runner montrant le score et le meilleur score.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_016_00-01-57.jpg" alt="Interface de l&#x27;application Pixel Paint &#x27;99 avec les outils de dessin et la palette de couleurs." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_016_00-01-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:57</span>
+                        <span class="caption-text">Interface de l&#x27;application Pixel Paint &#x27;99 avec les outils de dessin et la palette de couleurs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_017_00-02-06.jpg" alt="Interface d&#x27;une application de génération de code affichant les blocs de prompts et le panneau de code HTML." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_017_00-02-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:06</span>
+                        <span class="caption-text">Interface d&#x27;une application de génération de code affichant les blocs de prompts et le panneau de code HTML.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:08 - 00:02:28</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les deux ont généré du code. L&#x27;interface utilisateur de KimiK2 est apparue mais les outils ne fonctionnaient pas. Pas de crayon, pas de gomme, pas de remplissage, rien. De l&#x27;autre côté, le résultat de ChatGPT a fonctionné. Le crayon a peint, Phil a appliqué la couleur sélectionnée, la toile a réagi de manière fluide. Donc encore une fois, Kimi K2 échoue ici.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Double affichage : éditeur de code et application de peinture logicielle (PixelPaint Pro / Retro Pixel Painter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code source HTML/CSS à gauche et interface d&#x27;une application de dessin pixel art dotée d&#x27;une barre d&#x27;outils, d&#x27;une palette de couleurs et d&#x27;une zone de canevas.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison des performances des applications générées par IA, montrant l&#x27;échec des outils sur l&#x27;une et le fonctionnement correct sur l&#x27;autre.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_018_00-02-10.jpg" alt="Comparaison côte à côte montrant le code généré à gauche et l&#x27;interface utilisateur PixelPaint Pro à droite." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_018_00-02-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:10</span>
+                        <span class="caption-text">Comparaison côte à côte montrant le code généré à gauche et l&#x27;interface utilisateur PixelPaint Pro à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_019_00-02-18.jpg" alt="Interface de Retro Pixel Painter fonctionnelle avec une palette de couleurs et une zone de dessin active à l&#x27;écran." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_019_00-02-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:18</span>
+                        <span class="caption-text">Interface de Retro Pixel Painter fonctionnelle avec une palette de couleurs et une zone de dessin active à l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:28 - 00:02:50</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et regardez, c&#x27;est open source, ce qui est génial, mais pour un modèle à 1 trillion de paramètres, rater une application HTML basique de travail ? De plus, la plupart d&#x27;entre nous ne peuvent pas exécuter cela localement. Bref, mon cerveau veut saturer mais je vais tenter un dernier test. La batterie virtuelle. De multiples pads et tonalités sonores, un contrôle du volume, enregistrer, lire et effacer.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant d&#x27;abord la page du dépôt du modèle &quot;moonshotai/Kimi-K2-Thinking&quot;, puis une application web interactive nommée &quot;Virtual Drum Kit&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1 : la page de Kimi-K2-Thinking avec les onglets &quot;Model card&quot;, &quot;Files and versions&quot;, la section &quot;Inference Providers&quot; et une description textuelle (&quot;1. Model Introduction&quot;). Sur l&#x27;image 2 : l&#x27;application &quot;Virtual Drum Kit&quot; avec les touches Q, W, E, A, S, D, Z, X, C (Kick, Snare, Clap, Hi-Hat, Tom 1, Ride, Crash, Cowbell, Tom 2), des boutons de lecture (Play), d&#x27;enregistrement (Start Recording) et de sélection de kit (Classic Acoustic).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur navigue entre la documentation technique du modèle open source et l&#x27;interface de test de l&#x27;application de batterie virtuelle générée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_020_00-02-30.jpg" alt="Page de présentation du modèle open source Kimi-K2-Thinking sur une plateforme de type Hugging Face." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_020_00-02-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:30</span>
+                        <span class="caption-text">Page de présentation du modèle open source Kimi-K2-Thinking sur une plateforme de type Hugging Face.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_021_00-02-43.jpg" alt="Interface d&#x27;une application web interactive représentant une batterie virtuelle (Virtual Drum Kit) avec des pads de sons et des contrôles d&#x27;enregistrement." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_021_00-02-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:43</span>
+                        <span class="caption-text">Interface d&#x27;une application web interactive représentant une batterie virtuelle (Virtual Drum Kit) avec des pads de sons et des contrôles d&#x27;enregistrement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:50 - 00:03:17</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">cette fois je ne copierai pas le prompt d&#x27;OpenAI. J&#x27;ai écrit un prompt long et détaillé avec chaque instruction et je l&#x27;ai exécuté sur KimiK2. Côte à côte, j&#x27;ai donné le même long prompt à ChatGPT. Et étonnamment, KimiK2 a réussi. Il a généré des pads fonctionnels. Je pouvais augmenter et diminuer le volume, enregistrer et jouer ma musique, et tout effacer. Quand je clique sur enregistrer, oui, il a capturé chaque étape. Une application correcte sans problème.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface textuelle et éditeur de prompt sur fond sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt : « Prompt: Create a single-page app in a single HTML file with the following requirements: - Name: Virtual Drum Kit - Goal: Play a drum kit using keyboard or clicks. - Features: Multiple drum sounds, record and playback mode. - The UI should be music-studio themed, polished, modern. Make it as beautiful as possible. » ainsi qu&#x27;une version plus détaillée du même prompt.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation à l&#x27;écran du prompt textuel long et structuré utilisé pour tester l&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_022_00-02-52.jpg" alt="Affichage du prompt détaillé contenant les instructions pour créer une application web de type kit de batterie virtuel en un seul fichier HTML." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_022_00-02-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:52</span>
+                        <span class="caption-text">Affichage du prompt détaillé contenant les instructions pour créer une application web de type kit de batterie virtuel en un seul fichier HTML.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_023_00-02-59.jpg" alt="Interface de type chatbot montrant le prompt saisi dans la zone de texte avec la question « What can I help with? »." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_023_00-02-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:59</span>
+                        <span class="caption-text">Interface de type chatbot montrant le prompt saisi dans la zone de texte avec la question « What can I help with? ».</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:17 - 00:03:29</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est donc tout pour mes recherches d&#x27;aujourd&#x27;hui. Si vous avez aimé, abonnez-vous, mettez un pouce bleu et commentez votre meilleur score au jeu de la balle rebondissante. C&#x27;est Pursuing AI, et je vous donne rendez-vous pour la prochaine plongée en profondeur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du mini-jeu &quot;Jumping Ball Runner&quot; intégré ou développé dans le cadre de la vidéo.</p>
+                        <p><strong>Contenu textuel & Code :</strong> En haut à gauche, le titre &quot;Jumping Ball Runner&quot;, le score actuel &quot;Score: 117&quot; et le meilleur score &quot;Best: 306&quot;. En haut à droite, la vitesse &quot;Speed: 724&quot; et un bouton audio &quot;Muted&quot;. Au centre, un décor de jeu en 2D avec un ciel dégradé, des nuages blancs, des montagnes stylisées au premier plan et des blocs obstacles roses. Une balle rose avec des yeux et un sourire est en suspension.</p>
+                        <p><strong>Action / Démonstration :</strong> Le mini-jeu de course de la balle rebondissante est affiché à l&#x27;écran, illustrant l&#x27;appel à l&#x27;action du créateur invitant les spectateurs à partager leur score.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4nYriaeipLA/frame_024_00-03-23.jpg" alt="Capture d&#x27;écran du mini-jeu de plateforme &quot;Jumping Ball Runner&quot; montrant une balle rose souriante en l&#x27;air au-dessus d&#x27;obstacles sur un fond de ciel bleu avec des nuages." loading="lazy" onclick="openLightbox('screenshots/YT-4nYriaeipLA/frame_024_00-03-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:23</span>
+                        <span class="caption-text">Capture d&#x27;écran du mini-jeu de plateforme &quot;Jumping Ball Runner&quot; montrant une balle rose souriante en l&#x27;air au-dessus d&#x27;obstacles sur un fond de ciel bleu avec des nuages.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
