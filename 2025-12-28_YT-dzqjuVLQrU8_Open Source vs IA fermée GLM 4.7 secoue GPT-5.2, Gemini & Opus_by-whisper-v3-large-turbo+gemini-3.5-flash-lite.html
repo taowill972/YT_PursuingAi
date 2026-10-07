@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Open Source vs IA fermée : GLM 4.7 secoue GPT-5.2, Gemini &amp; Opus — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Open Source vs IA fermée : GLM 4.7 secoue GPT-5.2, Gemini &amp; Opus</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-12-28</span>
+                <span class="badge">⏱️ 03m 26s</span>
+                <span class="badge">🆔 <code>dzqjuVLQrU8</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=dzqjuVLQrU8" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* intitulée « Open Source vs IA fermée : GLM 4.7 secoue GPT-5.2, Gemini & Opus » explore l’affrontement décisif entre les modèles de langage et de code open source et les solutions propriétaires dominantes du marché. Face aux promesses de performances exceptionnelles de GLM 4.7, le créateur a choisi de soumettre ces intelligences artificielles à un stress-test impitoyable composé de simulations complexes en conditions réelles (génération de code interactif, simulation anatomique et rendu comportemental 3D). L'approche méthodologique repose sur l'utilisation de prompts longs, texturés et extrêmement détaillés — et non de requêtes simplistes —, afin de tester les limites logiques, visuelles et cinématiques de chaque modèle.</p><p>Au terme de ce comparatif rigoureux, la frontière entre open source et écosystèmes fermés s'avère plus poreuse que jamais. Si les modèles propriétaires conservent une supériorité notable sur des tâches organiques hautement délicates comme le réalisme visuel d'une main humaine, l'outsider open source GLM 4.7 démontre une supériorité écrasante sur des logiques algorithmiques avancées et de simulation spatiale, notamment dans le vol d'oiseaux en essaim via Three.js. Pour les créateurs de contenu vidéo, de VFX et les développeurs d'expériences interactives, cette étude de cas offre un enseignement capital : l'open source n'est plus une alternative de second choix au rabais, mais une véritable force de frappe concurrentielle capable de rivaliser, voire de surpasser les géants propriétaires sur des aspects techniques ciblés.</p><p>---</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>L&#x27;essor incontestable de l&#x27;Open Source** : GLM 4.7 prouve que les modèles ouverts ne se contentent plus de suivre la cadence, mais talonnent ou surpassent les grands acteurs propriétaires sur des tâches techniques spécifiques.</span></li><li><span class="point-bullet">✦</span><span>Le choix méthodologique des prompts longs** : L&#x27;utilisation de consignes textuelles denses, structurées et hautement détaillées est indispensable pour tester la véritable profondeur logique des IA, évitant ainsi les biais des prompts simplistes d&#x27;une seule ligne.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;importance de la tolérance à l&#x27;erreur itérative** : Face à une génération initiale en écran noir sur le test de la main, GLM 4.7 a nécessité un retour d&#x27;instruction correctif, soulignant que l&#x27;interaction itérative reste clé dans le code généré par IA.</span></li><li><span class="point-bullet">✦</span><span>Supériorité des modèles fermés sur l&#x27;organique** : Pour la simulation de main humaine, les solutions propriétaires (Gemini, GPT-5.2, Opus) surclassent nettement l&#x27;open source en matière de rendu visuel réaliste et immédiat.</span></li><li><span class="point-bullet">✦</span><span>Maîtrise de la logique anatomique vs esthétique** : Même si le rendu visuel de GLM 4.7 sur la main évoquait une commode, sa logique mécanique et cinématique (articulations et mouvement différencié du pouce) s&#x27;est révélée rigoureusement exacte.</span></li><li><span class="point-bullet">✦</span><span>La suprématie de GLM 4.7 sur la simulation spatiale** : Sur le test du vol d&#x27;oiseaux en essaim (Three.js), GLM 4.7 domine largement ses concurrents en offrant un monde cohérent, un menu de contrôle intégré et une stabilité de caméra irréprochable.</span></li><li><span class="point-bullet">✦</span><span>Les limites de la stabilité de caméra chez les concurrents** : Des modèles comme Gemini ont péché par une vue d&#x27;oiseau extrêmement instable nuisant à l&#x27;immersion, tandis qu&#x27;Opus a généré un comportement s&#x27;apparentant visuellement à des poissons nageant dans le ciel.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;échec contextuel des modèles de pointe** : GPT-5.2 a échoué à plusieurs reprises sur le test des oiseaux, confirmant qu&#x27;aucun modèle propriétaire n&#x27;est universellement parfait sur tous les types de simulation 3D.</span></li><li><span class="point-bullet">✦</span><span>Optimisation des coûts pour les créateurs** : L&#x27;émergence d&#x27;alternatives open source aussi puissantes que GLM 4.7 remet directement en question la rentabilité de l&#x27;investissement exclusif dans des abonnements à des modèles propriétaires onéreux.</span></li><li><span class="point-bullet">✦</span><span>Synergie entre code et rendu visuel** : L&#x27;intégration de scripts complexes générés par IA avec des moteurs graphiques légers (comme Three.js) ouvre des perspectives inédites pour le prototypage rapide de décors et d&#x27;effets visuels vidéo.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:25</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il s&#x27;agit de GLM 4.7, un modèle open source dont les benchmarks surpassent et rivalisent avec des modèles propriétaires comme Gemini, ChatGPT et Opus. La vraie question est donc simple : votre argent est-il gaspillé dans des modèles propriétaires ? Pour le savoir, j&#x27;ai testé GLM 4.7 face à des modèles propriétaires en utilisant trois tâches de simulation insensées.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Pages web documentant GLM-4.7, tableaux de benchmarks comparatifs, page de tarification et application de simulation 3D.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes techniques sur GLM-4.7 (&quot;Advancing the Coding Capability&quot;), graphiques de performance (AIME 25, LiveCodeBench, GPQA, HLE), plans tarifaires à 4$, 20$ et 200$, et panneau de contrôle &quot;Flock Controls&quot; dans la simulation 3D.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement à travers la documentation technique, les graphiques de benchmarks, l&#x27;affichage des offres d&#x27;abonnement et la démonstration d&#x27;une simulation 3D.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_001_00-00-02.jpg" alt="Page web de présentation de GLM-4.7 montrant ses capacités de codage et ses liens vers les ressources." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Page web de présentation de GLM-4.7 montrant ses capacités de codage et ses liens vers les ressources.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_002_00-00-09.jpg" alt="Graphiques d&#x27;évaluation des performances des LLM comparant GLM-4.7 à d&#x27;autres modèles sur plusieurs benchmarks." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_002_00-00-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Graphiques d&#x27;évaluation des performances des LLM comparant GLM-4.7 à d&#x27;autres modèles sur plusieurs benchmarks.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_003_00-00-17.jpg" alt="Page de tarification d&#x27;un service d&#x27;IA affichant les abonnements Go, Plus et Pro." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_003_00-00-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:17</span>
+                        <span class="caption-text">Page de tarification d&#x27;un service d&#x27;IA affichant les abonnements Go, Plus et Pro.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_004_00-00-23.jpg" alt="Simulation 3D interactive d&#x27;une forêt avec des contrôles de vol pour les oiseaux affichés en haut à droite." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_004_00-00-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:23</span>
+                        <span class="caption-text">Simulation 3D interactive d&#x27;une forêt avec des contrôles de vol pour les oiseaux affichés en haut à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:25 - 00:01:01</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ceci est Pursuing AI, et vous regardez The Research Report. Simulation 1. Simulation de main. Le premier test est une simulation de main. Les exigences sont strictes. Contrôle total de chaque doigt. Une main humaine réaliste. Des curseurs séparés pour chaque doigt. Un mouvement fluide et anatomiquement correct. Et un détail important. J&#x27;utilise de longs prompts détaillés, et non de courts prompts d&#x27;une ligne. D&#x27;abord, GLM 4.7. Il a généré 600 lignes de code, mais le résultat n&#x27;était qu&#x27;un écran noir, alors je lui ai redonné des instructions pour corriger le problème.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur de type site web d&#x27;actualité ou de notes de version IA (image 1), écran de présentation avec texte et modélisation 3D (image 2), et interface de type chat ou assistant de code GLM-4.7 sur fond sombre (image 3).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Image 1 : &quot;GPT-5.1: A smarter, more conversational ChatGPT&quot;, &quot;We&#x27;re upgrading GPT-5 while making it easier to customise in ChatGPT...&quot;. Image 2 : &quot;Requirements&quot;, &quot;• Full Control Of Every Finger&quot;. Image 3 : &quot;Hi, Pursuing AI&quot;, texte de prompt détaillé avec &quot;Create a highly realistic, interactive hand simulation...&quot;, options &quot;Deep Think&quot;, &quot;AI Slides&quot;, &quot;Full Stack&quot;, &quot;Magic Design&quot;, &quot;Write Code&quot;, &quot;Deep Research&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement des diapositives de présentation du projet de test de simulation de main avec différents modèles d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_005_00-00-27.jpg" alt="Présentation des notes de version de GPT-5.1 avec le titre &#x27;GPT-5.1: A smarter, more conversational ChatGPT&#x27; et une illustration animée d&#x27;un cerveau." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_005_00-00-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:27</span>
+                        <span class="caption-text">Présentation des notes de version de GPT-5.1 avec le titre &#x27;GPT-5.1: A smarter, more conversational ChatGPT&#x27; et une illustration animée d&#x27;un cerveau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_006_00-00-38.jpg" alt="Écran de présentation des exigences avec le titre &#x27;Requirements&#x27; et &#x27;Full Control Of Every Finger&#x27; à gauche, et une modélisation 3D basique d&#x27;une main articulée à droite." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_006_00-00-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:38</span>
+                        <span class="caption-text">Écran de présentation des exigences avec le titre &#x27;Requirements&#x27; et &#x27;Full Control Of Every Finger&#x27; à gauche, et une modélisation 3D basique d&#x27;une main articulée à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_007_00-00-50.jpg" alt="Interface de l&#x27;outil GLM-4.7 montrant un long prompt détaillé adressé à l&#x27;IA pour créer une simulation de main interactive." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_007_00-00-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:50</span>
+                        <span class="caption-text">Interface de l&#x27;outil GLM-4.7 montrant un long prompt détaillé adressé à l&#x27;IA pour créer une simulation de main interactive.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:02 - 00:01:26</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voici le nouveau résultat. À première vue, ça n&#x27;a pas l&#x27;air réaliste. La main est montrée de dos, et honnêtement, ça ressemble à une commode. Mais testons la mécanique. Nous avons bien des curseurs pour chaque doigt. Les doigts se plient correctement, et le pouce bouge différemment des autres doigts, ce qui est anatomiquement correct. Visuellement c&#x27;est donc faible, mais la logique des articulations est bonne.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de GLM-4.7 (modèle linguistique et de génération de code) avec un visualiseur 3D interactif et un panneau &quot;Hand Controller&quot; doté de curseurs pour chaque doigt (Thumb, Index Finger, Middle Finger, Ring Finger, Pinky Finger).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de prompt et de génération de code dans le panneau de gauche : instructions pour créer une simulation de main interactive et réaliste dans le navigateur, avec des exigences sur l&#x27;apparence, l&#x27;anatomie et la structure des articulations. Panneau de contrôle à droite avec des curseurs réglés sur 0%.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la simulation 3D d&#x27;une main modélisée géométriquement avec des curseurs permettant de contrôler individuellement chaque articulation des doigts.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_008_00-01-04.jpg" alt="Interface de GLM-4.7 montrant le panneau de code sur la gauche et un visualiseur 3D interactif d&#x27;une main avec un panneau de contrôle des doigts à droite." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_008_00-01-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:04</span>
+                        <span class="caption-text">Interface de GLM-4.7 montrant le panneau de code sur la gauche et un visualiseur 3D interactif d&#x27;une main avec un panneau de contrôle des doigts à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_009_00-01-10.jpg" alt="Interface de GLM-4.7 affichant les instructions textuelles de simulation de main avec curseurs de contrôle des doigts." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_009_00-01-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Interface de GLM-4.7 affichant les instructions textuelles de simulation de main avec curseurs de contrôle des doigts.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:26 - 00:02:00</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, c&#x27;est Gemini 3. Il a généré ceci en un seul prompt. La main a l&#x27;air réaliste. Le mouvement des doigts est correct. Le mouvement du pouce est également naturel. Ensuite, c&#x27;est GPT 5.2. La main a l&#x27;air réaliste. Le mouvement des doigts est fluide. Le seul inconvénient : le mouvement du pouce est légèrement décalé. C&#x27;est toujours bien, juste pas parfait. Opus 4.5. C&#x27;est Opus 4.5. Il génère une main blanche, mais les mouvements des doigts et du pouce sont corrects. Verdict de la simulation de main. Dans ce test, fermé</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de simulation et de contrôle de modélisation de mains en 3D (Hand Simulation / Hand Control).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneaux de contrôle avec les libellés : Hand Controls / Finger Controls, Thumb, Index Finger, Middle Finger, Ring Finger, Pinky Finger, et des boutons de préréglage (Open, Flat, Point, Peace, Rock, OK).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente différentes simulations et modèles 3D de mains générés par divers outils d&#x27;intelligence artificielle, en évaluant le réalisme des mouvements des doigts et du pouce.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_010_00-01-28.jpg" alt="Interface de simulation montrant une main modélisée en 3D avec un panneau de contrôle des doigts à droite." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_010_00-01-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:28</span>
+                        <span class="caption-text">Interface de simulation montrant une main modélisée en 3D avec un panneau de contrôle des doigts à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_011_00-01-38.jpg" alt="Interface de simulation de main réaliste affichant une main 3D beige et des curseurs de contrôle pour chaque doigt." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_011_00-01-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:38</span>
+                        <span class="caption-text">Interface de simulation de main réaliste affichant une main 3D beige et des curseurs de contrôle pour chaque doigt.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_012_00-01-49.jpg" alt="Interface de simulation affichant une main blanche en 3D et un panneau de contrôle latéral avec des boutons de préréglage." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_012_00-01-49.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:49</span>
+                        <span class="caption-text">Interface de simulation affichant une main blanche en 3D et un panneau de contrôle latéral avec des boutons de préréglage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_013_00-01-58.jpg" alt="Affichage comparatif en écran partagé de deux modèles de mains 3D avec leurs panneaux de contrôle respectifs." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_013_00-01-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:58</span>
+                        <span class="caption-text">Affichage comparatif en écran partagé de deux modèles de mains 3D avec leurs panneaux de contrôle respectifs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:00 - 00:02:33</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">les modèles sources performent clairement mieux que GLM 4.7. Prochain test, vol d&#x27;oiseaux en essaim. Exigences. Construit avec Three.js, comportement d&#x27;essaim réaliste. Curseurs pour la vitesse et le contrôle de l&#x27;essaim, environnement naturel avec arbres et végétation, mode caméra vue d&#x27;oiseau. C&#x27;est le résultat de GLM 4.7, le monde est beau, l&#x27;environnement est bien construit, le mouvement d&#x27;essaim est fluide et naturel en mode vue d&#x27;oiseau, la caméra est stable sans secousses, il y a aussi un menu de contrôle sur le côté.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application ou interface de démonstration 3D interactive utilisant Three.js avec un menu de configuration latéral &#x27;Flock Settings&#x27;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &#x27;Requirements&#x27;, &#x27;Built Using Three.js&#x27;, &#x27;Realistic Flocking Behaviour&#x27;, ainsi que les paramètres de l&#x27;essaim (&#x27;Separation&#x27;, &#x27;Alignment&#x27;, &#x27;Cohesion&#x27;, &#x27;Speed&#x27;, &#x27;Visual Range&#x27;) et des curseurs de contrôle.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et démonstration d&#x27;une simulation interactive en 3D d&#x27;un vol d&#x27;oiseaux en essaim, incluant l&#x27;affichage des exigences du test et des réglages via le menu latéral.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_014_00-02-02.jpg" alt="Interface 3D montrant un contrôleur de main avec des curseurs de réglage pour les doigts." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_014_00-02-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:02</span>
+                        <span class="caption-text">Interface 3D montrant un contrôleur de main avec des curseurs de réglage pour les doigts.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_015_00-02-12.jpg" alt="Écran affichant les exigences du test avec le texte &#x27;Requirements&#x27;, &#x27;Built Using Three.js&#x27;, &#x27;Realistic Flocking Behaviour&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_015_00-02-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:12</span>
+                        <span class="caption-text">Écran affichant les exigences du test avec le texte &#x27;Requirements&#x27;, &#x27;Built Using Three.js&#x27;, &#x27;Realistic Flocking Behaviour&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_016_00-02-23.jpg" alt="Vue aérienne de l&#x27;environnement virtuel avec des arbres et un menu de réglages &#x27;Flock Settings&#x27; sur le côté droit." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_016_00-02-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:23</span>
+                        <span class="caption-text">Vue aérienne de l&#x27;environnement virtuel avec des arbres et un menu de réglages &#x27;Flock Settings&#x27; sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_017_00-02-31.jpg" alt="Mode caméra vue d&#x27;oiseau montrant un groupe d&#x27;oiseaux volant au-dessus du paysage paysager." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_017_00-02-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:31</span>
+                        <span class="caption-text">Mode caméra vue d&#x27;oiseau montrant un groupe d&#x27;oiseaux volant au-dessus du paysage paysager.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:34 - 00:02:53</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans l&#x27;ensemble, ce résultat est solide. Maintenant, Gemini, l&#x27;environnement a l&#x27;air super, la logique de vol en essaim est correcte, mais la caméra vue d&#x27;oiseau est très instable, ce qui nuit à l&#x27;immersion. C&#x27;est Opus 4.5. Honnêtement, on dirait des poissons qui nagent dans le ciel. Les modèles d&#x27;oiseaux et la structure de l&#x27;essaim sont nettement pires.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de simulation 3D de vol d&#x27;oiseaux en essaim (Flocking Simulation) avec des panneaux de contrôle des paramètres sur le côté droit.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneaux de configuration affichant des curseurs et des valeurs pour les paramètres d&#x27;essaim (Separation, Alignment, Cohesion, Speed, Visual Range, Bird Count, Steering Force, Wind, Turbulence) et des indicateurs de performance (FPS, nombre d&#x27;oiseaux).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et affichage d&#x27;une simulation 3D interactive en temps réel démontrant le comportement de vol en essaim d&#x27;oiseaux au-dessus de paysages générés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_018_00-02-36.jpg" alt="Interface de simulation montrant un paysage vallonné vert et un ciel bleu avec des paramètres de vol en essaim à droite." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_018_00-02-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:36</span>
+                        <span class="caption-text">Interface de simulation montrant un paysage vallonné vert et un ciel bleu avec des paramètres de vol en essaim à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_019_00-02-43.jpg" alt="Interface de simulation Gemini affichant des reliefs vallonnés, une rivière et un panneau de paramètres de vol en essaim sur le côté droit." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_019_00-02-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:43</span>
+                        <span class="caption-text">Interface de simulation Gemini affichant des reliefs vallonnés, une rivière et un panneau de paramètres de vol en essaim sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_020_00-02-51.jpg" alt="Interface montrant une forêt stylisée avec des arbres en 3D low-poly et des oiseaux volant dans le ciel, ainsi qu&#x27;un panneau de contrôle des comportements d&#x27;essaim à droite." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_020_00-02-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:51</span>
+                        <span class="caption-text">Interface montrant une forêt stylisée avec des arbres en 3D low-poly et des oiseaux volant dans le ciel, ainsi qu&#x27;un panneau de contrôle des comportements d&#x27;essaim à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:53 - 00:03:13</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et enfin, GPT 5.2. Ce résultat est clairement pire. Je lui ai même redemandé d&#x27;améliorer le rendu, mais il a encore échoué. Verdict de la simulation d&#x27;envol d&#x27;oiseaux. Dans cette simulation, GLM 4.7 obtient les meilleurs résultats. Conclusion finale. Alors, quelle est la conclusion ? Dans la simulation de main, les modèles fermés gagnent encore.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interfaces de test de modèles d&#x27;IA (ChatGPT 5.2 et GLM-4.7) avec des environnements de simulation 3D interactifs dans le navigateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de prompt détaillé pour la simulation de main (&quot;Create a highly realistic, interactive hand simulation...&quot;), paramètres de contrôle des doigts (&quot;Hand Controller&quot; avec Thumb, Index Finger, etc.), et options de simulation de vol d&#x27;oiseaux.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative des résultats de simulation entre différents modèles d&#x27;IA (ChatGPT 5.2 et GLM-4.7), en montrant les rendus visuels et les échecs ou réussites des prompts.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_021_00-02-55.jpg" alt="Interface ChatGPT 5.2 affichant une simulation 3D de vol d&#x27;oiseaux avec des options de configuration textuelles." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_021_00-02-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:55</span>
+                        <span class="caption-text">Interface ChatGPT 5.2 affichant une simulation 3D de vol d&#x27;oiseaux avec des options de configuration textuelles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_022_00-03-03.jpg" alt="Écran partagé comparant deux simulations 3D différentes de vol d&#x27;oiseaux avec des panneaux de paramètres de vol." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_022_00-03-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:03</span>
+                        <span class="caption-text">Écran partagé comparant deux simulations 3D différentes de vol d&#x27;oiseaux avec des panneaux de paramètres de vol.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_023_00-03-11.jpg" alt="Interface GLM-4.7 montrant le panneau de prévisualisation d&#x27;une simulation 3D de main humaine avec des curseurs de contrôle (Hand Controller)." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_023_00-03-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:11</span>
+                        <span class="caption-text">Interface GLM-4.7 montrant le panneau de prévisualisation d&#x27;une simulation 3D de main humaine avec des curseurs de contrôle (Hand Controller).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:14 - 00:03:25</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En ce qui concerne le vol des oiseaux, GLM 4.7 domine. Cela signifie une chose. Les modèles open source offrent désormais une véritable concurrence directe aux modèles fermés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de GLM-4.7 (Chat / Session de partage) avec un volet de texte à gauche, une zone de prévisualisation 3D au centre et un panneau de contrôle &quot;Hand Controller&quot; à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de prompt visible dans le panneau de gauche demandant de créer une simulation de main interactive hautement réaliste s&#x27;exécutant dans le navigateur (&quot;Create a highly realistic, interactive hand simulation...&quot;), avec des exigences de base, d&#x27;apparence et d&#x27;anatomie. À droite, le panneau de contrôle affiche des curseurs pour chaque doigt (Thumb, Index Finger, Middle Finger, Ring Finger, Pinky Finger) réglés sur 0%.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une interface de démonstration interactive de GLM-4.7 générant un modèle 3D de main stylisée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-dzqjuVLQrU8/frame_024_00-03-20.jpg" alt="Interface de GLM-4.7 montrant la simulation interactive d&#x27;une main 3D avec panneau de contrôle latéral." loading="lazy" onclick="openLightbox('screenshots/YT-dzqjuVLQrU8/frame_024_00-03-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:20</span>
+                        <span class="caption-text">Interface de GLM-4.7 montrant la simulation interactive d&#x27;une main 3D avec panneau de contrôle latéral.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
