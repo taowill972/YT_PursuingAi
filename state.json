@@ -81,7 +81,8 @@
     "0994BqHojag",
     "rv39Quhquww",
     "33FpzAqYX_o",
-    "4Cu9EP_Zw6Q"
+    "4Cu9EP_Zw6Q",
+    "ECaiOB37Rgs"
   ],
   "processed_videos": [
     {
@@ -1227,9 +1228,23 @@
       "filepath_html": "/root/YT_PursuingAi/2025-09-30_YT-4Cu9EP_Zw6Q_De nouveaux modèles open source débarquent ! Recherche IA révolutionnaire_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-08T10:07:30Z",
       "status": "completed"
+    },
+    {
+      "video_id": "ECaiOB37Rgs",
+      "title": "Tout savoir sur Gemini dans Chrome : Fonctionnalités et décryptage complet !",
+      "raw_title": "Gemini In Chrome All Features Explained!",
+      "filename_md": "2025-09-22_YT-ECaiOB37Rgs_Tout savoir sur Gemini dans Chrome Fonctionnalités et décryptage complet !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2025-09-22_YT-ECaiOB37Rgs_Tout savoir sur Gemini dans Chrome Fonctionnalités et décryptage complet !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2025-09-22",
+      "duration": 176,
+      "screenshots_count": 15,
+      "filepath_md": "/root/YT_PursuingAi/2025-09-22_YT-ECaiOB37Rgs_Tout savoir sur Gemini dans Chrome Fonctionnalités et décryptage complet !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2025-09-22_YT-ECaiOB37Rgs_Tout savoir sur Gemini dans Chrome Fonctionnalités et décryptage complet !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-08T10:13:21Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 82,
+  "completed_count": 83,
   "last_run_timestamp": "2026-10-08T10:00:04Z",
   "status": "running",
   "total_catalog_count": 84

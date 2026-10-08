@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Tout savoir sur Gemini dans Chrome : Fonctionnalités et décryptage complet ! — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Tout savoir sur Gemini dans Chrome : Fonctionnalités et décryptage complet !</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-09-22</span>
+                <span class="badge">⏱️ 02m 56s</span>
+                <span class="badge">🆔 <code>ECaiOB37Rgs</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=ECaiOB37Rgs" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de Pursuing AI explore l'intégration majeure de l'intelligence artificielle Gemini directement au cœur du navigateur Google Chrome, marquant un tournant décisif où le web passe d'un espace de recherche passif à un environnement d'exécution actif et agentique. Le créateur adopte une approche méthodique et didactique : il structure sa présentation en listant les fonctionnalités phares par cas d'usage concrets, illustrant comment l'IA transforme radicalement l'expérience utilisateur, de la lecture rapide de documents d'experts au shopping comparatif automatisé. Sur le plan de la production vidéo par IA, ce type de contenu démontre l'efficacité d'un storytelling axé sur l'immédiateté et l'utilité pratique, captivant l'audience en répondant à des problématiques quotidiennes de productivité.</p><p>Pour les créateurs de contenu et les professionnels de la vidéo, cette mutation technologique offre des perspectives inédites en matière de veille informationnelle, de génération de scripts et d'adaptation de formats (comme la synthèse instantanée de longues vidéos YouTube). En s'appuyant sur des visuels générés ou sublimés par des outils de pointe (tels que Seedance 2.5, Kling 3.0 et Midjourney), le réalisateur parvient à enrober une démonstration logicielle austère dans un écrin esthétique futuriste et immersif. Cette synergie entre l'analyse technique rigoureuse et la puissance des générateurs visuels par IA constitue une masterclass pour capter l'attention sur les plateformes et vulgariser des innovations logicielles complexes.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Transformation de l&#x27;Omnibox** : La barre de recherche Chrome ne sert plus seulement à trouver des URL, mais devient une interface conversationnelle directe (Omnibox IA) capable de croiser les données de plusieurs onglets ouverts.</span></li><li><span class="point-bullet">✦</span><span>Synthèse intelligente de documents** : Capacité à condenser instantanément des articles longs, des blogs ou des documents de recherche complexes en points clés, avec une option de simplification par analogies.</span></li><li><span class="point-bullet">✦</span><span>Résumé automatique de vidéos YouTube** : Extraction immédiate de l&#x27;essence d&#x27;une longue vidéo sans nécessiter de visionnage intégral, un gain de temps massif pour la veille des créateurs.</span></li><li><span class="point-bullet">✦</span><span>Introduction des capacités agentiques** : Transition d&#x27;une IA passive (qui répond aux questions) à une IA active capable d&#x27;exécuter des actions complexes en arrière-plan, comme passer des commandes ou gérer des processus (en phase de déploiement progressif).</span></li><li><span class="point-bullet">✦</span><span>Shopping et comparatifs instantanés** : Ouverture de plusieurs onglets de produits pour laisser Gemini analyser, croiser et comparer automatiquement les prix, caractéristiques et avis clients.</span></li><li><span class="point-bullet">✦</span><span>Adaptation contextuelle de contenu** : Possibilité de modifier à la volée des recettes de cuisine (régimes spécifiques) ou d&#x27;ajuster des extraits de code informatique directement depuis la page web.</span></li><li><span class="point-bullet">✦</span><span>Mode vocal en direct (Hands-free)** : Intégration d&#x27;une interface audio naturelle permettant de dialoguer à l&#x27;oral avec Gemini tout en naviguant, idéale pour le multitasking (cuisine, travail manuel).</span></li><li><span class="point-bullet">✦</span><span>Écosystème Google unifié** : Connexion native entre Chrome, Gmail, YouTube et Google Agenda pour centraliser la gestion des tâches sans changer d&#x27;application.</span></li><li><span class="point-bullet">✦</span><span>Workflow de productivité par profil** : Ciblage précis des cas d&#x27;usage selon les publics (étudiants pour les lectures, professionnels pour la recherche, créateurs pour les scripts et les codes).</span></li><li><span class="point-bullet">✦</span><span>Esthétique visuelle au service de la tech** : Utilisation conjointe de Kling 3.0 et Seedance 2.5 pour transformer un sujet logiciel potentiellement abstrait en une expérience visuelle immersive de science-fiction.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:19</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Google vient d&#x27;intégrer son IA la plus puissante, Gemini, directement dans Chrome, et cela change notre façon de naviguer pour toujours. Qu&#x27;il s&#x27;agisse de résumer des pages web ou même d&#x27;agir à votre place, Gemini dans Chrome, c&#x27;est comme avoir un assistant personnel intégré directement dans votre navigateur. Dans cette vidéo, je vais décortiquer toutes les fonctionnalités, les cas d&#x27;usage les plus intéressants, et ce que vous devez savoir avant de l&#x27;utiliser.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Google Chrome avec l&#x27;intégration du panneau latéral de l&#x27;assistant Gemini.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles dans l&#x27;interface de Gemini : « Gemini acts on your behalf... », « Buy these ingredients for me on Instacart.com using the Sprouts store! », « Can I make this recipe gluten-free? », « Yes, you can make this recipe gluten-free. Here are some tips... ».</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de l&#x27;intégration de l&#x27;IA Gemini au sein du navigateur Google Chrome avec des exemples d&#x27;interactions textuelles et d&#x27;automatisation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_001_00-00-02.jpg" alt="Écran titre affichant les logos de Google Chrome et de Gemini." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Écran titre affichant les logos de Google Chrome et de Gemini.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_002_00-00-10.jpg" alt="Interface de Google Chrome avec un panneau latéral Gemini ouvert affichant un avertissement et un champ de saisie pour une action sur Instacart." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_002_00-00-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Interface de Google Chrome avec un panneau latéral Gemini ouvert affichant un avertissement et un champ de saisie pour une action sur Instacart.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_003_00-00-17.jpg" alt="Interface de Google Chrome avec le panneau latéral Gemini répondant à une question sur une recette de cuisine sans gluten." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_003_00-00-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:17</span>
+                        <span class="caption-text">Interface de Google Chrome avec le panneau latéral Gemini répondant à une question sur une recette de cuisine sans gluten.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:19 - 00:00:38</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Fonctionnalité 1. Lecture et compréhension plus intelligentes. La première chose que fait Gemini, c&#x27;est de rendre la lecture en ligne tellement plus facile. Ouvrez un article long, un blog ou un document de recherche, et il résume instantanément les points clés. Et si le contenu est trop technique ou déroutant, Gemini peut le simplifier en un langage clair et direct. Ou même utiliser des analogies pour vous aider à comprendre plus rapidement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web (Google Chrome) avec le panneau latéral Gemini activé sur le côté droit.</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL visible : &quot;www.thedailythread.com/blog/guide/10-office-fun-activities&quot;. Titre de l&#x27;article : &quot;10 Team Building Ideas for any Group&quot;. Invite dans le panneau Gemini : &quot;What works for a group of 10 and takes less than 30 minutes?&quot;. Réponse de Gemini listant plusieurs activités (&quot;Birthday Line Up&quot;, &quot;Two Truths and a Lie&quot;, &quot;Human Knot&quot;, &quot;Marshmallow Challenge&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur un article web de blog et affichage d&#x27;un résumé/réponse contextuel généré par l&#x27;assistant IA Gemini dans le panneau latéral droit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_004_00-00-28.jpg" alt="Navigateur web affichant un article de blog sur le team building avec le panneau latéral de Gemini ouvert à droite, générant des suggestions d&#x27;activités." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_004_00-00-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:28</span>
+                        <span class="caption-text">Navigateur web affichant un article de blog sur le team building avec le panneau latéral de Gemini ouvert à droite, générant des suggestions d&#x27;activités.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:38 - 00:00:58</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous êtes étudiant, cela pourrait vous faire économiser des heures de lecture chaque semaine. Des professionnels ou quiconque apprend quelque chose de nouveau. J&#x27;aurais aimé avoir ça pendant mes examens. Les résumés YouTube et l&#x27;IA agentique. Une autre fonctionnalité puissante est la capacité de Gemini à vous faire gagner du temps sur le contenu. Imaginez ouvrir une longue vidéo YouTube. Gemini peut générer instantanément un résumé clair, vous donnant les points clés sans avoir à visionner toute la vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du navigateur Google Chrome avec le panneau latéral Google Gemini activé.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché dans le résumé Gemini : « &quot;Busy&quot; is not the same as &quot;important&quot;. Being busy doesn&#x27;t necessarily mean you are productive. The goal is to focus on what is truly important and find a balance, rather than glorifying being &quot;slammed&quot;. » et « Downtime is productive... ». Boutons « Current tab » et champ de saisie « Ask Gemini ». Vignettes de vidéos YouTube en arrière-plan.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de la fonctionnalité de résumé instantané de vidéos YouTube par l&#x27;intelligence artificielle Gemini dans un panneau latéral du navigateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_005_00-00-56.jpg" alt="Interface de Google Gemini affichant un résumé textuel de vidéo YouTube dans un panneau latéral." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_005_00-00-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:56</span>
+                        <span class="caption-text">Interface de Google Gemini affichant un résumé textuel de vidéo YouTube dans un panneau latéral.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:58 - 00:01:19</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais cela ne s&#x27;arrête pas là. Gemini introduit également ce que Google appelle des capacités agentiques. Cela signifie que l&#x27;IA ne se contente pas de répondre à des questions. Elle peut réellement effectuer des actions pour vous. Par exemple, si vous faites des courses, au lieu d&#x27;ajouter des articles un par un, vous pouvez simplement dire à Gemini ce dont vous avez besoin, et il gère le processus en arrière-plan. Cela transforme Chrome d&#x27;un simple navigateur en un assistant actif qui fait le travail à votre place.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur Google Chrome affichant le site de livraison de courses Instacart (Sprouts Farmers Market) avec un panneau d&#x27;agent IA Gemini intégré dans l&#x27;angle supérieur droit.</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL visible : instacart.com/store/sprouts/storefront. Barre de recherche : &quot;Try &#x27;fruits i can store out of the fridge&#x27;&quot;. Panneau de l&#x27;assistant IA (Instacart Order from Sprouts) affichant le message : &quot;Buy these ingredients for me on Instacart.com using the Sprouts store&quot; ainsi que les étapes en cours : &quot;Navigating to Instacart.com&quot;, &quot;Selecting the Sprouts store&quot;, &quot;Clicking&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> L&#x27;assistant IA Gemini prend le contrôle du navigateur pour automatiser l&#x27;achat d&#x27;ingrédients sur le site Instacart, naviguant et sélectionnant le magasin de manière autonome.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_006_00-01-08.jpg" alt="Un utilisateur navigue sur le site de courses Instacart sur son ordinateur portable." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_006_00-01-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:08</span>
+                        <span class="caption-text">Un utilisateur navigue sur le site de courses Instacart sur son ordinateur portable.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_007_00-01-17.jpg" alt="Interface du navigateur Google Chrome affichant le site Instacart avec un panneau latéral d&#x27;assistant IA actif." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_007_00-01-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:17</span>
+                        <span class="caption-text">Interface du navigateur Google Chrome affichant le site Instacart avec un panneau latéral d&#x27;assistant IA actif.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:19 - 00:01:53</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En ce moment, ces capacités d&#x27;agent sont encore en phase de test, mais Google prévoit de les déployer pour les utilisateurs dans les mois à venir. C&#x27;est donc juste un aperçu de ce qui va arriver. Ensuite, les comparatifs. Disons que vous faites du shopping, ouvrez quelques onglets de produits, et Gemini comparera instantanément les caractéristiques, les prix et même les avis, en vous donnant les points positifs et négatifs. Cette fonctionnalité change la donne pour prendre des décisions rapidement. Fonctionnalité 4, l&#x27;adaptation de contenu. Gemini ne se contente pas de lire le contenu, il peut l&#x27;adapter. Par exemple, vous pouvez prendre une recette et demander à Gemini de la rendre végétarienne, sans gluten, ou de l&#x27;adapter à un plan de régime. Les développeurs peuvent également ajuster des extraits de code,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web Google Chrome avec une extension ou un panneau latéral de chat et d&#x27;agent Gemini intégré.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sur l&#x27;image 1 : URL &quot;instacart.com/store/sprouts&quot;, panneau latéral &quot;Instacart Order from Sprouts&quot;, texte &quot;Buy these ingredients for me on Instacart.com using the Sprouts store&quot;, étapes listées (&quot;Navigating to Instacart.com&quot;, &quot;Selecting the Sprouts store&quot;, &quot;Searching for carrots&quot;, etc.). Sur l&#x27;image 4 : fenêtre de chat &quot;Gemini&quot;, prompt utilisateur &quot;Can I make this recipe gluten-free?&quot;, réponse de l&#x27;assistant &quot;Yes, you can make this recipe gluten-free...&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de l&#x27;automatisation d&#x27;achats sur Instacart par Gemini, puis d&#x27;une adaptation de recette de cuisine pour devenir sans gluten.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_008_00-01-21.jpg" alt="Interface du navigateur Google Chrome affichant le site Instacart avec un panneau latéral de l&#x27;agent Gemini listant les étapes d&#x27;une commande automatique." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_008_00-01-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:21</span>
+                        <span class="caption-text">Interface du navigateur Google Chrome affichant le site Instacart avec un panneau latéral de l&#x27;agent Gemini listant les étapes d&#x27;une commande automatique.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_009_00-01-51.jpg" alt="Interface du navigateur Google Chrome affichant une page de recette avec une fenêtre de chat Gemini ouverte posant une question sur une version sans gluten." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_009_00-01-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:51</span>
+                        <span class="caption-text">Interface du navigateur Google Chrome affichant une page de recette avec une fenêtre de chat Gemini ouverte posant une question sur une version sans gluten.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:53 - 00:02:18</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Juste dans Chrome, l&#x27;une des parties les plus cool est le mode en direct. Vous pouvez réellement parler à Gemini à l&#x27;intérieur de Chrome, et il répond avec une voix naturelle pendant que vous naviguez. Imaginez cuisiner, travailler ou faire du multitasking. Le support IA mains libres est juste là avec vous. Fonctionnalité 6. Intégration des applications Google Gemini se connecte également aux services Google. De la synthèse de vidéos YouTube à l&#x27;extraction d&#x27;informations de Gmail ou à la création d&#x27;événements de calendrier, cela fait de Chrome le hub central pour toutes vos tâches sans changer d&#x27;application.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Google Chrome, interface de Gemini Live et intégration des applications Google.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de la page web, fenêtres contextuelles de Gemini Live, invite textuelle &quot;Create a focus block between 8-10AM for a half-hou&quot;, et confirmation de Google Calendar.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation web et interaction avec l&#x27;assistant Gemini Live et les services Google dans Chrome.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_010_00-01-55.jpg" alt="Navigateur Google Chrome affichant un article web intitulé &quot;How Athletes Celebrate and Inspire with Body Language&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_010_00-01-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Navigateur Google Chrome affichant un article web intitulé &quot;How Athletes Celebrate and Inspire with Body Language&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_011_00-02-02.jpg" alt="Interface de Google Chrome avec une superposition noire &quot;Gemini Live&quot; active montrant le statut &quot;Sharing&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_011_00-02-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:02</span>
+                        <span class="caption-text">Interface de Google Chrome avec une superposition noire &quot;Gemini Live&quot; active montrant le statut &quot;Sharing&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_012_00-02-10.jpg" alt="Panneau contextuel de Gemini dans Chrome affichant une invite textuelle pour créer un bloc de concentration." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_012_00-02-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:10</span>
+                        <span class="caption-text">Panneau contextuel de Gemini dans Chrome affichant une invite textuelle pour créer un bloc de concentration.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_013_00-02-16.jpg" alt="Interface de Gemini intégrée affichant une interaction Google Calendar avec une vidéo YouTube en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_013_00-02-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:16</span>
+                        <span class="caption-text">Interface de Gemini intégrée affichant une interaction Google Calendar avec une vidéo YouTube en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:18 - 00:02:37</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;une des fonctionnalités phares est l&#x27;Omnibox IA. Tapez simplement votre question directement dans la barre de recherche Chrome. Et Gemini fournit des réponses intelligentes et contextuelles. Elle peut même extraire des informations de plusieurs onglets ouverts, vous offrant ainsi une vue d&#x27;ensemble complète et équilibrée. Les meilleurs cas d&#x27;utilisation. Des étudiants résumant des lectures en quelques secondes. Des professionnels simplifiant la recherche. Des acheteurs comparant des produits plus rapidement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur Google Chrome / Diapositive de présentation animée avec logo Gemini.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte dans la barre de recherche : &quot;I&#x27;m a side sleeper with occasional lower...&quot;, bouton &quot;AI Mode&quot;, raccourcis vers des sites web (YouTube, Work Calendar, Google Drive, Google Photos). Texte sur la diapositive : &quot;THE BEST USE CASES&quot;, &quot;Students summarizing readings in seconds.&quot;, &quot;Professionnels simplifying research.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de la saisie d&#x27;une requête dans la barre d&#x27;adresse de Chrome, suivie d&#x27;un affichage de texte textuel résumant les cas d&#x27;utilisation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_014_00-02-20.jpg" alt="Interface du navigateur Google Chrome montrant la barre d&#x27;adresse Omnibox avec une requête de recherche textuelle et le bouton « AI Mode »." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_014_00-02-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:20</span>
+                        <span class="caption-text">Interface du navigateur Google Chrome montrant la barre d&#x27;adresse Omnibox avec une requête de recherche textuelle et le bouton « AI Mode ».</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-ECaiOB37Rgs/frame_015_00-02-35.jpg" alt="Écran de présentation sur fond noir avec le logo Gemini et le texte illustrant les meilleurs cas d&#x27;utilisation pour les étudiants et les professionnels." loading="lazy" onclick="openLightbox('screenshots/YT-ECaiOB37Rgs/frame_015_00-02-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:35</span>
+                        <span class="caption-text">Écran de présentation sur fond noir avec le logo Gemini et le texte illustrant les meilleurs cas d&#x27;utilisation pour les étudiants et les professionnels.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:37 - 00:02:55</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les créateurs adaptent des recettes, des scripts ou du code. Les multitaskers discutent avec Gemini en mode vocal. Et les utilisateurs occupés laissent Gemini agir pour eux grâce à l&#x27;IA agentique. Gemini dans Chrome n&#x27;est pas seulement un outil. C&#x27;est comme avoir un co-pilote pour le web. La question est : comment allez-vous l&#x27;utiliser ? Honnêtement, ce n&#x27;est que le début. Quelle est la première chose que vousisseriez faire à Gemini pour vous ? Dites-le-moi dans les commentaires.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation graphique avec texte de synthèse, logo Google Chrome revisité avec l&#x27;étoile Gemini, et schéma conceptuel du processus de recherche, apprentissage et partage (aucune interface logicielle réelle n&#x27;est manipulée).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes affichés à l&#x27;écran : &quot;THE BEST USE CASES&quot;, liste des cas d&#x27;usage (étudiants, professionnels, acheteurs, créateurs), logo animé Chrome/Gemini, et schéma textuel &quot;Researching -&gt; Learning -&gt; Sharing&quot; avec un cerveau cybernétique.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage successif de graphiques textuels illustrant les cas d&#x27;utilisation de Gemini, le logo du produit, puis une transition animée vers le concept de recherche et d&#x27;apprentissage.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
