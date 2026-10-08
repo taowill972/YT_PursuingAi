@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Le tueur de Nano Banana est enfin là ! — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Le tueur de Nano Banana est enfin là !</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-09-15</span>
+                <span class="badge">⏱️ 04m 46s</span>
+                <span class="badge">🆔 <code>DNly_Ue_XCc</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=DNly_Ue_XCc" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* explore la confrontation entre deux géants de l'édition et de la génération d'images par IA : le nouvel entrant **Seedream 4.0** (développé par ByteDance, l'entreprise derrière TikTok) et le modèle **Nano Banana**, précédemment considéré comme le destructeur ultime de Photoshop. Le créateur orchestre une démonstration comparative rigoureuse, confrontant les capacités des deux outils sur des cas d'usage réels et complexes, allant de la fusion d'images à la manipulation de texte typographique, en passant par l'inpainting contextuel et la résolution de problèmes mathématiques complexes sur tableau noir.</p><p>La méthode adoptée par le vidéaste repose sur un benchmark empirique structuré. Il commence par analyser les démos officielles spectaculaires de ByteDance pour Seedream 4.0, avant de les soumettre à l'épreuve de ses propres prompts et images de test. Chaque outil est évalué sur sa capacité à maintenir la cohérence visuelle, à respecter les proportions, à gérer l'éclairage nocturne, à manipuler des éléments textuels avec précision et à exécuter des modifications chirurgicales sans altérer le reste de l'image de référence. Ce face-à-face met en lumière les forces et les faiblesses respectives des modèles, notamment la supériorité de Seedream en matière de typographie et de fusion contextuelle, face à la précision de Nano Banana sur certains détourages et modifications texturées.</p><p>Pour les créateurs de contenu et les professionnels de la vidéo, cette analyse offre des enseignements stratégiques majeurs sur l'état de l'art de l'édition générative. Elle démontre comment l'intelligence artificielle redéfinit les workflows traditionnels de post-production, permettant de modifier des affiches, de coloriser des archives, ou de transformer des styles visuels complexes en quelques secondes. Comprendre les subtilités de promptage de ces outils permet aux créateurs d'optimiser leurs pipelines de production visuelle, d'économiser un temps précieux sur des logiciels lourds comme Photoshop, et de choisir l'IA la plus adaptée à chaque tâche spécifique.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Nano Banana</span><span class="tool-tag">Photoshop</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>La suprématie de ByteDance sur le texte** : Seedream 4.0 surpasse nettement Nano Banana dans la modification et la génération de texte intégré aux images, respectant les polices, les couleurs et les alignements sans altérer le design global.</span></li><li><span class="point-bullet">✦</span><span>Gestion de la typographie complexe** : Lors du remplacement de slogans sur des affiches (ex: « Santiago Music Festival » vers « Pursuing AI »), Seedream intègre les nouveaux caractères avec une propreté chirurgicale, là où Nano Banana conserve des scories textuelles.</span></li><li><span class="point-bullet">✦</span><span>Attention au respect des échelles (Inpainting)** : Lors de l&#x27;ajout d&#x27;objets ou d&#x27;animaux via un prompt (comme un crocodile dans une rivière), Seedream intègre l&#x27;élément de manière plus naturelle, évitant les erreurs de proportion constatées chez son concurrent.</span></li><li><span class="point-bullet">✦</span><span>Limites de la modification contextuelle globale** : Demander un passage en « mode nuit » révèle des subtilités d&#x27;éclairage : Seedream gère bien l&#x27;ambiance crépusculaire mais peut omettre d&#x27;allumer les lumières spécifiques d&#x27;un monument comme la Tour Eiffel, un domaine où Nano Banana se montre parfois plus intuitif.</span></li><li><span class="point-bullet">✦</span><span>Raisonnement visuel et résolution de problèmes** : Seedream 4.0 démontre une capacité unique à résoudre des équations mathématiques complexes et à afficher la solution proprement sur un tableau noir à partir d&#x27;un simple prompt textuel.</span></li><li><span class="point-bullet">✦</span><span>Piège de la transformation globale (Style Transfer)** : Il faut être extrêmement précis dans le promptage pour éviter qu&#x27;un outil comme Seedream n&#x27;applique un style 2D à l&#x27;intégralité d&#x27;une image (comme une pizza et la main qui la tient) au lieu de cibler un seul élément.</span></li><li><span class="point-bullet">✦</span><span>Cohérence et respect des références** : La fusion de multiples images de référence dans Seedream produit des résultats bluffants en conservant l&#x27;identité visuelle exacte des sources, ouvrant la voie à des workflows de moodboard automatisés.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;importance des prompts conditionnels** : Pour obtenir des résultats parfaits sur des modifications textuelles, l&#x27;utilisation de consignes strictes (« Conservez la palette de couleurs, la police et l&#x27;alignement du texte inchangés ») est indispensable pour guider l&#x27;IA.</span></li><li><span class="point-bullet">✦</span><span>Complémentarité des outils** : Aucun modèle n&#x27;est universellement supérieur ; Seedream excelle dans la typographie et la fusion globale, tandis que Nano Banana conserve l&#x27;avantage sur certains détourages d&#x27;objets et ajustements de textures serrés.</span></li><li><span class="point-bullet">✦</span><span>Évolution rapide de l&#x27;écosystème** : La vitesse à laquelle un nouvel outil (« le tueur de Nano Banana ») supplante le leader du marché souligne la nécessité pour les créateurs de veille technologique permanente pour maintenir des workflows de pointe.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:22</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il y a tout juste quelques semaines, Nano Banana ressemblait au destructeur ultime de Photoshop. Mais maintenant, oubliez cette idée, un nouvel éditeur et générateur d&#x27;images est arrivé, et il fait paraître Nano Banana lui-même obsolète. Je sais que cela semble difficile à croire, alors dans cette vidéo, je vais vous montrer des exemples réels et des comparaisons directes avec Nano Banana. Plongeons-nous-y directement. Le modèle s&#x27;appelle Seedream 4.0, créé par ByteDance, l&#x27;entreprise derrière TikTok.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration de visuels générés par IA et affichage d&#x27;un logo d&#x27;entreprise.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Visuels d&#x27;exemples d&#x27;images IA (portrait de femme et personnage de Catwoman), logo textuel &quot;ByteDance | Seed&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement de différentes images générées par IA pour illustrer les performances du modèle Seedream 4.0, suivi d&#x27;une transition avec le logo de ByteDance Seed.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_001_00-00-02.jpg" alt="Image générée par IA montrant le portrait réaliste d&#x27;une jeune femme brune aux cheveux ondulés, portant une robe noire et un collier." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Image générée par IA montrant le portrait réaliste d&#x27;une jeune femme brune aux cheveux ondulés, portant une robe noire et un collier.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_002_00-00-11.jpg" alt="Image générée par IA représentant un personnage style comics de Catwoman en costume en vinyle noir avec des oreilles de chat sur fond texturé." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_002_00-00-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:11</span>
+                        <span class="caption-text">Image générée par IA représentant un personnage style comics de Catwoman en costume en vinyle noir avec des oreilles de chat sur fond texturé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_003_00-00-20.jpg" alt="Écran noir affichant le logo de l&#x27;entreprise ByteDance Seed." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_003_00-00-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:20</span>
+                        <span class="caption-text">Écran noir affichant le logo de l&#x27;entreprise ByteDance Seed.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:22 - 00:00:56</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Sur leur site web, ils partagent quelques exemples. Supposons que vous téléciez une tonne d&#x27;images et que vous lui demandiez de les fusionner toutes ensemble en une seule image. Le résultat est insensé. Il comprend parfaitement le tout, et tout ressemble exactement à l&#x27;image de référence. Vous pouvez également modifier le texte d&#x27;une affiche, comme ceci, ou même changer complètement l&#x27;éclairage de la scène, comme ceci. Il est également très doué pour coloriser des photos en noir et blanc, et au-delà de l&#x27;édition, il est extrêmement puissant pour générer des images aussi. Par exemple, vous pouvez lui demander de concevoir une page d&#x27;atterrissage pour cette galerie, comme ceci, ou vous pouvez lui demander de résoudre une équation, et le</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de présentation de l&#x27;outil Seedream 4.0.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte « Seedream 4.0 », exemples visuels de fusion d&#x27;images, instructions textuelles et résolutions d&#x27;équations mathématiques sur fond de tableau noir.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration des différentes capacités de l&#x27;intelligence artificielle Seedream 4.0 (fusion d&#x27;images, édition de texte/éclairage, colorisation et génération).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_004_00-00-24.jpg" alt="Page web de présentation de Seedream 4.0 montrant des chaussures rouges et des pommes." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_004_00-00-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:24</span>
+                        <span class="caption-text">Page web de présentation de Seedream 4.0 montrant des chaussures rouges et des pommes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_005_00-00-34.jpg" alt="Démonstration de fusion d&#x27;images multiples pour composer une scène unique dans le désert." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_005_00-00-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:34</span>
+                        <span class="caption-text">Démonstration de fusion d&#x27;images multiples pour composer une scène unique dans le désert.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_006_00-00-45.jpg" alt="Démonstration de colorisation et de restauration d&#x27;une photo de type vintage sur un stand de glaces." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_006_00-00-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:45</span>
+                        <span class="caption-text">Démonstration de colorisation et de restauration d&#x27;une photo de type vintage sur un stand de glaces.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_007_00-00-54.jpg" alt="Affichage d&#x27;une équation mathématique résolue pas à pas sur un tableau noir généré." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_007_00-00-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:54</span>
+                        <span class="caption-text">Affichage d&#x27;une équation mathématique résolue pas à pas sur un tableau noir généré.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:56 - 00:01:25</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">solution de l&#x27;équation sur un tableau noir. Et puis regardez les résultats pour voir avec quelle précision il comprend le prompt et donne également la solution. Incroyable. Ce sont des exemples complètement fous. Regardez juste à quel point c&#x27;est insensé. Maintenant, bien sûr, ce sont leurs démos officielles, elles ont donc pu être triées sur le volet. Ensuite, je vais vous montrer mes propres expériences et comparaisons avec Nano Banana. Le cas d&#x27;usage des équations est intéressant. J&#x27;ai essayé le même prompt, mais avec une équation différente et les résultats ont été impressionnants. Seadream l&#x27;a exécuté parfaitement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration vidéo de génération de contenu par intelligence artificielle (outils Seadream / Nano Banana).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Équations mathématiques textuelles sur fond de tableau noir, étapes de résolution (Step 1 à Step 5), solution finale (x=4, y=3). Texte &quot;AI&quot; visible en haut à gauche sur l&#x27;image 2.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et comparaison de résultats de génération d&#x27;IA sur des cas d&#x27;usage d&#x27;équations mathématiques et de vidéos d&#x27;action.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_008_00-00-58.jpg" alt="Tableau noir affichant la résolution étape par étape d&#x27;un système d&#x27;équations mathématiques avec l&#x27;IA." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_008_00-00-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:58</span>
+                        <span class="caption-text">Tableau noir affichant la résolution étape par étape d&#x27;un système d&#x27;équations mathématiques avec l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_009_00-01-06.jpg" alt="Génération vidéo montrant un athlète futuriste en mouvement rapide avec des traînées de lumière bleue et orange." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_009_00-01-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:06</span>
+                        <span class="caption-text">Génération vidéo montrant un athlète futuriste en mouvement rapide avec des traînées de lumière bleue et orange.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_010_00-01-15.jpg" alt="Tableau noir affichant la résolution étape par étape d&#x27;un système d&#x27;équations mathématiques avec l&#x27;IA." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_010_00-01-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:15</span>
+                        <span class="caption-text">Tableau noir affichant la résolution étape par étape d&#x27;un système d&#x27;équations mathématiques avec l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_011_00-01-23.jpg" alt="Comparaison côte à côte de plusieurs tableaux noirs générés par l&#x27;IA montrant la résolution d&#x27;équations mathématiques." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_011_00-01-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:23</span>
+                        <span class="caption-text">Comparaison côte à côte de plusieurs tableaux noirs générés par l&#x27;IA montrant la résolution d&#x27;équations mathématiques.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:25 - 00:01:44</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">tandis que Nano Banana a également obtenu la bonne réponse et les étapes, mais les a présentées de manière un peu brouillonne sans exploiter au mieux l&#x27;espace. Pourtant, les deux modèles ont réussi à produire le bon résultat. J&#x27;ai utilisé cette image et lui ai donné une invite. Ajoute un crocodile dans la rivière. L&#x27;image doit être cohérente et naturelle. Maintenant, en regardant le résultat de SeaDream, c&#x27;est impressionnant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Affichage comparatif côte à côte de rendus générés par différentes intelligences artificielles (Seedream et Nano Banana).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte sur tableaux noirs détaillant les étapes mathématiques pour résoudre un système d&#x27;équations, puis étiquettes « INPUT » et « SEEDREAM » sous deux photographies similaires avec et sans crocodile.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle comparative des résultats de résolution mathématique et de modification d&#x27;image par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_012_00-01-27.jpg" alt="Comparaison divisée en deux écrans de tableaux noirs montrant la résolution de systèmes d&#x27;équations par Seedream et Nano Banana." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_012_00-01-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:27</span>
+                        <span class="caption-text">Comparaison divisée en deux écrans de tableaux noirs montrant la résolution de systèmes d&#x27;équations par Seedream et Nano Banana.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_013_00-01-42.jpg" alt="Comparaison entre une image d&#x27;entrée montrant une grenouille près d&#x27;une rivière et le résultat de SeaDream avec un crocodile ajouté." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_013_00-01-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:42</span>
+                        <span class="caption-text">Comparaison entre une image d&#x27;entrée montrant une grenouille près d&#x27;une rivière et le résultat de SeaDream avec un crocodile ajouté.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:44 - 00:02:02</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le crocodile se fond parfaitement. Tout semble naturel et l&#x27;image reste cohérente avec la référence. D&#x27;un autre côté, Nano Banana offre également un bon résultat, mais il y a une erreur évidente. Le crocodile est beaucoup trop grand, et cela ne fait tout simplement pas naturel. C&#x27;est pourquoi, dans ce tour, je donne le point à Sea Dream. Voici un autre exemple d&#x27;ajout d&#x27;éléments à une image.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation comparative de résultats de modèles d&#x27;IA générative d&#x27;images (Seedream vs Nano Banana).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes étiquetant les images : &quot;INPUT&quot;, &quot;SEEDREAM&quot;, et &quot;NANO 🍌&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur compare les résultats des différents modèles d&#x27;IA sur l&#x27;intégration d&#x27;un crocodile dans une scène naturelle avec une grenouille.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_014_00-01-46.jpg" alt="Comparaison visuelle entre l&#x27;image d&#x27;entrée originale (Input) et le résultat généré par Seedream montrant un petit crocodile s&#x27;approchant de la grenouille." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_014_00-01-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:46</span>
+                        <span class="caption-text">Comparaison visuelle entre l&#x27;image d&#x27;entrée originale (Input) et le résultat généré par Seedream montrant un petit crocodile s&#x27;approchant de la grenouille.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_015_00-01-53.jpg" alt="Comparaison côte à côte de l&#x27;image d&#x27;entrée (Input), du résultat Seedream (crocodile de taille naturelle) et du résultat Nano Banana (crocodile surdimensionné à l&#x27;arrière-plan)." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_015_00-01-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:53</span>
+                        <span class="caption-text">Comparaison côte à côte de l&#x27;image d&#x27;entrée (Input), du résultat Seedream (crocodile de taille naturelle) et du résultat Nano Banana (crocodile surdimensionné à l&#x27;arrière-plan).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:03 - 00:02:21</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;ai téléchargé une photo de Robert Pattinson et j&#x27;ai utilisé ce prompt. Ajoute un masque de Batman noir réaliste sur le visage de Robert Pattinson pour qu&#x27;il corresponde à son look et à l&#x27;éclairage. Le résultat de Nano Banana est bon. Le masque s&#x27;adapte bien, et seule la forme du visage a un peu changé, mais ça reste bien. Le résultat de Sea Dream n&#x27;était pas bon.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration vidéo montrant des comparaisons d&#x27;images générées par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Photo de Robert Pattinson en entrée et résultat généré étiqueté &quot;NANO&quot; avec le logo d&#x27;une banane.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur compare l&#x27;image d&#x27;entrée originale avec le résultat modifié par IA où un masque de Batman a été ajouté.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_016_00-02-05.jpg" alt="Image de Robert Pattinson utilisée comme photo d&#x27;entrée pour la génération par IA." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_016_00-02-05.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:05</span>
+                        <span class="caption-text">Image de Robert Pattinson utilisée comme photo d&#x27;entrée pour la génération par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_017_00-02-12.jpg" alt="Affichage comparatif montrant l&#x27;image d&#x27;entrée à gauche et un espace vide en préparation du résultat à droite." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_017_00-02-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:12</span>
+                        <span class="caption-text">Affichage comparatif montrant l&#x27;image d&#x27;entrée à gauche et un espace vide en préparation du résultat à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_018_00-02-19.jpg" alt="Comparaison avant/après affichant l&#x27;image originale &quot;INPUT&quot; à gauche et le résultat généré par &quot;NANO&quot; avec le masque de Batman à droite." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_018_00-02-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:19</span>
+                        <span class="caption-text">Comparaison avant/après affichant l&#x27;image originale &quot;INPUT&quot; à gauche et le résultat généré par &quot;NANO&quot; avec le masque de Batman à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:21 - 00:02:42</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il a ajouté le masque, mais ne l&#x27;a pas réparé, et il a également changé son expression faciale. Donc cette fois, le point va à Nano Banana. J&#x27;ai utilisé cette image et donné une instruction pour la changer en mode nuit. Voici le résultat de SeaDream. C&#x27;est devenu la nuit, mais les lampadaires sont restés allumés. D&#x27;un autre côté, Nano Banana a également gardé les lampadaires allumés, mais a éteint les lumières des bâtiments.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo comparative avec des visuels générés par IA et des étiquettes textuelles (INPUT, NANO, SEEDREAM, *DAYTIME*).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;INPUT&quot;, &quot;NANO&quot; avec une icône de banane, &quot;SEEDREAM&quot;, et &quot;*DAYTIME*&quot;.
+[Démonstration comparative] Le présentateur compare les performances de deux modèles d&#x27;IA (Nano Banana et SeaDream) sur la modification d&#x27;images (ajout d&#x27;un masque et changement d&#x27;éclairage de nuit à jour).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_019_00-02-23.jpg" alt="Comparaison visuelle entre l&#x27;image d&#x27;origine (INPUT) et les résultats de NANO BANANA et SEEDREAM concernant l&#x27;ajout d&#x27;un masque de Batman." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_019_00-02-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:23</span>
+                        <span class="caption-text">Comparaison visuelle entre l&#x27;image d&#x27;origine (INPUT) et les résultats de NANO BANANA et SEEDREAM concernant l&#x27;ajout d&#x27;un masque de Batman.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_020_00-02-31.jpg" alt="Affichage de l&#x27;image de départ (*DAYTIME*) représentant une rue de ville de nuit avec des lampadaires allumés." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_020_00-02-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:31</span>
+                        <span class="caption-text">Affichage de l&#x27;image de départ (*DAYTIME*) représentant une rue de ville de nuit avec des lampadaires allumés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_021_00-02-40.jpg" alt="Comparaison finale entre l&#x27;image d&#x27;entrée de nuit (INPUT), SEEDREAM et NANO BANANA après l&#x27;application du prompt de transformation en mode jour/nuit." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_021_00-02-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:40</span>
+                        <span class="caption-text">Comparaison finale entre l&#x27;image d&#x27;entrée de nuit (INPUT), SEEDREAM et NANO BANANA après l&#x27;application du prompt de transformation en mode jour/nuit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:42 - 00:03:06</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans SeaDream, les lumières des bâtiments sont toujours allumées. Laissez un commentaire ci-dessous pour me dire à quel outil vous donneriez des points. Ici, j&#x27;ai utilisé une image de vue aérienne de la tour Eiffel et j&#x27;ai donné un prompt pour la transformer en version nocturne. Le résultat de SeaDream bascule bien la scène en mode nuit, avec les lumières des bâtiments visibles, mais les lumières de la tour Eiffel restent éteintes. D&#x27;un autre côté, Nano Banana comprend clairement mieux ma requête. À la fois les bâtiments et les lumières de la tour Eiffel brillent magnifiquement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de présentation comparative d&#x27;outils d&#x27;IA générative (Seedream vs Nano Banana).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte visible : &quot;INPUT&quot;, &quot;SEEDREAM&quot;, &quot;NANO&quot; avec une icône de banane. Visuels de la tour Eiffel et de rues urbaines.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur compare les performances de deux modèles d&#x27;IA (Seedream et Nano Banana) sur une tâche de modification d&#x27;éclairage (transformation de jour en nuit).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_022_00-02-44.jpg" alt="Comparaison visuelle entre une image d&#x27;entrée (INPUT), le résultat de Seedream et le résultat de Nano Banana avec une icône de banane montrant une rue de ville de nuit." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_022_00-02-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:44</span>
+                        <span class="caption-text">Comparaison visuelle entre une image d&#x27;entrée (INPUT), le résultat de Seedream et le résultat de Nano Banana avec une icône de banane montrant une rue de ville de nuit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_023_00-02-50.jpg" alt="Image aérienne originale de la tour Eiffel et de la Seine à Paris de jour utilisée comme entrée (INPUT)." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_023_00-02-50.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:50</span>
+                        <span class="caption-text">Image aérienne originale de la tour Eiffel et de la Seine à Paris de jour utilisée comme entrée (INPUT).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_024_00-02-58.jpg" alt="Comparaison avant/après affichant l&#x27;image d&#x27;entrée (INPUT) de jour et le résultat de Seedream transformé en scène nocturne avec les lumières des bâtiments." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_024_00-02-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:58</span>
+                        <span class="caption-text">Comparaison avant/après affichant l&#x27;image d&#x27;entrée (INPUT) de jour et le résultat de Seedream transformé en scène nocturne avec les lumières des bâtiments.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_025_00-03-04.jpg" alt="Comparaison multi-panneaux montrant l&#x27;image d&#x27;entrée, le résultat Seedream avec la tour éteinte, et le résultat Nano Banana avec la tour illuminée de nuit." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_025_00-03-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:04</span>
+                        <span class="caption-text">Comparaison multi-panneaux montrant l&#x27;image d&#x27;entrée, le résultat Seedream avec la tour éteinte, et le résultat Nano Banana avec la tour illuminée de nuit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:06 - 00:03:42</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc, le point revient à Nano Banana. Comme nous l&#x27;avons vu avec Seadream, il fonctionne très bien lorsqu&#x27;il s&#x27;agit de modifier du texte. Pour tester cela, j&#x27;ai utilisé leur image sur laquelle était écrit « Santiago Music Festival » et j&#x27;ai donné le prompt suivant : Change Santiago Music Festival to Pursuing AI. Les résultats de Seadream sont parfaits, alors que Nano Banana n&#x27;est pas efficace pour modifier correctement le texte et ne supprime pas Music Festival. Comme il s&#x27;agit d&#x27;exemples de Seadream, cela pourrait être injuste pour Nano Banana. J&#x27;ai donc utilisé ma propre image avec « Golf Club Meet and Great » écrit dessus et j&#x27;ai donné le prompt : Change Golf Club Meet and Great to Basketball Club. Get a chance to meet Ronaldo and Messi.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de démonstration vidéo avec affichage comparatif d&#x27;images, de prompts textuels et de résultats de génération IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Santiago Music Festival&quot;, &quot;Change Santiago Music Festival To Pursuing AI&quot;, &quot;SEEDREAM&quot;, &quot;NANO BANANA&quot;, &quot;GOLF CLUB MEET &amp; GREAT&quot;, &quot;Change &#x27;Golf Club Meet and Great&#x27; to &#x27;Basketball Club - Get a chance to Meet Ronaldo and Messi&#x27;&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur compare visuellement les performances de modification de texte entre Seedance et Nano Banana en affichant les images originales, les prompts et les résultats côte à côte.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_026_00-03-08.jpg" alt="Animation montrant une créature lumineuse marchant dans une forêt sombre avec des lucioles et un hibou." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_026_00-03-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:08</span>
+                        <span class="caption-text">Animation montrant une créature lumineuse marchant dans une forêt sombre avec des lucioles et un hibou.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_027_00-03-19.jpg" alt="Affiche originale avec des motifs tropicaux et le texte &quot;Santiago Music Festival&quot; à gauche, et le prompt textuel affiché au centre." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_027_00-03-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:19</span>
+                        <span class="caption-text">Affiche originale avec des motifs tropicaux et le texte &quot;Santiago Music Festival&quot; à gauche, et le prompt textuel affiché au centre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_028_00-03-31.jpg" alt="Comparaison des résultats de modification de texte entre l&#x27;image originale, Seedance et Nano Banana." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_028_00-03-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:31</span>
+                        <span class="caption-text">Comparaison des résultats de modification de texte entre l&#x27;image originale, Seedance et Nano Banana.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_029_00-03-40.jpg" alt="Image de test personnelle avec une balle de golf sur de l&#x27;herbe et le texte &quot;GOLF CLUB MEET &amp; GREAT&quot;, accompagnée du prompt textuel en bas." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_029_00-03-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:40</span>
+                        <span class="caption-text">Image de test personnelle avec une balle de golf sur de l&#x27;herbe et le texte &quot;GOLF CLUB MEET &amp; GREAT&quot;, accompagnée du prompt textuel en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:42 - 00:04:17</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Conservez la palette de couleurs, la police et l&#x27;alignement du texte inchangés. Voici le résultat. C Dream a parfaitement réussi, incluant même le tiret que j&#x27;ai spécifié dans le prompt. Nano Banana, cependant, a clairement échoué dans ce tour. Je ne sais pas pourquoi, mais il a ajouté des éléments supplémentaires à l&#x27;image. Ici, les points vont à C Dream. J&#x27;ai utilisé cette image et donné le prompt : Ajoutez de nombreuses traînées de flou de mouvement à cette personne qui court vite. Voici les résultats des deux modèles. Alors, lequel devriez-vous choisir ? Dans ce cas, je préfère la génération de Nano Banana, j&#x27;ai téléchargé cette image de pizza et donné le prompt : Faire ressembler la pizza à un dessin 2D fantaisiste</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de tutoriel ou de comparatif vidéo montrant des superpositions de texte, des prompts et des résultats de génération d&#x27;images par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;GOLF CLUB MEET &amp; GREAT&quot;, &quot;Change &#x27;Golf Club Meet and Great&#x27; to &#x27;Basketball Club -Get a Chance to Meet Ronaldo and Messi. Keep the color scheme, font, and alignment of the text...&quot;, &quot;INPUT&quot;, &quot;SEEDREAM&quot;, &quot;NANO&quot;, &quot;Make pizza look like a 2D whimsical...&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative de différents modèles de génération d&#x27;IA évaluant leur capacité à modifier du texte sur image et à appliquer des effets visuels (flou de mouvement, style artistique).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_030_00-03-44.jpg" alt="Image d&#x27;une balle de golf sur de l&#x27;herbe avec un ciel bleu en arrière-plan, accompagnée d&#x27;un prompt textuel en bas demandant de modifier le texte." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_030_00-03-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:44</span>
+                        <span class="caption-text">Image d&#x27;une balle de golf sur de l&#x27;herbe avec un ciel bleu en arrière-plan, accompagnée d&#x27;un prompt textuel en bas demandant de modifier le texte.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_031_00-03-54.jpg" alt="Comparaison entre l&#x27;image d&#x27;entrée et les résultats générés par Seedream et Nano Banana suite à une modification de texte textuelle." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_031_00-03-54.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:54</span>
+                        <span class="caption-text">Comparaison entre l&#x27;image d&#x27;entrée et les résultats générés par Seedream et Nano Banana suite à une modification de texte textuelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_032_00-04-06.jpg" alt="Comparaison côte à côte de deux résultats de modèles d&#x27;IA générant un coureur avec des effets de flou de mouvement." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_032_00-04-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:06</span>
+                        <span class="caption-text">Comparaison côte à côte de deux résultats de modèles d&#x27;IA générant un coureur avec des effets de flou de mouvement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_033_00-04-15.jpg" alt="Affichage d&#x27;une image de pizza avec des sauces et une bouteille de Coca-Cola, avec le début du prompt textuel affiché à droite." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_033_00-04-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:15</span>
+                        <span class="caption-text">Affichage d&#x27;une image de pizza avec des sauces et une bouteille de Coca-Cola, avec le début du prompt textuel affiché à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:17 - 00:04:47</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">illustration animée, tout en gardant exactement tout le reste de l&#x27;image identique. Dans le prompt, j&#x27;ai spécifiquement mentionné uniquement la pizza, mais Seadream a transformé toute l&#x27;image en 2D. D&#x27;un autre côté, Nano Banana a fait une petite erreur en transformant également la main en 2D. Mais dans l&#x27;ensemble, la génération de Nano Banana est bonne. Je devrais donc donner un point à Nano Banana. Et avant de partir, je veux juste partager ceci. Je recherche constamment de nouveaux outils d&#x27;IA qui peuvent vraiment vous simplifier la vie, alors n&#x27;oubliez pas de vous abonner et de garder une longueur d&#x27;avance</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de comparaison de modèles de génération d&#x27;images par IA et navigateur web sur ordinateur portable.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt : « Make pizza look like a 2D whimsical hand-drawn anime illustration while keeping everything else in the image exactly the same. », et labels « SEEDREAM » et « NANO » accompagnés d&#x27;une icône de banane.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative de deux modèles d&#x27;IA générative (Seadream et Nano Banana) modifiant une image de pizza, suivie d&#x27;une illustration vidéo d&#x27;un utilisateur naviguant sur des outils d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_034_00-04-19.jpg" alt="Image originale de pizza avec le prompt affiché en superposition textuelle bleue." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_034_00-04-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:19</span>
+                        <span class="caption-text">Image originale de pizza avec le prompt affiché en superposition textuelle bleue.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_035_00-04-28.jpg" alt="Comparaison des résultats de génération d&#x27;image IA entre SEEDREAM et NANO BANANA à partir de l&#x27;image de référence." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_035_00-04-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:28</span>
+                        <span class="caption-text">Comparaison des résultats de génération d&#x27;image IA entre SEEDREAM et NANO BANANA à partir de l&#x27;image de référence.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-DNly_Ue_XCc/frame_036_00-04-45.jpg" alt="Vue de dos d&#x27;un utilisateur consultant une application web d&#x27;IA sur un ordinateur portable avec une tasse de café à côté." loading="lazy" onclick="openLightbox('screenshots/YT-DNly_Ue_XCc/frame_036_00-04-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:45</span>
+                        <span class="caption-text">Vue de dos d&#x27;un utilisateur consultant une application web d&#x27;IA sur un ordinateur portable avec une tasse de café à côté.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
