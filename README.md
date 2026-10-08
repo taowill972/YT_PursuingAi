@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `83 / 84` (`98.8%`)
+- **Vidéos traitées** : `81 / 84` (`96.4%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -96,9 +96,7 @@
 | 2025-10-11 | [We aren't ready?](2025-10-11_YT-1hkXJtRtHzY_We aren't ready_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-10-11_YT-1hkXJtRtHzY_We aren't ready_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 14s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=1hkXJtRtHzY) | `1hkXJtRtHzY` |
 | 2025-10-06 | [Some Open Source Models (Sora 2)..](2025-10-06_YT-0994BqHojag_Some Open Source Models (Sora 2).._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-10-06_YT-0994BqHojag_Some Open Source Models (Sora 2).._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 30s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=0994BqHojag) | `0994BqHojag` |
 | 2025-10-03 | [Sora 2 is wild!](2025-10-03_YT-rv39Quhquww_Sora 2 is wild!_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-10-03_YT-rv39Quhquww_Sora 2 is wild!_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 15s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=rv39Quhquww) | `rv39Quhquww` |
-| 2025-09-30 | [New open source models are here! Huge AI Research.](2025-09-30_YT-4Cu9EP_Zw6Q_New open source models are here! Huge AI Research._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-09-30_YT-4Cu9EP_Zw6Q_New open source models are here! Huge AI Research._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 5m 16s | `15 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=4Cu9EP_Zw6Q) | `4Cu9EP_Zw6Q` |
-| 2025-09-22 | [Tout savoir sur Gemini dans Chrome : Fonctionnalités et décryptage !](2025-09-22_YT-ECaiOB37Rgs_Tout savoir sur Gemini dans Chrome Fonctionnalités et décryptage !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-09-22_YT-ECaiOB37Rgs_Tout savoir sur Gemini dans Chrome Fonctionnalités et décryptage !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 2m 56s | `15 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=ECaiOB37Rgs) | `ECaiOB37Rgs` |
-| 2025-09-15 | [Le tueur de Nano Banana est enfin là !](2025-09-15_YT-DNly_Ue_XCc_Le tueur de Nano Banana est enfin là !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-09-15_YT-DNly_Ue_XCc_Le tueur de Nano Banana est enfin là !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 46s | `36 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=DNly_Ue_XCc) | `DNly_Ue_XCc` |
+| 2025-09-08 | [Ces métiers sont déjà remplacés par l'IA. Vous devez savoir.](2025-09-08_YT-33FpzAqYX_o_Ces métiers sont déjà remplacés par l'IA. Vous devez savoir._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-09-08_YT-33FpzAqYX_o_Ces métiers sont déjà remplacés par l'IA. Vous devez savoir._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 19s | `20 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=33FpzAqYX_o) | `33FpzAqYX_o` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

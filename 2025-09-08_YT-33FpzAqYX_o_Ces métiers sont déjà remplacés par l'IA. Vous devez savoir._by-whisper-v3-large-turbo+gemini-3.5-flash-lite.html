@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Ces métiers sont déjà remplacés par l&#x27;IA. Vous devez savoir. — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Ces métiers sont déjà remplacés par l&#x27;IA. Vous devez savoir.</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-09-08</span>
+                <span class="badge">⏱️ 03m 19s</span>
+                <span class="badge">🆔 <code>33FpzAqYX_o</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=33FpzAqYX_o" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de Pursuing AI, intitulée « Ces métiers sont déjà remplacés par l'IA. Vous devez savoir. », propose une immersion percutante et factuelle dans la réalité actuelle de l'automatisation par l'intelligence artificielle et la robotique. Loin des simples prédictions futuristes, le créateur s'appuie sur des preuves tangibles et des cas d'usage réels, principalement en Chine, pour démontrer que le remplacement de la main-d'œuvre humaine est déjà en marche dans des secteurs aussi divers que l'hôtellerie, la restauration, la rédaction publicitaire, la régulation de la circulation et le BTP. La structure narrative repose sur une gradation efficace : chaque section expose un métier touché, fournit des preuves concrètes (témoignages de professionnels, reportages sur le terrain), puis analyse l'impact sectoriel global avant d'interpeller directement le spectateur pour maximiser l'engagement.</p><p>Sur le plan de la production vidéo par IA, ce type de contenu illustre parfaitement l'art d'illustrer des sujets sociétaux complexes grâce à des flux de travail visuels ultra-dynamiques. Le créateur exploite des outils de pointe comme **Seedance 2.5** et **Kling 3.0** pour générer des séquences B-roll fluides, hyper-réalistes et parfaitement synchronisées avec un voice-over au rythme haletant. L'utilisation stratégique d'outils de génération d'images comme **Midjourney** permet de créer des vignettes et des visuels d'accroche saisissants. La méthode étape par étape repose sur un *hook* agressif dès les premières secondes, une transition fluide entre des exemples internationaux vérifiables et un appel à l'action final optimisé pour la rétention et la croissance de la chaîne.</p><p>Pour les créateurs de contenu vidéo et les monteurs, cette vidéo constitue un cas d'école en matière de storytelling et de monétisation de l'actualité technologique. En combinant des outils de **Génération Vidéo IA** avec un montage serré, des appels à commentaires ciblés et des questions ouvertes ("Notez-la sur 10"), le créateur transforme un sujet anxiogène en une conversation interactive à forte viralité. Les enseignements retirés de ce workflow permettent d'accélérer drastiquement la production de documentaires courts sur l'IA tout en maintenant un niveau d'engagement et de crédibilité élevé auprès d'une audience avide de comprendre les transformations du marché du travail.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Maîtriser le *hook* émotionnel et factuel** : Dès la première phrase, le créateur pose une affirmation percutante (« avec de vraies preuves ») pour éliminer le scepticisme du spectateur et garantir une rétention maximale dans les trente premières secondes.</span></li><li><span class="point-bullet">✦</span><span>Illustrer par des preuves tangibles** : Ne jamais se contenter de spéculations théoriques ; appuyer chaque affirmation sur des cas réels (ex. : robots livreurs dans les hôtels en Chine, bras robotisés Artly) pour asseoir l&#x27;autorité de la chaîne.</span></li><li><span class="point-bullet">✦</span><span>Intégrer des témoignages de première main** : Citer des retours d&#x27;utilisateurs issus de plateformes comme Reddit humanise le débat et donne une voix aux victimes directes des mutations technologiques (comme les rédacteurs publicitaires).</span></li><li><span class="point-bullet">✦</span><span>Déconstruire le remplacement sectoriel** : Expliquer que l&#x27;IA ne détruit pas toujours un métier en bloc, mais commence par automatiser des tâches spécifiques (ex. : la police de la circulation avec des agents robotisés gérant les flux basiques).</span></li><li><span class="point-bullet">✦</span><span>Exploiter les méga-projets industriels** : Mettre en avant des réalisations spectaculaires à grande échelle (comme une autoroute de 158 km construite sans ouvriers) pour démontrer l&#x27;ampleur systémique de l&#x27;automatisation.</span></li><li><span class="point-bullet">✦</span><span>Diversifier les industries ciblées** : Balayer large (hôtellerie, cafés, marketing, police, construction) pour maintenir l&#x27;intérêt d&#x27;une audience aux profils professionnels variés et élargir le potentiel viral de la vidéo.</span></li><li><span class="point-bullet">✦</span><span>Stimuler l&#x27;engagement communautaire actif** : Poser des questions précises et claires (« Notez-la sur 10 dans les commentaires », « L&#x27;IA vous a-t-elle aidé ou a-t-elle pris des opportunités ? ») pour propulser l&#x27;algorithme grâce à l&#x27;afflux de commentaires.</span></li><li><span class="point-bullet">✦</span><span>Créer des boucles d&#x27;anticipation (*loops*)** : Annoncer subtilement la suite (« le prochain emploi... pourrait vous surprendre encore plus ») pour maintenir la tension narrative et inciter le spectateur à rester jusqu&#x27;à la fin.</span></li><li><span class="point-bullet">✦</span><span>Optimiser le workflow visuel par IA** : Utiliser des générateurs de vidéo comme Seedance 2.5 et Kling 3.0 pour pallier l&#x27;absence d&#x27;images d&#x27;archives réelles, en veillant à maintenir une cohérence stylistique irréprochable.</span></li><li><span class="point-bullet">✦</span><span>Soigner le pont entre éthique et engagement** : Terminer sur une question philosophique ouverte (« L&#x27;IA va-t-elle détruire ou créer des emplois ? ») pour polariser sainement l&#x27;espace de discussion et maximiser le temps de visionnage.</span></li><li><span class="point-bullet">✦</span><span>Convertir l&#x27;audience de manière proactive** : Placer l&#x27;appel à l&#x27;abonnement et l&#x27;activation de la cloche au moment exact de la fatigue cognitive, juste avant la conclusion, en promettant une suite thématisée directe.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:19</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans la vidéo d&#x27;aujourd&#x27;hui, je vais vous montrer les emplois que l&#x27;intelligence artificielle a déjà remplacés, avec de vraies preuves. Plongeons donc directement dans le sujet. Premier sur la liste : les employés d&#x27;hôtel. Oui, en Chine, les hôtels remplacent déjà le personnel par l&#x27;IA. Imaginez ceci : vous commandez de la nourriture ou des serviettes, et au lieu d&#x27;une personne qui frappe à votre porte, un robot arrive en roulant et vous livre directement. Et cela ne s&#x27;arrête pas aux hôtels. Les cafés s&#x27;y mettent également.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo d&#x27;illustration de reportage / démonstration terrain (aucun logiciel affiché)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte visible sur le robot : &#x27;#MeetBotlr / Tweets appreciated / @AloftHotels&#x27;</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot de service est présenté en mouvement, puis un bras robotique prépare et sert un café latte avec un motif en mousse.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_001_00-00-10.jpg" alt="Gros plan sur un robot de service d&#x27;hôtel portant l&#x27;inscription &#x27;#MeetBotlr&#x27;" loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_001_00-00-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Gros plan sur un robot de service d&#x27;hôtel portant l&#x27;inscription &#x27;#MeetBotlr&#x27;</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_002_00-00-17.jpg" alt="Bras robotique automatisé préparant du café dans un café" loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_002_00-00-17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:17</span>
+                        <span class="caption-text">Bras robotique automatisé préparant du café dans un café</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:19 - 00:00:44</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les bras robotiques comme Artly ne se contentent pas de préparer du café. Ils peuvent même créer un art du latte parfait. Ce qui commence dans un pays y reste rarement. Cela pourrait se propager dans le monde entier plus vite que nous le pensons. Alors dites-moi, si cette technologie arrivait dans votre pays, l&#x27;aimeriez-vous ? Notez-la sur 10 dans les commentaires. Passons ensuite aux rédacteurs. Mais d&#x27;abord, clarifions ce que fait un rédacteur. Ce sont ceux qui écrivent les mots sur les publicités, les sites web ou les affiches, les lignes qui vous convainquent de cliquer, d&#x27;acheter ou d&#x27;essayer quelque chose.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo d&#x27;exemples d&#x27;applications concrètes (café robotisé et supports publicitaires visuels).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes publicitaires affichés : « FUEL YOUR LIFE, TASTE THE GOODNESS! » et étiquettes de produits « PURE &amp; GOOD KALE CHIPS ».</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de démonstrations robotisées (latte art) et d&#x27;exemples de supports publicitaires de copywriting.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_003_00-00-21.jpg" alt="Gros plan sur une tasse de café posée sur un comptoir en bois avec un motif complexe de latte art en forme de feuille réalisé par un robot." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_003_00-00-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:21</span>
+                        <span class="caption-text">Gros plan sur une tasse de café posée sur un comptoir en bois avec un motif complexe de latte art en forme de feuille réalisé par un robot.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_004_00-00-28.jpg" alt="Vue d&#x27;un café automatisé avec un bras robotique Artly en action et des écrans d&#x27;affichage numérique au mur." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_004_00-00-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:28</span>
+                        <span class="caption-text">Vue d&#x27;un café automatisé avec un bras robotique Artly en action et des écrans d&#x27;affichage numérique au mur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_005_00-00-42.jpg" alt="Visuel publicitaire avec le texte promotionnel « FUEL YOUR LIFE, TASTE THE GOODNESS! » et des sachets de snacks « PURE &amp; GOOD »." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_005_00-00-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Visuel publicitaire avec le texte promotionnel « FUEL YOUR LIFE, TASTE THE GOODNESS! » et des sachets de snacks « PURE &amp; GOOD ».</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:44 - 00:01:05</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant voici les preuves. Sur Reddit, plusieurs rédacteurs publicitaires ont admis que l&#x27;IA les avait déjà remplacés. L&#x27;un d&#x27;eux a même déclaré qu&#x27;il n&#x27;avait pas eu un seul emploi en huit mois parce que son entreprise avait licencié tous les rédacteurs et était passée à l&#x27;IA. Il a écrit : Je ne veux pas de réponses édulcorées du genre l&#x27;IA ne prend pas nos jobs, parce qu&#x27;elle a déjà pris le mien. J&#x27;ai lié ces publications dans la description pour que vous puissiez lire par vous-même.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Captures d&#x27;écran de publications de réseaux sociaux (Reddit/LinkedIn) affichées sur fond sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte en anglais abordant l&#x27;impact de l&#x27;intelligence artificielle sur les emplois de rédacteur (copywriter), les licenciements massifs et la difficulté de retrouver un emploi.
+[DESC_IMAGE_3] Suite du texte de la publication Reddit montrant la conclusion de l&#x27;auteur affirmant que l&#x27;IA a déjà pris son travail.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement visuel des captures d&#x27;écran de témoignages textuels pour illustrer les propos du créateur sur l&#x27;impact de l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_006_00-00-46.jpg" alt="Capture d&#x27;écran d&#x27;un article ou post Reddit/LinkedIn intitulé &quot;Has Copywriting as a career has been killed by AI&quot; traitant de la difficulté de trouver du travail en tant que rédacteur face à ChatGPT." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_006_00-00-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:46</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un article ou post Reddit/LinkedIn intitulé &quot;Has Copywriting as a career has been killed by AI&quot; traitant de la difficulté de trouver du travail en tant que rédacteur face à ChatGPT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_007_00-00-55.jpg" alt="Capture d&#x27;écran d&#x27;une publication Reddit intitulée &quot;Is AI replacing our job and how will we make money?&quot; où un utilisateur explique qu&#x27;il n&#x27;a pas eu de travail depuis 8 mois après avoir été licencié par son patron." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_007_00-00-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:55</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication Reddit intitulée &quot;Is AI replacing our job and how will we make money?&quot; où un utilisateur explique qu&#x27;il n&#x27;a pas eu de travail depuis 8 mois après avoir été licencié par son patron.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_008_00-01-03.jpg" alt="Suite de la publication Reddit montrant les préoccupations de l&#x27;auteur concernant l&#x27;avenir et demandant des réponses sérieuses plutôt que des dénégations." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_008_00-01-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:03</span>
+                        <span class="caption-text">Suite de la publication Reddit montrant les préoccupations de l&#x27;auteur concernant l&#x27;avenir et demandant des réponses sérieuses plutôt que des dénégations.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:05 - 00:01:25</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si vous êtes rédacteur, partagez votre expérience dans les commentaires. L&#x27;IA vous a-t-elle aidé ou a-t-elle pris des opportunités ? Mais ne vous installez pas trop confortablement, car le prochain emploi que l&#x27;IA aura remplacé pourrait vous surprendre encore plus. Numéro trois, la police de la circulation. Et voici la preuve. En Chine, des agents robotisés sont déjà déployés aux carrefours pour diriger les véhicules et les piétons dans la vie réelle.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation d&#x27;une vidéo d&#x27;illustration montrant un robot policier dans la rue en Chine.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Un robot humanoïde jaune et blanc avec un casque de police se tient sur un passage piéton urbain, entouré de voitures et de piétons la nuit, à côté d&#x27;un agent de police humain.</p>
+                        <p><strong>Action / Démonstration :</strong> Le robot est déployé pour réguler la circulation et guider les passants dans une rue animée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_009_00-01-23.jpg" alt="Robot agent de circulation en Chine sur un passage piéton à côté de véhicules et d&#x27;un agent humain." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_009_00-01-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:23</span>
+                        <span class="caption-text">Robot agent de circulation en Chine sur un passage piéton à côté de véhicules et d&#x27;un agent humain.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:25 - 00:01:46</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pas seulement dans un film de science-fiction. Maintenant, soyons clairs, tous les rôles policiers ne sont pas menacés. Ces robots font principalement des tâches de bas niveau comme guider la circulation, pas des enquêtes sensibles ou du maintien de l&#x27;ordre communautaire. Mais cela montre quelque chose d&#x27;important. Le remplacement par l&#x27;IA ne signifie pas toujours tout ou rien. Cela peut commencer par des tâches spécifiques puis s&#x27;étendre plus largement. Le prochain emploi vient du chantier de construction.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation face caméra sans partage d&#x27;écran</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun contenu logiciel ou interface affiché (images d&#x27;illustration de robots policiers et de chantiers).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une séquence vidéo d&#x27;illustration montrant un robot policier gérant la circulation et un ouvrier sur un chantier.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:46 - 00:02:05</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Récemment, une énorme histoire a éclaté en Chine. Une autoroute de 158 kilomètres a été construite presque entièrement sans ouvriers. Les robots et l&#x27;IA ont pris le relais, ce qui signifie que certains emplois pourraient bientôt disparaître à cause de cette réalisation. Voici comment cela s&#x27;est produit. Des drones ont scanné chaque fissure. Des finisseurs géants autonomes ont posé l&#x27;asphalte avec une précision millimétrique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation sans partage d&#x27;écran (images d&#x27;illustration montrant des engins de chantier et des salles de contrôle).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun texte ou interface logicielle visible à l&#x27;écran, uniquement des séquences vidéo d&#x27;illustration (un rouleau compresseur, des opérateurs dans une salle de contrôle devant des écrans, et une vue aérienne d&#x27;un chantier routier).</p>
+                        <p><strong>Action / Démonstration :</strong> Le flux vidéo présente des images d&#x27;illustration sur le chantier d&#x27;une autoroute automatisée en Chine, montrant les machines autonomes et les salles de contrôle associées.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:06 - 00:02:24</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et les rouleaux compresseurs ont compacté la route sans un seul opérateur sur le siège du conducteur. Ce n&#x27;est pas de la science-fiction. C&#x27;est aujourd&#x27;hui. Alors, quels emplois l&#x27;IA a-t-elle réellement remplacés ici ? Numéro un, les géomètres. Normalement, les équipes passent des jours à cartographier les dégâts routiers, mais cette fois, des drones l&#x27;ont fait plus rapidement et avec plus de précision. Numéro deux, les conducteurs d&#x27;engins lourds.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration et d&#x27;illustration avec incrustation de texte informatif.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché à l&#x27;écran : &quot;Surveyors&quot; (Géomètres).
+[DESC_IMAGE_1] Rendu visuel d&#x27;un engin de chantier autonome en action.
+[DESC_IMAGE_2] Présentation du premier métier remplacé : les géomètres (Surveyors).
+[DESC_IMAGE_3] Illustration du travail de cartographie aérienne par drones sur un chantier.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration pédagogique et présentation du workflow.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_010_00-02-08.jpg" alt="Gros plan sur un rouleau compresseur jaune XD135T en mouvement compactant le bitume." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_010_00-02-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:08</span>
+                        <span class="caption-text">Gros plan sur un rouleau compresseur jaune XD135T en mouvement compactant le bitume.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_011_00-02-15.jpg" alt="Image illustrant un géomètre avec son équipement sur un chantier de construction, avec le texte &#x27;Surveyors&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_011_00-02-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:15</span>
+                        <span class="caption-text">Image illustrant un géomètre avec son équipement sur un chantier de construction, avec le texte &#x27;Surveyors&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_012_00-02-22.jpg" alt="Vue aérienne montrant des drones survolant un grand chantier de construction avec des bâtiments en structure." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_012_00-02-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:22</span>
+                        <span class="caption-text">Vue aérienne montrant des drones survolant un grand chantier de construction avec des bâtiments en structure.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:25 - 00:02:46</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les machines de pavage et les rouleaux compresseurs étaient complètement autonomes. Pas de conducteurs, pas de changements d&#x27;équipe. Et cela ne s&#x27;arrête pas là. Les chauffeurs de taxi disparaissent aussi lentement, car en Chine, les voitures autonomes sont déjà sur les routes. Le plus fou, c&#x27;est qu&#x27;il ne s&#x27;agissait pas seulement d&#x27;un petit test. C&#x27;était l&#x27;une des autoroutes les plus fréquentées de Chine, resurfacée plus rapidement, plus sûrement et plus régulièrement que par les méthodes traditionnelles.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Séquence vidéo documentaire avec incrustations de texte informatif.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;3 30-TON RUBBER-WHEELED ROLLERS&quot; et &quot;CARMAGEDDON&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de véhicules de chantier autonomes, d&#x27;un intérieur de véhicule autonome en mouvement et d&#x27;un embouteillage nocturne.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_013_00-02-27.jpg" alt="Vue rapprochée d&#x27;un compacteur autonome jaune avec le texte explicatif &quot;3 30-TON RUBBER-WHEELED ROLLERS&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_013_00-02-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:27</span>
+                        <span class="caption-text">Vue rapprochée d&#x27;un compacteur autonome jaune avec le texte explicatif &quot;3 30-TON RUBBER-WHEELED ROLLERS&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_014_00-02-35.jpg" alt="Vue intérieure de l&#x27;habitacle d&#x27;une voiture autonome en circulation." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_014_00-02-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:35</span>
+                        <span class="caption-text">Vue intérieure de l&#x27;habitacle d&#x27;une voiture autonome en circulation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_015_00-02-44.jpg" alt="Vue aérienne nocturne d&#x27;une autoroute très encombrée par la circulation avec le mot &quot;CARMAGEDDON&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_015_00-02-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:44</span>
+                        <span class="caption-text">Vue aérienne nocturne d&#x27;une autoroute très encombrée par la circulation avec le mot &quot;CARMAGEDDON&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:46 - 00:03:05</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;IA ne remplace pas seulement le travail de bureau comme la rédaction de textes ou le support client. Elle est déjà en train de remodeler la construction elle-même. Alors, qu&#x27;en pensez-vous ? L&#x27;IA va-t-elle détruire des millions d&#x27;emplois dans la construction ? Ou en créera-t-elle de nouveaux que nous ne pouvons même pas encore imaginer ? Partagez vos réflexions ci-dessous. Et ce n&#x27;est que le début. Ce ne sont là que quelques-uns des emplois que l&#x27;IA a déjà remplacés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de contrôle sur tablette robuste de marque XCMG et divers affichages de vidéos de démonstration industrielle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Logos et interfaces de contrôle de machinerie lourde, vues aériennes de chantiers, intérieur de véhicule autonome et bras robotisés dans un café.</p>
+                        <p><strong>Action / Démonstration :</strong> Manipulation d&#x27;une tablette de contrôle tactile pour la machinerie de construction et défilement de différentes applications robotiques et d&#x27;automatisation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_016_00-02-56.jpg" alt="Gros plan sur une tablette numérique XCMG utilisée sur un chantier de construction." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_016_00-02-56.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:56</span>
+                        <span class="caption-text">Gros plan sur une tablette numérique XCMG utilisée sur un chantier de construction.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_017_00-03-03.jpg" alt="Écran divisé en quatre montrant divers cas d&#x27;utilisation de l&#x27;IA et de la robotique dans le secteur réel." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_017_00-03-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:03</span>
+                        <span class="caption-text">Écran divisé en quatre montrant divers cas d&#x27;utilisation de l&#x27;IA et de la robotique dans le secteur réel.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:05 - 00:03:18</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">D&#x27;autres arrivent, et vous voudrez savoir lesquels seront les suivants. Alors si vous avez trouvé cela révélateur, assurez-vous de cliquer sur ce bouton d&#x27;abonnement et d&#x27;activer la cloche. Parce que dans la prochaine vidéo, je vous montrerai encore plus d&#x27;emplois qui sont menacés. Restez curieux, et je vous vois dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration avec écran divisé en quatre fenêtres illustrant des innovations robotiques et d&#x27;automatisation des emplois.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte incrusté en bas à gauche de la vignette supérieure gauche sur l&#x27;image 3 : &quot;3 30-TON RUBBER-WHEELED ROLLERS&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle en grille 2x2 de diverses technologies d&#x27;automatisation (construction routière automatisée, conduite autonome, police robotisée et service de café par bras mécanique).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_018_00-03-07.jpg" alt="Écran divisé en 4 montrant des exemples d&#x27;automatisation : compacteur de route, habitacle de voiture autonome, robot de police et bras robotique barista." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_018_00-03-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:07</span>
+                        <span class="caption-text">Écran divisé en 4 montrant des exemples d&#x27;automatisation : compacteur de route, habitacle de voiture autonome, robot de police et bras robotique barista.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_019_00-03-12.jpg" alt="Écran divisé en 4 montrant la suite de la démonstration des technologies d&#x27;automatisation et de robotique." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_019_00-03-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:12</span>
+                        <span class="caption-text">Écran divisé en 4 montrant la suite de la démonstration des technologies d&#x27;automatisation et de robotique.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-33FpzAqYX_o/frame_020_00-03-16.jpg" alt="Écran divisé en 4 montrant en gros plan des rouleaux de compactage, un véhicule autonome, un robot humanoïde et un bras robotique de café." loading="lazy" onclick="openLightbox('screenshots/YT-33FpzAqYX_o/frame_020_00-03-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:16</span>
+                        <span class="caption-text">Écran divisé en 4 montrant en gros plan des rouleaux de compactage, un véhicule autonome, un robot humanoïde et un bras robotique de café.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
