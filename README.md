@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `79 / 84` (`94.0%`)
+- **Vidéos traitées** : `80 / 84` (`95.2%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -95,6 +95,7 @@
 | 2025-10-16 | [Veo 3.1 is wild!](2025-10-16_YT-Er4kw7J4HsQ_Veo 3.1 is wild!_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-10-16_YT-Er4kw7J4HsQ_Veo 3.1 is wild!_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 14s | `3 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=Er4kw7J4HsQ) | `Er4kw7J4HsQ` |
 | 2025-10-11 | [We aren't ready?](2025-10-11_YT-1hkXJtRtHzY_We aren't ready_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-10-11_YT-1hkXJtRtHzY_We aren't ready_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 14s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=1hkXJtRtHzY) | `1hkXJtRtHzY` |
 | 2025-10-06 | [Some Open Source Models (Sora 2)..](2025-10-06_YT-0994BqHojag_Some Open Source Models (Sora 2).._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-10-06_YT-0994BqHojag_Some Open Source Models (Sora 2).._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 30s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=0994BqHojag) | `0994BqHojag` |
+| 2025-10-03 | [Sora 2 is wild!](2025-10-03_YT-rv39Quhquww_Sora 2 is wild!_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2025-10-03_YT-rv39Quhquww_Sora 2 is wild!_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 4m 15s | `0 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=rv39Quhquww) | `rv39Quhquww` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

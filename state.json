@@ -78,7 +78,8 @@
     "OsF11o1YNBI",
     "Er4kw7J4HsQ",
     "1hkXJtRtHzY",
-    "0994BqHojag"
+    "0994BqHojag",
+    "rv39Quhquww"
   ],
   "processed_videos": [
     {
@@ -1182,9 +1183,23 @@
       "filepath_html": "/root/YT_PursuingAi/2025-10-06_YT-0994BqHojag_Some Open Source Models (Sora 2).._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-08T03:27:33Z",
       "status": "completed"
+    },
+    {
+      "video_id": "rv39Quhquww",
+      "title": "Sora 2 is wild!",
+      "raw_title": "Sora 2 is wild!",
+      "filename_md": "2025-10-03_YT-rv39Quhquww_Sora 2 is wild!_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2025-10-03_YT-rv39Quhquww_Sora 2 is wild!_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2025-10-03",
+      "duration": 255,
+      "screenshots_count": 0,
+      "filepath_md": "/root/YT_PursuingAi/2025-10-03_YT-rv39Quhquww_Sora 2 is wild!_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2025-10-03_YT-rv39Quhquww_Sora 2 is wild!_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-08T05:22:31Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 79,
+  "completed_count": 80,
   "last_run_timestamp": "2026-10-07T22:00:06Z",
   "status": "running",
   "total_catalog_count": 84
