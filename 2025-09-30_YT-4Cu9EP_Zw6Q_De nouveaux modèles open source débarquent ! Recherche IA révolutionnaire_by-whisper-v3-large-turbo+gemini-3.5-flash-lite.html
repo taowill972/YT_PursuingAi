@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 De nouveaux modèles open source débarquent ! Recherche IA révolutionnaire — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 De nouveaux modèles open source débarquent ! Recherche IA révolutionnaire</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-09-30</span>
+                <span class="badge">⏱️ 05m 16s</span>
+                <span class="badge">🆔 <code>4Cu9EP_Zw6Q</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=4Cu9EP_Zw6Q" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>Dans ce tutoriel complet intitulé **De nouveaux modèles open source débarquent ! Recherche IA révolutionnaire**, le créateur présente les techniques de pointe pour maîtriser la génération de vidéos et de visuels par intelligence artificielle.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">ComfyUI</span><span class="tool-tag">Nano Banana</span><span class="tool-tag">WAN 2.5</span><span class="tool-tag">Wan</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Structurer ses prompts de mouvement avec des termes de caméra précis.</span></li><li><span class="point-bullet">✦</span><span>Soigner la cohérence des personnages entre chaque plan.</span></li><li><span class="point-bullet">✦</span><span>Exploiter les modèles de dernière génération pour un rendu professionnel.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:23</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Poursuivre la recherche sur l&#x27;IA ne s&#x27;arrête jamais. Je n&#x27;arrive plus à suivre. Mes recherches ne s&#x27;arrêtent jamais. Et cette semaine, j&#x27;ai découvert des nouvelles incroyables et des modèles open source qui sont insensés. Nous avons Nano Banana pour le montage vidéo. Vous pouvez modifier votre vidéo simplement par du texte. Nous avons un autre outil vidéo IA, qui peut transférer les mouvements d&#x27;une vidéo sur un autre personnage, y compris vos mouvements de mains et vos expressions.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo avec incrustations PiP (Picture-in-Picture) de démonstration de transfert de mouvement.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Rendu visuel haute qualité de personnages animés (créature simiesque, enfant stylisé, orc) synchronisés avec les mouvements d&#x27;un utilisateur réel en médaillon.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;exemples de transferts de mouvements et d&#x27;expressions faciales de l&#x27;utilisateur vers des personnages virtuels générés par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_001_00-00-02.jpg" alt="Scène humoristique illustrant la surcharge de travail et le stress face à l&#x27;accélération constante de la recherche en IA." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Scène humoristique illustrant la surcharge de travail et le stress face à l&#x27;accélération constante de la recherche en IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_002_00-00-08.jpg" alt="Démonstration d&#x27;un modèle vidéo IA avec incrustation PiP montrant un homme reproduisant les mouvements du lion humanoïde à l&#x27;écran." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_002_00-00-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:08</span>
+                        <span class="caption-text">Démonstration d&#x27;un modèle vidéo IA avec incrustation PiP montrant un homme reproduisant les mouvements du lion humanoïde à l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_003_00-00-16.jpg" alt="Démonstration du transfert de mouvements faciaux et corporels sur un personnage d&#x27;enfant animé en 3D avec incrustation PiP." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_003_00-00-16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:16</span>
+                        <span class="caption-text">Démonstration du transfert de mouvements faciaux et corporels sur un personnage d&#x27;enfant animé en 3D avec incrustation PiP.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_004_00-00-21.jpg" alt="Démonstration du transfert de mouvements des mains sur un personnage d&#x27;orc en 3D avec incrustation PiP." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_004_00-00-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:21</span>
+                        <span class="caption-text">Démonstration du transfert de mouvements des mains sur un personnage d&#x27;orc en 3D avec incrustation PiP.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:23 - 00:00:42</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et c&#x27;est vraiment incroyable. Nous avons également un concurrent de VO3, qui peut générer de la vidéo et de l&#x27;audio de manière native. Et nous avons aussi un concurrent de Nano Banana, et il est même bon dans certaines conditions. Et nous avons des tonnes de nouveaux modèles insensés d&#x27;Alibaba, qui cartonnent. Alors, plongeons-nous directement dedans.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vitrine de démonstration vidéo de modèles d&#x27;IA générative (générations vidéo).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché à l&#x27;écran dans l&#x27;image 3 : &#x27;AI has changed everything.&#x27;</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de différents extraits vidéo générés par intelligence artificielle pour illustrer les nouveaux modèles concurrents.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_005_00-00-25.jpg" alt="Extrait vidéo généré par IA montrant Hulk dans un décor urbain, avec le créateur visible en incrustation (PiP) dans le coin supérieur gauche." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_005_00-00-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:25</span>
+                        <span class="caption-text">Extrait vidéo généré par IA montrant Hulk dans un décor urbain, avec le créateur visible en incrustation (PiP) dans le coin supérieur gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_006_00-00-32.jpg" alt="Extrait vidéo généré par IA montrant un personnage extraterrestre humanoïde avec un casque audio devant une enseigne lumineuse au néon bleu et rose." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_006_00-00-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:32</span>
+                        <span class="caption-text">Extrait vidéo généré par IA montrant un personnage extraterrestre humanoïde avec un casque audio devant une enseigne lumineuse au néon bleu et rose.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_007_00-00-40.jpg" alt="Extrait vidéo généré par IA montrant une femme de dos dans une ville futuriste cyberpunk, avec le texte géant affiché &#x27;AI has changed everything.&#x27; sur un écran incurvé géant." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_007_00-00-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:40</span>
+                        <span class="caption-text">Extrait vidéo généré par IA montrant une femme de dos dans une ville futuriste cyberpunk, avec le texte géant affiché &#x27;AI has changed everything.&#x27; sur un écran incurvé géant.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:42 - 00:01:00</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout d&#x27;abord, nous avons WAN 2.5. C&#x27;est un concurrent direct de VO3. Et le truc fou, c&#x27;est qu&#x27;il peut faire des vidéos avec un son intégré. Laissez-moi vous montrer quelques exemples. Allez, dégage de ma propriété ! Les collines sont vivantes avec le son de la musique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web du modèle de génération vidéo WAN 2.5 avec interface utilisateur textuelle et lecteur vidéo de démonstration.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles à l&#x27;écran : &quot;Features&quot;, &quot;Open Source&quot;, &quot;API&quot;, &quot;Try Now&quot;, &quot;Unleash Your Creativity&quot;, &quot;Try Wan2.5 Now -&gt;&quot;, et le champ de texte &quot;Describe visuals and dynamics in the video.&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration à l&#x27;écran des capacités de génération vidéo de WAN 2.5 avec des exemples d&#x27;animation générés par IA et synchronisation audio.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_008_00-00-44.jpg" alt="Interface web du modèle WAN 2.5 montrant une femme jouant de la guitare dans un décor de montagne et un champ de texte de prompt." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_008_00-00-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:44</span>
+                        <span class="caption-text">Interface web du modèle WAN 2.5 montrant une femme jouant de la guitare dans un décor de montagne et un champ de texte de prompt.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_009_00-00-51.jpg" alt="Génération vidéo IA montrant un blaireau fâché balayant des feuilles mortes devant une maison en bois rustique." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_009_00-00-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:51</span>
+                        <span class="caption-text">Génération vidéo IA montrant un blaireau fâché balayant des feuilles mortes devant une maison en bois rustique.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_010_00-00-58.jpg" alt="Génération vidéo IA montrant une femme blonde en costume traditionnel chantant et jouant de la guitare acoustique dans un paysage alpin." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_010_00-00-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:58</span>
+                        <span class="caption-text">Génération vidéo IA montrant une femme blonde en costume traditionnel chantant et jouant de la guitare acoustique dans un paysage alpin.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:01 - 00:01:23</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En conduisant le long de la côte où le soleil ne se couche jamais. WON 2.5 est créé par Alibaba. Et voici la partie géniale. Vous pouvez l&#x27;essayer complètement gratuitement sur leur site web, WON Video. Il vous suffit de vous inscrire et vous obtiendrez des crédits gratuits pour commencer. De plus, vous pouvez gagner plus de crédits chaque jour simplement en vous connectant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la plateforme de génération vidéo &quot;WON Video&quot; avec une barre de prompt contextuelle en bas (options : Vidéo, Text to Video, Wan2.5, 16:9 720P, 5s).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché à l&#x27;écran : &quot;Unleash Your Creativity&quot;, &quot;Try Wan2.5 Now&quot;, &quot;Describe visuals and dynamics in the video.&quot;, ainsi que les onglets &quot;Features&quot;, &quot;Open Source&quot;, &quot;API&quot; et le bouton &quot;Try Now&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de l&#x27;interface de la plateforme vidéo WON Video d&#x27;Alibaba avec des exemples de générations vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_011_00-01-12.jpg" alt="Interface du site web WON Video affichant un oiseau mécanique steampunk et une barre de prompt avec les options de génération." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_011_00-01-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:12</span>
+                        <span class="caption-text">Interface du site web WON Video affichant un oiseau mécanique steampunk et une barre de prompt avec les options de génération.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_012_00-01-21.jpg" alt="Interface du site web WON Video affichant la vidéo d&#x27;une femme avec des lunettes de soleil vue dans le rétroviseur d&#x27;une voiture." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_012_00-01-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:21</span>
+                        <span class="caption-text">Interface du site web WON Video affichant la vidéo d&#x27;une femme avec des lunettes de soleil vue dans le rétroviseur d&#x27;une voiture.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:23 - 00:01:42</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Avec cet outil, vous pouvez créer à la fois de l&#x27;image en vidéo et du texte en vidéo. Et oui, il peut générer des vidéos allant jusqu&#x27;à 1080p. Vous pouvez également choisir la taille et la durée, soit cinq secondes, soit 10 secondes. Par exemple, une vidéo de cinq secondes coûte 10 crédits, tandis qu&#x27;une vidéo de 10 secondes coûte 20 crédits.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;outil de génération vidéo Wan2.5.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus déroulants avec les options : Image to Video, Text to Video, Effects, Extend, First and Last Frame, References, Repaint, Inpaint. Options de résolution : 1080p, 720p, 480p. Formats : 16:9, 4:3, 1:1, 3:4, 9:16. Paramètres affichés : Wan2.5, 16:9 720P, 5s, et bouton de coût &quot;+ 10&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans les menus de l&#x27;interface pour présenter les options de génération, les résolutions et les formats disponibles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_013_00-01-25.jpg" alt="Interface de l&#x27;outil montrant le menu déroulant des modes de génération (Image to Video, Text to Video, Effects, etc.)." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_013_00-01-25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:25</span>
+                        <span class="caption-text">Interface de l&#x27;outil montrant le menu déroulant des modes de génération (Image to Video, Text to Video, Effects, etc.).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_014_00-01-33.jpg" alt="Interface de l&#x27;outil affichant les options de résolution (1080p, 720p, 480p) et les formats d&#x27;image (16:9, 4:3, 1:1, etc.)." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_014_00-01-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:33</span>
+                        <span class="caption-text">Interface de l&#x27;outil affichant les options de résolution (1080p, 720p, 480p) et les formats d&#x27;image (16:9, 4:3, 1:1, etc.).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_015_00-01-40.jpg" alt="Barre de contrôle et de saisie de prompt montrant les paramètres par défaut (Text to Video, Wan2.5, 16:9 720P, 5s) et le coût de 10 crédits." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_015_00-01-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:40</span>
+                        <span class="caption-text">Barre de contrôle et de saisie de prompt montrant les paramètres par défaut (Text to Video, Wan2.5, 16:9 720P, 5s) et le coût de 10 crédits.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:42 - 00:02:00</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et voici le super bonus, vous pouvez même télécharger votre propre audio et le synchroniser avec la vidéo. C&#x27;est incroyable, non ? Donc dans la boîte de texte, je tape une femme assise seule dans sa chambre qui pleure avec les yeux en larmes. Elle dit, j&#x27;ai perdu mon travail. J&#x27;aurais aimé m&#x27;abonner à Pursuing AI plus tôt, puis éclate en sanglots. Voici le résultat.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page d&#x27;accueil et interface de génération vidéo de Wan2.5.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt visible sur l&#x27;image #2 : &quot;A woman sitting alone in her room, crying with teary eyes. She says, &#x27;I lost my job... I wish I had subscribed to PursuingAi earlier,&#x27; then bursts into tears.&quot; Paramètres visibles : Vidéo, Text to Video, Wan2.5, 16:9, 720P, 5s ou 10s.</p>
+                        <p><strong>Action / Démonstration :</strong> Saisie du prompt textuel décrivant la scène de la femme qui pleure dans l&#x27;interface de génération vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_016_00-01-44.jpg" alt="Interface de la plateforme de génération vidéo Wan2.5 montrant la barre de prompt et les options de configuration." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_016_00-01-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:44</span>
+                        <span class="caption-text">Interface de la plateforme de génération vidéo Wan2.5 montrant la barre de prompt et les options de configuration.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_017_00-01-51.jpg" alt="Interface de la plateforme Wan2.5 avec le texte du prompt saisi par l&#x27;utilisateur." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_017_00-01-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:51</span>
+                        <span class="caption-text">Interface de la plateforme Wan2.5 avec le texte du prompt saisi par l&#x27;utilisateur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:00 - 00:02:20</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;ai perdu mon travail. J&#x27;aurais aimé m&#x27;abonner à Pursuing AI plus tôt. La synchronisation labiale est un peu décalée par rapport à la vidéo, mais dans l&#x27;ensemble, ça a l&#x27;air vraiment bien. Je mettrai le lien vers la page principale dans la description ci-dessous. Ensuite, nous avons un autre modèle vidéo d&#x27;Alibaba, et celui-ci est Wan Animate basé sur Wan 2.2.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la page de recherche ou de documentation officielle du modèle &quot;Wan-Animate&quot; (Tongyi Lab, Alibaba) avec des boutons d&#x27;accès (Paper, GitHub, HF Model, etc.).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte principal : &quot;Wan-Animate: Unified Character Animation and Replacement with Holistic Replication&quot;. Mention : &quot;Tongyi Lab, Alibaba&quot;. Boutons cliquables : Paper, GitHub, HF Model, MS Model, HF Space, MS Studio. Vidéo de démonstration en bas avec un personnage de cochon.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur affiche à l&#x27;écran la page officielle du nouveau modèle d&#x27;animation d&#x27;Alibaba (Wan-Animate) tout en introduisant ses fonctionnalités.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_018_00-02-18.jpg" alt="Page web de présentation du modèle Wan-Animate par Tongyi Lab d&#x27;Alibaba, avec des liens vers le projet et une vidéo de démonstration montrant un personnage de cochon animé et un encadré vidéo." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_018_00-02-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:18</span>
+                        <span class="caption-text">Page web de présentation du modèle Wan-Animate par Tongyi Lab d&#x27;Alibaba, avec des liens vers le projet et une vidéo de démonstration montrant un personnage de cochon animé et un encadré vidéo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:20 - 00:02:43</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ses capacités sont incroyables. Il peut transférer les mouvements et les expressions d&#x27;une vidéo sur un autre personnage. Cela inclut vos mains, la synchronisation labiale et les mouvements de tout le corps. Tout cela en maintenant une cohérence parfaite. Remarquez à quel point il est précis pour copier les expressions et les mouvements de la vidéo de référence. Il peut même remplacer un personnage dans une vidéo existante tout en préservant parfaitement l&#x27;arrière-plan.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du site web du projet de recherche Wan-Animate par Tongyi Lab (Alibaba), présentant des exemples de démonstration vidéo sous forme de lecteur avec incrustation de la vidéo source (picture-in-picture) et des liens vers les articles et dépôts (Paper, GitHub, HF Model, etc.).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre visible en haut de la page : &quot;Wan-Animate: Unified Character Animation and Replacement with Holistic Replication&quot; avec la mention &quot;Tongyi Lab, Alibaba&quot;. Boutons de navigation : Paper, GitHub, HF Model, MS Model, HF Space, MS Studio.</p>
+                        <p><strong>Action / Démonstration :</strong> Le site présente une démonstration vidéo animée où les mouvements d&#x27;un humain (visible en haut à gauche de la vidéo) sont transférés en temps réel sur différents personnages générés par IA (elfe, félin, panda).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_019_00-02-22.jpg" alt="Page web du projet Wan-Animate montrant l&#x27;animation d&#x27;un personnage elfe humanoïde d&#x27;après la vidéo de référence d&#x27;un homme en médaillon." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_019_00-02-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:22</span>
+                        <span class="caption-text">Page web du projet Wan-Animate montrant l&#x27;animation d&#x27;un personnage elfe humanoïde d&#x27;après la vidéo de référence d&#x27;un homme en médaillon.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_020_00-02-28.jpg" alt="Page web du projet Wan-Animate montrant le transfert de mouvements sur un personnage de félin anthropomorphe." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_020_00-02-28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:28</span>
+                        <span class="caption-text">Page web du projet Wan-Animate montrant le transfert de mouvements sur un personnage de félin anthropomorphe.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_021_00-02-41.jpg" alt="Page web du projet Wan-Animate montrant l&#x27;animation d&#x27;un personnage de panda effectuant les mêmes mouvements de mains que la vidéo de référence." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_021_00-02-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:41</span>
+                        <span class="caption-text">Page web du projet Wan-Animate montrant l&#x27;animation d&#x27;un personnage de panda effectuant les mêmes mouvements de mains que la vidéo de référence.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:43 - 00:03:02</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voici donc l&#x27;exemple. Rick Sorkin ? Excusez-moi, M. Sorkin. Vous avez cinq minutes de retard. Y a-t-il une raison pour que je vous laisse entrer ? J&#x27;essaie juste d&#x27;échapper à la police, d&#x27;accord ? Je me fiche un peu que vous me laissiez entrer ou non. M. Spector sera à vous dans un instant. Quoi ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Comparaison vidéo côte à côte (Split-screen) avec les étiquettes &quot;Original&quot; et &quot;Generated&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Les étiquettes textuelles &quot;Original&quot; sur les vidéos de gauche et &quot;Generated&quot; sur les vidéos de droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;exemples de modification vidéo par IA montrant le remplacement de personnages dans des scènes de film.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_022_00-02-45.jpg" alt="Comparaison vidéo avant/après montrant le personnage féminin original à gauche et sa version générée par IA à droite." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_022_00-02-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:45</span>
+                        <span class="caption-text">Comparaison vidéo avant/après montrant le personnage féminin original à gauche et sa version générée par IA à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_023_00-02-52.jpg" alt="Comparaison vidéo avant/après montrant le personnage masculin original en costume à gauche et sa version transformée en guerrier fantastique à droite." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_023_00-02-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:52</span>
+                        <span class="caption-text">Comparaison vidéo avant/après montrant le personnage masculin original en costume à gauche et sa version transformée en guerrier fantastique à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:02 - 00:03:35</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Est-ce que je peux vous apporter quelque chose ? Un café ou une bouteille d&#x27;eau ? C&#x27;est complètement fou ! Ça préserve non seulement l&#x27;arrière-plan, mais ça intègre aussi le nouveau personnage de manière fluide, sans modifier les conditions d&#x27;éclairage de la vidéo. Voici quelques exemples montrant comment il est possible de transférer non seulement les mouvements corporels, mais aussi les expressions faciales et même les mouvements des mains, et le meilleur, c&#x27;est que ça ne fonctionne pas seulement avec des humains réalistes. Ça fonctionne aussi avec différentes créatures et d&#x27;autres styles d&#x27;animation comme celui-ci. Regardez comment il peut remplacer de manière fluide un personnage dans une vidéo existante.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration vidéo de ré-enactment / remplacement de personnage par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Comparaison vidéo avant/après, incrustations vidéo (PiP) du présentateur ou de la source.</p>
+                        <p><strong>Action / Démonstration :</strong> Le modèle IA remplace un personnage réel ou animé par un autre tout en conservant les mouvements, les expressions faciales, les mains, l&#x27;éclairage et l&#x27;arrière-plan d&#x27;origine.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_024_00-03-04.jpg" alt="Démonstration comparative côte à côte d&#x27;un personnage remplacé dans une scène vidéo (original à gauche, généré à droite)." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_024_00-03-04.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:04</span>
+                        <span class="caption-text">Démonstration comparative côte à côte d&#x27;un personnage remplacé dans une scène vidéo (original à gauche, généré à droite).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_025_00-03-24.jpg" alt="Démonstration de transfert de mouvement avec le créateur en incrustation (PiP) en haut à gauche et le personnage généré en grand à l&#x27;écran." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_025_00-03-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:24</span>
+                        <span class="caption-text">Démonstration de transfert de mouvement avec le créateur en incrustation (PiP) en haut à gauche et le personnage généré en grand à l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_026_00-03-33.jpg" alt="Démonstration de remplacement de personnage dans un style d&#x27;animation de type Ghibli, avec le créateur en incrustation PiP." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_026_00-03-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:33</span>
+                        <span class="caption-text">Démonstration de remplacement de personnage dans un style d&#x27;animation de type Ghibli, avec le créateur en incrustation PiP.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:35 - 00:03:59</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout reste précis et la qualité est tout simplement incroyable et voici la partie géniale Ils ont déjà tout publié il suffit de cliquer sur github faites défiler vers le bas et vous trouverez toutes les instructions sur la façon de le télécharger de l&#x27;animer et de l&#x27;exécuter localement sur votre ordinateur Je mettrai également le lien vers la page principale dans la description ci-dessous afin que vous puissiez en lire plus. Ensuite, nous avons un nouvel outil d&#x27;IA pour le montage vidéo, et celui-ci s&#x27;appelle Lucy Edit par Descartes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Pages web GitHub et site de recherche de projets d&#x27;IA (Tongyi Lab, Alibaba), ainsi que des exemples de rendus vidéo générés par intelligence artificielle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Run Wan2.2&quot;, &quot;Installation&quot;, &quot;Clone the repo: git clone https://github.com/Wan-Video/Wan2.2.git&quot;, &quot;Install dependencies:&quot;, &quot;Model Download&quot;, &quot;T2V-A14B&quot;, &quot;I2V-A14B&quot;, &quot;TI2V-5B&quot;, &quot;Wan-Animate: Unified Character Animation and Replacement with Holistic Replication&quot;, &quot;Tongyi Lab, Alibaba&quot;, &quot;Paper&quot;, &quot;GitHub&quot;, &quot;HF Model&quot;, &quot;MS Model&quot;, &quot;HF Space&quot;, &quot;MS Studio&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle des instructions d&#x27;installation sur GitHub, des pages de recherche du modèle Wan-Animate, et défilement des exemples de vidéos générées par IA (personnages animés et scènes réalistes).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_027_00-03-37.jpg" alt="Démonstration d&#x27;une animation vidéo générée par IA représentant un personnage féminin inspiré de style animé 3D chantant, avec la créatrice visible en incrustation PiP dans le coin supérieur gauche." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_027_00-03-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:37</span>
+                        <span class="caption-text">Démonstration d&#x27;une animation vidéo générée par IA représentant un personnage féminin inspiré de style animé 3D chantant, avec la créatrice visible en incrustation PiP dans le coin supérieur gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_028_00-03-43.jpg" alt="Affichage de la page GitHub du projet Run Wan2.2 montrant les instructions d&#x27;installation avec les commandes de clonage et les liens de téléchargement des modèles." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_028_00-03-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:43</span>
+                        <span class="caption-text">Affichage de la page GitHub du projet Run Wan2.2 montrant les instructions d&#x27;installation avec les commandes de clonage et les liens de téléchargement des modèles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_029_00-03-51.jpg" alt="Présentation de la page web du projet &quot;Wan-Animate: Unified Character Animation and Replacement with Holistic Replication&quot; par Tongyi Lab, Alibaba, avec une vidéo de démonstration d&#x27;un personnage de cochon animable." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_029_00-03-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:51</span>
+                        <span class="caption-text">Présentation de la page web du projet &quot;Wan-Animate: Unified Character Animation and Replacement with Holistic Replication&quot; par Tongyi Lab, Alibaba, avec une vidéo de démonstration d&#x27;un personnage de cochon animable.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_030_00-03-57.jpg" alt="Démonstration d&#x27;une autre vidéo générée par IA montrant un homme assis sur un banc tenant une immense glace géante complexe avec de multiples parfums et nappages." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_030_00-03-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:57</span>
+                        <span class="caption-text">Démonstration d&#x27;une autre vidéo générée par IA montrant un homme assis sur un banc tenant une immense glace géante complexe avec de multiples parfums et nappages.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:59 - 00:04:21</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est open source et c&#x27;est rapide. En gros, pensez-y comme à Nano Banana pour le montage vidéo, où vous pouvez simplement demander à l&#x27;IA d&#x27;éditer n&#x27;importe quel élément d&#x27;une vidéo, juste avec du texte. C&#x27;est incroyablement puissant pour le micro-montage dans vos vidéos. Comme vous pouvez le voir ici, vous pouvez facilement transformer un personnage entier dans une vidéo en un tout nouveau, ou même échanger leurs vêtements ou leur apparence simplement avec du texte.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de ComfyUI (projet Lucy Edit Dev) montrant les nœuds de traitement et l&#x27;aperçu vidéo.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titre &quot;Lucy Edit - ComfyUI&quot;, liens vers GitHub, HuggingFace, Playground, Technical Report, Discord. Aperçu de workflow de nœuds ComfyUI et vidéos éditées (ex: painter_gothic_edit.mp4, painter_clown_edit.mp4, painter_bikini_edit.mp4).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface et des résultats d&#x27;édition vidéo par IA textuelle avec ComfyUI.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_031_00-04-01.jpg" alt="Interface de Lucy Edit - ComfyUI montrant le workflow de modification vidéo par IA." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_031_00-04-01.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:01</span>
+                        <span class="caption-text">Interface de Lucy Edit - ComfyUI montrant le workflow de modification vidéo par IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:21 - 00:04:40</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et le truc génial, c&#x27;est que vous pouvez essayer ça dès maintenant. Alors cliquons d&#x27;abord sur le playground, je vais téléverser ma propre vidéo, et changeons cet homme en Spider-Man. Remarquez qu&#x27;une fois que vous vous inscrivez avec un compte gratuit, vous obtenez 2 000 crédits pour jouer avec cet outil. Une génération utilisant la version pro en 480p coûte 75 crédits.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme Decart et de ComfyUI / Lucy Edit.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Lucy Edit - ComfyUI&quot;, &quot;Decart&quot;, &quot;Playground &gt; Video Editing&quot;, &quot;Make this man to spiderman&quot;, &quot;Generation Settings&quot;, &quot;Video Editing - LucyEdit Dev (Fast)&quot;, &quot;Video Editing - LucyEdit Pro (Quality)&quot;, &quot;480p&quot;, &quot;720p&quot;, &quot;15 credits/sec&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme Decart, affichage du prompt de transformation d&#x27;un homme en Spider-Man et ouverture du menu des paramètres de génération vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_032_00-04-23.jpg" alt="Interface du projet &quot;Lucy Edit - ComfyUI&quot; affichant des exemples de modifications vidéo (painter_gothic_edit.mp4, painter_clown_edit.mp4, painter_bikini_edit.mp4)." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_032_00-04-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:23</span>
+                        <span class="caption-text">Interface du projet &quot;Lucy Edit - ComfyUI&quot; affichant des exemples de modifications vidéo (painter_gothic_edit.mp4, painter_clown_edit.mp4, painter_bikini_edit.mp4).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_033_00-04-30.jpg" alt="Interface de la plateforme Decart dans la section &quot;Video Editing&quot;, montrant le téléchargement d&#x27;une vidéo avec le prompt textuel &quot;Make this man to spiderman&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_033_00-04-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:30</span>
+                        <span class="caption-text">Interface de la plateforme Decart dans la section &quot;Video Editing&quot;, montrant le téléchargement d&#x27;une vidéo avec le prompt textuel &quot;Make this man to spiderman&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_034_00-04-38.jpg" alt="Panneau des paramètres de génération (&quot;Generation Settings&quot;) ouvert sur l&#x27;interface Decart, permettant de choisir entre les modèles LucyEdit Dev et LucyEdit Pro ainsi que les résolutions 480p et 720p." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_034_00-04-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:38</span>
+                        <span class="caption-text">Panneau des paramètres de génération (&quot;Generation Settings&quot;) ouvert sur l&#x27;interface Decart, permettant de choisir entre les modèles LucyEdit Dev et LucyEdit Pro ainsi que les résolutions 480p et 720p.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:40 - 00:05:05</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si vous voulez générer en 720p, le coût sera doublé. Donc pour l&#x27;instant, restons sur du 480p et cliquons sur générer. Lucy Edit a deux versions, Pro et Dev. Probablement que la version Pro vous offre une meilleure qualité. Mais voici la partie géniale, ils ont également publié la version Dev. Sur leur dépôt GitHub, ils ont partagé un workflow ComfyUI complet où vous pouvez utiliser Lucy Dev localement sur votre ordinateur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Lucy Edit et page du dépôt GitHub avec un workflow ComfyUI.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de paramètres de génération (&quot;Video Editing - LucyEdit Dev&quot;, &quot;Video Editing - LucyEdit Pro&quot;, résolutions &quot;480p&quot;, &quot;720p&quot;), prompt &quot;Make this man to spiderman&quot;, interface de ComfyUI avec les nœuds &quot;Load Video&quot;, &quot;Lucy Edit Pro - API&quot;, &quot;Create Video&quot;, &quot;Save Video&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre les options de configuration de la résolution et des versions du modèle sur l&#x27;interface web, puis présente le dépôt GitHub et le workflow ComfyUI associé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_035_00-04-42.jpg" alt="Interface de Lucy Edit montrant les paramètres de génération, le choix du modèle (Dev ou Pro) et la résolution (480p ou 720p)." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_035_00-04-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:42</span>
+                        <span class="caption-text">Interface de Lucy Edit montrant les paramètres de génération, le choix du modèle (Dev ou Pro) et la résolution (480p ou 720p).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_036_00-04-57.jpg" alt="Page GitHub du dépôt &quot;Lucy Edit - ComfyUI&quot; affichant les liens et un aperçu des workflows et des vidéos d&#x27;exemple." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_036_00-04-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:57</span>
+                        <span class="caption-text">Page GitHub du dépôt &quot;Lucy Edit - ComfyUI&quot; affichant les liens et un aperçu des workflows et des vidéos d&#x27;exemple.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_037_00-05-03.jpg" alt="Vue rapprochée du workflow ComfyUI pour Lucy Edit avec les nœuds de chargement vidéo, de traitement et de sauvegarde." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_037_00-05-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:03</span>
+                        <span class="caption-text">Vue rapprochée du workflow ComfyUI pour Lucy Edit avec les nœuds de chargement vidéo, de traitement et de sauvegarde.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:05 - 00:05:15</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je mettrai également le lien de la page principale dans la description ci-dessous. Cette semaine, les recherches s&#x27;arrête ici. Dites-moi que vous aimez regarder mon contenu et faites-moi part de vos suggestions. Alors n&#x27;hésitez pas à commenter, abonnez-vous pour plus de recherches.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Rendu vidéo IA plein écran avec incrustation Picture-in-Picture (PiP) du créateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Image générée par IA représentant un personnage détaillé ressemblant à un gobelin ou un elfe cyborg, vêtu d&#x27;une armure futuriste dans un environnement boisé ou sombre, et incrustation vidéo du présentateur en haut à gauche.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un exemple de vidéo générée par intelligence artificielle en guise de conclusion, tandis que le créateur s&#x27;adresse aux spectateurs depuis le petit encadré PiP.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-4Cu9EP_Zw6Q/frame_038_00-05-10.jpg" alt="Rendu vidéo généré par IA montrant un personnage de gobelin cybernétique, avec le créateur en incrustation PiP dans le coin supérieur gauche." loading="lazy" onclick="openLightbox('screenshots/YT-4Cu9EP_Zw6Q/frame_038_00-05-10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:10</span>
+                        <span class="caption-text">Rendu vidéo généré par IA montrant un personnage de gobelin cybernétique, avec le créateur en incrustation PiP dans le coin supérieur gauche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

@@ -80,7 +80,8 @@
     "1hkXJtRtHzY",
     "0994BqHojag",
     "rv39Quhquww",
-    "33FpzAqYX_o"
+    "33FpzAqYX_o",
+    "4Cu9EP_Zw6Q"
   ],
   "processed_videos": [
     {
@@ -1212,10 +1213,24 @@
       "filepath_html": "/root/YT_PursuingAi/2025-09-08_YT-33FpzAqYX_o_Ces métiers sont déjà remplacés par l'IA. Vous devez savoir._by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "processed_at": "2026-10-08T07:14:30Z",
       "status": "completed"
+    },
+    {
+      "video_id": "4Cu9EP_Zw6Q",
+      "title": "De nouveaux modèles open source débarquent ! Recherche IA révolutionnaire",
+      "raw_title": "New open source models are here! Huge AI Research.",
+      "filename_md": "2025-09-30_YT-4Cu9EP_Zw6Q_De nouveaux modèles open source débarquent ! Recherche IA révolutionnaire_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2025-09-30_YT-4Cu9EP_Zw6Q_De nouveaux modèles open source débarquent ! Recherche IA révolutionnaire_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2025-09-30",
+      "duration": 316,
+      "screenshots_count": 38,
+      "filepath_md": "/root/YT_PursuingAi/2025-09-30_YT-4Cu9EP_Zw6Q_De nouveaux modèles open source débarquent ! Recherche IA révolutionnaire_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2025-09-30_YT-4Cu9EP_Zw6Q_De nouveaux modèles open source débarquent ! Recherche IA révolutionnaire_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-08T10:07:30Z",
+      "status": "completed"
     }
   ],
-  "completed_count": 81,
-  "last_run_timestamp": "2026-10-08T04:00:04Z",
+  "completed_count": 82,
+  "last_run_timestamp": "2026-10-08T10:00:04Z",
   "status": "running",
   "total_catalog_count": 84
 }
