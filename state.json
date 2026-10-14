@@ -84,9 +84,24 @@
     "4Cu9EP_Zw6Q",
     "ECaiOB37Rgs",
     "DNly_Ue_XCc",
-    "77EZXlIDHys"
+    "77EZXlIDHys",
+    "uI1sKOOMImo"
   ],
   "processed_videos": [
+    {
+      "video_id": "uI1sKOOMImo",
+      "title": "Gemini 4 Argon est bien plus puissant que nous le pensions",
+      "raw_title": "Gemini 4 Argon Is Way More Powerful Than We Thought",
+      "filename_md": "2026-10-14_YT-uI1sKOOMImo_Gemini 4 Argon est bien plus puissant que nous le pensions_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-10-14_YT-uI1sKOOMImo_Gemini 4 Argon est bien plus puissant que nous le pensions_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-10-14",
+      "duration": 531,
+      "screenshots_count": 58,
+      "filepath_md": "/root/YT_PursuingAi/2026-10-14_YT-uI1sKOOMImo_Gemini 4 Argon est bien plus puissant que nous le pensions_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-10-14_YT-uI1sKOOMImo_Gemini 4 Argon est bien plus puissant que nous le pensions_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-14T18:12:53Z",
+      "status": "completed"
+    },
     {
       "video_id": "77EZXlIDHys",
       "title": "L'IA vient de devenir folle… Gemini 4, GPT-6, Claude & Qwen 4",
@@ -1274,7 +1289,7 @@
       "status": "completed"
     }
   ],
-  "completed_count": 85,
+  "completed_count": 86,
   "last_run_timestamp": "2026-10-08T10:00:04Z",
   "status": "ALL_VIDEOS_PROCESSED_AUTOMATION_COMPLETED",
   "total_catalog_count": 84,

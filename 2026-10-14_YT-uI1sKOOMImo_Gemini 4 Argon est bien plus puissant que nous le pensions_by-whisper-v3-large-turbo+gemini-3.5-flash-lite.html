@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Gemini 4 Argon est bien plus puissant que nous le pensions — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Gemini 4 Argon est bien plus puissant que nous le pensions</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-10-14</span>
+                <span class="badge">⏱️ 08m 51s</span>
+                <span class="badge">🆔 <code>uI1sKOOMImo</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=uI1sKOOMImo" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* met en lumière **Gemini 4 Argon**, la dernière percée de Google en matière d'intelligence artificielle générative orientée vers la création 3D et multimédia. Les premiers retours partagés sur X (anciennement Twitter) démontrent la capacité d'Argon à concevoir des environnements complexes — comme une pagode japonaise détaillée ou un château fort — à partir de zéro, en un temps record et de manière entièrement autonome. Loin de se limiter à une génération text-to-image classique, le modèle s'intègre profondément dans des logiciels professionnels tels que Blender via des ponts dédiés (Blender MCP), orchestrant des pipelines créatifs complets incluant la modélisation, l'animation, le texturing et la synchronisation audio.</p><p>Le secret de cette efficacité réside dans l'utilisation de **boucles de critique visuelle multi-agents** au sein d'environnements propriétaires comme Google Antigravity. Plutôt que de produire un rendu unique en une seule étape, Argon exécute des centaines de cycles itératifs (jusqu'à 1 000 itérations dans certains tests), vérifiant ses propres rendus, corrigeant son code et affinant les détails géométriques et visuels. Cette approche itérative garantit non seulement la cohérence de la scène sous n'importe quel angle de caméra, mais permet également de traiter des concepts mathématiques avancés (comme les épicycles de Fourier) pour générer des animations cinétiques complexes accompagnées de musiques synchronisées.</p><p>Pour les créateurs de contenu et les professionnels de la vidéo, Argon redéfinit le rapport entre vitesse, coût et complexité technique. Face à des concurrents de poids comme Claude Opus 5.5 ou GPT-6 Astra, le modèle de Google se positionne comme une alternative redoutable en termes de productivité brute. Bien que des modèles rivaux puissent parfois l'emporter sur des micro-détails volumétriques extrêmement poussés, Argon offre un compromis économique et temporel inédit, permettant de prototyper et de finaliser des expériences 3D interactives en quelques minutes seulement, démocratisant ainsi l'accès à la production visuelle de haute volée.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude</span><span class="tool-tag">GPT-6</span><span class="tool-tag">flux</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>L&#x27;essor des boucles de critique visuelle multi-agents** : Argon ne se contente pas d&#x27;une inférence linéaire ; il utilise des agents IA capables d&#x27;analyser visuellement leurs propres rendus, d&#x27;identifier les défauts et d&#x27;itérer à plusieurs reprises pour corriger le code et la géométrie 3D.</span></li><li><span class="point-bullet">✦</span><span>Une automatisation complète du pipeline de production** : Le modèle gère de bout en bout des flux de travail complexes allant de la programmation et du design visuel jusqu&#x27;à la chorégraphie de la caméra, l&#x27;éclairage et l&#x27;intégration audio.</span></li><li><span class="point-bullet">✦</span><span>Exploitation de Blender via le MCP** : L&#x27;IA interagit directement avec des logiciels de référence de l&#x27;industrie 3D grâce à des ponts logiciels (Blender MCP), traduisant des concepts abstraits en scènes géométriques complexes.</span></li><li><span class="point-bullet">✦</span><span>Des gains de productivité massifs en temps** : Dans les tests comparatifs, Argon s&#x27;est avéré être jusqu&#x27;à 26 fois plus rapide que Claude Opus 5.5 pour générer des environnements 3D spatiaux complets (terminant des scènes complexes en moins de 4 à 5 minutes).</span></li><li><span class="point-bullet">✦</span><span>Une réduction drastique des coûts d&#x27;exploitation** : Les tests indiquent des coûts de génération inférieurs de 85 % à plus de 86% par rapport à ses concurrents directs, rendant l&#x27;expérimentation itérative beaucoup plus accessible financièrement.</span></li><li><span class="point-bullet">✦</span><span>Le compromis entre vitesse et micro-détails** : Si Claude Opus 5.5 conserve l&#x27;avantage sur des éléments visuels très spécifiques (comme les nuages volumétriques ou la mécanique fine des locomotives), Argon s&#x27;impose comme la solution idéale pour un rendu global solide obtenu rapidement.</span></li><li><span class="point-bullet">✦</span><span>La fusion des mathématiques et de la création artistique** : Capable d&#x27;exploiter des concepts géométriques avancés (tels que les épicycles de Fourier), Argon transforme des algorithmes mathématiques en animations visuelles fluides et esthétiques.</span></li><li><span class="point-bullet">✦</span><span>Création audio native et synchronisée** : Le modèle ne se limite pas au visuel ; il rédige les prompts nécessaires pour générer des bandes sonores sur mesure (via Lyria 3.5) parfaitement calées sur le rythme des animations créées.</span></li><li><span class="point-bullet">✦</span><span>Génération d&#x27;expériences interactives** : Au-delà des images fixes ou des vidéos traditionnelles, Argon conçoit des environnements 3D interactifs dotés de commandes permettant de naviguer, de voler et de modifier les axes de la caméra en temps réel.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Google vient de lancer Gemini pour Argon, et les résultats que les gens partagent sur X sont absolument fous. Et croyez-moi, vous allez vouloir voir ce dont ce modèle est capable. Alors prenez vos snacks, installez-vous confortablement et plongeons directement dans les résultats. C&#x27;est Pursuing AI, et vous regardez le rapport de recherche. Commençons par quelque chose que le PDG de Google, Sundar Pichai, a lui-même partagé.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de lecteur vidéo et publication sur le réseau social X.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de Sundar Pichai : &quot;Generating complex, multi-tiered architecture is a great test for frontier models. Using multi-agent visual critique loops in Google Antigravity, Argon autonomously created this highly detailed Pagoda and surrounding grounds from scratch in Blender.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;exemples de vidéos et d&#x27;une publication X démontrant les capacités du modèle d&#x27;IA Google Gemini pour Argon.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_001_00-00-02.jpg" alt="Démonstration vidéo d&#x27;un hydravion rouge et blanc volant au-dessus de l&#x27;eau, généré par IA." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Démonstration vidéo d&#x27;un hydravion rouge et blanc volant au-dessus de l&#x27;eau, généré par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_002_00-00-11.jpg" alt="Démonstration vidéo d&#x27;un petit kart rouge sur un circuit de course miniature installé sur un bureau." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_002_00-00-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:11</span>
+                        <span class="caption-text">Démonstration vidéo d&#x27;un petit kart rouge sur un circuit de course miniature installé sur un bureau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_003_00-00-19.jpg" alt="Publication sur le réseau social X de Sundar Pichai montrant une pagode générée par IA." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_003_00-00-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:19</span>
+                        <span class="caption-text">Publication sur le réseau social X de Sundar Pichai montrant une pagode générée par IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:22 - 00:00:57</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Argon a reçu la tâche de créer une pagode de style japonais très détaillée et ses environs à partir de zéro dans Blender. Et regardez-moi ça. Nous avons des bâtiments en bois à plusieurs niveaux, des structures de toit complexes, un pont incurvé, des jardins et un environnement détaillé entourant toute la structure. Mais la partie intéressante n&#x27;est pas seulement son apparence. Sundar a expliqué qu&#x27;Argon a utilisé des boucles de critique visuelle multi-agents à l&#x27;intérieur de Google Antigravity pour créer et affiner la scène. En termes simples, cette approche permet aux agents IA d&#x27;examiner les résultats visuels, d&#x27;identifier les éléments à améliorer et de travailler à travers plusieurs cycles de</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur la plateforme X (anciennement Twitter) de Sundar Pichai, CEO de Google and Alphabet, ainsi que des rendus vidéo 3D de Blender.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Generating complex, multi-tiered architecture is a great test for frontier models. Using multi-agent visual critique loops in Google Antigravity, Argon autonomously created this highly detailed Pagoda and surrounding grounds from scratch in Blender.&quot; Nom du profil : &quot;Sundar Pichai @sundarpichai CEO, Google and Alphabet&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement de la page X et affichage de plans visuels détaillés du modèle 3D de la pagode japonaise généré par l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_004_00-00-24.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Sundar Pichai sur X (Twitter) présentant une pagode japonaise détaillée créée dans Blender par l&#x27;IA Argon." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_004_00-00-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:24</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Sundar Pichai sur X (Twitter) présentant une pagode japonaise détaillée créée dans Blender par l&#x27;IA Argon.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_005_00-00-34.jpg" alt="Gros plan sur le rendu visuel détaillé de la pagode japonaise en bois, du pont rouge incurvé, des lanternes en pierre et des jardins." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_005_00-00-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:34</span>
+                        <span class="caption-text">Gros plan sur le rendu visuel détaillé de la pagode japonaise en bois, du pont rouge incurvé, des lanternes en pierre et des jardins.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_006_00-00-46.jpg" alt="Vue similaire au tweet de Sundar Pichai montrant le post sur X avec le texte explicatif sur Google Antigravity et les boucles de critique multi-agents." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_006_00-00-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:46</span>
+                        <span class="caption-text">Vue similaire au tweet de Sundar Pichai montrant le post sur X avec le texte explicatif sur Google Antigravity et les boucles de critique multi-agents.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_007_00-00-55.jpg" alt="Vue d&#x27;ensemble de la pagode à plusieurs niveaux et du complexe de bâtiments traditionnels japonais sous un ciel dégagé." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_007_00-00-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:55</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de la pagode à plusieurs niveaux et du complexe de bâtiments traditionnels japonais sous un ciel dégagé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:57 - 00:01:28</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">de raffinement. Et c&#x27;est important pour la création 3D, car générer quelque chose qui a l&#x27;air bien sous un angle est une chose. Construire un environnement qui se tient à partir de différents points de vue est un défi bien plus grand. Et la Pagode n&#x27;est pas le seul projet partagé par Sundar. Dans un autre exemple, Argonne part d&#x27;un fichier CAD de pixels bruts et le transforme en une animation de produit 3D complète. Nous parlons d&#x27;une animation en vue éclatée du téléphone, de l&#x27;éclairage, de la chorégraphie de la caméra et même de l&#x27;audio, le tout créé via Blender en utilisant le Blender MCP.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Rendu d&#x27;animation 3D et modélisation architecturale / produit (Blender).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Modèle 3D détaillé d&#x27;un complexe de temples japonais avec jardins, puis animation technique d&#x27;un smartphone montrant ses pièces internes (batterie, modules de caméra, circuits).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle de la cohérence spatiale d&#x27;un environnement 3D sous différents angles, suivie d&#x27;une animation 3D de produit (téléphone).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_008_00-00-59.jpg" alt="Vue d&#x27;ensemble d&#x27;un environnement 3D complexe représentant une pagode japonaise traditionnelle avec un pont et un bassin." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_008_00-00-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:59</span>
+                        <span class="caption-text">Vue d&#x27;ensemble d&#x27;un environnement 3D complexe représentant une pagode japonaise traditionnelle avec un pont et un bassin.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_009_00-01-08.jpg" alt="Gros plan sur l&#x27;architecture en bois d&#x27;un bâtiment traditionnel japonais, illustrant la précision des détails de modélisation 3D." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_009_00-01-08.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:08</span>
+                        <span class="caption-text">Gros plan sur l&#x27;architecture en bois d&#x27;un bâtiment traditionnel japonais, illustrant la précision des détails de modélisation 3D.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_010_00-01-18.jpg" alt="Animation 3D en vue éclatée d&#x27;un smartphone sur fond bleu, montrant ses composants internes." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_010_00-01-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:18</span>
+                        <span class="caption-text">Animation 3D en vue éclatée d&#x27;un smartphone sur fond bleu, montrant ses composants internes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:28 - 00:02:11</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et voici le détail qui a vraiment retenu mon attention. Selon Sundar, Argon a exécuté 1 000 cycles de boucles itératives, vérifiant ses propres rendus et affinant le code tout au long du processus. Plutôt que de générer la scène une seule fois et de s&#x27;arrêter là, il a vérifié à plusieurs reprises le résultat et apporté des améliorations. Sundar a également partagé une animation de typographie cinétique 3D générée entièrement par le code, y compris la musique, sans images pré-enregistrées ni logiciel de montage vidéo traditionnel.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo avec affichage d&#x27;éléments graphiques, publications de réseaux sociaux et extraits d&#x27;animations générées par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du titre « Gemini 4 Argon », publication de Sundar Pichai (CEO, Google and Alphabet) avec le texte : « Some great use cases from Googlers building with Gemini 4 Argon. It has a much stronger grasp of coding and multi-step tool use... It ran 1,000 rounds of iterative loops to check its own renders and refine the code along the way. », ainsi que des animations 3D cinétiques.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des capacités de Gemini 4 Argon en matière de génération de code, d&#x27;animation 3D et de boucles de rendu itératives.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_011_00-01-30.jpg" alt="Écran titre affichant le logo Gemini 4 Argon sur un fond dégradé bleu." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_011_00-01-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:30</span>
+                        <span class="caption-text">Écran titre affichant le logo Gemini 4 Argon sur un fond dégradé bleu.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_012_00-01-43.jpg" alt="Publication sur le réseau social X (Twitter) du compte de Sundar Pichai montrant le texte descriptif sur Gemini 4 Argon et un aperçu vidéo." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_012_00-01-43.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:43</span>
+                        <span class="caption-text">Publication sur le réseau social X (Twitter) du compte de Sundar Pichai montrant le texte descriptif sur Gemini 4 Argon et un aperçu vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_013_00-01-57.jpg" alt="Animation abstraite en 3D à typographie cinétique générée entièrement par le code." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_013_00-01-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:57</span>
+                        <span class="caption-text">Animation abstraite en 3D à typographie cinétique générée entièrement par le code.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_014_00-02-09.jpg" alt="Animation 3D géométrique avec des formes triangulaires sur fond de grille technologique lumineuse." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_014_00-02-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:09</span>
+                        <span class="caption-text">Animation 3D géométrique avec des formes triangulaires sur fond de grille technologique lumineuse.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:11 - 00:02:31</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et c&#x27;est là que les choses deviennent intéressantes. Nous allons au-delà de la simple génération d&#x27;une image ou de l&#x27;écriture de quelques lignes de code par l&#x27;IA. Ces exemples montrent Argon à l&#x27;œuvre dans plusieurs parties d&#x27;un flux de travail créatif, de la programmation et du design visuel à l&#x27;animation et à l&#x27;audio. Mais passons un instant aux animations de produits, car le prochain exemple est complètement différent.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (Twitter) affichant un tweet publié par le compte de Sundar Pichai.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Argon generated this 3D kinetic typography entirely in code (including the music) without pre-recorded footage or video editing software. Every frame was drawn by Argon using mathematical algorithms (3D meshes, particle simulations, vector geometry, etc)&quot;. Visuel affichant &quot;Gemini 4 Argon&quot; puis la lettre &quot;E&quot; en structure filaire (mesh 3D).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une publication sur X démontrant les capacités de génération typographique 3D entièrement par code de Gemini 4 Argon.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_015_00-02-13.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Sundar Pichai montrant une vidéo générée par Gemini 4 Argon avec le logo textuel." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_015_00-02-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:13</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Sundar Pichai montrant une vidéo générée par Gemini 4 Argon avec le logo textuel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_016_00-02-21.jpg" alt="Affichage du même tweet de Sundar Pichai montrant le rendu en fil de fer 3D d&#x27;une lettre (mesh 3D)." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_016_00-02-21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:21</span>
+                        <span class="caption-text">Affichage du même tweet de Sundar Pichai montrant le rendu en fil de fer 3D d&#x27;une lettre (mesh 3D).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:31 - 00:02:55</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">utilisé Argon pour créer une vidéo d&#x27;un pélican faisant du vélo en utilisant quelque chose appelé les épicycles de Fourier. Maintenant, cela peut sembler compliqué, mais l&#x27;idée de base est plutôt cool. En combinant des cercles rotatifs se déplaçant à différentes vitesses, vous pouvez tracer des formes étonnamment complexes. Et selon le créateur, Argon a créé la vidéo, tandis que la musique synchronisée a été générée en utilisant Lyria 3.5 à partir d&#x27;un prompt écrit par Argon.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un réseau social (X / Twitter) avec un lecteur vidéo intégré.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;Argon has this amazing natural understanding of the world... Here&#x27;s a pelican riding a bike, using fourier epicycles. Video made by Argon. Time-synced Lyria 3.5 music prompted by Argon.&quot; Sur l&#x27;animation : &quot;N = 10&quot;, &quot;error = 16.55%&quot;, &quot;21 spinning circles&quot;, et des formules mathématiques de Fourier.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une publication sur les réseaux sociaux présentant une vidéo d&#x27;animation mathématique réalisée par l&#x27;outil Argon, suivie d&#x27;un gros plan sur l&#x27;animation en cours de lecture montrant le tracé par épicycles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_017_00-02-33.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de @fofrAI montrant une vidéo générée par Argon avec des cercles épicycles de Fourier." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_017_00-02-33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:33</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de @fofrAI montrant une vidéo générée par Argon avec des cercles épicycles de Fourier.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_018_00-02-39.jpg" alt="Gros plan sur l&#x27;animation montrant des cercles rotatifs (épicycles de Fourier) avec la formule mathématique et le paramètre N = 3." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_018_00-02-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:39</span>
+                        <span class="caption-text">Gros plan sur l&#x27;animation montrant des cercles rotatifs (épicycles de Fourier) avec la formule mathématique et le paramètre N = 3.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:55 - 00:03:13</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc ce n&#x27;est pas simplement une image de pélican. C&#x27;est une visualisation mathématique transformée en animation, avec de la musique synchronisée pour l&#x27;accompagner. Et je pense que des exemples comme celui-ci montrent une autre facette intéressante d&#x27;Argon. Sa capacité à combiner des concepts mathématiques, du code, des visuels et de l&#x27;audio en un seul résultat créatif.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de visualisation ou de rendu mathématique (style animation de type Manim ou outil Argon) sur fond sombre étoilé.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte « N = 1024 », « error = 0.33% », « 2,049 spinning circles », ainsi que des formules mathématiques en bas de l&#x27;écran et un encadré montrant une vue détaillée en incrustation à droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;une animation graphique vectorielle générée par des cercles en rotation basés sur des équations mathématiques complexes.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_019_00-02-57.jpg" alt="Visualisation mathématique animée montrant des cercles tournants formant un dessin avec des équations et des paramètres textuels." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_019_00-02-57.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:57</span>
+                        <span class="caption-text">Visualisation mathématique animée montrant des cercles tournants formant un dessin avec des équations et des paramètres textuels.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:13 - 00:04:11</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En fait, Argon a même réalisé sa propre vidéo d&#x27;introduction. Et honnêtement, c&#x27;est plutôt intéressant à regarder.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de lecteur vidéo intégrée à la plateforme X (Twitter) affichant une vidéo d&#x27;animation 3D de présentation du modèle Gemini 4 Argon.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Gemini 4 Argon introduction video by Gemini 4 Argon&quot;, profil &quot;Harshith&quot; (@HarshithLucky3) avec la mention &quot;AI AI AI -&gt; AGI -&gt; ASI&quot;, et le nom &quot;Argon&quot; à côté du chiffre &quot;4&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une vidéo d&#x27;introduction générée ou publiée en ligne concernant le modèle &quot;Gemini 4 Argon&quot;, montrant des séquences d&#x27;animation 3D futuristes (personnage Android, intérieur de véhicule autonome, vue aérienne et graphismes de présentation).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_020_00-03-15.jpg" alt="Extrait vidéo de la publication X montrant un personnage Android vert dans une chambre avec le texte &quot;Gemini 4 Argon introduction video by Gemini 4 Argon&quot; et le profil de Harshith." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_020_00-03-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:15</span>
+                        <span class="caption-text">Extrait vidéo de la publication X montrant un personnage Android vert dans une chambre avec le texte &quot;Gemini 4 Argon introduction video by Gemini 4 Argon&quot; et le profil de Harshith.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_021_00-03-34.jpg" alt="Vue subjective depuis l&#x27;intérieur d&#x27;un véhicule ou d&#x27;un transport futuriste automatisé avec des écrans de contrôle affichant les trajets et l&#x27;arrivée prochaine." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_021_00-03-34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:34</span>
+                        <span class="caption-text">Vue subjective depuis l&#x27;intérieur d&#x27;un véhicule ou d&#x27;un transport futuriste automatisé avec des écrans de contrôle affichant les trajets et l&#x27;arrivée prochaine.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_022_00-03-53.jpg" alt="Vue aérienne stylisée d&#x27;une ville ou d&#x27;un réseau géométrique avec un canal d&#x27;eau et des infrastructures en 3D." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_022_00-03-53.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:53</span>
+                        <span class="caption-text">Vue aérienne stylisée d&#x27;une ville ou d&#x27;un réseau géométrique avec un canal d&#x27;eau et des infrastructures en 3D.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_023_00-04-09.jpg" alt="Animation montrant le chiffre &quot;4&quot; lumineux au-dessus d&#x27;une grille urbaine avec le texte &quot;Argon&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_023_00-04-09.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:09</span>
+                        <span class="caption-text">Animation montrant le chiffre &quot;4&quot; lumineux au-dessus d&#x27;une grille urbaine avec le texte &quot;Argon&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:11 - 00:04:29</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais les démonstrations créatives impressionnantes sont une chose. La question suivante est de savoir à quelle vitesse Argon peut réellement construire quelque chose. Et c&#x27;est là que les résultats commencent à devenir vraiment intéressants. Un utilisateur a demandé à Gemini4Argon de créer un château, et selon sa publication, l&#x27;environnement 3D a été achevé en moins de 4 minutes. Jetez un œil au résultat.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme X (anciennement Twitter) affichant des publications de démonstration avec des vidéos intégrées.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : « Gemini 4 Argon introduction video by Gemini 4 Argon » et sur la deuxième image « asked Gemini 4 Argon for a castle &gt; and it did it under 4 minutes i&#x27;ts crazy fast ».</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation de publications sur les réseaux sociaux illustrant la génération rapide d&#x27;environnements 3D par Gemini 4 Argon.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_024_00-04-13.jpg" alt="Capture d&#x27;écran montrant une publication sur les réseaux sociaux avec une vidéo de démonstration de Gemini 4 Argon mettant en scène un personnage Android vert dans une pièce." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_024_00-04-13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:13</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une publication sur les réseaux sociaux avec une vidéo de démonstration de Gemini 4 Argon mettant en scène un personnage Android vert dans une pièce.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_025_00-04-20.jpg" alt="Capture d&#x27;écran montrant une autre publication sur les réseaux sociaux d&#x27;un utilisateur affichant le résultat 3D d&#x27;un château généré en moins de 4 minutes." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_025_00-04-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:20</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une autre publication sur les réseaux sociaux d&#x27;un utilisateur affichant le résultat 3D d&#x27;un château généré en moins de 4 minutes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:29 - 00:04:49</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous avez un grand château avec plusieurs tours, des paysages environnants, des arbres et même un fossé autour de la structure. Et rappelez-vous, ce n&#x27;est pas seulement une image plate d&#x27;un château, c&#x27;est un environnement 3D qui peut être visualisé sous différents angles. Bien sûr, nous ne connaissons pas tous les détails de la configuration, et un seul exemple ne nous dit pas avec quelle constance Argon peut produire des résultats de ce genre.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;un outil de visualisation ou d&#x27;un environnement 3D interactif intitulé « CHÂTEAU DE VALORIA », comprenant un panneau de contrôle à droite pour les paramètres de la forteresse (mecanisms, sun &amp; atmosphere, camera views).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : « CHÂTEAU DE VALORIA », « FORTRESS MECHANISMS », « SUN &amp; ATMOSPHERE », « CAMERA VIEWS » (avec des options comme Overview, Drawbridge, Courtyard, Royal Keep, Moat Reflection, Head&#x27;s Eye). Boutons d&#x27;éclairage en haut : Dawn, Day, Sunset, Night, Controls.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et exploration interactive d&#x27;un environnement 3D de château, changement d&#x27;angles de vue de la caméra et modification des conditions d&#x27;éclairage (jour/nuit).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_026_00-04-31.jpg" alt="Vue de face d&#x27;un château 3D interactif dans une interface de démonstration nommée Château de Valoria, montrant les tours et le pont-levis." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_026_00-04-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:31</span>
+                        <span class="caption-text">Vue de face d&#x27;un château 3D interactif dans une interface de démonstration nommée Château de Valoria, montrant les tours et le pont-levis.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_027_00-04-39.jpg" alt="Vue en plongée à l&#x27;intérieur de la cour du château 3D, affichant les murs de pierre et les escaliers depuis un autre angle de caméra." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_027_00-04-39.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:39</span>
+                        <span class="caption-text">Vue en plongée à l&#x27;intérieur de la cour du château 3D, affichant les murs de pierre et les escaliers depuis un autre angle de caméra.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_028_00-04-47.jpg" alt="Vue panoramique extérieure du château 3D au coucher du soleil avec le pont-levis abaissé et les douves remplies d&#x27;eau." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_028_00-04-47.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:47</span>
+                        <span class="caption-text">Vue panoramique extérieure du château 3D au coucher du soleil avec le pont-levis abaissé et les douves remplies d&#x27;eau.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:49 - 00:05:09</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais si ce temps de création rapporté est exact, c&#x27;est une démonstration impressionnante de la rapidité avec laquelle l&#x27;IA peut assembler une scène 3D. Et maintenant, nous arrivons à la partie que je voulais vraiment vous montrer : comment Argon se compare aux autres modèles. Parce que créer des démos impressionnantes c&#x27;est bien, mais comment se comporte-t-il face à Claude Opus 5.5 ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de visualisation et de paramétrage d&#x27;une scène 3D interactive, accompagnée d&#x27;une capture d&#x27;écran du réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;CHÂTEAU DE VALORIA&quot;, &quot;FORTRESS MECHANISMS&quot;, &quot;Raise Bridge&quot;, &quot;Drop Gate&quot;, &quot;SUN &amp; ATMOSPHERE&quot;, &quot;Time Cycle&quot;, &quot;Banner Wind Speed&quot;, &quot;CAMERA VIEWS&quot;, &quot;Cinematic Tour&quot;, et sur le tweet : &quot;asked Gemini 4 Argon for a castle &gt; and it did it under 4 minutes i&#x27;ts crazy fast&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Rotation et affichage d&#x27;une scène de château 3D générée automatiquement, puis présentation d&#x27;une publication sur les réseaux sociaux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_029_00-04-51.jpg" alt="Visualisation 3D d&#x27;un château médiéval (Château de Valoria) généré par IA dans une interface avec panneaux de réglages." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_029_00-04-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:51</span>
+                        <span class="caption-text">Visualisation 3D d&#x27;un château médiéval (Château de Valoria) généré par IA dans une interface avec panneaux de réglages.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_030_00-04-59.jpg" alt="Vue rapprochée et dynamique de la scène 3D du château avec l&#x27;interface de contrôle et d&#x27;éclairage." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_030_00-04-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:59</span>
+                        <span class="caption-text">Vue rapprochée et dynamique de la scène 3D du château avec l&#x27;interface de contrôle et d&#x27;éclairage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_031_00-05-07.jpg" alt="Capture d&#x27;écran d&#x27;un tweet montrant la démo du château généré par Gemini 4 Argon en moins de 4 minutes." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_031_00-05-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:07</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet montrant la démo du château généré par Gemini 4 Argon en moins de 4 minutes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:09 - 00:05:28</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Commençons par un test impliquant un environnement de train spatial en 3D. Selon le créateur, les deux modèles ont reçu le même prompt. Gemini 4 Argon a terminé en 4 minutes et 20 secondes, pour un coût de 3,40 dollars. Claude Opus 5.5 a pris 1 heure et 53 minutes et a coûté 23,46 dollars.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une publication sur le réseau social X (anciennement Twitter) de l&#x27;utilisateur @EnvoiDev.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;4 minutes. $3.40. That&#x27;s all Gemini needed 🤯. Same prompt: Opus took 1h 53m and cost $23.46. Gemini took 4m 20s and cost $3.40. That&#x27;s 26x faster and 7x cheaper 🔐. Did it beat Opus? No. Opus is still ahead on detail: the volumetric clouds, the mechanics on the locomotive, the camera work. But the gap is way smaller than the price gap. Gemini still pulled off the station, the planets and the lightning, in less time than it takes to make a coffee ☕. When you need something good in minutes, not perfect in 2 hours, this is nuts. Watch them side by side and tell me: is Opus worth 7x the price here? 👀&quot;. En bas, une vidéo comparative labellisée &quot;Gemini&quot; vs &quot;Claude Opus 5.5&quot; montrant l&#x27;environnement 3D avec un train spatial.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;un tweet comparatif détaillé avec statistiques de temps de calcul et de coûts entre deux modèles d&#x27;IA générative.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_032_00-05-11.jpg" alt="Capture d&#x27;écran d&#x27;un tweet comparant les performances et les coûts entre Gemini et Claude Opus sur un environnement de train spatial 3D." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_032_00-05-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:11</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet comparant les performances et les coûts entre Gemini et Claude Opus sur un environnement de train spatial 3D.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:28 - 00:05:46</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela signifie qu&#x27;Argon était environ 26 fois plus rapide et près de 7 fois moins cher dans ce test particulier. Mais avant de supposer qu&#x27;Argon a tout gagné, il y a un piège important. Le créateur a en fait donné l&#x27;avantage à Opus en matière de détails visuels, mentionnant spécifiquement ses nuages volumétriques, la mécanique de la locomotive et le travail de la caméra.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de Twitter/X affichant un tweet avec du texte comparatif et une vidéo intégrée de test d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : &quot;4 minutes. $3.40. That&#x27;s all Gemini needed 🤯 Same prompt: Opus took 1h 53m and cost $23.46. Gemini took 4m 20s and cost $3.40. That&#x27;s 26x faster and 7x cheaper 🤯 Did it beat Opus? No. Opus is still ahead on detail: the volumetric clouds, the mechanics on the locomotive, the camera work.&quot; Comparatif chiffré des coûts et durées pour chaque modèle (Gemini : 3,40 $ en 4m 20s / Claude Opus 5.5 : 23,46 $ en 1h 52m 56s).</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement ou affichage d&#x27;une publication sur les réseaux sociaux comparant les performances, les coûts et le rendu visuel de deux modèles d&#x27;IA générative.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_033_00-05-30.jpg" alt="Capture d&#x27;écran d&#x27;un tweet de Tony montrant le comparatif entre Gemini et Claude Opus 5.5, avec une vidéo côte à côte en bas." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_033_00-05-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:30</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet de Tony montrant le comparatif entre Gemini et Claude Opus 5.5, avec une vidéo côte à côte en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_034_00-05-37.jpg" alt="Comparaison vidéo côte à côte en plein écran entre Gemini (en haut) et Claude Opus 5.5 (en bas) montrant les décors célestes et les trains." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_034_00-05-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:37</span>
+                        <span class="caption-text">Comparaison vidéo côte à côte en plein écran entre Gemini (en haut) et Claude Opus 5.5 (en bas) montrant les décors célestes et les trains.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_035_00-05-44.jpg" alt="Gros plan sur la comparaison vidéo côte à côte se concentrant sur la mécanique des roues et des locomotives de Gemini et Claude Opus 5.5." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_035_00-05-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:44</span>
+                        <span class="caption-text">Gros plan sur la comparaison vidéo côte à côte se concentrant sur la mécanique des roues et des locomotives de Gemini et Claude Opus 5.5.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:46 - 00:06:04</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Argon a quand même créé la station, les planètes et les éclairs, mais Opus a produit un résultat plus détaillé. Le compromis est donc assez clair ici. Si vous voulez les détails visuels les plus poussés et que vous avez plus de temps et d&#x27;argent à y consacrer, Opus mérite peut-être d&#x27;être envisagé. Mais si vous avez besoin d&#x27;un résultat solide rapidement et à moindre coût, Argon apparaît comme une alternative séduisante.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de comparaison vidéo split-screen (&quot;Gemini&quot; / &quot;Claude Opus 5.5&quot;) avec affichage des coûts et du temps de rendu en haut de chaque écran (&quot;Cost $3.40&quot;, &quot;Time 4m 20s&quot; vs &quot;Cost $23.46&quot;, &quot;Time 1h 52m 56s&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Vues comparatives de scènes de train futuriste/spatial générées par IA avec des métriques de performance et de coût.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation comparative côte à côte (split-screen) des rendus générés par deux modèles d&#x27;IA différents.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_036_00-05-48.jpg" alt="Comparaison vidéo split-screen montrant en haut Gemini (Argon) et en bas Claude Opus 5.5, avec un train près d&#x27;un éclair et d&#x27;une station." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_036_00-05-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:48</span>
+                        <span class="caption-text">Comparaison vidéo split-screen montrant en haut Gemini (Argon) et en bas Claude Opus 5.5, avec un train près d&#x27;un éclair et d&#x27;une station.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_037_00-05-55.jpg" alt="Comparaison vidéo split-screen montrant en haut Gemini (Argon) avec des planètes et un éclair, et en bas Claude Opus 5.5 avec un train au-dessus des nuages et des planètes." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_037_00-05-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:55</span>
+                        <span class="caption-text">Comparaison vidéo split-screen montrant en haut Gemini (Argon) avec des planètes et un éclair, et en bas Claude Opus 5.5 avec un train au-dessus des nuages et des planètes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_038_00-06-02.jpg" alt="Comparaison vidéo split-screen montrant en haut Gemini (Argon) avec une station spatiale et des planètes, et en bas Claude Opus 5.5 avec un train serpentant au-dessus d&#x27;une mer de nuages sous un soleil radieux et des anneaux de Saturne." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_038_00-06-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:02</span>
+                        <span class="caption-text">Comparaison vidéo split-screen montrant en haut Gemini (Argon) avec une station spatiale et des planètes, et en bas Claude Opus 5.5 avec un train serpentant au-dessus d&#x27;une mer de nuages sous un soleil radieux et des anneaux de Saturne.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:04 - 00:06:27</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et ce n&#x27;est pas la seule comparaison qui vaille le détour. Un autre créateur a testé Argon face à Opus 5.5 en utilisant le même prompt avec les réglages de raisonnement les plus élevés disponibles pour les deux modèles. Selon ce créateur, les résultats étaient presque identiques, mais regardez le temps et le coût. Opus a pris 15 minutes et coûté 8,20 dollars, tandis qu&#x27;Argon a terminé en 13 minutes pour seulement 1,20 dollar.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (anciennement Twitter) affichant un tweet détaillé avec texte explicatif, liens et images comparatives de génération de modèles d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet de @notjazii : &quot;tested both models with same prompt at highest reasoning available but results came out almost the same. &gt; opus took 15 mins and cost $8.2 via claude code cli &gt; argon took 13 mins and cost $1.2 via devin cli. really impressed by how well argon did, it came pretty close to opus 5.5 for way less money. running 3d tests now, you can check all the tests i ran on argon here: gemini-4-argon.vercel.app. what do you think, did argon cook or nah?&quot; Légendes des images : &quot;Gemini 4 Argon (High)&quot; et &quot;Opus 5.5 (High)&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des résultats comparatifs visuels et textuels d&#x27;un test de performance entre deux modèles d&#x27;IA (Gemini 4 Argon et Opus 5.5).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_039_00-06-12.jpg" alt="Comparaison côte à côte des résultats générés par Gemini 4 Argon (High) et Opus 5.5 (High) représentant des paysages urbains futuristes en pixel art." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_039_00-06-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:12</span>
+                        <span class="caption-text">Comparaison côte à côte des résultats générés par Gemini 4 Argon (High) et Opus 5.5 (High) représentant des paysages urbains futuristes en pixel art.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_040_00-06-20.jpg" alt="Publication sur le réseau social X par @notjazii montrant le comparatif des performances, du temps d&#x27;exécution et des coûts entre Opus et Argon, accompagné des images générées." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_040_00-06-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:20</span>
+                        <span class="caption-text">Publication sur le réseau social X par @notjazii montrant le comparatif des performances, du temps d&#x27;exécution et des coûts entre Opus et Argon, accompagné des images générées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:27 - 00:07:04</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc Argon était légèrement plus rapide et le coût était environ 85 % plus bas. C&#x27;est une différence assez significative si vous construisez régulièrement des environnements 3D et expérimentez différentes idées. Bien sûr, ce sont des tests individuels, pas la preuve qu&#x27;Argon égalera toujours Opus. Les résultats peuvent varier selon la tâche, la configuration et la qualité visée. Néanmoins, lorsque deux résultats semblent comparables à la personne qui effectue le test, dépenser beaucoup moins pour y arriver est un réel avantage. Et enfin, nous avons une dernière comparaison, cette fois en amenant GPT-6 Astra dans le mélange aux côtés de Claude Opus 5.5 et Gemini 4.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de test et de comparaison de modèles d&#x27;IA générative 3D (comparatifs vidéo et interface de publication du réseau social X).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &quot;Gemini 4 Argon (High)&quot;, &quot;Opus 5.5 (High)&quot;, &quot;Gemini 4 Argon&quot;, &quot;Opus 5.5 Medium (Routing)&quot;, &quot;Gemini 4 Argon vs. Claude Opus 5.5 vs. GPT-6 Astra&quot;, &quot;&gt;Here Gemini 4 Argon clearly won&quot;, &quot;Pranav Reddy @AI_Screening&quot;, &quot;Training, testing &amp; serving AI models.&quot;, &quot;What&#x27;s happening&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur compare visuellement les performances, la vitesse et le rendu d&#x27;environnements 3D générés par différents modèles d&#x27;IA (Gemini, Claude, GPT), puis présente un tweet comparatif intégrant un troisième modèle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_041_00-06-29.jpg" alt="Comparaison côte à côte de deux environnements 3D générés par Gemini 4 Argon (High) et Opus 5.5 (High)." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_041_00-06-29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:29</span>
+                        <span class="caption-text">Comparaison côte à côte de deux environnements 3D générés par Gemini 4 Argon (High) et Opus 5.5 (High).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_042_00-06-40.jpg" alt="Comparaison vidéo de scènes 3D en voxel affichant Gemini 4 Argon à gauche et Opus 5.5 Medium (Routing) à droite." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_042_00-06-40.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:40</span>
+                        <span class="caption-text">Comparaison vidéo de scènes 3D en voxel affichant Gemini 4 Argon à gauche et Opus 5.5 Medium (Routing) à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_043_00-06-52.jpg" alt="Rendu 3D en plongée d&#x27;un circuit de course miniature lumineux installé sur un bureau avec un clavier rétroéclairé." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_043_00-06-52.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:52</span>
+                        <span class="caption-text">Rendu 3D en plongée d&#x27;un circuit de course miniature lumineux installé sur un bureau avec un clavier rétroéclairé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_044_00-07-02.jpg" alt="Capture d&#x27;écran du réseau social X montrant une publication comparative à trois modèles (Gemini 4 Argon, Claude Opus 5.5 et GPT-6 Astra)." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_044_00-07-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:02</span>
+                        <span class="caption-text">Capture d&#x27;écran du réseau social X montrant une publication comparative à trois modèles (Gemini 4 Argon, Claude Opus 5.5 et GPT-6 Astra).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:04 - 00:07:34</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Argon. La tâche consistait à créer un navire cygne 3D interactif naviguant sur l&#x27;eau. Examinons les résultats. La version d&#x27;Argon présente un navire en forme de cygne stylisé, un arrière-plan de coucher de soleil et des commandes interactives pour naviguer, voler et changer la vue de la caméra. Opus 5.5 produit également un navire cygne, bien que certaines parties de son résultat semblent moins soignées dans la vidéo. Ensuite, il y a GPT-6 Astra, qui génère un autre navire détaillé avec plusieurs voiles et ses propres commandes interactives.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X (anciennement Twitter) affichant un comparatif vidéo de démonstration de 3 modèles d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du tweet : « Gemini 4 Argon vs. Claude Opus 5.5 vs. GPT-6 Astra &gt; Here Gemini 4 Argon clearly won ». Étiquettes vidéo : « Gemini 4 Argon », « Claude Opus 5.5 », « GPT-6 Astra », « The Swan Ship ».</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison visuelle des performances de génération et de rendu 3D interactif entre trois modèles d&#x27;intelligence artificielle différents.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_045_00-07-06.jpg" alt="Capture d&#x27;écran d&#x27;un tweet comparant les résultats de Gemini 4 Argon, Claude Opus 5.5 et GPT-6 Astra sur le défi du navire cygne." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_045_00-07-06.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:06</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tweet comparant les résultats de Gemini 4 Argon, Claude Opus 5.5 et GPT-6 Astra sur le défi du navire cygne.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_046_00-07-14.jpg" alt="Comparaison vidéo côte à côte des trois modèles d&#x27;IA générant et contrôlant le navire cygne interactif." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_046_00-07-14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:14</span>
+                        <span class="caption-text">Comparaison vidéo côte à côte des trois modèles d&#x27;IA générant et contrôlant le navire cygne interactif.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_047_00-07-24.jpg" alt="Poursuite de la démonstration visuelle comparant le rendu des trois IA avec des interfaces de contrôle interactives." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_047_00-07-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:24</span>
+                        <span class="caption-text">Poursuite de la démonstration visuelle comparant le rendu des trois IA avec des interfaces de contrôle interactives.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_048_00-07-32.jpg" alt="Retour à la vue globale du tweet avec le comparatif vidéo des trois modèles d&#x27;IA." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_048_00-07-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:32</span>
+                        <span class="caption-text">Retour à la vue globale du tweet avec le comparatif vidéo des trois modèles d&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:34 - 00:07:53</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le post original déclare qu&#x27;Argon est le vainqueur, mais je prendrais cette conclusion avec un peu de recul. Une comparaison visuelle comme celle-ci est utile, mais il faudrait tester la fonctionnalité, la cohérence et la qualité globale dans des conditions contrôlées avant de déclarer un vainqueur absolu. Malgré tout, ces exemples montrent pourquoi Argon mérite que l&#x27;on s&#x27;y intéresse.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de comparaison vidéo comparative verticale à trois volets affichant simultanément les rendus de différents modèles d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Noms des modèles affichés en surimpression : &quot;Gemini 4 Argon&quot;, &quot;The Swan-Ship&quot;, &quot;Claude Opus 5.5&quot;, &quot;GPT-6 Astra&quot; ainsi que diverses barres de contrôle et curseurs de lecture en bas de chaque écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Lecture simultanée de trois clips vidéo générés par IA montrant des variations de rendu 3D d&#x27;un bateau sur l&#x27;eau.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_049_00-07-36.jpg" alt="Comparaison vidéo en trois écrans divisés montrant les modèles Gemini 4 Argon, Claude Opus 5.5 et GPT-6 Astra avec un bateau naviguant sur l&#x27;eau." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_049_00-07-36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:36</span>
+                        <span class="caption-text">Comparaison vidéo en trois écrans divisés montrant les modèles Gemini 4 Argon, Claude Opus 5.5 et GPT-6 Astra avec un bateau naviguant sur l&#x27;eau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_050_00-07-51.jpg" alt="Poursuite de la comparaison vidéo sur trois écrans divisés montrant l&#x27;évolution de la navigation du bateau avec des artefacts visuels sur le modèle central." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_050_00-07-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:51</span>
+                        <span class="caption-text">Poursuite de la comparaison vidéo sur trois écrans divisés montrant l&#x27;évolution de la navigation du bateau avec des artefacts visuels sur le modèle central.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:53 - 00:08:20</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Nous le voyons s&#x27;attaquer à différents types de tâches créatives, allant d&#x27;environnements détaillés et d&#x27;animations mathématiques à des expériences 3D interactives. Et lorsque nous examinons les comparaisons, son avantage potentiel devient encore plus clair. Il ne s&#x27;agit pas nécessairement de battre chaque modèle concurrent sur chaque tâche. Il s&#x27;agit de produire des résultats utiles rapidement, et dans certains cas, à un coût bien inférieur. Alors, Gemini 4 Argon est-il le nouveau roi des expériences 3D générées par IA ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de présentation multi-fenêtres et interface épurée de type barre de recherche avec croquis interactif.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Éléments visibles : environnements 3D architecturaux (temple), animations mathématiques avec cercles concentriques et valeurs de N, comparatifs de modèles (Claude Opus 5.5, Gemini 4 Argon, GPT-4o), et un croquis de cerf-volant dans un sélecteur d&#x27;interface.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle comparative de différentes capacités de génération 3D par IA à travers divers cas d&#x27;usage (environnements, animations, objets interactifs).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_051_00-07-55.jpg" alt="Écran partagé présentant diverses démonstrations d&#x27;expériences 3D générées par IA, incluant un temple japonais, une interface mobile avec un minuteur, des animations géométriques et des comparatifs visuels de modèles." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_051_00-07-55.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:55</span>
+                        <span class="caption-text">Écran partagé présentant diverses démonstrations d&#x27;expériences 3D générées par IA, incluant un temple japonais, une interface mobile avec un minuteur, des animations géométriques et des comparatifs visuels de modèles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_052_00-08-03.jpg" alt="Écran partagé affichant d&#x27;autres exemples de rendus 3D, dont un personnage robot vert, un train circulant sur des rails et des comparaisons de modèles d&#x27;IA sur plusieurs fenêtres." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_052_00-08-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:03</span>
+                        <span class="caption-text">Écran partagé affichant d&#x27;autres exemples de rendus 3D, dont un personnage robot vert, un train circulant sur des rails et des comparaisons de modèles d&#x27;IA sur plusieurs fenêtres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_053_00-08-11.jpg" alt="Écran partagé montrant des animations 3D complexes, un avatar robot dans un environnement intérieur, ainsi que des comparaisons de scènes de science-fiction entre différents modèles." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_053_00-08-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:11</span>
+                        <span class="caption-text">Écran partagé montrant des animations 3D complexes, un avatar robot dans un environnement intérieur, ainsi que des comparaisons de scènes de science-fiction entre différents modèles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_054_00-08-18.jpg" alt="Gros plan sur une interface sombre avec une icône centrale représentant un croquis de cerf-volant et une barre de recherche semi-transparente mentionnant Gemini." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_054_00-08-18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:18</span>
+                        <span class="caption-text">Gros plan sur une interface sombre avec une icône centrale représentant un croquis de cerf-volant et une barre de recherche semi-transparente mentionnant Gemini.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:20 - 00:08:40</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je pense qu&#x27;il est trop tôt pour l&#x27;affirmer en se basant sur une poignée de tests communautaires, mais les différences de vitesse et de coût que nous avons observées sont certainement intéressantes, et les exemples créatifs nous donnent de nombreuses raisons de continuer à regarder. Maintenant, je veux vous entendre. Choisiriez-vous Argon pour sa vitesse et son coût inférieur, ou paieriez-vous toujours plus cher et attendriez-vous plus longtemps pour un modèle comme Opus 5.5 ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo comparative illustrant des exemples créatifs et techniques d&#x27;analyses par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphiques techniques, flux de données, tracés vectoriels et simulations scientifiques.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle d&#x27;exemples d&#x27;applications de modèles d&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_055_00-08-22.jpg" alt="Comparatif visuel d&#x27;un cerf-volant et de son analyse de flux aérodynamique par IA." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_055_00-08-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:22</span>
+                        <span class="caption-text">Comparatif visuel d&#x27;un cerf-volant et de son analyse de flux aérodynamique par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_056_00-08-30.jpg" alt="Écran divisé montrant des vagues sur l&#x27;océan à gauche et un suivi de trajectoire d&#x27;oiseaux à droite." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_056_00-08-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:30</span>
+                        <span class="caption-text">Écran divisé montrant des vagues sur l&#x27;océan à gauche et un suivi de trajectoire d&#x27;oiseaux à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_057_00-08-38.jpg" alt="Visualisation scientifique de données orbitales et astronomiques en deux panneaux graphiques." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_057_00-08-38.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:38</span>
+                        <span class="caption-text">Visualisation scientifique de données orbitales et astronomiques en deux panneaux graphiques.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:40 - 00:08:51</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dites-le-moi dans les commentaires. Si vous avez apprécié ce rapport de recherche, cliquez sur le bouton J&#x27;aime et abonnez-vous à Pursuing AI pour plus d&#x27;expériences sur l&#x27;intelligence artificielle, de comparatifs de modèles et des derniers développements. Je vous vois dans le prochain.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Écran de fin / carte de chaîne YouTube avec animation graphique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Visuel d&#x27;un cerveau relié à une puce électronique portant la mention &#x27;PAI&#x27; à l&#x27;intérieur d&#x27;un cercle néon bleu, le texte &#x27;The Research Report&#x27;, et un encadré interactif avec un bouton &#x27;Like&#x27; (pouce bleu), un bouton &#x27;Subscribed&#x27; (rouge) et une icône de cloche cliquée.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage de l&#x27;écran de conclusion de la vidéo invitant le spectateur à s&#x27;abonner et à interagir.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-uI1sKOOMImo/frame_058_00-08-45.jpg" alt="Écran de fin de vidéo affichant le logo de la chaîne Pursuing AI, le texte &#x27;The Research Report&#x27; et des boutons d&#x27;interaction YouTube (J&#x27;aime, Abonné, Cloche)." loading="lazy" onclick="openLightbox('screenshots/YT-uI1sKOOMImo/frame_058_00-08-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:45</span>
+                        <span class="caption-text">Écran de fin de vidéo affichant le logo de la chaîne Pursuing AI, le texte &#x27;The Research Report&#x27; et des boutons d&#x27;interaction YouTube (J&#x27;aime, Abonné, Cloche).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
