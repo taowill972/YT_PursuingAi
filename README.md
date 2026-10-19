@@ -3,7 +3,7 @@
 > Base de connaissances et transcriptions intégrales mot pour mot en français (audio via `whisper-v3-large-turbo`) et descriptions visuelles d'écran (via `gemini-3.5-flash-lite`) avec captures d'écran clés et fiches HTML interactives de la chaîne **[Pursuing AI](https://www.youtube.com/@PursuingAi)** (@PursuingAi).
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `87 / 87` (`100.0%`)
+- **Vidéos traitées** : `88 / 88` (`100.0%`)
 - **Modèle Audio ASR** : `OpenAI / Faster-Whisper large-v3-turbo` (CPU int8 VPS Contabo, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `Google Gemini 3.5 Flash-Lite` (Analyse d'écrans, prompts, outils et workflows vidéo IA)
 - **Signature des fichiers** : `by-whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -16,6 +16,7 @@
 
 | Date | Titre & Fiche Markdown | Fiche Web Interactive | Durée | Captures | Lien YouTube | ID Vidéo |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: |
+| 2026-10-19 | [Cette IA vous permet de marcher dans votre propre monde imaginaire 🤯](2026-10-19_YT-AcMbVwwsR44_Cette IA vous permet de marcher dans votre propre monde imaginaire 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-10-19_YT-AcMbVwwsR44_Cette IA vous permet de marcher dans votre propre monde imaginaire 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 0m 48s | `7 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=AcMbVwwsR44) | `AcMbVwwsR44` |
 | 2026-10-19 | [J'ai créé un monde ouvert entier avec l'IA… 🤯](2026-10-19_YT-Amsl8Sh_BUE_J'ai créé un monde ouvert entier avec l'IA… 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-10-19_YT-Amsl8Sh_BUE_J'ai créé un monde ouvert entier avec l'IA… 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 3m 48s | `29 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=Amsl8Sh_BUE) | `Amsl8Sh_BUE` |
 | 2026-10-14 | [Gemini 4 Argon est bien plus puissant que nous le pensions](2026-10-14_YT-uI1sKOOMImo_Gemini 4 Argon est bien plus puissant que nous le pensions_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-10-14_YT-uI1sKOOMImo_Gemini 4 Argon est bien plus puissant que nous le pensions_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 8m 51s | `58 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=uI1sKOOMImo) | `uI1sKOOMImo` |
 | 2026-10-12 | [L'IA vient de devenir folle… Gemini 4, GPT-6, Claude & Qwen 4](2026-10-12_YT-77EZXlIDHys_L'IA vient de devenir folle… Gemini 4, GPT-6, Claude & Qwen 4_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [🌐 Consulter en ligne](2026-10-12_YT-77EZXlIDHys_L'IA vient de devenir folle… Gemini 4, GPT-6, Claude & Qwen 4_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | 9m 21s | `60 images` | [Voir sur YouTube](https://www.youtube.com/watch?v=77EZXlIDHys) | `77EZXlIDHys` |

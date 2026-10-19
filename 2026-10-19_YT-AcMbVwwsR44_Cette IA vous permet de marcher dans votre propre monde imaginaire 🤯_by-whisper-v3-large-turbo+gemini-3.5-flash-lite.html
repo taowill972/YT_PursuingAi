@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Cette IA vous permet de marcher dans votre propre monde imaginaire 🤯 — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Cette IA vous permet de marcher dans votre propre monde imaginaire 🤯</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-10-19</span>
+                <span class="badge">⏱️ 00m 48s</span>
+                <span class="badge">🆔 <code>AcMbVwwsR44</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=AcMbVwwsR44" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de *Pursuing AI* met en lumière une avancée majeure dans la génération de contenu visuel par intelligence artificielle : la transition d'une simple génération d'images ou de clips isolés vers la création de mondes immersifs interconnectés. L'outil central présenté, Netta Studio, permet aux créateurs de s'affranchir du simple plan fixe pour concevoir des univers fictionnels complets, dotés de leurs propres environnements, personnages et cartes géographiques interactives. Cette approche révolutionne le prototypage visuel et la construction d'univers (*worldbuilding*) en permettant de lier visuellement des scènes disparates au sein d'un même écosystème cohérent.</p><p>Sur le plan méthodologique, le processus créatif exposé suit un tunnel de production linéaire mais hautement automatisé : l'incubation d'une vision textuelle initiale, la génération d'environnements fantastiques texturés, l'agencement spatial via une carte du monde globale, et enfin l'incarnation visuelle. Grâce à des mouvements de caméra en vue à la première personne (POV), l'IA simule la déambulation de l'utilisateur à l'intérieur même de sa création. Cette technique transforme un concept abstrait en une expérience sensorielle navigable et partageable, ouvrant des perspectives inédites pour les réalisateurs, les concepteurs de jeux vidéo et les créateurs de contenu en quête d'immersion totale.</p><p>Pour les créateurs de vidéo, ce workflow représente un gain de temps et de ressources considérable dans les phases de pré-production et de recherche visuelle. En éliminant le besoin de modélisation 3D complexe ou de moteurs de jeu lourds, ces outils démocratisent la réalisation de décors oniriques et de plans subjectifs complexes. C'est l'émergence d'une nouvelle ère où la narration visuelle ne se contente plus de raconter une histoire, mais invite le spectateur (ou le créateur) à explorer physiquement l'espace mental dont elle est issue.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Seedance 2.5</span><span class="tool-tag">Kling 3.0</span><span class="tool-tag">Midjourney</span><span class="tool-tag">Génération Vidéo IA</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Évolution du paradigme créatif** : Le passage de la génération de plans uniques à la conception d&#x27;un écosystème visuel global et interconnecté redéfinit le *worldbuilding* moderne.</span></li><li><span class="point-bullet">✦</span><span>Structuration par la carte du monde** : L&#x27;utilisation d&#x27;une interface cartographique permet de lier logiquement différents lieux fantastiques, assurant une cohérence spatiale indispensable à l&#x27;immersion.</span></li><li><span class="point-bullet">✦</span><span>Puissance du POV (Vue subjective)** : Générer des vidéos à la première personne simule la marche, transformant le spectateur passif en un explorateur actif de l&#x27;univers virtuel.</span></li><li><span class="point-bullet">✦</span><span>Industrialisation de l&#x27;imaginaire** : Le workflow réduit drastiquement la friction entre une idée conceptuelle abstraite et un rendu visuel exploitable en production.</span></li><li><span class="point-bullet">✦</span><span>Démocratisation des décors complexes** : Plus besoin de compétences avancées en modélisation 3D ou en game design pour faire naître des forêts lumineuses et des royaumes mystérieux.</span></li><li><span class="point-bullet">✦</span><span>Optimisation de la pré-production** : Cet outil s&#x27;avère stratégique pour les réalisateurs cherchant à prototyper rapidement des environnements de films fantastiques avant le tournage.</span></li><li><span class="point-bullet">✦</span><span>Cohérence stylistique** : Le défi majeur réside dans le maintien d&#x27;une identité visuelle forte entre les différents environnements générés par l&#x27;IA sur une même carte.</span></li><li><span class="point-bullet">✦</span><span>Narration expérientielle** : Les créateurs de contenu peuvent désormais exploiter la dimension spatiale pour dynamiser leurs récits et capter l&#x27;attention d&#x27;un public friand d&#x27;immersion.</span></li><li><span class="point-bullet">✦</span><span>Accessibilité web** : L&#x27;intégration de ces technologies via des interfaces web (comme *netta.art*) abaisse la barrière à l&#x27;entrée matérielle pour les créateurs indépendants.</span></li><li><span class="point-bullet">✦</span><span>Synergie des outils multimodaux** : Combiner des phases de design d&#x27;environnement (type Midjourney/Netta) et d&#x27;animation vidéo (type Kling/Seedance) garantit des résultats à la pointe du réalisme.</span></li><li><span class="point-bullet">✦</span><span>Gestion des transitions spatiales** : Anticiper la manière dont les lieux se connectent sur la carte évite les ruptures de ton visuelles lors des déplacements en POV.</span></li><li><span class="point-bullet">✦</span><span>Exploitation du partage social** : La capacité à exporter et partager ces mondes explorables constitue un levier marketing puissant pour fédérer une communauté autour d&#x27;un univers fictionnel.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il y a enfin une IA qui vous permet de donner vie à vos mondes imaginaires et d&#x27;y pénétrer pour de vrai. Elle s&#x27;appelle Netta Studio, et voici comment elle fonctionne. Vous commencez avec une idée, et Netta Studio la transforme en un monde rempli de lieux, de personnages et d&#x27;environnements uniques. Imaginez des forêts lumineuses, des royaumes mystérieux et des paysages gigantesques tout droit sortis d&#x27;un film fantastique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Démonstration de l&#x27;outil Netta Studio avec logo en haut à gauche affichant &quot;NETTA&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Visuels de mondes imaginaires générés par intelligence artificielle avec le logo de la marque &quot;NETTA&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation dynamique de séquences vidéo générées par l&#x27;IA illustrant les mondes fantastiques créés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AcMbVwwsR44/frame_001_00-00-02.jpg" alt="Rendu visuel d&#x27;un monde fantastique généré par Netta Studio avec un mouvement de caméra immersif rapide." loading="lazy" onclick="openLightbox('screenshots/YT-AcMbVwwsR44/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Rendu visuel d&#x27;un monde fantastique généré par Netta Studio avec un mouvement de caméra immersif rapide.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AcMbVwwsR44/frame_002_00-00-19.jpg" alt="Affichage d&#x27;un paysage ou d&#x27;un environnement sombre généré par l&#x27;outil Netta Studio." loading="lazy" onclick="openLightbox('screenshots/YT-AcMbVwwsR44/frame_002_00-00-19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:19</span>
+                        <span class="caption-text">Affichage d&#x27;un paysage ou d&#x27;un environnement sombre généré par l&#x27;outil Netta Studio.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:22 - 00:00:44</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais cela ne s&#x27;arrête pas à la génération de scènes individuelles. Avec une fonctionnalité de carte du monde, vous pouvez rassembler vos lieux et voir comment tout votre monde se connecte. Et vient ensuite la partie la plus cool, vous pouvez générer des vidéos en vue à la première personne (POV) et faire l&#x27;expérience de votre monde comme si vous y marchiez réellement. Votre imagination passe d&#x27;une simple idée à un monde que vous pouvez voir, explorer et partager.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application de génération vidéo par IA dotée d&#x27;une fonction de carte du monde et d&#x27;un mode de visualisation en première personne (POV).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché dans l&#x27;interface détaillant la génération de scènes interconnectées et le rendu d&#x27;un quartier résidentiel de luxe avec des maisons dotées de piscines et de palmiers (&#x27;Isla Coral Estates&#x27;).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation à travers une carte interactive montrant des emplacements connectés, puis transition vers une vue subjective (POV) simulant une promenade virtuelle dans le monde généré par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AcMbVwwsR44/frame_003_00-00-24.jpg" alt="Scène maritime nocturne générée avec des éclairs et un navire naviguant sur une mer agitée." loading="lazy" onclick="openLightbox('screenshots/YT-AcMbVwwsR44/frame_003_00-00-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:24</span>
+                        <span class="caption-text">Scène maritime nocturne générée avec des éclairs et un navire naviguant sur une mer agitée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AcMbVwwsR44/frame_004_00-00-30.jpg" alt="Vue aérienne ou topographique d&#x27;un lotissement résidentiel côtier nommé &#x27;Isla Coral Estates&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-AcMbVwwsR44/frame_004_00-00-30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:30</span>
+                        <span class="caption-text">Vue aérienne ou topographique d&#x27;un lotissement résidentiel côtier nommé &#x27;Isla Coral Estates&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AcMbVwwsR44/frame_005_00-00-37.jpg" alt="Interface de l&#x27;outil montrant un panneau latéral avec des prompts textuels et un aperçu vidéo en POV d&#x27;une rue bordée de palmiers." loading="lazy" onclick="openLightbox('screenshots/YT-AcMbVwwsR44/frame_005_00-00-37.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:37</span>
+                        <span class="caption-text">Interface de l&#x27;outil montrant un panneau latéral avec des prompts textuels et un aperçu vidéo en POV d&#x27;une rue bordée de palmiers.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AcMbVwwsR44/frame_006_00-00-42.jpg" alt="Vidéo en vue subjective (première personne) simulant une marche le long d&#x27;une rue résidentielle bordée de luxueuses villas et de palmiers." loading="lazy" onclick="openLightbox('screenshots/YT-AcMbVwwsR44/frame_006_00-00-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Vidéo en vue subjective (première personne) simulant une marche le long d&#x27;une rue résidentielle bordée de luxueuses villas et de palmiers.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:44 - 00:00:48</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous voulez créer le vôtre ? Allez voir Netta Studio sur netta.art.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site Netta Studio (netta.art) avec le logo NETA en haut à gauche et un bandeau de navigation supérieur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte principal : « A world of things to explore. ». Grille de vignettes illustrant diverses créations artistiques et visuelles générées par intelligence artificielle. Texte ajouté en surimpression en bas : « NETA.ART ».</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la plateforme web Netta Studio et de sa galerie d&#x27;œuvres artistiques créées par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-AcMbVwwsR44/frame_007_00-00-46.jpg" alt="Page d&#x27;accueil du site web Netta Studio (netta.art) affichant une galerie d&#x27;images générées par IA sous le titre « A world of things to explore »." loading="lazy" onclick="openLightbox('screenshots/YT-AcMbVwwsR44/frame_007_00-00-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:46</span>
+                        <span class="caption-text">Page d&#x27;accueil du site web Netta Studio (netta.art) affichant une galerie d&#x27;images générées par IA sous le titre « A world of things to explore ».</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
