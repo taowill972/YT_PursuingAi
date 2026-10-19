@@ -85,9 +85,24 @@
     "ECaiOB37Rgs",
     "DNly_Ue_XCc",
     "77EZXlIDHys",
-    "uI1sKOOMImo"
+    "uI1sKOOMImo",
+    "Amsl8Sh_BUE"
   ],
   "processed_videos": [
+    {
+      "video_id": "Amsl8Sh_BUE",
+      "title": "J'ai créé un monde ouvert entier avec l'IA… 🤯",
+      "raw_title": "I Built an Entire Open World With AI… 🤯",
+      "filename_md": "2026-10-19_YT-Amsl8Sh_BUE_J'ai créé un monde ouvert entier avec l'IA… 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filename_html": "2026-10-19_YT-Amsl8Sh_BUE_J'ai créé un monde ouvert entier avec l'IA… 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "pub_date": "2026-10-19",
+      "duration": 228,
+      "screenshots_count": 29,
+      "filepath_md": "/root/YT_PursuingAi/2026-10-19_YT-Amsl8Sh_BUE_J'ai créé un monde ouvert entier avec l'IA… 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "filepath_html": "/root/YT_PursuingAi/2026-10-19_YT-Amsl8Sh_BUE_J'ai créé un monde ouvert entier avec l'IA… 🤯_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "processed_at": "2026-10-19T09:57:04Z",
+      "status": "completed"
+    },
     {
       "video_id": "uI1sKOOMImo",
       "title": "Gemini 4 Argon est bien plus puissant que nous le pensions",
@@ -1289,7 +1304,7 @@
       "status": "completed"
     }
   ],
-  "completed_count": 86,
+  "completed_count": 87,
   "last_run_timestamp": "2026-10-08T10:00:04Z",
   "status": "ALL_VIDEOS_PROCESSED_AUTOMATION_COMPLETED",
   "total_catalog_count": 84,

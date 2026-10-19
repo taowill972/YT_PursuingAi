@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 J&#x27;ai créé un monde ouvert entier avec l&#x27;IA… 🤯 — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 J&#x27;ai créé un monde ouvert entier avec l&#x27;IA… 🤯</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-10-19</span>
+                <span class="badge">⏱️ 03m 48s</span>
+                <span class="badge">🆔 <code>Amsl8Sh_BUE</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@PursuingAi" target="_blank" class="badge">📺 Pursuing AI</a>
+                <a href="https://www.youtube.com/watch?v=Amsl8Sh_BUE" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                <p>La vidéo de Pursuing AI explore une avancée majeure dans la création de contenu assistée par l'intelligence artificielle : la conception et l'exploration interactive d'un monde ouvert entier à partir d'une simple idée textuelle. Délaissant les approches traditionnelles cloisonnées — où l'écriture, la génération d'images et la mise en scène vidéo nécessitent des logiciels multiples —, le créateur utilise ici un espace de travail unifié pour bâtir un univers criminel fictif inspiré de la Floride moderne et de l'esthétique de GTA 6. Cette méthode permet de structurer un écosystème narratif cohérent comprenant des personnages principaux et secondaires, des factions rivales, des entreprises et des intrigues interconnectées, le tout générant automatiquement des dizaines de cartes thématiques interdépendantes.</p><p>La technique innovante repose sur la transition fluide entre la conception textuelle et la visualisation spatiale. Le créateur ne se contente pas de stocker des fiches descriptives ; il exploite une fonctionnalité de carte globale pour cartographier l'interconnexion géographique et narrative des différentes régions (telles que Dora Luna ou Cielo Beach). Cette vue d'ensemble garantit la cohérence du lore avant de passer à l'étape suivante : l'immersion visuelle. Grâce à des flux de travail dédiés, le monde ainsi théorisé prend vie à travers des séquences vidéo en vue subjective (POV) à la première personne, permettant littéralement de pénétrer à l'intérieur de l'univers généré.</p><p>Pour les créateurs de vidéo et les concepteurs de mondes virtuels, ce workflow représente un gain de temps considérable et un changement de paradigme. Plutôt que de produire des images isolées ou des clips déconnectés, l'IA devient un moteur de worldbuilding persistant où chaque élément (personnage, lieu, faction) nourrit et contextualise les générations futures. Cette approche ouvre la voie à une pré-production ultra-rapide pour des récits fictionnels, des concepts de jeux vidéo ou des productions machinima, où la cohérence de l'univers et l'immersion visuelle se construisent de manière itérative au sein d'une seule et même interface.</p>
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">flux</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>Centralisation du flux de travail** : Regrouper l&#x27;écriture du scénario, la création des visuels et la mise en scène dans une seule interface élimine les frictions techniques liées au passage d&#x27;un logiciel à un autre.</span></li><li><span class="point-bullet">✦</span><span>Approche itérative du worldbuilding** : Commencer par un concept narratif simple (ex. : un jeu de crime en Floride) et laisser l&#x27;IA enrichir progressivement l&#x27;univers par vagues successives de génération.</span></li><li><span class="point-bullet">✦</span><span>Interconnexion des entités** : Structurer le monde en générant simultanément des personnages, des lieux, des forces de l&#x27;ordre et des factions rivales pour garantir une cohérence narrative globale dès le départ.</span></li><li><span class="point-bullet">✦</span><span>Gestion quantitative de la complexité** : Gérer un grand nombre de cartes modulaires (plus de 47 éléments initiaux recensant missions, entreprises et lieux) sans perdre le fil conducteur grâce à une organisation automatisée.</span></li><li><span class="point-bullet">✦</span><span>Cartographie globale du monde** : Utiliser la vue de la carte générale pour spatialiser les différentes régions et comprendre comment les décors s&#x27;articulent logiquement les uns par rapport aux autres.</span></li><li><span class="point-bullet">✦</span><span>Immersion par la vue subjective (POV)** : Transformer des données textuelles et des cartes statiques en séquences vidéo dynamiques à la première personne pour évaluer concrètement l&#x27;atmosphère du monde créé.</span></li><li><span class="point-bullet">✦</span><span>Persistance du projet** : Traiter le monde virtuel comme un projet vivant et unique, où chaque nouvelle génération (image, texte ou vidéo) s&#x27;appuie sur les fondations établies sans repartir de zéro.</span></li><li><span class="point-bullet">✦</span><span>Expérimentation des invites (prompts)** : Ajuster finement les instructions textuelles pour guider l&#x27;IA vers l&#x27;esthétique recherchée, tout en acceptant d&#x27;affiner itérativement les résultats en fonction des spécificités du modèle.</span></li><li><span class="point-bullet">✦</span><span>Exploration multi-facettes** : Utiliser des fonctionnalités de type *WorldBox* pour multiplier les angles d&#x27;exploration d&#x27;un même univers, allant de la fiche signalétique de personnage au rendu vidéo immersif.</span></li><li><span class="point-bullet">✦</span><span>Piège à éviter (la dispersion)** : Ne pas multiplier les univers indépendants, mais concentrer ses efforts sur un seul monde ouvert pour tester la profondeur, la logique et la réactivité de l&#x27;outil d&#x27;IA sur le long terme.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:33</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Avez-vous déjà imaginé créer votre propre monde ? Un royaume fantastique ? Une ville pleine de secrets ? Ou un monde ouvert entier à la GTA avec ses propres personnages, lieux et histoires ? Eh bien, vous pouvez créer quelque chose comme ça avec l&#x27;IA. Mais traditionnellement, vous auriez besoin de différents outils pour écrire l&#x27;histoire, générer des visuels et donner vie à ce monde. Mais et si vous pouviez construire votre monde et y pénétrer réellement en utilisant un seul espace de travail basé sur l&#x27;IA ? C&#x27;est ce que nous allons explorer aujourd&#x27;hui en utilisant Netta Studio. Je vais prendre mon idée d&#x27;un monde ouvert inspiré de GTA 6 et voir jusqu&#x27;où je peux le développer.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du site web Netta Studio (neta.art) affichée dans un navigateur Chrome, avec des onglets &quot;Explore&quot;, &quot;Blog&quot;, &quot;Changelog&quot; et un bouton &quot;Get started&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le texte principal sur la page d&#x27;accueil est « A world of things to explore. » Accompagné d&#x27;une grille de nombreuses vignettes d&#x27;illustrations de mondes fantastiques et urbains.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle de différents mondes générés par IA suivie de la présentation de l&#x27;interface de la plateforme Netta Studio.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_001_00-00-02.jpg" alt="Visuel de démonstration généré par IA montrant l&#x27;entrée d&#x27;une grotte mystérieuse avec des cristaux de glace bleus." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_001_00-00-02.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:02</span>
+                        <span class="caption-text">Visuel de démonstration généré par IA montrant l&#x27;entrée d&#x27;une grotte mystérieuse avec des cristaux de glace bleus.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_002_00-00-12.jpg" alt="Visuel de démonstration généré par IA représentant une luxueuse villa moderne au bord de l&#x27;eau avec piscine et palmiers." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_002_00-00-12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:12</span>
+                        <span class="caption-text">Visuel de démonstration généré par IA représentant une luxueuse villa moderne au bord de l&#x27;eau avec piscine et palmiers.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_003_00-00-23.jpg" alt="Animation visuelle de transition abstraite et lumineuse avec des faisceaux dorés en mouvement rapide." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_003_00-00-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:23</span>
+                        <span class="caption-text">Animation visuelle de transition abstraite et lumineuse avec des faisceaux dorés en mouvement rapide.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_004_00-00-31.jpg" alt="Capture d&#x27;écran du site web de Netta Studio (neta.art) affichant la page d&#x27;accueil avec de multiples vignettes de mondes virtuels et le slogan « A world of things to explore »." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_004_00-00-31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:31</span>
+                        <span class="caption-text">Capture d&#x27;écran du site web de Netta Studio (neta.art) affichant la page d&#x27;accueil avec de multiples vignettes de mondes virtuels et le slogan « A world of things to explore ».</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:33 - 00:01:09</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est Pursuing AI, et vous regardez le rapport de recherche. J&#x27;ai ouvert Netta Studio, et c&#x27;est la première chose que vous voyez. L&#x27;idée derrière tout ça est assez simple. Vous commencez avec une idée, puis vous construisez progressivement un monde entier autour d&#x27;elle. Au lieu de simplement générer une histoire ou une image, vous pouvez développer des personnages, des lieux, des factions et du lore, puis utiliser ces éléments pour développer encore plus votre monde. Et plutôt que de simplement regarder ce que d&#x27;autres ont créé, je voulais voir ce qui se passerait si je construisais mon propre monde à partir de zéro. Commençons donc. J&#x27;ai commencé par un concept simple, un jeu de crime en monde ouvert fictif inspiré par l&#x27;atmosphère de la Floride moderne.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Netta Studio (netta.art) et interface de génération vidéo ou de création de mondes virtuels.</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL de Netta Studio : netta.art/world/world_01M40... ; texte principal : &quot;Coral Vice&quot; et &quot;Doraluna is a city that sells sunshine and forgives everything else...&quot;; dans le panneau latéral : commandes textuelles (&quot;Fan-Made GTA 6-Style Open-World Crime Ga...&quot;, &quot;Load narrating-v2 skill&quot;, &quot;Read world phase&quot;, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur navigue à travers différentes interfaces de génération de mondes (vidéos cinématiques et plateforme Netta Studio).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_005_00-00-46.jpg" alt="Aperçu d&#x27;une vidéo générée montrant une rue animée de la cité de Minas Tirith avec des montagnes enneigées en arrière-plan." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_005_00-00-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:46</span>
+                        <span class="caption-text">Aperçu d&#x27;une vidéo générée montrant une rue animée de la cité de Minas Tirith avec des montagnes enneigées en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_006_00-00-58.jpg" alt="Scène cinématique générée montrant le cheval de Troie devant des temples et des bâtiments en flammes sous la lune." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_006_00-00-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:58</span>
+                        <span class="caption-text">Scène cinématique générée montrant le cheval de Troie devant des temples et des bâtiments en flammes sous la lune.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_007_00-01-07.jpg" alt="Interface de Netta Studio (netta.art) affichant un panneau de discussion à gauche et le texte de présentation du monde &#x27;Coral Vice&#x27; sur le tableau principal." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_007_00-01-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:07</span>
+                        <span class="caption-text">Interface de Netta Studio (netta.art) affichant un panneau de discussion à gauche et le texte de présentation du monde &#x27;Coral Vice&#x27; sur le tableau principal.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:09 - 00:01:46</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Nous avons nos personnages principaux, Ren et Diaz, ainsi que plusieurs personnages secondaires, et autour d&#x27;eux, Netta a commencé à construire les lieux. Nous avons des endroits comme Dora Luna, Cielo Beach, et plusieurs autres zones, mais un monde a besoin de plus que des personnages et des lieux. Il a besoin d&#x27;une histoire qui relie le tout. Netta a donc également développé des organisations criminelles, des forces de l&#x27;ordre, des factions rivales et les conflits entre elles. Elle a même commencé à relier ces éléments au scénario principal. Et après la génération initiale, nous avions 47 cartes représentant différentes parties de notre monde. Celles-ci comprenaient des personnages, des lieux, des factions, des entreprises,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web Netta (neta.art) utilisée pour la génération et l&#x27;organisation d&#x27;univers de jeux de type GTA 6.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus et cartes textuelles interactives représentant les personnages (&#x27;Ren&#x27;, &#x27;Diaz&#x27;), les lieux (&#x27;Dora Luna&#x27;, &#x27;Cielo Beach&#x27;, &#x27;Sabrocosta&#x27;), les factions et l&#x27;histoire en quatre actes, ainsi que le panneau latéral &#x27;World Wiki&#x27; indiquant &#x27;47 entries&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur navigue à travers l&#x27;interface de l&#x27;application Netta pour montrer les différentes catégories de cartes générées (personnages, lieux, factions, histoire) qui constituent le monde virtuel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_008_00-01-11.jpg" alt="Interface de Netta montrant la section &#x27;Characters&#x27; avec des cartes de personnages comme Ren et Diaz." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_008_00-01-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:11</span>
+                        <span class="caption-text">Interface de Netta montrant la section &#x27;Characters&#x27; avec des cartes de personnages comme Ren et Diaz.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_009_00-01-22.jpg" alt="Interface de Netta affichant la section &#x27;Locations&#x27; avec des cartes de lieux comme Dora Luna et Cielo Beach." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_009_00-01-22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:22</span>
+                        <span class="caption-text">Interface de Netta affichant la section &#x27;Locations&#x27; avec des cartes de lieux comme Dora Luna et Cielo Beach.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_010_00-01-35.jpg" alt="Interface de Netta présentant la section &#x27;Factions&#x27; et les options pour donner vie au monde." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_010_00-01-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:35</span>
+                        <span class="caption-text">Interface de Netta présentant la section &#x27;Factions&#x27; et les options pour donner vie au monde.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_011_00-01-44.jpg" alt="Interface du &#x27;World Wiki&#x27; de Netta montrant les 47 entrées réparties par catégories (People, Places, Factions, Lore, Events)." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_011_00-01-44.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:44</span>
+                        <span class="caption-text">Interface du &#x27;World Wiki&#x27; de Netta montrant les 47 entrées réparties par catégories (People, Places, Factions, Lore, Events).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:46 - 00:02:22</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">des missions, et d&#x27;autres éléments. Mais maintenant je voulais explorer quelque chose de plus intéressant. À quoi ressemble réellement ce monde lorsque nous rassemblons toutes ses pièces ? J&#x27;ai donc exploré ensuite la fonctionnalité de carte du monde de Netta. Au lieu de regarder les cartes de localisation individuelles une par une, je voulais voir le monde dans son ensemble. Et voilà. Maintenant, nous pouvons voir les différentes régions et emplacements disposés ensemble, ce qui nous donne une image beaucoup plus claire du monde que nous avons construit. C&#x27;est particulièrement utile pour un monde comme le nôtre, où nous avons de multiples emplacements, différents groupes, et une histoire qui les relie. Parce que lorsque vous créez un concept de monde ouvert, ce n&#x27;est pas seulement</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application Netta Art (interface de création de monde ouvert / wiki / cartographie interactive).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes visibles : &#x27;World Wiki&#x27;, &#x27;Factions&#x27;, &#x27;Lore&#x27;, &#x27;Fan-Made GTA 6-Style Open-World Crime Game Concept&#x27;, descriptions de factions (Doraluna PD Anti-Vice Division, The Delacroix Syndicate), et &#x27;The Meridian Mile&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur navigue à travers les différentes sections du wiki du monde, puis présente la carte globale interactive et zoome sur un quartier spécifique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_012_00-01-48.jpg" alt="Interface du wiki du monde montrant les rubriques Overview, People, Places, Factions, Lore et Events." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_012_00-01-48.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:48</span>
+                        <span class="caption-text">Interface du wiki du monde montrant les rubriques Overview, People, Places, Factions, Lore et Events.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_013_00-01-59.jpg" alt="Interface de Netta avec panneau de discussion à gauche et espace de travail visuel à droite affichant des fiches de concepts et des portraits." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_013_00-01-59.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:59</span>
+                        <span class="caption-text">Interface de Netta avec panneau de discussion à gauche et espace de travail visuel à droite affichant des fiches de concepts et des portraits.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_014_00-02-11.jpg" alt="Vue aérienne complète d&#x27;une carte du monde de style GTA montrant différentes zones géographiques interconnectées." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_014_00-02-11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:11</span>
+                        <span class="caption-text">Vue aérienne complète d&#x27;une carte du monde de style GTA montrant différentes zones géographiques interconnectées.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_015_00-02-20.jpg" alt="Zoom détaillé sur une zone urbaine spécifique de la carte avec une description textuelle de &#x27;The Meridian Mile&#x27;." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_015_00-02-20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:20</span>
+                        <span class="caption-text">Zoom détaillé sur une zone urbaine spécifique de la carte avec une description textuelle de &#x27;The Meridian Mile&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:22 - 00:02:43</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">à propos d&#x27;inventer des endroits individuels. Il s&#x27;agit de comprendre comment ces endroits s&#x27;intègrent dans l&#x27;univers plus vaste. Et maintenant que nous avons une meilleure image de notre monde, je veux aller un peu plus loin. Et si nous pouvions réellement faire l&#x27;expérience de ce monde de l&#x27;intérieur ? C&#x27;est là que les choses deviennent particulièrement intéressantes. Jusqu&#x27;à présent, nous avons principalement observé notre monde de l&#x27;extérieur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web interactive de cartographie et d&#x27;exploration de monde virtuel (interface style atlas interactif avec zoom et points d&#x27;intérêt cliquables).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Noms des lieux affichés : &quot;Coral Vice - The Grand Meridian Coast Atlas&quot;, &quot;The Meridian Mile&quot;, &quot;Isla Coral Estates&quot;, &quot;Eband Intercontinental Airport&quot;, &quot;Doraluna&quot;, &quot;Cielo Beach&quot;. Description textuelle d&#x27;Isla Coral Estates : &quot;A gated island in the bay built on dredged fill, with villas, private docks and the coast&#x27;s donor money...&quot; Boutons interactifs comme &quot;Back to Map&quot; et &quot;Explore This Place&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et zoom à travers la carte interactive d&#x27;un monde virtuel pour explorer différents quartiers et lieux spécifiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_016_00-02-24.jpg" alt="Vue aérienne interactive de la carte d&#x27;une ville virtuelle nommée Coral Vice avec des zones comme The Meridian Mile et Isla Coral Estates." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_016_00-02-24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:24</span>
+                        <span class="caption-text">Vue aérienne interactive de la carte d&#x27;une ville virtuelle nommée Coral Vice avec des zones comme The Meridian Mile et Isla Coral Estates.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_017_00-02-32.jpg" alt="Zoom sur le quartier résidentiel de luxe Isla Coral Estates montrant des villas avec piscines, des quais et une description textuelle." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_017_00-02-32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:32</span>
+                        <span class="caption-text">Zoom sur le quartier résidentiel de luxe Isla Coral Estates montrant des villas avec piscines, des quais et une description textuelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_018_00-02-41.jpg" alt="Vue d&#x27;ensemble de la grande carte interactive montrant plusieurs zones de la ville, incluant un aéroport et différentes îles côtières." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_018_00-02-41.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:41</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de la grande carte interactive montrant plusieurs zones de la ville, incluant un aéroport et différentes îles côtières.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:43 - 00:03:05</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais et si nous pouvions réellement nous y déplacer ? Je voulais voir si Netta pouvait créer une vidéo en vue subjective (POV) à la première personne qui nous plonge à l&#x27;intérieur du monde que nous avons construit. J&#x27;ai donc exploré le flux de travail de la vidéo POV et j&#x27;ai utilisé notre monde comme point de départ. Et maintenant, jetons un œil au résultat.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de type tableau de bord interactif combinant un assistant textuel et une vue de gestion de projet visuelle (Board/Canvas) avec des assets de personnages et de décors.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt et de l&#x27;historique de chat visible sur l&#x27;interface (mentionnant &quot;Fan-Made GTA 6-Style Open-World Game Concept&quot;, &quot;Wrong Car, Right Night&quot;, &quot;Next POV: The Knock&quot;) ainsi que des vignettes de personnages (&quot;Characters&quot;) et de lieux (&quot;Locations&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle des rendus vidéo générés par l&#x27;IA et de l&#x27;interface de travail utilisée pour orchestrer le workflow de création du monde virtuel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (4) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-4">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_019_00-02-45.jpg" alt="Rendu vidéo généré par IA montrant une vue extérieure avec une villa de luxe au bord de l&#x27;eau et un personnage versant du vin." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_019_00-02-45.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:45</span>
+                        <span class="caption-text">Rendu vidéo généré par IA montrant une vue extérieure avec une villa de luxe au bord de l&#x27;eau et un personnage versant du vin.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_020_00-02-51.jpg" alt="Interface de gestion de projet (type tableau blanc et interface de chat style Claude) montrant des concepts de jeux de type GTA 6, des fiches de personnages et des localisations." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_020_00-02-51.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:51</span>
+                        <span class="caption-text">Interface de gestion de projet (type tableau blanc et interface de chat style Claude) montrant des concepts de jeux de type GTA 6, des fiches de personnages et des localisations.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_021_00-02-58.jpg" alt="Rendu vidéo en vue subjective (POV) montrant une rue résidentielle bordée de palmiers et de maisons luxueuses avec des voitures de sport garées." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_021_00-02-58.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:58</span>
+                        <span class="caption-text">Rendu vidéo en vue subjective (POV) montrant une rue résidentielle bordée de palmiers et de maisons luxueuses avec des voitures de sport garées.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_022_00-03-03.jpg" alt="Rendu vidéo en mouvement simulant une vue subjective (POV) longeant le trottoir d&#x27;un quartier résidentiel tropical haut de gamme." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_022_00-03-03.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:03</span>
+                        <span class="caption-text">Rendu vidéo en mouvement simulant une vue subjective (POV) longeant le trottoir d&#x27;un quartier résidentiel tropical haut de gamme.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:05 - 00:03:25</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, je voulais explorer la génération de compétences WorldBox, et cela nous donne une autre façon d&#x27;explorer le processus de construction de monde à l&#x27;intérieur de Netta Studio. La partie intéressante de cette expérience est que nous ne traitons pas chaque création comme un projet complètement séparé. Nous continuons à travailler avec un monde que nous avons déjà établi, et c&#x27;est ce qui rend cela intéressant pour moi.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Netta Studio (interface web interactive de création de mondes par IA).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de compétences (&quot;Skills&quot;, &quot;World Box&quot;), panneau de discussion latéral, texte descriptif de l&#x27;univers &quot;Characters&quot; (Two outsiders, five people who shape them...), et rendu 3D cinématique d&#x27;une rue côtière.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de Netta Studio pour sélectionner une compétence de génération (&quot;WorldBox&quot;) et visualisation d&#x27;un rendu 3D du monde créé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_023_00-03-07.jpg" alt="Interface de Netta Studio montrant le menu des compétences avec l&#x27;option &quot;WorldBox&quot; sélectionnée." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_023_00-03-07.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:07</span>
+                        <span class="caption-text">Interface de Netta Studio montrant le menu des compétences avec l&#x27;option &quot;WorldBox&quot; sélectionnée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_024_00-03-15.jpg" alt="Interface de Netta Studio affichant le panneau de discussion et le texte descriptif du monde &quot;Characters&quot;." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_024_00-03-15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:15</span>
+                        <span class="caption-text">Interface de Netta Studio affichant le panneau de discussion et le texte descriptif du monde &quot;Characters&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_025_00-03-23.jpg" alt="Rendu visuel d&#x27;un quartier résidentiel ensoleillé bordé de palmiers dans un style de jeu vidéo en monde ouvert." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_025_00-03-23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:23</span>
+                        <span class="caption-text">Rendu visuel d&#x27;un quartier résidentiel ensoleillé bordé de palmiers dans un style de jeu vidéo en monde ouvert.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:25 - 00:03:44</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce n&#x27;est pas seulement générer une seule image ou écrire une histoire. Il s&#x27;agit de développer un monde et de trouver différentes façons de donner vie à ce monde. Bien sûr, les résultats dépendent de vos invites et de ce que vous essayez de créer, il y a donc toujours de la place pour expérimenter et affiner les choses. Mais si vous avez toujours voulu construire votre propre univers fictif, Netta Studio vaut le détour.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la plateforme Netta Studio (neta.art) ainsi que des clips vidéo de démonstration générés par IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL &quot;neta.art&quot;, texte &quot;A world of things to explore&quot;, menus de navigation (Explore, Blog, Changelog, Get started) et grille de nombreuses vignettes d&#x27;images et de mondes virtuels.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle d&#x27;un univers généré par IA avec un mouvement de caméra (travelling) dans un quartier résidentiel, suivie d&#x27;une transition montrant l&#x27;interface du site web Netta.art.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_026_00-03-27.jpg" alt="Rendu visuel d&#x27;une rue résidentielle luxueuse en bord de mer généré par IA, montrant des villas modernes, des palmiers et des voitures de sport." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_026_00-03-27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:27</span>
+                        <span class="caption-text">Rendu visuel d&#x27;une rue résidentielle luxueuse en bord de mer généré par IA, montrant des villas modernes, des palmiers et des voitures de sport.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_027_00-03-35.jpg" alt="Suite du rendu vidéo en travelling avant le long de la rue résidentielle côtière bordée de palmiers et de villas blanches." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_027_00-03-35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:35</span>
+                        <span class="caption-text">Suite du rendu vidéo en travelling avant le long de la rue résidentielle côtière bordée de palmiers et de villas blanches.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_028_00-03-42.jpg" alt="Capture d&#x27;écran du site web de Netta Studio (neta.art) affichant la page d&#x27;accueil avec le slogan &quot;A world of things to explore&quot; et une grille de vignettes d&#x27;œuvres générées." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_028_00-03-42.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:42</span>
+                        <span class="caption-text">Capture d&#x27;écran du site web de Netta Studio (neta.art) affichant la page d&#x27;accueil avec le slogan &quot;A world of things to explore&quot; et une grille de vignettes d&#x27;œuvres générées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:44 - 00:03:48</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;ai mis le lien dans la description, ainsi que le lien de la communauté Netta Studio.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site web Netta Studio (neta.art).</p>
+                        <p><strong>Contenu textuel & Code :</strong> En-tête avec le logo &quot;Neta&quot;, les onglets de navigation &quot;Explore&quot;, &quot;Blog&quot;, &quot;Changelog&quot;, un bouton pour Discord et un bouton &quot;Get started&quot;. Le slogan principal affiché au centre est &quot;A world of things to explore.&quot; avec une grille d&#x27;illustrations artistiques et variées en dessous.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de la page d&#x27;accueil de la plateforme Netta Studio sur le navigateur web.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="screenshots/YT-Amsl8Sh_BUE/frame_029_00-03-46.jpg" alt="Page d&#x27;accueil du site web Netta Studio (neta.art) montrant une galerie d&#x27;images et de créations artistiques générées par IA." loading="lazy" onclick="openLightbox('screenshots/YT-Amsl8Sh_BUE/frame_029_00-03-46.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:46</span>
+                        <span class="caption-text">Page d&#x27;accueil du site web Netta Studio (neta.art) montrant une galerie d&#x27;images et de créations artistiques générées par IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
